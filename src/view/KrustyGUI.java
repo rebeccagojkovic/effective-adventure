@@ -13,7 +13,7 @@ package view;
 
 /**
  *
- * @author Martin
+ * @author Azra
  */
 @SuppressWarnings("serial")
 public class KrustyGUI extends javax.swing.JFrame {
