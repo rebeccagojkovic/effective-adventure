@@ -91,7 +91,8 @@ public class KrustyGUI extends javax.swing.JFrame {
 
         cookieBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cookieBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            @Override
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cookieBoxActionPerformed(evt);
             }
         });
@@ -133,11 +134,13 @@ public class KrustyGUI extends javax.swing.JFrame {
                 false, false, false
             };
 
-            public Class getColumnClass(int columnIndex) {
+            @Override
+			public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
+            @Override
+			public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
@@ -163,7 +166,8 @@ public class KrustyGUI extends javax.swing.JFrame {
 
         unblockButton.setText("Unblock selected");
         unblockButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            @Override
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
                 unblockButtonActionPerformed(evt);
             }
         });
@@ -189,11 +193,13 @@ public class KrustyGUI extends javax.swing.JFrame {
                 false, false, false, true
             };
 
-            public Class getColumnClass(int columnIndex) {
+            @Override
+			public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
+            @Override
+			public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
@@ -215,7 +221,8 @@ public class KrustyGUI extends javax.swing.JFrame {
 
         searchCookieBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         searchCookieBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            @Override
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchCookieBoxActionPerformed(evt);
             }
         });
@@ -224,7 +231,8 @@ public class KrustyGUI extends javax.swing.JFrame {
 
         clearButton.setText("Clear");
         clearButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            @Override
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearButtonActionPerformed(evt);
             }
         });
@@ -237,7 +245,8 @@ public class KrustyGUI extends javax.swing.JFrame {
 
         searchFromTimestampField.setText("yyyy-mm-dd");
         searchFromTimestampField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            @Override
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchFromTimestampFieldActionPerformed(evt);
             }
         });
@@ -246,7 +255,8 @@ public class KrustyGUI extends javax.swing.JFrame {
 
         searchToTimestampField.setText("yyyy-mm-dd");
         searchToTimestampField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            @Override
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchToTimestampFieldActionPerformed(evt);
             }
         });
@@ -263,7 +273,8 @@ public class KrustyGUI extends javax.swing.JFrame {
 
         blockButton.setText("Block selected");
         blockButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            @Override
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
                 blockButtonActionPerformed(evt);
             }
         });
@@ -281,7 +292,8 @@ public class KrustyGUI extends javax.swing.JFrame {
         storagePane.add(showPalletButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         showPalletLabel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            @Override
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
                 showPalletLabelActionPerformed(evt);
             }
         });
@@ -310,11 +322,13 @@ public class KrustyGUI extends javax.swing.JFrame {
                 false, false, false
             };
 
-            public Class getColumnClass(int columnIndex) {
+            @Override
+			public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
+            @Override
+			public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
