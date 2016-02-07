@@ -41,7 +41,7 @@ public class Product {
 	public void setpTime(DateFormat pTime) {
 		this.pTime = pTime;
 	}
-    @ManyToMany(mappedBy="products")
+    @ManyToMany(mappedBy="Product")
 	public Set<Ingredient> getIngredients() {
 		return ingredients;
 	}
@@ -49,7 +49,7 @@ public class Product {
 	public void setIngredients(Set<Ingredient> ingredients) {
 		this.ingredients = ingredients;
 	}
-	@ManyToMany(mappedBy="products")
+	@ManyToMany(mappedBy="Product")
 	public Set<Order> getOrders() {
 		return orders;
 	}

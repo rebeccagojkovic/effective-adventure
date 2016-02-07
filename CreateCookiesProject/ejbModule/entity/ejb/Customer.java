@@ -41,7 +41,7 @@ public class Customer {
 	public void setcAddress(String cAddress) {
 		this.cAddress = cAddress;
 	}
-	@OneToMany(mappedBy="customers")
+	@OneToMany(mappedBy="Customer")
 	public Set<Order> getOrders() {
 		return orders;
 	}
