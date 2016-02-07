@@ -1,2 +1,0 @@
-# effective-adventure
-SYSA14
