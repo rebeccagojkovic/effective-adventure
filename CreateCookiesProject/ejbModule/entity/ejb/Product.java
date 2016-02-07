@@ -1,5 +1,6 @@
 package entity.ejb;
 
+import java.text.DateFormat;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -12,7 +13,7 @@ import javax.persistence.Table;
 public class Product {
 	private int pNumber;
 	private String pName;
-	private int pTime;
+	private  DateFormat pTime;
 	private Set<Ingredient> ingredients;
 	private Set<Order> orders;
 
@@ -33,11 +34,11 @@ public class Product {
 		this.pName = pName;
 	}
 	@Column(name="pTime")
-	public int getpTime() {
+	public DateFormat getpTime() {
 		return pTime;
 	}
 
-	public void setpTime(int pTime) {
+	public void setpTime(DateFormat pTime) {
 		this.pTime = pTime;
 	}
     @ManyToMany(mappedBy="products")

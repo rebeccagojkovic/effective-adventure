@@ -1,5 +1,6 @@
 package entity.ejb;
 
+import java.text.DateFormat;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -16,7 +17,7 @@ import javax.persistence.Table;
 public class Order {
 	private long oNumber;
 	private boolean isDelivered;
-	private int expectedDeliveryDate;
+	private DateFormat expectedDeliveryDate;
 	private Set<Product> products;
 	private Customer customer;
 
@@ -40,11 +41,11 @@ public class Order {
 	}
 
 	@Column(name = "expectedDeliveryDate")
-	public int getExpectedDeliveryDate() {
+	public DateFormat getExpectedDeliveryDate() {
 		return expectedDeliveryDate;
 	}
 
-	public void setExpectedDeliveryDate(int expectedDeliveryDate) {
+	public void setExpectedDeliveryDate(DateFormat expectedDeliveryDate) {
 		this.expectedDeliveryDate = expectedDeliveryDate;
 	}
 

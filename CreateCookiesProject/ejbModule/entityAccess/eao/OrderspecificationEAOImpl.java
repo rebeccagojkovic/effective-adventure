@@ -13,6 +13,7 @@ import entity.ejb.Recipe;
 @Stateless
 public class OrderspecificationEAOImpl implements
 		OrderspecificationEAOImplLocal {
+
 	@PersistenceContext(unitName = "LabEJBSQL")
 	private EntityManager em;
 
