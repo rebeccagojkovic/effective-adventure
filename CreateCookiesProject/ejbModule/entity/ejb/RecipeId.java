@@ -3,9 +3,10 @@ package entity.ejb;
 import java.io.Serializable;
 
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 
 
-
+@Embeddable
 public class RecipeId {
 	
 	private int pNumber;
