@@ -4,6 +4,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import entity.ejb.Orderspecification;
 import entity.ejb.Recipe;
 
 /**
@@ -23,7 +24,8 @@ public class RecipeEAOImpl implements RecipeEAOImplLocal {
 	}
 
 	public Recipe findByiNumberPNumber(int iNumber, int pNumber) {
-		return em.find(Recipe.class, iNumber, pNumber);
+		RecipeId iNumberPNumber= new RecipeId(iNumber,pNumber);
+		return em.find(Orderspecification.class, iNumberPNumber);
 
 	}
 
