@@ -26,7 +26,7 @@ public class RecipeEAOImpl implements RecipeEAOImplLocal {
 
 	public Recipe findByiNumberPNumber(int iNumber, int pNumber) {
 		RecipeId iNumberPNumber= new RecipeId(iNumber,pNumber);
-		return em.find(Orderspecification.class, iNumberPNumber);
+		return em.find(Recipe.class, iNumberPNumber);
 
 	}
 
