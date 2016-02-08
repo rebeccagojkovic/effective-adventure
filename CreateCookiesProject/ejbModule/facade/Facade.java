@@ -3,6 +3,7 @@ package facade;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
+import entity.ejb.Customer;
 import entityAccess.eao.CustomerEAOImplLocal;
 import entityAccess.eao.IngredientEAOImplLocal;
 import entityAccess.eao.OrderEAOImplLocal;
@@ -35,6 +36,11 @@ public class Facade implements FacadeLocal {
 	public Facade() {
 		// TODO Auto-generated constructor stub
 	}
-	
 
+	@Override
+	public Customer createCustomer(Customer customer) {
+		return customerEAO.createCustomer(customer);
+	}
+	
+	
 }
