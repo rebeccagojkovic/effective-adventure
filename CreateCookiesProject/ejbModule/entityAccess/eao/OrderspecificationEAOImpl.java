@@ -5,6 +5,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import entity.ejb.Orderspecification;
+import entity.ejb.OrderspecificationId;
 import entity.ejb.Recipe;
 
 /**
