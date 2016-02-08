@@ -11,9 +11,10 @@ import javax.persistence.Table;
 @Table(name = "Orderspecification")
 public class Orderspecification {
 	private long oNumber;
-	private long pNumber;
+	private int pNumber;
 	private Set<Order> orders;
 	private Set<Product> products;
+
 	@Id
 	@Column(name="oNumber")
 	public long getoNumber() {
@@ -25,11 +26,11 @@ public class Orderspecification {
 	}
 	@Id
 	@Column(name="pNumber")
-	public long getpNumber() {
+	public int getpNumber() {
 		return pNumber;
 	}
 
-	public void setpNumber(long pNumber) {
+	public void setpNumber(int pNumber) {
 		this.pNumber = pNumber;
 	}
 

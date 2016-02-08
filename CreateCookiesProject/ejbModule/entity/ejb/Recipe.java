@@ -10,14 +10,14 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Recipe")
 public class Recipe {
-	private long pNumber;
-	private long iNumber;
+	private int pNumber;
+	private int iNumber;
 	private Set<Ingredient> Ingredients;
 	private Set<Product> products;
 
 	@Id
 	@Column(name = "pNumber")
-	public long getpNumber() {
+	public int getpNumber() {
 		return pNumber;
 	}
 
@@ -27,7 +27,7 @@ public class Recipe {
 
 	@Id
 	@Column(name = "iNumber")
-	public long getiNumber() {
+	public int getiNumber() {
 		return iNumber;
 	}
 

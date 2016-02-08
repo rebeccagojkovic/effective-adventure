@@ -25,7 +25,8 @@ public class OrderspecificationEAOImpl implements
 	}
 
 	public Orderspecification findBypNumberONumber(int pNumber, long oNumber) {
-		return em.find(Orderspecification.class, pNumber, oNumber);
+		Orderspecification pNumberONumber= new Orderspecification(pNumber,oNumber);
+		return em.find(Orderspecification.class, pNumberONumber);
 
 	}
 
