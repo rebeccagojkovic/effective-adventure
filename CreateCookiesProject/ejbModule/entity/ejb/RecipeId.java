@@ -15,7 +15,7 @@ public class RecipeId {
 		
 	}
 	
-	public RecipeId(int pNumber, long iNumber) {
+	public RecipeId(int pNumber, int iNumber) {
 		this.pNumber = pNumber;
 		this.iNumber = iNumber;
 	}
