@@ -42,7 +42,7 @@ public class Customer {
 		this.cAddress = cAddress;
 	}
 	@OneToMany(mappedBy="Customer")
-	public Set<Order> getOrders() {
+	public Set<Order> getOrders() { 
 		return orders;
 	}
 
