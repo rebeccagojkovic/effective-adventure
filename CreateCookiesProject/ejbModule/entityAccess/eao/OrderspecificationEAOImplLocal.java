@@ -7,7 +7,7 @@ import entity.ejb.Recipe;
 
 @Local
 public interface OrderspecificationEAOImplLocal {
-	public Recipe findBypNumberONumber(int pNumber, long oNumber);
+	public Orderspecification findBypNumberONumber(int pNumber, long oNumber);
 
 	public Orderspecification createOrderspecification(
 			Orderspecification orderspecification);

@@ -40,15 +40,17 @@ public class CreateCookiesServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
-		
+		out.println("<!DOCTYPE html><html><head>");
+		out.println("<title>CreateCookies</title>");
+		out.println("<meta charset=\"ISO-8859-1\">");
 		out.println("</head><body>");
 		out.println("<h3>Customer</h3>" + "<br>");
 		out.println("** Create Customer **" + "<br>");
-		Customer c1 = new Customer();
-		c1.setcNumber(1);
-		c1.setcName("Mormors bageri");
-		c1.setcAddress("Lund");
-		facade.createCustomer(c1);
+//		Customer c1 = new Customer();
+//		c1.setcNumber(1);
+//		c1.setcName("Mormors bageri");
+//		c1.setcAddress("Lund");
+//		facade.createCustomer(c1);
 		out.println("</body></html>");
 	}
 

@@ -5,6 +5,10 @@ import javax.ejb.Stateless;
 
 import entity.ejb.Customer;
 import entity.ejb.Ingredient;
+import entity.ejb.Order;
+import entity.ejb.Orderspecification;
+import entity.ejb.Product;
+import entity.ejb.Recipe;
 import entityAccess.eao.CustomerEAOImplLocal;
 import entityAccess.eao.IngredientEAOImplLocal;
 import entityAccess.eao.OrderEAOImplLocal;
@@ -84,4 +88,53 @@ public class Facade implements FacadeLocal {
 		// TODO Auto-generated method stub
 		ingredientEAO.deleteIngredient(iNumber);
 	}
+	@Override
+	public Order findByoNumber(long oNumber) {
+		// TODO Auto-generated method stub
+		return orderEAO.findByoNumber(oNumber);
+	}
+
+	@Override
+	public Order createOrder(Order order) {
+		// TODO Auto-generated method stub
+		return orderEAO.createOrder(order);
+	}
+
+	@Override
+	public Order updateOrder(Order order) {
+		// TODO Auto-generated method stub
+		return orderEAO.updateOrder(order);
+	}
+
+	@Override
+	public void deleteOrder(long oNumber) {
+		// TODO Auto-generated method stub
+		orderEAO.deleteOrder(oNumber);
+	}
+	
+	@Override
+	public Product findBypNumber(int pNumber) {
+		// TODO Auto-generated method stub
+		return productEAO.findBypNumber(pNumber);
+	}
+
+	@Override
+	public Product createProduct(Product product) {
+		// TODO Auto-generated method stub
+		return productEAO.createProduct(product);
+	}
+
+	@Override
+	public Product updateProduct(Product product) {
+		// TODO Auto-generated method stub
+		return productEAO.updateProduct(product);
+	}
+
+	@Override
+	public void deleteProduct(int pNumber) {
+		// TODO Auto-generated method stub
+		productEAO.deleteProduct(pNumber);
+	}
+
+	
 }
