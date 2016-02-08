@@ -6,6 +6,7 @@ import javax.persistence.PersistenceContext;
 
 import entity.ejb.Orderspecification;
 import entity.ejb.Recipe;
+import entity.ejb.RecipeId;
 
 /**
  * Session Bean implementation class RecipeEAOImpl
