@@ -24,7 +24,7 @@ public class RecipeEAOImpl implements RecipeEAOImplLocal {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Recipe findByiNumberPNumber(int iNumber, int pNumber) {
+	public Recipe findByiNumberPNumber(String iNumber, String pNumber) {
 		RecipeId iNumberPNumber= new RecipeId(iNumber,pNumber);
 		return em.find(Recipe.class, iNumberPNumber);
 
@@ -40,7 +40,7 @@ public class RecipeEAOImpl implements RecipeEAOImplLocal {
 		return recipe;
 	}
 
-	public void deleteRecipe(int iNumber, int pNumber) {
+	public void deleteRecipe(String iNumber, String pNumber) {
 		Recipe r = this.findByiNumberPNumber(iNumber, pNumber);
 		if (r != null) {
 			em.remove(r);
