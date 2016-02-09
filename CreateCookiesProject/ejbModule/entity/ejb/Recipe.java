@@ -3,6 +3,7 @@ package entity.ejb;
 import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -12,31 +13,21 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Recipe")
 public class Recipe {
-	private String pNumber;
-	private String iNumber;
+	
+	private String iNumberPNumber;
 	private int quantity;
 	private Ingredient ingredient;
 	private Product product;
-
-	@Id
-	@Column(name = "pNumber")
-	public String getpNumber() {
-		return pNumber;
+	
+	@EmbeddedId
+	public String getiNumberPNumber() {
+		return iNumberPNumber;
 	}
 
-	public void setpNumber(String pNumber) {
-		this.pNumber = pNumber;
+	public void setiNumberPNumber(String iNumberPNumber) {
+		this.iNumberPNumber = iNumberPNumber;
 	}
 
-	@Id
-	@Column(name = "iNumber")
-	public String getiNumber() {
-		return iNumber;
-	}
-
-	public void setiNumber(String iNumber) {
-		this.iNumber = iNumber;
-	}
 	@Column(name = "quantity")
 	public int getQuantity() {
 		return quantity;

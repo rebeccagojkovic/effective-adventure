@@ -14,12 +14,11 @@ import javax.persistence.Table;
 @Table(name = "Orderspecification")
 public class Orderspecification {
 	
-	@EmbeddedId
 	private String pNumberONumber;
 	private Order order;
 	private Product product;
 
-	@Column(name="pNumberONumber")
+	@EmbeddedId
 	public String getpNumberONumber() {
 		return pNumberONumber;
 	}
