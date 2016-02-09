@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -42,16 +43,15 @@ public class Product {
 		this.pTime = pTime;
 	}
 	
-	
-
+	@OneToMany(mappedBy="product")
 	public Set<Recipe> getRecipe() {
 		return recipe;
 	}
-
+	
 	public void setRecipe(Set<Recipe> recipe) {
 		this.recipe = recipe;
 	}
-
+	@OneToMany(mappedBy="product")
 	public Set<Orderspecification> getOrderspecification() {
 		return orderspecification;
 	}

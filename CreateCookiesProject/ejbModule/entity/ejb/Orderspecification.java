@@ -5,6 +5,8 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -33,7 +35,8 @@ public class Orderspecification {
 	public void setpNumber(String pNumber) {
 		this.pNumber = pNumber;
 	}
-
+	@ManyToOne
+	@JoinColumn(name="pNumberONumber", referencedColumnName="oNumber")
 	public Order getOrder() {
 		return order;
 	}
@@ -41,11 +44,12 @@ public class Orderspecification {
 	public void setOrder(Order order) {
 		this.order = order;
 	}
-
+	@ManyToOne
+	@JoinColumn(name="pNumberONumber", referencedColumnName="pNumber")
 	public Product getProduct() {
 		return product;
 	}
-
+	
 	public void setProduct(Product product) {
 		this.product = product;
 	}

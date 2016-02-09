@@ -5,6 +5,8 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -35,7 +37,7 @@ public class Recipe {
 	public void setiNumber(String iNumber) {
 		this.iNumber = iNumber;
 	}
-
+	@Column(name = "quantity")
 	public int getQuantity() {
 		return quantity;
 	}
@@ -43,7 +45,8 @@ public class Recipe {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-
+	@ManyToOne
+	@JoinColumn(name="iNumberPNumber", referencedColumnName="iNumber")
 	public Ingredient getIngredient() {
 		return ingredient;
 	}
@@ -51,7 +54,8 @@ public class Recipe {
 	public void setIngredient(Ingredient ingredient) {
 		this.ingredient = ingredient;
 	}
-
+	@ManyToOne
+	@JoinColumn(name="iNumberPNumber", referencedColumnName="pNumber")
 	public Product getProduct() {
 		return product;
 	}
