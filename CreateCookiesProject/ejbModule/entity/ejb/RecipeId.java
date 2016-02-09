@@ -1,7 +1,5 @@
 package entity.ejb;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
@@ -9,35 +7,35 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class RecipeId {
 	
-	private int pNumber;
-	private int iNumber;
+	private String pNumber;
+	private String iNumber;
 	
 	public RecipeId() {
 		
 	}
 	
-	public RecipeId(int pNumber, int iNumber) {
+	public RecipeId(String pNumber, String iNumber) {
 		this.pNumber = pNumber;
 		this.iNumber = iNumber;
 	}
 	
 	@Column(name = "pNumber", nullable = false)
-	public int getpNumber() {
+	public String getpNumber() {
 		return pNumber;
 	}
 
-	public void setpNumber(int pNumber) {
+	public void setpNumber(String pNumber) {
 		this.pNumber = pNumber;
 
 	}
 
 	@Column(name = "iNumber", nullable = false)
-	public long getiNumber() {
+	public String getiNumber() {
 		return iNumber;
 
 	}
 
-	public void setiNumber(int iNumber) {
+	public void setiNumber(String iNumber) {
 		this.iNumber = iNumber;
 	}
 
