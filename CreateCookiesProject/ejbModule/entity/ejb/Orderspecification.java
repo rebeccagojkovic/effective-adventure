@@ -12,16 +12,16 @@ import javax.persistence.Table;
 @Table(name = "Orderspecification")
 public class Orderspecification {
 	
-	private String pNumberONumber;
+	private OrderspecificationId pNumberONumber;
 	private Order order;
 	private Product product;
 
 	@EmbeddedId
-	public String getpNumberONumber() {
+	public OrderspecificationId getpNumberONumber() {
 		return pNumberONumber;
 	}
 
-	public void setpNumberONumber(String pNumberONumber) {
+	public void setpNumberONumber(OrderspecificationId pNumberONumber) {
 		this.pNumberONumber = pNumberONumber;
 	}
 

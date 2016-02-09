@@ -1,7 +1,5 @@
 package entity.ejb;
 
-
-
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -14,17 +12,17 @@ import javax.persistence.Table;
 @Table(name = "Recipe")
 public class Recipe {
 
-	private String iNumberPNumber;
+	private RecipeId iNumberPNumber;
 	private int quantity;
 	private Ingredient ingredient;
 	private Product product;
 
 	@EmbeddedId
-	public String getiNumberPNumber() {
+	public RecipeId getiNumberPNumber() {
 		return iNumberPNumber;
 	}
 
-	public void setiNumberPNumber(String iNumberPNumber) {
+	public void setiNumberPNumber(RecipeId iNumberPNumber) {
 		this.iNumberPNumber = iNumberPNumber;
 	}
 
