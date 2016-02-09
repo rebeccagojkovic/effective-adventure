@@ -7,6 +7,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -28,7 +29,8 @@ public class Orderspecification {
 	}
 
 	@ManyToOne
-	@JoinColumn(name="pNumberONumber", referencedColumnName="oNumber")
+	@JoinColumns({ @JoinColumn(name = "pNumber", referencedColumnName = "oNumber"),
+			@JoinColumn(name = "oNumber", referencedColumnName = "oNumber") })
 	public Order getOrder() {
 		return order;
 	}
@@ -37,7 +39,8 @@ public class Orderspecification {
 		this.order = order;
 	}
 	@ManyToOne
-	@JoinColumn(name="pNumberONumber", referencedColumnName="pNumber")
+	@JoinColumns({ @JoinColumn(name = "iNumber", referencedColumnName = "pNumber"),
+			@JoinColumn(name = "pNumber", referencedColumnName = "pNumber") })
 	public Product getProduct() {
 		return product;
 	}
