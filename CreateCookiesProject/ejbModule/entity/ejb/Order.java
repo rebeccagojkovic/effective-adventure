@@ -15,19 +15,19 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Orde")
 public class Order {
-	private long oNumber;
+	private String oNumber;
 	private boolean isDelivered;
 	private DateFormat expectedDeliveryDate;
-	private Set<Product> products;
 	private Customer customer;
-
+	private Set<Orderspecification> orderspecification;
+	
 	@Id
 	@Column(name = "oNumber")
-	public long getoNumber() {
+	public String getoNumber() {
 		return oNumber;
 	}
 
-	public void setoNumber(long oNumber) {
+	public void setoNumber(String oNumber) {
 		this.oNumber = oNumber;
 	}
 
@@ -48,19 +48,8 @@ public class Order {
 	public void setExpectedDeliveryDate(DateFormat expectedDeliveryDate) {
 		this.expectedDeliveryDate = expectedDeliveryDate;
 	}
-
-	@ManyToMany
-	@JoinTable(name = "Orderspecification", joinColumns = @JoinColumn(name = "oNumber", referencedColumnName = "oNumber"), inverseJoinColumns = @JoinColumn(name = "pNumber", referencedColumnName = "pNumber"))
-	public Set<Product> getProducts() {
-		return products;
-	}
-
-	public void setProducts(Set<Product> products) {
-		this.products = products;
-	}
-
 	@ManyToOne
-	@JoinColumn(name = "cNumber", referencedColumnName = "cNumber")
+	@JoinColumn(name="cNumber", referencedColumnName="cNumber")
 	public Customer getCustomer() {
 		return customer;
 	}
@@ -68,5 +57,15 @@ public class Order {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
+
+	public Set<Orderspecification> getOrderspecification() {
+		return orderspecification;
+	}
+
+	public void setOrderspecification(Set<Orderspecification> orderspecification) {
+		this.orderspecification = orderspecification;
+	}
+
+	
 
 }

@@ -10,44 +10,45 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Orderspecification")
 public class Orderspecification {
-	private long oNumber;
-	private int pNumber;
-	private Set<Order> orders;
-	private Set<Product> products;
+	private String oNumber;
+	private String pNumber;
+	private Order order;
+	private Product product;
 
 	@Id
 	@Column(name="oNumber")
-	public long getoNumber() {
+	public String getoNumber() {
 		return oNumber;
 	}
 
-	public void setoNumber(long oNumber) {
+	public void setoNumber(String oNumber) {
 		this.oNumber = oNumber;
 	}
 	@Id
 	@Column(name="pNumber")
-	public int getpNumber() {
+	public String getpNumber() {
 		return pNumber;
 	}
 
-	public void setpNumber(int pNumber) {
+	public void setpNumber(String pNumber) {
 		this.pNumber = pNumber;
 	}
 
-	public Set<Order> getOrders() {
-		return orders;
+	public Order getOrder() {
+		return order;
 	}
 
-	public void setOrders(Set<Order> orders) {
-		this.orders = orders;
+	public void setOrder(Order order) {
+		this.order = order;
 	}
 
-	public Set<Product> getProducts() {
-		return products;
+	public Product getProduct() {
+		return product;
 	}
 
-	public void setProducts(Set<Product> products) {
-		this.products = products;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
+	
 
 }

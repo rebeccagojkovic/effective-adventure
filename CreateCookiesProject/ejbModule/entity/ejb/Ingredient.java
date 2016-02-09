@@ -13,18 +13,18 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Ingredient")
 public class Ingredient {
-	private int iNumber;
+	private String iNumber;
 	private String iName;
 	private int iQuantityInStock;
-	private Set<Product> products;
+	private Set<Recipe> recipe;
 
 	@Id
 	@Column(name = "iNumber")
-	public int getiNumber() {
+	public String getiNumber() {
 		return iNumber;
 	}
 
-	public void setiNumber(int iNumber) {
+	public void setiNumber(String iNumber) {
 		this.iNumber = iNumber;
 	}
 
@@ -45,15 +45,18 @@ public class Ingredient {
 	public void setiQuantityInStock(int iQuantityInStock) {
 		this.iQuantityInStock = iQuantityInStock;
 	}
-
-	@ManyToMany
-	@JoinTable(name = "Recipe", joinColumns = @JoinColumn(name = "iNumber", referencedColumnName = "iNumber"), inverseJoinColumns = @JoinColumn(name = "pNumber", referencedColumnName = "pNumber"))
-	public Set<Product> getProducts() {
-		return products;
+	
+	
+	public Set<Recipe> getRecipe() {
+		return recipe;
 	}
 
-	public void setProducts(Set<Product> products) {
-		this.products = products;
+	public void setRecipe(Set<Recipe> recipe) {
+		this.recipe = recipe;
 	}
+
+	
+
+	
 
 }

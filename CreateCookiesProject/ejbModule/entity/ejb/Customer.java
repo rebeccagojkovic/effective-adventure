@@ -11,18 +11,18 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Customer")
 public class Customer {
-	private long cNumber;
+	private String cNumber;
 	private String cName;
 	private String cAddress;
-	private Set<Order> orders;
+	private Set<Order> order;
 	
 	@Id
 	@Column(name="cNumber")
-	public long getcNumber() {
+	public String getcNumber() {
 		return cNumber;
 	}
 
-	public void setcNumber(long cNumber) {
+	public void setcNumber(String cNumber) {
 		this.cNumber = cNumber;
 	}
 	@Column(name="cName")
@@ -41,12 +41,13 @@ public class Customer {
 	public void setcAddress(String cAddress) {
 		this.cAddress = cAddress;
 	}
-	@OneToMany(mappedBy="Customer")
-	public Set<Order> getOrders() { 
-		return orders;
+	@OneToMany(mappedBy="customer")
+	public Set<Order> getOrder() {
+		return order;
 	}
 
-	public void setOrders(Set<Order> orders) {
-		this.orders = orders;
+	public void setOrder(Set<Order> order) {
+		this.order = order;
 	}
+	
 }

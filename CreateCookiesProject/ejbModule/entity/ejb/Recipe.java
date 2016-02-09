@@ -10,45 +10,54 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Recipe")
 public class Recipe {
-	private int pNumber;
-	private int iNumber;
-	private Set<Ingredient> Ingredients;
-	private Set<Product> products;
+	private String pNumber;
+	private String iNumber;
+	private int quantity;
+	private Ingredient ingredient;
+	private Product product;
 
 	@Id
 	@Column(name = "pNumber")
-	public int getpNumber() {
+	public String getpNumber() {
 		return pNumber;
 	}
 
-	public void setpNumber(int pNumber) {
+	public void setpNumber(String pNumber) {
 		this.pNumber = pNumber;
 	}
 
 	@Id
 	@Column(name = "iNumber")
-	public int getiNumber() {
+	public String getiNumber() {
 		return iNumber;
 	}
 
-	public void setiNumber(int iNumber) {
+	public void setiNumber(String iNumber) {
 		this.iNumber = iNumber;
 	}
 
-	public Set<Ingredient> getIngredients() {
-		return Ingredients;
+	public int getQuantity() {
+		return quantity;
 	}
 
-	public void setIngredients(Set<Ingredient> ingredients) {
-		Ingredients = ingredients;
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
-	public Set<Product> getProducts() {
-		return products;
+	public Ingredient getIngredient() {
+		return ingredient;
 	}
 
-	public void setProducts(Set<Product> products) {
-		this.products = products;
+	public void setIngredient(Ingredient ingredient) {
+		this.ingredient = ingredient;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 
 }

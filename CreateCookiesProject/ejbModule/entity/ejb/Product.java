@@ -11,18 +11,18 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Product")
 public class Product {
-	private int pNumber;
+	private String pNumber;
 	private String pName;
 	private  DateFormat pTime;
-	private Set<Ingredient> ingredients;
-	private Set<Order> orders;
+	private Set<Recipe> recipe;
+	private Set<Orderspecification> orderspecification;
 
 	@Column(name="pNumber")
-	public int getpNumber() {
+	public String getpNumber() {
 		return pNumber;
 	}
 
-	public void setpNumber(int pNumber) {
+	public void setpNumber(String pNumber) {
 		this.pNumber = pNumber;
 	}
 	@Column(name="pName")
@@ -41,21 +41,24 @@ public class Product {
 	public void setpTime(DateFormat pTime) {
 		this.pTime = pTime;
 	}
-    @ManyToMany(mappedBy="Product")
-	public Set<Ingredient> getIngredients() {
-		return ingredients;
+	
+	
+
+	public Set<Recipe> getRecipe() {
+		return recipe;
 	}
 
-	public void setIngredients(Set<Ingredient> ingredients) {
-		this.ingredients = ingredients;
-	}
-	@ManyToMany(mappedBy="Product")
-	public Set<Order> getOrders() {
-		return orders;
+	public void setRecipe(Set<Recipe> recipe) {
+		this.recipe = recipe;
 	}
 
-	public void setOrders(Set<Order> orders) {
-		this.orders = orders;
+	public Set<Orderspecification> getOrderspecification() {
+		return orderspecification;
 	}
+
+	public void setOrderspecification(Set<Orderspecification> orderspecification) {
+		this.orderspecification = orderspecification;
+	}
+  
 
 }
