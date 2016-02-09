@@ -7,7 +7,7 @@ import entity.ejb.Recipe;
 
 @Local
 public interface OrderspecificationEAOImplLocal {
-	public Orderspecification findBypNumberONumber(int pNumber, long oNumber);
+	public Orderspecification findBypNumberONumber(String pNumber, String oNumber);
 
 	public Orderspecification createOrderspecification(
 			Orderspecification orderspecification);
@@ -15,5 +15,5 @@ public interface OrderspecificationEAOImplLocal {
 	public Orderspecification updateOrderspecification(
 			Orderspecification orderspecification);
 
-	public void deleteOrderspecification(int pNumber, long oNumber);
+	public void deleteOrderspecification(String pNumber, String oNumber);
 }

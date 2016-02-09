@@ -25,7 +25,7 @@ public class OrderspecificationEAOImpl implements
 		// TODO Auto-generated constructor stub
 	}
 
-	public Orderspecification findBypNumberONumber(int pNumber, long oNumber) {
+	public Orderspecification findBypNumberONumber(String pNumber, String oNumber) {
 		OrderspecificationId pNumberONumber= new OrderspecificationId(pNumber,oNumber);
 		return em.find(Orderspecification.class, pNumberONumber);
 
@@ -43,7 +43,7 @@ public class OrderspecificationEAOImpl implements
 		return orderspecification;
 	}
 
-	public void deleteOrderspecification(int pNumber, long oNumber) {
+	public void deleteOrderspecification(String pNumber, String oNumber) {
 		Orderspecification os = this.findBypNumberONumber(pNumber, oNumber);
 		if (os != null) {
 			em.remove(os);
