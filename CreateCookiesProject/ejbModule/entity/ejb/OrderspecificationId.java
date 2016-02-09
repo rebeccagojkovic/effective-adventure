@@ -3,9 +3,11 @@ package entity.ejb;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+import entityAccess.eao.OrderspecificationEAOImplLocal;
+
 
 @Embeddable
-public class OrderspecificationId {
+public class OrderspecificationId{
 	
 	private String pNumber;
 	private String oNumber;
