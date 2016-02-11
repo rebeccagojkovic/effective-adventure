@@ -19,7 +19,6 @@ public class ProductEAOImpl implements ProductEAOImplLocal {
 	 * Default constructor.
 	 */
 	public ProductEAOImpl() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Product findBypNumber(int pNumber) {

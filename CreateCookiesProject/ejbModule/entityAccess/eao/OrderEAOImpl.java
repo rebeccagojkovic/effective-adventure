@@ -19,7 +19,6 @@ public class OrderEAOImpl implements OrderEAOImplLocal {
 	 * Default constructor.
 	 */
 	public OrderEAOImpl() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Order findByoNumber(long oNumber) {

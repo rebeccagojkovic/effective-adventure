@@ -55,84 +55,70 @@ public class Facade implements FacadeLocal {
 
 	@Override
 	public Customer updateCustomer(Customer customer) {
-		// TODO Auto-generated method stub
 		return customerEAO.updateCustomer(customer);
 	}
 
 	@Override
 	public void deleteCustomer(long cNumber) {
-		// TODO Auto-generated method stub
 		customerEAO.deleteCustomer(cNumber);
 	}
 
 	@Override
 	public Ingredient findByiNumber(int iNumber) {
-		// TODO Auto-generated method stub
 		return ingredientEAO.findByiNumber(iNumber);
 	}
 
 	@Override
 	public Ingredient createIngredient(Ingredient ingredient) {
-		// TODO Auto-generated method stub
 		return ingredientEAO.createIngredient(ingredient);
 	}
 
 	@Override
 	public Ingredient updateIngredient(Ingredient ingredient) {
-		// TODO Auto-generated method stub
 		return ingredientEAO.updateIngredient(ingredient);
 	}
 
 	@Override
 	public void deleteIngredient(int iNumber) {
-		// TODO Auto-generated method stub
 		ingredientEAO.deleteIngredient(iNumber);
 	}
 	@Override
 	public Order findByoNumber(long oNumber) {
-		// TODO Auto-generated method stub
 		return orderEAO.findByoNumber(oNumber);
 	}
 
 	@Override
 	public Order createOrder(Order order) {
-		// TODO Auto-generated method stub
 		return orderEAO.createOrder(order);
 	}
 
 	@Override
 	public Order updateOrder(Order order) {
-		// TODO Auto-generated method stub
 		return orderEAO.updateOrder(order);
 	}
 
 	@Override
 	public void deleteOrder(long oNumber) {
-		// TODO Auto-generated method stub
 		orderEAO.deleteOrder(oNumber);
 	}
 	
 	@Override
 	public Product findBypNumber(int pNumber) {
-		// TODO Auto-generated method stub
 		return productEAO.findBypNumber(pNumber);
 	}
 
 	@Override
 	public Product createProduct(Product product) {
-		// TODO Auto-generated method stub
 		return productEAO.createProduct(product);
 	}
 
 	@Override
 	public Product updateProduct(Product product) {
-		// TODO Auto-generated method stub
 		return productEAO.updateProduct(product);
 	}
 
 	@Override
 	public void deleteProduct(int pNumber) {
-		// TODO Auto-generated method stub
 		productEAO.deleteProduct(pNumber);
 	}
 

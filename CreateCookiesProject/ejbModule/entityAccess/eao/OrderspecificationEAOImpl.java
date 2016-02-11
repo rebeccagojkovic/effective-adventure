@@ -22,7 +22,6 @@ public class OrderspecificationEAOImpl implements
 	 * Default constructor.
 	 */
 	public OrderspecificationEAOImpl() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Orderspecification findBypNumberONumber(String pNumber, String oNumber) {

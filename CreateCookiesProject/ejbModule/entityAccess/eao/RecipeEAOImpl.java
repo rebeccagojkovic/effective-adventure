@@ -21,7 +21,6 @@ public class RecipeEAOImpl implements RecipeEAOImplLocal {
 	 * Default constructor.
 	 */
 	public RecipeEAOImpl() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Recipe findByiNumberPNumber(String iNumber, String pNumber) {
