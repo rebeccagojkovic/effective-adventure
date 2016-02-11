@@ -20,8 +20,8 @@ import facade.FacadeLocal;
 public class CreateCookiesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	//@EJB
-	//FacadeLocal facade;
+	@EJB
+	FacadeLocal facade;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -44,11 +44,11 @@ public class CreateCookiesServlet extends HttpServlet {
 		out.println("</head><body>");
 		out.println("<h3>Customer</h3>" + "<br>");
 		out.println("** Create Customer **" + "<br>");
-//		Customer c1 = new Customer();
-//		c1.setcNumber("1");
-//		c1.setcName("Mormors bageri");
-//		c1.setcAddress("Lund");
-//		facade.createCustomer(c1);
+		Customer c1 = new Customer();
+		c1.setcNumber("1");
+		c1.setcName("Mormors bageri");
+		c1.setcAddress("Lund");
+		facade.createCustomer(c1);
 		out.println("</body></html>");
 	}
 
