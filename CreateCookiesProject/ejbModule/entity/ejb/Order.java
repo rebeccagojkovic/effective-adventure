@@ -1,5 +1,6 @@
 package entity.ejb;
 
+import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.util.Set;
 
@@ -12,11 +13,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Order")
+@Table(name = "Orde")
 public class Order {
 	private String oNumber;
 	private boolean isDelivered;
-	private DateFormat expectedDeliveryDate;
+	private Timestamp expectedDeliveryDate;
 	private Customer customer;
 	private Set<Orderspecification> orderspecification;
 	
@@ -40,11 +41,11 @@ public class Order {
 	}
 
 	@Column(name = "expectedDeliveryDate")
-	public DateFormat getExpectedDeliveryDate() {
+	public Timestamp getExpectedDeliveryDate() {
 		return expectedDeliveryDate;
 	}
 
-	public void setExpectedDeliveryDate(DateFormat expectedDeliveryDate) {
+	public void setExpectedDeliveryDate(Timestamp expectedDeliveryDate) {
 		this.expectedDeliveryDate = expectedDeliveryDate;
 	}
 	@ManyToOne

@@ -27,8 +27,9 @@ public class Orderspecification {
 	}
 
 	@ManyToOne
-	@JoinColumns({ @JoinColumn(name = "pNumber", referencedColumnName = "oNumber", insertable = false, updatable = false),
-			@JoinColumn(name = "oNumber", referencedColumnName = "oNumber", insertable = false, updatable = false) })
+	@JoinColumn(name = "oNumber_FK", referencedColumnName = "oNumber")
+//	@JoinColumns({ @JoinColumn(name = "pNumber_FK", referencedColumnName = "oNumber"),
+//			@JoinColumn(name = "oNumber_FK", referencedColumnName = "oNumber") })
 	public Order getOrder() {
 		return order;
 	}
@@ -37,8 +38,9 @@ public class Orderspecification {
 		this.order = order;
 	}
 	@ManyToOne
-	@JoinColumns({ @JoinColumn(name = "iNumber", referencedColumnName = "pNumber", insertable = false, updatable = false),
-			@JoinColumn(name = "pNumber", referencedColumnName = "pNumber", insertable = false, updatable = false) })
+	@JoinColumn(name = "pNumber_FK", referencedColumnName = "pNumber")
+//	@JoinColumns({ @JoinColumn(name = "iNumber_FK", referencedColumnName = "pNumber"),
+//			@JoinColumn(name = "pNumber_FK", referencedColumnName = "pNumber") })
 	public Product getProduct() {
 		return product;
 	}
