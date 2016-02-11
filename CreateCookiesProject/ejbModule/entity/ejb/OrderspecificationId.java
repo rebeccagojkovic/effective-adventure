@@ -1,5 +1,7 @@
 package entity.ejb;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
@@ -7,7 +9,7 @@ import entityAccess.eao.OrderspecificationEAOImplLocal;
 
 
 @Embeddable
-public class OrderspecificationId{
+public class OrderspecificationId implements Serializable{
 	
 	private String pNumber;
 	private String oNumber;

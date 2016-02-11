@@ -36,8 +36,8 @@ public class Recipe {
 	}
 
 	@ManyToOne
-	@JoinColumns({ @JoinColumn(name = "iNumber", referencedColumnName = "iNumber"),
-			@JoinColumn(name = "pNumber", referencedColumnName = "iNumber") })
+	@JoinColumns({ @JoinColumn(name = "iNumber", referencedColumnName = "iNumber", insertable = false, updatable = false),
+			@JoinColumn(name = "pNumber", referencedColumnName = "iNumber", insertable = false, updatable = false) })
 	public Ingredient getIngredient() {
 		return ingredient;
 	}
@@ -47,8 +47,8 @@ public class Recipe {
 	}
 
 	@ManyToOne
-	@JoinColumns({ @JoinColumn(name = "iNumber", referencedColumnName = "pNumber"),
-			@JoinColumn(name = "pNumber", referencedColumnName = "pNumber") })
+	@JoinColumns({ @JoinColumn(name = "iNumber", referencedColumnName = "pNumber", insertable = false, updatable = false),
+			@JoinColumn(name = "pNumber", referencedColumnName = "pNumber", insertable = false, updatable = false) })
 	public Product getProduct() {
 		return product;
 	}

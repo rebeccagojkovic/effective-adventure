@@ -1,11 +1,13 @@
 package entity.ejb;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 
 @Embeddable
-public class RecipeId {
+public class RecipeId implements Serializable{
 	
 	private String pNumber;
 	private String iNumber;
