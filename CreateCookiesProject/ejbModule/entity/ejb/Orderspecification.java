@@ -14,6 +14,7 @@ import javax.persistence.Table;
 public class Orderspecification {
 	
 	private OrderspecificationId pNumberONumber;
+	private int palletInStock;
 	private Order order;
 	private Product product;
 
@@ -24,6 +25,15 @@ public class Orderspecification {
 
 	public void setpNumberONumber(OrderspecificationId pNumberONumber) {
 		this.pNumberONumber = pNumberONumber;
+	}
+	
+	@Column(name="palletInStock")
+	public int getPalletInStock() {
+		return palletInStock;
+	}
+
+	public void setPalletInStock(int palletInStock) {
+		this.palletInStock = palletInStock;
 	}
 
 	@ManyToOne
