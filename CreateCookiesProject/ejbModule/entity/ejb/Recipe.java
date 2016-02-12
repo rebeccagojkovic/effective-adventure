@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class Recipe {
 
 	private RecipeId iNumberPNumber;
-	private int quantity;
+	private double quantity;
 	private Ingredient ingredient;
 	private Product product;
 
@@ -27,11 +27,11 @@ public class Recipe {
 	}
 
 	@Column(name = "quantity")
-	public int getQuantity() {
+	public double getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(int quantity) {
+	public void setQuantity(double quantity) {
 		this.quantity = quantity;
 	}
 

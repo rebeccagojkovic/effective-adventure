@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class Ingredient {
 	private String iNumber;
 	private String iName;
-	private int iQuantityInStock;
+	private double iQuantityInStock;
 	private Set<Recipe> recipe;
 
 	@Id
@@ -36,11 +36,11 @@ public class Ingredient {
 	}
 
 	@Column(name = "iQuantityInStock")
-	public int getiQuantityInStock() {
+	public double getiQuantityInStock() {
 		return iQuantityInStock;
 	}
 
-	public void setiQuantityInStock(int iQuantityInStock) {
+	public void setiQuantityInStock(double iQuantityInStock) {
 		this.iQuantityInStock = iQuantityInStock;
 	}
 	
