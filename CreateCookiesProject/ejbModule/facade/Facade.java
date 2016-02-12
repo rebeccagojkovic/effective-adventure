@@ -7,6 +7,7 @@ import entity.ejb.Customer;
 import entity.ejb.Ingredient;
 import entity.ejb.Order;
 import entity.ejb.Orderspecification;
+import entity.ejb.OrderspecificationId;
 import entity.ejb.Product;
 import entity.ejb.Recipe;
 import entityAccess.eao.CustomerEAOImplLocal;
@@ -34,6 +35,7 @@ public class Facade implements FacadeLocal {
 	OrderEAOImplLocal orderEAO;
 	@EJB
 	OrderspecificationEAOImplLocal orderspecificationEAO;
+	
 
 	/**
 	 * Default constructor.
@@ -121,6 +123,45 @@ public class Facade implements FacadeLocal {
 	public void deleteProduct(int pNumber) {
 		productEAO.deleteProduct(pNumber);
 	}
+	
+	
+	@Override
+	public Orderspecification findBypNumberONumber(String pNumber,String ONumber) {
+		return orderspecificationEAO.findBypNumberONumber(pNumber, ONumber);
+	}
 
+	@Override
+	public Orderspecification createOrderspecification(Orderspecification orderspecification) {
+		return orderspecificationEAO.createOrderspecification(orderspecification);
+	}
+
+	@Override
+	public Orderspecification updateOrderspecification(Orderspecification orderspecification) {
+		return orderspecificationEAO.updateOrderspecification(orderspecification);
+	}
+
+	@Override
+	public void deleteOrderspecification(String pNumber, String oNumber) {
+		orderspecificationEAO.deleteOrderspecification(pNumber, oNumber);
+	}
+	@Override
+	public Recipe findByiNumberPNumber(String iNumber,String pNumber) {
+		return recipeEAO.findByiNumberPNumber(iNumber, pNumber);
+	}
+
+	@Override
+	public Recipe createRecipe(Recipe recipe) {
+		return recipeEAO.createRecipe(recipe);
+	}
+
+	@Override
+	public Recipe updateRecipe(Recipe recipe) {
+		return recipeEAO.updateRecipe(recipe);
+	}
+
+	@Override
+	public void deleteRecipe(String iNumber, String pNumber) {
+		recipeEAO.deleteRecipe(iNumber, pNumber);
+	}
 	
 }

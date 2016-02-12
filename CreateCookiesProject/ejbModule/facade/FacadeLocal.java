@@ -44,6 +44,22 @@ public interface FacadeLocal {
 
 	public void deleteProduct(int pNumber);
 
+	public Orderspecification findBypNumberONumber(String pNumber, String ONumber);
+
+	public Orderspecification createOrderspecification(Orderspecification orderspecification);
+
+	public Orderspecification updateOrderspecification(Orderspecification orderspecification);
+
+	public void deleteOrderspecification(String pNumber, String oNumber);
+
+	public Recipe findByiNumberPNumber(String iNumber, String pNumber);
+
+	public Recipe createRecipe(Recipe recipe);
+
+	public Recipe updateRecipe(Recipe recipe);
+
+	public void deleteRecipe(String iNumber, String pNumber);
+
 	
 
 	
