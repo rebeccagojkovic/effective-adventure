@@ -9,14 +9,12 @@ import javax.persistence.TypedQuery;
 
 import entity.ejb.Customer;
 
-
-
 /**
  * Session Bean implementation class CustomerEAOImpl
  */
 @Stateless
 public class CustomerEAOImpl implements CustomerEAOImplLocal {
-	
+
 	@PersistenceContext(unitName = "LabEJBSQL")
 	private EntityManager em;
 
@@ -48,22 +46,18 @@ public class CustomerEAOImpl implements CustomerEAOImplLocal {
 			em.remove(c);
 		}
 	}
-	
-	public List <Customer> findAll(){
-		TypedQuery<Customer>query=
-				em.createNamedQuery ("Customer.findAll", Customer.class);
-	List <Customer> results=query.getResultList();
-	return results;
-	}
-	
-	public List<Customer> findActive(String adress){
-		TypedQuery <Customer> query = 
-				em.createNamedQuery("Customer.findActive", Customer.class);
-					//	query.setParameter(arg0, arg1)
+
+	public List<Customer> findAllCustomers() {
+		TypedQuery<Customer> query = em.createNamedQuery("Customer.findAllCustomers", Customer.class);
 		List<Customer> results = query.getResultList();
 		return results;
 	}
-	
-	
+
+	public List<Customer> findActive(Boolean isDelivered) {
+		TypedQuery<Customer> query = em.createNamedQuery("Customer.findActive", Customer.class);
+		// query.setParameter(arg0, arg1)
+		List<Customer> results = query.getResultList();
+		return results;
+	}
 
 }

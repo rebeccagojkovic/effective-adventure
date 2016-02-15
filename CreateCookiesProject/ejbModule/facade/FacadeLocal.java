@@ -1,5 +1,7 @@
 package facade;
 
+import java.util.List;
+
 import javax.ejb.Local;
 
 import entity.ejb.Customer;
@@ -19,6 +21,14 @@ public interface FacadeLocal {
 	public Customer updateCustomer(Customer customer);
 
 	public void deleteCustomer(long cNumber);
+	
+	public List<Customer> findActive(Boolean isDelivered);
+
+	public List<Customer> findAllCustomers();
+	
+	public List<Order> findAllOrders();
+	public List<Order> findCertainOrder(String oNumber);
+	
 
 	public Ingredient findByiNumber(int iNumber);
 
@@ -27,6 +37,8 @@ public interface FacadeLocal {
 	public Ingredient updateIngredient(Ingredient ingredient);
 
 	public void deleteIngredient(int iNumber);
+	
+	
 
 	public Order findByoNumber(long oNumber);
 
@@ -35,6 +47,8 @@ public interface FacadeLocal {
 	public Order updateOrder(Order order);
 
 	public void deleteOrder(long oNumber);
+	
+	
 
 	public Product findBypNumber(int pNumber);
 
@@ -43,14 +57,20 @@ public interface FacadeLocal {
 	public Product updateProduct(Product product);
 
 	public void deleteProduct(int pNumber);
+	
 
-	public Orderspecification findBypNumberONumber(String pNumber, String ONumber);
+	public Orderspecification findBypNumberONumber(String pNumber,
+			String ONumber);
 
-	public Orderspecification createOrderspecification(Orderspecification orderspecification);
+	public Orderspecification createOrderspecification(
+			Orderspecification orderspecification);
 
-	public Orderspecification updateOrderspecification(Orderspecification orderspecification);
+	public Orderspecification updateOrderspecification(
+			Orderspecification orderspecification);
 
 	public void deleteOrderspecification(String pNumber, String oNumber);
+	
+	
 
 	public Recipe findByiNumberPNumber(String iNumber, String pNumber);
 
@@ -62,5 +82,4 @@ public interface FacadeLocal {
 
 	
 
-	
 }

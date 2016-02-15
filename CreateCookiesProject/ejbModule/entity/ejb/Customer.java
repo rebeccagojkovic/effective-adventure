@@ -13,10 +13,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@NamedQueries({
-	@NamedQuery(name = "Customer.findAll", query = "SELECT c FROM Customer c"),
-	@NamedQuery(name = "Customer.findActive", query = "SELECT c FROM Customer c WHERE c.isDelivered = false")}) //Kanske inte funkar
-	
+@NamedQueries({ @NamedQuery(name = "Customer.findAllCustomers", query = "SELECT c FROM Customer c"),
+		@NamedQuery(name = "Customer.findActive", query = "SELECT c FROM Customer c WHERE c.isDelivered = false"),
+		@NamedQuery(name = "Customer.findByAddress", query = "SELECT c FROM Customer c WHERE c.cAddress LIKE :cAddress"), })
+
 @Table(name = "Customer")
 public class Customer implements Serializable {
 	private String cNumber;
@@ -44,12 +44,7 @@ public class Customer implements Serializable {
 	}
 
 	@Column(name = "cAddress")
-	public String ge
-	
-	
-	
-	
-	tcAddress() {
+	public String getcAddress() {
 		return cAddress;
 	}
 
@@ -57,7 +52,7 @@ public class Customer implements Serializable {
 		this.cAddress = cAddress;
 	}
 
-	@OneToMany(mappedBy = "customer", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
 	public Set<Order> getOrder() {
 		return order;
 	}
