@@ -1,8 +1,11 @@
 package entityAccess.eao;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import entity.ejb.Customer;
 
@@ -45,5 +48,22 @@ public class CustomerEAOImpl implements CustomerEAOImplLocal {
 			em.remove(c);
 		}
 	}
+	
+	public List <Customer> findAll(){
+		TypedQuery<Customer>query=
+				em.createNamedQuery ("Customer.findAll", Customer.class);
+	List <Customer> results=query.getResultList();
+	return results;
+	}
+	
+	public List<Customer> findActive(String adress){
+		TypedQuery <Customer> query = 
+				em.createNamedQuery("Customer.findActive", Customer.class);
+					//	query.setParameter(arg0, arg1)
+		List<Customer> results = query.getResultList();
+		return results;
+	}
+	
+	
 
 }

@@ -7,10 +7,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
+@NamedQueries({
+	@NamedQuery(name = "Ingredient.findAll", query = "SELECT i FROM Ingredient i"),
+	@NamedQuery(name = "Ingredient.findByName", query = "SELECT i FROM Customer i WHERE i.iName li:")}) //Kanske inte funkar
 @Table(name = "Ingredient")
 public class Ingredient implements Serializable{
 	private String iNumber;
