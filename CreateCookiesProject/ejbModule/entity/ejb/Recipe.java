@@ -1,5 +1,7 @@
 package entity.ejb;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -10,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Recipe")
-public class Recipe {
+public class Recipe implements Serializable{
 
 	private RecipeId iNumberPNumber;
 	private double quantity;

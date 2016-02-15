@@ -3,7 +3,7 @@ package entityAccess.eao;
 import javax.ejb.Local;
 
 import entity.ejb.Orderspecification;
-import entity.ejb.Recipe;
+
 
 @Local
 public interface OrderspecificationEAOImplLocal {

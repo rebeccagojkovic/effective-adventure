@@ -46,11 +46,16 @@ public class CreateCookiesServlet extends HttpServlet {
 		out.println("</head><body>");
 		out.println("<h3>Customer</h3>" + "<br>");
 		out.println("** Create Ingredient **" + "<br>");
-		Orderspecification os = new Orderspecification();
-		os.setPalletQuantity(3);
-		os.setOrder();
-		os.setProduct(1);;
-		facade.createOrderspecification(os);
+		Ingredient i =new Ingredient();
+		Ingredient i1 =new Ingredient();
+		i.setiNumber("3");
+		i.setiName("Choklad");
+		i.setiQuantityInStock(10000);
+		i1.setiNumber("7");
+		i1.setiName("Sylt");
+		i1.setiQuantityInStock(10000);
+		facade.createIngredient(i);
+		facade.createIngredient(i1);
 		out.println("</body></html>");
 	}
 

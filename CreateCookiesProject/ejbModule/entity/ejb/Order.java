@@ -1,11 +1,13 @@
 package entity.ejb;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -14,7 +16,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Orde")
-public class Order {
+public class Order implements Serializable{
 	private String oNumber;
 	private boolean isDelivered;
 	private Timestamp expectedDeliveryDate;
@@ -57,7 +59,7 @@ public class Order {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-    @OneToMany(mappedBy="order")
+    @OneToMany(mappedBy="order", fetch=FetchType.EAGER)
 	public Set<Orderspecification> getOrderspecification() {
 		return orderspecification;
 	}

@@ -1,5 +1,7 @@
 package entity.ejb;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -11,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Orderspecification")
-public class Orderspecification {
+public class Orderspecification  implements Serializable{
 	
 	private OrderspecificationId pNumberONumber;
 	private int palletQuantity;

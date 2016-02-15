@@ -1,17 +1,19 @@
 package entity.ejb;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Product")
-public class Product {
+public class Product implements Serializable {
 	private String pNumber;
 	private String pName;
 	private Timestamp pTime;
@@ -46,7 +48,7 @@ public class Product {
 		this.pTime = pTime;
 	}
 
-	@OneToMany(mappedBy = "product")
+	@OneToMany(mappedBy = "product", fetch=FetchType.EAGER)
 	public Set<Recipe> getRecipe() {
 		return recipe;
 	}

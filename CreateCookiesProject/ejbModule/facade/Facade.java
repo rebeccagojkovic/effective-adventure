@@ -7,7 +7,6 @@ import entity.ejb.Customer;
 import entity.ejb.Ingredient;
 import entity.ejb.Order;
 import entity.ejb.Orderspecification;
-import entity.ejb.OrderspecificationId;
 import entity.ejb.Product;
 import entity.ejb.Recipe;
 import entityAccess.eao.CustomerEAOImplLocal;

@@ -1,16 +1,18 @@
 package entity.ejb;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Ingredient")
-public class Ingredient {
+public class Ingredient implements Serializable{
 	private String iNumber;
 	private String iName;
 	private double iQuantityInStock;
@@ -44,7 +46,7 @@ public class Ingredient {
 		this.iQuantityInStock = iQuantityInStock;
 	}
 	
-	@OneToMany(mappedBy="ingredient")
+	@OneToMany(mappedBy="ingredient", fetch=FetchType.EAGER)
 	public Set<Recipe> getRecipe() {
 		return recipe;
 	}

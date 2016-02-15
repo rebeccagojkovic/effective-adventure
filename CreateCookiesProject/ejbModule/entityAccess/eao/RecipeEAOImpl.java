@@ -3,8 +3,6 @@ package entityAccess.eao;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
-import entity.ejb.Orderspecification;
 import entity.ejb.Recipe;
 import entity.ejb.RecipeId;
 
