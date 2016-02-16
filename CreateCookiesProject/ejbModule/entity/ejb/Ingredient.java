@@ -15,7 +15,8 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({
 	@NamedQuery(name = "Ingredient.findAllIngredients", query = "SELECT i FROM Ingredient i"),
-	@NamedQuery(name = "Ingredient.findByName", query = "SELECT i FROM Customer i WHERE i.iName LIKE:iName")}) 
+	@NamedQuery(name = "Ingredient.findByName", query = "SELECT i FROM Ingredient i WHERE i.iName LIKE :iName")
+	}) 
 @Table(name = "Ingredient")
 public class Ingredient implements Serializable{
 	private String iNumber;

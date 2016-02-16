@@ -13,16 +13,11 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@NamedQueries({
-@NamedQuery(name= "Recipe.findAllRecipes",
-           query= "SELECT r FROM Recipe r"),
-@NamedQuery(name= "Recipe.countRecipes",
-           query= "SELECT COUNT (r) FROM Recipe r"),
-})
-
+//@NamedQueries({ @NamedQuery(name = "Recipe.findAllRecipes", query = "SELECT r FROM Recipe r"),
+//		@NamedQuery(name = "Recipe.countRecipes", query = "SELECT COUNT (r) FROM Recipe r"), })
 
 @Table(name = "Recipe")
-public class Recipe implements Serializable{
+public class Recipe implements Serializable {
 
 	private RecipeId iNumberPNumber;
 	private double quantity;
@@ -49,8 +44,9 @@ public class Recipe implements Serializable{
 
 	@ManyToOne
 	@JoinColumn(name = "iNumber_FK", referencedColumnName = "iNumber")
-//	@JoinColumns({ @JoinColumn(name = "iNumber_FK", referencedColumnName = "iNumber"),
-//			@JoinColumn(name = "pNumber_FK", referencedColumnName = "iNumber") })
+	// @JoinColumns({ @JoinColumn(name = "iNumber_FK", referencedColumnName =
+	// "iNumber"),
+	// @JoinColumn(name = "pNumber_FK", referencedColumnName = "iNumber") })
 	public Ingredient getIngredient() {
 		return ingredient;
 	}
@@ -61,8 +57,9 @@ public class Recipe implements Serializable{
 
 	@ManyToOne
 	@JoinColumn(name = "pNumber_FK", referencedColumnName = "pNumber")
-//	@JoinColumns({ @JoinColumn(name = "iNumber_FK", referencedColumnName = "pNumber"),
-//			@JoinColumn(name = "pNumber_FK", referencedColumnName = "pNumber") })
+	// @JoinColumns({ @JoinColumn(name = "iNumber_FK", referencedColumnName =
+	// "pNumber"),
+	// @JoinColumn(name = "pNumber_FK", referencedColumnName = "pNumber") })
 	public Product getProduct() {
 		return product;
 	}

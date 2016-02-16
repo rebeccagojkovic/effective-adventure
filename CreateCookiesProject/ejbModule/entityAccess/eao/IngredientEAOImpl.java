@@ -3,6 +3,8 @@ package entityAccess.eao;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import java.util.List;
 
 import entity.ejb.Ingredient;
 
@@ -20,7 +22,7 @@ public  class IngredientEAOImpl implements IngredientEAOImplLocal {
     public IngredientEAOImpl() {
         // TODO Auto-generated constructor stub
     }
-    public Ingredient findByiNumber(int iNumber) {
+    public Ingredient findByiNumber(String iNumber) {
 		return em.find(Ingredient.class, iNumber);
 
 	}
@@ -35,13 +37,24 @@ public  class IngredientEAOImpl implements IngredientEAOImplLocal {
 		return ingredient;
 	}
 
-	public void deleteIngredient(int iNumber) {
+	public void deleteIngredient(String iNumber) {
 		Ingredient i = this.findByiNumber(iNumber);
 		if (i != null) {
 			em.remove(i);
 		}
 	}
+	public List <Ingredient> findAllIngredients(){
+	TypedQuery<Ingredient> query = em.createNamedQuery("Ingredient.findAllIngredients", Ingredient.class);
 	
-}
+	List<Ingredient> results = query.getResultList();
+	return results;
+	}
+	
+	public List <Ingredient> findByName(String iName) {
+	TypedQuery<Ingredient> query = em.createNamedQuery("Ingredient.findByName", Ingredient.class);
+	query.setParameter("iName", iName);
+	List<Ingredient> results = query.getResultList();
+	return results;
+}}
 
 

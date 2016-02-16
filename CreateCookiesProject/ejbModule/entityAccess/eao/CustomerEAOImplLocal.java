@@ -8,16 +8,16 @@ import entity.ejb.Customer;
 
 @Local
 public interface CustomerEAOImplLocal {
-	public Customer findBycNumber(long cNumber);
+	public Customer findBycNumber(String cNumber);
 
 	public Customer createCustomer(Customer customer);
 
 	public Customer updateCustomer(Customer customer);
 
-	public void deleteCustomer(long cNumber);
+	public void deleteCustomer(String cNumber);
 
-	public List<Customer> findActive(Boolean isDelivered);
-	
-	public List<Customer> findAllCustomers();
-	
+//	public List<Customer> findActive(Boolean isDelivered);
+
+//	public List<Customer> findAllCustomers();
+
 }

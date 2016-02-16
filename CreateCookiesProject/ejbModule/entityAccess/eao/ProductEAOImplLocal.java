@@ -6,11 +6,11 @@ import entity.ejb.Product;
 
 @Local
 public interface ProductEAOImplLocal {
-	public Product findBypNumber(int pNumber);
+	public Product findBypNumber(String pNumber);
 
 	public Product createProduct(Product product);
 
 	public Product updateProduct(Product product);
 
-	public void deleteProduct(int pNumber);
+	public void deleteProduct(String pNumber);
 }

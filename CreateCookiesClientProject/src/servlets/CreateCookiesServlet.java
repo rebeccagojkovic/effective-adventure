@@ -59,18 +59,25 @@ public class CreateCookiesServlet extends HttpServlet {
 		i1.setiQuantityInStock(10000);
 		facade.createIngredient(i);
 		facade.createIngredient(i1);
-		
-//		Product p = new Product();
-//		p.setpNumber("1");
-//		p.setpName("Socker");
-//		p.setpTime(null);
-//		facade.createProduct(p);
-//		
-//		Recipe r = new Recipe();
-//		RecipeId rid = new RecipeId();
-//		rid.setiNumber("3");
-//		rid.setpNumber("1");
-//		facade.createRecipe(r);
+
+		Ingredient i11 = facade.findByiNumber("3");
+		if (i11 != null)
+
+		{
+			out.println("<h4>Hittade: " + i11.getiName() + "</h4>");
+		}
+
+		// Product p = new Product();
+		// p.setpNumber("1");
+		// p.setpName("Socker");
+		// p.setpTime(null);
+		// facade.createProduct(p);
+		//
+		// Recipe r = new Recipe();
+		// RecipeId rid = new RecipeId();
+		// rid.setiNumber("3");
+		// rid.setpNumber("1");
+		// facade.createRecipe(r);
 
 		out.println("</body></html>");
 	}

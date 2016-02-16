@@ -21,7 +21,7 @@ public class ProductEAOImpl implements ProductEAOImplLocal {
 	public ProductEAOImpl() {
 	}
 
-	public Product findBypNumber(int pNumber) {
+	public Product findBypNumber(String pNumber) {
 		return em.find(Product.class, pNumber);
 
 	}
@@ -36,7 +36,7 @@ public class ProductEAOImpl implements ProductEAOImplLocal {
 		return product;
 	}
 
-	public void deleteProduct(int pNumber) {
+	public void deleteProduct(String pNumber) {
 		Product p = this.findBypNumber(pNumber);
 		if (p != null) {
 			em.remove(p);

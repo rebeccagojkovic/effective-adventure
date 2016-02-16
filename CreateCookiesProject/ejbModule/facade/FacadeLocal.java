@@ -16,70 +16,60 @@ public interface FacadeLocal {
 
 	public Customer createCustomer(Customer customer);
 
-	public Customer findBycNumber(long cNumber);
+//	public Customer findBycNumber(String cNumber);
 
 	public Customer updateCustomer(Customer customer);
 
 	public void deleteCustomer(long cNumber);
-	
-	public List<Customer> findActive(Boolean isDelivered);
 
-	public List<Customer> findAllCustomers();
-	
-	public List<Order> findAllOrders();
-	public List<Order> findCertainOrder(String oNumber);
-	
+//	public List<Customer> findActive(Boolean isDelivered);
 
-	public Ingredient findByiNumber(int iNumber);
+//	public List<Customer> findAllCustomers();
+
+//	public List<Order> findAllOrders();
+
+//	public List<Order> findCertainOrder(String oNumber);
+
+	public Ingredient findByiNumber(String iNumber);
+	
+	public List<Ingredient> findByName(String iName);
 
 	public Ingredient createIngredient(Ingredient ingredient);
 
 	public Ingredient updateIngredient(Ingredient ingredient);
 
-	public void deleteIngredient(int iNumber);
-	
-	
+	public void deleteIngredient(String iNumber);
 
-	public Order findByoNumber(long oNumber);
+	public Order findByoNumber(String oNumber);
 
 	public Order createOrder(Order order);
 
 	public Order updateOrder(Order order);
 
-	public void deleteOrder(long oNumber);
-	
-	
+	public void deleteOrder(String oNumber);
 
-	public Product findBypNumber(int pNumber);
+//	public Product findBypNumber(int pNumber);
 
 	public Product createProduct(Product product);
 
 	public Product updateProduct(Product product);
 
-	public void deleteProduct(int pNumber);
-	
+//	public void deleteProduct(String pNumber);
 
-	public Orderspecification findBypNumberONumber(String pNumber,
-			String ONumber);
+//	public Orderspecification findBypNumberONumber(String pNumber, String ONumber);
 
-	public Orderspecification createOrderspecification(
-			Orderspecification orderspecification);
+	public Orderspecification createOrderspecification(Orderspecification orderspecification);
 
-	public Orderspecification updateOrderspecification(
-			Orderspecification orderspecification);
+	public Orderspecification updateOrderspecification(Orderspecification orderspecification);
 
-	public void deleteOrderspecification(String pNumber, String oNumber);
-	
-	
+//	public void deleteOrderspecification(String pNumber, String oNumber);
 
-	public Recipe findByiNumberPNumber(String iNumber, String pNumber);
+//	public Recipe findByiNumberPNumber(String iNumber, String pNumber);
 
 	public Recipe createRecipe(Recipe recipe);
 
 	public Recipe updateRecipe(Recipe recipe);
 
-	public void deleteRecipe(String iNumber, String pNumber);
-
-	
+//	public void deleteRecipe(String iNumber, String pNumber);
 
 }

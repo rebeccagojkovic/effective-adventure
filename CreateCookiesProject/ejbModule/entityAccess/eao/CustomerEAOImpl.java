@@ -25,7 +25,7 @@ public class CustomerEAOImpl implements CustomerEAOImplLocal {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Customer findBycNumber(long cNumber) {
+	public Customer findBycNumber(String cNumber) {
 		return em.find(Customer.class, cNumber);
 
 	}
@@ -40,24 +40,24 @@ public class CustomerEAOImpl implements CustomerEAOImplLocal {
 		return customer;
 	}
 
-	public void deleteCustomer(long cNumber) {
+	public void deleteCustomer(String cNumber) {
 		Customer c = this.findBycNumber(cNumber);
 		if (c != null) {
 			em.remove(c);
 		}
 	}
 
-	public List<Customer> findAllCustomers() {
-		TypedQuery<Customer> query = em.createNamedQuery("Customer.findAllCustomers", Customer.class);
-		List<Customer> results = query.getResultList();
-		return results;
-	}
-
-	public List<Customer> findActive(Boolean isDelivered) {
-		TypedQuery<Customer> query = em.createNamedQuery("Customer.findActive", Customer.class);
-		// query.setParameter(arg0, arg1)
-		List<Customer> results = query.getResultList();
-		return results;
-	}
+//	public List<Customer> findAllCustomers() {
+//		TypedQuery<Customer> query = em.createNamedQuery("Customer.findAllCustomers", Customer.class);
+//		List<Customer> results = query.getResultList();
+//		return results;
+//	}
+//
+//	public List<Customer> findActive(Boolean isDelivered) {
+//		TypedQuery<Customer> query = em.createNamedQuery(Customer.findActive, Customer.class);
+//		// query.setParameter("false", false)
+//		List<Customer> results = query.getResultList();
+//		return results;
+//	}
 
 }

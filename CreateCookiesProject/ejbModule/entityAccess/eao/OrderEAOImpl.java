@@ -24,9 +24,8 @@ public class OrderEAOImpl implements OrderEAOImplLocal {
 	public OrderEAOImpl() {
 	}
 
-	public Order findByoNumber(long oNumber) {
+	public Order findByoNumber(String oNumber) {
 		return em.find(Order.class, oNumber);
-
 	}
 
 	public Order createOrder(Order order) {
@@ -39,26 +38,25 @@ public class OrderEAOImpl implements OrderEAOImplLocal {
 		return order;
 	}
 
-	public void deleteOrder(long oNumber) {
+	public void deleteOrder(String oNumber) {
 		Order o = this.findByoNumber(oNumber);
 		if (o != null) {
 			em.remove(o);
 		}
 	}
-	
-	public List<Order> findAllOrders() {
-		 TypedQuery<Order> query =
-		em.createNamedQuery("Order.findAllOrders", Order.class);
-		 List<Order> results = query.getResultList();
-		 return results;
-		 }
-	public List<Order> findCertainOrder(String oNumber) {
-		 TypedQuery<Order> query =
-		em.createNamedQuery("Order.findCertainOrder", Order.class);
-		 query.setParameter("oNumber", oNumber);
-		 List<Order> results = query.getResultList();
-		 return results;
-		 
-}
+
+//	public List<Order> findAllOrders() {
+//		TypedQuery<Order> query = em.createNamedQuery("Order.findAllOrders", Order.class);
+//		List<Order> results = query.getResultList();
+//		return results;
+//	}
+//
+//	public List<Order> findCertainOrder(String oNumber) {
+//		TypedQuery<Order> query = em.createNamedQuery("Order.findCertainOrder", Order.class);
+//		query.setParameter("oNumber", oNumber);
+//		List<Order> results = query.getResultList();
+//		return results;
+//
+//	}
 
 }

@@ -10,16 +10,16 @@ import entity.ejb.Order;
 
 @Local
 public interface OrderEAOImplLocal {
-	public Order findByoNumber(long oNumber);
+    public Order findByoNumber(String oNumber);
 
 	public Order createOrder(Order order);
 
 	public Order updateOrder(Order order);
 
-	public void deleteOrder(long oNumber);
+	public void deleteOrder(String oNumber);
 	
-	public List<Order> findCertainOrder(String oNumber);
+//	public List<Order> findCertainOrder(String oNumber);
 	
-	public List<Order> findAllOrders();
+//	public List<Order> findAllOrders();
 	
 }

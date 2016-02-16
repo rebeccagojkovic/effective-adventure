@@ -15,11 +15,12 @@ import javax.persistence.Table;
 
 @Entity
 
-@NamedQueries({ @NamedQuery(name = "Customer.findAllCustomers", query = "SELECT c.cNumber FROM Customer c"),
-		@NamedQuery(name = "Customer.findActive", query = "SELECT c FROM Customer c WHERE c.isDelivered = false"),
-		@NamedQuery(name = "Customer.findByAddress", query = "SELECT c FROM Customer c WHERE c.cAddress LIKE :cAddress"), })
+//@NamedQueries({ @NamedQuery(name = "Customer.findAllCustomers", query = "SELECT c.cNumber FROM Customer c"),
+//		@NamedQuery(name = "Customer.findActive", query = "SELECT c FROM Customer c WHERE c.isDelivered = false"),
+//		@NamedQuery(name = "Customer.findByAddress", query = "SELECT c FROM Customer c WHERE c.cAddress LIKE :cAddress"), })
 
 @Table(name = "Customer")
+
 public class Customer implements Serializable {
 	private String cNumber;
 	private String cName;
@@ -28,7 +29,7 @@ public class Customer implements Serializable {
 	private String cCountry;
 	private String cEmail;
 	private Set<Order> order;
-	private Password password;
+//	private Password password;
 
 	@Id
 	@Column(name = "cNumber")
@@ -94,13 +95,13 @@ public class Customer implements Serializable {
 		this.order = order;
 	}
 
-	@OneToOne(mappedBy = "customer")
-	public Password getPassword() {
-		return password;
-	}
-
-	public void setPassword(Password password) {
-		this.password = password;
-	}
+//	@OneToOne(mappedBy = "customer")
+//	public Password getPassword() {
+//		return password;
+//	}
+//
+//	public void setPassword(Password password) {
+//		this.password = password;
+//	}
 
 }

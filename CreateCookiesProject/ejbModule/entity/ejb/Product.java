@@ -14,10 +14,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@NamedQueries({
-@NamedQuery(name= "Product.findAllProducts", query= "SELECT p FROM Product p"),
-@NamedQuery(name= "Product.InfoTimeStamp", query= "SELECT p.pName, p.pTime FROM Product p WHERE p.pNumber LIKE :pNumber"),
-})
+//@NamedQueries({
+//@NamedQuery(name= "Product.findAllProducts", query= "SELECT p FROM Product p"),
+//@NamedQuery(name= "Product.InfoTimeStamp", query= "SELECT p.pName, p.pTime FROM Product p WHERE p.pNumber LIKE :pNumber"),
+//})
 
 
 @Table(name = "Product")
