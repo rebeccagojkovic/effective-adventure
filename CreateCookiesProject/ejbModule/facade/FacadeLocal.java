@@ -16,11 +16,11 @@ public interface FacadeLocal {
 
 	public Customer createCustomer(Customer customer);
 
-//	public Customer findBycNumber(String cNumber);
+	public Customer findBycNumber(String cNumber);
 
 	public Customer updateCustomer(Customer customer);
 
-	public void deleteCustomer(long cNumber);
+	public void deleteCustomer(String cNumber);
 
 //	public List<Customer> findActive(Boolean isDelivered);
 
@@ -48,28 +48,28 @@ public interface FacadeLocal {
 
 	public void deleteOrder(String oNumber);
 
-//	public Product findBypNumber(int pNumber);
+	public Product findBypNumber(String pNumber);
 
 	public Product createProduct(Product product);
 
 	public Product updateProduct(Product product);
 
-//	public void deleteProduct(String pNumber);
+	public void deleteProduct(String pNumber);
 
-//	public Orderspecification findBypNumberONumber(String pNumber, String ONumber);
+	public Orderspecification findBypNumberONumber(String pNumber, String ONumber);
 
 	public Orderspecification createOrderspecification(Orderspecification orderspecification);
 
 	public Orderspecification updateOrderspecification(Orderspecification orderspecification);
 
-//	public void deleteOrderspecification(String pNumber, String oNumber);
+	public void deleteOrderspecification(String pNumber, String oNumber);
 
-//	public Recipe findByiNumberPNumber(String iNumber, String pNumber);
+	public Recipe findByiNumberPNumber(String iNumber, String pNumber);
 
 	public Recipe createRecipe(Recipe recipe);
 
 	public Recipe updateRecipe(Recipe recipe);
 
-//	public void deleteRecipe(String iNumber, String pNumber);
+	public void deleteRecipe(String iNumber, String pNumber);
 
 }

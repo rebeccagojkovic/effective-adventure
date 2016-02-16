@@ -52,6 +52,9 @@ public class CustomerEAOImpl implements CustomerEAOImplLocal {
 //		List<Customer> results = query.getResultList();
 //		return results;
 //	}
+	//public List<Customer> findByCountry (String cCountry) {
+	//TypedQuery<Customer> query = em.createNamedQuery("Customer.findByCountry", Customer.class);
+	//  query.setParameter("cCountry", cCountry);
 //
 //	public List<Customer> findActive(Boolean isDelivered) {
 //		TypedQuery<Customer> query = em.createNamedQuery(Customer.findActive, Customer.class);

@@ -17,7 +17,9 @@ import javax.persistence.Table;
 
 //@NamedQueries({ @NamedQuery(name = "Customer.findAllCustomers", query = "SELECT c.cNumber FROM Customer c"),
 //		@NamedQuery(name = "Customer.findActive", query = "SELECT c FROM Customer c WHERE c.isDelivered = false"),
-//		@NamedQuery(name = "Customer.findByAddress", query = "SELECT c FROM Customer c WHERE c.cAddress LIKE :cAddress"), })
+//		@NamedQuery(name = "Customer.findByAddress", query = "SELECT c FROM Customer c WHERE c.cAddress LIKE :cAddress"),
+//      @NamedQuery(name = "Customer.findByCountry", query = "SELECT c FROM Customer c WHERE c.cCountry LIKE :cCountry),
+//})
 
 @Table(name = "Customer")
 
