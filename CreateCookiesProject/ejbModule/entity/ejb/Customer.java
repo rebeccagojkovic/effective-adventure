@@ -14,11 +14,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-<<<<<<< HEAD
+
 @NamedQueries({ @NamedQuery(name = "Customer.findAllCustomers", query = "SELECT c.cNumber FROM Customer c"),
-=======
-@NamedQueries({ @NamedQuery(name = "Customer.findAllCustomers", query = "SELECT c FROM Customer c"),
->>>>>>> branch 'master' of https://github.com/spikk/effective-adventure
 		@NamedQuery(name = "Customer.findActive", query = "SELECT c FROM Customer c WHERE c.isDelivered = false"),
 		@NamedQuery(name = "Customer.findByAddress", query = "SELECT c FROM Customer c WHERE c.cAddress LIKE :cAddress"), })
 
@@ -27,12 +24,12 @@ public class Customer implements Serializable {
 	private String cNumber;
 	private String cName;
 	private String cAddress;
-	private String  cPostalAddress;
+	private String cPostalAddress;
 	private String cCountry;
 	private String cEmail;
 	private Set<Order> order;
-    private Password password;
-    
+	private Password password;
+
 	@Id
 	@Column(name = "cNumber")
 	public String getcNumber() {
@@ -56,9 +53,8 @@ public class Customer implements Serializable {
 	public String getcAddress() {
 		return cAddress;
 	}
-	
-	
-	@Column(name="cPostalAddress")
+
+	@Column(name = "cPostalAddress")
 	public String getcPostalAddress() {
 		return cPostalAddress;
 	}
@@ -67,7 +63,7 @@ public class Customer implements Serializable {
 		this.cPostalAddress = cPostalAddress;
 	}
 
-	@Column(name="cCountry")
+	@Column(name = "cCountry")
 	public String getcCountry() {
 		return cCountry;
 	}
@@ -75,7 +71,8 @@ public class Customer implements Serializable {
 	public void setcCountry(String cCountry) {
 		this.cCountry = cCountry;
 	}
-	@Column(name="cEmail")
+
+	@Column(name = "cEmail")
 	public String getcEmail() {
 		return cEmail;
 	}
@@ -96,8 +93,8 @@ public class Customer implements Serializable {
 	public void setOrder(Set<Order> order) {
 		this.order = order;
 	}
-    
-	@OneToOne(mappedBy="customer")
+
+	@OneToOne(mappedBy = "customer")
 	public Password getPassword() {
 		return password;
 	}
@@ -105,7 +102,5 @@ public class Customer implements Serializable {
 	public void setPassword(Password password) {
 		this.password = password;
 	}
-	
-	
 
 }
