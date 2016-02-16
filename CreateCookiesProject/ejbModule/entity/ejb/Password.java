@@ -2,6 +2,7 @@ package entity.ejb;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
@@ -20,6 +21,7 @@ public class Password {
 	}
 
 	@OneToOne()
+	@JoinColumn(name="password", referencedColumnName="cNumber")
 	public Customer getCustomer() {
 		return customer;
 	}
