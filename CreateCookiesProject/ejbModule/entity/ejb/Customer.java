@@ -13,18 +13,14 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Customer")
 public class Customer implements Serializable {
-	private String cNumber;
-	private String cName;
-	private String cAddress;
-	private Set<Order> order;
+	private String c ber;
+	private S r ng cName;
+	privaCustomerste Strin   Address;
+	private Set<Order
+		rder;dQuery(name = "Customer.findActive", query = "SELECT c FROM Customer c WHERE c.isDelivered = false"),
+		@NamedQuery(name = "Customer.findByAddress", query = "SELECT c FROM Customer c WHERE c.cAddress LIKE :cAddress"), })
 
-	@Id
-	@Column(name = "cNumber")
-	public String getcNumber() {
-		return cNumber;
-	}
-
-	public void setcNumber(String cNumber) {
+cNumber) {
 		this.cNumber = cNumber;
 	}
 
@@ -33,7 +29,10 @@ public class Customer implements Serializable {
 		return cName;
 	}
 
-	public void setcName(String cName) {
+	public void setcName(String
+	private String  cPostalAddress;
+	private String cCountry;
+	private String cEmail; cName) {
 		this.cName = cName;
 	}
 

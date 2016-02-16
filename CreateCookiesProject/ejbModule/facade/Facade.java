@@ -1,5 +1,7 @@
 package facade;
 
+import java.util.List;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
@@ -34,7 +36,6 @@ public class Facade implements FacadeLocal {
 	OrderEAOImplLocal orderEAO;
 	@EJB
 	OrderspecificationEAOImplLocal orderspecificationEAO;
-	
 
 	/**
 	 * Default constructor.
@@ -47,11 +48,11 @@ public class Facade implements FacadeLocal {
 	public Customer createCustomer(Customer customer) {
 		return customerEAO.createCustomer(customer);
 	}
-	
+
 	@Override
 	public Customer findBycNumber(long cNumber) {
-		return customerEAO.findBycNumber(cNumber) ;
-		
+		return customerEAO.findBycNumber(cNumber);
+
 	}
 
 	@Override
@@ -62,6 +63,18 @@ public class Facade implements FacadeLocal {
 	@Override
 	public void deleteCustomer(long cNumber) {
 		customerEAO.deleteCustomer(cNumber);
+	}
+
+	@Override
+	public List<Customer> findAllCustomers() {
+		return customerEAO.findAllCustomers();
+
+	}
+
+	@Override
+	public List<Customer> findActive(Boolean isDelivered) {
+		return customerEAO.findActive(isDelivered);
+
 	}
 
 	@Override
@@ -83,6 +96,7 @@ public class Facade implements FacadeLocal {
 	public void deleteIngredient(int iNumber) {
 		ingredientEAO.deleteIngredient(iNumber);
 	}
+
 	@Override
 	public Order findByoNumber(long oNumber) {
 		return orderEAO.findByoNumber(oNumber);
@@ -102,7 +116,18 @@ public class Facade implements FacadeLocal {
 	public void deleteOrder(long oNumber) {
 		orderEAO.deleteOrder(oNumber);
 	}
-	
+
+	@Override
+	public List<Order> findAllOrders() {
+		return orderEAO.findAllOrders();
+	}
+
+	@Override
+	public List<Order> findCertainOrder(String oNumber) {
+		return orderEAO.findCertainOrder(oNumber);
+
+	}
+
 	@Override
 	public Product findBypNumber(int pNumber) {
 		return productEAO.findBypNumber(pNumber);
@@ -122,10 +147,9 @@ public class Facade implements FacadeLocal {
 	public void deleteProduct(int pNumber) {
 		productEAO.deleteProduct(pNumber);
 	}
-	
-	
+
 	@Override
-	public Orderspecification findBypNumberONumber(String pNumber,String ONumber) {
+	public Orderspecification findBypNumberONumber(String pNumber, String ONumber) {
 		return orderspecificationEAO.findBypNumberONumber(pNumber, ONumber);
 	}
 
@@ -143,8 +167,9 @@ public class Facade implements FacadeLocal {
 	public void deleteOrderspecification(String pNumber, String oNumber) {
 		orderspecificationEAO.deleteOrderspecification(pNumber, oNumber);
 	}
+
 	@Override
-	public Recipe findByiNumberPNumber(String iNumber,String pNumber) {
+	public Recipe findByiNumberPNumber(String iNumber, String pNumber) {
 		return recipeEAO.findByiNumberPNumber(iNumber, pNumber);
 	}
 
@@ -162,5 +187,5 @@ public class Facade implements FacadeLocal {
 	public void deleteRecipe(String iNumber, String pNumber) {
 		recipeEAO.deleteRecipe(iNumber, pNumber);
 	}
-	
+
 }

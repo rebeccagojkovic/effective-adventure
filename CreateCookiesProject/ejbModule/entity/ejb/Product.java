@@ -8,10 +8,18 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
+@NamedQueries({
+@NamedQuery(name= "Product.findAllProducts", query= "SELECT p FROM Product p"),
+@NamedQuery(name= "Product.InfoTimeStamp", query= "SELECT p.pName, p.pTime FROM Product p WHERE p.pNumber LIKE :pNumber"),
+})
+
+
 @Table(name = "Product")
 public class Product implements Serializable {
 	private String pNumber;
