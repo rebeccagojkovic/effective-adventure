@@ -14,7 +14,11 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
+<<<<<<< HEAD
 @NamedQueries({ @NamedQuery(name = "Customer.findAllCustomers", query = "SELECT c.cNumber FROM Customer c"),
+=======
+@NamedQueries({ @NamedQuery(name = "Customer.findAllCustomers", query = "SELECT c FROM Customer c"),
+>>>>>>> branch 'master' of https://github.com/spikk/effective-adventure
 		@NamedQuery(name = "Customer.findActive", query = "SELECT c FROM Customer c WHERE c.isDelivered = false"),
 		@NamedQuery(name = "Customer.findByAddress", query = "SELECT c FROM Customer c WHERE c.cAddress LIKE :cAddress"), })
 
