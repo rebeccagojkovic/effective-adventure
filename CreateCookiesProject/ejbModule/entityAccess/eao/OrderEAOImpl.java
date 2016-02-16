@@ -50,13 +50,12 @@ public class OrderEAOImpl implements OrderEAOImplLocal {
 //		List<Order> results = query.getResultList();
 //		return results;
 //	}
-//
-//	public List<Order> findCertainOrder(String oNumber) {
+
+//	public List<Order> findCertainOrder(String customer) {
 //		TypedQuery<Order> query = em.createNamedQuery("Order.findCertainOrder", Order.class);
-//		query.setParameter("oNumber", oNumber);
+//		query.setParameter("customer", customer);
 //		List<Order> results = query.getResultList();
 //		return results;
-//
 //	}
 
 }

@@ -47,15 +47,26 @@ public class CustomerEAOImpl implements CustomerEAOImplLocal {
 		}
 	}
 
-//	public List<Customer> findAllCustomers() {
-//		TypedQuery<Customer> query = em.createNamedQuery("Customer.findAllCustomers", Customer.class);
-//		List<Customer> results = query.getResultList();
-//		return results;
-//	}
-	//public List<Customer> findByCountry (String cCountry) {
-	//TypedQuery<Customer> query = em.createNamedQuery("Customer.findByCountry", Customer.class);
-	//  query.setParameter("cCountry", cCountry);
-//
+	public List<Customer> findAllCustomers() {
+		TypedQuery<Customer> query = em.createNamedQuery("Customer.findAllCustomers", Customer.class);
+		List<Customer> results = query.getResultList();
+		return results;
+	}
+
+	public List<Customer> findByCountry(String cCountry) {
+		TypedQuery<Customer> query = em.createNamedQuery("Customer.findByCountry", Customer.class);
+		query.setParameter("cCountry", cCountry);
+		List<Customer> results = query.getResultList();
+		return results;
+	}
+
+	public List<Customer> findByAddress(String cAddress) {
+		TypedQuery<Customer> query = em.createNamedQuery("Customer.findByAddress", Customer.class);
+		query.setParameter("cAddress", cAddress);
+		List<Customer> results = query.getResultList();
+		return results;
+	}
+
 //	public List<Customer> findActive(Boolean isDelivered) {
 //		TypedQuery<Customer> query = em.createNamedQuery(Customer.findActive, Customer.class);
 //		// query.setParameter("false", false)

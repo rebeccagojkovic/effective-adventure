@@ -18,8 +18,8 @@ public interface OrderEAOImplLocal {
 
 	public void deleteOrder(String oNumber);
 	
-//	public List<Order> findCertainOrder(String oNumber);
-	
-//	public List<Order> findAllOrders();
-	
+//    public List<Order> findCertainOrder(String customer);
+//	
+//    public List<Order> findAllOrders();
+//	
 }

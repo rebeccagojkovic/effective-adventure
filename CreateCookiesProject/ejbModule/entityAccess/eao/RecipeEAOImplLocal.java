@@ -14,5 +14,8 @@ public interface RecipeEAOImplLocal {
 	public Recipe updateRecipe(Recipe recipe);
 
 	public void deleteRecipe(String iNumber, String pNumber);
-
+	
+	//public List<Recipe>findAllRecipes
+	
+	//public List<Recipe>
 }

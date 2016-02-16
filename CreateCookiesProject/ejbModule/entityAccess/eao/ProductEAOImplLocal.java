@@ -13,4 +13,7 @@ public interface ProductEAOImplLocal {
 	public Product updateProduct(Product product);
 
 	public void deleteProduct(String pNumber);
+	
+	//public List<Product>findAllProducts(); 
+	//public List<Product>InfoTimeStamp (String pName);
 }

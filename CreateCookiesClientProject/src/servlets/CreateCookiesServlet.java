@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -57,14 +58,34 @@ public class CreateCookiesServlet extends HttpServlet {
 		i1.setiNumber("7");
 		i1.setiName("Sylt");
 		i1.setiQuantityInStock(10000);
-		facade.createIngredient(i);
-		facade.createIngredient(i1);
+		// facade.createIngredient(i);
+		// facade.createIngredient(i1);
+
+		List<Ingredient> allingredients = facade.findAllIngredients();
+		for (Ingredient in1 : allingredients) {
+			out.println("<h4>Hittade: " + in1.getClass().getSimpleName());
+			out.println(" Id: " + in1.getiNumber());
+			out.println(" - " + in1.getiName());
+			out.println(" - " + in1.getiQuantityInStock() + "</h4>");
+
+		}
 
 		Ingredient i11 = facade.findByiNumber("3");
 		if (i11 != null)
 
 		{
 			out.println("<h4>Hittade: " + i11.getiName() + "</h4>");
+			out.println("");
+		}
+		out.println("</body></html>");
+
+		List<Ingredient> ingredientsearch = facade.findByName("choklad");
+		for (Ingredient i111 : ingredientsearch) {
+			out.println("<h4>Hittade: " + i111.getClass().getSimpleName());
+			out.println(" Id: " + i111.getiNumber());
+			out.println(" - " + i111.getiName());
+			out.println(" - " + i111.getiQuantityInStock() + "</h4>");
+
 		}
 
 		// Product p = new Product();
@@ -79,7 +100,5 @@ public class CreateCookiesServlet extends HttpServlet {
 		// rid.setpNumber("1");
 		// facade.createRecipe(r);
 
-		out.println("</body></html>");
 	}
-
 }

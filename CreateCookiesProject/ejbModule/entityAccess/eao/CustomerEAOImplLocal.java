@@ -16,8 +16,12 @@ public interface CustomerEAOImplLocal {
 
 	public void deleteCustomer(String cNumber);
 
-//	public List<Customer> findActive(Boolean isDelivered);
+	public List<Customer> findAllCustomers();
 
-//	public List<Customer> findAllCustomers();
+	public List<Customer> findByAddress(String cAddress);
+
+	public List<Customer> findByCountry(String cCountry);
+
+	// public List<Customer> findActive(Boolean isDelivered);
 
 }

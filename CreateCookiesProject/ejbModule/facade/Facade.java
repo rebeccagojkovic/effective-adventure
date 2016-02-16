@@ -65,17 +65,27 @@ public class Facade implements FacadeLocal {
 		customerEAO.deleteCustomer(cNumber);
 	}
 
-//	@Override
-//	public List<Customer> findAllCustomers() {
-//		return customerEAO.findAllCustomers();
-//
-//	}
+	@Override
+	public List<Customer> findAllCustomers() {
+		return customerEAO.findAllCustomers();
 
-//	@Override
-//	public List<Customer> findActive(Boolean isDelivered) {
-//		return customerEAO.findActive(isDelivered);
-//
-//	}
+	}
+
+	// @Override
+	// public List<Customer> findActive(Boolean isDelivered) {
+	// return customerEAO.findActive(isDelivered);
+	//
+	// }
+
+	@Override
+	public List<Customer> findByAddress(String cAddress) {
+		return customerEAO.findByAddress(cAddress);
+	}
+
+	@Override
+	public List<Customer> findByCountry(String cCountry) {
+		return customerEAO.findByCountry(cCountry);
+	}
 
 	@Override
 	public Ingredient findByiNumber(String iNumber) {
@@ -96,12 +106,16 @@ public class Facade implements FacadeLocal {
 	public void deleteIngredient(String iNumber) {
 		ingredientEAO.deleteIngredient(iNumber);
 	}
+
 	@Override
-	public List<Ingredient> findByName(String iName){
+	public List<Ingredient> findByName(String iName) {
 		return ingredientEAO.findByName(iName);
 	}
-	
-	
+
+	@Override
+	public List<Ingredient> findAllIngredients() {
+		return ingredientEAO.findAllIngredients();
+	}
 
 	@Override
 	public Order findByoNumber(String oNumber) {
@@ -122,17 +136,24 @@ public class Facade implements FacadeLocal {
 	public void deleteOrder(String oNumber) {
 		orderEAO.deleteOrder(oNumber);
 	}
+	//
+	// @Override
+	// public List<Order> findAllOrders() {
+	// return orderEAO.findAllOrders();
+	// }
 
-//	@Override
-//	public List<Order> findAllOrders() {
-//		return orderEAO.findAllOrders();
-//	}
+	// @Override
+	// public List<Order> findCertainOrder(String customer) {
+	// return orderEAO.findCertainOrder(customer);
+	// }
 
-//	@Override
-//	public List<Order> findCertainOrder(String oNumber) {
-//		return orderEAO.findCertainOrder(oNumber);
-//
-//	}
+	// public List<Product>findAllProducts(){
+	// return productEAO.findAllProducts();
+	// }
+
+	// public List<Product>InfoTimeStamp(String pName){
+	// return productEAO.InfoTimeStamp(pName);
+	// }
 
 	@Override
 	public Product findBypNumber(String pNumber) {
@@ -192,6 +213,6 @@ public class Facade implements FacadeLocal {
 	@Override
 	public void deleteRecipe(String iNumber, String pNumber) {
 		recipeEAO.deleteRecipe(iNumber, pNumber);
-		}
+	}
 
 }

@@ -13,9 +13,9 @@ public interface IngredientEAOImplLocal {
 	public Ingredient updateIngredient(Ingredient ingredient);
 
 	public void deleteIngredient(String iNumber);
-	
-	public List <Ingredient> findAllIngredients();
-	
+
+	public List<Ingredient> findAllIngredients();
+
 	public List<Ingredient> findByName(String iName);
 
 }

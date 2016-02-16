@@ -24,15 +24,24 @@ public interface FacadeLocal {
 
 //	public List<Customer> findActive(Boolean isDelivered);
 
-//	public List<Customer> findAllCustomers();
+	public List<Customer> findAllCustomers();
 
-//	public List<Order> findAllOrders();
+	public List<Customer> findByAddress(String cAddress);
 
-//	public List<Order> findCertainOrder(String oNumber);
+	public List<Customer> findByCountry(String cCountry);
+
+	// public List<Order> findAllOrders();
+
+	// public List<Order> findCertainOrder(String customer);
+
+	// public List<Product>findAllProducts();
+	// public List<Product>InfoTimeStamp(String pName);
 
 	public Ingredient findByiNumber(String iNumber);
-	
+
 	public List<Ingredient> findByName(String iName);
+
+	public List<Ingredient> findAllIngredients();
 
 	public Ingredient createIngredient(Ingredient ingredient);
 
