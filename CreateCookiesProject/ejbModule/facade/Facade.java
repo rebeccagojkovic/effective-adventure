@@ -76,18 +76,6 @@ public class Facade implements FacadeLocal {
 		return customerEAO.findActive(isDelivered);
 
 	}
-
-	@Override
-	public List<Customer> findAllCustomers() {
-		return customerEAO.findAllCustomers();
-
-	}
-
-	@Override
-	public List<Customer> findActive(Boolean isDelivered) {
-		return customerEAO.findActive(isDelivered);
-
-	}
 	
 	
 
@@ -110,13 +98,10 @@ public class Facade implements FacadeLocal {
 	public void deleteIngredient(int iNumber) {
 		ingredientEAO.deleteIngredient(iNumber);
 	}
-<<<<<<< HEAD
-=======
 	
 	
 	
 	
->>>>>>> branch 'master' of https://github.com/spikk/effective-adventure
 
 	@Override
 	public Order findByoNumber(long oNumber) {
@@ -138,23 +123,9 @@ public class Facade implements FacadeLocal {
 		orderEAO.deleteOrder(oNumber);
 	}
 
-<<<<<<< HEAD
-	@Override
-	public List<Order> findAllOrders() {
-		return orderEAO.findAllOrders();
-	}
-
-	@Override
-	public List<Order> findCertainOrder(String oNumber) {
-		return orderEAO.findCertainOrder(oNumber);
-
-	}
-
-=======
 	
 	
 	
->>>>>>> branch 'master' of https://github.com/spikk/effective-adventure
 	@Override
 	public Product findBypNumber(int pNumber) {
 		return productEAO.findBypNumber(pNumber);
@@ -174,12 +145,9 @@ public class Facade implements FacadeLocal {
 	public void deleteProduct(int pNumber) {
 		productEAO.deleteProduct(pNumber);
 	}
-<<<<<<< HEAD
-=======
 	
 	
 	
->>>>>>> branch 'master' of https://github.com/spikk/effective-adventure
 
 	@Override
 	public Orderspecification findBypNumberONumber(String pNumber, String ONumber) {
@@ -201,12 +169,9 @@ public class Facade implements FacadeLocal {
 		orderspecificationEAO.deleteOrderspecification(pNumber, oNumber);
 	}
 
-<<<<<<< HEAD
-=======
 	
 	
 	
->>>>>>> branch 'master' of https://github.com/spikk/effective-adventure
 	@Override
 	public Recipe findByiNumberPNumber(String iNumber, String pNumber) {
 		return recipeEAO.findByiNumberPNumber(iNumber, pNumber);
@@ -226,8 +191,6 @@ public class Facade implements FacadeLocal {
 	public void deleteRecipe(String iNumber, String pNumber) {
 		recipeEAO.deleteRecipe(iNumber, pNumber);
 	}
-<<<<<<< HEAD
-=======
 	
 	public List <Order> findAllOrders(){
 		return orderEAO.findAllOrders();
@@ -237,6 +200,5 @@ public class Facade implements FacadeLocal {
 		
 	}
 	
->>>>>>> branch 'master' of https://github.com/spikk/effective-adventure
 
 }
