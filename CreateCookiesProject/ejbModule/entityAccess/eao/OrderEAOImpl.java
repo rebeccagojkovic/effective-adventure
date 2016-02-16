@@ -1,8 +1,11 @@
 package entityAccess.eao;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import entity.ejb.Order;
 
@@ -42,5 +45,20 @@ public class OrderEAOImpl implements OrderEAOImplLocal {
 			em.remove(o);
 		}
 	}
+	
+	public List<Order> findAllOrders() {
+		 TypedQuery<Order> query =
+		em.createNamedQuery("Order.findAllOrders", Order.class);
+		 List<Order> results = query.getResultList();
+		 return results;
+		 }
+	public List<Order> findCertainOrder(String oNumber) {
+		 TypedQuery<Order> query =
+		em.createNamedQuery("Order.findCertainOrder", Order.class);
+		 query.setParameter("oNumber", oNumber);
+		 List<Order> results = query.getResultList();
+		 return results;
+		 
+}
 
 }

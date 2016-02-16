@@ -1,5 +1,7 @@
 package entityAccess.eao;
 
+import java.util.List;
+
 import javax.ejb.Local;
 
 import entity.ejb.Customer;
@@ -14,4 +16,8 @@ public interface CustomerEAOImplLocal {
 
 	public void deleteCustomer(long cNumber);
 
+	public List<Customer> findActive(Boolean isDelivered);
+	
+	public List<Customer> findAllCustomers();
+	
 }
