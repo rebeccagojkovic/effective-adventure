@@ -7,10 +7,16 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
+@NamedQueries({ @NamedQuery(name = "Customer.findAllCustomers", query = "SELECT c FROM Customer c"),
+		@NamedQuery(name = "Customer.findActive", query = "SELECT c FROM Customer c WHERE c.isDelivered = false"),
+		@NamedQuery(name = "Customer.findByAddress", query = "SELECT c FROM Customer c WHERE c.cAddress LIKE :cAddress"), })
+
 @Table(name = "Customer")
 public class Customer implements Serializable {
 	private String c ber;
@@ -45,7 +51,7 @@ cNumber) {
 		this.cAddress = cAddress;
 	}
 
-	@OneToMany(mappedBy = "customer", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
 	public Set<Order> getOrder() {
 		return order;
 	}

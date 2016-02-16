@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import entity.ejb.Customer;
 import entity.ejb.Ingredient;
 import entity.ejb.Orderspecification;
+import entity.ejb.Product;
+import entity.ejb.Recipe;
+import entity.ejb.RecipeId;
 import facade.FacadeLocal;
 
 /**
@@ -30,7 +33,7 @@ public class CreateCookiesServlet extends HttpServlet {
 	 */
 	public CreateCookiesServlet() {
 		super();
-	
+
 	}
 
 	/**
@@ -46,8 +49,8 @@ public class CreateCookiesServlet extends HttpServlet {
 		out.println("</head><body>");
 		out.println("<h3>Customer</h3>" + "<br>");
 		out.println("** Create Ingredient **" + "<br>");
-		Ingredient i =new Ingredient();
-		Ingredient i1 =new Ingredient();
+		Ingredient i = new Ingredient();
+		Ingredient i1 = new Ingredient();
 		i.setiNumber("3");
 		i.setiName("Choklad");
 		i.setiQuantityInStock(10000);
@@ -56,6 +59,19 @@ public class CreateCookiesServlet extends HttpServlet {
 		i1.setiQuantityInStock(10000);
 		facade.createIngredient(i);
 		facade.createIngredient(i1);
+		
+//		Product p = new Product();
+//		p.setpNumber("1");
+//		p.setpName("Socker");
+//		p.setpTime(null);
+//		facade.createProduct(p);
+//		
+//		Recipe r = new Recipe();
+//		RecipeId rid = new RecipeId();
+//		rid.setiNumber("3");
+//		rid.setpNumber("1");
+//		facade.createRecipe(r);
+
 		out.println("</body></html>");
 	}
 
