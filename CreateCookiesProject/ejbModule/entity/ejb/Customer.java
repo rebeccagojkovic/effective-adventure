@@ -15,11 +15,12 @@ import javax.persistence.Table;
 
 @Entity
 
-@NamedQueries({ @NamedQuery(name = "Customer.findAllCustomers", query = "SELECT c.cNumber FROM Customer c"),
+@NamedQueries({ @NamedQuery(name = "Customer.findAllCustomers", query = "SELECT c FROM Customer c"),
 		@NamedQuery(name = "Customer.findByAddress", query = "SELECT c FROM Customer c WHERE c.cAddress LIKE :cAddress"),
 		@NamedQuery(name = "Customer.findByCountry", query = "SELECT c FROM Customer c WHERE c.cCountry LIKE :cCountry"), 
         @NamedQuery(name = "Customer.findByPostalAddress", query = "SELECT c FROM Customer c WHERE c.cPostalAddress LIKE :cPostalAddress"), 
-        @NamedQuery(name = "Customer.findBycName", query = "SELECT c FROM Customer c WHERE c.cName LIKE :cName")})
+        @NamedQuery(name = "Customer.findBycName", query = "SELECT c FROM Customer c WHERE c.cName LIKE :cName")
+})
 
 @Table(name = "Customer")
 

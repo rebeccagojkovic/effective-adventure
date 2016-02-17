@@ -17,5 +17,5 @@ public interface RecipeEAOImplLocal {
 	
 	//public List<Recipe>findAllRecipes
 	
-	//public List<Recipe>
+	//public List<Recipe>countRecipes
 }
