@@ -66,6 +66,19 @@ public class CustomerEAOImpl implements CustomerEAOImplLocal {
 		List<Customer> results = query.getResultList();
 		return results;
 	}
+	public List<Customer> findByPostalAddress(String cPostalAddress) {
+		TypedQuery<Customer> query = em.createNamedQuery("Customer.findByPostalAddress", Customer.class);
+		query.setParameter("cPostalAddress", cPostalAddress);
+		List<Customer> results = query.getResultList();
+		return results;
+	}
+
+	public List<Customer> findBycName(String cName) {
+		TypedQuery<Customer> query = em.createNamedQuery("Customer.findBycName", Customer.class);
+		query.setParameter("cName", cName);
+		List<Customer> results = query.getResultList();
+		return results;
+	}
 
 //	public List<Customer> findActive(Boolean isDelivered) {
 //		TypedQuery<Customer> query = em.createNamedQuery(Customer.findActive, Customer.class);

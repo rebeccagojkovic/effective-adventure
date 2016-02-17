@@ -29,6 +29,10 @@ public interface FacadeLocal {
 	public List<Customer> findByAddress(String cAddress);
 
 	public List<Customer> findByCountry(String cCountry);
+	
+	public List<Customer> findByPostalAddress(String cPostalAddress);
+	
+	public	List<Customer> findBycName(String cName);
 
 	// public List<Order> findAllOrders();
 
@@ -80,5 +84,9 @@ public interface FacadeLocal {
 	public Recipe updateRecipe(Recipe recipe);
 
 	public void deleteRecipe(String iNumber, String pNumber);
+
+
+
+	
 
 }

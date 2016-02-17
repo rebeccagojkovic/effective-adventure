@@ -86,11 +86,23 @@ public class Facade implements FacadeLocal {
 	public List<Customer> findByCountry(String cCountry) {
 		return customerEAO.findByCountry(cCountry);
 	}
+	
+	
+	@Override
+	public List<Customer> findByPostalAddress(String cPostalAddress) {
+		return customerEAO.findByPostalAddress(cPostalAddress);
+	}
 
+	@Override
+	public List<Customer> findBycName(String cName) {
+		return customerEAO.findBycName(cName);
+	}
+	
 	@Override
 	public Ingredient findByiNumber(String iNumber) {
 		return ingredientEAO.findByiNumber(iNumber);
 	}
+
 
 	@Override
 	public Ingredient createIngredient(Ingredient ingredient) {
