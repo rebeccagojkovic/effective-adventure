@@ -4,7 +4,9 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import  java.util.List;
+import java.util.List;
+
+import entity.ejb.Customer;
 import entity.ejb.Product;
 
 /**
@@ -12,7 +14,6 @@ import entity.ejb.Product;
  */
 @Stateless
 public class ProductEAOImpl implements ProductEAOImplLocal {
-	
 
 	@PersistenceContext(unitName = "LabEJBSQL")
 	private EntityManager em;
@@ -45,17 +46,24 @@ public class ProductEAOImpl implements ProductEAOImplLocal {
 		}
 	}
 
-//	public List <Product> findAllProducts(){
-//		TypedQuery<Product> query =
-//				em.createNamedQuery("Product.findAllProducts", Product.class);
-//		List<Product> results = query.getResultList();
-//		return results;
-//	}
-//	public List <Product> InfoTimeStamp(String pName){
-//		Typed<Product> query =
-	//em.createNamedQuery("Product.InfoTimeStamp", Product.class);
-	//query.setParameter("pName", pName);
-//	List<Product> results = query.getResultList();
-//	return results;
-	//}
+	// public List <Product> findAllProducts(){
+	// TypedQuery<Product> query =
+	// em.createNamedQuery("Product.findAllProducts", Product.class);
+	// List<Product> results = query.getResultList();
+	// return results;
+	// }
+	// public List <Product> InfoTimeStamp(String pName){
+	// Typed<Product> query = em.createNamedQuery("Product.InfoTimeStamp",
+	// Product.class);
+	// query.setParameter("pName", pName);
+	// List<Product> results = query.getResultList();
+	// return results;
+	// }
+
+	public List<Product> findBypName(String pName) {
+		TypedQuery<Product> query = em.createNamedQuery("Product.findBypName", Product.class);
+		query.setParameter("pName", pName);
+		List<Product> results = query.getResultList();
+		return results;
+	}
 }

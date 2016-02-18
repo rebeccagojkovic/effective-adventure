@@ -17,6 +17,7 @@ import javax.persistence.Table;
 //@NamedQueries({
 //@NamedQuery(name= "Product.findAllProducts", query= "SELECT p FROM Product p"),
 //@NamedQuery(name= "Product.InfoTimeStamp", query= "SELECT p.pTime FROM Product p WHERE p.pName LIKE :pName"),
+//@NamedQuery(name= "Product.findBypName", query= "SELECT p FROM Product p WHERE p.pName LIKE :pName")
 //})
 
 
@@ -25,6 +26,7 @@ public class Product implements Serializable {
 	private String pNumber;
 	private String pName;
 	private Timestamp pTime;
+	private double price;
 	private Set<Recipe> recipe;
 	private Set<Orderspecification> orderspecification;
 
@@ -54,6 +56,14 @@ public class Product implements Serializable {
 
 	public void setpTime(Timestamp pTime) {
 		this.pTime = pTime;
+	}
+	@Column(name="price")
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
 
 	@OneToMany(mappedBy = "product", fetch=FetchType.EAGER)

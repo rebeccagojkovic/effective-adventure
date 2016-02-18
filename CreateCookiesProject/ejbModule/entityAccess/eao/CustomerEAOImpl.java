@@ -80,11 +80,5 @@ public class CustomerEAOImpl implements CustomerEAOImplLocal {
 		return results;
 	}
 
-//	public List<Customer> findActive(Boolean isDelivered) {
-//		TypedQuery<Customer> query = em.createNamedQuery(Customer.findActive, Customer.class);
-//		// query.setParameter("false", false)
-//		List<Customer> results = query.getResultList();
-//		return results;
-//	}
 
 }

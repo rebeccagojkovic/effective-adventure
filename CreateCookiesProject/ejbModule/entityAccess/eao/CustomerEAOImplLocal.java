@@ -26,6 +26,5 @@ public interface CustomerEAOImplLocal {
 	
 	public List<Customer> findBycName(String cName);
 
-	// public List<Customer> findActive(Boolean isDelivered);
 
 }
