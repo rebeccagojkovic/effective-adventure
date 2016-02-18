@@ -1,5 +1,6 @@
 package entityAccess.eao;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.ejb.Local;
@@ -15,7 +16,10 @@ public interface ProductEAOImplLocal {
 	public Product updateProduct(Product product);
 
 	public void deleteProduct(String pNumber);
+
+	public List<Product> findAllProducts();
+
+	public List<Product>InfoTimeStamp (Timestamp pTime);
 	
-	public List<Product>findAllProducts(); 
-	//public List<Product>InfoTimeStamp (String pName);
+	public List<Product> findBypName(String pName);
 }

@@ -1,5 +1,6 @@
 package facade;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.ejb.Local;
@@ -13,10 +14,8 @@ import entity.ejb.Recipe;
 
 @Local
 public interface FacadeLocal {
-	
-	
-	//* Customer *//
-	
+
+	// * Customer *//
 
 	public Customer createCustomer(Customer customer);
 
@@ -36,10 +35,8 @@ public interface FacadeLocal {
 
 	public List<Customer> findBycName(String cName);
 
-	
-	//* Ingredient *//
-	
-	
+	// * Ingredient *//
+
 	public Ingredient findByiNumber(String iNumber);
 
 	public List<Ingredient> findByName(String iName);
@@ -51,10 +48,8 @@ public interface FacadeLocal {
 	public Ingredient updateIngredient(Ingredient ingredient);
 
 	public void deleteIngredient(String iNumber);
-	
-	
-	//* Order *//
-	
+
+	// * Order *//
 
 	public Order findByoNumber(String oNumber);
 
@@ -64,16 +59,14 @@ public interface FacadeLocal {
 
 	public void deleteOrder(String oNumber);
 
-    //	public List<Order> findAllOrders();
+	// public List<Order> findAllOrders();
 
 	// public List<Order> isDelivered(boolean isDelivered);
 
 	// public List<Order> findCertainOrder(String customer);
 
-	
-	//* Product *//
-	
-	
+	// * Product *//
+
 	public Product findBypNumber(String pNumber);
 
 	public Product createProduct(Product product);
@@ -82,16 +75,14 @@ public interface FacadeLocal {
 
 	public void deleteProduct(String pNumber);
 
-	 public List<Product>findAllProducts();
+	public List<Product> findAllProducts();
 
-	// public List<Product>InfoTimeStamp(String pName);
+	public List<Product>InfoTimeStamp(Timestamp pTime);
 
-	// public List<Product>findBypName(String pName);
+	public List<Product> findBypName(String pName);
 
-	
-	//* Order Specification *//
-	
-	
+	// * Order Specification *//
+
 	public Orderspecification findBypNumberONumber(String pNumber, String ONumber);
 
 	public Orderspecification createOrderspecification(Orderspecification orderspecification);
@@ -99,11 +90,9 @@ public interface FacadeLocal {
 	public Orderspecification updateOrderspecification(Orderspecification orderspecification);
 
 	public void deleteOrderspecification(String pNumber, String oNumber);
-	
-	
-	//* Recipe *// 
 
-	
+	// * Recipe *//
+
 	public Recipe findByiNumberPNumber(String iNumber, String pNumber);
 
 	public Recipe createRecipe(Recipe recipe);
@@ -112,8 +101,10 @@ public interface FacadeLocal {
 
 	public void deleteRecipe(String iNumber, String pNumber);
 
-	// public List<Recipe>findAllRecipes();
 	
+
+	// public List<Recipe>findAllRecipes();
+
 	// public List<Recipe>countRecipes();
 
 }

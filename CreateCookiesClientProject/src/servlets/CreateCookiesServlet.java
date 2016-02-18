@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -97,18 +98,39 @@ public class CreateCookiesServlet extends HttpServlet {
 			out.println("<h4>Hittade: " + pr1.getClass().getSimpleName());
 			out.println(" Id: " + pr1.getpNumber());
 			out.println(" - " + pr1.getpName());
-			out.println(" - " + pr1.getpTime() + "</h4>");
+			out.println(" - " + pr1.getpTime());
+			out.println(" - " + pr1.getPrice()+ "</h4>");
 
 		}
 		
-		List<Product> productname = facade.findby;
-		for (Product pr1 : productsearch) {
+		List<Product> productname = facade.findBypName("kokostoppar");
+		for (Product pr1 : productname) {
 			out.println("<h4>Hittade: " + pr1.getClass().getSimpleName());
 			out.println(" Id: " + pr1.getpNumber());
 			out.println(" - " + pr1.getpName());
-			out.println(" - " + pr1.getpTime() + "</h4>");
+			out.println(" - " + pr1.getpTime());
+			out.println(" - " + pr1.getPrice()+ "</h4>");
 
 		}
+		
+		List<Product> producttime = facade.InfoTimeStamp(Timestamp.valueOf("1900-01-01 11:20:24.000"));
+		for (Product pr2 : producttime){
+			out.println("<h4>Hittade: " + pr2.getClass().getSimpleName());
+			out.println(" Id: " + pr2.getpNumber()+ "</h4>");
+			
+		}
+		
+		//*  Order *//
+		
+/*		List<Product> ordersearch = facade.findAllOrders();
+		for (Product or1 : ordersearch) {
+			out.println("<h4>Hittade: " + or1.getClass().getSimpleName());
+			out.println(" Id: " + or1.getoNumber());
+			out.println(" - " + or1.getoName()+ "</h4>");
+
+		}*/
+		
+		
 
 		// Product p = new Product();
 		// p.setpNumber("1");

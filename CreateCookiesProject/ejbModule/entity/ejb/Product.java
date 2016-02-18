@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({
 @NamedQuery(name= "Product.findAllProducts", query= "SELECT p FROM Product p"),
-//@NamedQuery(name= "Product.InfoTimeStamp", query= "SELECT p.pTime FROM Product p WHERE p.pName LIKE :pName"),
+@NamedQuery(name= "Product.InfoTimeStamp", query= "SELECT p FROM Product p WHERE p.pTime LIKE :pTime"),
 @NamedQuery(name= "Product.findBypName", query= "SELECT p FROM Product p WHERE p.pName LIKE :pName")
 })
 
