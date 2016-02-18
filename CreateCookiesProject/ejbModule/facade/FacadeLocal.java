@@ -13,6 +13,10 @@ import entity.ejb.Recipe;
 
 @Local
 public interface FacadeLocal {
+	
+	
+	//* Customer *//
+	
 
 	public Customer createCustomer(Customer customer);
 
@@ -32,6 +36,10 @@ public interface FacadeLocal {
 
 	public List<Customer> findBycName(String cName);
 
+	
+	//* Ingredient *//
+	
+	
 	public Ingredient findByiNumber(String iNumber);
 
 	public List<Ingredient> findByName(String iName);
@@ -43,6 +51,10 @@ public interface FacadeLocal {
 	public Ingredient updateIngredient(Ingredient ingredient);
 
 	public void deleteIngredient(String iNumber);
+	
+	
+	//* Order *//
+	
 
 	public Order findByoNumber(String oNumber);
 
@@ -52,12 +64,16 @@ public interface FacadeLocal {
 
 	public void deleteOrder(String oNumber);
 
-	public List<Order> findAllOrders();
+    //	public List<Order> findAllOrders();
 
 	// public List<Order> isDelivered(boolean isDelivered);
 
 	// public List<Order> findCertainOrder(String customer);
 
+	
+	//* Product *//
+	
+	
 	public Product findBypNumber(String pNumber);
 
 	public Product createProduct(Product product);
@@ -66,12 +82,16 @@ public interface FacadeLocal {
 
 	public void deleteProduct(String pNumber);
 
-	// public List<Product>findAllProducts();
+	 public List<Product>findAllProducts();
 
 	// public List<Product>InfoTimeStamp(String pName);
 
-	// public List<Product>finsBypName(String pName);
+	// public List<Product>findBypName(String pName);
 
+	
+	//* Order Specification *//
+	
+	
 	public Orderspecification findBypNumberONumber(String pNumber, String ONumber);
 
 	public Orderspecification createOrderspecification(Orderspecification orderspecification);
@@ -79,7 +99,11 @@ public interface FacadeLocal {
 	public Orderspecification updateOrderspecification(Orderspecification orderspecification);
 
 	public void deleteOrderspecification(String pNumber, String oNumber);
+	
+	
+	//* Recipe *// 
 
+	
 	public Recipe findByiNumberPNumber(String iNumber, String pNumber);
 
 	public Recipe createRecipe(Recipe recipe);

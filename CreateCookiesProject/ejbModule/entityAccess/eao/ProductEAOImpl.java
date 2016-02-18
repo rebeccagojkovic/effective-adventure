@@ -46,12 +46,13 @@ public class ProductEAOImpl implements ProductEAOImplLocal {
 		}
 	}
 
-	// public List <Product> findAllProducts(){
-	// TypedQuery<Product> query =
-	// em.createNamedQuery("Product.findAllProducts", Product.class);
-	// List<Product> results = query.getResultList();
-	// return results;
-	// }
+	 public List <Product> findAllProducts(){
+	 TypedQuery<Product> query =
+	 em.createNamedQuery("Product.findAllProducts", Product.class);
+	 List<Product> results = query.getResultList();
+	 return results;
+	 }
+	 
 	// public List <Product> InfoTimeStamp(String pName){
 	// Typed<Product> query = em.createNamedQuery("Product.InfoTimeStamp",
 	// Product.class);

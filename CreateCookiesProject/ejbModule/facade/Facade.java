@@ -44,6 +44,8 @@ public class Facade implements FacadeLocal {
 		// TODO Auto-generated constructor stub
 	}
 
+	//* Customer *//
+	
 	@Override
 	public Customer createCustomer(Customer customer) {
 		return customerEAO.createCustomer(customer);
@@ -91,6 +93,8 @@ public class Facade implements FacadeLocal {
 		return customerEAO.findBycName(cName);
 	}
 
+	//* Ingredient *//
+	
 	@Override
 	public Ingredient findByiNumber(String iNumber) {
 		return ingredientEAO.findByiNumber(iNumber);
@@ -120,6 +124,8 @@ public class Facade implements FacadeLocal {
 	public List<Ingredient> findAllIngredients() {
 		return ingredientEAO.findAllIngredients();
 	}
+	
+	//* Order *//
 
 	@Override
 	public Order findByoNumber(String oNumber) {
@@ -141,10 +147,10 @@ public class Facade implements FacadeLocal {
 		orderEAO.deleteOrder(oNumber);
 	}
 
-	@Override
-	public List<Order> findAllOrders() {
-		return orderEAO.findAllOrders();
-	}
+//	@Override
+//	public List<Order> findAllOrders() {
+//		return orderEAO.findAllOrders();
+//	}
 
 	//@Override
 	//public List<Order> isDelivered(boolean isDelivered) {
@@ -161,9 +167,11 @@ public class Facade implements FacadeLocal {
 	// return orderEAO.isDelivered();
 	// }
 
-	// public List<Product>findAllProducts(){
-	// return productEAO.findAllProducts();
-	// }
+	//* Product *//
+	
+	 public List<Product>findAllProducts(){
+	 return productEAO.findAllProducts();
+	 }
 
 	// public List<Product>InfoTimeStamp(String pName){
 	// return productEAO.InfoTimeStamp(pName);
@@ -200,6 +208,8 @@ public class Facade implements FacadeLocal {
 	// public List<Product>findBypName(String pName){
 	// return productEAO.findBypName(pName);
 	// }
+	
+	//* Order Specification *//
 
 	@Override
 	public Orderspecification findBypNumberONumber(String pNumber, String ONumber) {
@@ -221,6 +231,8 @@ public class Facade implements FacadeLocal {
 		orderspecificationEAO.deleteOrderspecification(pNumber, oNumber);
 	}
 
+	//* Recipe *//
+	
 	@Override
 	public Recipe findByiNumberPNumber(String iNumber, String pNumber) {
 		return recipeEAO.findByiNumberPNumber(iNumber, pNumber);

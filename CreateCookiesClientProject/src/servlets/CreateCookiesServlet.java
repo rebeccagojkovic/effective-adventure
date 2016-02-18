@@ -60,6 +60,8 @@ public class CreateCookiesServlet extends HttpServlet {
 		i1.setiQuantityInStock(10000);
 		// facade.createIngredient(i);
 		// facade.createIngredient(i1);
+		
+		//* Ingredient *//
 
 		List<Ingredient> allingredients = facade.findAllIngredients();
 		for (Ingredient in1 : allingredients) {
@@ -78,13 +80,33 @@ public class CreateCookiesServlet extends HttpServlet {
 			out.println("");
 		}
 		out.println("</body></html>");
-
+		
 		List<Ingredient> ingredientsearch = facade.findByName("choklad");
 		for (Ingredient i111 : ingredientsearch) {
 			out.println("<h4>Hittade: " + i111.getClass().getSimpleName());
 			out.println(" Id: " + i111.getiNumber());
 			out.println(" - " + i111.getiName());
 			out.println(" - " + i111.getiQuantityInStock() + "</h4>");
+
+		}
+		
+		//* Product *//
+		
+		List<Product> productsearch = facade.findAllProducts();
+		for (Product pr1 : productsearch) {
+			out.println("<h4>Hittade: " + pr1.getClass().getSimpleName());
+			out.println(" Id: " + pr1.getpNumber());
+			out.println(" - " + pr1.getpName());
+			out.println(" - " + pr1.getpTime() + "</h4>");
+
+		}
+		
+		List<Product> productname = facade.findby;
+		for (Product pr1 : productsearch) {
+			out.println("<h4>Hittade: " + pr1.getClass().getSimpleName());
+			out.println(" Id: " + pr1.getpNumber());
+			out.println(" - " + pr1.getpName());
+			out.println(" - " + pr1.getpTime() + "</h4>");
 
 		}
 

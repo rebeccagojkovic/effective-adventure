@@ -21,6 +21,6 @@ public interface OrderEAOImplLocal {
 
 	//public List<Order> isDelivered();
 
-	public List<Order> findAllOrders();
+	//public List<Order> findAllOrders();
 
 }
