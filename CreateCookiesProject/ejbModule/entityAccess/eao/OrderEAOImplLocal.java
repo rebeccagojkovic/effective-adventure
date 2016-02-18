@@ -18,10 +18,8 @@ public interface OrderEAOImplLocal {
 	public void deleteOrder(String oNumber);
 
 	// public List<Order> findCertainOrder(String customer);
-<<<<<<< HEAD
-=======
+
 	//public List<Order> isDelivered();
->>>>>>> branch 'master' of https://github.com/spikk/effective-adventure
 
 	public List<Order> findAllOrders();
 
