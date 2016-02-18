@@ -32,12 +32,6 @@ public interface FacadeLocal {
 
 	public List<Customer> findBycName(String cName);
 
-	// public List<Recipe>findAllRecipes();
-	// public List<Recipe>countRecipes();
-
-	// public List<Recipe>findAllRecipes();
-	// public List<Recipe>countRecipes();
-
 	public Ingredient findByiNumber(String iNumber);
 
 	public List<Ingredient> findByName(String iName);
@@ -59,8 +53,8 @@ public interface FacadeLocal {
 	public void deleteOrder(String oNumber);
 
 	public List<Order> findAllOrders();
-	
-	//public List<Order> isDelivered(boolean isDelivered);
+
+	// public List<Order> isDelivered(boolean isDelivered);
 
 	// public List<Order> findCertainOrder(String customer);
 
@@ -73,9 +67,9 @@ public interface FacadeLocal {
 	public void deleteProduct(String pNumber);
 
 	// public List<Product>findAllProducts();
-	
+
 	// public List<Product>InfoTimeStamp(String pName);
-	
+
 	// public List<Product>finsBypName(String pName);
 
 	public Orderspecification findBypNumberONumber(String pNumber, String ONumber);
@@ -94,6 +88,8 @@ public interface FacadeLocal {
 
 	public void deleteRecipe(String iNumber, String pNumber);
 
+	// public List<Recipe>findAllRecipes();
 	
+	// public List<Recipe>countRecipes();
 
 }
