@@ -19,9 +19,14 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({ @NamedQuery(name = "Order.findAllOrders", query = "SELECT o FROM Orde o")
 //		@NamedQuery(name = "Order.findCertainOrder", query = "SELECT o FROM Orde o WHERE o.Customer LIKE: customer"),
+<<<<<<< HEAD
 //@NamedQuery(name"Order.isDelivered", query = SELECT o FROM Orde)
+=======
+//@NamedQuery(name"Order.isDelivered", query = "SELECT o FROM Orde o WHERE o.IsDelivered = TRUE"),
+>>>>>>> branch 'master' of https://github.com/spikk/effective-adventure
 	})
 
+//
 @Table(name = "Orde")
 public class Order implements Serializable {
 	private String oNumber;

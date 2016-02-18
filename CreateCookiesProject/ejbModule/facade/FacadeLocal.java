@@ -31,6 +31,12 @@ public interface FacadeLocal {
 	public List<Customer> findByPostalAddress(String cPostalAddress);
 
 	public List<Customer> findBycName(String cName);
+	public List<Customer> findBycName(String cName);
+
+	public List<Order> findAllOrders();
+
+	// public List<Recipe>findAllRecipes();
+	// public List<Recipe>countRecipes();
 
 	// public List<Recipe>findAllRecipes();
 	// public List<Recipe>countRecipes();

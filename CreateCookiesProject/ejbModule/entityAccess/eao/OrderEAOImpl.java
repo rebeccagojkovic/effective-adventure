@@ -57,5 +57,9 @@ public class OrderEAOImpl implements OrderEAOImplLocal {
 //		List<Order> results = query.getResultList();
 //		return results;
 //	}
-
+	
+ //public List<Order>Order.isDelivered(){
+	//TypedQuery<Order> query = em.createNamedQuery("Order.isDelivered", Order.class);
+	//List<Order> results = query.getResultList();
+	//return results;
 }

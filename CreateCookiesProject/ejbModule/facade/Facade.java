@@ -156,6 +156,19 @@ public class Facade implements FacadeLocal {
 	// return orderEAO.findCertainOrder(customer);
 	// }
 
+	//@Override
+	// public List<Order> isDelivered() {
+	// return orderEAO.isDelivered();
+	// }
+
+	// public List<Product>findAllProducts(){
+	// return productEAO.findAllProducts();
+	// }
+
+	// public List<Product>InfoTimeStamp(String pName){
+	// return productEAO.InfoTimeStamp(pName);
+	// }
+
 	@Override
 	public Product findBypNumber(String pNumber) {
 		return productEAO.findBypNumber(pNumber);
