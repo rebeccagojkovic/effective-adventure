@@ -59,11 +59,11 @@ public interface FacadeLocal {
 
 	public void deleteOrder(String oNumber);
 
-	// public List<Order> findAllOrders();
+	public List<Order> findAllOrders();
 
-	// public List<Order> isDelivered(boolean isDelivered);
+	public List<Order> isDelivered(boolean isDelivered);
 
-	// public List<Order> findCertainOrder(String customer);
+	public List<Order> findCertainOrder(String customer);
 
 	// * Product *//
 
@@ -77,7 +77,7 @@ public interface FacadeLocal {
 
 	public List<Product> findAllProducts();
 
-	public List<Product>InfoTimeStamp(Timestamp pTime);
+	public List<Product> InfoTimeStamp(Timestamp pTime);
 
 	public List<Product> findBypName(String pName);
 
@@ -100,8 +100,6 @@ public interface FacadeLocal {
 	public Recipe updateRecipe(Recipe recipe);
 
 	public void deleteRecipe(String iNumber, String pNumber);
-
-	
 
 	// public List<Recipe>findAllRecipes();
 

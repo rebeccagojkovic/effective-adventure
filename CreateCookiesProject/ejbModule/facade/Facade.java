@@ -148,10 +148,10 @@ public class Facade implements FacadeLocal {
 		orderEAO.deleteOrder(oNumber);
 	}
 
-	// @Override
-	// public List<Order> findAllOrders() {
-	// return orderEAO.findAllOrders();
-	// }
+	@Override
+	public List<Order> findAllOrders() {
+		return orderEAO.findAllOrders();
+	}
 
 	// @Override
 	// public List<Order> isDelivered(boolean isDelivered) {
@@ -166,15 +166,15 @@ public class Facade implements FacadeLocal {
 	// else return null;
 	// }}}
 
-	// @Override
-	// public List<Order> findCertainOrder(String customer) {
-	// return orderEAO.findCertainOrder(customer);
-	// }
+	@Override
+	public List<Order> findCertainOrder(String customer) {
+		return orderEAO.findCertainOrder(customer);
+	}
 
-	// @Override
-	// public List<Order> isDelivered() {
-	// return orderEAO.isDelivered();
-	// }
+	@Override
+	public List<Order> isDelivered(boolean isDelivered) {
+		return orderEAO.isDelivered(isDelivered);
+	}
 
 	// * Product *//
 
@@ -183,9 +183,9 @@ public class Facade implements FacadeLocal {
 		return productEAO.findAllProducts();
 	}
 
-	 public List<Product>InfoTimeStamp(Timestamp pTime){
-	 return productEAO.InfoTimeStamp(pTime);
-	 }
+	public List<Product> InfoTimeStamp(Timestamp pTime) {
+		return productEAO.InfoTimeStamp(pTime);
+	}
 
 	@Override
 	public Product findBypNumber(String pNumber) {

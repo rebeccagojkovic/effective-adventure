@@ -17,10 +17,10 @@ public interface OrderEAOImplLocal {
 
 	public void deleteOrder(String oNumber);
 
-	// public List<Order> findCertainOrder(String customer);
+	public List<Order> findCertainOrder(String customer);
 
-	//public List<Order> isDelivered();
+	public List<Order> isDelivered(boolean isDeliverd);
 
-	//public List<Order> findAllOrders();
+	public List<Order> findAllOrders();
 
 }

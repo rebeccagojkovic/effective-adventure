@@ -17,10 +17,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-//@NamedQueries({ @NamedQuery(name = "Order.findAllOrders", query = "SELECT o FROM Orde o"),
-//		@NamedQuery(name = "Order.findCertainOrder", query = "SELECT o FROM Orde o WHERE o.Customer LIKE: customer"),
-//@NamedQuery(name"Order.isDelivered", query = "SELECT o FROM Orde o WHERE o.IsDelivered = TRUE"),
-//	})
+@NamedQueries({ @NamedQuery(name = "Order.findAllOrders", query = "SELECT o FROM Order o"),
+		@NamedQuery(name = "Order.findCertainOrder", query = "SELECT o FROM Order o WHERE o.oNumber LIKE :customer"),
+		@NamedQuery(name = "Order.isDelivered", query = "SELECT o FROM Order o WHERE o.IsDelivered LIKE :isDelivered"), })
 @Table(name = "Orde")
 public class Order implements Serializable {
 	private String oNumber;
@@ -58,7 +57,7 @@ public class Order implements Serializable {
 	}
 
 	@ManyToOne
-	@JoinColumn(name = "cNumber", referencedColumnName = "cNumber")
+	@JoinColumn(name = "cNumber_FK", referencedColumnName = "cNumber")
 	public Customer getCustomer() {
 		return customer;
 	}
