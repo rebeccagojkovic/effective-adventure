@@ -14,12 +14,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@NamedQueries({
-@NamedQuery(name= "Product.findAllProducts", query= "SELECT p FROM Product p"),
-@NamedQuery(name= "Product.InfoTimeStamp", query= "SELECT p FROM Product p WHERE p.pTime LIKE :pTime"),
-@NamedQuery(name= "Product.findBypName", query= "SELECT p FROM Product p WHERE p.pName LIKE :pName")
-})
-
+@NamedQueries({ @NamedQuery(name = "Product.findAllProducts", query = "SELECT p FROM Product p"),
+		@NamedQuery(name = "Product.InfoTimeStamp", query = "SELECT p FROM Product p WHERE p.pTime LIKE :pTime"),
+		@NamedQuery(name = "Product.findBypName", query = "SELECT p FROM Product p WHERE p.pName LIKE :pName") })
 
 @Table(name = "Product")
 public class Product implements Serializable {
@@ -61,7 +58,8 @@ public class Product implements Serializable {
 	public void setpTime(Timestamp pTime) {
 		this.pTime = pTime;
 	}
-	@Column(name="price")
+
+	@Column(name = "price")
 	public double getPrice() {
 		return price;
 	}
@@ -70,7 +68,7 @@ public class Product implements Serializable {
 		this.price = price;
 	}
 
-	@OneToMany(mappedBy = "product", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
 	public Set<Recipe> getRecipe() {
 		return recipe;
 	}

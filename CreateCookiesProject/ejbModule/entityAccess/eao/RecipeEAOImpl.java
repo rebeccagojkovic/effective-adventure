@@ -52,15 +52,18 @@ public class RecipeEAOImpl implements RecipeEAOImplLocal {
 		}
 	}
 
+	@Override
 	public List<Recipe> findAllRecipes() {
 		TypedQuery<Recipe> query = em.createNamedQuery("Recipe.findAllRecipes", Recipe.class);
 		List<Recipe> results = query.getResultList();
 		return results;
 	}
 
-	// public List<Recipe>countRecipes(){
-	// TypedQuery<Recipe> query = em.createNamedQuery("Recipe.countRecipes",
-	// Recipe.class);
-	// Check how we'll return a number.
-	// return results;
+	@Override
+	public List<Recipe> countRecipes() {
+		TypedQuery<Recipe> query = em.createNamedQuery("Recipe.countRecipes", Recipe.class);
+		List<Recipe> results = query.getResultList(); // Check how we'll return
+														// a number.
+		return results;
+	}
 }

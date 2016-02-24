@@ -6,7 +6,6 @@ import javax.ejb.Local;
 
 import entity.ejb.Recipe;
 
-
 @Local
 public interface RecipeEAOImplLocal {
 	public Recipe findByiNumberPNumber(String iNumber, String pNumber);
@@ -16,8 +15,8 @@ public interface RecipeEAOImplLocal {
 	public Recipe updateRecipe(Recipe recipe);
 
 	public void deleteRecipe(String iNumber, String pNumber);
-	
-	public List<Recipe>findAllRecipes();
-	
-	//public List<Recipe>countRecipes
+
+	public List<Recipe> findAllRecipes();
+
+	public List<Recipe> countRecipes();
 }

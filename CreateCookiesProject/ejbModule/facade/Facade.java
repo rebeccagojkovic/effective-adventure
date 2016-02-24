@@ -256,7 +256,8 @@ public class Facade implements FacadeLocal {
 		return recipeEAO.findAllRecipes();
 	}
 
-	// public List<Recipe>countRecipes(){
-	// return recipeEAO.countRecipes();
-	// }
+	@Override
+	public List<Recipe> countRecipes() {
+		return recipeEAO.countRecipes();
+	}
 }

@@ -13,14 +13,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@NamedQueries({
-	@NamedQuery(name = "Ingredient.findAllIngredients", query = "SELECT i FROM Ingredient i"),
-	@NamedQuery(name = "Ingredient.findByName", query = "SELECT i FROM Ingredient i WHERE i.iName LIKE :iName"),
-	
-	
-	}) 
+@NamedQueries({ @NamedQuery(name = "Ingredient.findAllIngredients", query = "SELECT i FROM Ingredient i"),
+		@NamedQuery(name = "Ingredient.findByName", query = "SELECT i FROM Ingredient i WHERE i.iName LIKE :iName"),
+
+})
 @Table(name = "Ingredient")
-public class Ingredient implements Serializable{
+public class Ingredient implements Serializable {
 	/**
 	 * 
 	 */
@@ -57,8 +55,8 @@ public class Ingredient implements Serializable{
 	public void setiQuantityInStock(double iQuantityInStock) {
 		this.iQuantityInStock = iQuantityInStock;
 	}
-	
-	@OneToMany(mappedBy="ingredient", fetch=FetchType.EAGER)
+
+	@OneToMany(mappedBy = "ingredient", fetch = FetchType.EAGER)
 	public Set<Recipe> getRecipe() {
 		return recipe;
 	}
@@ -66,9 +64,5 @@ public class Ingredient implements Serializable{
 	public void setRecipe(Set<Recipe> recipe) {
 		this.recipe = recipe;
 	}
-
-	
-
-	
 
 }

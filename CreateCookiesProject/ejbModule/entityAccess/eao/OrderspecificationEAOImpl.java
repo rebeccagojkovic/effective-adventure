@@ -7,13 +7,11 @@ import javax.persistence.PersistenceContext;
 import entity.ejb.Orderspecification;
 import entity.ejb.OrderspecificationId;
 
-
 /**
  * Session Bean implementation class OrderspecificationEAOImpl
  */
 @Stateless
-public class OrderspecificationEAOImpl implements
-		OrderspecificationEAOImplLocal {
+public class OrderspecificationEAOImpl implements OrderspecificationEAOImplLocal {
 
 	@PersistenceContext(unitName = "LabEJBSQL")
 	private EntityManager em;
@@ -26,21 +24,19 @@ public class OrderspecificationEAOImpl implements
 
 	@Override
 	public Orderspecification findBypNumberONumber(String pNumber, String oNumber) {
-		OrderspecificationId pNumberONumber= new OrderspecificationId(pNumber,oNumber);
+		OrderspecificationId pNumberONumber = new OrderspecificationId(pNumber, oNumber);
 		return em.find(Orderspecification.class, pNumberONumber);
 
 	}
 
 	@Override
-	public Orderspecification createOrderspecification(
-			Orderspecification orderspecification) {
+	public Orderspecification createOrderspecification(Orderspecification orderspecification) {
 		em.persist(orderspecification);
 		return orderspecification;
 	}
 
 	@Override
-	public Orderspecification updateOrderspecification(
-			Orderspecification orderspecification) {
+	public Orderspecification updateOrderspecification(Orderspecification orderspecification) {
 		em.merge(orderspecification);
 		return orderspecification;
 	}

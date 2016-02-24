@@ -12,8 +12,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Orderspecification")
-public class Orderspecification  implements Serializable{
-	
+public class Orderspecification implements Serializable {
+
 	/**
 	 * 
 	 */
@@ -31,8 +31,8 @@ public class Orderspecification  implements Serializable{
 	public void setpNumberONumber(OrderspecificationId pNumberONumber) {
 		this.pNumberONumber = pNumberONumber;
 	}
-	
-	@Column(name="palletQuantity")
+
+	@Column(name = "palletQuantity")
 	public int getPalletQuantity() {
 		return palletQuantity;
 	}
@@ -43,8 +43,9 @@ public class Orderspecification  implements Serializable{
 
 	@ManyToOne
 	@JoinColumn(name = "oNumber_FK", referencedColumnName = "oNumber")
-//	@JoinColumns({ @JoinColumn(name = "pNumber_FK", referencedColumnName = "oNumber"),
-//			@JoinColumn(name = "oNumber_FK", referencedColumnName = "oNumber") })
+	// @JoinColumns({ @JoinColumn(name = "pNumber_FK", referencedColumnName =
+	// "oNumber"),
+	// @JoinColumn(name = "oNumber_FK", referencedColumnName = "oNumber") })
 	public Order getOrder() {
 		return order;
 	}
@@ -52,17 +53,18 @@ public class Orderspecification  implements Serializable{
 	public void setOrder(Order order) {
 		this.order = order;
 	}
+
 	@ManyToOne
 	@JoinColumn(name = "pNumber_FK", referencedColumnName = "pNumber")
-//	@JoinColumns({ @JoinColumn(name = "iNumber_FK", referencedColumnName = "pNumber"),
-//			@JoinColumn(name = "pNumber_FK", referencedColumnName = "pNumber") })
+	// @JoinColumns({ @JoinColumn(name = "iNumber_FK", referencedColumnName =
+	// "pNumber"),
+	// @JoinColumn(name = "pNumber_FK", referencedColumnName = "pNumber") })
 	public Product getProduct() {
 		return product;
 	}
-	
+
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-	
 
 }

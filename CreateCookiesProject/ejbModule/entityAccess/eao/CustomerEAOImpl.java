@@ -72,6 +72,7 @@ public class CustomerEAOImpl implements CustomerEAOImplLocal {
 		List<Customer> results = query.getResultList();
 		return results;
 	}
+
 	@Override
 	public List<Customer> findByPostalAddress(String cPostalAddress) {
 		TypedQuery<Customer> query = em.createNamedQuery("Customer.findByPostalAddress", Customer.class);
@@ -87,6 +88,5 @@ public class CustomerEAOImpl implements CustomerEAOImplLocal {
 		List<Customer> results = query.getResultList();
 		return results;
 	}
-
 
 }

@@ -19,7 +19,7 @@ public interface ProductEAOImplLocal {
 
 	public List<Product> findAllProducts();
 
-	public List<Product>InfoTimeStamp (Timestamp pTime);
-	
+	public List<Product> InfoTimeStamp(Timestamp pTime);
+
 	public List<Product> findBypName(String pName);
 }

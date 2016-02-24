@@ -21,10 +21,9 @@ public interface CustomerEAOImplLocal {
 	public List<Customer> findByAddress(String cAddress);
 
 	public List<Customer> findByCountry(String cCountry);
-	
-	public List<Customer> findByPostalAddress(String cPostalAddress);
-	
-	public List<Customer> findBycName(String cName);
 
+	public List<Customer> findByPostalAddress(String cPostalAddress);
+
+	public List<Customer> findBycName(String cName);
 
 }

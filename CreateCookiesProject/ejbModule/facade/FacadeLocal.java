@@ -103,6 +103,6 @@ public interface FacadeLocal {
 
 	public List<Recipe> findAllRecipes();
 
-	// public List<Recipe>countRecipes();
+	public List<Recipe> countRecipes();
 
 }
