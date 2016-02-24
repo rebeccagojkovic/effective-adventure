@@ -42,7 +42,6 @@ public class Facade implements FacadeLocal {
 	 * Default constructor.
 	 */
 	public Facade() {
-		// TODO Auto-generated constructor stub
 	}
 
 	// * Customer *//

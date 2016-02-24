@@ -16,6 +16,10 @@ import javax.persistence.Table;
 @Table(name = "Recipe")
 public class Recipe implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private RecipeId iNumberPNumber;
 	private double quantity;
 	private Ingredient ingredient;

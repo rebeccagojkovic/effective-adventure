@@ -24,6 +24,10 @@ import javax.persistence.Table;
 @Table(name = "Customer")
 
 public class Customer implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String cNumber;
 	private String cName;
 	private String cAddress;

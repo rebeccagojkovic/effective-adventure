@@ -21,7 +21,6 @@ public class IngredientEAOImpl implements IngredientEAOImplLocal {
 	 * Default constructor.
 	 */
 	public IngredientEAOImpl() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

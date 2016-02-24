@@ -21,6 +21,10 @@ import javax.persistence.Table;
 		@NamedQuery(name = "Order.isDelivered", query = "SELECT o FROM Order o WHERE o.isDelivered LIKE :isDelivered"), })
 @Table(name = "Orde")
 public class Order implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String oNumber;
 	private String isDelivered;
 	private Timestamp expectedDeliveryDate;

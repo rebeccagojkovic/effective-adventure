@@ -14,6 +14,10 @@ import javax.persistence.Table;
 @Table(name = "Orderspecification")
 public class Orderspecification  implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private OrderspecificationId pNumberONumber;
 	private int palletQuantity;
 	private Order order;

@@ -21,6 +21,10 @@ import javax.persistence.Table;
 	}) 
 @Table(name = "Ingredient")
 public class Ingredient implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String iNumber;
 	private String iName;
 	private double iQuantityInStock;

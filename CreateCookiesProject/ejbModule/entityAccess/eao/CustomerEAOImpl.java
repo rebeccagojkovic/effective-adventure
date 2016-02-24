@@ -22,7 +22,6 @@ public class CustomerEAOImpl implements CustomerEAOImplLocal {
 	 * Default constructor.
 	 */
 	public CustomerEAOImpl() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

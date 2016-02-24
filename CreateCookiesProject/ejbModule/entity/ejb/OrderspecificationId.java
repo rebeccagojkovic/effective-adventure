@@ -9,6 +9,10 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class OrderspecificationId implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String pNumber;
 	private String oNumber;
 	
