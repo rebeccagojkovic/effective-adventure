@@ -152,10 +152,10 @@ public class Facade implements FacadeLocal {
 		return orderEAO.findAllOrders();
 	}
 
-	// @Override
-	// public List<Order> isDelivered(boolean isDelivered) {
-	// return orderEAO.isDelivered(isDelivered);
-	// }
+	@Override
+	public List<Order> isDelivered(boolean isDelivered) {
+		return orderEAO.isDelivered(isDelivered);
+	}
 
 	// @Override
 	// public List <Order> isDelivered(boolean isDelivered) {
@@ -168,11 +168,6 @@ public class Facade implements FacadeLocal {
 	@Override
 	public List<Order> findCertainOrder(String customer) {
 		return orderEAO.findCertainOrder(customer);
-	}
-
-	@Override
-	public List<Order> isDelivered(String isDelivered) {
-		return orderEAO.isDelivered(isDelivered);
 	}
 
 	// * Product *//
@@ -255,9 +250,11 @@ public class Facade implements FacadeLocal {
 	public void deleteRecipe(String iNumber, String pNumber) {
 		recipeEAO.deleteRecipe(iNumber, pNumber);
 	}
-	// public List<Recipe>findAllRecipes(){
-	// return recipeEAO.findAllRecipes();
-	// }
+
+	@Override
+	public List<Recipe> findAllRecipes() {
+		return recipeEAO.findAllRecipes();
+	}
 
 	// public List<Recipe>countRecipes(){
 	// return recipeEAO.countRecipes();

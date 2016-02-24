@@ -65,7 +65,7 @@ public class OrderEAOImpl implements OrderEAOImplLocal {
 	}
 
 	@Override
-	public List<Order> isDelivered(String isDelivered) {
+	public List<Order> isDelivered(boolean isDelivered) {
 		TypedQuery<Order> query = em.createNamedQuery("Order.isDelivered", Order.class);
 		query.setParameter("isDelivered", isDelivered);
 		List<Order> results = query.getResultList();

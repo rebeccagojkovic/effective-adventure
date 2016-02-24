@@ -12,12 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import entity.ejb.Customer;
-import entity.ejb.Ingredient;
-import entity.ejb.Orderspecification;
-import entity.ejb.Product;
-import entity.ejb.Recipe;
-import entity.ejb.RecipeId;
+import entity.ejb.*;
 import facade.FacadeLocal;
 
 /**
@@ -49,8 +44,15 @@ public class CreateCookiesServlet extends HttpServlet {
 		out.println("<title>CreateCookies</title>");
 		out.println("<meta charset=\"ISO-8859-1\">");
 		out.println("</head><body>");
-		out.println("<h3>Customer</h3>" + "<br>");
-		out.println("** Create Ingredient **" + "<br>");
+		out.println("<h3>CreateCookies</h3>" + "<br>");
+
+		// * Customer *//
+
+		out.println("** Customer **" + "<br>");
+
+		// * Ingredient *//
+
+		out.println("** Ingredient **" + "<br>");
 		Ingredient i = new Ingredient();
 		Ingredient i1 = new Ingredient();
 		i.setiNumber("3");
@@ -61,8 +63,6 @@ public class CreateCookiesServlet extends HttpServlet {
 		i1.setiQuantityInStock(10000);
 		// facade.createIngredient(i);
 		// facade.createIngredient(i1);
-		
-		//* Ingredient *//
 
 		List<Ingredient> allingredients = facade.findAllIngredients();
 		for (Ingredient in1 : allingredients) {
@@ -80,8 +80,7 @@ public class CreateCookiesServlet extends HttpServlet {
 			out.println("<h4>Hittade: " + i11.getiName() + "</h4>");
 			out.println("");
 		}
-		out.println("</body></html>");
-		
+
 		List<Ingredient> ingredientsearch = facade.findByName("choklad");
 		for (Ingredient i111 : ingredientsearch) {
 			out.println("<h4>Hittade: " + i111.getClass().getSimpleName());
@@ -90,47 +89,32 @@ public class CreateCookiesServlet extends HttpServlet {
 			out.println(" - " + i111.getiQuantityInStock() + "</h4>");
 
 		}
-		
-		//* Product *//
-		
-		List<Product> productsearch = facade.findAllProducts();
-		for (Product pr1 : productsearch) {
-			out.println("<h4>Hittade: " + pr1.getClass().getSimpleName());
-			out.println(" Id: " + pr1.getpNumber());
-			out.println(" - " + pr1.getpName());
-			out.println(" - " + pr1.getpTime());
-			out.println(" - " + pr1.getPrice()+ "</h4>");
 
-		}
-		
-		List<Product> productname = facade.findBypName("kokostoppar");
-		for (Product pr1 : productname) {
-			out.println("<h4>Hittade: " + pr1.getClass().getSimpleName());
-			out.println(" Id: " + pr1.getpNumber());
-			out.println(" - " + pr1.getpName());
-			out.println(" - " + pr1.getpTime());
-			out.println(" - " + pr1.getPrice()+ "</h4>");
+		// * Order *//
 
-		}
-		
-		List<Product> producttime = facade.InfoTimeStamp(Timestamp.valueOf("1900-01-01 11:20:24.000"));
-		for (Product pr2 : producttime){
-			out.println("<h4>Hittade: " + pr2.getClass().getSimpleName());
-			out.println(" Id: " + pr2.getpNumber()+ "</h4>");
-			
-		}
-		
-		//*  Order *//
-		
-/*		List<Product> ordersearch = facade.findAllOrders();
-		for (Product or1 : ordersearch) {
+		out.println("** Order **" + "<br>");
+
+		List<Order> ordersearch = facade.findAllOrders();
+		for (Order or1 : ordersearch) {
 			out.println("<h4>Hittade: " + or1.getClass().getSimpleName());
 			out.println(" Id: " + or1.getoNumber());
-			out.println(" - " + or1.getoName()+ "</h4>");
+			out.println(" - " + or1.getoNumber() + "</h4>");
 
-		}*/
+		}
 		
-		
+		List<Order> orderisdelivered = facade.isDelivered(true);
+		for (Order or2 : orderisdelivered) {
+			out.println("<h4>Hittade: " + or2.getClass().getSimpleName());
+			out.println(" Id: " + or2.getoNumber());
+		}
+
+		// * Orderspecification *//
+
+		out.println("** Orderspecification **" + "<br>");
+
+		// * Product *//
+
+		out.println("** Product **" + "<br>");
 
 		// Product p = new Product();
 		// p.setpNumber("1");
@@ -143,6 +127,39 @@ public class CreateCookiesServlet extends HttpServlet {
 		// rid.setiNumber("3");
 		// rid.setpNumber("1");
 		// facade.createRecipe(r);
+
+		List<Product> productsearch = facade.findAllProducts();
+		for (Product pr1 : productsearch) {
+			out.println("<h4>Hittade: " + pr1.getClass().getSimpleName());
+			out.println(" Id: " + pr1.getpNumber());
+			out.println(" - " + pr1.getpName());
+			out.println(" - " + pr1.getpTime());
+			out.println(" - " + pr1.getPrice() + "</h4>");
+
+		}
+
+		List<Product> productname = facade.findBypName("kokostoppar");
+		for (Product pr1 : productname) {
+			out.println("<h4>Hittade: " + pr1.getClass().getSimpleName());
+			out.println(" Id: " + pr1.getpNumber());
+			out.println(" - " + pr1.getpName());
+			out.println(" - " + pr1.getpTime());
+			out.println(" - " + pr1.getPrice() + "</h4>");
+
+		}
+
+		List<Product> producttime = facade.InfoTimeStamp(Timestamp.valueOf("1900-01-01 11:20:24.000"));
+		for (Product pr2 : producttime) {
+			out.println("<h4>Hittade: " + pr2.getClass().getSimpleName());
+			out.println(" Id: " + pr2.getpNumber() + "</h4>");
+
+		}
+
+		// * Recipe *//
+
+		out.println("** Recipe **" + "<br>");
+
+		out.println("</body></html>");
 
 	}
 }

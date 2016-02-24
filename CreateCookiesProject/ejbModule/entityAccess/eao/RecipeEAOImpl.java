@@ -1,8 +1,12 @@
 package entityAccess.eao;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+
 import entity.ejb.Recipe;
 import entity.ejb.RecipeId;
 
@@ -23,7 +27,7 @@ public class RecipeEAOImpl implements RecipeEAOImplLocal {
 
 	@Override
 	public Recipe findByiNumberPNumber(String iNumber, String pNumber) {
-		RecipeId iNumberPNumber= new RecipeId(iNumber,pNumber);
+		RecipeId iNumberPNumber = new RecipeId(iNumber, pNumber);
 		return em.find(Recipe.class, iNumberPNumber);
 
 	}
@@ -47,13 +51,16 @@ public class RecipeEAOImpl implements RecipeEAOImplLocal {
 			em.remove(r);
 		}
 	}
-//public List<Recipe>findAllRecipes(){
-	//TypedQuery<Recipe> query = em.createNamedQuery("Recipe.findAllRecipes", Recipe.class);
-	//List<Recipe> results = query.getResultList();
-	//return results;
-	
-	//public List<Recipe>countRecipes(){
-	//TypedQuery<Recipe> query = em.createNamedQuery("Recipe.countRecipes", Recipe.class);
-	//Check how we'll return a number.
-	//return results;
+
+	public List<Recipe> findAllRecipes() {
+		TypedQuery<Recipe> query = em.createNamedQuery("Recipe.findAllRecipes", Recipe.class);
+		List<Recipe> results = query.getResultList();
+		return results;
+	}
+
+	// public List<Recipe>countRecipes(){
+	// TypedQuery<Recipe> query = em.createNamedQuery("Recipe.countRecipes",
+	// Recipe.class);
+	// Check how we'll return a number.
+	// return results;
 }

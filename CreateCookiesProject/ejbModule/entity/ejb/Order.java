@@ -26,7 +26,7 @@ public class Order implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	private String oNumber;
-	private String isDelivered;
+	private boolean isDelivered;
 	private Timestamp expectedDeliveryDate;
 	private Customer customer;
 	private Set<Orderspecification> orderspecification;
@@ -42,11 +42,11 @@ public class Order implements Serializable {
 	}
 
 	@Column(name = "isDelivered")
-	public String isDelivered() {
+	public boolean getisDelivered() {
 		return isDelivered;
 	}
 
-	public void setDelivered(String isDelivered) {
+	public void setisDelivered(boolean isDelivered) {
 		this.isDelivered = isDelivered;
 	}
 

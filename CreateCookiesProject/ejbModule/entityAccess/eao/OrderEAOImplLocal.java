@@ -18,7 +18,7 @@ public interface OrderEAOImplLocal {
 
 	public List<Order> findCertainOrder(String customer);
 
-	public List<Order> isDelivered(String isDeliverd);
+	public List<Order> isDelivered(boolean isDeliverd);
 
 	public List<Order> findAllOrders();
 

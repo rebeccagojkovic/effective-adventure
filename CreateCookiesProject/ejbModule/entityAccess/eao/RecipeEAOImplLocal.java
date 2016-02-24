@@ -1,5 +1,7 @@
 package entityAccess.eao;
 
+import java.util.List;
+
 import javax.ejb.Local;
 
 import entity.ejb.Recipe;
@@ -15,7 +17,7 @@ public interface RecipeEAOImplLocal {
 
 	public void deleteRecipe(String iNumber, String pNumber);
 	
-	//public List<Recipe>findAllRecipes
+	public List<Recipe>findAllRecipes();
 	
 	//public List<Recipe>countRecipes
 }

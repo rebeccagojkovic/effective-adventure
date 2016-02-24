@@ -61,7 +61,7 @@ public interface FacadeLocal {
 
 	public List<Order> findAllOrders();
 
-	public List<Order> isDelivered(String isDelivered);
+	public List<Order> isDelivered(boolean isDelivered);
 
 	public List<Order> findCertainOrder(String customer);
 
@@ -101,7 +101,7 @@ public interface FacadeLocal {
 
 	public void deleteRecipe(String iNumber, String pNumber);
 
-	// public List<Recipe>findAllRecipes();
+	public List<Recipe> findAllRecipes();
 
 	// public List<Recipe>countRecipes();
 
