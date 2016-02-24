@@ -24,24 +24,28 @@ public class OrderspecificationEAOImpl implements
 	public OrderspecificationEAOImpl() {
 	}
 
+	@Override
 	public Orderspecification findBypNumberONumber(String pNumber, String oNumber) {
 		OrderspecificationId pNumberONumber= new OrderspecificationId(pNumber,oNumber);
 		return em.find(Orderspecification.class, pNumberONumber);
 
 	}
 
+	@Override
 	public Orderspecification createOrderspecification(
 			Orderspecification orderspecification) {
 		em.persist(orderspecification);
 		return orderspecification;
 	}
 
+	@Override
 	public Orderspecification updateOrderspecification(
 			Orderspecification orderspecification) {
 		em.merge(orderspecification);
 		return orderspecification;
 	}
 
+	@Override
 	public void deleteOrderspecification(String pNumber, String oNumber) {
 		Orderspecification os = this.findBypNumberONumber(pNumber, oNumber);
 		if (os != null) {

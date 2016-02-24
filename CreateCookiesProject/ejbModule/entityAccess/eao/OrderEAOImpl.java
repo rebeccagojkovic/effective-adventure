@@ -24,20 +24,24 @@ public class OrderEAOImpl implements OrderEAOImplLocal {
 	public OrderEAOImpl() {
 	}
 
+	@Override
 	public Order findByoNumber(String oNumber) {
 		return em.find(Order.class, oNumber);
 	}
 
+	@Override
 	public Order createOrder(Order order) {
 		em.persist(order);
 		return order;
 	}
 
+	@Override
 	public Order updateOrder(Order order) {
 		em.merge(order);
 		return order;
 	}
 
+	@Override
 	public void deleteOrder(String oNumber) {
 		Order o = this.findByoNumber(oNumber);
 		if (o != null) {
@@ -45,12 +49,14 @@ public class OrderEAOImpl implements OrderEAOImplLocal {
 		}
 	}
 
+	@Override
 	public List<Order> findAllOrders() {
 		TypedQuery<Order> query = em.createNamedQuery("Order.findAllOrders", Order.class);
 		List<Order> results = query.getResultList();
 		return results;
 	}
 
+	@Override
 	public List<Order> findCertainOrder(String customer) {
 		TypedQuery<Order> query = em.createNamedQuery("Order.findCertainOrder", Order.class);
 		query.setParameter("customer", customer);
@@ -58,7 +64,8 @@ public class OrderEAOImpl implements OrderEAOImplLocal {
 		return results;
 	}
 
-	public List<Order> isDelivered(boolean isDelivered) {
+	@Override
+	public List<Order> isDelivered(String isDelivered) {
 		TypedQuery<Order> query = em.createNamedQuery("Order.isDelivered", Order.class);
 		query.setParameter("isDelivered", isDelivered);
 		List<Order> results = query.getResultList();

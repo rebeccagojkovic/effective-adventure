@@ -21,22 +21,26 @@ public class RecipeEAOImpl implements RecipeEAOImplLocal {
 	public RecipeEAOImpl() {
 	}
 
+	@Override
 	public Recipe findByiNumberPNumber(String iNumber, String pNumber) {
 		RecipeId iNumberPNumber= new RecipeId(iNumber,pNumber);
 		return em.find(Recipe.class, iNumberPNumber);
 
 	}
 
+	@Override
 	public Recipe createRecipe(Recipe recipe) {
 		em.persist(recipe);
 		return recipe;
 	}
 
+	@Override
 	public Recipe updateRecipe(Recipe recipe) {
 		em.merge(recipe);
 		return recipe;
 	}
 
+	@Override
 	public void deleteRecipe(String iNumber, String pNumber) {
 		Recipe r = this.findByiNumberPNumber(iNumber, pNumber);
 		if (r != null) {

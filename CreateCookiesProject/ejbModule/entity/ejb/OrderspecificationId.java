@@ -5,8 +5,6 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
-import entityAccess.eao.OrderspecificationEAOImplLocal;
-
 
 @Embeddable
 public class OrderspecificationId implements Serializable{

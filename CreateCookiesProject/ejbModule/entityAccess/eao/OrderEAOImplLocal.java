@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import entity.ejb.Customer;
 import entity.ejb.Order;
 
 @Local
@@ -19,7 +18,7 @@ public interface OrderEAOImplLocal {
 
 	public List<Order> findCertainOrder(String customer);
 
-	public List<Order> isDelivered(boolean isDeliverd);
+	public List<Order> isDelivered(String isDeliverd);
 
 	public List<Order> findAllOrders();
 

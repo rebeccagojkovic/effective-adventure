@@ -2,7 +2,6 @@ package entity.ejb;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.text.DateFormat;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -19,11 +18,11 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({ @NamedQuery(name = "Order.findAllOrders", query = "SELECT o FROM Order o"),
 		@NamedQuery(name = "Order.findCertainOrder", query = "SELECT o FROM Order o WHERE o.oNumber LIKE :customer"),
-		@NamedQuery(name = "Order.isDelivered", query = "SELECT o FROM Order o WHERE o.IsDelivered LIKE :isDelivered"), })
+		@NamedQuery(name = "Order.isDelivered", query = "SELECT o FROM Order o WHERE o.isDelivered LIKE :isDelivered"), })
 @Table(name = "Orde")
 public class Order implements Serializable {
 	private String oNumber;
-	private boolean isDelivered;
+	private String isDelivered;
 	private Timestamp expectedDeliveryDate;
 	private Customer customer;
 	private Set<Orderspecification> orderspecification;
@@ -39,11 +38,11 @@ public class Order implements Serializable {
 	}
 
 	@Column(name = "isDelivered")
-	public boolean isDelivered() {
+	public String isDelivered() {
 		return isDelivered;
 	}
 
-	public void setDelivered(boolean isDelivered) {
+	public void setDelivered(String isDelivered) {
 		this.isDelivered = isDelivered;
 	}
 

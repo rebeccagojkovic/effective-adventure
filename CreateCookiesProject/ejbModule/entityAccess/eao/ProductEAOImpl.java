@@ -8,7 +8,6 @@ import javax.persistence.TypedQuery;
 import java.sql.Timestamp;
 import java.util.List;
 
-import entity.ejb.Customer;
 import entity.ejb.Product;
 
 /**
@@ -26,21 +25,25 @@ public class ProductEAOImpl implements ProductEAOImplLocal {
 	public ProductEAOImpl() {
 	}
 
+	@Override
 	public Product findBypNumber(String pNumber) {
 		return em.find(Product.class, pNumber);
 
 	}
 
+	@Override
 	public Product createProduct(Product product) {
 		em.persist(product);
 		return product;
 	}
 
+	@Override
 	public Product updateProduct(Product product) {
 		em.merge(product);
 		return product;
 	}
 
+	@Override
 	public void deleteProduct(String pNumber) {
 		Product p = this.findBypNumber(pNumber);
 		if (p != null) {
@@ -48,12 +51,14 @@ public class ProductEAOImpl implements ProductEAOImplLocal {
 		}
 	}
 
+	@Override
 	public List<Product> findAllProducts() {
 		TypedQuery<Product> query = em.createNamedQuery("Product.findAllProducts", Product.class);
 		List<Product> results = query.getResultList();
 		return results;
 	}
 
+	@Override
 	public List<Product> InfoTimeStamp(Timestamp pTime) {
 		TypedQuery<Product> query = em.createNamedQuery("Product.InfoTimeStamp", Product.class);
 		query.setParameter("pTime", pTime);
@@ -61,6 +66,7 @@ public class ProductEAOImpl implements ProductEAOImplLocal {
 		return results;
 	}
 
+	@Override
 	public List<Product> findBypName(String pName) {
 		TypedQuery<Product> query = em.createNamedQuery("Product.findBypName", Product.class);
 		query.setParameter("pName", pName);

@@ -172,7 +172,7 @@ public class Facade implements FacadeLocal {
 	}
 
 	@Override
-	public List<Order> isDelivered(boolean isDelivered) {
+	public List<Order> isDelivered(String isDelivered) {
 		return orderEAO.isDelivered(isDelivered);
 	}
 
@@ -183,6 +183,7 @@ public class Facade implements FacadeLocal {
 		return productEAO.findAllProducts();
 	}
 
+	@Override
 	public List<Product> InfoTimeStamp(Timestamp pTime) {
 		return productEAO.InfoTimeStamp(pTime);
 	}
@@ -207,6 +208,7 @@ public class Facade implements FacadeLocal {
 		productEAO.deleteProduct(pNumber);
 	}
 
+	@Override
 	public List<Product> findBypName(String pName) {
 		return productEAO.findBypName(pName);
 	}

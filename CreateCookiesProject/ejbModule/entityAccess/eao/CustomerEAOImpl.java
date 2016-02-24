@@ -25,21 +25,25 @@ public class CustomerEAOImpl implements CustomerEAOImplLocal {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
 	public Customer findBycNumber(String cNumber) {
 		return em.find(Customer.class, cNumber);
 
 	}
 
+	@Override
 	public Customer createCustomer(Customer customer) {
 		em.persist(customer);
 		return customer;
 	}
 
+	@Override
 	public Customer updateCustomer(Customer customer) {
 		em.merge(customer);
 		return customer;
 	}
 
+	@Override
 	public void deleteCustomer(String cNumber) {
 		Customer c = this.findBycNumber(cNumber);
 		if (c != null) {
@@ -47,12 +51,14 @@ public class CustomerEAOImpl implements CustomerEAOImplLocal {
 		}
 	}
 
+	@Override
 	public List<Customer> findAllCustomers() {
 		TypedQuery<Customer> query = em.createNamedQuery("Customer.findAllCustomers", Customer.class);
 		List<Customer> results = query.getResultList();
 		return results;
 	}
 
+	@Override
 	public List<Customer> findByCountry(String cCountry) {
 		TypedQuery<Customer> query = em.createNamedQuery("Customer.findByCountry", Customer.class);
 		query.setParameter("cCountry", cCountry);
@@ -60,12 +66,14 @@ public class CustomerEAOImpl implements CustomerEAOImplLocal {
 		return results;
 	}
 
+	@Override
 	public List<Customer> findByAddress(String cAddress) {
 		TypedQuery<Customer> query = em.createNamedQuery("Customer.findByAddress", Customer.class);
 		query.setParameter("cAddress", cAddress);
 		List<Customer> results = query.getResultList();
 		return results;
 	}
+	@Override
 	public List<Customer> findByPostalAddress(String cPostalAddress) {
 		TypedQuery<Customer> query = em.createNamedQuery("Customer.findByPostalAddress", Customer.class);
 		query.setParameter("cPostalAddress", cPostalAddress);
@@ -73,6 +81,7 @@ public class CustomerEAOImpl implements CustomerEAOImplLocal {
 		return results;
 	}
 
+	@Override
 	public List<Customer> findBycName(String cName) {
 		TypedQuery<Customer> query = em.createNamedQuery("Customer.findBycName", Customer.class);
 		query.setParameter("cName", cName);
