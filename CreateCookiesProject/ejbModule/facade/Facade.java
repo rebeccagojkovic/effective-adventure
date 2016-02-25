@@ -141,6 +141,11 @@ public class Facade implements FacadeLocal {
 	public Order updateOrder(Order order) {
 		return orderEAO.updateOrder(order);
 	}
+	
+//	@Override
+//	public List<Order> updateOrder(String oNumber) {
+//		return orderEAO.updateOrder();
+//	}
 
 	@Override
 	public void deleteOrder(String oNumber) {

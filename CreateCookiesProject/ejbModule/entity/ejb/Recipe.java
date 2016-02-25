@@ -13,7 +13,8 @@ import javax.persistence.Table;
 
 @Entity
 @NamedQueries({ @NamedQuery(name = "Recipe.findAllRecipes", query = "SELECT r FROM Recipe r"),
-		@NamedQuery(name = "Recipe.countRecipes", query = "SELECT COUNT (r) FROM Recipe r"), })
+		@NamedQuery(name = "Recipe.countRecipes", query = "SELECT COUNT (r) FROM Recipe r"),
+				})
 
 @Table(name = "Recipe")
 public class Recipe implements Serializable {
@@ -66,7 +67,7 @@ public class Recipe implements Serializable {
 	public Product getProduct() {
 		return product;
 	}
-
+	
 	public void setProduct(Product product) {
 		this.product = product;
 	}

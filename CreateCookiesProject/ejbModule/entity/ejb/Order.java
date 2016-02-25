@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Set;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +19,9 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({ @NamedQuery(name = "Order.findAllOrders", query = "SELECT o FROM Order o"),
 		@NamedQuery(name = "Order.findCertainOrder", query = "SELECT o FROM Order o WHERE o.oNumber LIKE :customer"),
-		@NamedQuery(name = "Order.isDelivered", query = "SELECT o FROM Order o WHERE o.isDelivered LIKE :isDelivered"), })
+		@NamedQuery(name = "Order.isDelivered", query = "SELECT o FROM Order o WHERE o.isDelivered LIKE :isDelivered"),
+		//@NamedQuery(name = "Order.updateOrder", query = "SELECT o FROM Order o WHERE o.oNumber LIKE :updateOrder")
+		})
 @Table(name = "Orde")
 public class Order implements Serializable {
 	/**

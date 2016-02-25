@@ -56,6 +56,8 @@ public interface FacadeLocal {
 	public Order createOrder(Order order);
 
 	public Order updateOrder(Order order);
+	
+//	public List<Order> updateOrder(String oNumber);
 
 	public void deleteOrder(String oNumber);
 
