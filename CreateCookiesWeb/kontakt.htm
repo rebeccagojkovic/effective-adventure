@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title> Fabulous Bakery </title>
+ <meta charset="windows-1252">
+<style>
+
+body {
+    background-image:url("kakor.jpg");
+}
+header {
+    background-color:#002828 ;
+    color:white;
+    text-align:center;
+    padding:5px;
+    border-radius: 25px;
+    opacity: 0.9;
+    margin:5px;
+
+}
+nav {
+    line-height:30px;
+    background-color:#003333;
+    height:50px;
+    float:top;
+    padding:10px;
+    border-radius: 25px;
+    opacity: 0.9;
+    margin:5px;
+
+}
+
+nav ul {
+   padding:-3px;
+}
+
+nav ul li {
+    display: inline;
+    
+}
+
+nav ul li a {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px 4px 0 0;
+    
+}
+
+nav ul li a:hover {
+    background-color:#002828;
+
+}
+
+section {
+    width:900px;
+    height:600px;
+    background-image: url("bakelser.jpg");
+    background-position:right bottom;
+    background-repeat: no-repeat;
+    background-color:#FFFFFF;
+    float:right; 
+    border-radius: 25px;
+    opacity: 0.9;
+    margin:5px;    
+}
+
+section dl{
+   padding:10px;
+   margin:20px;
+}
+section textarea{
+   margin:20px;
+}
+section h1{
+   padding:10px;
+}
+
+section value{
+   padding:5px;
+}
+
+section p{
+   margin: 25px;
+}
+
+aside{
+    width:324px;
+    height:600px;
+    background-color:#006E6E;
+    float:left;
+    border-radius: 25px;
+    opacity: 0.9;
+    margin:5px;
+
+}
+aside h1{
+    margin-top:80px;
+    text-align: center;
+    color: white;
+}
+
+aside h4{
+    padding:0px;
+    text-align: center;
+    color: white;
+}
+
+footer {
+    background-color:#002828;
+    height:30px;
+    color:white;
+    clear:both;
+    text-align:center;
+    border-radius: 25px;
+    opacity: 0.9; 
+
+}
+</style>
+</head>
+
+<body >
+
+<header >
+   <h1>Fabulous Cookies</h1> 
+   <h3>Småkakor och tårtor - Det perfekta dessertbordet för företagskunden</h3>  
+</header >
+
+<nav >
+ <ul id="menu">
+  <li><a href="index.htm">HEM</a></li>
+  <li><a href="smakakor.htm">SMÅKAKOR & RECEPT</a></li>
+  <li><a href="bestallning.htm">BESTÄLLNING</a></li>
+  <li><a href="kontakt.htm">KONTAKT</a></li>
+ </ul> 
+</nav>
+
+<aside>
+ <h1><u>Fabulous Cookies</u></h1>
+ <h4>Tvärgränd 11, Gamla stan<br>23146 Stockholm<br>08-231231</h4>
+ <br><br><h4>Öppettider:<br>Måndag-Fredag: 06.00-18.00 <br> Lördag: 10.00-18.00 <br>Söndag:10.00-16.00 </h4>
+ 
+</aside>
+
+<section>
+<h1><u>Kontakta Fabulous Bakery</u></h1>
+<form metod="GET" action="http://localhost/">
+<dl>
+<dt>Företagsnamn
+<dd><input type="text" name="Företagsnamn">
+<dt>Adress
+<dd><input type="text" name="Adress">
+<dt>Postadress
+<dd><input type="text" name="Postadress">
+<dt>Land
+<dd><input type="text" name="Land">
+</dl>
+<textarea name= "kommentar" 
+				rows="10" cols="40">
+</textarea>
+<p><input type ="Submit" value="Skicka"></p>
+</form>
+</section>
+
+<footer>
+  <p>www.fabulouscookies.com</p>
+</footer>
+</body>
+</html>
