@@ -42,7 +42,7 @@ public class CreateCookiesServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE html><html><head>");
 		out.println("<title>CreateCookies</title>");
-		out.println("<meta charset=\"ISO-8859-1\">");
+		out.println("<meta charset=\"UTF-8\">");
 		out.println("</head><body>");
 		out.println("<h3>CreateCookies</h3>" + "<br>");
 
