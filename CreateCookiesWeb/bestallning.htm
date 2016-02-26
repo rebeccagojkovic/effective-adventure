@@ -55,8 +55,8 @@ nav ul li a:hover {
 }
 
 section {
-    width:900px;
-    height:1700px;
+    width:600px;
+    height:1000px;
     background-color:#006E6E;
     float:right; 
     border-radius: 25px;
@@ -64,54 +64,32 @@ section {
     margin:5px;
 }
 aside{
-    width:324px;
-    height:1700px;
+    width:624px;
+    height:1000px;
     background-color:#006E6E;
     float:left;
     border-radius: 25px;
     opacity: 0.9;
     margin:5px;
 }
-    aside login{
-    
-	position: absolute;
+
+#login{
 	top: 0px;
 	width: 88%;	
 	padding: 18px 6% 60px 6%;
 	margin: 0 0 35px 0;
-	background: rgb(247, 247, 247);
-	border: 1px solid rgba(147, 184, 189,0.8);
-	box-shadow:	
-		0pt 2px 5px rgba(105, 108, 109,  0.7),	
-		0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
-	border-radius: px;
-   
-    }
-#login{
-	z-index: 22;
+	background-color:#006E6E;
+	border-radius:25px;
 }
     /**** general text styling ****/
-    #wrapper h1{
-	font-size: 48px;
-	color: rgb(6, 106, 117);
+#wrapper h1{
+	font-size: 38px;
+	color: white;
 	padding: 2px 0 10px 0;
 	font-style: italic;
 	font-weight: bold;
-	text-align: center;
+    margin-left:20px;
 	padding-bottom: 30px;
-}
-    /** For the moment only webkit supports the background-clip:text; */
-    #wrapper h1{
-	background: 
-	-webkit-repeating-linear-gradient(-45deg, 
-		rgb(18, 83, 93) , 
-		rgb(18, 83, 93) 20px,
-		rgb(64, 111, 118) 20px,
-		rgb(64, 111, 118) 40px,
-		rgb(18, 83, 93) 40px);
-	-webkit-text-fill-color: transparent;
-	-webkit-background-clip: text;
-        
 }
 
 #wrapper h1:after{
@@ -131,7 +109,7 @@ aside{
     
     /**** advanced input styling ****/
 /* placeholder */
-::-webkit-input-placeholder  { 
+:-webkit-input-placeholder  { 
 	color: rgb(190, 188, 188); 
 	font-style: italic;
 }
@@ -150,7 +128,7 @@ input {
 	padding: 10px 5px 10px 10px;	
 	border: 1px solid rgb(178, 178, 178);
 	box-sizing : content-box;
-	border-radius: 3px;
+	border-radius: 8px;
 	box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
 	transition: all 0.2s linear;
 }
@@ -184,16 +162,15 @@ input {
 }
 /*styling both submit buttons */
 #wrapper p.button input{
-	width: 30%;
+	width: 10%;
 	cursor: pointer;	
 	background: rgb(61, 157, 179);
 	padding: 8px 5px;
 	font-family: 'BebasNeueRegular','Arial Narrow',Arial,sans-serif;
 	color: #fff;
-	font-size: 24px;	
+	font-size: 18px;	
 	border: 1px solid rgb(28, 108, 122);	
 	margin-bottom: 10px;	
-	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 	border-radius: 3px;	
 	box-shadow:
 		0px 1px 6px 4px rgba(0, 0, 0, 0.07) inset,
@@ -214,7 +191,7 @@ input {
 }
 p.login.button,
 p.signin.button{
-	text-align: right;
+	text-align: left;
 	margin: 5px 0;
 }
     
@@ -237,10 +214,9 @@ p.signin.button{
     
     p.change_link{
 	position: absolute;
-	color: rgb(127, 124, 124);
-	left: 0px;
+	color: gray;
 	height: 20px;
-	width: 440px;
+	width: 500px;
 	padding: 17px 30px 20px 30px;
 	font-size: 16px	;
 	text-align: right;
@@ -261,7 +237,7 @@ p.signin.button{
 	background: rgb(247, 248, 241);
 	padding: 2px 6px;
 	color: rgb(29, 162, 193);
-	margin-left: 10px;
+	margin-left: 100px;
 	text-decoration: none;
 	border-radius: 4px;
 	border: 1px solid rgb(203, 213, 214);
@@ -353,31 +329,31 @@ footer {
 </nav>
 
 <aside>
-   
     <div id="wrapper">
         
         <div id="login" class="animate form">
             <h1>Log in</h1>
             <p>
-                <label for= "username" class="uname" data-icon="u" > Your email </label>
+                <label for= "username" class="uname" data-icon="u" > Din mail </label>
         <input id ="username" name="username" required="required" type="text" placeholder="myname@student.lu.se"/>
                 <p> 
-					<label for="password" class="youpasswd" data-icon="p"> Your password </label>
+					<label for="password" class="youpasswd" data-icon="p"> Lösenord </label>
 					<input id="password" name="password" required="required" type="password" placeholder="example.pasSword123" /> 
 				</p>
                 <p class="keeplogin"> 
 					<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
-					<label for="loginkeeping">Keep me logged in</label>
+					<label for="loginkeeping">Håll mig inloggad</label>
 				</p>
      <p class="login button"> 
 					<input type="submit" value="Login" /> 
 				</p>
     <p class="change_link">
-					Not a cookie monster yet?
-					<a href="#toregister" class="to_register">Become one now!</a>
+					Inte ett kakmonster ännu?
+					<a href="#toregister" class="to_register">Bli ett nu!</a>
 				</p>
 			
 		</div>
+    </div>
 <div id="register" class="animate form">
 			 
 				<h1> Sign up </h1> 
@@ -407,9 +383,7 @@ footer {
 				</p>
 			
 		</div>
-		
-	</div>
-</div>  
+		  
 </aside>
 
 
