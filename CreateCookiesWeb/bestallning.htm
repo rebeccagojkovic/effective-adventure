@@ -84,7 +84,7 @@ aside{
 }
     /**** general text styling ****/
 #wrapper h1{
-	font-size: 38px;
+	font-size: 28px;
 	color: white;
 	padding: 2px 0 10px 0;
 	font-style: normal;
@@ -163,7 +163,7 @@ input {
 }
 /*styling both submit buttons */
 #wrapper p.button input{
-	width: 10%;
+	width: 17%;
 	cursor: pointer;	
 	background: rgb(61, 157, 179);
 	padding: 8px 5px;
@@ -295,7 +295,16 @@ p.signin.button{
 		transform: translateX(-20px);
 	}
 }
-    
+  
+#register{
+	top: 0px;
+	width: 88%;	
+    color:white;
+	padding: 18px 6% 60px 6%;
+	margin: 0 0 35px 0;
+	background-color:#006E6E;
+	border-radius:25px;
+}
 footer {
     background-color:#002828;
     height:30px;
@@ -345,18 +354,14 @@ footer {
 					<label for="loginkeeping">Håll mig inloggad</label>
 				</p>
      <p class="login button"> 
-					<input type="submit" value="Login" /> 
+					<input type="submit" value="Logga in" /> 
 				</p>
-    <p class="change_link">
+     <!-- <p class="change_link">
 					Inte ett kakmonster ännu?
 					<a href="#toregister" class="to_register">Bli ett nu!</a>
-				</p>
-			
-		</div>
-    </div>
-<div id="register" class="animate form">
+				</p>-->
 			 
-				<h1> Sign up </h1> 
+              <h1>Registrera dig </h1> 
 				<p> 
                     
                     <label for="usernamesignup" class="uname" data-icon="u">Ditt användarnamn</label>
@@ -371,19 +376,18 @@ footer {
 					<input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="example.pasSword123"/>
 				</p>
 				<p> 
-					<label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Var god och bekräfta ditt lösenord </label>
+					<label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Bekräfta lösenord </label>
 					<input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="example.pasSword123"/>
 				</p>
 				<p class="signin button"> 
-					<input type="submit" value="Sign up"/> 
+					<input type="submit" value="Registrera dig"/> 
 				</p>
-<p class="change_link">  
+<!--<p class="change_link">  
 					Already a member ?
 					<a href="#tologin" class="to_register"> Go and log in </a>
-				</p>
-			
+				</p>-->
 		</div>
-		  
+  	  </div>
 </aside>
 
 
