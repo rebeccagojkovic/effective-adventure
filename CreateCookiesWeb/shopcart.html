@@ -69,24 +69,38 @@ div {
     
     border-radius:25px;
     background-color:#006E6E; 
-    float:left;
+    
     color:white;  
     opacity: 0.8;
 }
-.article img{
-    position:absolute;
-    top:320px;
-    left:350px;
-    border-radius:50px;
-}
+  
+    
 .article ul li{
     display: list-item;
 	margin-left:40px;
+  
 }
 
 .article h1{
 	font-style:italic;
+    color:white;
+    text-align:center;
 }
+    
+
+article h3 {
+  text-align: center; 
+  color:white;
+}
+
+
+    
+    
+    
+    
+    
+    
+    
     article input{
        
          width: 47%;
@@ -134,12 +148,14 @@ div {
     }
     article P{
         margin-left: 40px;
-        
+       
     }
-    
-    
-    
-    
+ article p.imagelist{
+    width 150px;
+    height:100px;
+    border-radius:20px;
+    }
+        
 .footer {
     background-color:#002828;
     height:30px;
@@ -158,7 +174,7 @@ div {
 <header>
     <h1>Fabulous Cookies</h1> 
    <h3>Småkakor- Det perfekta dessertbordet för företagskunden</h3>
-    <a href src="">
+
 </header >
 </div >
 <div class ="nav" >
@@ -175,8 +191,9 @@ div {
 <div class ="article" >
  <article>
      <p>
-  <input name=addbox type=button value="Lägg till vara i varukorg" onclick=Loc_additem('p1i1','1.11','Page_1_item_1','pageone.html')><BR>
+         <input name=addbox type=button value="Lägg till vara i varukorg" onclick=Loc_additem('p1i1','1.11','Page_1_item_1','pageone.html')><BR>
          <input type=button name=subbox value="Ångra köp" onclick=Loc_subitem('p1i1','1.11','page_1_item_1','pageone.html')><P>
+        
      
      
 Du har beställt såhär många av denna vara:<thismany type=text name=p1i1 size=2><P>
@@ -192,8 +209,7 @@ This item costs over $9000 <P>
      
 Du har beställt såhär många av denna vara:<thismany type=text name=p1i1 size=2><P>
 
-         Du har beställt såhär många av denna vara:<thismany type=text name=p1i1 size=2><P>
-
+    
          <input name=addbox type=button value="Lägg till vara i varukorg" onclick=Loc_additem('p3i2','6.66','Page_3_Item_2','pagethree.html')><br>
 <input type=button name=subbox value="Ångra köp" onclick=Loc_subitem('p3i2','6.66','Page_3_Item_2','pagethree.html')><BR>
          
@@ -211,18 +227,29 @@ Du har beställt såhär många av denna vara:<thismany type=text name=p1i1 size
 
          <input name=addbox type=button value="Lägg till vara i varukorg" onclick=Loc_additem('p3i2','6.66','Page_3_Item_2','pagethree.html')><br>
 <input type=button name=subbox value="Ångra köp" onclick=Loc_subitem('p3i2','6.66','Page_3_Item_2','pagethree.html')><BR>
-         
+           
          Du har beställt såhär många av denna vara:<thismany type=text name=p1i1 size=2><P>
 
-         <input name=addbox type=button value="Lägg till vara i varukorg" onclick=Loc_additem('p3i2','6.66','Page_3_Item_2','pagethree.html')><br>
+       <input name=addbox type=button value="Lägg till vara i varukorg" onclick=Loc_additem('p3i2','6.66','Page_3_Item_2','pagethree.html')><br
 <input type=button name=subbox value="Ångra köp" onclick=Loc_subitem('p3i2','6.66','Page_3_Item_2','pagethree.html')><BR>
-         
-         
-         
+    
+        
+     
+         <p class="imagelist"><img src="berliners.jpg" alt="berliner"></p>
+         <p class="imagelist"><img src="smakaka.jpg" alt="smakaka"></p>
+         <p class="imagelist"><img src="kokostoppar.jpg" alt="kokostoppar"></p>
+         <p class="imagelist"><img src="nötkakor.jpg" alt="notkakor"></p>
+         <p class="imagelist"><img src="macarron.jpg" alt="macarron"></p>
+         <p class="imagelist"><img src="amneris.jpg" alt="amneris"></p>
+         <p class="imagelist"><img src="notring.jpg" alt="notring"></p>
+         <p class="imagelist"><img src="tangokakor.jpg" alt="tangokakor"></p>
+    
+        
 </article>
 </div>
 <div class="aside">
  <aside >
+   
       
 	
 </aside >
