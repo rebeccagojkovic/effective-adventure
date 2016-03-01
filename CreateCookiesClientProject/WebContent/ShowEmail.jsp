@@ -11,7 +11,7 @@
 	<h2>Email:</h2>
 	<p>
 		<%
-			Customer c = (Customer) request.getAttribute("eMail");
+			Customer c = (Customer) request.getAttribute("cEmail");
 		%>
 		<input type="text" name="txtEmail" value="<%=c.getcEmail()%>">
 	</p>
