@@ -42,10 +42,11 @@ public class MainServlet extends HttpServlet {
 		String operation = req.getParameter("operation");
 		if (operation.equals("showemail")) {
 			String cEmail = req.getParameter("txtEmail");
-			facade.findBycEmail(cEmail);
-			
-			Customer c1 = new Customer();
-			req.setAttribute("cEmail", c1);
+			List<Customer> customeremail = facade.findBycEmail(cEmail);
+			for (Customer c1 : customeremail) {
+				req.setAttribute("email", c1);
+			}
+
 			url = "/ShowEmail.jsp";
 		} else if (operation.equals("searchemail")) {
 			url = "/SearchEmail.jsp";
