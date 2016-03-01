@@ -25,5 +25,7 @@ public interface CustomerEAOImplLocal {
 	public List<Customer> findByPostalAddress(String cPostalAddress);
 
 	public List<Customer> findBycName(String cName);
+	
+	public List<Customer> findBycEmail(String cEmail);
 
 }

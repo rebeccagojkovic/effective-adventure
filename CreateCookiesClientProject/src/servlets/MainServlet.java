@@ -1,5 +1,6 @@
 package servlets;
 
+import javax.ejb.EJB;
 import javax.servlet.*;
 import java.io.PrintWriter;
 import java.io.IOException;
@@ -20,6 +21,9 @@ public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String CONTENT_TYPE = "text/html; charset=ISO-8859-1";
 
+	@EJB
+	FacadeLocal facade;
+
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
 	}
@@ -36,7 +40,7 @@ public class MainServlet extends HttpServlet {
 		String url = null; // Get hidden field
 		String operation = req.getParameter("operation");
 		if (operation.equals("showemail")) {
-			String Customer = req.getParameter("txtEmail");
+			facade.findBycEmail(cEmail) = req.getParameter("txtEmail");
 			Customer c = new Customer();
 			req.setAttribute("cEmail", c);
 			url = "/ShowEmail.jsp";

@@ -18,7 +18,8 @@ import javax.persistence.Table;
 		@NamedQuery(name = "Customer.findByAddress", query = "SELECT c FROM Customer c WHERE c.cAddress LIKE :cAddress"),
 		@NamedQuery(name = "Customer.findByCountry", query = "SELECT c FROM Customer c WHERE c.cCountry LIKE :cCountry"),
 		@NamedQuery(name = "Customer.findByPostalAddress", query = "SELECT c FROM Customer c WHERE c.cPostalAddress LIKE :cPostalAddress"),
-		@NamedQuery(name = "Customer.findBycName", query = "SELECT c FROM Customer c WHERE c.cName LIKE :cName"), })
+		@NamedQuery(name = "Customer.findBycName", query = "SELECT c FROM Customer c WHERE c.cName LIKE :cName"),
+		@NamedQuery(name = "Customer.findBycEmail", query = "SELECT c FROM Customer c WHERE c.cEmail LIKE :cEmail"), })
 
 @Table(name = "Customer")
 
