@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="sv">
+<html>
+<head>
+ <title> not Fabulous Bakery </title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta charset="UTF-8">
+<style>
+div {
+    resize: both;
+    overflow: auto;
+}
+ .body{
+   background-image:url("kakor.jpg");
+   background-repeat:repeat;
+}
+
+.header {
+    background-color:#002828 ;
+    border-radius: 25px;
+    opacity: 0.9;
+    color:white;
+    text-align:center;
+    padding:5px;    
+}
+.header h1{
+    font-size:xx-large;  
+}
+.header h3{
+    font-size:medium;  
+}
+
+.nav {
+    line-height:30px;
+    background-color:#003333;
+    border-radius: 25px;
+    height:50px;
+    float:top;
+    padding: 10px;
+    margin-top:5px;
+    opacity: 0.9;  
+}
+
+.nav ul {
+    padding:-1px;
+}
+
+.nav ul li {
+    display: inline;
+}
+
+.nav ul li a {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px 4px 0 0; 
+}
+
+.nav ul li a:hover {
+    background-color:#002828;
+}
+
+
+.article {
+    width:620px;
+    height:1200px;
+    margin:5px;
+    
+    border-radius:25px;
+    background-color:#006E6E; 
+    
+    color:white;  
+    opacity: 0.8;
+}
+  
+    
+.article ul li{
+    display: list-item;
+	margin-left:40px;
+  
+}
+
+.article h1{
+	font-style:italic;
+    color:white;
+    text-align:center;
+}
+    
+
+article h3 {
+  text-align: center; 
+  color:white;
+}
+
+
+    
+    
+    
+    
+    
+    
+    
+    article input{
+       
+         width: 47%;
+		
+	background: rgb(61, 157, 179);
+	padding: 5px 22px;
+	font-family: 'BebasNeueRegular','Arial Narrow',Arial,sans-serif;
+	color: #fff;
+	font-size: 18px;	
+	border: 1px solid rgb(28, 108, 122);	
+       	margin-left: 1px;
+        margin-top: 2px;
+	margin-bottom: 10px;	
+	border-radius: 100px;	
+	box-shadow:
+		0px 1px 6px 4px rgba(0, 0, 0, 0.07) inset,
+		0px 0px 0px 1px rgb(254, 254, 254),
+		0px 1px 3px 3px rgb(210, 210, 210);
+	transition: all 0.2s linear;
+       
+    }
+    
+    article input:hover{
+            background: rgb(74, 179, 198);
+        }
+    
+    article thismany{
+        width: 42%;
+		
+	background: rgb(61, 157, 179);
+	padding: 5px 15px;
+	font-family: 'BebasNeueRegular','Arial Narrow',Arial,sans-serif;
+	color: #fff;
+	font-size: 18px;	
+	border: 1px solid rgb(28, 108, 122);	
+       	margin-left: 8px;
+	margin-bottom: 10px;	
+	border-radius: 100px;	
+	box-shadow:
+			0px 1px 6px 4px rgba(0, 0, 0, 0.07) inset,
+		0px 0px 0px 1px rgb(254, 254, 254),
+		0px 1px 3px 3px rgb(210, 210, 210);
+	transition: all 0.2s linear;
+        
+    }
+    article P{
+        margin-left: 40px;
+       
+    }
+ article p.imagelist{
+    width 150px;
+    height:100px;
+    border-radius:20px;
+    }
+        
+.footer {
+    background-color:#002828;
+    height:30px;
+    margin:5px;
+    border-radius: 25px;
+    color:white;
+    clear:both;
+    text-align:center;
+}
+</style>
+</head>
+
+<div class= "body" >
+<body >
+<div class="header">
+<header>
+    <h1>Fabulous Cookies</h1> 
+   <h3>Småkakor- Det perfekta dessertbordet för företagskunden</h3>
+
+</header >
+</div >
+<div class ="nav" >
+<nav>
+ <ul id="menu">
+  <li><a href="FabulousBakery.htm">HEM</a></li>
+  <li><a href="smakakor.htm">SMÅKAKOR & RECEPT</a></li>
+  <li><a href="beställning.htm">BESTÄLLNING</a></li>
+  <li><a href="kontakt.htm">KONTAKT</a></li>
+     <li><a href="">Logga in/Registrera</a></li>
+ </ul> 
+</nav>
+</div>
+<div class ="article" >
+ <article>
+     <p>
+         <input name=addbox type=button value="Lägg till vara i varukorg" onclick=Loc_additem('p1i1','1.11','Page_1_item_1','pageone.html')><BR>
+         <input type=button name=subbox value="Ångra köp" onclick=Loc_subitem('p1i1','1.11','page_1_item_1','pageone.html')><P>
+        
+     
+     
+Du har beställt såhär många av denna vara:<thismany type=text name=p1i1 size=2><P>
+
+         <input name=addbox type=button value="Lägg till vara i varukorg" onclick=Loc_additem('p3i2','6.66','Page_3_Item_2','pagethree.html')><br>
+<input type=button name=subbox value="Ångra köp" onclick=Loc_subitem('p3i2','6.66','Page_3_Item_2','pagethree.html')><BR>
+
+     
+Du har beställt såhär många av denna vara:<thismany type=text name=p1i1 size=2><P>
+This item costs over $9000 <P>
+         <input name=addbox type=button value="Lägg till vara i varukorg" onclick=Loc_additem('p3i3','7.77','Page_3_Item_3','pagethree.html')><br>
+<input type=button name=subbox value="Ångra köp" onclick=Loc_subitem('p3i3','7.77','Page_3_Item_3','pagethree.html')><BR>
+     
+Du har beställt såhär många av denna vara:<thismany type=text name=p1i1 size=2><P>
+
+    
+         <input name=addbox type=button value="Lägg till vara i varukorg" onclick=Loc_additem('p3i2','6.66','Page_3_Item_2','pagethree.html')><br>
+<input type=button name=subbox value="Ångra köp" onclick=Loc_subitem('p3i2','6.66','Page_3_Item_2','pagethree.html')><BR>
+         
+         Du har beställt såhär många av denna vara:<thismany type=text name=p1i1 size=2><P>
+
+         <input name=addbox type=button value="Lägg till vara i varukorg" onclick=Loc_additem('p3i2','6.66','Page_3_Item_2','pagethree.html')><br>
+<input type=button name=subbox value="Ångra köp" onclick=Loc_subitem('p3i2','6.66','Page_3_Item_2','pagethree.html')><BR>
+         
+         Du har beställt såhär många av denna vara:<thismany type=text name=p1i1 size=2><P>
+
+         <input name=addbox type=button value="Lägg till vara i varukorg" onclick=Loc_additem('p3i2','6.66','Page_3_Item_2','pagethree.html')><br>
+<input type=button name=subbox value="Ångra köp" onclick=Loc_subitem('p3i2','6.66','Page_3_Item_2','pagethree.html')><BR>
+         
+         Du har beställt såhär många av denna vara:<thismany type=text name=p1i1 size=2><P>
+
+         <input name=addbox type=button value="Lägg till vara i varukorg" onclick=Loc_additem('p3i2','6.66','Page_3_Item_2','pagethree.html')><br>
+<input type=button name=subbox value="Ångra köp" onclick=Loc_subitem('p3i2','6.66','Page_3_Item_2','pagethree.html')><BR>
+           
+         Du har beställt såhär många av denna vara:<thismany type=text name=p1i1 size=2><P>
+
+       <input name=addbox type=button value="Lägg till vara i varukorg" onclick=Loc_additem('p3i2','6.66','Page_3_Item_2','pagethree.html')><br
+<input type=button name=subbox value="Ångra köp" onclick=Loc_subitem('p3i2','6.66','Page_3_Item_2','pagethree.html')><BR>
+    
+        
+     
+         <p class="imagelist"><img src="berliners.jpg" alt="berliner"></p>
+         <p class="imagelist"><img src="smakaka.jpg" alt="smakaka"></p>
+         <p class="imagelist"><img src="kokostoppar.jpg" alt="kokostoppar"></p>
+         <p class="imagelist"><img src="nötkakor.jpg" alt="notkakor"></p>
+         <p class="imagelist"><img src="macarron.jpg" alt="macarron"></p>
+         <p class="imagelist"><img src="amneris.jpg" alt="amneris"></p>
+         <p class="imagelist"><img src="notring.jpg" alt="notring"></p>
+         <p class="imagelist"><img src="tangokakor.jpg" alt="tangokakor"></p>
+    
+        
+</article>
+</div>
+<div class="aside">
+ <aside >
+   
+      
+	
+</aside >
+</div>
+<div class= "footer">
+<footer >
+   <p>www.fabulouscookies.com</p>
+</footer>
+</div>
+</body>
+</div>
+</html>

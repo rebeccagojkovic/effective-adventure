@@ -88,5 +88,13 @@ public class CustomerEAOImpl implements CustomerEAOImplLocal {
 		List<Customer> results = query.getResultList();
 		return results;
 	}
+	
+	@Override
+	public List<Customer> findBycEmail(String cEmail) {
+		TypedQuery<Customer> query = em.createNamedQuery("Customer.findBycEmail", Customer.class);
+		query.setParameter("cEmail", cEmail);
+		List<Customer> results = query.getResultList();
+		return results;
+	}
 
 }

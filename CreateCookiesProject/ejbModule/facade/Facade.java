@@ -92,6 +92,11 @@ public class Facade implements FacadeLocal {
 	public List<Customer> findBycName(String cName) {
 		return customerEAO.findBycName(cName);
 	}
+	
+	@Override
+	public List<Customer> findBycEmail(String cEmail) {
+		return customerEAO.findBycEmail(cEmail);
+	}
 
 	// * Ingredient *//
 

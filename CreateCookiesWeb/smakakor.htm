@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="mobiel-device.css" />
+ <title> Fabulous Bakery </title>
+ <meta charset="UTF-8">
+<style>
+
+Body{
+    background-image:url("kakor.jpg");
+    background-repeat:repeat;
+}
+
+header {
+    background-color:#002828 ;
+    color:white;
+    text-align:center;
+    padding:5px;
+    border-radius: 25px;
+    opacity: 0.9;
+    margin:5px;
+
+}
+nav {
+    line-height:30px;
+    background-color:#003333;
+    height:50px;
+    float:top;
+    padding:10px;
+    border-radius: 25px;
+    opacity: 0.9;
+    margin:5px;
+}
+
+nav ul {
+   padding:-3px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px 4px 0 0;
+}
+
+nav ul li a:hover {
+    background-color:#002828;
+
+}
+
+section {
+    width:900px;
+    height:1800px;
+    float:right; 
+    border-radius: 25px;
+    background-color:#006E6E;
+    opacity: 0.9;
+    margin:5px;
+}
+section h1 {
+ margin-left:50px;
+ color:white;  
+}
+section textarea {
+  margin-left:50px;
+  background-color: #006E6E; 
+  color:white;
+}
+aside{
+    width:324px;
+    height:1800px;
+    background-color:#006E6E;
+    float:left;
+    border-radius: 25px;
+    opacity: 0.9;
+    margin:5px;
+}
+aside h1{
+    color:white;
+    text-align:center;
+}
+
+aside img{
+  width 150px;
+  height:100px;
+  border-radius:25px;
+}
+
+aside p.centered {
+  text-align: center; 
+}
+
+aside h3 {
+  text-align: center; 
+  color:white;
+}
+
+aside p {
+  text-align: center; 
+  color:white;
+}
+
+footer {
+    background-color:#002828;
+    height:30px;
+    color:white;
+    clear:both;
+    text-align:center;
+    border-radius: 25px;
+    opacity: 0.9; 
+}
+
+</style>
+</head>
+
+<body >
+
+<header >
+   <h1>Fabulous Cookies</h1> 
+   <h3>Småkakor - Det perfekta dessertbordet för företagskunden</h3>
+   
+</header >
+
+<nav >
+ <ul id="menu">
+  <li><a href="index.htm">HEM</a></li>
+  <li><a href="smakakor.htm">SMÅKAKOR & RECEPT</a></li>
+  <li><a href="bestallning.htm">BESTÄLLNING</a></li>
+  <li><a href="kontakt.htm">KONTAKT</a></li>
+ </ul> 
+</nav>
+<aside>
+   <h1><u>Småkakor</u></h1>
+   <form metod="GET" action="http://localhost">
+	<h3>Vilken kaka vill du ha recept på?</h3>
+	<p class="centered"><img src="berliners.jpg" alt="berliner"></p>
+	<h3>Berliner</h3><p class="centered"><input type="radio" name="Definition" value="Berliner"></p>
+	<p class="centered"><img src="smakaka.jpg" alt="glasyrpeparkakor"></p>
+	<h3>Glasyrpepparkaka</h3><p class="centered"><input type="radio" name="Definition" value="Glasyrpepparkaka"></p>
+	<p class="centered"><img src="kokostoppar.jpg" alt="kokostoppar"></p>
+	<h3>Kokostoppar</h3><p class="centered"><input type="radio" name="Definition" value="Kokostoppar"></p>
+	<p class="centered"><img src="nötkakor.jpg" alt="nötkakor"></p>
+	<h3>Nötkakor</h3><p class="centered"><input type="radio" name="Definition" value="Nötkakor"></p>
+	<p class="centered"><img src="macarron.jpg" alt="macarons"></p>
+	<h3>Macarron</h3><p class="centered"><input type="radio" name="Definition" value="Macarron"></p>
+	<p class="centered"><img src="amneris.jpg" alt="amneris"></p>
+	<h3>Amneris</h3><p class="centered"><input type="radio" name="Definition" value="Amneris"></p>
+	<p class="centered"><img src="notring.jpg" alt="notring"></p>
+	<h3>Nötringar</h3><p class="centered"><input type="radio" name="Definition" value="Nötringar"></p>
+	<p class="centered"><img src="tangokakor.jpg" alt="tango"></p>
+	<h3>Tango</h3><p class="centered"><input type="radio" name="Definition" value="Tango"></p>
+   </form>
+</aside>
+<section>
+<br><br>
+<h1>Ingredienser i valt recept</h1>
+<form metod="GET" action="http://localhost/">
+<textarea name= "recept1" 
+				rows="36px" cols="60">
+</textarea><br><br>
+<textarea name= "recept2" 
+				rows="35px" cols="60">
+</textarea><br><br>
+<textarea name= "recept3" 
+				rows="26px" cols="60">
+</textarea>
+</form>
+</section>
+<footer>
+ <p>www.fabulouscookies.com</p>
+</footer>
+</body>
+</html>
