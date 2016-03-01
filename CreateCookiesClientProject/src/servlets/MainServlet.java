@@ -3,6 +3,7 @@ package servlets;
 import javax.ejb.EJB;
 import javax.servlet.*;
 import java.io.PrintWriter;
+import java.util.List;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -40,15 +41,16 @@ public class MainServlet extends HttpServlet {
 		String url = null; // Get hidden field
 		String operation = req.getParameter("operation");
 		if (operation.equals("showemail")) {
-			facade.findBycEmail(cEmail) = req.getParameter("txtEmail");
-			Customer c = new Customer();
-			req.setAttribute("cEmail", c);
+			String cEmail = req.getParameter("txtEmail");
+			Customer c1 = new Customer();
+			req.setAttribute("cEmail", c1);
 			url = "/ShowEmail.jsp";
 		} else if (operation.equals("searchemail")) {
 			url = "/SearchEmail.jsp";
 		} else {
+			url = "/SearchEmail.jsp";
 		}
-		url = "/SearchEmail.jsp";
+
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
 		dispatcher.forward(req, resp);// req.getRequestDispatcher(url).forward(req,
 										// resp);
