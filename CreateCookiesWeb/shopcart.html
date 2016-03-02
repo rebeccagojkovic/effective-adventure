@@ -5,6 +5,8 @@
  <title> not Fabulous Bakery </title>
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
 <style>
 div {
     resize: both;
@@ -61,56 +63,24 @@ div {
     background-color:#002828;
 }
 
-
 .article {
-    width:620px;
-    height:1200px;
-    margin:5px;
-    
+    margin:5px; 
     border-radius:25px;
-    background-color:#006E6E; 
-    
+    background-color:#006E6E;  
     color:white;  
     opacity: 0.8;
 }
   
-    
-.article ul li{
-    display: list-item;
-	margin-left:40px;
-  
-}
-
-.article h1{
-	font-style:italic;
-    color:white;
-    text-align:center;
-}
-    
-
-article h3 {
-  text-align: center; 
-  color:white;
-}
-
 
     
-    
-    
-    
-    
-    
-    
-    article input{
-       
-         width: 47%;
-		
+    .article input{
 	background: rgb(61, 157, 179);
 	padding: 5px 22px;
 	font-family: 'BebasNeueRegular','Arial Narrow',Arial,sans-serif;
 	color: #fff;
-	font-size: 18px;	
-	border: 1px solid rgb(28, 108, 122);	
+		
+	border: 1px solid rgb(28, 108, 122);
+       
        	margin-left: 1px;
         margin-top: 2px;
 	margin-bottom: 10px;	
@@ -122,23 +92,22 @@ article h3 {
 	transition: all 0.2s linear;
        
     }
-    
-    article input:hover{
+     .article input:hover{
             background: rgb(74, 179, 198);
         }
     
-    article thismany{
-        width: 42%;
+   
+    .article thismany{
+       
 		
 	background: rgb(61, 157, 179);
 	padding: 5px 15px;
 	font-family: 'BebasNeueRegular','Arial Narrow',Arial,sans-serif;
-	color: #fff;
-	font-size: 18px;	
+	color: #fff;	
 	border: 1px solid rgb(28, 108, 122);	
-       	margin-left: 8px;
+       		margin-left: 8px;
 	margin-bottom: 10px;	
-	border-radius: 100px;	
+	border-radius: 100px;
 	box-shadow:
 			0px 1px 6px 4px rgba(0, 0, 0, 0.07) inset,
 		0px 0px 0px 1px rgb(254, 254, 254),
@@ -146,15 +115,22 @@ article h3 {
 	transition: all 0.2s linear;
         
     }
-    article P{
-        margin-left: 40px;
+    .article P{
+        margin-left: 5%;
+        
        
     }
- article p.imagelist{
-    width 150px;
-    height:100px;
-    border-radius:20px;
+    p.imagelist{
+        position: ;
+       top: 38%;
+    left: 42%;
+    margin-top: -19%;
+    margin-bottom: 21%;
+        
+        
+        
     }
+ 
         
 .footer {
     background-color:#002828;
@@ -168,15 +144,18 @@ article h3 {
 </style>
 </head>
 
-<div class= "body" >
-<body >
-<div class="header">
+    <div class="header">
 <header>
     <h1>Fabulous Cookies</h1> 
    <h3>Småkakor- Det perfekta dessertbordet för företagskunden</h3>
 
 </header >
-</div >
+    </div>
+<div class= "body" >
+
+
+
+   
 <div class ="nav" >
 <nav>
  <ul id="menu">
@@ -188,14 +167,17 @@ article h3 {
  </ul> 
 </nav>
 </div>
+        
+        
 <div class ="article" >
- <article>
-     <p>
+
+     <div class ="container">
+     <div class="eight columns">
+     <p>   
          <input name=addbox type=button value="Lägg till vara i varukorg" onclick=Loc_additem('p1i1','1.11','Page_1_item_1','pageone.html')><BR>
          <input type=button name=subbox value="Ångra köp" onclick=Loc_subitem('p1i1','1.11','page_1_item_1','pageone.html')><P>
+         
         
-     
-     
 Du har beställt såhär många av denna vara:<thismany type=text name=p1i1 size=2><P>
 
          <input name=addbox type=button value="Lägg till vara i varukorg" onclick=Loc_additem('p3i2','6.66','Page_3_Item_2','pagethree.html')><br>
@@ -230,11 +212,13 @@ Du har beställt såhär många av denna vara:<thismany type=text name=p1i1 size
            
          Du har beställt såhär många av denna vara:<thismany type=text name=p1i1 size=2><P>
 
-       <input name=addbox type=button value="Lägg till vara i varukorg" onclick=Loc_additem('p3i2','6.66','Page_3_Item_2','pagethree.html')><br
+           <input name=addbox type=button value="Lägg till vara i varukorg" onclick=Loc_additem('p3i2','6.66','Page_3_Item_2','pagethree.html')><br>
 <input type=button name=subbox value="Ångra köp" onclick=Loc_subitem('p3i2','6.66','Page_3_Item_2','pagethree.html')><BR>
     
-        
-     
+        </div>
+             
+             <div class="four columns">
+   
          <p class="imagelist"><img src="berliners.jpg" alt="berliner"></p>
          <p class="imagelist"><img src="smakaka.jpg" alt="smakaka"></p>
          <p class="imagelist"><img src="kokostoppar.jpg" alt="kokostoppar"></p>
@@ -244,21 +228,21 @@ Du har beställt såhär många av denna vara:<thismany type=text name=p1i1 size
          <p class="imagelist"><img src="notring.jpg" alt="notring"></p>
          <p class="imagelist"><img src="tangokakor.jpg" alt="tangokakor"></p>
     
-        
-</article>
+        </div>
+         </div>
 </div>
+         
+         
 <div class="aside">
- <aside >
-   
-      
-	
-</aside >
+ 
 </div>
 <div class= "footer">
 <footer >
    <p>www.fabulouscookies.com</p>
 </footer>
 </div>
-</body>
-</div>
+         
+
+  </div>       
+
 </html>
