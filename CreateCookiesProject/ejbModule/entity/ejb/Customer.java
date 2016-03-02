@@ -34,8 +34,18 @@ public class Customer implements Serializable {
 	private String cPostalAddress;
 	private String cCountry;
 	private String cEmail;
+	private String cPassword;
 	private Set<Order> order;
-	// private Password password;
+	
+	
+	public Customer(String cName, String cAddress, String cPostalAddress, String cCountry, String cEmail, String cPassword) {
+		this.cName = cName;
+		this.cAddress = cAddress;
+		this.cPostalAddress = cPostalAddress;
+		this.cCountry = cCountry;
+		this.cEmail = cEmail;
+		this.cPassword = cPassword;
+	}
 
 	@Id
 	@Column(name = "cNumber")
@@ -59,6 +69,10 @@ public class Customer implements Serializable {
 	@Column(name = "cAddress")
 	public String getcAddress() {
 		return cAddress;
+	}
+
+	public void setcAddress(String cAddress) {
+		this.cAddress = cAddress;
 	}
 
 	@Column(name = "cPostalAddress")
@@ -88,8 +102,13 @@ public class Customer implements Serializable {
 		this.cEmail = cEmail;
 	}
 
-	public void setcAddress(String cAddress) {
-		this.cAddress = cAddress;
+	@Column(name = "cPassword")
+	public String getcPassword() {
+		return cPassword;
+	}
+
+	public void setcPassword(String cPassword) {
+		this.cPassword = cPassword;
 	}
 
 	@OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
