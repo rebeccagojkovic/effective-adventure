@@ -18,7 +18,7 @@ public class LoginServlet extends HttpServlet {
      String cPassword = request.getParameter("cPassword");
      CustomerEAOImpl loginService = new CustomerEAOImpl();
      boolean result = loginService.authenticateCustomer(cEmail, cPassword);
-     Customer customer = loginService.getUserByUserId(userId);
+     Customer customer = loginService.findBycEmail(userId);
      if(result == true){
          request.getSession().setAttribute("user", user);      
          response.sendRedirect("home.jsp");

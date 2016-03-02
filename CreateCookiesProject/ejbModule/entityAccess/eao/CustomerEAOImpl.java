@@ -3,7 +3,6 @@ package entityAccess.eao;
 import java.util.List;
 
 import javax.ejb.Stateless;
-import javax.jms.Session;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
