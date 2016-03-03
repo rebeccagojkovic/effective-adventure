@@ -1,16 +1,6 @@
 package servlets;
 
-import entity.ejb.Customer;
-import entity.ejb.Ingredient;
-import entity.ejb.Order;
-import entity.ejb.Orderspecification;
-import entity.ejb.Product;
-import entity.ejb.Recipe;
-import facade.FacadeLocal;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Timestamp;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,12 +8,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
+import entity.ejb.Customer;
 
 /**
  * Servlet implementation class CustomerServlet
  */
 @WebServlet("/CustomerServlet")
-public class CustomerServlet extends HttpServlet implements FacadeLocal {
+public class CustomerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -35,88 +27,15 @@ public class CustomerServlet extends HttpServlet implements FacadeLocal {
     }
 
 	/**
-     * @see FacadeLocal#findBycEmail(String)
-     */
-    public List<Customer> findBycEmail(String cEmail)  { 
-         // TODO Auto-generated method stub
-			return null;
-    }
-
-	/**
-     * @see FacadeLocal#deleteCustomer(String)
-     */
-    public void deleteCustomer(String cNumber)  { 
-         // TODO Auto-generated method stub
-    }
-	/**
-     * @see FacadeLocal#updateCustomer(Customer)
-     */
-    public Customer updateCustomer(Customer customer)  { 
-         // TODO Auto-generated method stub
-			return null;
-    }
-
-	/**
-     * @see FacadeLocal#findBycName(String)
-     */
-    public List<Customer> findBycName(String cName)  { 
-         // TODO Auto-generated method stub
-			return null;
-    }
-	/**
-     * @see FacadeLocal#createCustomer(Customer)
-     */
-    public Customer createCustomer(Customer customer)  { 
-         // TODO Auto-generated method stub
-			return null;
-    }
-	/**
-     * @see FacadeLocal#findByAddress(String)
-     */
-    public List<Customer> findByAddress(String cAddress)  { 
-         // TODO Auto-generated method stub
-			return null;
-    }
-
-	/**
-     * @see FacadeLocal#findByPostalAddress(String)
-     */
-    public List<Customer> findByPostalAddress(String cPostalAddress)  { 
-         // TODO Auto-generated method stub
-			return null;
-    }
-
-	/**
-     * @see FacadeLocal#findByCountry(String)
-     */
-    public List<Customer> findByCountry(String cCountry)  { 
-         // TODO Auto-generated method stub
-			return null;
-    }
-
-	/**
-     * @see FacadeLocal#findBycNumber(String)
-     */
-    public Customer findBycNumber(String cNumber)  { 
-         // TODO Auto-generated method stub
-			return null;
-    }
-	/**
-     * @see FacadeLocal#findAllCustomers()
-     */
-    public List<Customer> findAllCustomers()  { 
-         // TODO Auto-generated method stub
-			return null;
-    }
-	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		PrintWriter out = response.getWriter();
-		out.println("MainServlet-doGet");
-		out.close();
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+	    PrintWriter out= response.getWriter();
+	    out.println("CustomerServlet-doGet");
+	    out.close();
+	
 	}
 
 	/**
@@ -124,8 +43,29 @@ public class CustomerServlet extends HttpServlet implements FacadeLocal {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-		
+		//doGet(request, response);
+		String url = null;
+		//Get hidden field
+		String operation = request.getParameter("operation");
+		if (operation.equals("ShowCustomer")) {
+		System.out.println("MainServlet-showCustomer");
+		String name = request.getParameter("companyName");
+		String email = request.getParameter("email");
+		String country = request.getParameter("country");
+		String postalAddress = request.getParameter("postalAddress");
+		String address = request.getParameter("address");
+		Customer c= new Customer("", name,email,country,postalAddress,address);
+		request.setAttribute("customer", c);
+		url = "/ShowCustomer.jsp";
+		} else if (operation.equals("SearchCustomer")) {
+		System.out.println("CustomerServlet-SearchCustomer");
+		   url = "/SearchCustomer.jsp";
+		} else {
+		   url ="/SearchCustomer.jsp";
+		}
+		System.out.println(url);
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+		dispatcher.forward(request, response);
 	}
 
 }
