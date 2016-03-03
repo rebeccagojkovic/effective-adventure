@@ -26,11 +26,7 @@
 				<td><input type="text" name="productTime" maxlength="30" /></td>
 				<td><input type="submit" name="submit" value="Send question" /></td>
 			</tr>
-			<tr>
-				<td>Price</td>
-				<td><input type="text" name="price" maxlength="30" /></td>
-				<td><input type="submit" name="submit" value="Send question" /></td>
-			</tr>
+			
 			
     </table>
 		<input name="operation" value="ShowProduct" type="hidden">
