@@ -38,14 +38,14 @@ public class Customer implements Serializable {
 	private Set<Order> order;
 	
 	
-	public Customer(String cName, String cAddress, String cPostalAddress, String cCountry, String cEmail, String cPassword) {
-		this.cName = cName;
-		this.cAddress = cAddress;
-		this.cPostalAddress = cPostalAddress;
-		this.cCountry = cCountry;
-		this.cEmail = cEmail;
-		this.cPassword = cPassword;
-	}
+//	public Customer(String cName, String cAddress, String cPostalAddress, String cCountry, String cEmail, String cPassword) {
+//		this.cName = cName;
+//		this.cAddress = cAddress;
+//		this.cPostalAddress = cPostalAddress;
+//		this.cCountry = cCountry;
+//		this.cEmail = cEmail;
+//		this.cPassword = cPassword;
+//	}
 
 	@Id
 	@Column(name = "cNumber")

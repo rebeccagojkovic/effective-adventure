@@ -60,6 +60,10 @@ public class CreateCookiesServlet extends HttpServlet {
 			out.println(" - " + cu1.getcAddress() + "</h4>");
 
 		}
+		
+		Customer customeremail = facade.getCustomerByEmail("ake");
+//		out.println("<h4>Hittade: " + customeremail.getcNumber());
+		
 
 		// * Ingredient *//
 

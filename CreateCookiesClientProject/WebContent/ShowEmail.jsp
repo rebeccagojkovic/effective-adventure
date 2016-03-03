@@ -13,9 +13,10 @@
 	<h2>Email:</h2>
 	<p>
 		<%
-			Customer c1 = (Customer) request.getAttribute("email");
+			// Customer c1 = (Customer) request.getAttribute("email");
+			
 		%>
-		<input type="text" name="txtEmail" value="<%=c1.getcEmail()%>">
+		<input type="text" name="txtEmail" value="<%=request.getAttribute("email")%>">
 	</p>
 	<form action="/CreateCookiesClientProject/MainServlet" method="post">
 		<input type="submit" name="submit" value="Tillbaka"> <input
