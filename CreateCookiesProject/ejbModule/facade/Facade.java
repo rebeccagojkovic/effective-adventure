@@ -101,6 +101,11 @@ public class Facade implements FacadeLocal {
 	public Customer getCustomerByEmail(String cEmail) {
 		return customerEAO.getCustomerByEmail(cEmail);
 	}
+	
+	@Override
+	public boolean authenticateCustomer(String cEmail, String cPassword) {
+		return customerEAO.authenticateCustomer(cEmail, cPassword);
+	}
 
 	// * Ingredient *//
 

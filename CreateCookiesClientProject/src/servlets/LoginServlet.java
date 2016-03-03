@@ -1,29 +1,42 @@
 package servlets;
 
 import java.io.IOException;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import entity.ejb.*;
-import entityAccess.eao.*;
 import facade.FacadeLocal;
 
+/**
+ * Servlet implementation class TestServlet
+ */
+@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private static final long serialVersionUID = 1L;
 
+	@EJB
+	FacadeLocal facade;
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String cEmail = request.getParameter("cEmail");
 		String cPassword = request.getParameter("cPassword");
-		CustomerEAOImpl loginService = new CustomerEAOImpl();
-		boolean result = loginService.authenticateCustomer(cEmail, cPassword);
-		Customer customer = loginService.getCustomerByEmail(cEmail);
+
+		boolean result = facade.authenticateCustomer(cEmail, cPassword);
+
 		if (result == true) {
-			request.getSession().setAttribute("customer", customer);
+			request.getSession().setAttribute("cEmail", cEmail);
 			response.sendRedirect("home.jsp");
 		} else {
 			response.sendRedirect("error.jsp");
 		}
+
 	}
 
 }

@@ -100,14 +100,16 @@ public class CustomerEAOImpl implements CustomerEAOImplLocal {
 		return results;
 	}
 
-//	public boolean authenticateCustomer(String cEmail, String cPassword) {
-//		Customer customer = getCustomerByEmail(cEmail);
-//		if (customer != null && customer.getcEmail().equals(cEmail) && customer.getcPassword().equals(cPassword)) {
-//			return true;
-//		} else {
-//			return false;
-//		}
-//	}
+	@Override
+	public boolean authenticateCustomer(String cEmail, String cPassword) {
+		Customer customer = getCustomerByEmail(cEmail);
+		if (customer != null && customer.getcEmail().equals(cEmail) && customer.getcPassword().equals(cPassword)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	@Override
 	public Customer getCustomerByEmail(String cEmail) {
 		// Customer c = em.find(Customer.class, cEmail);
