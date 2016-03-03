@@ -4,7 +4,9 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transaction;
 
@@ -89,7 +91,7 @@ public class CustomerEAOImpl implements CustomerEAOImplLocal {
 		List<Customer> results = query.getResultList();
 		return results;
 	}
-	
+
 	@Override
 	public List<Customer> findBycEmail(String cEmail) {
 		TypedQuery<Customer> query = em.createNamedQuery("Customer.findBycEmail", Customer.class);
@@ -97,55 +99,68 @@ public class CustomerEAOImpl implements CustomerEAOImplLocal {
 		List<Customer> results = query.getResultList();
 		return results;
 	}
-	
-	public boolean authenticateCustomer(String cEmail, String cPassword) {
-        Customer customer = getCustomerByCemail(cEmail);         
-        if(customer!=null && customer.getcEmail().equals(cEmail) && customer.getcPassword().equals(cPassword)){
-            return true;
-        }else{
-            return false;
-        }
-    }
- 
-    public Customer getCustomerByCemail(String cEmail) {
-        Session session = HibernateUtil.openSession();
-        Transaction tx = null;
-        User user = null;
-        try {
-            tx = session.getTransaction();
-            tx.begin();
-            Query query = session.createQuery("from User where userId='"+userId+"'");
-            user = (User)query.uniqueResult();
-            tx.commit();
-        } catch (Exception e) {
-            if (tx != null) {
-                tx.rollback();
-            }
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
-        return user;
-    }
-     
-    public List<User> getListOfUsers(){
-        List<User> list = new ArrayList<User>();
-        Session session = HibernateUtil.openSession();
-        Transaction tx = null;       
-        try {
-            tx = session.getTransaction();
-            tx.begin();
-            list = session.createQuery("from User").list();                       
-            tx.commit();
-        } catch (Exception e) {
-            if (tx != null) {
-                tx.rollback();
-            }
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
-        return list;
-    }
+
+//	public boolean authenticateCustomer(String cEmail, String cPassword) {
+//		Customer customer = getCustomerByEmail(cEmail);
+//		if (customer != null && customer.getcEmail().equals(cEmail) && customer.getcPassword().equals(cPassword)) {
+//			return true;
+//		} else {
+//			return false;
+//		}
+//	}
+	@Override
+	public Customer getCustomerByEmail(String cEmail) {
+		// Customer c = em.find(Customer.class, cEmail);
+		// List<Customer> list = c.getcEmail()
+		TypedQuery<Customer> query = em.createNamedQuery("Customer.findBycEmail", Customer.class);
+
+		query.setParameter("cEmail", cEmail);
+		try {
+			return query.getSingleResult();
+		} catch (NoResultException e) {
+			return null;
+		}
+	}
+
+	// public Customer getCustomerByCemail(String cEmail) {
+	// Session session = HibernateUtil.openSession();
+	// Transaction tx = null;
+	// User user = null;
+	// try {
+	// tx = session.getTransaction();
+	// tx.begin();
+	// Query query = session.createQuery("from User where userId='"+userId+"'");
+	// user = (User)query.uniqueResult();
+	// tx.commit();
+	// } catch (Exception e) {
+	// if (tx != null) {
+	// tx.rollback();
+	// }
+	// e.printStackTrace();
+	// } finally {
+	// session.close();
+	// }
+	// return user;
+	// }
+	//
+	// public List<User> getListOfUsers(){
+	// List<User> list = new ArrayList<User>();
+	// Session session = HibernateUtil.openSession();
+	// Transaction tx = null;
+	// try {
+	// tx = session.getTransaction();
+	// tx.begin();
+	// list = session.createQuery("from User").list();
+	// tx.commit();
+	// } catch (Exception e) {
+	// if (tx != null) {
+	// tx.rollback();
+	// }
+	// e.printStackTrace();
+	// } finally {
+	// session.close();
+	// }
+	// return list;
+	// }
 
 }

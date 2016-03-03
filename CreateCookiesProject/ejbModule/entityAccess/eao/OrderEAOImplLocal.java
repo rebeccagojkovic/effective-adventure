@@ -21,5 +21,9 @@ public interface OrderEAOImplLocal {
 	public List<Order> isDelivered(boolean isDeliverd);
 
 	public List<Order> findAllOrders();
+	
+	//public List<Order> updateOrder(String oNumber);
+
+	
 
 }

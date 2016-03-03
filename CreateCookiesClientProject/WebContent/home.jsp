@@ -1,7 +1,7 @@
 <%@page import="java.util.List"%>
-<%@page import="com.javawebtutor.service.LoginService"%>
+<%@page import="entityAccess.eao.CustomerEAOImpl"%>
 <%@page import="java.util.Date"%>
-<%@page import="com.javawebtutor.model.User"%>
+<%@page import="entity.ejb.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,9 +17,9 @@
 			<b>This is Sample Result Page</b><br />
 			<%=new Date()%></br>
 			<%
-				User user = (User)session.getAttribute("user");
+				Customer customer = (Customer)session.getAttribute("user");
 			%>
-			<b>Welcome <%=user.getFirstName() + " " + user.getLastName()%></b> <br />
+			<b>Welcome <%=customer.getcName()%></b> <br />
 			<a href="logout.jsp">Logout</a>
 			</p>
 
@@ -35,16 +35,12 @@
 				</thead>
 				<tbody>
 					<%
-						LoginService loginService = new LoginService();
-						List<User> list = loginService.getListOfUsers();
-						for (User u : list) {
+						CustomerEAOImpl loginService = new CustomerEAOImpl();
+						List<Customer> list = loginService.findAllCustomers();
+						for (Customer c : list) {
 					%>
 					<tr>
-						<td><%=u.getUserId()%></td>
-						<td><%=u.getFirstName()%></td>
-						<td><%=u.getMiddleName()%></td>
-						<td><%=u.getLastName()%></td>
-						<td><%=u.getEmail()%></td>
+						<td><%=c.getcName()%></td>
 					</tr>
 					<%
 						}

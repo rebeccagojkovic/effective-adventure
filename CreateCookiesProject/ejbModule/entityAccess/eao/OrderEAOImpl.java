@@ -3,6 +3,7 @@ package entityAccess.eao;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.management.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -35,6 +36,52 @@ public class OrderEAOImpl implements OrderEAOImplLocal {
 		return order;
 	}
 
+	
+//	@Override
+//	public List<Order> updateOrder(Order order){
+//		TypedQuery<Order> query = em.createNamedQuery("Order.updateOrder", Order.class);
+//		
+//		List <Order> o = query.getResultList();
+//		if(order.getExpectedDeliveryDate() != null){
+//			order.setExpectedDeliveryDate(o.getExpectedDeliveryDate());
+//		}
+//		if(order.getoNumber() != null){
+//			order = o.getoNumber();
+//		}
+//		return order;
+//		
+//	}
+	
+//	@Override
+//	public List<Order> updateOrder(String oNumber) {
+//		TypedQuery<Order> query = em.createNamedQuery("Order.updateOrder", Order.class);
+//		Query.setParameter("oNumber", oNumber);
+//		List<Order> results = query.getResultList();
+//		
+//		for(Order o : results){
+//		if(((Order) results).getExpectedDeliveryDate() != null){
+//			o.setExpectedDeliveryDate(o.getExpectedDeliveryDate());
+//		}}
+//		for(Order o : results){
+//			if(((Order) results).getCustomer() != null){
+//				o.setCustomer(o.getCustomer());
+//			}}
+//		for(Order o : results){
+//			if(((Order) results).getoNumber() != null){
+//				o.setoNumber(o.getoNumber());
+//			}}
+//		for(Order o : results){
+//			if(((Order) results).getOrderspecification() != null){
+//				o.setExpectedDeliveryDate(o.getExpectedDeliveryDate());
+//			}}
+//		for(Order o : results){
+//			if(((Order) results).getOrderspecification() != null){
+//				o.setOrderspecification(o.getOrderspecification());
+//			}}
+//		
+//		return results;
+//	}
+	
 	@Override
 	public Order updateOrder(Order order) {
 		em.merge(order);
@@ -71,4 +118,6 @@ public class OrderEAOImpl implements OrderEAOImplLocal {
 		List<Order> results = query.getResultList();
 		return results;
 	}
+
+
 }

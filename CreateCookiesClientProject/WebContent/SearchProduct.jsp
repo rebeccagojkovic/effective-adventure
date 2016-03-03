@@ -9,6 +9,7 @@
 <body>
 <form action="/ProductServlet"  method="post">
 <table  cellspacing="0" cellpadding="0" border="0" align="left">
+<tr>
 <td><h2>Search Product:</h2></td>
 </tr>
 			<tr>
@@ -26,11 +27,7 @@
 				<td><input type="text" name="productTime" maxlength="30" /></td>
 				<td><input type="submit" name="submit" value="Send question" /></td>
 			</tr>
-			<tr>
-				<td>Price</td>
-				<td><input type="text" name="price" maxlength="30" /></td>
-				<td><input type="submit" name="submit" value="Send question" /></td>
-			</tr>
+			
 			
     </table>
 		<input name="operation" value="ShowProduct" type="hidden">

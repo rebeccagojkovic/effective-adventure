@@ -97,6 +97,10 @@ public class Facade implements FacadeLocal {
 	public List<Customer> findBycEmail(String cEmail) {
 		return customerEAO.findBycEmail(cEmail);
 	}
+	@Override
+	public Customer getCustomerByEmail(String cEmail) {
+		return customerEAO.getCustomerByEmail(cEmail);
+	}
 
 	// * Ingredient *//
 
@@ -146,6 +150,11 @@ public class Facade implements FacadeLocal {
 	public Order updateOrder(Order order) {
 		return orderEAO.updateOrder(order);
 	}
+	
+//	@Override
+//	public List<Order> updateOrder(String oNumber) {
+//		return orderEAO.updateOrder();
+//	}
 
 	@Override
 	public void deleteOrder(String oNumber) {

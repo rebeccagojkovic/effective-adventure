@@ -36,18 +36,27 @@ public class MainServlet extends HttpServlet {
 		out.close();
 	}
 
-	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		resp.setContentType(CONTENT_TYPE);
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType(CONTENT_TYPE);
 		String url = null; // Get hidden field
-		String operation = req.getParameter("operation");
+		String operation = request.getParameter("operation");
 		if (operation.equals("showemail")) {
-			String cEmail = req.getParameter("txtEmail");
-			List<Customer> customeremail = facade.findBycEmail(cEmail);
-			for (Customer c1 : customeremail) {
-				req.setAttribute("email", c1);
-			}
+			String cEmail = request.getParameter("txtEmail");
 
+			// Customer customeremail = facade.getCustomerByEmail(cEmail);
+
+			List<Customer> allcustomers = facade.findBycEmail(cEmail);
+			for (Customer cu1 : allcustomers) {
+				
+				request.setAttribute("email", cu1.getcEmail());
+				
+			}
 			url = "/ShowEmail.jsp";
+
+			// Customer c = new Customer();
+			// request.setAttribute("email", c);
+			// url = "/ShowEmail.jsp";
+
 		} else if (operation.equals("searchemail")) {
 			url = "/SearchEmail.jsp";
 		} else {
@@ -55,7 +64,7 @@ public class MainServlet extends HttpServlet {
 		}
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-		dispatcher.forward(req, resp);// req.getRequestDispatcher(url).forward(req,
-										// resp);
+		dispatcher.forward(request, response);// request.getRequestDispatcher(url).forward(request,
+		// response);
 	}
 }

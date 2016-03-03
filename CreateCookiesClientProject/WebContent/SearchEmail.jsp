@@ -7,7 +7,7 @@
 <title>SearchEmail</title>
 </head>
 <body>
-	<form action="/CreateCookiesClientProject/TestjServlet" method="post">
+	<form action="/CreateCookiesClientProject/MainServlet" method="post">
 
 		<table cellspacing="0" cellpadding="0" border="0" align="left">
 			<tr>

@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.jboss.resteasy.util.FindAnnotation;
+
 import entity.ejb.*;
 import facade.FacadeLocal;
 
@@ -37,18 +39,31 @@ public class CreateCookiesServlet extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void service(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE html><html><head>");
 		out.println("<title>CreateCookies</title>");
-		out.println("<meta charset=\"UTF-8\">");
+		out.println("<meta charset=\"ISO-8859-1\">");
 		out.println("</head><body>");
 		out.println("<h3>CreateCookies</h3>" + "<br>");
 
 		// * Customer *//
 
 		out.println("** Customer **" + "<br>");
+
+		List<Customer> allcustomers = facade.findAllCustomers();
+		for (Customer cu1 : allcustomers) {
+			out.println("<h4>Hittade: " + cu1.getClass().getSimpleName());
+			out.println(" Id: " + cu1.getcNumber());
+			out.println(" - " + cu1.getcName());
+			out.println(" - " + cu1.getcAddress() + "</h4>");
+
+		}
+		
+		Customer customeremail = facade.getCustomerByEmail("ake");
+//		out.println("<h4>Hittade: " + customeremail.getcNumber());
+		
 
 		// * Ingredient *//
 
@@ -92,6 +107,15 @@ public class CreateCookiesServlet extends HttpServlet {
 
 		// * Order *//
 
+		Order o1 = new Order();
+		o1.setCustomer(facade.findBycNumber("1"));
+		o1.setoNumber("2");
+//		o1.setExpectedDeliveryDate(o1.getExpectedDeliveryDate());
+		
+		
+
+		facade.updateOrder(o1);
+
 		out.println("** Order **" + "<br>");
 
 		List<Order> ordersearch = facade.findAllOrders();
@@ -101,11 +125,18 @@ public class CreateCookiesServlet extends HttpServlet {
 			out.println(" - " + or1.getoNumber() + "</h4>");
 
 		}
-		
+
 		List<Order> orderisdelivered = facade.isDelivered(true);
 		for (Order or2 : orderisdelivered) {
 			out.println("<h4>Hittade: " + or2.getClass().getSimpleName());
-			out.println(" Id: " + or2.getoNumber());
+			out.println(" Id: " + or2.getoNumber() + "</h4>");
+		}
+		
+		List<Order> ordercertain = facade.findCertainOrder("2");
+		
+		for (Order or3 : ordercertain){
+			out.println("<h4>Hittade: " + or3.getClass().getSimpleName());
+			out.println(" Id: " + or3.getoNumber() + "</h4>");
 		}
 
 		// * Orderspecification *//
@@ -148,7 +179,8 @@ public class CreateCookiesServlet extends HttpServlet {
 
 		}
 
-		List<Product> producttime = facade.InfoTimeStamp(Timestamp.valueOf("1900-01-01 11:20:24.000"));
+		List<Product> producttime = facade.InfoTimeStamp(Timestamp
+				.valueOf("1900-01-01 11:20:24.000"));
 		for (Product pr2 : producttime) {
 			out.println("<h4>Hittade: " + pr2.getClass().getSimpleName());
 			out.println(" Id: " + pr2.getpNumber() + "</h4>");
