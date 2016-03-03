@@ -48,7 +48,8 @@ public class MainServlet extends HttpServlet {
 			List<Customer> allcustomers = facade.findBycEmail(cEmail);
 			for (Customer cu1 : allcustomers) {
 				
-				request.setAttribute("email", cu1.getcEmail());
+				request.setAttribute("cEmail", cu1.getcEmail());
+				request.setAttribute("cName", cu1.getcName());
 				
 			}
 			url = "/ShowEmail.jsp";

@@ -16,7 +16,8 @@
 			// Customer c1 = (Customer) request.getAttribute("email");
 			
 		%>
-		<input type="text" name="txtEmail" value="<%=request.getAttribute("email")%>">
+		<input type="text" name="txtEmail" value="<%=request.getAttribute("cEmail")%>">
+		<input type="text" name="txtName" value="<%=request.getAttribute("cName")%>">
 	</p>
 	<form action="/CreateCookiesClientProject/MainServlet" method="post">
 		<input type="submit" name="submit" value="Tillbaka"> <input
