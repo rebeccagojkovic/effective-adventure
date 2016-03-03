@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
 		boolean result = facade.authenticateCustomer(cEmail, cPassword);
 
 		if (result == true) {
-			request.getSession().setAttribute("cEmail", cEmail);
+			request.getSession().setAttribute("cEmail", result);
 			response.sendRedirect("home.jsp");
 		} else {
 			response.sendRedirect("error.jsp");

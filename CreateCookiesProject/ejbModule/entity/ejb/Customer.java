@@ -2,14 +2,20 @@ package entity.ejb;
 
 import java.io.Serializable;
 import java.util.Set;
+import java.util.UUID;
 
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -24,10 +30,11 @@ import javax.persistence.Table;
 @Table(name = "Customer")
 
 public class Customer implements Serializable {
+	private static final long serialVersionUID = 1L;
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+
 	private String cNumber;
 	private String cName;
 	private String cAddress;
@@ -36,25 +43,22 @@ public class Customer implements Serializable {
 	private String cEmail;
 	private String cPassword;
 	private Set<Order> order;
-	
-	
-//	public Customer(String cName, String cAddress, String cPostalAddress, String cCountry, String cEmail, String cPassword) {
-//		this.cName = cName;
-//		this.cAddress = cAddress;
-//		this.cPostalAddress = cPostalAddress;
-//		this.cCountry = cCountry;
-//		this.cEmail = cEmail;
-//		this.cPassword = cPassword;
-//	}
+
+	// @SequenceGenerator(name="seq", initialValue=1, allocationSize=100)
+	// @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
 
 	@Id
 	@Column(name = "cNumber")
 	public String getcNumber() {
 		return cNumber;
 	}
-
+	
 	public void setcNumber(String cNumber) {
 		this.cNumber = cNumber;
+	}
+	@PrePersist
+	public void cNumberGenerated(){
+		this.setcNumber(UUID.randomUUID().toString());
 	}
 
 	@Column(name = "cName")
@@ -128,5 +132,18 @@ public class Customer implements Serializable {
 	// public void setPassword(Password password) {
 	// this.password = password;
 	// }
+	public Customer() {
 
+	}
+
+	public Customer(String cName, String cAddress, String cPostalAddress, String cCountry,
+			String cEmail, String cPassword) {
+//		this.cNumber = cNumber;
+		this.cName = cName;
+		this.cAddress = cAddress;
+		this.cPostalAddress = cPostalAddress;
+		this.cCountry = cCountry;
+		this.cEmail = cEmail;
+		this.cPassword = cPassword;
+	}
 }
