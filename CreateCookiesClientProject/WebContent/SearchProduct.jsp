@@ -9,6 +9,7 @@
 <body>
 <form action="/ProductServlet"  method="post">
 <table  cellspacing="0" cellpadding="0" border="0" align="left">
+<tr>
 <td><h2>Search Product:</h2></td>
 </tr>
 			<tr>
