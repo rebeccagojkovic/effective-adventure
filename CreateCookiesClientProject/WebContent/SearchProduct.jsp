@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,30 +7,34 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="/ProductServlet"  method="post">
-<table  cellspacing="0" cellpadding="0" border="0" align="left">
-<tr>
-<td><h2>Search Product:</h2></td>
-</tr>
+	<form action="/ProductServlet" method="post">
+		<table cellspacing="0" cellpadding="0" border="0" align="left">
 			<tr>
-				<td>Product Number</td>
-				<td><input type="text" name="productNumber" maxlength="30" /></td>
-				<td><input type="submit" name="submit" value="Send question" /></td>
+				<td><h2>Search Product:</h2></td>
 			</tr>
 			<tr>
-				<td>Product Name</td>
-				<td><input type="text" name="productName" maxlength="30" /></td>
-				<td><input type="submit" name="submit" value="Send question" /></td>
+
+				<td><input type="text" name="searchProduct" maxlength="30" /></td>
+
 			</tr>
 			<tr>
-				<td>Product Time</td>
-				<td><input type="text" name="productTime" maxlength="30" /></td>
+				<td><input type="radio" name="radioproductsearch"
+					id="radioProductName" value="productName" maxlength="30" />Product
+					Name</td>
+
+			</tr>
+			<tr>
+
+				<td><input type="radio" name="radioproductsearch"
+					id="radioProductTime" value="productTime" maxlength="20" />Product
+					Time</td>
+
+			</tr>
+			<tr>
 				<td><input type="submit" name="submit" value="Send question" /></td>
 			</tr>
-			
-			
-    </table>
-		<input name="operation" value="ShowProduct" type="hidden">
-</form>
+		</table>
+		<input name="operation" value="showcustomer" type="hidden">
+	</form>
 </body>
 </html>
