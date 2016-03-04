@@ -13,32 +13,33 @@
 <td><h2>Search Customer:</h2></td>
 </tr>
 			<tr>
-				<td>Company name</td>
-				<td><input type="text" name="companyName" maxlength="30" /></td>
-				<td><input type="submit" name="submit" value="Send question" /></td>
+				
+				<td><input type="text" name="searchCustomer" maxlength="30" /></td>
+				
 			</tr>
 			<tr>
-				<td>Email</td>
-				<td><input type="text" name="email" maxlength="40" /></td>
-				<td><input type="submit" name="submit" value="Send question" /></td>
+				<td><input type="radio" name="radiocustomersearch" id="radioCompanyName" value="companyName" maxlength="30" />Company Name</td>
+				
 			</tr>
 			<tr>
-				<td>Country</td>
-				<td><input type="text" name="country" maxlength="30" /></td>
-				<td><input type="submit" name="submit" value="Send question" /></td>
+				
+				<td><input type="radio" name="radiocustomersearch" id="radioCompanyEmail" value="companyEmail" maxlength="40" />Company Email</td>
+				
 			</tr>
 			<tr>
-				<td>Postal address</td>
-				<td><input type="text" name="postalAddress" maxlength="100" /></td>
-				<td><input type="submit" name="submit" value="Send question" /></td>
+				<td><input type="radio" name="radiocustomersearch" id="radioCompanyCountry" value="companyCountry" maxlength="30" />Country</td>
 			</tr>
 			<tr>
-				<td>Address</td>
-				<td><input type="text" name="address" maxlength="100" /></td>
-				<td><input type="submit" name="submit" value="Send question" /></td>
+				<td><input type="radio" name="radiocustomersearch" id="radioPostalAddress" value="postalAddress" maxlength="30" />Postal Address</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="radiocustomersearch" id="radioCompanyAddress" value="companyAddress" maxlength="30" />Address</td>
+			</tr>
+			<tr>
+			<td><input type="submit" name="submit" value="Send question" /></td>
 			</tr>
 </table>
-<input name="operation" value="ShowCustomer" type="hidden">
+<input name="operation" value="showcustomer" type="hidden">
 </form>
 </body>
 </html>

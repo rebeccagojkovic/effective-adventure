@@ -13,23 +13,30 @@
 <td><h2>Search Order:</h2></td>
 </tr>
 			<tr>
-				<td>Order number</td>
-				<td><input type="text" name="orderNumber" maxlength="30" /></td>
-				<td><input type="submit" name="submit" value="Send question" /></td>
-			</tr>
-			<tr>
-				<td>Expected delivery date</td>
-				<td><input type="text" name="expectedDeliveryDate" maxlength="40" /></td>
-				<td><input type="submit" name="submit" value="Send question" /></td>
-			</tr>
-			<tr>
-				<td>is Delivered</td>
-				<td><input type="text" name="isDelivered" maxlength="30" /></td>
-				<td><input type="submit" name="submit" value="Send question" /></td>
-			</tr>
-</table>
-<input name="operation" value="ShowOrder" type="hidden">
-</form>
 
+				<td><input type="text" name="searchOrder" maxlength="30" /></td>
+
+			</tr>
+			<tr>
+				<td><input type="radio" name="radioOrderSearch"
+					id="radioOrderNumber" value="orderNumber" maxlength="30" />Order Number</td>
+
+			</tr>
+			<tr>
+
+				<td><input type="radio" name="radioOrderSearch"
+					id="radioexpectedDeliveryDate" value="expectedDeliveryDate" maxlength="20" />Expected Delivery Date</td>
+
+			</tr>
+			<tr>
+				<td><input type="radio" name="radioOrderSearch"
+					id="radioisDelivered" value="isDelivered" maxlength="20" />Is Delivered</td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="submit" value="Send question" /></td>
+			</tr>
+		</table>
+		<input name="operation" value="showorder" type="hidden">
+	</form>
 </body>
 </html>

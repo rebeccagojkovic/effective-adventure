@@ -34,7 +34,7 @@
 	</p>
 	<form action="/CreateCookiesClientProject/CustomerServlet" method="post">
 		<input type="submit" name="submit" value="Tillbaka"> <input
-			name="operation" value="SearchCustomer" type="hidden">
+			name="operation" value="searchcustomer" type="hidden">
 	</form>
 </body>
 </html>
