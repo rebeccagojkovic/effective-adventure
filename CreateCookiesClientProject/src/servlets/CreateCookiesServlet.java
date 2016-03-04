@@ -61,7 +61,7 @@ public class CreateCookiesServlet extends HttpServlet {
 
 		}
 		
-		Customer customeremail = facade.getCustomerByEmail("ake");
+//		Customer customeremail = facade.getCustomerByEmail("ake");
 //		out.println("<h4>Hittade: " + customeremail.getcNumber());
 		
 

@@ -17,9 +17,9 @@
 			<b>This is Sample Result Page</b><br />
 			<%=new Date()%></br>
 			<%
-				Customer customer = (Customer)session.getAttribute("user");
+				Customer customer = (Customer) session.getAttribute("cEmail");
 			%>
-			<b>Welcome <%=customer.getcName()%></b> <br />
+			<b>Welcome <%= customer.getcEmail()%></b> <br />
 			<a href="logout.jsp">Logout</a>
 			</p>
 
@@ -35,15 +35,15 @@
 				</thead>
 				<tbody>
 					<%
-						CustomerEAOImpl loginService = new CustomerEAOImpl();
-						List<Customer> list = loginService.findAllCustomers();
-						for (Customer c : list) {
+				//		CustomerEAOImpl loginService = new CustomerEAOImpl();
+					//	List<Customer> list = loginService.findAllCustomers();
+					//	for (Customer c : list) {
 					%>
 					<tr>
-						<td><%=c.getcName()%></td>
+						<td><//%=c.getcName()%></td>
 					</tr>
 					<%
-						}
+					//	}
 					%>
 				
 				<tbody>

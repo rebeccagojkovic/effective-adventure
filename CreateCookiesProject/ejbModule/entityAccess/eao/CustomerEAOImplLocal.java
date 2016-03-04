@@ -30,4 +30,6 @@ public interface CustomerEAOImplLocal {
 	
 	public Customer getCustomerByEmail(String cEmail);
 
+	boolean authenticateCustomer(String cEmail, String cPassword);
+
 }

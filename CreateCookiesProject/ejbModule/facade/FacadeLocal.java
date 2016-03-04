@@ -34,10 +34,12 @@ public interface FacadeLocal {
 	public List<Customer> findByPostalAddress(String cPostalAddress);
 
 	public List<Customer> findBycName(String cName);
-	
+
 	public List<Customer> findBycEmail(String cEmail);
-	
+
 	public Customer getCustomerByEmail(String cEmail);
+
+	boolean authenticateCustomer(String cEmail, String cPassword);
 
 	// * Ingredient *//
 
@@ -60,8 +62,8 @@ public interface FacadeLocal {
 	public Order createOrder(Order order);
 
 	public Order updateOrder(Order order);
-	
-//	public List<Order> updateOrder(String oNumber);
+
+	// public List<Order> updateOrder(String oNumber);
 
 	public void deleteOrder(String oNumber);
 
