@@ -60,25 +60,57 @@ public class CustomerServlet extends HttpServlet {
 		String operation = request.getParameter("operation");
 		if (operation.equals("showcustomer")) {
 			System.out.println("MainServlet-showcustomer");
+			
+			
 			String cName = request.getParameter("companyName");
 			String cEmail = request.getParameter("email");
 			String cCountry = request.getParameter("country");
 			String cPostalAddress = request.getParameter("postalAddress");
 			String cAddress = request.getParameter("address");
-			List<Customer> allcustomers = facade.findBycEmail(cEmail);
-			for (Customer cu1 : allcustomers) {
-				request.setAttribute("email", cu1.getcEmail());
-				url = "/ShowCustomer.jsp";
-			}
-		} else if (operation.equals("SearchCustomer")) {
-			System.out.println("CustomerServlet-SearchCustomer");
-			url = "/SearchCustomer.jsp";
-		} else {
-			url = "/SearchCustomer.jsp";
-		}
-		System.out.println(url);
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-		dispatcher.forward(request, response);
-	}
 
+			String searchCustomer = request.getParameter("searchCustomer");
+
+			if (request.getParameter("radiocustomersearch") != null) {
+				if (request.getParameter("radiocustomersearch").equals("companyName")) {
+					request.setAttribute("searchCustomer", cName);
+					
+					System.out.println("findBycName");
+					
+					List<Customer> name = facade.findBycName(searchCustomer);
+					for (Customer cu1 : name) {
+						request.setAttribute("customer", cu1.getcEmail());
+						
+					}
+					url = "/ShowCustomer.jsp";
+				}
+				// else {
+				// request.setAttribute("Radio button 1 was not selected.<BR>",
+				// );
+				// }
+				// if(request.getParameter("radios").equals("radio2")) {
+				// request.setAttribute("Radio button 2 was selected.<BR>");
+				// }
+				// else {
+				// out.println("Radio button 2 was not selected.<BR>");
+				// }
+				// if(request.getParameter("radios").equals("radio3")) {
+				// out.println("Radio button 3 was selected.<BR>");
+				// }
+				// else {
+				// out.println("Radio button 3 was not selected.<BR>");
+				// }
+				//
+				
+			} else if (operation.equals("SearchCustomer")) {
+				System.out.println("CustomerServlet-SearchCustomer");
+				url = "/SearchCustomer.jsp";
+			} else {
+				url = "/SearchCustomer.jsp";
+			}
+			System.out.println(url);
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+			dispatcher.forward(request, response);
+		}
+
+	}
 }

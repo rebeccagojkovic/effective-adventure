@@ -32,9 +32,10 @@
 	<p>
 		<input type="text" name="address" value="<%=c.getcAddress()%>">
 	</p>
-	<form action="/CreateCookiesClientProject/CustomerServlet" method="post">
+	<form action="/CreateCookiesClientProject/CustomerServlet"
+		method="post">
 		<input type="submit" name="submit" value="Tillbaka"> <input
-			name="operation" value="searchcustomer" type="hidden">
+			name="operation" value="SearchCustomer" type="hidden">
 	</form>
 </body>
 </html>

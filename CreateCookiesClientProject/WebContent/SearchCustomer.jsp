@@ -7,7 +7,7 @@
 <title>Search Customer</title>
 </head>
 <body>
-	<form action="/CustomerServlet" method="post">
+	<form action="/CreateCookiesClientProject/CustomerServlet" method="post">
 		<table cellspacing="0" cellpadding="0" border="0" align="left">
 			<tr>
 				<td><h2>Search Customer:</h2></td>
