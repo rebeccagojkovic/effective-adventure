@@ -36,7 +36,7 @@
 			</tr>
 			<tr>
 				<td><input type="radio" name="radiocustomersearch"
-					id="radioPostalAddress" value="postalAddress" maxlength="30" />Postal
+					id="radioPostalAddress" value="companyPostalAddress" maxlength="30" />Postal
 					Address</td>
 			</tr>
 			<tr>

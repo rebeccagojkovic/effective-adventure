@@ -60,47 +60,74 @@ public class CustomerServlet extends HttpServlet {
 		String operation = request.getParameter("operation");
 		if (operation.equals("showcustomer")) {
 			System.out.println("MainServlet-showcustomer");
-			
-			
+
 			String cName = request.getParameter("companyName");
-			String cEmail = request.getParameter("email");
-			String cCountry = request.getParameter("country");
-			String cPostalAddress = request.getParameter("postalAddress");
-			String cAddress = request.getParameter("address");
+			String cEmail = request.getParameter("companyEmail");
+			String cCountry = request.getParameter("companyCountry");
+			String cPostalAddress = request.getParameter("companyPostalAddress");
+			String cAddress = request.getParameter("companyAddress");
 
 			String searchCustomer = request.getParameter("searchCustomer");
+			Customer customer = new Customer();
 
 			if (request.getParameter("radiocustomersearch") != null) {
 				if (request.getParameter("radiocustomersearch").equals("companyName")) {
 					request.setAttribute("searchCustomer", cName);
-					
+
 					System.out.println("findBycName");
-					
+
 					List<Customer> name = facade.findBycName(searchCustomer);
 					for (Customer cu1 : name) {
-						request.setAttribute("customer", cu1.getcEmail());
-						
+						request.setAttribute("customer", cu1);
+
 					}
 					url = "/ShowCustomer.jsp";
 				}
-				// else {
-				// request.setAttribute("Radio button 1 was not selected.<BR>",
-				// );
-				// }
-				// if(request.getParameter("radios").equals("radio2")) {
-				// request.setAttribute("Radio button 2 was selected.<BR>");
-				// }
-				// else {
-				// out.println("Radio button 2 was not selected.<BR>");
-				// }
-				// if(request.getParameter("radios").equals("radio3")) {
-				// out.println("Radio button 3 was selected.<BR>");
-				// }
-				// else {
-				// out.println("Radio button 3 was not selected.<BR>");
-				// }
-				//
-				
+				if (request.getParameter("radiocustomersearch").equals("companyEmail")) {
+					request.setAttribute("searchCustomer", cEmail);
+
+					List<Customer> email = facade.findBycEmail(searchCustomer);
+					for (Customer cu2 : email) {
+						request.setAttribute("customer", cu2);
+
+					}
+					url = "/ShowCustomer.jsp";
+
+				}
+				if (request.getParameter("radiocustomersearch").equals("companyCountry")) {
+					request.setAttribute("searchCustomer", cCountry);
+
+					List<Customer> country = facade.findByCountry(searchCustomer);
+					for (Customer cu3 : country) {
+						request.setAttribute("customer", cu3);
+
+					}
+					url = "/ShowCustomer.jsp";
+
+				}
+				if (request.getParameter("radiocustomersearch").equals("companyPostalAddress")) {
+					request.setAttribute("searchCustomer", cPostalAddress);
+
+					List<Customer> postal = facade.findByPostalAddress(searchCustomer);
+					for (Customer cu4 : postal) {
+						request.setAttribute("customer", cu4);
+
+					}
+					url = "/ShowCustomer.jsp";
+
+				}
+				if (request.getParameter("radiocustomersearch").equals("companyAddress")) {
+					request.setAttribute("searchCustomer", cAddress);
+
+					List<Customer> address = facade.findByAddress(searchCustomer);
+					for (Customer cu5 : address) {
+						request.setAttribute("customer", cu5);
+
+					}
+					url = "/ShowCustomer.jsp";
+
+				}
+
 			} else if (operation.equals("SearchCustomer")) {
 				System.out.println("CustomerServlet-SearchCustomer");
 				url = "/SearchCustomer.jsp";
