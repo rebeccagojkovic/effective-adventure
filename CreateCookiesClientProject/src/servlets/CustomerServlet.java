@@ -29,7 +29,6 @@ public class CustomerServlet extends HttpServlet {
 	 */
 	public CustomerServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -38,7 +37,6 @@ public class CustomerServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at:
 		// ").append(request.getContextPath());
 		PrintWriter out = response.getWriter();
@@ -53,7 +51,6 @@ public class CustomerServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		// doGet(request, response);
 		String url = null;
 		// Get hidden field
@@ -68,8 +65,7 @@ public class CustomerServlet extends HttpServlet {
 			String cAddress = request.getParameter("companyAddress");
 
 			String searchCustomer = request.getParameter("searchCustomer");
-			Customer customer = new Customer();
-
+			
 			if (request.getParameter("radiocustomersearch") != null) {
 				if (request.getParameter("radiocustomersearch").equals("companyName")) {
 					request.setAttribute("searchCustomer", cName);
