@@ -15,14 +15,13 @@
 				if (cookie.getName().equals("cEmail"))
 					cEmail = cookie.getValue();
 			}
+			response.sendRedirect("http://iis.infoteket.nu/CreateCookiesWeb4/index.html");
 		}
-		if (cEmail == null)
+		else if(cEmail == null) {
+
 			response.sendRedirect("error.html");
+		}
 	%>
-	<h3>
-		Hi
-		<%=cEmail%>, Login successful.
-	</h3>
-	<br>
+
 </body>
 </html>
