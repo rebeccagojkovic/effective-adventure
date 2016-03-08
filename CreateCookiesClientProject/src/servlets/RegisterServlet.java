@@ -57,7 +57,7 @@ public class RegisterServlet extends HttpServlet {
 
 		facade.createCustomer(c);
 
-		response.sendRedirect("LoginCustomer.jsp");
+		response.sendRedirect("http://iis.infoteket.nu/CreateCookiesWeb/index.html");
 
 		doGet(request, response);
 	}

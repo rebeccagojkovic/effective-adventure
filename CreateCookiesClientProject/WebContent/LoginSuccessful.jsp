@@ -15,7 +15,7 @@
 				if (cookie.getName().equals("cEmail"))
 					cEmail = cookie.getValue();
 			}
-			response.sendRedirect("http://iis.infoteket.nu/CreateCookiesWeb4/index.html");
+			response.sendRedirect("http://iis.infoteket.nu/CreateCookiesWeb/index.html");
 		}
 		else if(cEmail == null) {
 
