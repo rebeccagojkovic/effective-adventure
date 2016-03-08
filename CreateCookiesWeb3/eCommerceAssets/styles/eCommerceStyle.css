@@ -286,6 +286,10 @@ footer div p {
 .imageindex{
      width:90%;
 }
+.imageKontakt{
+     width:100%;
+}
+
 h1{
     clear: left;
     text-align: left;
@@ -314,6 +318,16 @@ td input{
     border-radius:25px; 
 }
 textarea{
+    margin-left: auto;
+    text-align: left;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+    border-radius: 25px;
+	width: 80%;
+}
+.textareaKontakt{
+    float:left;
     margin-left: auto;
     text-align: left;
     -webkit-box-sizing: border-box;
@@ -451,6 +465,19 @@ footer .footerlinks {
 	width: 95%;
 	padding-top: 0px;
 }
+#content .sidebar1 #menubar {
+	position: relative;
+	left: -7%;
+	overflow: hidden;
+	width: 95%;
+	padding-top: 0px;
+}#content .sidebarSearch #menubar {
+	position: relative;
+	left: -7%;
+	overflow: hidden;
+	width: 95%;
+	padding-top: 0px;
+}
 /* offer banners content */
 #mainWrapper #offer p {
 	font-size: small;
@@ -544,6 +571,16 @@ header #headerLinks a {
 }
 /* Menubar in sidebar */
 #content .sidebar #menubar {
+	position: relative;
+	left: -8%;
+	text-align: center;
+}
+#content .sidebar1 #menubar {
+	position: relative;
+	left: -8%;
+	text-align: center;
+}
+    #content .sidebarSearch #menubar {
 	position: relative;
 	left: -8%;
 	text-align: center;
