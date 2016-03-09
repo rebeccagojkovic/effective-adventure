@@ -20,12 +20,12 @@ header {
 #logo {
 	float: left;
 	padding-top: 10px;
-	padding-bottom: 10px;
+    padding-bottom: 10px;
 	width: 139px;
 	text-align: center;
 	color: rgba(255,255,255,1.00);
 	border-radius:25px;
-	margin-bottom:5px;
+    margin-bottom: 5px;
 	background-color: rgba(190,190,190,1.00);
 }
 /* div for Links in header */
@@ -347,7 +347,9 @@ footer div p {
 .imageKontakt{
      width:100%;
 }
-
+.imageCart{
+    width:5%;
+}
 h1{
     clear: left;
     text-align: left;
