@@ -12,6 +12,6 @@ $('#search').keyup(function () {
             }
         });
         output += '</ul>';
-        $('#offer').html(output);
+        $('#mainContent').html(output);
     });
 });
