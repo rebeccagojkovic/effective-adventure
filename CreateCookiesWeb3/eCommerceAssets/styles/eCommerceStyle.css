@@ -106,6 +106,21 @@ header {
 	padding-top: 36px;
 	height: 1150px;
 }
+/* Sidebar1 order */
+#content .sidebarSearch {
+	font-family: 'Montserrat', sans-serif;
+	color: rgba(146,146,146,1.00);
+	float: left;
+	width: 20%;
+	padding-left: 3%;
+	padding-right: 3%;
+	text-align: center;
+	background-color: #003333;
+	opacity:0.9;
+	border-radius:25px;
+	padding-top: 36px;
+	height: 950px;
+}
 /* main content of the site */
 #content .mainContent {
 	float: left;
@@ -125,6 +140,13 @@ header {
 }
 /*menubar's properties for menus in sidebar */
 #content .sidebar1 #menubar {
+	text-align: left;
+	color: rgba(146,146,146,1.00);
+	position: relative;
+	left: 0%;
+}
+/*menubar's properties for menus in sidebar */
+#content .sidebarSearch #menubar {
 	text-align: left;
 	color: rgba(146,146,146,1.00);
 	position: relative;
@@ -257,9 +279,17 @@ footer div p {
     width:80%;
     float:left;
 }
+.imageSearching{
+    width:60%;
+    float:left;
+}
 .imageindex{
      width:90%;
 }
+.imageKontakt{
+     width:100%;
+}
+
 h1{
     clear: left;
     text-align: left;
@@ -288,6 +318,16 @@ td input{
     border-radius:25px; 
 }
 textarea{
+    margin-left: auto;
+    text-align: left;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+    border-radius: 25px;
+	width: 80%;
+}
+.textareaKontakt{
+    float:left;
     margin-left: auto;
     text-align: left;
     -webkit-box-sizing: border-box;
@@ -328,6 +368,15 @@ textarea{
 	color: rgba(107,97,97,1.00);
 	text-decoration: none;
 }
+/*Links in sidebar1 */
+.sidebarSearch #menubar .menu ul li a {
+	color: rgba(146,146,146,1.00);
+	text-decoration: none;
+}
+.sidebarSearch #menubar .menu ul li a:hover {
+	color: rgba(107,97,97,1.00);
+	text-decoration: none;
+}
 /* Menu headings in sidebar */
 #menubar .menu h2 {
 	font-size: 14px;
@@ -342,6 +391,10 @@ textarea{
 }
 /* Menus in sidebar1 */
 .sidebar1 #menubar .menu {
+	margin-bottom: 29px;
+}
+/* Menus in sidebar1 */
+.sidebarSearch #menubar .menu {
 	margin-bottom: 29px;
 }
 /* Container for links in footer */
@@ -406,6 +459,19 @@ footer .footerlinks {
 }
 /*menubar in sidebar */
 #content .sidebar #menubar {
+	position: relative;
+	left: -7%;
+	overflow: hidden;
+	width: 95%;
+	padding-top: 0px;
+}
+#content .sidebar1 #menubar {
+	position: relative;
+	left: -7%;
+	overflow: hidden;
+	width: 95%;
+	padding-top: 0px;
+}#content .sidebarSearch #menubar {
 	position: relative;
 	left: -7%;
 	overflow: hidden;
@@ -505,6 +571,16 @@ header #headerLinks a {
 }
 /* Menubar in sidebar */
 #content .sidebar #menubar {
+	position: relative;
+	left: -8%;
+	text-align: center;
+}
+#content .sidebar1 #menubar {
+	position: relative;
+	left: -8%;
+	text-align: center;
+}
+    #content .sidebarSearch #menubar {
 	position: relative;
 	left: -8%;
 	text-align: center;
