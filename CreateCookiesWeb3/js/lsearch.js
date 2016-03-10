@@ -1,7 +1,7 @@
 $('#search').keyup(function () {
     var searchField = $('#search').val();
     var myExp = new RegExp(searchField, 'i');
-    $.getJSON('http://iis.infoteket.nu:8080/CreateCookiesClientProject/AllProductsJSON.jsp', function (data) {
+    $.getJSON('http://cors.io/?u=http://iis.infoteket.nu:8080/CreateCookiesClientProject/AllProductsJSON.jsp', function (data) {
         var output = '<ul class="searchresult">';
         $.each(data, function (key, val) {
             if ((val.name.search(myExp) !== -1) || (val.bio.search(myExp) !== -1)) {
