@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="/ProductServlet" method="post">
+	<form action="/CreateCookiesClientProject/ProductServlet" method="post">
 		<table cellspacing="0" cellpadding="0" border="0" align="left">
 			<tr>
 				<td><h2>Search Product:</h2></td>
@@ -34,7 +34,7 @@
 				<td><input type="submit" name="submit" value="Send question" /></td>
 			</tr>
 		</table>
-		<input name="operation" value="showcustomer" type="hidden">
+		<input name="operation" value="showproduct" type="hidden">
 	</form>
 </body>
 </html>
