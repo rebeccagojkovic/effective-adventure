@@ -14,8 +14,8 @@ import facade.FacadeLocal;
 /**
  * Servlet implementation class ProductServlet
  */
-@WebServlet("/ProductServlet")
-public class ProductServlet extends HttpServlet {
+@WebServlet("/ProductTable")
+public class ProductTable extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB
 	FacadeLocal facade;
@@ -23,7 +23,7 @@ public class ProductServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ProductServlet() {
+	public ProductTable() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
