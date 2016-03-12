@@ -3,15 +3,25 @@ $('#search').keyup(function () {
     var myExp = new RegExp(searchField, 'i');
     $.getJSON('json/data.json', function (data) {
         var output = '<ul class="searchresult">';
-        $.each(data, function (key, val) {
-            if ((val.name.search(myExp) !== -1) || (val.bio.search(myExp) !== -1)) {
-                output += '<li>';
-                output += '<h2>' + val.name + '</h2>';
-                output += '<p>' + val.bio + '</p>';
-                output += '</li>';
-            }
+        $.each(data, function(idx, obj){ 
+        $.each(obj, function(key, val){
+            if ((val.pName.search(myExp) !== -1)) {
+			
+				output += '<div class="productRow">'
+				output += '<article class="productInfo">'
+				output += '<div><img alt="sample" src="eCommerceAssets/images/berliners.jpg"></div>'
+				output += '<p class="price">20kr</p>'
+                output += '<p class="productContent">' + val.pName + '</p>';
+				output += '<input type="button" name="button" value="Köp" class="buyButton">'
+				output += '</article>'
+				output += '</div>'      
+		
+			  
+                }
         });
-        output += '</ul>';
+		
+		});
+        
         $('#mainContent').html(output);
     });
 });
