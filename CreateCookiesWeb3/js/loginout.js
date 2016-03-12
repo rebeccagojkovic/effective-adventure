@@ -1,4 +1,4 @@
-<script type="text/javascript">
+< script type = "text/javascript" >
 function disable_enable(_this)
 {
   if (_this == 'login')
