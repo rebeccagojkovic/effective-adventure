@@ -9,7 +9,7 @@ $('#search').keyup(function () {
 
                     output += '<div class="productRow">'
                     output += '<article class="productInfo">'
-                    output += '<div><img alt="sample" src="eCommerceAssets/images/berliners.jpg"></div>'
+                    output += '<div><img alt="sample" src="eCommerceAssets/images/' + val.pNumber + '.jpg"></div>'
                     output += '<p class="price">20kr</p>'
                     output += '<p class="productContent">' + val.pName + '</p>';
                     output += '<input type="button" name="button" value="Köp" class="buyButton">'
