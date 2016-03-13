@@ -1,10 +1,10 @@
 <%@ taglib prefix="json" uri="http://www.atg.com/taglibs/json" %>
 
 <json:object>
-    <json:array name="products" var="product" items="${products.lineProducts}">
+    <json:array name="products" var="product" items="${products}">
     <json:object>
       <json:property name="pName" value="${product.pName}"/>
-      <json:property name="price" value="${product.price}"/>      
+      <json:property name="pNumber" value="${product.pNumber}"/>      
     </json:object>
   </json:array>
 </json:object>

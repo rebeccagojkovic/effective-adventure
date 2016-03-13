@@ -1,10 +1,12 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,6 +27,30 @@ public class RegisterServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		Cookie[] cookies = request.getCookies();
+
+		for (Cookie cookie : cookies) {
+			if ("cEmail".equals(cookie.getName())) {
+				String cEmail = cookie.getValue();
+
+				List<Customer> customer = facade.findBycEmail(cEmail);
+				for (Customer cu1 : customer) {
+					request.setAttribute("cEmail", cu1.getcEmail());
+					request.setAttribute("cPassword", cu1.getcPassword());
+					request.setAttribute("cName", cu1.getcName());
+					request.setAttribute("cAddress", cu1.getcAddress());
+					request.setAttribute("cCountry", cu1.getcCountry());
+					request.setAttribute("cPostalAddress", cu1.getcPostalAddress());
+					request.getRequestDispatcher("CustomerProfile.jsp").forward(request, response);
+				}
+			}
+		}
+
+	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String cEmail = request.getParameter("cEmail");
@@ -33,31 +59,31 @@ public class RegisterServlet extends HttpServlet {
 		String cAddress = request.getParameter("cAddress");
 		String cCountry = request.getParameter("cCountry");
 		String cPostalAddress = request.getParameter("cPostalAddress");
-//		String cNumber = request.getParameter("cNumber");
+		// String cNumber = request.getParameter("cNumber");
 
 		Customer c = new Customer(cName, cAddress, cPostalAddress, cCountry, cEmail, cPassword);
-		
-//		request.getSession().setAttribute("cNumber", c);
 
-//		request.getSession().setAttribute("cName", cName);
-//		request.getSession().setAttribute("cPostalAddress", cPostalAddress);
-//		request.getSession().setAttribute("cAddress", cAddress);
-//		request.getSession().setAttribute("cCountry", cCountry);
-//		request.getSession().setAttribute("cEmail", cEmail);
-//		request.getSession().setAttribute("cPassword", cPassword);
-//		request.getSession().setAttribute("cNumber", cNumber);
+		// request.getSession().setAttribute("cNumber", c);
 
-//		c.setcAddress(cAddress);
-//		c.setcCountry(cCountry);
-//		c.setcEmail(cEmail);
-//		c.setcName(cName);
-//		c.setcPassword(cPassword);
-//		c.setcPostalAddress(cPostalAddress);
-//		c.setcNumber(cNumber);
+		// request.getSession().setAttribute("cName", cName);
+		// request.getSession().setAttribute("cPostalAddress", cPostalAddress);
+		// request.getSession().setAttribute("cAddress", cAddress);
+		// request.getSession().setAttribute("cCountry", cCountry);
+		// request.getSession().setAttribute("cEmail", cEmail);
+		// request.getSession().setAttribute("cPassword", cPassword);
+		// request.getSession().setAttribute("cNumber", cNumber);
+
+		// c.setcAddress(cAddress);
+		// c.setcCountry(cCountry);
+		// c.setcEmail(cEmail);
+		// c.setcName(cName);
+		// c.setcPassword(cPassword);
+		// c.setcPostalAddress(cPostalAddress);
+		// c.setcNumber(cNumber);
 
 		facade.createCustomer(c);
 
-		response.sendRedirect("http://iis.infoteket.nu/CreateCookiesWeb/index.html");
+		response.sendRedirect("http://iis.infoteket.nu/CreateCookiesWeb/profilsida.html");
 
 		doGet(request, response);
 	}

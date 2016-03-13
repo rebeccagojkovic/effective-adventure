@@ -37,6 +37,6 @@ public class ProductTable extends HttpServlet {
 		System.out.println("MainServlet-showproduct");
 		List<Product> products = facade.findAllProducts();
 		request.setAttribute("products", products);
-		request.getRequestDispatcher("ProductTable.jsp").forward(request, response);
+		request.getRequestDispatcher("AllProductsJSON.jsp").forward(request, response);
 	}
 }
