@@ -1,359 +1,407 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Fabulous Bakery</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="eCommerceAssets/styles/eCommerceStyle.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <title>Fabulous Bakery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="eCommerceAssets/styles/eCommerceStyle.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script>
-  $(function() {
-    $( "#dialog" ).dialog({
-      autoOpen: false,
-      show: {
-        effect: "blind",
-        duration: 1000
-      },
-      hide: {
-        effect: "explode",
-        duration: 1000
-      }
-    });
- 
-    $( "#opener" ).click(function() {
-      $( "#dialog" ).dialog( "open" );
-    });
-  });
-  </script>
-<!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
-<script>var __adobewebfontsappname__="dreamweaver"</script><script src="http://use.edgefonts.net/montserrat:n4:default;source-sans-pro:n2:default.js" type="text/javascript"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script>
+        $(function () {
+            $("#dialog").dialog({
+                autoOpen: false
+                , show: {
+                    effect: "blind"
+                    , duration: 1000
+                }
+                , hide: {
+                    effect: "explode"
+                    , duration: 1000
+                }
+            });
+
+            $("#opener").click(function () {
+                $("#dialog").dialog("open");
+            });
+        });
+    </script>
+    <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
+    <script>
+        var __adobewebfontsappname__ = "dreamweaver"
+    </script>
+    <script src="http://use.edgefonts.net/montserrat:n4:default;source-sans-pro:n2:default.js" type="text/javascript"></script>
 </head>
 
 <body>
-<div id="mainWrapper">
-  <header> <!-- This is the header content. It contains Logo and links -->
-    <div id="logo"> <!-- <img src="logoImage.png" alt="sample logo"> --> 
-      <!-- Company Logo text --> 
-      Fabulous Bakery </div>
-    <div id="headerLinks"><button id="opener">Logga in/Registrera</button><a href="#" title="Cart">Cart</a></div>
-      <div id="dialog" title="Logga in/Registrera">
-      <div class="productRow"><!-- Each product row contains info of 3 elements -->
-       <article class="productInfo"> <!-- Each individual product description -->
-           <div ><img class="imageLoggainRegistrera" alt="???" src="eCommerceAssets/images/loggain.jpg"></div> 
-           <form method="post" action="http://iis.infoteket.nu:8080/CreateCookiesClientProject/LoginServlet">
-                <h1>Logga in</h1>
-                <table class="loginTable">
-                    <tr>
-                        <td>Email<input class="loggaIn" name="cEmail"></td>
-                    </tr>
-                    <tr>
-                        <td>Lösenord<input class="loggaIn" name="cPassword"></td>
-                    </tr>
-                    <tr>
-                        <td><input class="buttonLoggainRegistrera" type="submit" value="Logga in"></td>
-                    </tr>
-                </table>
-            </form>
-        </article>
-      </div>
-      <div class="productRow">
-	  <article class="productInfo"><!-- Each individual product description -->
-         <br>
-          <div><img class="imageLoggainRegistrera" alt="???" src="eCommerceAssets/images/images.jpg"></div>
-            <form action="http://iis.infoteket.nu:8080/CreateCookiesClientProject/RegisterServlet" method="post">
-                
-                <h1>Registrera Dig</h1>
-                <table >
-                    <tr>
-                        <td>Företag<input class="registerTable" name="cName"></td>
-                    </tr>
-                    <tr>
-                        <td>Address<input class="registerTable" name="cAddress"></td>
-                    </tr>
-                    <tr>
-                        <td>Postadress<input class="registerTable" name="cPostalAddress"></td>
-                    </tr>
-                    <tr>
-                        <td>Land<input class="registerTable" name="cCountry"></td>
-                    </tr>
-                    <tr>
-                        <td>Email<input class="registerTable" name="cEmail"></td>
-                    </tr>
+    <div id="mainWrapper">
+        <header>
+            <!-- This is the header content. It contains Logo and links -->
+            <div id="logo">
+                <!-- <img src="logoImage.png" alt="sample logo"> -->
+                <!-- Company Logo text -->
+                Fabulous Bakery </div>
+            <div id="headerLinks">
+                <button id="opener">Logga in/Registrera</button><a href="#" title="Cart">Cart</a></div>
+            <div id="dialog" title="Logga in/Registrera">
+                <div class="productRow">
+                    <!-- Each product row contains info of 3 elements -->
+                    <article class="productInfo">
+                        <!-- Each individual product description -->
+                        <div><img class="imageLoggainRegistrera" alt="???" src="eCommerceAssets/images/loggain.jpg"></div>
+                        <form method="post" action="http://iis.infoteket.nu:8080/CreateCookiesClientProject/LoginServlet">
+                            <h1>Logga in</h1>
+                            <table class="loginTable">
+                                <tr>
+                                    <td>Email
+                                        <input class="loggaIn" name="cEmail">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Lösenord
+                                        <input class="loggaIn" name="cPassword">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input class="buttonLoggainRegistrera" type="submit" value="Logga in">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </article>
+                </div>
+                <div class="productRow">
+                    <article class="productInfo">
+                        <!-- Each individual product description -->
+                        <br>
+                        <div><img class="imageLoggainRegistrera" alt="???" src="eCommerceAssets/images/images.jpg"></div>
+                        <form action="http://iis.infoteket.nu:8080/CreateCookiesClientProject/RegisterServlet" method="post">
 
-                    <tr>
-                        <td>Lösenord<input class="registerTable" name="cPassword"></td>
-                    </tr>
+                            <h1>Registrera Dig</h1>
+                            <table>
+                                <tr>
+                                    <td>Företag
+                                        <input class="registerTable" name="cName">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Address
+                                        <input class="registerTable" name="cAddress">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Postadress
+                                        <input class="registerTable" name="cPostalAddress">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Land
+                                        <input class="registerTable" name="cCountry">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email
+                                        <input class="registerTable" name="cEmail">
+                                    </td>
+                                </tr>
 
-                    <tr>
-                        <td><input class="buttonLoggainRegistrera" type="submit" value="Registrera"></td>
-                    </tr>
-                </table>
-            </form>
-        </article>
-      </div>
-     </div>     
-  </header>
-  <section id="offer"> 
-    <h1>Fabulous Bakery</h1>
-    <h3>Småkakor- Det perfekta dessertbordet för företagskunden</h3>
-  </section>
-  <div id="content">
-    <section class="sidebar1"> 
-      <div id="menubar">
-        <nav class="menu">
-          <h2><!-- Title for menuset 1 -->Gör ditt val </h2>
-          <hr>
-          <ul>
-            <!-- List of links under menuset 1 -->
-            <li> <a href="index.html" title="Hem">Hem</a></li>
-            <li><a href="smakakor.html" title="Småkakor & Recept">Småkakor & Recept</a></li>
-            <li><a href="bestallning.html" title="Beställning">Beställning</a></li>
-			<li><a href="kontakt.html" title="Kontakt">Kontakt</a></li>
-            <li><a href="searching.html" title="Search">Search</a></li>
-            <li><a href="testning.html" title="Testning">Testning</a></li>
-          </ul>
-        </nav>
+                                <tr>
+                                    <td>Lösenord
+                                        <input class="registerTable" name="cPassword">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <input class="buttonLoggainRegistrera" type="submit" value="Registrera">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </article>
+                </div>
+            </div>
+        </header>
+        <section id="offer">
+            <h1>Fabulous Bakery</h1>
+            <h3>Småkakor- Det perfekta dessertbordet för företagskunden</h3>
+        </section>
+        <div id="content">
+            <section class="sidebar1">
+                <div id="menubar">
+                    <nav class="menu">
+                        <h2><!-- Title for menuset 1 -->Gör ditt val </h2>
+                        <hr>
+                        <ul>
+                            <!-- List of links under menuset 1 -->
+                            <li> <a href="index.html" title="Hem">Hem</a></li>
+                            <li><a href="smakakor.html" title="Småkakor & Recept">Småkakor & Recept</a></li>
+                            <li><a href="bestallning.html" title="Beställning">Beställning</a></li>
+                            <li><a href="kontakt.html" title="Kontakt">Kontakt</a></li>
+                            <li><a href="searching.html" title="Search">Search</a></li>
+                            <li><a href="testning.html" title="Testning">Testning</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/minicart/3.0.6/minicart.min.js"></script>
+            <script>
+                paypal.minicart.render();
+            </script>
+
+            <script>
+                paypal.minicart.reset();
+            </script>
+
+
+            <section class="mainContent">
+
+                <div class="simpleCart_shelfItem">
+                    <select class="item_size">
+                        <option value="tall">Berliners</option>
+                        <option value="grande">Amneris</option>
+                        <option value="venti">Nötkakor</option>
+                        <option value="venti">Nötring</option>
+                        <option value="venti">Macaron</option>
+                        <option value="venti">Tangokakor</option>
+                        <option value="venti">Kokostoppar</option>
+                        <option value="venti">Glasyrpepparkakor</option>
+                    </select>
+                    <input type="text" class="item_custom-attribute">
+                    <h2 class="item_name">Item Name Goes Here</h2>
+                    <img src="eCommerceAssets/images/cart.png" alt="Item Alt">
+                    <span class="item_price">$19.99</span>
+                    <a href="javascript:;" class="item_add">Add to Cart</a>
+                    <span class="simpleCart_quantity"></span>
+                    <!--number of items in the cart-->
+                    <span class="simpleCart_total"></span>
+                    <!-- total cost of cart before tax & shipping-->
+                    <span class="simpleCart_taxRate"></span>
+                    <!--will be display as a percentage ( ie 7% )-->
+                    <span class="simpleCart_taxCost"></span>
+                    <!--taxRate X total displayed as currency-->
+                    <span class="simpleCart_finalTotal"></span>
+                    <!--total of the cart after tax & shipping -->
+
+
+                    <div class="simpleCart_items"></div>
+                    <!-- Yep it's that simple -->
+                </div>
+
+
+
+
+                <div class="productRow">
+                    <!-- Each product row contains info of 3 elements -->
+                    <article class="productInfo">
+                        <!-- Each individual product description -->
+                        <div><img alt="sample" src="eCommerceAssets/images/berliners.jpg"></div>
+                        <p class="price">20kr</p>
+                        <p class="productContent">Berliners </p>
+                        <form method="post" action="https://www.paypal.com/cgi-bin/webscr" target="paypal">
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="business" value="">
+                            <input type="hidden" name="item_name" value="Berliners">
+
+                            <input type="hidden" name="amount" value="20">
+                            <input type="hidden" name="shipping" value="1.00">
+                            <input type="hidden" name="shipping2" value="0.50">
+                            <input type="hidden" name="handling" value="2.00">
+                            <input type="hidden" name="currency_code" value="SEK">
+                            <input type="hidden" name="return" value="">
+                            <input type="hidden" name="undefined_quantity" value="1">
+
+                            <input type="hidden" name="add" value="1">
+                            <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+                        </form>
+                    </article>
+                    <article class="productInfo">
+                        <!-- Each individual product description -->
+                        <div><img alt="sample" src="eCommerceAssets/images/amneris.jpg"></div>
+                        <p class="price">20kr</p>
+                        <p class="productContent">Amneris</p>
+                        <form method="post" action="https://www.paypal.com/cgi-bin/webscr" target="paypal">
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="business" value="">
+                            <input type="hidden" name="item_name" value="Amneris">
+
+                            <input type="hidden" name="amount" value="20">
+                            <input type="hidden" name="shipping" value="1.00">
+                            <input type="hidden" name="shipping2" value="0.50">
+                            <input type="hidden" name="handling" value="2.00">
+                            <input type="hidden" name="currency_code" value="SEK">
+                            <input type="hidden" name="return" value="">
+                            <input type="hidden" name="undefined_quantity" value="1">
+
+                            <input type="hidden" name="add" value="1">
+                            <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+                        </form>
+                    </article>
+                    <article class="productInfo">
+                        <!-- Each individual product description -->
+                        <div><img alt="sample" src="eCommerceAssets/images/nötkakor.jpg"></div>
+                        <p class="price">20kr</p>
+                        <p class="productContent">Nötkakor</p>
+                        <form method="post" action="https://www.paypal.com/cgi-bin/webscr" target="paypal">
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="business" value="">
+                            <input type="hidden" name="item_name" value="Nötkakor">
+
+                            <input type="hidden" name="amount" value="20">
+                            <input type="hidden" name="shipping" value="1.00">
+                            <input type="hidden" name="shipping2" value="0.50">
+                            <input type="hidden" name="handling" value="2.00">
+                            <input type="hidden" name="currency_code" value="SEK">
+                            <input type="hidden" name="return" value="">
+                            <input type="hidden" name="undefined_quantity" value="1">
+
+                            <input type="hidden" name="add" value="1">
+                            <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+                        </form>
+                    </article>
+                    <article class="productInfo">
+                        <!-- Each individual product description -->
+                        <div><img alt="sample" src="eCommerceAssets/images/notring.jpg"></div>
+                        <p class="price">20kr</p>
+                        <p class="productContent">Nötring</p>
+                        <form method="post" action="https://www.paypal.com/cgi-bin/webscr" target="paypal">
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="business" value="">
+                            <input type="hidden" name="item_name" value="Nötring">
+                            <input type="hidden" name="item_number" value="123">
+                            <input type="hidden" name="amount" value="20">
+                            <input type="hidden" name="shipping" value="1.00">
+                            <input type="hidden" name="shipping2" value="0.50">
+                            <input type="hidden" name="handling" value="2.00">
+                            <input type="hidden" name="currency_code" value="SEK">
+                            <input type="hidden" name="return" value="">
+                            <input type="hidden" name="undefined_quantity" value="1">
+
+                            <input type="hidden" name="add" value="1">
+                            <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+                        </form>
+                    </article>
+                </div>
+                <div class="productRow">
+                    <!-- Each product row contains info of 3 elements -->
+                    <article class="productInfo">
+                        <!-- Each individual product description -->
+                        <div><img alt="sample" src="eCommerceAssets/images/macarron.jpg"></div>
+                        <p class="price">20kr</p>
+                        <p class="productContent">Macaron</p>
+                        <form method="post" action="https://www.paypal.com/cgi-bin/webscr" target="paypal">
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="business" value="">
+                            <input type="hidden" name="item_name" value="Macaron">
+                            <input type="hidden" name="item_number" value="123">
+                            <input type="hidden" name="amount" value="20">
+                            <input type="hidden" name="shipping" value="1.00">
+                            <input type="hidden" name="shipping2" value="0.50">
+                            <input type="hidden" name="handling" value="2.00">
+                            <input type="hidden" name="currency_code" value="SEK">
+                            <input type="hidden" name="return" value="">
+                            <input type="hidden" name="undefined_quantity" value="1">
+
+                            <input type="hidden" name="add" value="1">
+                            <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+                        </form>
+                    </article>
+                    <article class="productInfo">
+                        <!-- Each individual product description -->
+                        <div><img alt="sample" src="eCommerceAssets/images/tangokakor.jpg"></div>
+                        <p class="price">50kr</p>
+                        <p class="productContent">Tangokakor</p>
+                        <form method="post" action="https://www.paypal.com/cgi-bin/webscr" target="paypal">
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="business" value="">
+                            <input type="hidden" name="item_name" value="Tangokakor">
+
+                            <input type="hidden" name="amount" value="50">
+                            <input type="hidden" name="shipping" value="1.00">
+                            <input type="hidden" name="shipping2" value="0.50">
+                            <input type="hidden" name="handling" value="2.00">
+                            <input type="hidden" name="currency_code" value="SEK">
+                            <input type="hidden" name="return" value="">
+                            <input type="hidden" name="undefined_quantity" value="1">
+
+                            <input type="hidden" name="add" value="1">
+                            <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+                        </form>
+                    </article>
+                </div>
+                <div class="productRow">
+                    <article class="productInfo">
+                        <!-- Each individual product description -->
+                        <div><img alt="sample" src="eCommerceAssets/images/kokostoppar.jpg"></div>
+                        <p class="price">20kr</p>
+                        <p class="productContent">Kokostoppar</p>
+                        <form method="post" action="https://www.paypal.com/cgi-bin/webscr" target="paypal">
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="business" value="">
+                            <input type="hidden" name="item_name" value="Kokostoppar">
+
+                            <input type="hidden" name="amount" value="20">
+                            <input type="hidden" name="shipping" value="1.00">
+                            <input type="hidden" name="shipping2" value="0.50">
+                            <input type="hidden" name="handling" value="2.00">
+                            <input type="hidden" name="currency_code" value="SEK">
+                            <input type="hidden" name="return" value="">
+                            <input type="hidden" name="undefined_quantity" value="1">
+
+                            <input type="hidden" name="add" value="1">
+                            <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+                        </form>
+                    </article>
+                    <article class="productInfo">
+                        <!-- Each individual product description -->
+                        <div><img alt="sample" src="eCommerceAssets/images/smakaka.jpg"></div>
+                        <p class="price">20kr</p>
+                        <p class="productContent">Glasyrpepparkakor</p>
+                        <form method="post" action="https://www.paypal.com/cgi-bin/webscr" target="paypal">
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="business" value="">
+                            <input type="hidden" name="item_name" value="Glasyrpepparkakor">
+
+                            <input type="hidden" name="amount" value="20">
+                            <input type="hidden" name="shipping" value="1.00">
+                            <input type="hidden" name="shipping2" value="0.50">
+                            <input type="hidden" name="handling" value="2.00">
+                            <input type="hidden" name="currency_code" value="SEK">
+                            <input type="hidden" name="return" value="">
+                            <input type="hidden" name="undefined_quantity" value="1">
+
+                            <input type="hidden" name="add" value="1">
+                            <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+                        </form>
+                    </article>
+                </div>
+            </section>
         </div>
-    </section>
-     <script src="//cdnjs.cloudflare.com/ajax/libs/minicart/3.0.6/minicart.min.js"></script>
-<script>
-    paypal.minicart.render();
-</script>
-    
-    <script>
-    paypal.minicart.reset();
-</script>
-
-
- <section class="mainContent">
-     
-      <div class="simpleCart_shelfItem">
-            <select class="item_size">
-    <option value="tall">Berliners</option>
-    <option value="grande">Amneris</option>
-    <option value="venti">Nötkakor</option>
-    <option value="venti">Nötring</option>
-    <option value="venti">Macaron</option>
-    <option value="venti">Tangokakor</option>
-    <option value="venti">Kokostoppar</option>
-    <option value="venti">Glasyrpepparkakor</option>
-</select>
-<input type="text" class="item_custom-attribute">
-   <h2 class="item_name">Item Name Goes Here</h2>
-   <img src="eCommerceAssets/images/cart.png" alt="Item Alt">
-   <span class="item_price">$19.99</span>
-   <a href="javascript:;" class="item_add">Add to Cart</a>
-          <span class="simpleCart_quantity"></span>
-<!--number of items in the cart-->
-<span class="simpleCart_total"></span>
-<!-- total cost of cart before tax & shipping-->
-<span class="simpleCart_taxRate"></span> 
-<!--will be display as a percentage ( ie 7% )-->
-<span class="simpleCart_taxCost"></span> 
-<!--taxRate X total displayed as currency-->
-<span class="simpleCart_finalTotal"></span> 
-<!--total of the cart after tax & shipping -->
-        
-        
-        <div class="simpleCart_items"></div>
-<!-- Yep it's that simple -->
-</div>
-        
-        
-     
-     
-      <div class="productRow"><!-- Each product row contains info of 3 elements -->
-        <article class="productInfo"><!-- Each individual product description -->
-          <div><img alt="sample" src="eCommerceAssets/images/berliners.jpg"></div>
-          <p class="price">20kr</p>
-          <p class="productContent">Berliners </p>
-            <form method="post" action="https://www.paypal.com/cgi-bin/webscr" target="paypal">
-<input type="hidden" name="cmd" value="_cart">
-<input type="hidden" name="business" value="">
-<input type="hidden" name="item_name" value="Berliners">
-
-<input type="hidden" name="amount" value="20">
-<input type="hidden" name="shipping" value="1.00">
-<input type="hidden" name="shipping2" value="0.50">
-<input type="hidden" name="handling" value="2.00">
-<input type="hidden" name="currency_code" value="SEK">
-<input type="hidden" name="return" value="">
-<input type="hidden" name="undefined_quantity" value="1">
-
-<input type="hidden" name="add" value="1">
-          <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
-            </form>  
-        </article>
-        <article class="productInfo"><!-- Each individual product description -->
-          <div><img alt="sample" src="eCommerceAssets/images/amneris.jpg"></div>
-          <p class="price">20kr</p>
-          <p class="productContent">Amneris</p>
-          <form method="post" action="https://www.paypal.com/cgi-bin/webscr" target="paypal">
-<input type="hidden" name="cmd" value="_cart">
-<input type="hidden" name="business" value="">
-<input type="hidden" name="item_name" value="Amneris">
-
-<input type="hidden" name="amount" value="20">
-<input type="hidden" name="shipping" value="1.00">
-<input type="hidden" name="shipping2" value="0.50">
-<input type="hidden" name="handling" value="2.00">
-<input type="hidden" name="currency_code" value="SEK">
-<input type="hidden" name="return" value="">
-<input type="hidden" name="undefined_quantity" value="1">
-
-<input type="hidden" name="add" value="1">
-<input type="image" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
-            </form>
-        </article>
-        <article class="productInfo"> <!-- Each individual product description -->
-          <div><img alt="sample" src="eCommerceAssets/images/nötkakor.jpg"></div>
-          <p class="price">20kr</p>
-          <p class="productContent">Nötkakor</p>
-          <form method="post" action="https://www.paypal.com/cgi-bin/webscr" target="paypal">
-<input type="hidden" name="cmd" value="_cart">
-<input type="hidden" name="business" value="">
-<input type="hidden" name="item_name" value="Nötkakor">
-
-<input type="hidden" name="amount" value="20">
-<input type="hidden" name="shipping" value="1.00">
-<input type="hidden" name="shipping2" value="0.50">
-<input type="hidden" name="handling" value="2.00">
-<input type="hidden" name="currency_code" value="SEK">
-<input type="hidden" name="return" value="">
-<input type="hidden" name="undefined_quantity" value="1">
-
-<input type="hidden" name="add" value="1">
-<input type="image" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
-            </form>
-        </article>
-		<article class="productInfo"> <!-- Each individual product description -->
-          <div><img alt="sample" src="eCommerceAssets/images/notring.jpg"></div>
-          <p class="price">20kr</p>
-          <p class="productContent">Nötring</p>
-          <form method="post" action="https://www.paypal.com/cgi-bin/webscr" target="paypal">
-<input type="hidden" name="cmd" value="_cart">
-<input type="hidden" name="business" value="">
-<input type="hidden" name="item_name" value="Nötring">
-<input type="hidden" name="item_number" value="123">
-<input type="hidden" name="amount" value="20">
-<input type="hidden" name="shipping" value="1.00">
-<input type="hidden" name="shipping2" value="0.50">
-<input type="hidden" name="handling" value="2.00">
-<input type="hidden" name="currency_code" value="SEK">
-<input type="hidden" name="return" value="">
-<input type="hidden" name="undefined_quantity" value="1">
-
-<input type="hidden" name="add" value="1">
-<input type="image" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
-            </form>
-        </article>
-      </div>
-      <div class="productRow"> 
-        <!-- Each product row contains info of 3 elements -->
-        <article class="productInfo"> <!-- Each individual product description -->
-          <div><img alt="sample" src="eCommerceAssets/images/macarron.jpg"></div>
-          <p class="price">20kr</p>
-          <p class="productContent">Macaron</p>
-          <form method="post" action="https://www.paypal.com/cgi-bin/webscr" target="paypal">
-<input type="hidden" name="cmd" value="_cart">
-<input type="hidden" name="business" value="">
-<input type="hidden" name="item_name" value="Macaron">
-<input type="hidden" name="item_number" value="123">
-<input type="hidden" name="amount" value="20">
-<input type="hidden" name="shipping" value="1.00">
-<input type="hidden" name="shipping2" value="0.50">
-<input type="hidden" name="handling" value="2.00">
-<input type="hidden" name="currency_code" value="SEK">
-<input type="hidden" name="return" value="">
-<input type="hidden" name="undefined_quantity" value="1">
-
-<input type="hidden" name="add" value="1">
-<input type="image" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
-            </form>
-        </article>
-        <article class="productInfo"><!-- Each individual product description -->
-          <div><img alt="sample" src="eCommerceAssets/images/tangokakor.jpg"></div>
-          <p class="price">50kr</p>
-          <p class="productContent">Tangokakor</p>
-          <form method="post" action="https://www.paypal.com/cgi-bin/webscr" target="paypal">
-<input type="hidden" name="cmd" value="_cart">
-<input type="hidden" name="business" value="">
-<input type="hidden" name="item_name" value="Tangokakor">
-
-<input type="hidden" name="amount" value="50">
-<input type="hidden" name="shipping" value="1.00">
-<input type="hidden" name="shipping2" value="0.50">
-<input type="hidden" name="handling" value="2.00">
-<input type="hidden" name="currency_code" value="SEK">
-<input type="hidden" name="return" value="">
-<input type="hidden" name="undefined_quantity" value="1">
-
-<input type="hidden" name="add" value="1">
-<input type="image" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
-            </form>
-        </article>
-      </div>
-      <div class="productRow">
-        <article class="productInfo"> <!-- Each individual product description -->
-          <div><img alt="sample" src="eCommerceAssets/images/kokostoppar.jpg"></div>
-          <p class="price">20kr</p>
-          <p class="productContent">Kokostoppar</p>
-         <form method="post" action="https://www.paypal.com/cgi-bin/webscr" target="paypal">
-<input type="hidden" name="cmd" value="_cart">
-<input type="hidden" name="business" value="">
-<input type="hidden" name="item_name" value="Kokostoppar">
-
-<input type="hidden" name="amount" value="20">
-<input type="hidden" name="shipping" value="1.00">
-<input type="hidden" name="shipping2" value="0.50">
-<input type="hidden" name="handling" value="2.00">
-<input type="hidden" name="currency_code" value="SEK">
-<input type="hidden" name="return" value="">
-<input type="hidden" name="undefined_quantity" value="1">
-
-<input type="hidden" name="add" value="1">
-<input type="image" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
-            </form>
-        </article>
-        <article class="productInfo"><!-- Each individual product description -->
-          <div><img alt="sample" src="eCommerceAssets/images/smakaka.jpg"></div>
-          <p class="price">20kr</p>
-          <p class="productContent">Glasyrpepparkakor</p>
-          <form method="post" action="https://www.paypal.com/cgi-bin/webscr" target="paypal">
-<input type="hidden" name="cmd" value="_cart">
-<input type="hidden" name="business" value="">
-<input type="hidden" name="item_name" value="Glasyrpepparkakor">
-
-<input type="hidden" name="amount" value="20">
-<input type="hidden" name="shipping" value="1.00">
-<input type="hidden" name="shipping2" value="0.50">
-<input type="hidden" name="handling" value="2.00">
-<input type="hidden" name="currency_code" value="SEK">
-<input type="hidden" name="return" value="">
-<input type="hidden" name="undefined_quantity" value="1">
-
-<input type="hidden" name="add" value="1">
-<input type="image" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
-            </form>
-        </article>
-      </div>
-    </section>
-  </div>
-  <footer> 
-    <!-- This is the footer with default 3 divs -->
-    <div>
-      <p>Öppettider:<br>Måndag-Fredag: 06.00-18.00 <br> Lördag: 10.00-18.00 <br>Söndag:10.00-16.00</p>
+        <footer>
+            <!-- This is the footer with default 3 divs -->
+            <div>
+                <p>Öppettider:
+                    <br>Måndag-Fredag: 06.00-18.00
+                    <br> Lördag: 10.00-18.00
+                    <br>Söndag:10.00-16.00</p>
+            </div>
+            <div>
+                <p>
+                    <br>Tvärgränd 11, Gamla stan
+                    <br>23146 Stockholm
+                    <br>08-231231</p>
+            </div>
+            <div class="footerlinks">
+                <p>
+                    <br>
+                    <br><a href="index.html" title="Hem">www.fabulousbakery.se</a></p>
+            </div>
+        </footer>
     </div>
-    <div>
-      <p><br>Tvärgränd 11, Gamla stan<br>23146 Stockholm<br>08-231231</p>
-    </div>
-    <div class="footerlinks">
-      <p><br><br><a href="index.html" title="Hem">www.fabulousbakery.se</a></p>
-    </div>
-  </footer>
-</div>
 </body>
+
 </html>
