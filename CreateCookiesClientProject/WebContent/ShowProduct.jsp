@@ -12,7 +12,7 @@
 	<%
 		Product p = (Product) request.getAttribute("product");
 	%>
-	<h2>Person:</h2>
+	<h2>Product:</h2>
 	<p>
 		<input type="text" name="productNumber" value="<%=p.getpNumber()%>">
 	</p>
