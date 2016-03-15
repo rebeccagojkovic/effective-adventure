@@ -16,7 +16,6 @@ $('#search').keyup(function () {
                     output += '<p class="productContent">' + val.pName + '</p>';
                     output += '<input type="button" name="button" value="Köp" class="buyButton">';
                     output += '</article>';
-                    output += '</article>';
                     output += '</div>';
                     output += '</section>';
 
