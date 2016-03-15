@@ -8,7 +8,6 @@ $('#search').keyup(function () {
             $.each(obj, function (key, val) {
                 if ((val.pName.search(myExp) !== -1)) {
 
-                    output += '<section class="mainContent">';
                     output += '<div class="productRow">';
                     output += '<article class="productInfo">';
                     output += '<div><img alt="sample" src="eCommerceAssets/images/' + val.pNumber + '.jpg"></div>';
@@ -17,15 +16,12 @@ $('#search').keyup(function () {
                     output += '<input type="button" name="button" value="Köp" class="buyButton">';
                     output += '</article>';
                     output += '</div>';
-                    output += '</section>';
-
-
 
                 }
             });
 
         });
 
-        $('#mainContent').html(output);
+        $('#productRow').html(output);
     });
 });
