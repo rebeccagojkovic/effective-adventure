@@ -149,95 +149,98 @@
                             <li><a href="searching.html" title="Search">Search</a></li>
                             <li><a href="testning.html" title="Testning">Testning</a></li>
                             <li><a href="about.html" title="about">Om oss</a></li>
-                       
+
                         </ul>
                     </nav>
                 </div>
             </section>
-            <section class="mainContent">
-                <div class="productRow">
-                    <!-- Each product row contains info of 3 elements -->
-                    <article class="productInfo">
-                        <!-- Each individual product description -->
-                        <h1> Din profil </h1>
-                        <form action="">
+            <section id="mainContent">
 
-                            <fieldset>
-                                <legend> Företagsuppgifter </legend>
+                <section class="mainContent">
+                    <div class="productRow">
+                        <!-- Each product row contains info of 3 elements -->
+                        <article class="productInfo">
+                            <!-- Each individual product description -->
+                            <h1> Din profil </h1>
+                            <form action="">
 
-                                Kundnummer:
-                                <br>
-                                <input type="text" name="cNumber" maxlength="20">
-                                <br> Företagsnamn:
-                                <br>
-                                <input type="text" name="fullname" maxlength="50">
-                                <br>
+                                <fieldset>
+                                    <legend> Företagsuppgifter </legend>
 
-                            </fieldset>
-
-                            <!-- </form> -->
-                            <!-- Address and postal address -->
-                            <!-- <form action="action_page.php"> -->
-                            <fieldset>
-                                <legend> Adressuppgifter </legend>
-                                Adress:
-                                <br>
-                                <input id="first_line" type="text" name="cAddress" maxlength="200">
-                                <br> Postadress:
-                                <br>
-                                <input id="state" type="text" name="CPostalAddress">
-                                <br>
-                            </fieldset>
-
-                            <!-- </form> -->
-
-                            <!-- <form action="action_page.php"> -->
-                            <fieldset>
-                                <legend> Land </legend>
-                                <select name="countries">
-                                    <option value="Sverige"> Sverige </option>
+                                    Kundnummer:
                                     <br>
-                                    <option value="Danmark"> Danmark </option>
+                                    <input type="text" name="cNumber" maxlength="20">
+                                    <br> Företagsnamn:
                                     <br>
-                                    <option value="Norge"> Norge </option>
-                                    <br>
-                                    <option value="Finland"> Finland </option>
+                                    <input type="text" name="fullname" maxlength="50">
                                     <br>
 
-                                </select>
+                                </fieldset>
 
-                            </fieldset>
+                                <!-- </form> -->
+                                <!-- Address and postal address -->
+                                <!-- <form action="action_page.php"> -->
+                                <fieldset>
+                                    <legend> Adressuppgifter </legend>
+                                    Adress:
+                                    <br>
+                                    <input id="first_line" type="text" name="cAddress" maxlength="200">
+                                    <br> Postadress:
+                                    <br>
+                                    <input id="state" type="text" name="CPostalAddress">
+                                    <br>
+                                </fieldset>
 
-                            <fieldset>
-                                <legend> Ditt konto </legend>
-                                Användarnamn:
+                                <!-- </form> -->
+
+                                <!-- <form action="action_page.php"> -->
+                                <fieldset>
+                                    <legend> Land </legend>
+                                    <select name="countries">
+                                        <option value="Sverige"> Sverige </option>
+                                        <br>
+                                        <option value="Danmark"> Danmark </option>
+                                        <br>
+                                        <option value="Norge"> Norge </option>
+                                        <br>
+                                        <option value="Finland"> Finland </option>
+                                        <br>
+
+                                    </select>
+
+                                </fieldset>
+
+                                <fieldset>
+                                    <legend> Ditt konto </legend>
+                                    Användarnamn:
+                                    <br>
+                                    <input type="email" name="cEmail" value="Din e-post">
+                                    <br> Lösenord:
+                                    <br>
+                                    <input type="password" name="cPassword" value="Ditt lösenord">
+                                    <br>
+                                    <br>
+                                    <!-- <input type="Submit" value="Submit"> -->
+                                </fieldset>
+                                <!-- </form> -->
                                 <br>
-                                <input type="email" name="cEmail" value="Din e-post">
-                                <br> Lösenord:
-                                <br>
-                                <input type="password" name="cPassword" value="Ditt lösenord">
-                                <br>
-                                <br>
-                                <!-- <input type="Submit" value="Submit"> -->
-                            </fieldset>
-                            <!-- </form> -->
+                                <input id="saveProfil" type="submit" value="Spara">
+                            </form>
                             <br>
-                            <input id="saveProfil" type="submit" value="Spara">
-                        </form>
-                        <br>
-                        <br>
-                        <br>
-                        <a href="bestallning.html">
-                            <button id="goToOrder">Gå vidare till Beställning</button>
-                        </a>
-                    </article>
-                    <article class="productInfo">
-                        <!-- Each individual product description -->
-                        <h1> Orderhistorik </h1>
+                            <br>
+                            <br>
+                            <a href="bestallning.html">
+                                <button id="goToOrder">Gå vidare till Beställning</button>
+                            </a>
+                        </article>
+                        <article class="productInfo">
+                            <!-- Each individual product description -->
+                            <h1> Orderhistorik </h1>
 
 
-                    </article>
-                </div>
+                        </article>
+                    </div>
+                </section>
             </section>
         </div>
         <footer>
