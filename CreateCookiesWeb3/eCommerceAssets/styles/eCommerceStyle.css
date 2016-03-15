@@ -231,6 +231,20 @@ header {
     width: 40%;
 }
 
+.about{
+
+    
+    float:left;
+    margin-left: 5%;
+    padding-left: 5%;
+    padding-right:5%;
+    width 40%;
+    font-style: italic;
+    color: ghostwhite;
+    background-color: rgba(146, 146, 146, 1.00);
+    border-radius: 100%;
+}
+
 
 /* Prices of a products in catalog */
 
