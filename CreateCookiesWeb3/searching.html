@@ -6,29 +6,10 @@
     <title>Fabulous Bakery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="eCommerceAssets/styles/eCommerceStyle.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script>
-        $(function () {
-            $("#dialog").dialog({
-                autoOpen: false
-                , show: {
-                    effect: "blind"
-                    , duration: 1000
-                }
-                , hide: {
-                    effect: "explode"
-                    , duration: 1000
-                }
-            });
-
-            $("#opener").click(function () {
-                $("#dialog").dialog("open");
-            });
-        });
-    </script>
+    <link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="js/dialog.js" type="text/javascript"></script>
     <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
     <script>
         var __adobewebfontsappname__ = "dreamweaver"
@@ -134,6 +115,8 @@
         </section>
         <div id="content">
             <section class="sidebarSearch">
+                <input type="search" name="search" id="search" placeholder="Sök din produkt här" />
+                <script src="js/lsearch.js" type="text/javascript"></script>
                 <div id="menubar">
                     <nav class="menu">
                         <h2><!-- Title for menuset 1 -->Gör ditt val </h2>
@@ -146,225 +129,231 @@
                             <li><a href="kontakt.html" title="Kontakt">Kontakt</a></li>
                             <li><a href="searching.html" title="Search">Search</a></li>
                             <li><a href="testning.html" title="Testning">Testning</a></li>
+                            <li><a href="about.html" title="about">Om oss</a></li>
+
                         </ul>
                     </nav>
                 </div>
             </section>
+
+
             <section class="mainContent">
-                <div class="productRow">
-                    <!-- Each product row contains info of 3 elements -->
-                    <article class="productInfo">
-                        <!-- Each individual product description -->
-                        <div><img class="imageSearching" alt="sample" src="eCommerceAssets/images/ingredient.jpg"></div>
-                        <form action="/CreateCookiesClientProject/IngredientServlet" method="post">
-                            <table>
-                                <tr>
-                                    <td>
-                                        <h2>Search Ingredient:</h2></td>
-                                </tr>
-                                <tr>
+                <div id="productRow">
+                    <div class="productRow">
+                        <!-- Each product row contains info of 3 elements -->
+                        <article class="productInfo">
+                            <!-- Each individual product description -->
+                            <div><img class="imageSearching" alt="sample" src="eCommerceAssets/images/ingredient.jpg"></div>
+                            <form action="/CreateCookiesClientProject/IngredientServlet" method="post">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <h2>Search Ingredient:</h2></td>
+                                    </tr>
+                                    <tr>
 
-                                    <td>
-                                        <input type="text" name="searchIngredient" maxlength="30" />
-                                    </td>
+                                        <td>
+                                            <input type="text" name="searchIngredient" maxlength="30" />
+                                        </td>
 
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="radio" name="radioIngredientSearch" id="radioIngredientName" value="ingredientName" maxlength="30" />Ingredient Name
-                                    </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="radioIngredientSearch" id="radioIngredientName" value="ingredientName" maxlength="30" />Ingredient Name
+                                        </td>
 
-                                </tr>
-                                <tr>
+                                    </tr>
+                                    <tr>
 
-                                    <td>
-                                        <input type="radio" name="radioIngredientSearch" id="radioIngredientNumber" value="ingredientNumber" maxlength="10" />Ingredient Number
-                                    </td>
+                                        <td>
+                                            <input type="radio" name="radioIngredientSearch" id="radioIngredientNumber" value="ingredientNumber" maxlength="10" />Ingredient Number
+                                        </td>
 
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="radio" name="radioIngredientSearch" id="radioIngredientQuantityInStock" value="quantityInStock" maxlength="30" />Quantity in stock</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input class="buttonSearch" type="submit" name="submit" value="Send question" />
-                                    </td>
-                                </tr>
-                            </table>
-                            <input name="operation" value="showingredient" type="hidden">
-                        </form>
-                    </article>
-                    <article class="productInfo">
-                        <!-- Each individual product description -->
-                        <div><img class="imageSearching" alt="sample" src="eCommerceAssets/images/customer.jpg"></div>
-                        <form action="/CreateCookiesClientProject/CustomerServlet" method="post">
-                            <table>
-                                <tr>
-                                    <td>
-                                        <h2>Search Customer:</h2></td>
-                                </tr>
-                                <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="radioIngredientSearch" id="radioIngredientQuantityInStock" value="quantityInStock" maxlength="30" />Quantity in stock</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input class="buttonSearch" type="submit" name="submit" value="Send question" />
+                                        </td>
+                                    </tr>
+                                </table>
+                                <input name="operation" value="showingredient" type="hidden">
+                            </form>
+                        </article>
+                        <article class="productInfo">
+                            <!-- Each individual product description -->
+                            <div><img class="imageSearching" alt="sample" src="eCommerceAssets/images/customer.jpg"></div>
+                            <form action="/CreateCookiesClientProject/CustomerServlet" method="post">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <h2>Search Customer:</h2></td>
+                                    </tr>
+                                    <tr>
 
-                                    <td>
-                                        <input type="text" name="searchCustomer" maxlength="30" />
-                                    </td>
+                                        <td>
+                                            <input type="text" name="searchCustomer" maxlength="30" />
+                                        </td>
 
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="radio" name="radiocustomersearch" id="radioCompanyName" value="companyName" maxlength="30" />Company Name
-                                    </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="radiocustomersearch" id="radioCompanyName" value="companyName" maxlength="30" />Company Name
+                                        </td>
 
-                                </tr>
-                                <tr>
+                                    </tr>
+                                    <tr>
 
-                                    <td>
-                                        <input type="radio" name="radiocustomersearch" id="radioCompanyEmail" value="companyEmail" maxlength="40" />Company Email
-                                    </td>
+                                        <td>
+                                            <input type="radio" name="radiocustomersearch" id="radioCompanyEmail" value="companyEmail" maxlength="40" />Company Email
+                                        </td>
 
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="radio" name="radiocustomersearch" id="radioCompanyCountry" value="companyCountry" maxlength="30" />Country</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="radio" name="radiocustomersearch" id="radioPostalAddress" value="companyPostalAddress" maxlength="30" />Postal Address
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="radio" name="radiocustomersearch" id="radioCompanyAddress" value="companyAddress" maxlength="30" />Address</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input class="buttonSearch" type="submit" name="submit" value="Send question" />
-                                    </td>
-                                </tr>
-                            </table>
-                            <input name="operation" value="showcustomer" type="hidden">
-                        </form>
-                    </article>
-                    <article class="productInfo">
-                        <!-- Each individual product description -->
-                        <div><img class="imageSearching" alt="sample" src="eCommerceAssets/images/macaron.jpg"></div>
-                        <form action="/CreateCookiesClientProject/ProductServlet" method="post">
-                            <table>
-                                <tr>
-                                    <td>
-                                        <h2>Search Product:</h2></td>
-                                </tr>
-                                <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="radiocustomersearch" id="radioCompanyCountry" value="companyCountry" maxlength="30" />Country</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="radiocustomersearch" id="radioPostalAddress" value="companyPostalAddress" maxlength="30" />Postal Address
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="radiocustomersearch" id="radioCompanyAddress" value="companyAddress" maxlength="30" />Address</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input class="buttonSearch" type="submit" name="submit" value="Send question" />
+                                        </td>
+                                    </tr>
+                                </table>
+                                <input name="operation" value="showcustomer" type="hidden">
+                            </form>
+                        </article>
+                        <article class="productInfo">
+                            <!-- Each individual product description -->
+                            <div><img class="imageSearching" alt="sample" src="eCommerceAssets/images/macaron.jpg"></div>
+                            <form action="/CreateCookiesClientProject/ProductServlet" method="post">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <h2>Search Product:</h2></td>
+                                    </tr>
+                                    <tr>
 
-                                    <td>
-                                        <input type="text" name="searchProduct" maxlength="30" />
-                                    </td>
+                                        <td>
+                                            <input type="text" name="searchProduct" maxlength="30" />
+                                        </td>
 
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="radio" name="radioproductsearch" id="radioProductName" value="productName" maxlength="30" />Product Name
-                                    </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="radioproductsearch" id="radioProductName" value="productName" maxlength="30" />Product Name
+                                        </td>
 
-                                </tr>
-                                <tr>
+                                    </tr>
+                                    <tr>
 
-                                    <td>
-                                        <input type="radio" name="radioproductsearch" id="radioProductTime" value="productTime" maxlength="20" />Product Time
-                                    </td>
+                                        <td>
+                                            <input type="radio" name="radioproductsearch" id="radioProductTime" value="productTime" maxlength="20" />Product Time
+                                        </td>
 
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input class="buttonSearch" type="submit" name="submit" value="Send question" />
-                                    </td>
-                                </tr>
-                            </table>
-                            <input name="operation" value="showcustomer" type="hidden">
-                        </form>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input class="buttonSearch" type="submit" name="submit" value="Send question" />
+                                        </td>
+                                    </tr>
+                                </table>
+                                <input name="operation" value="showcustomer" type="hidden">
+                            </form>
 
-                    </article>
-                    <article class="productInfo">
-                        <!-- Each individual product description -->
-                        <div><img class="imageSearching" alt="sample" src="eCommerceAssets/images/order.jpg"></div>
-                        <form action="/CreateCookiesClientProject/OrderServlet" method="post">
-                            <table>
-                                <tr>
-                                    <td>
-                                        <h2>Search Order:</h2></td>
-                                </tr>
-                                <tr>
+                        </article>
+                        <article class="productInfo">
+                            <!-- Each individual product description -->
+                            <div><img class="imageSearching" alt="sample" src="eCommerceAssets/images/order.jpg"></div>
+                            <form action="/CreateCookiesClientProject/OrderServlet" method="post">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <h2>Search Order:</h2></td>
+                                    </tr>
+                                    <tr>
 
-                                    <td>
-                                        <input type="text" name="searchOrder" maxlength="30" />
-                                    </td>
+                                        <td>
+                                            <input type="text" name="searchOrder" maxlength="30" />
+                                        </td>
 
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="radio" name="radioOrderSearch" id="radioOrderNumber" value="orderNumber" maxlength="30" />Order Number
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="radio" name="radioOrderSearch" id="radioexpectedDeliveryDate" value="expectedDeliveryDate" maxlength="20" />Expected Delivery Date</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="radioOrderSearch" id="radioOrderNumber" value="orderNumber" maxlength="30" />Order Number
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="radioOrderSearch" id="radioexpectedDeliveryDate" value="expectedDeliveryDate" maxlength="20" />Expected Delivery Date</td>
 
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="radio" name="radioOrderSearch" id="radioisDelivered" value="isDelivered" maxlength="20" />Is Delivered
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input class="buttonSearch" type="submit" name="submit" value="Send question" />
-                                    </td>
-                                </tr>
-                            </table>
-                            <input name="operation" value="showorder" type="hidden">
-                        </form>
-                    </article>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="radioOrderSearch" id="radioisDelivered" value="isDelivered" maxlength="20" />Is Delivered
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input class="buttonSearch" type="submit" name="submit" value="Send question" />
+                                        </td>
+                                    </tr>
+                                </table>
+                                <input name="operation" value="showorder" type="hidden">
+                            </form>
+                        </article>
 
-                </div>
-                <div class="productRow">
-                    <article class="productInfo">
-                        <!-- Each individual product description -->
+                    </div>
+                    <div class="productRow">
+                        <article class="productInfo">
+                            <!-- Each individual product description -->
 
-                        <div><img class="imageSearching" alt="sample" src="eCommerceAssets/images/recipe.jpg"></div>
-                        <form action="/CreateCookiesClientProject/RecipeServlet" method="post">
-                            <table>
-                                <tr>
-                                    <td>
-                                        <h2>Search Recipe:</h2></td>
-                                </tr>
+                            <div><img class="imageSearching" alt="sample" src="eCommerceAssets/images/recipe.jpg"></div>
+                            <form action="/CreateCookiesClientProject/RecipeServlet" method="post">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <h2>Search Recipe:</h2></td>
+                                    </tr>
 
-                                <tr>
+                                    <tr>
 
-                                    <td>
-                                        <input type="text" name="searchRecipe" maxlength="30" />
-                                    </td>
+                                        <td>
+                                            <input type="text" name="searchRecipe" maxlength="30" />
+                                        </td>
 
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="radio" name="radioRecipeSearch" id="radiorIngredientNumber" value="ringredientNumber" maxlength="30" />Ingredient Number</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="radio" name="radioRecipeSearch" id="radiorProductNumber" value="rproductNumber" maxlength="30" />Product Number
-                                    </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="radioRecipeSearch" id="radiorIngredientNumber" value="ringredientNumber" maxlength="30" />Ingredient Number</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="radioRecipeSearch" id="radiorProductNumber" value="rproductNumber" maxlength="30" />Product Number
+                                        </td>
 
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input class="buttonSearch" type="submit" name="submit" value="Send question" />
-                                    </td>
-                                </tr>
-                            </table>
-                            <input name="operation" value="showrecipe" type="hidden">
-                        </form>
-                    </article>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input class="buttonSearch" type="submit" name="submit" value="Send question" />
+                                        </td>
+                                    </tr>
+                                </table>
+                                <input name="operation" value="showrecipe" type="hidden">
+                            </form>
+                        </article>
+                    </div>
                 </div>
             </section>
         </div>
