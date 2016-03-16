@@ -10,6 +10,7 @@
     <script src="https://code.jquery.com/jquery-2.2.1.min.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
     <script src="js/dialog.js" type="text/javascript"></script>
+
     <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
     <script>
         var __adobewebfontsappname__ = "dreamweaver"
@@ -144,7 +145,7 @@
                         <article class="productInfo">
                             <!-- Each individual product description -->
                             <div><img class="imageSearching" alt="sample" src="eCommerceAssets/images/ingredient.jpg"></div>
-                            <form action="/CreateCookiesClientProject/IngredientServlet" method="post">
+                            <form id="post" form action="http://iis.infoteket.nu:8080/CreateCookiesClientProject/IngredientServlet" method="post">
                                 <table>
                                     <tr>
                                         <td>
@@ -159,34 +160,39 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <input type="radio" name="radioIngredientSearch" id="radioIngredientName" value="ingredientName" maxlength="30" />Ingredient Name
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-
-                                        <td>
-                                            <input type="radio" name="radioIngredientSearch" id="radioIngredientNumber" value="ingredientNumber" maxlength="10" />Ingredient Number
+                                            <input type="radio" name="radioIngredientSearch" id="radioIngredientNumber" value="iName" maxlength="10" />Ingredient Number
                                         </td>
 
                                     </tr>
                                     <tr>
                                         <td>
-                                            <input type="radio" name="radioIngredientSearch" id="radioIngredientQuantityInStock" value="quantityInStock" maxlength="30" />Quantity in stock</td>
+                                            <input type="radio" name="radioIngredientSearch" id="radioIngredientName" value="iNumber" maxlength="30" />Ingredient Name
+                                        </td>
+
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="radioIngredientSearch" id="radioIngredientQuantityInStock" value="iQuantityInStock" maxlength="30" />Quantity in stock</td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <input class="buttonSearch" type="submit" name="submit" value="Send question" />
+                                            <script src="js/submit.js" type="text/javascript"></script>
                                         </td>
                                     </tr>
                                 </table>
                                 <input name="operation" value="showingredient" type="hidden">
                             </form>
                         </article>
+
                         <article class="productInfo">
                             <!-- Each individual product description -->
                             <div><img class="imageSearching" alt="sample" src="eCommerceAssets/images/customer.jpg"></div>
-                            <form action="/CreateCookiesClientProject/CustomerServlet" method="post">
+
+
+                            <form id="post" action="http://iis.infoteket.nu:8080/CreateCookiesClientProject/CustomerServlet" method="post">
+
                                 <table>
                                     <tr>
                                         <td>
@@ -227,17 +233,24 @@
                                     </tr>
                                     <tr>
                                         <td>
+
                                             <input class="buttonSearch" type="submit" name="submit" value="Send question" />
+                                            <script src="js/submit.js" type="text/javascript"></script>
                                         </td>
                                     </tr>
                                 </table>
+
                                 <input name="operation" value="showcustomer" type="hidden">
+
                             </form>
+
+
+
                         </article>
                         <article class="productInfo">
                             <!-- Each individual product description -->
                             <div><img class="imageSearching" alt="sample" src="eCommerceAssets/images/macaron.jpg"></div>
-                            <form action="/CreateCookiesClientProject/ProductServlet" method="post">
+                            <form id="post" form action="http://iis.infoteket.nu:8080/CreateCookiesClientProject/ProductServlet" method="post">
                                 <table>
                                     <tr>
                                         <td>
@@ -266,6 +279,7 @@
                                     <tr>
                                         <td>
                                             <input class="buttonSearch" type="submit" name="submit" value="Send question" />
+                                            <script src="js/submit.js" type="text/javascript"></script>
                                         </td>
                                     </tr>
                                 </table>
@@ -276,7 +290,7 @@
                         <article class="productInfo">
                             <!-- Each individual product description -->
                             <div><img class="imageSearching" alt="sample" src="eCommerceAssets/images/order.jpg"></div>
-                            <form action="/CreateCookiesClientProject/OrderServlet" method="post">
+                            <form id="post" form action="http://iis.infoteket.nu:8080/CreateCookiesClientProject/OrderServlet" method="post">
                                 <table>
                                     <tr>
                                         <td>
@@ -307,6 +321,7 @@
                                     <tr>
                                         <td>
                                             <input class="buttonSearch" type="submit" name="submit" value="Send question" />
+                                            <script src="js/submit.js" type="text/javascript"></script>
                                         </td>
                                     </tr>
                                 </table>
@@ -320,7 +335,7 @@
                             <!-- Each individual product description -->
 
                             <div><img class="imageSearching" alt="sample" src="eCommerceAssets/images/recipe.jpg"></div>
-                            <form action="/CreateCookiesClientProject/RecipeServlet" method="post">
+                            <form id="post" form action="http://iis.infoteket.nu:8080/CreateCookiesClientProject/RecipeServlet" method="post">
                                 <table>
                                     <tr>
                                         <td>
@@ -347,6 +362,7 @@
                                     <tr>
                                         <td>
                                             <input class="buttonSearch" type="submit" name="submit" value="Send question" />
+                                            <script src="js/submit.js" type="text/javascript"></script>
                                         </td>
                                     </tr>
                                 </table>
