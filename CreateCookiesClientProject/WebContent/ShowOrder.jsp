@@ -26,7 +26,7 @@
 			value="<%=o.getisDelivered()%>">
 	</p>
 	<p>
-	<form action="/CreateCookiesClientProject/CustomerServlet"
+	<form action="/CreateCookiesClientProject/OrderServlet"
 		method="post">
 		<input type="submit" name="submit" value="Tillbaka"> <input
 			name="operation" value="SearchOrder" type="hidden">
