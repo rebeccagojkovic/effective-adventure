@@ -156,6 +156,7 @@ header {
     text-align: center;
     padding-left: 4%;
     border-radius: 25px;
+    opacity:0.8;
     background-color: white;
 }
 
@@ -195,6 +196,7 @@ header {
 #mainWrapper {
     width: 80%;
     padding-left: 10%;
+    
 }
 
 
