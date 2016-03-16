@@ -1,4 +1,5 @@
 package servlets;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,18 +24,16 @@ public class OrderServlet extends HttpServlet {
 	 */
 	public OrderServlet() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		throws ServletException, IOException {
-			// doGet(request, response);
+		
 			String url = null;
-			// Get hidden field
+		
 			String operation = request.getParameter("operation");
 			if (operation.equals("showorder")) {
 				System.out.println("MainServlet-showorder");
