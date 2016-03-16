@@ -12,7 +12,7 @@
 	<%
 		Ingredient i = (Ingredient) request.getAttribute("ingredient");
 	%>
-	<h2>Customer:</h2>
+	<h2>Ingredient:</h2>
 	<p>
 		<input type="text" name="iNumber" value="<%=i.getiNumber()%>">
 	</p>

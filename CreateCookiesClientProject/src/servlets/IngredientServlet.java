@@ -37,6 +37,7 @@ public class IngredientServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 
 		String url = null;
 		String operation = request.getParameter("operation");
@@ -49,19 +50,18 @@ public class IngredientServlet extends HttpServlet {
 
 			String searchIngredient = request.getParameter("searchIngredient");
 
-			if (request.getParameter("radioingredientsearch") != null) {
-				if (request.getParameter("radioingredientsearch").equals("iNumber")) {
+			if (request.getParameter("radioIngredientSearch") != null) {
+				if (request.getParameter("radioIngredientSearch").equals("iNumber")) {
 					request.setAttribute("searchIngredient", iNumber);
-
-					System.out.println("findByiNumber");
 
 					Ingredient number = facade.findByiNumber(searchIngredient);
 
 					request.setAttribute("ingredient", number);
 
+					System.out.println(iNumber);
 					url = "/ShowIngredient.jsp";
 				}
-				if (request.getParameter("radioingredientsearch").equals("iName")) {
+				if (request.getParameter("radioIngredientSearch").equals("iName")) {
 					request.setAttribute("searchIngredient", iName);
 
 					List<Ingredient> name = facade.findByiName(searchIngredient);
@@ -69,15 +69,17 @@ public class IngredientServlet extends HttpServlet {
 						request.setAttribute("ingredient", in1);
 
 					}
+					System.out.println(iName);
 					url = "/ShowIngredient.jsp";
 
 				}
-				if (request.getParameter("radioingredientsearch").equals("iQuantityInStock")) {
+				if (request.getParameter("radioIngredientSearch").equals("iQuantityInStock")) {
 					request.setAttribute("searchIngredient", iQuantityInStock);
 
 					List<Ingredient> quantity = facade.findByiQuantityInStock(searchIngredient);
 					for (Ingredient in1 : quantity) {
-						request.setAttribute("ingredient", in1);
+						double d = Double.parseDouble("1000");
+						request.setAttribute("ingredient", d);
 
 					}
 					url = "/ShowIngredient.jsp";

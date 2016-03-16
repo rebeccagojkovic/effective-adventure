@@ -23,6 +23,8 @@ public class RegisterServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+
 		String cEmail = request.getParameter("cEmail");
 		String cPassword = request.getParameter("cPassword");
 		String cName = request.getParameter("cName");
