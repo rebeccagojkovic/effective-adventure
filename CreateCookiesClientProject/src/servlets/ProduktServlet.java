@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import entity.ejb.Customer;
+import entity.ejb.Ingredient;
 import entity.ejb.Product;
 import facade.FacadeLocal;
 
@@ -61,21 +62,19 @@ public class ProduktServlet extends HttpServlet {
 			String pName = request.getParameter("productName");
 			String pTime = request.getParameter("productTime");
 			String price = request.getParameter("productPrice");
-			
 
 			String searchProduct = request.getParameter("searchProduct");
 
 			if (request.getParameter("radioproductsearch") != null) {
 				if (request.getParameter("radioproductsearch").equals("productNumber")) {
-					request.setAttribute("searchProduct",pNumber );
+					request.setAttribute("searchProduct", pNumber);
+
+					Product number = facade.findBypNumber(searchProduct);
+					
+					request.setAttribute("product", number);
 
 					System.out.println("findBypNumber");
 
-					List<Product> number = facade.findBypNumber(searchProduct);
-					for (Product p1 : number) {
-						request.setAttribute("product", p1);
-
-					}
 					url = "/ShowProduct.jsp";
 				}
 				if (request.getParameter("radioproductsearch").equals("productName")) {
@@ -103,8 +102,8 @@ public class ProduktServlet extends HttpServlet {
 				if (request.getParameter("radioproductsearch").equals("productPrice")) {
 					request.setAttribute("searchProduct", price);
 
-					List<Product>prices = facade.findByPrice(searchProduct);
-					for (Product p4 :prices) {
+					List<Product> prices = facade.findByPrice(searchProduct);
+					for (Product p4 : prices) {
 						request.setAttribute("product", p4);
 
 					}
