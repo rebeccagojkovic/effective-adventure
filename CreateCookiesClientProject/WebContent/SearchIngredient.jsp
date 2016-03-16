@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="/IngredientServlet" method="post">
+	<form action="/CreateCookiesClientProject/IngredientServlet" method="post">
 		<table cellspacing="0" cellpadding="0" border="0" align="left">
 			<tr>
 				<td><h2>Search Ingredient:</h2></td>
@@ -19,20 +19,20 @@
 			</tr>
 			<tr>
 				<td><input type="radio" name="radioIngredientSearch"
-					id="radioIngredientName" value="ingredientName" maxlength="30" />Ingredient
-					Name</td>
-
-			</tr>
-			<tr>
-
-				<td><input type="radio" name="radioIngredientSearch"
-					id="radioIngredientNumber" value="ingredientNumber" maxlength="10" />Ingredient 
+					id="radioIngredientName" value="iNumber" maxlength="30" />Ingredient
 					Number</td>
 
 			</tr>
 			<tr>
+
 				<td><input type="radio" name="radioIngredientSearch"
-					id="radioIngredientQuantityInStock" value="quantityInStock" maxlength="30" />Quantity in stock</td>
+					id="radioIngredientNumber" value="iName" maxlength="10" />Ingredient 
+					Name</td>
+
+			</tr>
+			<tr>
+				<td><input type="radio" name="radioIngredientSearch"
+					id="radioIngredientQuantityInStock" value="iQuantityInStock" maxlength="30" />Quantity in stock</td>
 			</tr>
 			<tr>
 				<td><input type="submit" name="submit" value="Send question" /></td>
