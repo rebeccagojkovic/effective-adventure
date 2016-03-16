@@ -1,6 +1,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -28,7 +29,22 @@ public class IngredientServlet extends HttpServlet {
 	 */
 	public IngredientServlet() {
 		super();
-		// TODO Auto-generated constructor stub
+
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// response.getWriter().append("Served at:
+		// ").append(request.getContextPath());
+		PrintWriter out = response.getWriter();
+		out.println("IngredientServlet-doGet");
+		out.close();
+
 	}
 
 	/**
@@ -47,7 +63,7 @@ public class IngredientServlet extends HttpServlet {
 			String iNumber = request.getParameter("iNumber");
 			String iName = request.getParameter("iName");
 			String iQuantityInStock = request.getParameter("iQuantityInStock");
-//			double d = Double.parseDouble(iQuantityInStock);
+			// double d = Double.parseDouble(iQuantityInStock);
 
 			String searchIngredient = request.getParameter("searchIngredient");
 
@@ -87,17 +103,16 @@ public class IngredientServlet extends HttpServlet {
 
 				}
 
+			} else if (operation.equals("searchIngredient")) {
+				System.out.println("CustomerServlet-searchIngredient");
+				url = "/SearchIngredient.jsp";
+			} else {
+				url = "/SearchIngredient.jsp";
 			}
-
-		} else if (operation.equals("searchIngredient")) {
-			System.out.println("CustomerServlet-searchIngredient");
-			url = "/searchIngredient.jsp";
-		} else {
-			url = "/searchIngredient.jsp";
+			System.out.println(url);
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+			dispatcher.forward(request, response);
 		}
-		System.out.println(url);
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-		dispatcher.forward(request, response);
-	}
 
+	}
 }
