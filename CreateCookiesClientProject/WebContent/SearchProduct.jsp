@@ -23,12 +23,12 @@
 					Name</td>
 
 			</tr>
-			<tr>
+			<!-- <tr>
 				<td><input type="radio" name="radioproductsearch"
 					id="radioProductNumber" value="productNumber" maxlength="30" />Product
 					Name</td>
 
-			</tr>
+			</tr> -->
 			<tr>
 
 				<td><input type="radio" name="radioproductsearch"

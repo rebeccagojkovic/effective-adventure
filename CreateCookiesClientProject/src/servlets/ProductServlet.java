@@ -59,7 +59,7 @@ public class ProductServlet extends HttpServlet {
 		if (operation.equals("showproduct")) {
 			System.out.println("MainServlet-showproduct");
 
-			String pNumber = request.getParameter("productNumber");
+//			String pNumber = request.getParameter("productNumber");
 			String pName = request.getParameter("productName");
 			String pTime = request.getParameter("productTime");
 			
@@ -67,17 +67,17 @@ public class ProductServlet extends HttpServlet {
 			String searchProduct = request.getParameter("searchProduct");
 
 			if (request.getParameter("radioproductsearch") != null) {
-				if (request.getParameter("radioproductsearch").equals("productNumber")) {
-					request.setAttribute("searchProduct", pNumber);
-
-					Product number = facade.findBypNumber(searchProduct);
-					
-					request.setAttribute("product", number);
-
-					System.out.println("findBypNumber");
-
-					url = "/ShowProduct.jsp";
-				}
+//				if (request.getParameter("radioproductsearch").equals("productNumber")) {
+//					request.setAttribute("searchProduct", pNumber);
+//
+//					Product number = facade.findBypNumber(searchProduct);
+//					
+//					request.setAttribute("product", number);
+//
+//					System.out.println("findBypNumber");
+//
+//					url = "/ShowProduct.jsp";
+//				}
 				if (request.getParameter("radioproductsearch").equals("productName")) {
 					request.setAttribute("searchProduct", pName);
 
