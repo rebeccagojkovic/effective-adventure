@@ -34,6 +34,8 @@ public class CustomerProfileServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+
 		Cookie[] cookies = request.getCookies();
 
 		for (Cookie cookie : cookies) {
@@ -59,15 +61,17 @@ public class CustomerProfileServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+
 		String cEmail = request.getParameter("cEmail");
 		String cPassword = request.getParameter("cPassword");
 		String cName = request.getParameter("cName");
 		String cAddress = request.getParameter("cAddress");
 		String cCountry = request.getParameter("cCountry");
 		String cPostalAddress = request.getParameter("cPostalAddress");
-		// String cNumber = request.getParameter("cNumber");
+		String cNumber = request.getParameter("cNumber");
 
-		Customer c = new Customer(cName, cAddress, cPostalAddress, cCountry, cEmail, cPassword);
+		Customer c = new Customer(cNumber, cName, cAddress, cPostalAddress, cCountry, cEmail, cPassword);
 
 		facade.updateCustomer(c);
 

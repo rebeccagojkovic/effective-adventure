@@ -31,9 +31,9 @@ public class RegisterServlet extends HttpServlet {
 		String cAddress = request.getParameter("cAddress");
 		String cCountry = request.getParameter("cCountry");
 		String cPostalAddress = request.getParameter("cPostalAddress");
-		// String cNumber = request.getParameter("cNumber");
+		String cNumber = request.getParameter("cNumber");
 
-		Customer c = new Customer(cName, cAddress, cPostalAddress, cCountry, cEmail, cPassword);
+		Customer c = new Customer(cNumber, cName, cAddress, cPostalAddress, cCountry, cEmail, cPassword);
 
 		facade.createCustomer(c);
 

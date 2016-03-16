@@ -34,6 +34,8 @@ public class ProductTable extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+
 		System.out.println("MainServlet-showproduct");
 		List<Product> products = facade.findAllProducts();
 		request.setAttribute("products", products);

@@ -10,7 +10,7 @@ import junit.framework.TestCase;
 public class CustomerEJBTest extends TestCase {
 	FacadeLocal facade;
 
-	// String expectedNumber;
+	String expectedNumber;
 	String expectedName;
 	String expectedAddress;
 	String expectedPostalAddress;
@@ -31,6 +31,7 @@ public class CustomerEJBTest extends TestCase {
 		Context context = new InitialContext();
 		facade = (FacadeLocal) context.lookup("java:app/CreateCookiesProject/Facade!facade.FacadeLocal");
 
+		expectedNumber = "1";
 		expectedName = "Bageriet";
 		expectedAddress = "Nygatan";
 		expectedPostalAddress = "Lund";
@@ -38,7 +39,7 @@ public class CustomerEJBTest extends TestCase {
 		expectedEmail = "ake@bageriet.se";
 		expectedPassword = "password";
 
-		c1 = new Customer(expectedName, expectedAddress, expectedPostalAddress, expectedCountry, expectedEmail,
+		c1 = new Customer(expectedNumber, expectedName, expectedAddress, expectedPostalAddress, expectedCountry, expectedEmail,
 				expectedPassword);
 	}
 

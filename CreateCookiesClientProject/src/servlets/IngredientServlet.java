@@ -39,6 +39,8 @@ public class IngredientServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+
 		// response.getWriter().append("Served at:
 		// ").append(request.getContextPath());
 		PrintWriter out = response.getWriter();
