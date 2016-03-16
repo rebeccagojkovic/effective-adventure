@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="/RecipeServlet" method="post">
+	<form action="/CreateCookiesClientProject/RecipeServlet" method="post">
 		<table cellspacing="0" cellpadding="0" border="0" align="left">
 			<tr>
 				<td><h2>Search Recipe:</h2></td>
