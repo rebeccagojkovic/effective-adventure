@@ -23,7 +23,7 @@
 		<input type="text" name="productTime" value="<%=p.getpTime()%>">
 	</p>
 	<p><%=new java.util.Date()%></p>
-	<form action="/MVCProject/MainServlet" method="post">
+	<form action="/CreateCookiesClientProject/ProductServlet" method="post">
 		<input type="submit" name="submit" value="Tillbaka"> <input
 			name="operation" value="searchproduct" type="hidden">
 	</form>

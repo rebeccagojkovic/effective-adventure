@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -20,14 +21,14 @@ import facade.FacadeLocal;
  * Servlet implementation class ProduktServlet
  */
 @WebServlet("/ProduktServlet")
-public class ProduktServlet extends HttpServlet {
+public class ProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	FacadeLocal facade;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ProduktServlet() {
+	public ProductServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -61,7 +62,7 @@ public class ProduktServlet extends HttpServlet {
 			String pNumber = request.getParameter("productNumber");
 			String pName = request.getParameter("productName");
 			String pTime = request.getParameter("productTime");
-			String price = request.getParameter("productPrice");
+			
 
 			String searchProduct = request.getParameter("searchProduct");
 
@@ -91,7 +92,8 @@ public class ProduktServlet extends HttpServlet {
 				if (request.getParameter("radioproductsearch").equals("productTime")) {
 					request.setAttribute("searchProduct", pTime);
 
-					List<Product> time = facade.FindBypTime(searchProduct);
+					List<Product> time = facade.InfoTimeStamp(Timestamp
+							.valueOf(searchProduct));
 					for (Product p3 : time) {
 						request.setAttribute("product", p3);
 
@@ -99,17 +101,6 @@ public class ProduktServlet extends HttpServlet {
 					url = "/ShowProduct.jsp";
 
 				}
-				if (request.getParameter("radioproductsearch").equals("productPrice")) {
-					request.setAttribute("searchProduct", price);
-
-					List<Product> prices = facade.findByPrice(searchProduct);
-					for (Product p4 : prices) {
-						request.setAttribute("product", p4);
-
-					}
-					url = "/ShowCustomer.jsp";
-				}
-
 			} else if (operation.equals("SearchProduct")) {
 				System.out.println("CustomerServlet-SearchProduct");
 				url = "/SearchProduct.jsp";
