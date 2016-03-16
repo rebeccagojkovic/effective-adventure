@@ -13,6 +13,7 @@ public class CustomerEJBTest extends TestCase {
 	FacadeLocal facade;
 	public CustomerEJBTest(String name) {
 		super(name);
+		
 	}
 
 	protected void setUp() throws Exception {
@@ -26,8 +27,8 @@ public class CustomerEJBTest extends TestCase {
 		facade=null;
 	}
 
-	public void testFindByAddress() {
-		List<Customer>addresslist=facade.findByAddress("Nygatan");
+	public void testFindByAddress(List<Customer>addresslist) {
+		addresslist=facade.findByAddress("Nygatan");
 		assertEquals(facade.findByAddress("Nygatan"), addresslist);
 	}
 

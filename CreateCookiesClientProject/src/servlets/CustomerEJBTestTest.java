@@ -4,13 +4,14 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 
 import entity.ejb.Customer;
-import facade.FacadeLocal;
 import junit.framework.TestCase;
 
-public class CustomerTest extends TestCase {
-    Customer customer;
-	public CustomerTest(String name) {
+public class CustomerEJBTestTest extends TestCase {
+	Customer customer;
+	
+	public CustomerEJBTestTest(String name) {
 		super(name);
+		
 	}
 
 	protected void setUp() throws Exception {
@@ -25,8 +26,7 @@ public class CustomerTest extends TestCase {
 	}
 
 	public void testGetcNumber() {
-		 assertEquals(customer.getcNumber(),"1");
-;
+		assertEquals(customer.getcNumber(),"1");
 	}
 
 	public void testSetcNumber() {
@@ -34,15 +34,15 @@ public class CustomerTest extends TestCase {
 	}
 
 	public void testGetcName() {
-		 assertEquals(customer.getcName(),"Åke");
+		assertEquals(customer.getcName(),"Bageriet");
 	}
 
 	public void testSetcName() {
-		 customer.setcName("Åke");
+		customer.setcName("Bageriet");
 	}
 
 	public void testGetcAddress() {
-		 assertEquals(customer.getcAddress(),"Nygatan");
+		assertEquals(customer.getcAddress(),"Nygatan");
 	}
 
 	public void testSetcAddress() {
@@ -50,11 +50,17 @@ public class CustomerTest extends TestCase {
 	}
 
 	public void testGetcPostalAddress() {
-		 assertEquals(customer.getcPostalAddress(),"Lund");
+		assertEquals(customer.getcPostalAddress(),"Malmö");
 	}
 
 	public void testSetcPostalAddress() {
 		customer.setcPostalAddress("Lund");
 	}
+	public void testEquals() {
+		 assertTrue(!customer.equals(null));
+		 assertEquals(customer,customer);
+		 assertEquals(customer, new Customer());
+		 assertTrue(!customer.equals(customer));
+		}
 
 }
