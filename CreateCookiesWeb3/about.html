@@ -41,12 +41,13 @@
                             <table class="loginTable">
                                 <tr>
                                     <td>Email
-                                        <input class="loggaIn" name="cEmail">
+                                        <input class="loggaIn" id="valid" type="email" name="cEmail" required>
+
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Lösenord
-                                        <input type="password" class="loggaIn" name="cPassword">
+                                        <input class="loggaIn" id="valid" type="password" name="cPassword" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -68,34 +69,39 @@
                             <h1>Registrera Dig</h1>
                             <table>
                                 <tr>
+                                    <td>Kundnummer
+                                        <input class="registerTable" id="valid" type="number" name="cNumber" required>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td>Företag
-                                        <input class="registerTable" name="cName">
+                                        <input class="registerTable" id="valid" type="text" name="cName" required>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Address
-                                        <input class="registerTable" name="cAddress">
+                                        <input class="registerTable" id="valid" type="text" name="cAddress" required>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Postadress
-                                        <input class="registerTable" name="cPostalAddress">
+                                        <input class="registerTable" id="valid" type="text" name="cPostalAddress" required>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Land
-                                        <input class="registerTable" name="cCountry">
+                                        <input class="registerTable" id="valid" type="text" name="cCountry" required>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Email
-                                        <input class="registerTable" name="cEmail">
+                                        <input class="registerTable" id="valid" type="email" name="cEmail" required>
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <td>Lösenord
-                                        <input type="password" class="registerTable" name="cPassword">
+                                        <input class="registerTable" id="valid" type="password" name="cPassword" required>
                                     </td>
                                 </tr>
 
