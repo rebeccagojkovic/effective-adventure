@@ -55,7 +55,7 @@ public interface FacadeLocal {
 
 	public List<Ingredient> findByiName(String iName);
 
-	public List<Ingredient> findByiQuantityInStock(String iQuantityInStock);
+	public List<Ingredient> findByiQuantityInStock(double iQuantityInStock);
 
 	// * Order *//
 

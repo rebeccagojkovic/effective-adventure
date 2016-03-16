@@ -47,6 +47,7 @@ public class IngredientServlet extends HttpServlet {
 			String iNumber = request.getParameter("iNumber");
 			String iName = request.getParameter("iName");
 			String iQuantityInStock = request.getParameter("iQuantityInStock");
+//			double d = Double.parseDouble(iQuantityInStock);
 
 			String searchIngredient = request.getParameter("searchIngredient");
 
@@ -76,10 +77,10 @@ public class IngredientServlet extends HttpServlet {
 				if (request.getParameter("radioIngredientSearch").equals("iQuantityInStock")) {
 					request.setAttribute("searchIngredient", iQuantityInStock);
 
-					List<Ingredient> quantity = facade.findByiQuantityInStock(searchIngredient);
+					List<Ingredient> quantity = facade.findByiQuantityInStock(Double.valueOf(searchIngredient));
 					for (Ingredient in1 : quantity) {
-						double d = Double.parseDouble("1000");
-						request.setAttribute("ingredient", d);
+
+						request.setAttribute("ingredient", in1);
 
 					}
 					url = "/ShowIngredient.jsp";

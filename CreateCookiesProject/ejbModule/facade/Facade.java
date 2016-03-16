@@ -141,7 +141,7 @@ public class Facade implements FacadeLocal {
 	}
 
 	@Override
-	public List<Ingredient> findByiQuantityInStock(String iQuantityInStock) {
+	public List<Ingredient> findByiQuantityInStock(double iQuantityInStock) {
 		return ingredientEAO.findByiQuantityInStock(iQuantityInStock);
 	}
 
