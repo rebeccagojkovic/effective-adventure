@@ -65,7 +65,7 @@ public class IngredientEAOImpl implements IngredientEAOImplLocal {
 		return results;
 	}
 	@Override
-	public List<Ingredient> findByiQuantityInStock(String iQuantityInStock) {
+	public List<Ingredient> findByiQuantityInStock(double iQuantityInStock) {
 		TypedQuery<Ingredient> query = em.createNamedQuery("Ingredient.findByiQuantityInStock", Ingredient.class);
 		query.setParameter("iQuantityInStock", iQuantityInStock);
 		List<Ingredient> results = query.getResultList();
