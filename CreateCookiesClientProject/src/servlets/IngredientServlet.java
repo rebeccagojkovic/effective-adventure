@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import entity.ejb.Customer;
 import entity.ejb.Ingredient;
 import facade.FacadeLocal;
 
@@ -56,18 +55,17 @@ public class IngredientServlet extends HttpServlet {
 
 					System.out.println("findByiNumber");
 
-					List<Ingredient> number = facade.findByiNumber(searchIngredient);
-					for (Customer in1 : number) {
-						request.setAttribute("ingredient", in1);
+					Ingredient number = facade.findByiNumber(searchIngredient);
 
-					}
+					request.setAttribute("ingredient", number);
+
 					url = "/ShowIngredient.jsp";
 				}
 				if (request.getParameter("radioingredientsearch").equals("iName")) {
 					request.setAttribute("searchIngredient", iName);
 
 					List<Ingredient> name = facade.findByiName(searchIngredient);
-					for (Customer in1 : name) {
+					for (Ingredient in1 : name) {
 						request.setAttribute("ingredient", in1);
 
 					}
@@ -77,8 +75,8 @@ public class IngredientServlet extends HttpServlet {
 				if (request.getParameter("radioingredientsearch").equals("iQuantityInStock")) {
 					request.setAttribute("searchIngredient", iQuantityInStock);
 
-					List<Ingredient> quantity = facade.findbyiQuantityInStock(searchIngredient);
-					for (Customer in1 : quantity) {
+					List<Ingredient> quantity = facade.findByiQuantityInStock(searchIngredient);
+					for (Ingredient in1 : quantity) {
 						request.setAttribute("ingredient", in1);
 
 					}

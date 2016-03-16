@@ -126,20 +126,20 @@ public class Facade implements FacadeLocal {
 	}
 
 	@Override
-	public List<Ingredient> findAllIngredients() {
-		return ingredientEAO.findAllIngredients();
+	public Ingredient findByiNumber(String iNumber) {
+		return ingredientEAO.findByiNumber(iNumber);
 	}
 
 	@Override
-	public Ingredient findByiNumber(String iNumber) {
-		return ingredientEAO.findByiNumber(iNumber);
+	public List<Ingredient> findAllIngredients() {
+		return ingredientEAO.findAllIngredients();
 	}
 
 	@Override
 	public List<Ingredient> findByiName(String iName) {
 		return ingredientEAO.findByiName(iName);
 	}
-	
+
 	@Override
 	public List<Ingredient> findByiQuantityInStock(String iQuantityInStock) {
 		return ingredientEAO.findByiQuantityInStock(iQuantityInStock);
