@@ -48,6 +48,11 @@ public class CustomerEJBTest extends TestCase {
 		facade = null;
 		c1 = null;
 	}
+	
+	public void testFindByNumber() {
+	
+			assertEquals(expectedNumber, c1.getcNumber());
+		}
 
 	public void testFindByAddress() {
 		List<Customer> addresslist = facade.findByAddress(expectedAddress);
