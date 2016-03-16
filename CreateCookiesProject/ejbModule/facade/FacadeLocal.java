@@ -78,7 +78,7 @@ public interface FacadeLocal {
 	// * Product *//
 
 	public Product findBypNumber(String pNumber);
-
+	
 	public Product createProduct(Product product);
 
 	public Product updateProduct(Product product);
@@ -114,5 +114,4 @@ public interface FacadeLocal {
 	public List<Recipe> findAllRecipes();
 
 	public List<Recipe> countRecipes();
-
 }

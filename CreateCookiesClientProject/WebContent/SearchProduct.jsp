@@ -24,10 +24,22 @@
 
 			</tr>
 			<tr>
+				<td><input type="radio" name="radioproductsearch"
+					id="radioProductNumber" value="productNumber" maxlength="30" />Product
+					Name</td>
+
+			</tr>
+			<tr>
 
 				<td><input type="radio" name="radioproductsearch"
 					id="radioProductTime" value="productTime" maxlength="20" />Product
 					Time</td>
+
+			</tr>
+			<tr>
+				<td><input type="radio" name="radioproductsearch"
+					id="radioProductPrice" value="productPrice" maxlength="30" />Product
+					Name</td>
 
 			</tr>
 			<tr>
