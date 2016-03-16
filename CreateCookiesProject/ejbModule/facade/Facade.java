@@ -131,7 +131,7 @@ public class Facade implements FacadeLocal {
 	}
 
 	@Override
-	public List<Ingredient> findByiNumber(String iNumber) {
+	public Ingredient findByiNumber(String iNumber) {
 		return ingredientEAO.findByiNumber(iNumber);
 	}
 

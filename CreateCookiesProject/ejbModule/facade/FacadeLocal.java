@@ -51,7 +51,7 @@ public interface FacadeLocal {
 
 	public List<Ingredient> findAllIngredients();
 
-	public List<Ingredient> findByiNumber(String iNumber);
+	public Ingredient findByiNumber(String iNumber);
 
 	public List<Ingredient> findByiName(String iName);
 
