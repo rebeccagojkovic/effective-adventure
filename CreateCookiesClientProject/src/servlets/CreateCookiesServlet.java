@@ -94,7 +94,7 @@ public class CreateCookiesServlet extends HttpServlet {
 			out.println("");
 		}
 
-		List<Ingredient> ingredientsearch = facade.findByName("choklad");
+		List<Ingredient> ingredientsearch = facade.findByiName("choklad");
 		for (Ingredient i111 : ingredientsearch) {
 			out.println("<h4>Hittade: " + i111.getClass().getSimpleName());
 			out.println(" Id: " + i111.getiNumber());
