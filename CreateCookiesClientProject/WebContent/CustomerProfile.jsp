@@ -23,7 +23,7 @@
 			<legend> Företagsuppgifter </legend>
 
 			Kundnummer: <br> <input type="text" name="cNumber"
-				maxlength="20" value="${cNumber}"> <br> Företagsnamn: <br>
+				maxlength="20" value="${cNumber}" readonly> <br> Företagsnamn: <br>
 			<input type="text" name="cName" maxlength="50" value="${cName}">
 			<br>
 
