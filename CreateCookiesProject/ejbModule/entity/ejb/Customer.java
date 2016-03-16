@@ -52,10 +52,10 @@ public class Customer implements Serializable {
 	public void setcNumber(String cNumber) {
 		this.cNumber = cNumber;
 	}
-	@PrePersist
-	public void cNumberGenerated(){
-		this.setcNumber(UUID.randomUUID().toString());
-	}
+//	@PrePersist
+//	public void cNumberGenerated(){
+//		this.setcNumber(UUID.randomUUID().toString());
+//	}
 
 	@Column(name = "cName")
 	public String getcName() {
@@ -132,9 +132,9 @@ public class Customer implements Serializable {
 
 	}
 
-	public Customer(String cName, String cAddress, String cPostalAddress, String cCountry,
+	public Customer(String cNumber, String cName, String cAddress, String cPostalAddress, String cCountry,
 			String cEmail, String cPassword) {
-//		this.cNumber = cNumber;
+		this.cNumber = cNumber;
 		this.cName = cName;
 		this.cAddress = cAddress;
 		this.cPostalAddress = cPostalAddress;
