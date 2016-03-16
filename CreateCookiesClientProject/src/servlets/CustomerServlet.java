@@ -66,7 +66,7 @@ public class CustomerServlet extends HttpServlet {
 			String cAddress = request.getParameter("companyAddress");
 
 			String searchCustomer = request.getParameter("searchCustomer");
-			
+
 			if (request.getParameter("radiocustomersearch") != null) {
 				if (request.getParameter("radiocustomersearch").equals("companyName")) {
 					request.setAttribute("searchCustomer", cName);
@@ -134,7 +134,7 @@ public class CustomerServlet extends HttpServlet {
 			System.out.println(url);
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
 			dispatcher.forward(request, response);
-			
+
 		}
 
 	}
