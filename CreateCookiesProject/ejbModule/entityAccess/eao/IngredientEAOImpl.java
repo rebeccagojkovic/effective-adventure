@@ -55,11 +55,26 @@ public class IngredientEAOImpl implements IngredientEAOImplLocal {
 		List<Ingredient> results = query.getResultList();
 		return results;
 	}
+	
+	@Override
+	public List<Ingredient> findByiNumber(String iNumber) {
+		TypedQuery<Ingredient> query = em.createNamedQuery("Ingredient.findByiNumber", Ingredient.class);
+		query.setParameter("iNumber", iNumber);
+		List<Ingredient> results = query.getResultList();
+		return results;
+	}
 
 	@Override
-	public List<Ingredient> findByName(String iName) {
-		TypedQuery<Ingredient> query = em.createNamedQuery("Ingredient.findByName", Ingredient.class);
+	public List<Ingredient> findByiName(String iName) {
+		TypedQuery<Ingredient> query = em.createNamedQuery("Ingredient.findByiName", Ingredient.class);
 		query.setParameter("iName", iName);
+		List<Ingredient> results = query.getResultList();
+		return results;
+	}
+	@Override
+	public List<Ingredient> findByiQuantityInStock(String iQuantityInStock) {
+		TypedQuery<Ingredient> query = em.createNamedQuery("Ingredient.findByiQuantityInStock", Ingredient.class);
+		query.setParameter("iQuantityInStock", iQuantityInStock);
 		List<Ingredient> results = query.getResultList();
 		return results;
 	}

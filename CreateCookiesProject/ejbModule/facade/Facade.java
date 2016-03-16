@@ -92,27 +92,23 @@ public class Facade implements FacadeLocal {
 	public List<Customer> findBycName(String cName) {
 		return customerEAO.findBycName(cName);
 	}
-	
+
 	@Override
 	public List<Customer> findBycEmail(String cEmail) {
 		return customerEAO.findBycEmail(cEmail);
 	}
+
 	@Override
 	public Customer getCustomerByEmail(String cEmail) {
 		return customerEAO.getCustomerByEmail(cEmail);
 	}
-	
+
 	@Override
 	public boolean authenticateCustomer(String cEmail, String cPassword) {
 		return customerEAO.authenticateCustomer(cEmail, cPassword);
 	}
 
 	// * Ingredient *//
-
-	@Override
-	public Ingredient findByiNumber(String iNumber) {
-		return ingredientEAO.findByiNumber(iNumber);
-	}
 
 	@Override
 	public Ingredient createIngredient(Ingredient ingredient) {
@@ -130,13 +126,23 @@ public class Facade implements FacadeLocal {
 	}
 
 	@Override
-	public List<Ingredient> findByName(String iName) {
-		return ingredientEAO.findByName(iName);
+	public List<Ingredient> findAllIngredients() {
+		return ingredientEAO.findAllIngredients();
 	}
 
 	@Override
-	public List<Ingredient> findAllIngredients() {
-		return ingredientEAO.findAllIngredients();
+	public List<Ingredient> findByiNumber(String iNumber) {
+		return ingredientEAO.findByiNumber(iNumber);
+	}
+
+	@Override
+	public List<Ingredient> findByiName(String iName) {
+		return ingredientEAO.findByiName(iName);
+	}
+	
+	@Override
+	public List<Ingredient> findByiQuantityInStock(String iQuantityInStock) {
+		return ingredientEAO.findByiQuantityInStock(iQuantityInStock);
 	}
 
 	// * Order *//
@@ -155,11 +161,11 @@ public class Facade implements FacadeLocal {
 	public Order updateOrder(Order order) {
 		return orderEAO.updateOrder(order);
 	}
-	
-//	@Override
-//	public List<Order> updateOrder(String oNumber) {
-//		return orderEAO.updateOrder();
-//	}
+
+	// @Override
+	// public List<Order> updateOrder(String oNumber) {
+	// return orderEAO.updateOrder();
+	// }
 
 	@Override
 	public void deleteOrder(String oNumber) {

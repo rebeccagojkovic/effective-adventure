@@ -14,7 +14,9 @@ import javax.persistence.Table;
 
 @Entity
 @NamedQueries({ @NamedQuery(name = "Ingredient.findAllIngredients", query = "SELECT i FROM Ingredient i"),
-		@NamedQuery(name = "Ingredient.findByName", query = "SELECT i FROM Ingredient i WHERE i.iName LIKE :iName"),
+		@NamedQuery(name = "Ingredient.findByiNumber", query = "SELECT i FROM Ingredient i WHERE i.iNumber LIKE :iNumber"),
+		@NamedQuery(name = "Ingredient.findByiName", query = "SELECT i FROM Ingredient i WHERE i.iName LIKE :iName"),
+		@NamedQuery(name = "Ingredient.findByiQuantityInStock", query = "SELECT i FROM Ingredient i WHERE i.iQuantityInStock LIKE :iQuantityInStock"),
 
 })
 @Table(name = "Ingredient")

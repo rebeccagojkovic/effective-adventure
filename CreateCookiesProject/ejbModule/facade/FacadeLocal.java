@@ -43,17 +43,19 @@ public interface FacadeLocal {
 
 	// * Ingredient *//
 
-	public Ingredient findByiNumber(String iNumber);
-
-	public List<Ingredient> findByName(String iName);
-
-	public List<Ingredient> findAllIngredients();
-
 	public Ingredient createIngredient(Ingredient ingredient);
 
 	public Ingredient updateIngredient(Ingredient ingredient);
 
 	public void deleteIngredient(String iNumber);
+
+	public List<Ingredient> findAllIngredients();
+
+	public List<Ingredient> findByiNumber(String iNumber);
+
+	public List<Ingredient> findByiName(String iName);
+
+	public List<Ingredient> findByiQuantityInStock(String iQuantityInStock);
 
 	// * Order *//
 
