@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Fabulous Bakery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="eCommerceAssets/styles/eCommerceStyle.css" rel="stylesheet" type="text/css">
@@ -145,7 +145,7 @@
                         <article class="productInfo">
                             <!-- Each individual product description -->
                             <div><img class="imageSearching" alt="sample" src="eCommerceAssets/images/ingredient.jpg"></div>
-                            <form id="post" form action="http://iis.infoteket.nu:8080/CreateCookiesClientProject/IngredientServlet" method="post">
+                            <form id="post" action="http://iis.infoteket.nu:8080/CreateCookiesClientProject/IngredientServlet" method="post">
                                 <table>
                                     <tr>
                                         <td>
@@ -160,13 +160,13 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <input type="radio" name="radioIngredientSearch" id="radioIngredientNumber" value="iName" maxlength="10" />Ingredient Number
+                                            <input type="radio" name="radioIngredientSearch" id="radioIngredientNumber" value="iNumber" maxlength="10" />Ingredient Number
                                         </td>
 
                                     </tr>
                                     <tr>
                                         <td>
-                                            <input type="radio" name="radioIngredientSearch" id="radioIngredientName" value="iNumber" maxlength="30" />Ingredient Name
+                                            <input type="radio" name="radioIngredientSearch" id="radioIngredientName" value="iName" maxlength="30" />Ingredient Name
                                         </td>
 
 
