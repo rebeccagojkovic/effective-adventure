@@ -45,7 +45,7 @@
                                 </tr>
                                 <tr>
                                     <td>Lösenord
-                                        <input class="loggaIn" name="cPassword">
+                                        <input type="password" class="loggaIn" name="cPassword">
                                     </td>
                                 </tr>
                                 <tr>
@@ -94,7 +94,7 @@
 
                                 <tr>
                                     <td>Lösenord
-                                        <input class="registerTable" name="cPassword">
+                                        <input type="password" class="registerTable" name="cPassword">
                                     </td>
                                 </tr>
 
@@ -142,14 +142,13 @@
                     <div class="productRow">
                         <!-- Each product row contains info of 3 elements -->
                         <article class="productInfo">
-                           <form
-                                action="http://iis.infoteket.nu:8080/CreateCookiesClientProject/CustomerEJBTest"
-                                method="get" name="youPickItForm">
+                            <form class="testning" action="http://iis.infoteket.nu:8080/CreateCookiesClientProject/CustomerEJBTest" method="get" name="youPickItForm">
                                 <select name="suite" size="2" multiple>
-                                    <option value="servlets.CustomerEJBTest">
+                                    <option selected="selected" value="servlets.CustomerEJBTest">
                                         servlets.CustomerEJBTest</option>
-                                </select> <input type="submit" value="Run" />
-                            </form> 
+                                </select>
+                                <input type="submit" value="Run" />
+                            </form>
                         </article>
                     </div>
                 </div>

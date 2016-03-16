@@ -29,7 +29,85 @@
                 <button id="opener">Logga in/Registrera</button>
                 <a href="#" title="Cart"><img class="imageCart" alt="???" src="eCommerceAssets/images/cart.png"></a>
             </div>
-            <div id="dialog" title="Logga in/Registrera">
+                        <div id="dialog" title="Logga in/Registrera">
+                <div class="productRow">
+                    <!-- Each product row contains info of 3 elements -->
+                    <article class="productInfo">
+                        <!-- Each individual product description -->
+                        <div><img class="imageLoggainRegistrera" alt="???" src="eCommerceAssets/images/loggain.jpg"></div>
+                        <form method="post" action="http://iis.infoteket.nu:8080/CreateCookiesClientProject/LoginServlet">
+                            <h1>Logga in</h1>
+                            <table class="loginTable">
+                                <tr>
+                                    <td>Email
+                                        <input class="loggaIn" name="cEmail">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Lösenord
+                                        <input type="password" class="loggaIn" name="cPassword">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input class="buttonLoggainRegistrera" type="submit" value="Logga in">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </article>
+                </div>
+                <div class="productRow">
+                    <article class="productInfo">
+                        <!-- Each individual product description -->
+                        <br>
+                        <div><img class="imageLoggainRegistrera" alt="???" src="eCommerceAssets/images/images.jpg"></div>
+                        <form action="http://iis.infoteket.nu:8080/CreateCookiesClientProject/RegisterServlet" method="post">
+
+                            <h1>Registrera Dig</h1>
+                            <table>
+                                <tr>
+                                    <td>Företag
+                                        <input class="registerTable" name="cName">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Address
+                                        <input class="registerTable" name="cAddress">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Postadress
+                                        <input class="registerTable" name="cPostalAddress">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Land
+                                        <input class="registerTable" name="cCountry">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email
+                                        <input class="registerTable" name="cEmail">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Lösenord
+                                        <input type="password" class="registerTable" name="cPassword">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <input class="buttonLoggainRegistrera" type="submit" value="Registrera">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </article>
+                </div>
+            </div>
         </header>
         <section id="offer">
             <h1>Fabulous Bakery</h1>
