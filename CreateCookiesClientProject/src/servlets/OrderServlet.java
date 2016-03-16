@@ -1,6 +1,8 @@
 package servlets;
+
 import javax.ejb.EJB;
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -11,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import entity.ejb.Order;
+import entity.ejb.Product;
 import facade.FacadeLocal;
 
 /**
@@ -27,60 +30,71 @@ public class OrderServlet extends HttpServlet {
 	 */
 	public OrderServlet() {
 		super();
-		
+
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-			String url = null;
-		
-			String operation = request.getParameter("operation");
-			if (operation.equals("showorder")) {
-				System.out.println("MainServlet-showorder");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-				String oNumber = request.getParameter("orderNumber");
-				String isDelivered = request.getParameter("isDelivered");
-				
+		String url = null;
 
-				String searchOrder = request.getParameter("searchOrder");
-				
-				if (request.getParameter("radioOrderSearch") != null) {
-					if (request.getParameter("radioOrderSearch").equals("orderNumber")) {
-						request.setAttribute("searchOrder", oNumber);
+		String operation = request.getParameter("operation");
+		if (operation.equals("showorder")) {
+			System.out.println("MainServlet-showorder");
 
+			String oNumber = request.getParameter("orderNumber");
+//			String expectedDeliveryDate = request.getParameter("expectedDeliveryDate");
+			String isDelivered = request.getParameter("isDelivered");
 
-						System.out.println("findByoNumber");
+			String searchOrder = request.getParameter("searchOrder");
 
-						Order number = facade.findByoNumber(searchOrder);
-						
-							request.setAttribute("Order", number);
+			if (request.getParameter("radioOrderSearch") != null) {
+				if (request.getParameter("radioOrderSearch").equals("orderNumber")) {
+					request.setAttribute("searchOrder", oNumber);
 
-						url = "/ShowOrder.jsp";
-					
-					
-					}
-					if (request.getParameter("radioOrderSearch").equals(isDelivered)) {
-						request.setAttribute("searchOrder", isDelivered);
+					System.out.println("findByoNumber");
 
-						List<Order> delivered = facade.isDelivered(true);
-						for (Order o3 : delivered) {
-							request.setAttribute("Order", o3);
-						}
-						url = "/ShowOrder.jsp";
-					}
+					Order number = facade.findByoNumber(searchOrder);
 
-				} else if (operation.equals("SearchOrder")) {
-					System.out.println("OrderServlet-SearchOrder");
-					url = "/SearchOrder.jsp";
-				} else {
-					url = "/SearchOrder.jsp";
+					request.setAttribute("order", number);
+
+					url = "/ShowOrder.jsp";
+
 				}
-				System.out.println(url);
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-				dispatcher.forward(request, response);
+//				if (request.getParameter("radioOrderSearch").equals("expectedDeliveryDate")) {
+//					request.setAttribute("searchOrder", expectedDeliveryDate);
+//
+//					List<Product> time = facade.InfoTimeStamp(Timestamp.valueOf(expectedDeliveryDate));
+//					for (Product o1 : time) {
+//						request.setAttribute("order", o1);
+//
+//					}
+//					url = "/ShowOrder.jsp";
+//
+//				}
+				if (request.getParameter("radioOrderSearch").equals("isDelivered")) {
+					request.setAttribute("searchOrder", isDelivered);
+
+					List<Order> delivered = facade.isDelivered(Boolean.valueOf(searchOrder));
+					for (Order o3 : delivered) {
+						request.setAttribute("order", o3);
+					}
+					url = "/ShowOrder.jsp";
+				}
+
+			} else if (operation.equals("SearchOrder")) {
+				System.out.println("OrderServlet-SearchOrder");
+				url = "/SearchOrder.jsp";
+			} else {
+				url = "/SearchOrder.jsp";
 			}
+			System.out.println(url);
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+			dispatcher.forward(request, response);
 		}
+	}
 }
