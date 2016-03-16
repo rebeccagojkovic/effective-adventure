@@ -1,6 +1,9 @@
 package servlets;
 import javax.ejb.EJB;
 import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -46,25 +49,24 @@ public class OrderServlet extends HttpServlet {
 				
 				if (request.getParameter("radioOrderSearch") != null) {
 					if (request.getParameter("radioOrderSearch").equals("orderNumber")) {
-						request.setAttribute("searchOrder", orderNumber);
+						request.setAttribute("searchOrder", oNumber);
 
 
 						System.out.println("findByoNumber");
 
-						List<Order> orderNumber = facade.findByOrdernumber(searchOrder);
-						for (Order o1 : orderNumber) {
-							request.setAttribute("Order", o1);
+						Order number = facade.findByoNumber(searchOrder);
+						
+							request.setAttribute("Order", number);
 
-						}
 						url = "/ShowOrder.jsp";
 					
 					
 					}
-					if (request.getParameter("radioOrderSearch").equals("isDelivered")) {
+					if (request.getParameter("radioOrderSearch").equals(isDelivered)) {
 						request.setAttribute("searchOrder", isDelivered);
 
-						List<Order> isDelivered = facade.isDelivered(searchOrder);
-						for (Order o3 : isDelivered) {
+						List<Order> delivered = facade.isDelivered(true);
+						for (Order o3 : delivered) {
 							request.setAttribute("Order", o3);
 						}
 						url = "/ShowOrder.jsp";
