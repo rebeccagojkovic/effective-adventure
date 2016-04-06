@@ -10,3 +10,9 @@ C:\Users\Azra Balic\Documents\Visual Studio 2015\Projects\CreateCookiesSolution\
 C:\Users\erik.aberg\Source\Repos\effective-adventure\CreateCookiesSolution\CreateCookies\bin\Debug\CreateCookies.exe.config
 C:\Users\erik.aberg\Source\Repos\effective-adventure\CreateCookiesSolution\CreateCookies\obj\Debug\CreateCookies.exe
 C:\Users\erik.aberg\Source\Repos\effective-adventure\CreateCookiesSolution\CreateCookies\obj\Debug\CreateCookies.pdb
+C:\Users\erik.aberg\Source\Repos\effective-adventure\CreateCookiesSolution\CreateCookies\bin\Debug\CreateCookies.exe
+C:\Users\erik.aberg\Source\Repos\effective-adventure\CreateCookiesSolution\CreateCookies\bin\Debug\CreateCookies.pdb
+C:\Users\erik.aberg\Source\Repos\effective-adventure\CreateCookiesSolution\CreateCookies\obj\Debug\CreateCookies.csprojResolveAssemblyReference.cache
+C:\Users\erik.aberg\Source\Repos\effective-adventure\CreateCookiesSolution\CreateCookies\obj\Debug\CreateCookies.Form1.resources
+C:\Users\erik.aberg\Source\Repos\effective-adventure\CreateCookiesSolution\CreateCookies\obj\Debug\CreateCookies.Properties.Resources.resources
+C:\Users\erik.aberg\Source\Repos\effective-adventure\CreateCookiesSolution\CreateCookies\obj\Debug\CreateCookies.csproj.GenerateResource.Cache
