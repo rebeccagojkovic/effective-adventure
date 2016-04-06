@@ -14,7 +14,6 @@ namespace CreateCookies.Model
         private string cPostalAddress;
         private string cCountry;
         private string cEmail;
-        private string cPassword;
         private List<Order> order;
 
         public string CNumber
@@ -94,20 +93,6 @@ namespace CreateCookies.Model
                 cEmail = value;
             }
         }
-
-        public string CPassword
-        {
-            get
-            {
-                return cPassword;
-            }
-
-            set
-            {
-                cPassword = value;
-            }
-        }
-
         internal List<Order> Order
         {
             get
