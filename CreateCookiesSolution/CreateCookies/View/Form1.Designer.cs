@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.button10 = new System.Windows.Forms.Button();
@@ -95,7 +95,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.createCookiesDataSet = new CreateCookies.CreateCookiesDataSet();
+            this.ordeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordeTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.OrdeTableAdapter();
+            this.oNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabPage3.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -109,6 +114,9 @@
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -142,13 +150,12 @@
             this.groupBox10.Size = new System.Drawing.Size(1500, 367);
             this.groupBox10.TabIndex = 1;
             this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Produced Cookies";
+            this.groupBox10.Text = "Produced Orders";
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.listView1);
+            this.groupBox9.Controls.Add(this.dataGridView1);
             this.groupBox9.Controls.Add(this.button12);
-            this.groupBox9.Controls.Add(this.button11);
             this.groupBox9.Location = new System.Drawing.Point(39, 34);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(1500, 586);
@@ -158,21 +165,12 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(34, 405);
+            this.button12.Location = new System.Drawing.Point(34, 467);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(211, 125);
+            this.button12.Size = new System.Drawing.Size(189, 103);
             this.button12.TabIndex = 8;
             this.button12.Text = "Produce";
             this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(34, 40);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(364, 42);
-            this.button11.TabIndex = 7;
-            this.button11.Text = "Get Orders";
-            this.button11.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -785,13 +783,40 @@
             this.tabPage5.Text = "Delivery";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // dataGridView1
             // 
-            this.listView1.Location = new System.Drawing.Point(34, 106);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1444, 273);
-            this.listView1.TabIndex = 10;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.oNumberDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.ordeBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(34, 40);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 33;
+            this.dataGridView1.Size = new System.Drawing.Size(189, 399);
+            this.dataGridView1.TabIndex = 9;
+            // 
+            // createCookiesDataSet
+            // 
+            this.createCookiesDataSet.DataSetName = "CreateCookiesDataSet";
+            this.createCookiesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ordeBindingSource
+            // 
+            this.ordeBindingSource.DataMember = "Orde";
+            this.ordeBindingSource.DataSource = this.createCookiesDataSet;
+            this.ordeBindingSource.CurrentChanged += new System.EventHandler(this.ordeBindingSource_CurrentChanged);
+            // 
+            // ordeTableAdapter
+            // 
+            this.ordeTableAdapter.ClearBeforeFill = true;
+            // 
+            // oNumberDataGridViewTextBoxColumn
+            // 
+            this.oNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.oNumberDataGridViewTextBoxColumn.DataPropertyName = "oNumber";
+            this.oNumberDataGridViewTextBoxColumn.HeaderText = "Order";
+            this.oNumberDataGridViewTextBoxColumn.Name = "oNumberDataGridViewTextBoxColumn";
             // 
             // Form1
             // 
@@ -802,6 +827,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "CreateCookies";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabPage3.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -820,6 +846,9 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -891,9 +920,13 @@
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private CreateCookiesDataSet createCookiesDataSet;
+        private System.Windows.Forms.BindingSource ordeBindingSource;
+        private CreateCookiesDataSetTableAdapters.OrdeTableAdapter ordeTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
