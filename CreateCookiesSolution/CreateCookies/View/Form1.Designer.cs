@@ -30,7 +30,14 @@
         {
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
@@ -87,11 +94,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button10 = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.tabPage3.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -101,7 +109,6 @@
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -117,6 +124,8 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.groupBox10);
+            this.tabPage3.Controls.Add(this.groupBox9);
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage3.Name = "tabPage3";
@@ -125,6 +134,45 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Production";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Location = new System.Drawing.Point(39, 626);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(1500, 367);
+            this.groupBox10.TabIndex = 1;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Produced Cookies";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.listBox3);
+            this.groupBox9.Controls.Add(this.button12);
+            this.groupBox9.Controls.Add(this.button11);
+            this.groupBox9.Location = new System.Drawing.Point(39, 34);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(1500, 586);
+            this.groupBox9.TabIndex = 0;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "In Production";
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(34, 405);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(211, 125);
+            this.button12.TabIndex = 8;
+            this.button12.Text = "Produce";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(34, 40);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(364, 42);
+            this.button11.TabIndex = 7;
+            this.button11.Text = "Get Orders";
+            this.button11.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -140,6 +188,35 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Order";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.button10);
+            this.groupBox8.Controls.Add(this.listBox2);
+            this.groupBox8.Location = new System.Drawing.Point(643, 442);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(894, 362);
+            this.groupBox8.TabIndex = 6;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Order Information";
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(14, 306);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(357, 43);
+            this.button10.TabIndex = 1;
+            this.button10.Text = "Show chosen order information";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 25;
+            this.listBox2.Location = new System.Drawing.Point(14, 30);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(871, 254);
+            this.listBox2.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -359,11 +436,11 @@
             this.groupBox7.Size = new System.Drawing.Size(1499, 406);
             this.groupBox7.TabIndex = 16;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Customers All Orders";
+            this.groupBox7.Text = "Customer\'s All Orders";
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(21, 310);
+            this.button8.Location = new System.Drawing.Point(21, 330);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(269, 44);
             this.button8.TabIndex = 1;
@@ -698,35 +775,6 @@
             this.tabControl1.Size = new System.Drawing.Size(1566, 1040);
             this.tabControl1.TabIndex = 0;
             // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.button10);
-            this.groupBox8.Controls.Add(this.listBox2);
-            this.groupBox8.Location = new System.Drawing.Point(643, 442);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(894, 377);
-            this.groupBox8.TabIndex = 6;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Order Information";
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 25;
-            this.listBox2.Location = new System.Drawing.Point(14, 30);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(871, 254);
-            this.listBox2.TabIndex = 0;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(14, 306);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(357, 43);
-            this.button10.TabIndex = 1;
-            this.button10.Text = "Show chosen order information";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
             // tabPage5
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 34);
@@ -737,6 +785,15 @@
             this.tabPage5.Text = "Delivery";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 25;
+            this.listBox3.Location = new System.Drawing.Point(34, 102);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(1444, 279);
+            this.listBox3.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -746,7 +803,10 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "CreateCookies";
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -761,7 +821,6 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -831,6 +890,11 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.ListBox listBox3;
     }
 }
 
