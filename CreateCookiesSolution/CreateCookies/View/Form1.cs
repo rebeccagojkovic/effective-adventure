@@ -21,5 +21,25 @@ namespace CreateCookies
         {
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'createCookiesDataSet.Orde' table. You can move, or remove it, as needed.
+            this.ordeTableAdapter.Fill(this.createCookiesDataSet.Orde);
+
+        }
+
+        private void findOrderToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.ordeTableAdapter.FindOrder(this.createCookiesDataSet.Orde, searchToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }
