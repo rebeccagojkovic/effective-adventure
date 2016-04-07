@@ -95,7 +95,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.tabPage3.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -146,7 +146,7 @@
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.listBox3);
+            this.groupBox9.Controls.Add(this.listView1);
             this.groupBox9.Controls.Add(this.button12);
             this.groupBox9.Controls.Add(this.button11);
             this.groupBox9.Location = new System.Drawing.Point(39, 34);
@@ -215,7 +215,7 @@
             this.listBox2.ItemHeight = 25;
             this.listBox2.Location = new System.Drawing.Point(14, 30);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(871, 254);
+            this.listBox2.Size = new System.Drawing.Size(861, 254);
             this.listBox2.TabIndex = 0;
             // 
             // groupBox3
@@ -515,7 +515,7 @@
             this.groupBox5.Size = new System.Drawing.Size(492, 524);
             this.groupBox5.TabIndex = 13;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Search/Update Customer";
+            this.groupBox5.Text = "Update Customer";
             // 
             // comboBox8
             // 
@@ -785,14 +785,13 @@
             this.tabPage5.Text = "Delivery";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // listBox3
+            // listView1
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 25;
-            this.listBox3.Location = new System.Drawing.Point(34, 102);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(1444, 279);
-            this.listBox3.TabIndex = 9;
+            this.listView1.Location = new System.Drawing.Point(34, 106);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(1444, 273);
+            this.listView1.TabIndex = 10;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // Form1
             // 
@@ -894,7 +893,7 @@
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListView listView1;
     }
 }
 
