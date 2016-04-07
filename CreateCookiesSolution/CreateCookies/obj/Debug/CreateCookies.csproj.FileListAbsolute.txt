@@ -28,3 +28,10 @@ C:\Users\Azra Balic\Source\Repos\effective-adventure\CreateCookiesSolution\Creat
 C:\Users\ricka\Source\Repos\effective-adventure\CreateCookiesSolution\CreateCookies\bin\Debug\CreateCookies.exe.config
 C:\Users\ricka\Source\Repos\effective-adventure\CreateCookiesSolution\CreateCookies\obj\Debug\CreateCookies.exe
 C:\Users\ricka\Source\Repos\effective-adventure\CreateCookiesSolution\CreateCookies\obj\Debug\CreateCookies.pdb
+C:\Users\ricka\Source\Repos\effective-adventure\CreateCookiesSolution\CreateCookies\bin\Debug\CreateCookies.exe
+C:\Users\ricka\Source\Repos\effective-adventure\CreateCookiesSolution\CreateCookies\bin\Debug\CreateCookies.pdb
+C:\Users\ricka\Source\Repos\effective-adventure\CreateCookiesSolution\CreateCookies\obj\Debug\CreateCookies.csprojResolveAssemblyReference.cache
+C:\Users\ricka\Source\Repos\effective-adventure\CreateCookiesSolution\CreateCookies\obj\Debug\CreateCookies.Form1.resources
+C:\Users\ricka\Source\Repos\effective-adventure\CreateCookiesSolution\CreateCookies\obj\Debug\CreateCookies.Properties.Resources.resources
+C:\Users\ricka\Source\Repos\effective-adventure\CreateCookiesSolution\CreateCookies\obj\Debug\CreateCookies.View.Main.resources
+C:\Users\ricka\Source\Repos\effective-adventure\CreateCookiesSolution\CreateCookies\obj\Debug\CreateCookies.csproj.GenerateResource.Cache
