@@ -29,25 +29,7 @@ namespace CreateCookies
 
         }
 
-        private void findOrderToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.ordeTableAdapter.FindOrder(this.createCookiesDataSet.Orde, searchToolStripTextBox.Text);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void searchToolStripTextBox_Click(object sender, EventArgs e)
+        private void ordeBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
         }

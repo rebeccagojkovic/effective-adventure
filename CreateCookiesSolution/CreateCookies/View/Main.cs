@@ -24,6 +24,8 @@ namespace CreateCookies.View
 
         private void Main_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'createCookiesDataSet.Orde' table. You can move, or remove it, as needed.
+            this.ordeTableAdapter.Fill(this.createCookiesDataSet.Orde);
             // TODO: This line of code loads data into the 'createCookiesDataSet.Customer' table. You can move, or remove it, as needed.
             this.customerTableAdapter.Fill(this.createCookiesDataSet.Customer);
 
