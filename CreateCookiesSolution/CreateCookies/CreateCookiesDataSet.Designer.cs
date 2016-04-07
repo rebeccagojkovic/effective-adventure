@@ -4091,8 +4091,8 @@ SELECT cNumber, cAddress, cCountry, cEmail, cName, cPassword, cPostalAddress FRO
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Ingredient] ([iNumber], [iName], [iQuantityInStock]) VALUES (@" +
-                "iNumber, @iName, @iQuantityInStock);\r\nSELECT iNumber, iName, iQuantityInStock FR" +
-                "OM Ingredient WHERE (iNumber = @iNumber)";
+                "iNumber, @iName, @iQuantityInStock);\nSELECT iNumber, iName, iQuantityInStock FRO" +
+                "M Ingredient WHERE (iNumber = @iNumber)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4508,11 +4508,18 @@ SELECT oNumber, expectedDeliveryDate, isDelivered, cNumber_FK FROM Orde WHERE (o
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT oNumber, expectedDeliveryDate, isDelivered, cNumber_FK FROM dbo.Orde";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        oNumber, expectedDeliveryDate, isDelivered, cNumber_FK\r\nFROM       " +
+                "     Orde\r\nWHERE        (oNumber LIKE @Search + N\'%\') OR\r\n                      " +
+                "   (cNumber_FK LIKE @Search + N\'%\')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Search", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "oNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4537,6 +4544,25 @@ SELECT oNumber, expectedDeliveryDate, isDelivered, cNumber_FK FROM Orde WHERE (o
             CreateCookiesDataSet.OrdeDataTable dataTable = new CreateCookiesDataSet.OrdeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FindOrder(CreateCookiesDataSet.OrdeDataTable dataTable, string Search) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Search == null)) {
+                throw new global::System.ArgumentNullException("Search");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Search));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5332,8 +5358,8 @@ SELECT oNumber, pNumber, palletQuantity, oNumber_FK, pNumber_FK FROM Orderspecif
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Product] ([pNumber], [pName], [pTime], [price]) VALUES (@pNumb" +
-                "er, @pName, @pTime, @price);\r\nSELECT pNumber, pName, pTime, price FROM Product W" +
-                "HERE (pNumber = @pNumber)";
+                "er, @pName, @pTime, @price);\nSELECT pNumber, pName, pTime, price FROM Product WH" +
+                "ERE (pNumber = @pNumber)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
