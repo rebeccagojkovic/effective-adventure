@@ -31,6 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cCountryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cPostalAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.createCookiesDataSet = new CreateCookies.CreateCookiesDataSet();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.button10 = new System.Windows.Forms.Button();
@@ -61,20 +72,12 @@
             this.button11 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
-            this.createCookiesDataSet = new CreateCookies.CreateCookiesDataSet();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.CustomerTableAdapter();
-            this.cNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cCountryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cPostalAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -82,9 +85,6 @@
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -111,6 +111,86 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Customer";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(668, 27);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "Create";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cNumberDataGridViewTextBoxColumn,
+            this.cAddressDataGridViewTextBoxColumn,
+            this.cCountryDataGridViewTextBoxColumn,
+            this.cEmailDataGridViewTextBoxColumn,
+            this.cNameDataGridViewTextBoxColumn,
+            this.cPasswordDataGridViewTextBoxColumn,
+            this.cPostalAddressDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.customerBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 107);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(763, 244);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // cNumberDataGridViewTextBoxColumn
+            // 
+            this.cNumberDataGridViewTextBoxColumn.DataPropertyName = "cNumber";
+            this.cNumberDataGridViewTextBoxColumn.HeaderText = "cNumber";
+            this.cNumberDataGridViewTextBoxColumn.Name = "cNumberDataGridViewTextBoxColumn";
+            // 
+            // cAddressDataGridViewTextBoxColumn
+            // 
+            this.cAddressDataGridViewTextBoxColumn.DataPropertyName = "cAddress";
+            this.cAddressDataGridViewTextBoxColumn.HeaderText = "cAddress";
+            this.cAddressDataGridViewTextBoxColumn.Name = "cAddressDataGridViewTextBoxColumn";
+            // 
+            // cCountryDataGridViewTextBoxColumn
+            // 
+            this.cCountryDataGridViewTextBoxColumn.DataPropertyName = "cCountry";
+            this.cCountryDataGridViewTextBoxColumn.HeaderText = "cCountry";
+            this.cCountryDataGridViewTextBoxColumn.Name = "cCountryDataGridViewTextBoxColumn";
+            // 
+            // cEmailDataGridViewTextBoxColumn
+            // 
+            this.cEmailDataGridViewTextBoxColumn.DataPropertyName = "cEmail";
+            this.cEmailDataGridViewTextBoxColumn.HeaderText = "cEmail";
+            this.cEmailDataGridViewTextBoxColumn.Name = "cEmailDataGridViewTextBoxColumn";
+            // 
+            // cNameDataGridViewTextBoxColumn
+            // 
+            this.cNameDataGridViewTextBoxColumn.DataPropertyName = "cName";
+            this.cNameDataGridViewTextBoxColumn.HeaderText = "cName";
+            this.cNameDataGridViewTextBoxColumn.Name = "cNameDataGridViewTextBoxColumn";
+            // 
+            // cPasswordDataGridViewTextBoxColumn
+            // 
+            this.cPasswordDataGridViewTextBoxColumn.DataPropertyName = "cPassword";
+            this.cPasswordDataGridViewTextBoxColumn.HeaderText = "cPassword";
+            this.cPasswordDataGridViewTextBoxColumn.Name = "cPasswordDataGridViewTextBoxColumn";
+            // 
+            // cPostalAddressDataGridViewTextBoxColumn
+            // 
+            this.cPostalAddressDataGridViewTextBoxColumn.DataPropertyName = "cPostalAddress";
+            this.cPostalAddressDataGridViewTextBoxColumn.HeaderText = "cPostalAddress";
+            this.cPostalAddressDataGridViewTextBoxColumn.Name = "cPostalAddressDataGridViewTextBoxColumn";
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "Customer";
+            this.customerBindingSource.DataSource = this.createCookiesDataSet;
+            // 
+            // createCookiesDataSet
+            // 
+            this.createCookiesDataSet.DataSetName = "CreateCookiesDataSet";
+            this.createCookiesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabPage2
             // 
@@ -431,89 +511,9 @@
             this.tabPage5.Text = "Delivery";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cNumberDataGridViewTextBoxColumn,
-            this.cAddressDataGridViewTextBoxColumn,
-            this.cCountryDataGridViewTextBoxColumn,
-            this.cEmailDataGridViewTextBoxColumn,
-            this.cNameDataGridViewTextBoxColumn,
-            this.cPasswordDataGridViewTextBoxColumn,
-            this.cPostalAddressDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.customerBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 78);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(763, 244);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(668, 27);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Create";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // createCookiesDataSet
-            // 
-            this.createCookiesDataSet.DataSetName = "CreateCookiesDataSet";
-            this.createCookiesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "Customer";
-            this.customerBindingSource.DataSource = this.createCookiesDataSet;
-            // 
             // customerTableAdapter
             // 
             this.customerTableAdapter.ClearBeforeFill = true;
-            // 
-            // cNumberDataGridViewTextBoxColumn
-            // 
-            this.cNumberDataGridViewTextBoxColumn.DataPropertyName = "cNumber";
-            this.cNumberDataGridViewTextBoxColumn.HeaderText = "cNumber";
-            this.cNumberDataGridViewTextBoxColumn.Name = "cNumberDataGridViewTextBoxColumn";
-            // 
-            // cAddressDataGridViewTextBoxColumn
-            // 
-            this.cAddressDataGridViewTextBoxColumn.DataPropertyName = "cAddress";
-            this.cAddressDataGridViewTextBoxColumn.HeaderText = "cAddress";
-            this.cAddressDataGridViewTextBoxColumn.Name = "cAddressDataGridViewTextBoxColumn";
-            // 
-            // cCountryDataGridViewTextBoxColumn
-            // 
-            this.cCountryDataGridViewTextBoxColumn.DataPropertyName = "cCountry";
-            this.cCountryDataGridViewTextBoxColumn.HeaderText = "cCountry";
-            this.cCountryDataGridViewTextBoxColumn.Name = "cCountryDataGridViewTextBoxColumn";
-            // 
-            // cEmailDataGridViewTextBoxColumn
-            // 
-            this.cEmailDataGridViewTextBoxColumn.DataPropertyName = "cEmail";
-            this.cEmailDataGridViewTextBoxColumn.HeaderText = "cEmail";
-            this.cEmailDataGridViewTextBoxColumn.Name = "cEmailDataGridViewTextBoxColumn";
-            // 
-            // cNameDataGridViewTextBoxColumn
-            // 
-            this.cNameDataGridViewTextBoxColumn.DataPropertyName = "cName";
-            this.cNameDataGridViewTextBoxColumn.HeaderText = "cName";
-            this.cNameDataGridViewTextBoxColumn.Name = "cNameDataGridViewTextBoxColumn";
-            // 
-            // cPasswordDataGridViewTextBoxColumn
-            // 
-            this.cPasswordDataGridViewTextBoxColumn.DataPropertyName = "cPassword";
-            this.cPasswordDataGridViewTextBoxColumn.HeaderText = "cPassword";
-            this.cPasswordDataGridViewTextBoxColumn.Name = "cPasswordDataGridViewTextBoxColumn";
-            // 
-            // cPostalAddressDataGridViewTextBoxColumn
-            // 
-            this.cPostalAddressDataGridViewTextBoxColumn.DataPropertyName = "cPostalAddress";
-            this.cPostalAddressDataGridViewTextBoxColumn.HeaderText = "cPostalAddress";
-            this.cPostalAddressDataGridViewTextBoxColumn.Name = "cPostalAddressDataGridViewTextBoxColumn";
             // 
             // Main
             // 
@@ -526,6 +526,9 @@
             this.Load += new System.EventHandler(this.Main_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -535,9 +538,6 @@
             this.groupBox1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
