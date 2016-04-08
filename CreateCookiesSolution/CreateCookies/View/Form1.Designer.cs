@@ -251,7 +251,7 @@
             this.groupBox8.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox8.Size = new System.Drawing.Size(894, 362);
+            this.groupBox8.Size = new System.Drawing.Size(922, 362);
             this.groupBox8.TabIndex = 6;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Order Information";
@@ -261,7 +261,7 @@
             this.listView1.Location = new System.Drawing.Point(4, 29);
             this.listView1.Margin = new System.Windows.Forms.Padding(6);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(876, 269);
+            this.listView1.Size = new System.Drawing.Size(908, 269);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -284,7 +284,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(896, 140);
+            this.groupBox3.Size = new System.Drawing.Size(932, 140);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Delete Order";
@@ -294,7 +294,7 @@
             this.button4.Location = new System.Drawing.Point(234, 83);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(610, 44);
+            this.button4.Size = new System.Drawing.Size(678, 44);
             this.button4.TabIndex = 3;
             this.button4.Text = "Delete Order";
             this.button4.UseVisualStyleBackColor = true;
@@ -305,7 +305,7 @@
             this.comboBox4.Location = new System.Drawing.Point(234, 31);
             this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(610, 33);
+            this.comboBox4.Size = new System.Drawing.Size(678, 33);
             this.comboBox4.TabIndex = 2;
             // 
             // label11
