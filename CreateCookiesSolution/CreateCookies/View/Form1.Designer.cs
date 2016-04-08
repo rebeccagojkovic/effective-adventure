@@ -114,6 +114,16 @@
             this.button11 = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.textBox10 = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.ingredientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ingredientTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.IngredientTableAdapter();
+            this.iNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iQuantityInStockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -137,10 +147,16 @@
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.dataGridView3);
+            this.tabPage4.Controls.Add(this.label18);
+            this.tabPage4.Controls.Add(this.comboBox9);
+            this.tabPage4.Controls.Add(this.checkBox1);
             this.tabPage4.Location = new System.Drawing.Point(4, 34);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage4.Name = "tabPage4";
@@ -999,6 +1015,75 @@
             this.textBox10.TabIndex = 11;
             this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(32, 500);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(150, 29);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox9
+            // 
+            this.comboBox9.FormattingEnabled = true;
+            this.comboBox9.Location = new System.Drawing.Point(219, 425);
+            this.comboBox9.Name = "comboBox9";
+            this.comboBox9.Size = new System.Drawing.Size(121, 33);
+            this.comboBox9.TabIndex = 1;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(27, 428);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(171, 25);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Choose Supplier";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iNumberDataGridViewTextBoxColumn,
+            this.iNameDataGridViewTextBoxColumn,
+            this.iQuantityInStockDataGridViewTextBoxColumn});
+            this.dataGridView3.DataSource = this.ingredientBindingSource;
+            this.dataGridView3.Location = new System.Drawing.Point(23, 26);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 33;
+            this.dataGridView3.Size = new System.Drawing.Size(506, 393);
+            this.dataGridView3.TabIndex = 3;
+            // 
+            // ingredientBindingSource
+            // 
+            this.ingredientBindingSource.DataMember = "Ingredient";
+            this.ingredientBindingSource.DataSource = this.createCookiesDataSetBindingSource;
+            // 
+            // ingredientTableAdapter
+            // 
+            this.ingredientTableAdapter.ClearBeforeFill = true;
+            // 
+            // iNumberDataGridViewTextBoxColumn
+            // 
+            this.iNumberDataGridViewTextBoxColumn.DataPropertyName = "iNumber";
+            this.iNumberDataGridViewTextBoxColumn.HeaderText = "Ingredient Number";
+            this.iNumberDataGridViewTextBoxColumn.Name = "iNumberDataGridViewTextBoxColumn";
+            // 
+            // iNameDataGridViewTextBoxColumn
+            // 
+            this.iNameDataGridViewTextBoxColumn.DataPropertyName = "iName";
+            this.iNameDataGridViewTextBoxColumn.HeaderText = "Ingredient Name";
+            this.iNameDataGridViewTextBoxColumn.Name = "iNameDataGridViewTextBoxColumn";
+            // 
+            // iQuantityInStockDataGridViewTextBoxColumn
+            // 
+            this.iQuantityInStockDataGridViewTextBoxColumn.DataPropertyName = "iQuantityInStock";
+            this.iQuantityInStockDataGridViewTextBoxColumn.HeaderText = "QuantityInStock";
+            this.iQuantityInStockDataGridViewTextBoxColumn.Name = "iQuantityInStockDataGridViewTextBoxColumn";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1009,6 +1094,8 @@
             this.Name = "Form1";
             this.Text = "CreateCookies";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -1040,6 +1127,8 @@
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1131,6 +1220,15 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.BindingSource ingredientBindingSource;
+        private CreateCookiesDataSetTableAdapters.IngredientTableAdapter ingredientTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iQuantityInStockDataGridViewTextBoxColumn;
     }
 }
 
