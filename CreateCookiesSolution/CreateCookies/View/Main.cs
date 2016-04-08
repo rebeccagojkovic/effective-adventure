@@ -28,5 +28,10 @@ namespace CreateCookies.View
             this.customerTableAdapter.Fill(this.createCookiesDataSet.Customer);
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
