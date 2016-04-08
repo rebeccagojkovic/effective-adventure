@@ -258,16 +258,16 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(4, 29);
+            this.listView1.Location = new System.Drawing.Point(22, 29);
             this.listView1.Margin = new System.Windows.Forms.Padding(6);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(908, 269);
+            this.listView1.Size = new System.Drawing.Size(890, 269);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(4, 308);
+            this.button10.Location = new System.Drawing.Point(22, 308);
             this.button10.Margin = new System.Windows.Forms.Padding(4);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(356, 42);
