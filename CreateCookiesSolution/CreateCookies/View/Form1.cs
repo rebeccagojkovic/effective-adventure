@@ -51,5 +51,10 @@ namespace CreateCookies
         {
 
         }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
