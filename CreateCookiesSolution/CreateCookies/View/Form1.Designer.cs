@@ -59,7 +59,6 @@
             this.cNumberFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ordeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.button11 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -114,7 +113,6 @@
             this.ordeTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.OrdeTableAdapter();
             this.createCookiesDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.tabPage3.SuspendLayout();
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -138,8 +136,6 @@
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -435,7 +431,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox10);
             this.groupBox1.Controls.Add(this.button11);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.comboBox3);
@@ -453,16 +448,7 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Order";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(102, 29);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(187, 20);
-            this.textBox10.TabIndex = 11;
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
+
             // 
             // button11
             // 
@@ -994,15 +980,7 @@
             this.button11.TabIndex = 10;
             this.button11.Text = "Generate Order Number";
             this.button11.UseVisualStyleBackColor = true;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(205, 56);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(370, 31);
-            this.textBox10.TabIndex = 11;
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
+
             // 
             // Form1
             // 
@@ -1046,8 +1024,6 @@
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1137,7 +1113,6 @@
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label18;
