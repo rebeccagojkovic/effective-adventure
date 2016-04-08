@@ -1018,7 +1018,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(32, 500);
+            this.checkBox1.Location = new System.Drawing.Point(918, 488);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(150, 29);
             this.checkBox1.TabIndex = 0;
@@ -1028,7 +1028,7 @@
             // comboBox9
             // 
             this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(219, 425);
+            this.comboBox9.Location = new System.Drawing.Point(937, 418);
             this.comboBox9.Name = "comboBox9";
             this.comboBox9.Size = new System.Drawing.Size(121, 33);
             this.comboBox9.TabIndex = 1;
@@ -1036,7 +1036,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(27, 428);
+            this.label18.Location = new System.Drawing.Point(736, 426);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(171, 25);
             this.label18.TabIndex = 2;
@@ -1054,7 +1054,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(23, 26);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 33;
-            this.dataGridView3.Size = new System.Drawing.Size(506, 393);
+            this.dataGridView3.Size = new System.Drawing.Size(506, 965);
             this.dataGridView3.TabIndex = 3;
             // 
             // ingredientBindingSource
