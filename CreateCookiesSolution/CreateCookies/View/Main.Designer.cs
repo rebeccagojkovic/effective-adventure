@@ -102,8 +102,8 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -135,10 +135,11 @@
             this.cPasswordDataGridViewTextBoxColumn,
             this.cPostalAddressDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.customerBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 107);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 128);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(763, 244);
+            this.dataGridView1.Size = new System.Drawing.Size(773, 391);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // cNumberDataGridViewTextBoxColumn
             // 
