@@ -29,12 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.ingredientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.createCookiesDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.createCookiesDataSet = new CreateCookies.CreateCookiesDataSet();
+            this.ordeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordeTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.OrdeTableAdapter();
+            this.ingredientTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.IngredientTableAdapter();
+            this.ordeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.iNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iQuantityInStockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.oNumberDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label20 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -53,8 +69,6 @@
             this.expectedDeliveryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isDeliveredDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cNumberFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ordeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.createCookiesDataSet = new CreateCookies.CreateCookiesDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -68,61 +82,80 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.label23 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.createCookiesDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ordeTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.OrdeTableAdapter();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.ingredientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ingredientTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.IngredientTableAdapter();
-            this.iNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iQuantityInStockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.label19 = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.comboBox10 = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.button12 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.checkBox9 = new System.Windows.Forms.CheckBox();
+            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.comboBox11 = new System.Windows.Forms.ComboBox();
+            this.comboBox12 = new System.Windows.Forms.ComboBox();
+            this.comboBox13 = new System.Windows.Forms.ComboBox();
+            this.comboBox14 = new System.Windows.Forms.ComboBox();
+            this.comboBox15 = new System.Windows.Forms.ComboBox();
+            this.comboBox16 = new System.Windows.Forms.ComboBox();
+            this.comboBox17 = new System.Windows.Forms.ComboBox();
+            this.comboBox18 = new System.Windows.Forms.ComboBox();
+            this.comboBox19 = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource1)).BeginInit();
             this.tabPage4.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -130,20 +163,43 @@
             this.findOrderToolStrip.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
-            this.groupBox11.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // ingredientBindingSource
+            // 
+            this.ingredientBindingSource.DataMember = "Ingredient";
+            this.ingredientBindingSource.DataSource = this.createCookiesDataSetBindingSource;
+            // 
+            // createCookiesDataSetBindingSource
+            // 
+            this.createCookiesDataSetBindingSource.DataSource = this.createCookiesDataSet;
+            this.createCookiesDataSetBindingSource.Position = 0;
+            // 
+            // createCookiesDataSet
+            // 
+            this.createCookiesDataSet.DataSetName = "CreateCookiesDataSet";
+            this.createCookiesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ordeBindingSource
+            // 
+            this.ordeBindingSource.DataMember = "Orde";
+            this.ordeBindingSource.DataSource = this.createCookiesDataSet;
+            // 
+            // ordeTableAdapter
+            // 
+            this.ordeTableAdapter.ClearBeforeFill = true;
+            // 
+            // ingredientTableAdapter
+            // 
+            this.ingredientTableAdapter.ClearBeforeFill = true;
+            // 
+            // ordeBindingSource1
+            // 
+            this.ordeBindingSource1.DataMember = "Orde";
+            this.ordeBindingSource1.DataSource = this.createCookiesDataSetBindingSource;
             // 
             // tabPage4
             // 
@@ -158,9 +214,104 @@
             this.tabPage4.Text = "Supplier";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.comboBox19);
+            this.groupBox11.Controls.Add(this.comboBox18);
+            this.groupBox11.Controls.Add(this.comboBox17);
+            this.groupBox11.Controls.Add(this.comboBox16);
+            this.groupBox11.Controls.Add(this.comboBox15);
+            this.groupBox11.Controls.Add(this.comboBox14);
+            this.groupBox11.Controls.Add(this.comboBox13);
+            this.groupBox11.Controls.Add(this.comboBox12);
+            this.groupBox11.Controls.Add(this.comboBox11);
+            this.groupBox11.Controls.Add(this.checkBox10);
+            this.groupBox11.Controls.Add(this.checkBox9);
+            this.groupBox11.Controls.Add(this.checkBox8);
+            this.groupBox11.Controls.Add(this.checkBox7);
+            this.groupBox11.Controls.Add(this.checkBox6);
+            this.groupBox11.Controls.Add(this.checkBox5);
+            this.groupBox11.Controls.Add(this.checkBox4);
+            this.groupBox11.Controls.Add(this.checkBox3);
+            this.groupBox11.Controls.Add(this.checkBox2);
+            this.groupBox11.Controls.Add(this.checkBox1);
+            this.groupBox11.Controls.Add(this.button12);
+            this.groupBox11.Controls.Add(this.label21);
+            this.groupBox11.Controls.Add(this.comboBox10);
+            this.groupBox11.Controls.Add(this.label19);
+            this.groupBox11.Controls.Add(this.comboBox9);
+            this.groupBox11.Controls.Add(this.label18);
+            this.groupBox11.Location = new System.Drawing.Point(781, 26);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(816, 966);
+            this.groupBox11.TabIndex = 1;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Supplier";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(63, 132);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(278, 25);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "Choose ingredients to order";
+            // 
+            // comboBox9
+            // 
+            this.comboBox9.FormattingEnabled = true;
+            this.comboBox9.Location = new System.Drawing.Point(282, 66);
+            this.comboBox9.Name = "comboBox9";
+            this.comboBox9.Size = new System.Drawing.Size(493, 33);
+            this.comboBox9.TabIndex = 1;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(60, 66);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(171, 25);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Choose Supplier";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iNumberDataGridViewTextBoxColumn,
+            this.iNameDataGridViewTextBoxColumn,
+            this.iQuantityInStockDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.ingredientBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(6, 40);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 33;
+            this.dataGridView2.Size = new System.Drawing.Size(576, 720);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // iNumberDataGridViewTextBoxColumn
+            // 
+            this.iNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.iNumberDataGridViewTextBoxColumn.DataPropertyName = "iNumber";
+            this.iNumberDataGridViewTextBoxColumn.HeaderText = "Ingredient Number";
+            this.iNumberDataGridViewTextBoxColumn.Name = "iNumberDataGridViewTextBoxColumn";
+            // 
+            // iNameDataGridViewTextBoxColumn
+            // 
+            this.iNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.iNameDataGridViewTextBoxColumn.DataPropertyName = "iName";
+            this.iNameDataGridViewTextBoxColumn.HeaderText = "Ingredient Name";
+            this.iNameDataGridViewTextBoxColumn.Name = "iNameDataGridViewTextBoxColumn";
+            // 
+            // iQuantityInStockDataGridViewTextBoxColumn
+            // 
+            this.iQuantityInStockDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.iQuantityInStockDataGridViewTextBoxColumn.DataPropertyName = "iQuantityInStock";
+            this.iQuantityInStockDataGridViewTextBoxColumn.HeaderText = "QuantityInStock (g)";
+            this.iQuantityInStockDataGridViewTextBoxColumn.Name = "iQuantityInStockDataGridViewTextBoxColumn";
+            // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.groupBox10);
             this.tabPage3.Controls.Add(this.groupBox9);
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(6);
@@ -171,49 +322,55 @@
             this.tabPage3.Text = "Production";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // groupBox10
-            // 
-            this.groupBox10.Location = new System.Drawing.Point(40, 627);
-            this.groupBox10.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox10.Size = new System.Drawing.Size(1500, 367);
-            this.groupBox10.TabIndex = 1;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Produced Cookies";
-            // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.button12);
             this.groupBox9.Controls.Add(this.button11);
-            this.groupBox9.Location = new System.Drawing.Point(40, 35);
-            this.groupBox9.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox9.Controls.Add(this.dataGridView3);
+            this.groupBox9.Controls.Add(this.label20);
+            this.groupBox9.Location = new System.Drawing.Point(41, 38);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox9.Size = new System.Drawing.Size(1500, 587);
+            this.groupBox9.Size = new System.Drawing.Size(1550, 954);
             this.groupBox9.TabIndex = 0;
             this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "In Production";
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(34, 406);
-            this.button12.Margin = new System.Windows.Forms.Padding(4);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(212, 125);
-            this.button12.TabIndex = 8;
-            this.button12.Text = "Produce";
-            this.button12.UseVisualStyleBackColor = true;
+            this.groupBox9.Text = "Production";
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(34, 58);
-            this.button11.Margin = new System.Windows.Forms.Padding(4);
+            this.button11.Location = new System.Drawing.Point(482, 422);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(364, 42);
-            this.button11.TabIndex = 7;
-            this.button11.Text = "Get Orders";
+            this.button11.Size = new System.Drawing.Size(331, 75);
+            this.button11.TabIndex = 2;
+            this.button11.Text = "Produce";
             this.button11.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.oNumberDataGridViewTextBoxColumn1});
+            this.dataGridView3.DataSource = this.ordeBindingSource1;
+            this.dataGridView3.Location = new System.Drawing.Point(482, 108);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 33;
+            this.dataGridView3.Size = new System.Drawing.Size(322, 282);
+            this.dataGridView3.TabIndex = 1;
+            // 
+            // oNumberDataGridViewTextBoxColumn1
+            // 
+            this.oNumberDataGridViewTextBoxColumn1.DataPropertyName = "oNumber";
+            this.oNumberDataGridViewTextBoxColumn1.HeaderText = "Order Number";
+            this.oNumberDataGridViewTextBoxColumn1.Name = "oNumberDataGridViewTextBoxColumn1";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(204, 234);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(254, 25);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Choose Order to produce";
             // 
             // tabPage2
             // 
@@ -365,6 +522,10 @@
             this.toolStripContainer1.TabIndex = 2;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
+            // toolStripContainer1.TopToolStripPanel
+            // 
+            this.toolStripContainer1.TopToolStripPanel.Padding = new System.Windows.Forms.Padding(0, 0, 25, 25);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
@@ -409,16 +570,6 @@
             this.cNumberFKDataGridViewTextBoxColumn.DataPropertyName = "cNumber_FK";
             this.cNumberFKDataGridViewTextBoxColumn.HeaderText = "CustomerNumber";
             this.cNumberFKDataGridViewTextBoxColumn.Name = "cNumberFKDataGridViewTextBoxColumn";
-            // 
-            // ordeBindingSource
-            // 
-            this.ordeBindingSource.DataMember = "Orde";
-            this.ordeBindingSource.DataSource = this.createCookiesDataSet;
-            // 
-            // createCookiesDataSet
-            // 
-            this.createCookiesDataSet.DataSetName = "CreateCookiesDataSet";
-            this.createCookiesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox1
             // 
@@ -555,6 +706,22 @@
             this.comboBox1.Size = new System.Drawing.Size(388, 33);
             this.comboBox1.TabIndex = 0;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Location = new System.Drawing.Point(2, 17);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(6);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1634, 1058);
+            this.tabControl1.TabIndex = 0;
+            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBox7);
@@ -572,8 +739,6 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.button8);
-            this.groupBox7.Controls.Add(this.listBox1);
             this.groupBox7.Location = new System.Drawing.Point(32, 587);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox7.Name = "groupBox7";
@@ -581,33 +746,9 @@
             this.groupBox7.Size = new System.Drawing.Size(1500, 406);
             this.groupBox7.TabIndex = 16;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Customer\'s All Orders";
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(20, 331);
-            this.button8.Margin = new System.Windows.Forms.Padding(4);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(268, 44);
-            this.button8.TabIndex = 1;
-            this.button8.Text = "Show Orders";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 25;
-            this.listBox1.Location = new System.Drawing.Point(20, 50);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1460, 254);
-            this.listBox1.TabIndex = 0;
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.button9);
-            this.groupBox6.Controls.Add(this.comboBox7);
-            this.groupBox6.Controls.Add(this.label23);
             this.groupBox6.Location = new System.Drawing.Point(1072, 37);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
@@ -615,53 +756,9 @@
             this.groupBox6.Size = new System.Drawing.Size(460, 523);
             this.groupBox6.TabIndex = 15;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Delete Customer";
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(12, 154);
-            this.button9.Margin = new System.Windows.Forms.Padding(4);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(440, 35);
-            this.button9.TabIndex = 13;
-            this.button9.Text = "Delete Customer";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(196, 73);
-            this.comboBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(248, 33);
-            this.comboBox7.TabIndex = 13;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(6, 77);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(184, 25);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "Choose Customer";
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.comboBox8);
-            this.groupBox5.Controls.Add(this.button7);
-            this.groupBox5.Controls.Add(this.button6);
-            this.groupBox5.Controls.Add(this.comboBox6);
-            this.groupBox5.Controls.Add(this.textBox6);
-            this.groupBox5.Controls.Add(this.textBox7);
-            this.groupBox5.Controls.Add(this.textBox8);
-            this.groupBox5.Controls.Add(this.textBox9);
-            this.groupBox5.Controls.Add(this.label12);
-            this.groupBox5.Controls.Add(this.label13);
-            this.groupBox5.Controls.Add(this.label14);
-            this.groupBox5.Controls.Add(this.label15);
-            this.groupBox5.Controls.Add(this.label16);
-            this.groupBox5.Controls.Add(this.label17);
             this.groupBox5.Location = new System.Drawing.Point(548, 37);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
@@ -669,161 +766,141 @@
             this.groupBox5.Size = new System.Drawing.Size(492, 523);
             this.groupBox5.TabIndex = 13;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Search/Update Customer";
-            // 
-            // comboBox8
-            // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(226, 369);
-            this.comboBox8.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(248, 33);
-            this.comboBox8.TabIndex = 13;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(20, 471);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(454, 35);
-            this.button7.TabIndex = 14;
-            this.button7.Text = "Update Customer";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(226, 129);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(248, 35);
-            this.button6.TabIndex = 13;
-            this.button6.Text = "Choose Customer";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(226, 73);
-            this.comboBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(248, 33);
-            this.comboBox6.TabIndex = 13;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(226, 421);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(248, 31);
-            this.textBox6.TabIndex = 11;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(226, 304);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(248, 31);
-            this.textBox7.TabIndex = 10;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(226, 240);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(248, 31);
-            this.textBox8.TabIndex = 9;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(226, 181);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(248, 31);
-            this.textBox9.TabIndex = 8;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(16, 425);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(65, 25);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Email";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(16, 367);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 25);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "Country";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(16, 308);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(157, 25);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Postal Address";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(16, 242);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(91, 25);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "Address";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(16, 183);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(165, 25);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "Company Name";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(16, 77);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(200, 25);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Customer\'s Number";
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button5);
-            this.groupBox4.Controls.Add(this.textBox5);
-            this.groupBox4.Controls.Add(this.textBox4);
-            this.groupBox4.Controls.Add(this.textBox3);
-            this.groupBox4.Controls.Add(this.textBox2);
-            this.groupBox4.Controls.Add(this.textBox1);
-            this.groupBox4.Controls.Add(this.comboBox5);
-            this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Location = new System.Drawing.Point(32, 27);
+            this.groupBox4.Location = new System.Drawing.Point(19, 37);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(492, 523);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Register New Customer";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 34);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage5.Size = new System.Drawing.Size(1626, 1020);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Inventory";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(4, 34);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1626, 1020);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Simulation";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 77);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(200, 25);
+            this.label5.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 137);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(165, 25);
+            this.label6.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 196);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 25);
+            this.label7.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(16, 262);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(157, 25);
+            this.label8.TabIndex = 3;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(16, 321);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(87, 25);
+            this.label9.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(16, 379);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 25);
+            this.label10.TabIndex = 5;
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(226, 317);
+            this.comboBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(248, 33);
+            this.comboBox5.TabIndex = 6;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(226, 73);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(248, 31);
+            this.textBox1.TabIndex = 7;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(226, 135);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(248, 31);
+            this.textBox2.TabIndex = 8;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(226, 194);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(248, 31);
+            this.textBox3.TabIndex = 9;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(226, 258);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(248, 31);
+            this.textBox4.TabIndex = 10;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(226, 377);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(248, 31);
+            this.textBox5.TabIndex = 11;
             // 
             // button5
             // 
@@ -835,251 +912,385 @@
             this.button5.Text = "Register Customer";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // label17
             // 
-            this.textBox5.Location = new System.Drawing.Point(226, 377);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(248, 31);
-            this.textBox5.TabIndex = 11;
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(16, 77);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(200, 25);
+            this.label17.TabIndex = 0;
             // 
-            // textBox4
+            // label16
             // 
-            this.textBox4.Location = new System.Drawing.Point(226, 258);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(248, 31);
-            this.textBox4.TabIndex = 10;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(16, 183);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(165, 25);
+            this.label16.TabIndex = 1;
             // 
-            // textBox3
+            // label15
             // 
-            this.textBox3.Location = new System.Drawing.Point(226, 194);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(248, 31);
-            this.textBox3.TabIndex = 9;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(16, 242);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(91, 25);
+            this.label15.TabIndex = 2;
             // 
-            // textBox2
+            // label14
             // 
-            this.textBox2.Location = new System.Drawing.Point(226, 135);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(248, 31);
-            this.textBox2.TabIndex = 8;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(16, 308);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(157, 25);
+            this.label14.TabIndex = 3;
             // 
-            // textBox1
+            // label13
             // 
-            this.textBox1.Location = new System.Drawing.Point(226, 73);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(248, 31);
-            this.textBox1.TabIndex = 7;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(16, 367);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(87, 25);
+            this.label13.TabIndex = 4;
             // 
-            // comboBox5
+            // label12
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(226, 317);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(248, 33);
-            this.comboBox5.TabIndex = 6;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(16, 425);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(65, 25);
+            this.label12.TabIndex = 5;
             // 
-            // label10
+            // textBox9
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 379);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 25);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Email";
+            this.textBox9.Location = new System.Drawing.Point(226, 181);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(248, 31);
+            this.textBox9.TabIndex = 8;
             // 
-            // label9
+            // textBox8
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 321);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(87, 25);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Country";
+            this.textBox8.Location = new System.Drawing.Point(226, 240);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(248, 31);
+            this.textBox8.TabIndex = 9;
             // 
-            // label8
+            // textBox7
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 262);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(157, 25);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Postal Address";
+            this.textBox7.Location = new System.Drawing.Point(226, 304);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(248, 31);
+            this.textBox7.TabIndex = 10;
             // 
-            // label7
+            // textBox6
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 196);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 25);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Address";
+            this.textBox6.Location = new System.Drawing.Point(226, 421);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(248, 31);
+            this.textBox6.TabIndex = 11;
             // 
-            // label6
+            // comboBox6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 137);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(165, 25);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Company Name";
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(226, 73);
+            this.comboBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(248, 33);
+            this.comboBox6.TabIndex = 13;
             // 
-            // label5
+            // button6
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 77);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(200, 25);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Customer\'s Number";
+            this.button6.Location = new System.Drawing.Point(226, 129);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(248, 35);
+            this.button6.TabIndex = 13;
+            this.button6.Text = "Choose Customer";
+            this.button6.UseVisualStyleBackColor = true;
             // 
-            // tabControl1
+            // button7
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Location = new System.Drawing.Point(2, 17);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(6);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1634, 1058);
-            this.tabControl1.TabIndex = 0;
+            this.button7.Location = new System.Drawing.Point(20, 471);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(454, 35);
+            this.button7.TabIndex = 14;
+            this.button7.Text = "Update Customer";
+            this.button7.UseVisualStyleBackColor = true;
             // 
-            // tabPage5
+            // comboBox8
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 34);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage5.Size = new System.Drawing.Size(1626, 1020);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Delivery";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Location = new System.Drawing.Point(226, 369);
+            this.comboBox8.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(248, 33);
+            this.comboBox8.TabIndex = 13;
             // 
-            // createCookiesDataSetBindingSource
+            // label23
             // 
-            this.createCookiesDataSetBindingSource.DataSource = this.createCookiesDataSet;
-            this.createCookiesDataSetBindingSource.Position = 0;
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 77);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(184, 25);
+            this.label23.TabIndex = 0;
             // 
-            // ordeTableAdapter
+            // comboBox7
             // 
-            this.ordeTableAdapter.ClearBeforeFill = true;
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(196, 73);
+            this.comboBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(248, 33);
+            this.comboBox7.TabIndex = 13;
             // 
-            // dataGridView2
+            // button9
             // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iNumberDataGridViewTextBoxColumn,
-            this.iNameDataGridViewTextBoxColumn,
-            this.iQuantityInStockDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.ingredientBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(43, 40);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 33;
-            this.dataGridView2.Size = new System.Drawing.Size(576, 720);
-            this.dataGridView2.TabIndex = 0;
+            this.button9.Location = new System.Drawing.Point(12, 154);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(440, 35);
+            this.button9.TabIndex = 13;
+            this.button9.Text = "Delete Customer";
+            this.button9.UseVisualStyleBackColor = true;
             // 
-            // ingredientBindingSource
+            // listBox1
             // 
-            this.ingredientBindingSource.DataMember = "Ingredient";
-            this.ingredientBindingSource.DataSource = this.createCookiesDataSetBindingSource;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 25;
+            this.listBox1.Location = new System.Drawing.Point(20, 50);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(1460, 254);
+            this.listBox1.TabIndex = 0;
             // 
-            // ingredientTableAdapter
+            // button8
             // 
-            this.ingredientTableAdapter.ClearBeforeFill = true;
+            this.button8.Location = new System.Drawing.Point(20, 331);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(268, 44);
+            this.button8.TabIndex = 1;
+            this.button8.Text = "Show Orders";
+            this.button8.UseVisualStyleBackColor = true;
             // 
-            // iNumberDataGridViewTextBoxColumn
+            // tabPage7
             // 
-            this.iNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.iNumberDataGridViewTextBoxColumn.DataPropertyName = "iNumber";
-            this.iNumberDataGridViewTextBoxColumn.HeaderText = "Ingredient Number";
-            this.iNumberDataGridViewTextBoxColumn.Name = "iNumberDataGridViewTextBoxColumn";
+            this.tabPage7.Location = new System.Drawing.Point(4, 34);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(1626, 1020);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Storage";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // iNameDataGridViewTextBoxColumn
+            // comboBox10
             // 
-            this.iNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.iNameDataGridViewTextBoxColumn.DataPropertyName = "iName";
-            this.iNameDataGridViewTextBoxColumn.HeaderText = "Ingredient Name";
-            this.iNameDataGridViewTextBoxColumn.Name = "iNameDataGridViewTextBoxColumn";
+            this.comboBox10.FormattingEnabled = true;
+            this.comboBox10.Location = new System.Drawing.Point(350, 178);
+            this.comboBox10.Name = "comboBox10";
+            this.comboBox10.Size = new System.Drawing.Size(425, 33);
+            this.comboBox10.TabIndex = 4;
             // 
-            // iQuantityInStockDataGridViewTextBoxColumn
+            // label21
             // 
-            this.iQuantityInStockDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.iQuantityInStockDataGridViewTextBoxColumn.DataPropertyName = "iQuantityInStock";
-            this.iQuantityInStockDataGridViewTextBoxColumn.HeaderText = "QuantityInStock (g)";
-            this.iQuantityInStockDataGridViewTextBoxColumn.Name = "iQuantityInStockDataGridViewTextBoxColumn";
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(429, 132);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(165, 25);
+            this.label21.TabIndex = 5;
+            this.label21.Text = "Choose Amount";
             // 
-            // groupBox11
+            // button12
             // 
-            this.groupBox11.Controls.Add(this.label19);
-            this.groupBox11.Controls.Add(this.checkedListBox1);
-            this.groupBox11.Controls.Add(this.comboBox9);
-            this.groupBox11.Controls.Add(this.label18);
-            this.groupBox11.Location = new System.Drawing.Point(713, 26);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(884, 966);
-            this.groupBox11.TabIndex = 1;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Supplier";
+            this.button12.Location = new System.Drawing.Point(68, 603);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(215, 61);
+            this.button12.TabIndex = 6;
+            this.button12.Text = "Send Order";
+            this.button12.UseVisualStyleBackColor = true;
             // 
-            // label18
+            // checkBox1
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(60, 66);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(171, 25);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Choose Supplier";
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(104, 182);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(123, 29);
+            this.checkBox1.TabIndex = 17;
+            this.checkBox1.Text = "Choklad";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // comboBox9
+            // checkBox2
             // 
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(282, 66);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(563, 33);
-            this.comboBox9.TabIndex = 1;
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(104, 222);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(115, 29);
+            this.checkBox2.TabIndex = 18;
+            this.checkBox2.Text = "Mandel";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // checkedListBox1
+            // checkBox3
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Choklad",
-            "Mandel",
-            "Marsipan",
-            "Mjöl",
-            "Mjölk",
-            "Nötter",
-            "Smör",
-            "Socker",
-            "Vaniljsocker",
-            "Ägg"});
-            this.checkedListBox1.Location = new System.Drawing.Point(70, 212);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(398, 342);
-            this.checkedListBox1.TabIndex = 2;
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(104, 259);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(133, 29);
+            this.checkBox3.TabIndex = 19;
+            this.checkBox3.Text = "Marsipan";
+            this.checkBox3.UseVisualStyleBackColor = true;
             // 
-            // label19
+            // checkBox4
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(65, 156);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(278, 25);
-            this.label19.TabIndex = 3;
-            this.label19.Text = "Choose ingredients to order";
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(104, 299);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(84, 29);
+            this.checkBox4.TabIndex = 20;
+            this.checkBox4.Text = "Mjöl";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(104, 339);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(95, 29);
+            this.checkBox5.TabIndex = 21;
+            this.checkBox5.Text = "Mjölk";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(104, 379);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(102, 29);
+            this.checkBox6.TabIndex = 22;
+            this.checkBox6.Text = "Nötter";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(104, 417);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(94, 29);
+            this.checkBox7.TabIndex = 23;
+            this.checkBox7.Text = "Smör";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // checkBox8
+            // 
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Location = new System.Drawing.Point(104, 451);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(111, 29);
+            this.checkBox8.TabIndex = 24;
+            this.checkBox8.Text = "Socker";
+            this.checkBox8.UseVisualStyleBackColor = true;
+            // 
+            // checkBox9
+            // 
+            this.checkBox9.AutoSize = true;
+            this.checkBox9.Location = new System.Drawing.Point(104, 486);
+            this.checkBox9.Name = "checkBox9";
+            this.checkBox9.Size = new System.Drawing.Size(161, 29);
+            this.checkBox9.TabIndex = 25;
+            this.checkBox9.Text = "Vaniljsocker";
+            this.checkBox9.UseVisualStyleBackColor = true;
+            // 
+            // checkBox10
+            // 
+            this.checkBox10.AutoSize = true;
+            this.checkBox10.Location = new System.Drawing.Point(104, 521);
+            this.checkBox10.Name = "checkBox10";
+            this.checkBox10.Size = new System.Drawing.Size(82, 29);
+            this.checkBox10.TabIndex = 26;
+            this.checkBox10.Text = "Ägg";
+            this.checkBox10.UseVisualStyleBackColor = true;
+            // 
+            // comboBox11
+            // 
+            this.comboBox11.FormattingEnabled = true;
+            this.comboBox11.Location = new System.Drawing.Point(350, 217);
+            this.comboBox11.Name = "comboBox11";
+            this.comboBox11.Size = new System.Drawing.Size(425, 33);
+            this.comboBox11.TabIndex = 27;
+            // 
+            // comboBox12
+            // 
+            this.comboBox12.FormattingEnabled = true;
+            this.comboBox12.Location = new System.Drawing.Point(350, 257);
+            this.comboBox12.Name = "comboBox12";
+            this.comboBox12.Size = new System.Drawing.Size(425, 33);
+            this.comboBox12.TabIndex = 28;
+            // 
+            // comboBox13
+            // 
+            this.comboBox13.FormattingEnabled = true;
+            this.comboBox13.Location = new System.Drawing.Point(350, 297);
+            this.comboBox13.Name = "comboBox13";
+            this.comboBox13.Size = new System.Drawing.Size(425, 33);
+            this.comboBox13.TabIndex = 29;
+            // 
+            // comboBox14
+            // 
+            this.comboBox14.FormattingEnabled = true;
+            this.comboBox14.Location = new System.Drawing.Point(350, 337);
+            this.comboBox14.Name = "comboBox14";
+            this.comboBox14.Size = new System.Drawing.Size(425, 33);
+            this.comboBox14.TabIndex = 30;
+            // 
+            // comboBox15
+            // 
+            this.comboBox15.FormattingEnabled = true;
+            this.comboBox15.Location = new System.Drawing.Point(350, 377);
+            this.comboBox15.Name = "comboBox15";
+            this.comboBox15.Size = new System.Drawing.Size(425, 33);
+            this.comboBox15.TabIndex = 31;
+            // 
+            // comboBox16
+            // 
+            this.comboBox16.FormattingEnabled = true;
+            this.comboBox16.Location = new System.Drawing.Point(350, 413);
+            this.comboBox16.Name = "comboBox16";
+            this.comboBox16.Size = new System.Drawing.Size(425, 33);
+            this.comboBox16.TabIndex = 32;
+            // 
+            // comboBox17
+            // 
+            this.comboBox17.FormattingEnabled = true;
+            this.comboBox17.Location = new System.Drawing.Point(350, 449);
+            this.comboBox17.Name = "comboBox17";
+            this.comboBox17.Size = new System.Drawing.Size(425, 33);
+            this.comboBox17.TabIndex = 33;
+            // 
+            // comboBox18
+            // 
+            this.comboBox18.FormattingEnabled = true;
+            this.comboBox18.Location = new System.Drawing.Point(350, 484);
+            this.comboBox18.Name = "comboBox18";
+            this.comboBox18.Size = new System.Drawing.Size(425, 33);
+            this.comboBox18.TabIndex = 34;
+            // 
+            // comboBox19
+            // 
+            this.comboBox19.FormattingEnabled = true;
+            this.comboBox19.Location = new System.Drawing.Point(350, 519);
+            this.comboBox19.Name = "comboBox19";
+            this.comboBox19.Size = new System.Drawing.Size(425, 33);
+            this.comboBox19.TabIndex = 35;
             // 
             // Form1
             // 
@@ -1091,9 +1302,19 @@
             this.Name = "Form1";
             this.Text = "CreateCookies";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource1)).EndInit();
             this.tabPage4.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -1105,35 +1326,58 @@
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).EndInit();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
+        private CreateCookiesDataSet createCookiesDataSet;
+        private System.Windows.Forms.BindingSource createCookiesDataSetBindingSource;
+        private System.Windows.Forms.BindingSource ordeBindingSource;
+        private CreateCookiesDataSetTableAdapters.OrdeTableAdapter ordeTableAdapter;
+        private System.Windows.Forms.BindingSource ingredientBindingSource;
+        private CreateCookiesDataSetTableAdapters.IngredientTableAdapter ingredientTableAdapter;
+        private System.Windows.Forms.BindingSource ordeBindingSource1;
         private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iQuantityInStockDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oNumberDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ToolStrip findOrderToolStrip;
+        private System.Windows.Forms.ToolStripLabel searchToolStripLabel;
+        private System.Windows.Forms.ToolStripTextBox searchToolStripTextBox;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn expectedDeliveryDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isDeliveredDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNumberFKDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label4;
@@ -1144,82 +1388,69 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private CreateCookiesDataSet createCookiesDataSet;
-        private System.Windows.Forms.BindingSource createCookiesDataSetBindingSource;
-        private System.Windows.Forms.BindingSource ordeBindingSource;
-        private CreateCookiesDataSetTableAdapters.OrdeTableAdapter ordeTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn expectedDeliveryDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isDeliveredDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNumberFKDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStrip findOrderToolStrip;
-        private System.Windows.Forms.ToolStripLabel searchToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox searchToolStripTextBox;
-        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.BindingSource ingredientBindingSource;
-        private CreateCookiesDataSetTableAdapters.IngredientTableAdapter ingredientTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iQuantityInStockDataGridViewTextBoxColumn;
-        private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox comboBox10;
+        private System.Windows.Forms.CheckBox checkBox10;
+        private System.Windows.Forms.CheckBox checkBox9;
+        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ComboBox comboBox19;
+        private System.Windows.Forms.ComboBox comboBox18;
+        private System.Windows.Forms.ComboBox comboBox17;
+        private System.Windows.Forms.ComboBox comboBox16;
+        private System.Windows.Forms.ComboBox comboBox15;
+        private System.Windows.Forms.ComboBox comboBox14;
+        private System.Windows.Forms.ComboBox comboBox13;
+        private System.Windows.Forms.ComboBox comboBox12;
+        private System.Windows.Forms.ComboBox comboBox11;
     }
 }
 
