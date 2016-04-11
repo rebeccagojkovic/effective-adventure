@@ -73,7 +73,7 @@ namespace CreateCookies
 
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        private void buttonRegCustomer_Click(object sender, EventArgs e)
         {
             string cNumber = textBoxCnumber.Text;
             string cName = textBoxCname.Text;
@@ -83,6 +83,21 @@ namespace CreateCookies
             string cPostalAddress = textBoxCpostalAddress.Text;
 
             controller.RegisterCustomer(cNumber, cAddress, cCountry, cEmail, cName, cPostalAddress);
+        }
+
+        private void textBoxCnumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxCname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox23_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
