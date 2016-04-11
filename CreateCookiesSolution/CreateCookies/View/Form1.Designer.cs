@@ -176,6 +176,14 @@
             this.label34 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.listView2 = new System.Windows.Forms.ListView();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.ingredientBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.orderspecificationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderspecificationTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.OrderspecificationTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).BeginInit();
@@ -197,10 +205,15 @@
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage7.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ingredientBindingSource
@@ -1080,6 +1093,7 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.groupBox10);
             this.tabPage7.Location = new System.Drawing.Point(4, 34);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
@@ -1612,6 +1626,54 @@
             this.listView2.TabIndex = 0;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
+            // groupBox10
+            // 
+            this.groupBox10.Location = new System.Drawing.Point(39, 28);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(1560, 948);
+            this.groupBox10.TabIndex = 0;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Storage";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator1,
+            this.toolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(331, 48);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(327, 6);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(330, 38);
+            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
+            // 
+            // ordeBindingSource2
+            // 
+            this.ordeBindingSource2.DataMember = "Orde";
+            this.ordeBindingSource2.DataSource = this.createCookiesDataSetBindingSource;
+            // 
+            // ingredientBindingSource1
+            // 
+            this.ingredientBindingSource1.DataMember = "Ingredient";
+            this.ingredientBindingSource1.DataSource = this.createCookiesDataSetBindingSource;
+            // 
+            // orderspecificationBindingSource
+            // 
+            this.orderspecificationBindingSource.DataMember = "Orderspecification";
+            this.orderspecificationBindingSource.DataSource = this.createCookiesDataSetBindingSource;
+            // 
+            // orderspecificationTableAdapter
+            // 
+            this.orderspecificationTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1650,6 +1712,7 @@
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -1657,6 +1720,10 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1809,6 +1876,14 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.ComboBox comboBox23;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.BindingSource ingredientBindingSource1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.BindingSource ordeBindingSource2;
+        private System.Windows.Forms.BindingSource orderspecificationBindingSource;
+        private CreateCookiesDataSetTableAdapters.OrderspecificationTableAdapter orderspecificationTableAdapter;
     }
 }
 
