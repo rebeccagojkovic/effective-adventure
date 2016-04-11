@@ -184,6 +184,17 @@
             this.ingredientBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.orderspecificationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderspecificationTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.OrderspecificationTableAdapter();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.comboBox24 = new System.Windows.Forms.ComboBox();
+            this.button18 = new System.Windows.Forms.Button();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.button19 = new System.Windows.Forms.Button();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.comboBox25 = new System.Windows.Forms.ComboBox();
+            this.label35 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).BeginInit();
@@ -214,6 +225,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource)).BeginInit();
+            this.groupBox12.SuspendLayout();
             this.SuspendLayout();
             // 
             // ingredientBindingSource
@@ -251,6 +263,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.groupBox12);
             this.tabPage4.Controls.Add(this.groupBox11);
             this.tabPage4.Controls.Add(this.dataGridView2);
             this.tabPage4.Location = new System.Drawing.Point(4, 34);
@@ -331,10 +344,10 @@
             this.iNameDataGridViewTextBoxColumn,
             this.iQuantityInStockDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.ingredientBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 40);
+            this.dataGridView2.Location = new System.Drawing.Point(18, 26);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 33;
-            this.dataGridView2.Size = new System.Drawing.Size(576, 720);
+            this.dataGridView2.Size = new System.Drawing.Size(742, 529);
             this.dataGridView2.TabIndex = 0;
             // 
             // iNumberDataGridViewTextBoxColumn
@@ -1674,6 +1687,110 @@
             // 
             this.orderspecificationTableAdapter.ClearBeforeFill = true;
             // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.label35);
+            this.groupBox12.Controls.Add(this.comboBox25);
+            this.groupBox12.Controls.Add(this.comboBox24);
+            this.groupBox12.Controls.Add(this.button18);
+            this.groupBox12.Controls.Add(this.textBox23);
+            this.groupBox12.Controls.Add(this.textBox24);
+            this.groupBox12.Controls.Add(this.button19);
+            this.groupBox12.Controls.Add(this.label37);
+            this.groupBox12.Controls.Add(this.label38);
+            this.groupBox12.Controls.Add(this.label39);
+            this.groupBox12.Location = new System.Drawing.Point(18, 561);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(742, 431);
+            this.groupBox12.TabIndex = 17;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Register New Customer";
+            // 
+            // comboBox24
+            // 
+            this.comboBox24.FormattingEnabled = true;
+            this.comboBox24.Location = new System.Drawing.Point(297, 285);
+            this.comboBox24.Name = "comboBox24";
+            this.comboBox24.Size = new System.Drawing.Size(354, 33);
+            this.comboBox24.TabIndex = 14;
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(47, 335);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(604, 44);
+            this.button18.TabIndex = 13;
+            this.button18.Text = "Register new Supplier";
+            this.button18.UseVisualStyleBackColor = true;
+            // 
+            // textBox23
+            // 
+            this.textBox23.Location = new System.Drawing.Point(297, 242);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(354, 31);
+            this.textBox23.TabIndex = 8;
+            // 
+            // textBox24
+            // 
+            this.textBox24.Enabled = false;
+            this.textBox24.Location = new System.Drawing.Point(297, 78);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(354, 31);
+            this.textBox24.TabIndex = 7;
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(297, 125);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(354, 43);
+            this.button19.TabIndex = 6;
+            this.button19.Text = "Add Ingredient";
+            this.button19.UseVisualStyleBackColor = true;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(69, 78);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(151, 25);
+            this.label37.TabIndex = 2;
+            this.label37.Text = "Add Ingredient";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(58, 248);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(168, 25);
+            this.label38.TabIndex = 1;
+            this.label38.Text = "Supplier\'s Name";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(58, 288);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(94, 25);
+            this.label39.TabIndex = 0;
+            this.label39.Text = "Location";
+            // 
+            // comboBox25
+            // 
+            this.comboBox25.FormattingEnabled = true;
+            this.comboBox25.Location = new System.Drawing.Point(297, 191);
+            this.comboBox25.Name = "comboBox25";
+            this.comboBox25.Size = new System.Drawing.Size(354, 33);
+            this.comboBox25.TabIndex = 15;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(58, 194);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(186, 25);
+            this.label35.TabIndex = 16;
+            this.label35.Text = "Added Ingredients";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1724,6 +1841,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource)).EndInit();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1884,6 +2003,17 @@
         private System.Windows.Forms.BindingSource ordeBindingSource2;
         private System.Windows.Forms.BindingSource orderspecificationBindingSource;
         private CreateCookiesDataSetTableAdapters.OrderspecificationTableAdapter orderspecificationTableAdapter;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.ComboBox comboBox24;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.ComboBox comboBox25;
     }
 }
 

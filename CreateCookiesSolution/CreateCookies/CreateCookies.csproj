@@ -59,7 +59,6 @@
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\Orderspecification.cs" />
     <Compile Include="Model\Pallet.cs" />
-    <Compile Include="Model\Password.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Recipe.cs" />
     <Compile Include="Model\Supplier.cs" />
