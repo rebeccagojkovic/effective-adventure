@@ -3629,12 +3629,23 @@ SELECT cNumber, cAddress, cCountry, cEmail, cName, cPassword, cPostalAddress FRO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT cNumber, cAddress, cCountry, cEmail, cName, cPassword, cPostalAddress FROM" +
                 " dbo.Customer";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"INSERT INTO [dbo].[Customer] ([cNumber], [cAddress], [cCountry], [cEmail], [cName],  [cPostalAddress]) VALUES (@cNumber, @cAddress, @cCountry, @cEmail, @cName, @cPostalAddress);
+SELECT cNumber, cAddress, cCountry, cEmail, cName, cPostalAddress FROM Customer WHERE (cNumber = @cNumber)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cNumber", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "cNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cAddress", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "cAddress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cCountry", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "cCountry", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cEmail", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "cEmail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cName", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "cName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cPostalAddress", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "cPostalAddress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3952,6 +3963,65 @@ SELECT cNumber, cAddress, cCountry, cEmail, cName, cPassword, cPostalAddress FRO
         public virtual int Update(string cAddress, string cCountry, string cEmail, string cName, string cPassword, string cPostalAddress, string Original_cNumber, string Original_cAddress, string Original_cCountry, string Original_cEmail, string Original_cName, string Original_cPassword, string Original_cPostalAddress) {
             return this.Update(Original_cNumber, cAddress, cCountry, cEmail, cName, cPassword, cPostalAddress, Original_cNumber, Original_cAddress, Original_cCountry, Original_cEmail, Original_cName, Original_cPassword, Original_cPostalAddress);
         }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int RegisterCustomerQuery(string cNumber, string cAddress, string cCountry, string cEmail, string cName, string cPostalAddress) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((cNumber == null)) {
+                throw new global::System.ArgumentNullException("cNumber");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(cNumber));
+            }
+            if ((cAddress == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(cAddress));
+            }
+            if ((cCountry == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(cCountry));
+            }
+            if ((cEmail == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(cEmail));
+            }
+            if ((cName == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(cName));
+            }
+            if ((cPostalAddress == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((string)(cPostalAddress));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
     }
     
     /// <summary>
@@ -4091,8 +4161,8 @@ SELECT cNumber, cAddress, cCountry, cEmail, cName, cPassword, cPostalAddress FRO
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Ingredient] ([iNumber], [iName], [iQuantityInStock]) VALUES (@" +
-                "iNumber, @iName, @iQuantityInStock);\nSELECT iNumber, iName, iQuantityInStock FRO" +
-                "M Ingredient WHERE (iNumber = @iNumber)";
+                "iNumber, @iName, @iQuantityInStock);\r\nSELECT iNumber, iName, iQuantityInStock FR" +
+                "OM Ingredient WHERE (iNumber = @iNumber)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5358,8 +5428,8 @@ SELECT oNumber, pNumber, palletQuantity, oNumber_FK, pNumber_FK FROM Orderspecif
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Product] ([pNumber], [pName], [pTime], [price]) VALUES (@pNumb" +
-                "er, @pName, @pTime, @price);\nSELECT pNumber, pName, pTime, price FROM Product WH" +
-                "ERE (pNumber = @pNumber)";
+                "er, @pName, @pTime, @price);\r\nSELECT pNumber, pName, pTime, price FROM Product W" +
+                "HERE (pNumber = @pNumber)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

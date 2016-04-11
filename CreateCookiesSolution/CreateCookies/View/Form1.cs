@@ -12,8 +12,10 @@ namespace CreateCookies
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        Controller.Controller controller;
+        public Form1(Controller.Controller controller)
         {
+            this.controller = controller;
             InitializeComponent();
         }
 
@@ -69,6 +71,18 @@ namespace CreateCookies
         private void groupBox7_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            string cNumber = textBoxCnumber.Text;
+            string cName = textBoxCname.Text;
+            string cAddress = textBoxCaddress.Text;
+            string cCountry = comboBoxCcountry.Text;
+            string cEmail = textBoxCemail.Text;
+            string cPostalAddress = textBoxCpostalAddress.Text;
+
+            controller.RegisterCustomer(cNumber, cAddress, cCountry, cEmail, cName, cPostalAddress);
         }
     }
 }
