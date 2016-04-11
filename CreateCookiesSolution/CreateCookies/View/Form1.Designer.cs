@@ -1704,7 +1704,7 @@
             this.groupBox12.Size = new System.Drawing.Size(742, 431);
             this.groupBox12.TabIndex = 17;
             this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Register New Customer";
+            this.groupBox12.Text = "Register New Supplier";
             // 
             // comboBox24
             // 
