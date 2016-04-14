@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace CreateCookies
 {
     public partial class Form1 : Form
@@ -48,31 +49,6 @@ namespace CreateCookies
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void searchToolStripTextBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox4_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox7_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonRegCustomer_Click(object sender, EventArgs e)
         {
             string cNumber = textBoxCnumber.Text;
@@ -84,20 +60,5 @@ namespace CreateCookies
 
             controller.RegisterCustomer(cNumber, cAddress, cCountry, cEmail, cName, cPostalAddress);
         }
-
-        private void textBoxCnumber_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxCname_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox23_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-    }
+        
 }
