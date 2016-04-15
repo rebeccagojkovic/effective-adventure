@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 
 namespace CreateCookies
@@ -22,7 +23,7 @@ namespace CreateCookies
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
-
+              
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -60,5 +61,11 @@ namespace CreateCookies
 
             controller.RegisterCustomer(cNumber, cAddress, cCountry, cEmail, cName, cPostalAddress);
         }
-        
+
+        private void comboBox22_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+    }
 }
+
