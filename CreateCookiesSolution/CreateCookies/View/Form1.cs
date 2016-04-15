@@ -20,14 +20,10 @@ namespace CreateCookies
             this.controller = controller;
             InitializeComponent();
         }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-              
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'createCookieDataSet.Customer' table. You can move, or remove it, as needed.
+            this.customerTableAdapter.Fill(this.createCookieDataSet.Customer);
             // TODO: This line of code loads data into the 'createCookiesDataSet.Orderspecification' table. You can move, or remove it, as needed.
             this.orderspecificationTableAdapter.Fill(this.createCookiesDataSet.Orderspecification);
             // TODO: This line of code loads data into the 'createCookiesDataSet.Ingredient' table. You can move, or remove it, as needed.
@@ -62,9 +58,17 @@ namespace CreateCookies
             controller.RegisterCustomer(cNumber, cAddress, cCountry, cEmail, cName, cPostalAddress);
         }
 
-        private void comboBox22_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        private void NewCustomer_Click(object sender, EventArgs e)
         {
-            
+            textBoxCnumber.Clear();
+            textBoxCname.Clear();
+            textBoxCaddress.Clear();
+            textBoxCpostalAddress.Clear();
+            comboBoxCcountry.SelectedIndex = -1;
+            textBoxCemail.Clear();
+            textBoxCnumber.Focus();
         }
     }
 }

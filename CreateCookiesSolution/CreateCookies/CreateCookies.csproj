@@ -64,6 +64,11 @@
   <ItemGroup>
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="Controller\CustomerController.cs" />
+    <Compile Include="CreateCookieDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateCookieDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CreateCookiesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -116,6 +121,17 @@
     <EmbeddedResource Include="View\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="CreateCookieDataSet.xsc">
+      <DependentUpon>CreateCookieDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CreateCookieDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CreateCookieDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CreateCookieDataSet.xss">
+      <DependentUpon>CreateCookieDataSet.xsd</DependentUpon>
+    </None>
     <None Include="CreateCookiesDataSet.xsc">
       <DependentUpon>CreateCookiesDataSet.xsd</DependentUpon>
     </None>
