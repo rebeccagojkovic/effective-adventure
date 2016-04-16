@@ -239,6 +239,8 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).BeginInit();
@@ -807,6 +809,8 @@
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.dateTimePicker1);
+            this.groupBox9.Controls.Add(this.label47);
             this.groupBox9.Controls.Add(this.label46);
             this.groupBox9.Controls.Add(this.dataGridView1);
             this.groupBox9.Controls.Add(this.comboBoxPalletAmount);
@@ -826,17 +830,17 @@
             // comboBoxPalletAmount
             // 
             this.comboBoxPalletAmount.FormattingEnabled = true;
-            this.comboBoxPalletAmount.Location = new System.Drawing.Point(385, 174);
+            this.comboBoxPalletAmount.Location = new System.Drawing.Point(360, 179);
             this.comboBoxPalletAmount.Name = "comboBoxPalletAmount";
-            this.comboBoxPalletAmount.Size = new System.Drawing.Size(303, 33);
+            this.comboBoxPalletAmount.Size = new System.Drawing.Size(370, 33);
             this.comboBoxPalletAmount.TabIndex = 5;
             // 
             // comboBoxProductToProduce
             // 
             this.comboBoxProductToProduce.FormattingEnabled = true;
-            this.comboBoxProductToProduce.Location = new System.Drawing.Point(385, 100);
+            this.comboBoxProductToProduce.Location = new System.Drawing.Point(360, 97);
             this.comboBoxProductToProduce.Name = "comboBoxProductToProduce";
-            this.comboBoxProductToProduce.Size = new System.Drawing.Size(303, 33);
+            this.comboBoxProductToProduce.Size = new System.Drawing.Size(370, 33);
             this.comboBoxProductToProduce.TabIndex = 4;
             // 
             // label44
@@ -851,10 +855,10 @@
             // 
             // btnProduce
             // 
-            this.btnProduce.Location = new System.Drawing.Point(385, 364);
+            this.btnProduce.Location = new System.Drawing.Point(360, 336);
             this.btnProduce.Margin = new System.Windows.Forms.Padding(4);
             this.btnProduce.Name = "btnProduce";
-            this.btnProduce.Size = new System.Drawing.Size(303, 65);
+            this.btnProduce.Size = new System.Drawing.Size(370, 65);
             this.btnProduce.TabIndex = 2;
             this.btnProduce.Text = "Produce";
             this.btnProduce.UseVisualStyleBackColor = true;
@@ -2264,7 +2268,7 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.dataGridView1.DataSource = this.ingredientBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(762, 100);
+            this.dataGridView1.Location = new System.Drawing.Point(762, 88);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 33;
@@ -2295,12 +2299,29 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(757, 71);
+            this.label46.Location = new System.Drawing.Point(757, 59);
             this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(87, 25);
             this.label46.TabIndex = 7;
             this.label46.Text = "Storage";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(81, 260);
+            this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(132, 25);
+            this.label47.TabIndex = 8;
+            this.label47.Text = "Product time";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(360, 255);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(370, 31);
+            this.dateTimePicker1.TabIndex = 9;
             // 
             // Form1
             // 
@@ -2579,6 +2600,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label47;
     }
 }
 
