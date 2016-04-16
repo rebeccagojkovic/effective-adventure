@@ -41,7 +41,7 @@ namespace CreateCookies
         {
             try
             {
-                this.ordeTableAdapter.FindOrder(this.createCookiesDataSet.Orde, searchToolStripTextBox.Text);
+                this.ordeTableAdapter.FindOrder(this.createCookiesDataSet.Orde, searchToolStripTextBoxOrderControl.Text);
             }
             catch (System.Exception ex)
             {

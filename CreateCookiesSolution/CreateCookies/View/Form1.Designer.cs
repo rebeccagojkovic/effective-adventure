@@ -89,36 +89,36 @@
             this.label20 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.button10 = new System.Windows.Forms.Button();
+            this.listViewOrderInformation = new System.Windows.Forms.ListView();
+            this.btnChoosenOrderInformation = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.btnDeleteOrder = new System.Windows.Forms.Button();
+            this.comboBoxChooseOrder = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.findOrderToolStrip = new System.Windows.Forms.ToolStrip();
             this.searchToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.searchToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.searchToolStripTextBoxOrderControl = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewOrderControl = new System.Windows.Forms.DataGridView();
             this.oNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.expectedDeliveryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isDeliveredDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cNumberFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ordeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.textBoxGenerateOrderNumber = new System.Windows.Forms.TextBox();
+            this.btnGenerateOrderNumber = new System.Windows.Forms.Button();
+            this.btnAddOder = new System.Windows.Forms.Button();
+            this.comboBoxAddedCookies = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btnAddCookies = new System.Windows.Forms.Button();
+            this.dateTimePickerOrderdate = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxAOCnumber = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxChooseCookies = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -251,7 +251,7 @@
             this.groupBox2.SuspendLayout();
             this.findOrderToolStrip.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrderControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -879,8 +879,8 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.listView1);
-            this.groupBox8.Controls.Add(this.button10);
+            this.groupBox8.Controls.Add(this.listViewOrderInformation);
+            this.groupBox8.Controls.Add(this.btnChoosenOrderInformation);
             this.groupBox8.Location = new System.Drawing.Point(644, 442);
             this.groupBox8.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox8.Name = "groupBox8";
@@ -890,29 +890,29 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Order Information";
             // 
-            // listView1
+            // listViewOrderInformation
             // 
-            this.listView1.Location = new System.Drawing.Point(4, 29);
-            this.listView1.Margin = new System.Windows.Forms.Padding(6);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(908, 269);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listViewOrderInformation.Location = new System.Drawing.Point(4, 29);
+            this.listViewOrderInformation.Margin = new System.Windows.Forms.Padding(6);
+            this.listViewOrderInformation.Name = "listViewOrderInformation";
+            this.listViewOrderInformation.Size = new System.Drawing.Size(908, 269);
+            this.listViewOrderInformation.TabIndex = 2;
+            this.listViewOrderInformation.UseCompatibleStateImageBehavior = false;
             // 
-            // button10
+            // btnChoosenOrderInformation
             // 
-            this.button10.Location = new System.Drawing.Point(8, 308);
-            this.button10.Margin = new System.Windows.Forms.Padding(4);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(356, 42);
-            this.button10.TabIndex = 1;
-            this.button10.Text = "Show chosen order information";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnChoosenOrderInformation.Location = new System.Drawing.Point(8, 308);
+            this.btnChoosenOrderInformation.Margin = new System.Windows.Forms.Padding(4);
+            this.btnChoosenOrderInformation.Name = "btnChoosenOrderInformation";
+            this.btnChoosenOrderInformation.Size = new System.Drawing.Size(356, 42);
+            this.btnChoosenOrderInformation.TabIndex = 1;
+            this.btnChoosenOrderInformation.Text = "Show chosen order information";
+            this.btnChoosenOrderInformation.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.comboBox4);
+            this.groupBox3.Controls.Add(this.btnDeleteOrder);
+            this.groupBox3.Controls.Add(this.comboBoxChooseOrder);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Location = new System.Drawing.Point(640, 819);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
@@ -923,24 +923,24 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Delete Order";
             // 
-            // button4
+            // btnDeleteOrder
             // 
-            this.button4.Location = new System.Drawing.Point(234, 83);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(682, 44);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Delete Order";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnDeleteOrder.Location = new System.Drawing.Point(234, 83);
+            this.btnDeleteOrder.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteOrder.Name = "btnDeleteOrder";
+            this.btnDeleteOrder.Size = new System.Drawing.Size(682, 44);
+            this.btnDeleteOrder.TabIndex = 3;
+            this.btnDeleteOrder.Text = "Delete Order";
+            this.btnDeleteOrder.UseVisualStyleBackColor = true;
             // 
-            // comboBox4
+            // comboBoxChooseOrder
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(234, 31);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(682, 33);
-            this.comboBox4.TabIndex = 2;
+            this.comboBoxChooseOrder.FormattingEnabled = true;
+            this.comboBoxChooseOrder.Location = new System.Drawing.Point(234, 31);
+            this.comboBoxChooseOrder.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxChooseOrder.Name = "comboBoxChooseOrder";
+            this.comboBoxChooseOrder.Size = new System.Drawing.Size(682, 33);
+            this.comboBoxChooseOrder.TabIndex = 2;
             // 
             // label11
             // 
@@ -956,7 +956,7 @@
             // 
             this.groupBox2.Controls.Add(this.findOrderToolStrip);
             this.groupBox2.Controls.Add(this.toolStripContainer1);
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dataGridViewOrderControl);
             this.groupBox2.Location = new System.Drawing.Point(6, 13);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox2.Name = "groupBox2";
@@ -972,7 +972,7 @@
             this.findOrderToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.findOrderToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.searchToolStripLabel,
-            this.searchToolStripTextBox});
+            this.searchToolStripTextBoxOrderControl});
             this.findOrderToolStrip.Location = new System.Drawing.Point(26, 350);
             this.findOrderToolStrip.Name = "findOrderToolStrip";
             this.findOrderToolStrip.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
@@ -988,11 +988,11 @@
             this.searchToolStripLabel.Text = "Search:";
             this.searchToolStripLabel.TextChanged += new System.EventHandler(this.findOrderToolStripButton_Click);
             // 
-            // searchToolStripTextBox
+            // searchToolStripTextBoxOrderControl
             // 
-            this.searchToolStripTextBox.Name = "searchToolStripTextBox";
-            this.searchToolStripTextBox.Size = new System.Drawing.Size(196, 39);
-            this.searchToolStripTextBox.TextChanged += new System.EventHandler(this.findOrderToolStripButton_Click);
+            this.searchToolStripTextBoxOrderControl.Name = "searchToolStripTextBoxOrderControl";
+            this.searchToolStripTextBoxOrderControl.Size = new System.Drawing.Size(196, 39);
+            this.searchToolStripTextBoxOrderControl.TextChanged += new System.EventHandler(this.findOrderToolStripButton_Click);
             // 
             // toolStripContainer1
             // 
@@ -1012,21 +1012,21 @@
             // 
             this.toolStripContainer1.TopToolStripPanel.Padding = new System.Windows.Forms.Padding(0, 0, 25, 25);
             // 
-            // dataGridView1
+            // dataGridViewOrderControl
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewOrderControl.AutoGenerateColumns = false;
+            this.dataGridViewOrderControl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOrderControl.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.oNumberDataGridViewTextBoxColumn,
             this.expectedDeliveryDateDataGridViewTextBoxColumn,
             this.isDeliveredDataGridViewCheckBoxColumn,
             this.cNumberFKDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.ordeBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 37);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1494, 302);
-            this.dataGridView1.TabIndex = 5;
+            this.dataGridViewOrderControl.DataSource = this.ordeBindingSource;
+            this.dataGridViewOrderControl.Location = new System.Drawing.Point(26, 37);
+            this.dataGridViewOrderControl.Margin = new System.Windows.Forms.Padding(6);
+            this.dataGridViewOrderControl.Name = "dataGridViewOrderControl";
+            this.dataGridViewOrderControl.Size = new System.Drawing.Size(1494, 302);
+            this.dataGridViewOrderControl.TabIndex = 5;
             // 
             // oNumberDataGridViewTextBoxColumn
             // 
@@ -1063,18 +1063,18 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox10);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.textBoxGenerateOrderNumber);
+            this.groupBox1.Controls.Add(this.btnGenerateOrderNumber);
+            this.groupBox1.Controls.Add(this.btnAddOder);
+            this.groupBox1.Controls.Add(this.comboBoxAddedCookies);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.btnAddCookies);
+            this.groupBox1.Controls.Add(this.dateTimePickerOrderdate);
+            this.groupBox1.Controls.Add(this.comboBoxAOCnumber);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.comboBoxChooseCookies);
             this.groupBox1.Location = new System.Drawing.Point(12, 444);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
@@ -1084,43 +1084,43 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Order";
             // 
-            // textBox10
+            // textBoxGenerateOrderNumber
             // 
-            this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(208, 54);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(386, 31);
-            this.textBox10.TabIndex = 11;
+            this.textBoxGenerateOrderNumber.Enabled = false;
+            this.textBoxGenerateOrderNumber.Location = new System.Drawing.Point(208, 54);
+            this.textBoxGenerateOrderNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxGenerateOrderNumber.Name = "textBoxGenerateOrderNumber";
+            this.textBoxGenerateOrderNumber.Size = new System.Drawing.Size(386, 31);
+            this.textBoxGenerateOrderNumber.TabIndex = 11;
             // 
-            // button3
+            // btnGenerateOrderNumber
             // 
-            this.button3.Location = new System.Drawing.Point(8, 33);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(168, 73);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Generate Order Number";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnGenerateOrderNumber.Location = new System.Drawing.Point(8, 33);
+            this.btnGenerateOrderNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGenerateOrderNumber.Name = "btnGenerateOrderNumber";
+            this.btnGenerateOrderNumber.Size = new System.Drawing.Size(168, 73);
+            this.btnGenerateOrderNumber.TabIndex = 10;
+            this.btnGenerateOrderNumber.Text = "Generate Order Number";
+            this.btnGenerateOrderNumber.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnAddOder
             // 
-            this.button2.Location = new System.Drawing.Point(12, 471);
-            this.button2.Margin = new System.Windows.Forms.Padding(6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(582, 44);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Add Order";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAddOder.Location = new System.Drawing.Point(12, 471);
+            this.btnAddOder.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAddOder.Name = "btnAddOder";
+            this.btnAddOder.Size = new System.Drawing.Size(582, 44);
+            this.btnAddOder.TabIndex = 9;
+            this.btnAddOder.Text = "Add Order";
+            this.btnAddOder.UseVisualStyleBackColor = true;
             // 
-            // comboBox3
+            // comboBoxAddedCookies
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(208, 248);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(6);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(386, 33);
-            this.comboBox3.TabIndex = 8;
+            this.comboBoxAddedCookies.FormattingEnabled = true;
+            this.comboBoxAddedCookies.Location = new System.Drawing.Point(208, 248);
+            this.comboBoxAddedCookies.Margin = new System.Windows.Forms.Padding(6);
+            this.comboBoxAddedCookies.Name = "comboBoxAddedCookies";
+            this.comboBoxAddedCookies.Size = new System.Drawing.Size(386, 33);
+            this.comboBoxAddedCookies.TabIndex = 8;
             // 
             // label4
             // 
@@ -1132,32 +1132,32 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Added Cookies";
             // 
-            // button1
+            // btnAddCookies
             // 
-            this.button1.Location = new System.Drawing.Point(204, 181);
-            this.button1.Margin = new System.Windows.Forms.Padding(6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(392, 44);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Add Cookie";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddCookies.Location = new System.Drawing.Point(204, 181);
+            this.btnAddCookies.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAddCookies.Name = "btnAddCookies";
+            this.btnAddCookies.Size = new System.Drawing.Size(392, 44);
+            this.btnAddCookies.TabIndex = 6;
+            this.btnAddCookies.Text = "Add Cookie";
+            this.btnAddCookies.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // dateTimePickerOrderdate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(204, 337);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(6);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(388, 31);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePickerOrderdate.Location = new System.Drawing.Point(204, 337);
+            this.dateTimePickerOrderdate.Margin = new System.Windows.Forms.Padding(6);
+            this.dateTimePickerOrderdate.Name = "dateTimePickerOrderdate";
+            this.dateTimePickerOrderdate.Size = new System.Drawing.Size(388, 31);
+            this.dateTimePickerOrderdate.TabIndex = 3;
             // 
-            // comboBox2
+            // comboBoxAOCnumber
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(208, 398);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(6);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(388, 33);
-            this.comboBox2.TabIndex = 5;
+            this.comboBoxAOCnumber.FormattingEnabled = true;
+            this.comboBoxAOCnumber.Location = new System.Drawing.Point(208, 398);
+            this.comboBoxAOCnumber.Margin = new System.Windows.Forms.Padding(6);
+            this.comboBoxAOCnumber.Name = "comboBoxAOCnumber";
+            this.comboBoxAOCnumber.Size = new System.Drawing.Size(388, 33);
+            this.comboBoxAOCnumber.TabIndex = 5;
             // 
             // label3
             // 
@@ -1189,14 +1189,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Choose Cookie";
             // 
-            // comboBox1
+            // comboBoxChooseCookies
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(208, 119);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(6);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(388, 33);
-            this.comboBox1.TabIndex = 0;
+            this.comboBoxChooseCookies.FormattingEnabled = true;
+            this.comboBoxChooseCookies.Location = new System.Drawing.Point(208, 119);
+            this.comboBoxChooseCookies.Margin = new System.Windows.Forms.Padding(6);
+            this.comboBoxChooseCookies.Name = "comboBoxChooseCookies";
+            this.comboBoxChooseCookies.Size = new System.Drawing.Size(388, 33);
+            this.comboBoxChooseCookies.TabIndex = 0;
             // 
             // tabControl1
             // 
@@ -2281,7 +2281,7 @@
             this.findOrderToolStrip.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrderControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -2335,35 +2335,35 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.ListView listViewOrderInformation;
+        private System.Windows.Forms.Button btnChoosenOrderInformation;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Button btnDeleteOrder;
+        private System.Windows.Forms.ComboBox comboBoxChooseOrder;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ToolStrip findOrderToolStrip;
         private System.Windows.Forms.ToolStripLabel searchToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox searchToolStripTextBox;
+        private System.Windows.Forms.ToolStripTextBox searchToolStripTextBoxOrderControl;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewOrderControl;
         private System.Windows.Forms.DataGridViewTextBoxColumn oNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn expectedDeliveryDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isDeliveredDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNumberFKDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.TextBox textBoxGenerateOrderNumber;
+        private System.Windows.Forms.Button btnGenerateOrderNumber;
+        private System.Windows.Forms.Button btnAddOder;
+        private System.Windows.Forms.ComboBox comboBoxAddedCookies;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button btnAddCookies;
+        private System.Windows.Forms.DateTimePicker dateTimePickerOrderdate;
+        private System.Windows.Forms.ComboBox comboBoxAOCnumber;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxChooseCookies;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label5;
