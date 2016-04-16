@@ -172,24 +172,20 @@
             this.label22 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerExpectedDeliveryDate = new System.Windows.Forms.DateTimePicker();
             this.label45 = new System.Windows.Forms.Label();
-            this.listView4 = new System.Windows.Forms.ListView();
+            this.listViewStorage = new System.Windows.Forms.ListView();
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label41 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.comboBox27 = new System.Windows.Forms.ComboBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.textBoxGeneratePalletID = new System.Windows.Forms.TextBox();
             this.button22 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.comboBox26 = new System.Windows.Forms.ComboBox();
+            this.btnUnstoreDelivery = new System.Windows.Forms.Button();
+            this.btnStore = new System.Windows.Forms.Button();
+            this.comboBoxCooseFromProducedProducts = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.createCookieDataSet = new CreateCookies.CreateCookieDataSet();
@@ -437,7 +433,7 @@
             // comboBoxEgg
             // 
             this.comboBoxEgg.FormattingEnabled = true;
-            this.comboBoxEgg.Location = new System.Drawing.Point(350, 519);
+            this.comboBoxEgg.Location = new System.Drawing.Point(350, 526);
             this.comboBoxEgg.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxEgg.Name = "comboBoxEgg";
             this.comboBoxEgg.Size = new System.Drawing.Size(424, 33);
@@ -807,9 +803,9 @@
             this.label47.Location = new System.Drawing.Point(81, 260);
             this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(132, 25);
+            this.label47.Size = new System.Drawing.Size(104, 25);
             this.label47.TabIndex = 8;
-            this.label47.Text = "Product time";
+            this.label47.Text = "Produced";
             // 
             // label46
             // 
@@ -1748,20 +1744,16 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.dateTimePicker4);
+            this.groupBox10.Controls.Add(this.dateTimePickerExpectedDeliveryDate);
             this.groupBox10.Controls.Add(this.label45);
-            this.groupBox10.Controls.Add(this.listView4);
+            this.groupBox10.Controls.Add(this.listViewStorage);
             this.groupBox10.Controls.Add(this.dateTimePicker3);
             this.groupBox10.Controls.Add(this.label41);
-            this.groupBox10.Controls.Add(this.dateTimePicker2);
-            this.groupBox10.Controls.Add(this.label40);
-            this.groupBox10.Controls.Add(this.label42);
-            this.groupBox10.Controls.Add(this.comboBox27);
-            this.groupBox10.Controls.Add(this.textBox21);
+            this.groupBox10.Controls.Add(this.textBoxGeneratePalletID);
             this.groupBox10.Controls.Add(this.button22);
-            this.groupBox10.Controls.Add(this.button21);
-            this.groupBox10.Controls.Add(this.button20);
-            this.groupBox10.Controls.Add(this.comboBox26);
+            this.groupBox10.Controls.Add(this.btnUnstoreDelivery);
+            this.groupBox10.Controls.Add(this.btnStore);
+            this.groupBox10.Controls.Add(this.comboBoxCooseFromProducedProducts);
             this.groupBox10.Controls.Add(this.label36);
             this.groupBox10.Location = new System.Drawing.Point(40, 29);
             this.groupBox10.Margin = new System.Windows.Forms.Padding(4);
@@ -1772,36 +1764,36 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Storage";
             // 
-            // dateTimePicker4
+            // dateTimePickerExpectedDeliveryDate
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(1148, 658);
-            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(384, 31);
-            this.dateTimePicker4.TabIndex = 22;
+            this.dateTimePickerExpectedDeliveryDate.Location = new System.Drawing.Point(1149, 578);
+            this.dateTimePickerExpectedDeliveryDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePickerExpectedDeliveryDate.Name = "dateTimePickerExpectedDeliveryDate";
+            this.dateTimePickerExpectedDeliveryDate.Size = new System.Drawing.Size(384, 31);
+            this.dateTimePickerExpectedDeliveryDate.TabIndex = 22;
             // 
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(904, 661);
+            this.label45.Location = new System.Drawing.Point(905, 581);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(237, 25);
             this.label45.TabIndex = 21;
             this.label45.Text = "Expected Delivery Date";
             // 
-            // listView4
+            // listViewStorage
             // 
-            this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewStorage.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader7,
             this.columnHeader8,
             this.columnHeader9,
             this.columnHeader10});
-            this.listView4.Location = new System.Drawing.Point(57, 46);
-            this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(1471, 504);
-            this.listView4.TabIndex = 20;
-            this.listView4.UseCompatibleStateImageBehavior = false;
-            this.listView4.View = System.Windows.Forms.View.Details;
+            this.listViewStorage.Location = new System.Drawing.Point(57, 46);
+            this.listViewStorage.Name = "listViewStorage";
+            this.listViewStorage.Size = new System.Drawing.Size(1471, 504);
+            this.listViewStorage.TabIndex = 20;
+            this.listViewStorage.UseCompatibleStateImageBehavior = false;
+            this.listViewStorage.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader7
             // 
@@ -1825,7 +1817,7 @@
             // 
             // dateTimePicker3
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(376, 808);
+            this.dateTimePicker3.Location = new System.Drawing.Point(374, 763);
             this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(384, 31);
@@ -1834,58 +1826,21 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(52, 812);
+            this.label41.Location = new System.Drawing.Point(52, 768);
             this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(106, 25);
             this.label41.TabIndex = 18;
             this.label41.Text = "Valid until";
             // 
-            // dateTimePicker2
+            // textBoxGeneratePalletID
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(376, 760);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(384, 31);
-            this.dateTimePicker2.TabIndex = 17;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(52, 765);
-            this.label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(104, 25);
-            this.label40.TabIndex = 16;
-            this.label40.Text = "Produced";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(904, 579);
-            this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(166, 25);
-            this.label42.TabIndex = 15;
-            this.label42.Text = "Choose Product";
-            // 
-            // comboBox27
-            // 
-            this.comboBox27.FormattingEnabled = true;
-            this.comboBox27.Location = new System.Drawing.Point(1148, 579);
-            this.comboBox27.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox27.Name = "comboBox27";
-            this.comboBox27.Size = new System.Drawing.Size(380, 33);
-            this.comboBox27.TabIndex = 14;
-            // 
-            // textBox21
-            // 
-            this.textBox21.Enabled = false;
-            this.textBox21.Location = new System.Drawing.Point(376, 658);
-            this.textBox21.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(386, 31);
-            this.textBox21.TabIndex = 13;
+            this.textBoxGeneratePalletID.Enabled = false;
+            this.textBoxGeneratePalletID.Location = new System.Drawing.Point(376, 658);
+            this.textBoxGeneratePalletID.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxGeneratePalletID.Name = "textBoxGeneratePalletID";
+            this.textBoxGeneratePalletID.Size = new System.Drawing.Size(386, 31);
+            this.textBoxGeneratePalletID.TabIndex = 13;
             // 
             // button22
             // 
@@ -1897,34 +1852,34 @@
             this.button22.Text = "Generate PalletID";
             this.button22.UseVisualStyleBackColor = true;
             // 
-            // button21
+            // btnUnstoreDelivery
             // 
-            this.button21.Location = new System.Drawing.Point(909, 738);
-            this.button21.Margin = new System.Windows.Forms.Padding(4);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(618, 40);
-            this.button21.TabIndex = 8;
-            this.button21.Text = "Unstore and Delivery";
-            this.button21.UseVisualStyleBackColor = true;
+            this.btnUnstoreDelivery.Location = new System.Drawing.Point(915, 637);
+            this.btnUnstoreDelivery.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUnstoreDelivery.Name = "btnUnstoreDelivery";
+            this.btnUnstoreDelivery.Size = new System.Drawing.Size(618, 40);
+            this.btnUnstoreDelivery.TabIndex = 8;
+            this.btnUnstoreDelivery.Text = "Unstore and Delivery";
+            this.btnUnstoreDelivery.UseVisualStyleBackColor = true;
             // 
-            // button20
+            // btnStore
             // 
-            this.button20.Location = new System.Drawing.Point(54, 885);
-            this.button20.Margin = new System.Windows.Forms.Padding(4);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(704, 40);
-            this.button20.TabIndex = 7;
-            this.button20.Text = "Store";
-            this.button20.UseVisualStyleBackColor = true;
+            this.btnStore.Location = new System.Drawing.Point(56, 839);
+            this.btnStore.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStore.Name = "btnStore";
+            this.btnStore.Size = new System.Drawing.Size(704, 40);
+            this.btnStore.TabIndex = 7;
+            this.btnStore.Text = "Store";
+            this.btnStore.UseVisualStyleBackColor = true;
             // 
-            // comboBox26
+            // comboBoxCooseFromProducedProducts
             // 
-            this.comboBox26.FormattingEnabled = true;
-            this.comboBox26.Location = new System.Drawing.Point(380, 579);
-            this.comboBox26.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox26.Name = "comboBox26";
-            this.comboBox26.Size = new System.Drawing.Size(384, 33);
-            this.comboBox26.TabIndex = 2;
+            this.comboBoxCooseFromProducedProducts.FormattingEnabled = true;
+            this.comboBoxCooseFromProducedProducts.Location = new System.Drawing.Point(380, 579);
+            this.comboBoxCooseFromProducedProducts.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxCooseFromProducedProducts.Name = "comboBoxCooseFromProducedProducts";
+            this.comboBoxCooseFromProducedProducts.Size = new System.Drawing.Size(384, 33);
+            this.comboBoxCooseFromProducedProducts.TabIndex = 2;
             // 
             // label36
             // 
@@ -2583,20 +2538,16 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.ComboBox comboBox26;
+        private System.Windows.Forms.ComboBox comboBoxCooseFromProducedProducts;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.ListView listViewProducedProducts;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.ComboBox comboBox27;
-        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.TextBox textBoxGeneratePalletID;
         private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button btnUnstoreDelivery;
+        private System.Windows.Forms.Button btnStore;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label40;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -2609,12 +2560,12 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ListView listView4;
+        private System.Windows.Forms.ListView listViewStorage;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.DateTimePicker dateTimePickerExpectedDeliveryDate;
         private System.Windows.Forms.Label label45;
         private CreateCookieDataSet createCookieDataSet;
         private System.Windows.Forms.BindingSource customerBindingSource;
