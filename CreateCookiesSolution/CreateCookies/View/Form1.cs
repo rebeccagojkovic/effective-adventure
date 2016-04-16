@@ -22,6 +22,10 @@ namespace CreateCookies
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'createCookiesDataSet1.Customer' table. You can move, or remove it, as needed.
+            this.customerTableAdapter2.Fill(this.createCookiesDataSet1.Customer);
+            // TODO: This line of code loads data into the 'createCookieDataSet1.Customer' table. You can move, or remove it, as needed.
+            this.customerTableAdapter1.Fill(this.createCookieDataSet1.Customer);
             // TODO: This line of code loads data into the 'createCookieDataSet.Customer' table. You can move, or remove it, as needed.
             this.customerTableAdapter.Fill(this.createCookieDataSet.Customer);
             // TODO: This line of code loads data into the 'createCookiesDataSet.Orderspecification' table. You can move, or remove it, as needed.
@@ -60,7 +64,7 @@ namespace CreateCookies
 
 
 
-        private void NewCustomer_Click(object sender, EventArgs e)
+        private void btnNewCustomer_Click(object sender, EventArgs e)
         {
             textBoxCnumber.Clear();
             textBoxCname.Clear();
@@ -70,6 +74,8 @@ namespace CreateCookies
             textBoxCemail.Clear();
             textBoxCnumber.Focus();
         }
+
+        
     }
 }
 

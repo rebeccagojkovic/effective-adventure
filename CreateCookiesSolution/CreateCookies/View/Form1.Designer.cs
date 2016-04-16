@@ -123,35 +123,37 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label43 = new System.Windows.Forms.Label();
-            this.comboBox20 = new System.Windows.Forms.ComboBox();
-            this.button14 = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.comboBoxOCnumber = new System.Windows.Forms.ComboBox();
+            this.customerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.createCookieDataSet1 = new CreateCookies.CreateCookieDataSet1();
+            this.btnSeeOrders = new System.Windows.Forms.Button();
+            this.listViewCustomersOrders = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.button17 = new System.Windows.Forms.Button();
-            this.comboBox23 = new System.Windows.Forms.ComboBox();
+            this.btnDeleteCustomer = new System.Windows.Forms.Button();
+            this.comboBoxDCnumber = new System.Windows.Forms.ComboBox();
+            this.customerBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.createCookiesDataSet1 = new CreateCookies.CreateCookiesDataSet1();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.comboBox22 = new System.Windows.Forms.ComboBox();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.createCookieDataSet = new CreateCookies.CreateCookieDataSet();
+            this.comboBoxUCnumber = new System.Windows.Forms.ComboBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.comboBox21 = new System.Windows.Forms.ComboBox();
-            this.button15 = new System.Windows.Forms.Button();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.button16 = new System.Windows.Forms.Button();
+            this.comboBoxUCcountry = new System.Windows.Forms.ComboBox();
+            this.btnUppdateCustomer = new System.Windows.Forms.Button();
+            this.textBoxUCemail = new System.Windows.Forms.TextBox();
+            this.textBoxUCpostaladdress = new System.Windows.Forms.TextBox();
+            this.textBoxUCaddress = new System.Windows.Forms.TextBox();
+            this.textBoxUCname = new System.Windows.Forms.TextBox();
+            this.btnSearchCustomer = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.NewCustomer = new System.Windows.Forms.Button();
+            this.btnNewCustomer = new System.Windows.Forms.Button();
             this.comboBoxCcountry = new System.Windows.Forms.ComboBox();
             this.buttonRegCustomer = new System.Windows.Forms.Button();
             this.textBoxCemail = new System.Windows.Forms.TextBox();
@@ -186,6 +188,8 @@
             this.button20 = new System.Windows.Forms.Button();
             this.comboBox26 = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.createCookieDataSet = new CreateCookies.CreateCookieDataSet();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -228,6 +232,8 @@
             this.ingredientTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.IngredientTableAdapter();
             this.orderspecificationTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.OrderspecificationTableAdapter();
             this.customerTableAdapter = new CreateCookies.CreateCookieDataSetTableAdapters.CustomerTableAdapter();
+            this.customerTableAdapter1 = new CreateCookies.CreateCookieDataSet1TableAdapters.CustomerTableAdapter();
+            this.customerTableAdapter2 = new CreateCookies.CreateCookiesDataSet1TableAdapters.CustomerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).BeginInit();
@@ -251,13 +257,17 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookieDataSet1)).BeginInit();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet1)).BeginInit();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createCookieDataSet)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookieDataSet)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource1)).BeginInit();
@@ -955,7 +965,6 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Order control";
-         
             // 
             // findOrderToolStrip
             // 
@@ -1221,14 +1230,14 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.label43);
-            this.groupBox7.Controls.Add(this.comboBox20);
-            this.groupBox7.Controls.Add(this.button14);
-            this.groupBox7.Controls.Add(this.listView2);
+            this.groupBox7.Controls.Add(this.comboBoxOCnumber);
+            this.groupBox7.Controls.Add(this.btnSeeOrders);
+            this.groupBox7.Controls.Add(this.listViewCustomersOrders);
             this.groupBox7.Location = new System.Drawing.Point(52, 567);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox7.Size = new System.Drawing.Size(1532, 431);
+            this.groupBox7.Size = new System.Drawing.Size(1530, 431);
             this.groupBox7.TabIndex = 19;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Customer\'s Orders";
@@ -1243,58 +1252,71 @@
             this.label43.TabIndex = 15;
             this.label43.Text = "Choose Customer ";
             // 
-            // comboBox20
+            // comboBoxOCnumber
             // 
-            this.comboBox20.FormattingEnabled = true;
-            this.comboBox20.Location = new System.Drawing.Point(233, 361);
-            this.comboBox20.Name = "comboBox20";
-            this.comboBox20.Size = new System.Drawing.Size(220, 33);
-            this.comboBox20.TabIndex = 2;
+            this.comboBoxOCnumber.DataSource = this.customerBindingSource1;
+            this.comboBoxOCnumber.FormattingEnabled = true;
+            this.comboBoxOCnumber.Location = new System.Drawing.Point(233, 361);
+            this.comboBoxOCnumber.Name = "comboBoxOCnumber";
+            this.comboBoxOCnumber.Size = new System.Drawing.Size(220, 33);
+            this.comboBoxOCnumber.TabIndex = 2;
             // 
-            // button14
+            // customerBindingSource1
             // 
-            this.button14.Location = new System.Drawing.Point(461, 351);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(195, 50);
-            this.button14.TabIndex = 1;
-            this.button14.Text = "See orders";
-            this.button14.UseVisualStyleBackColor = true;
+            this.customerBindingSource1.DataMember = "Customer";
+            this.customerBindingSource1.DataSource = this.createCookieDataSet1;
             // 
-            // listView2
+            // createCookieDataSet1
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.createCookieDataSet1.DataSetName = "CreateCookieDataSet1";
+            this.createCookieDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnSeeOrders
+            // 
+            this.btnSeeOrders.Location = new System.Drawing.Point(461, 351);
+            this.btnSeeOrders.Name = "btnSeeOrders";
+            this.btnSeeOrders.Size = new System.Drawing.Size(195, 50);
+            this.btnSeeOrders.TabIndex = 1;
+            this.btnSeeOrders.Text = "See orders";
+            this.btnSeeOrders.UseVisualStyleBackColor = true;
+            // 
+            // listViewCustomersOrders
+            // 
+            this.listViewCustomersOrders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
-            this.listView2.Enabled = false;
-            this.listView2.Location = new System.Drawing.Point(16, 31);
-            this.listView2.Margin = new System.Windows.Forms.Padding(4);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(1500, 304);
-            this.listView2.TabIndex = 0;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.listViewCustomersOrders.Enabled = false;
+            this.listViewCustomersOrders.Location = new System.Drawing.Point(16, 31);
+            this.listViewCustomersOrders.Margin = new System.Windows.Forms.Padding(4);
+            this.listViewCustomersOrders.Name = "listViewCustomersOrders";
+            this.listViewCustomersOrders.Size = new System.Drawing.Size(1496, 304);
+            this.listViewCustomersOrders.TabIndex = 0;
+            this.listViewCustomersOrders.UseCompatibleStateImageBehavior = false;
+            this.listViewCustomersOrders.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Order Number";
-            this.columnHeader1.Width = 172;
+            this.columnHeader1.Width = 200;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Is Delivered";
-            this.columnHeader2.Width = 160;
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 200;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Customer\'s Number";
-            this.columnHeader3.Width = 224;
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 200;
             // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.label34);
-            this.groupBox6.Controls.Add(this.button17);
-            this.groupBox6.Controls.Add(this.comboBox23);
+            this.groupBox6.Controls.Add(this.btnDeleteCustomer);
+            this.groupBox6.Controls.Add(this.comboBoxDCnumber);
             this.groupBox6.Location = new System.Drawing.Point(1104, 46);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
@@ -1314,36 +1336,47 @@
             this.label34.TabIndex = 30;
             this.label34.Text = "Choose Customer";
             // 
-            // button17
+            // btnDeleteCustomer
             // 
-            this.button17.Location = new System.Drawing.Point(16, 133);
-            this.button17.Margin = new System.Windows.Forms.Padding(4);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(444, 44);
-            this.button17.TabIndex = 30;
-            this.button17.Text = "Delete Customer";
-            this.button17.UseVisualStyleBackColor = true;
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(16, 133);
+            this.btnDeleteCustomer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteCustomer.Name = "btnDeleteCustomer";
+            this.btnDeleteCustomer.Size = new System.Drawing.Size(444, 44);
+            this.btnDeleteCustomer.TabIndex = 30;
+            this.btnDeleteCustomer.Text = "Delete Customer";
+            this.btnDeleteCustomer.UseVisualStyleBackColor = true;
             // 
-            // comboBox23
+            // comboBoxDCnumber
             // 
-            this.comboBox23.FormattingEnabled = true;
-            this.comboBox23.Location = new System.Drawing.Point(222, 65);
-            this.comboBox23.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox23.Name = "comboBox23";
-            this.comboBox23.Size = new System.Drawing.Size(238, 33);
-            this.comboBox23.TabIndex = 0;
+            this.comboBoxDCnumber.DataSource = this.customerBindingSource2;
+            this.comboBoxDCnumber.FormattingEnabled = true;
+            this.comboBoxDCnumber.Location = new System.Drawing.Point(222, 65);
+            this.comboBoxDCnumber.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxDCnumber.Name = "comboBoxDCnumber";
+            this.comboBoxDCnumber.Size = new System.Drawing.Size(238, 33);
+            this.comboBoxDCnumber.TabIndex = 0;
+            // 
+            // customerBindingSource2
+            // 
+            this.customerBindingSource2.DataMember = "Customer";
+            this.customerBindingSource2.DataSource = this.createCookiesDataSet1;
+            // 
+            // createCookiesDataSet1
+            // 
+            this.createCookiesDataSet1.DataSetName = "CreateCookiesDataSet1";
+            this.createCookiesDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.comboBox22);
+            this.groupBox5.Controls.Add(this.comboBoxUCnumber);
             this.groupBox5.Controls.Add(this.label33);
-            this.groupBox5.Controls.Add(this.comboBox21);
-            this.groupBox5.Controls.Add(this.button15);
-            this.groupBox5.Controls.Add(this.textBox15);
-            this.groupBox5.Controls.Add(this.textBox17);
-            this.groupBox5.Controls.Add(this.textBox18);
-            this.groupBox5.Controls.Add(this.textBox19);
-            this.groupBox5.Controls.Add(this.button16);
+            this.groupBox5.Controls.Add(this.comboBoxUCcountry);
+            this.groupBox5.Controls.Add(this.btnUppdateCustomer);
+            this.groupBox5.Controls.Add(this.textBoxUCemail);
+            this.groupBox5.Controls.Add(this.textBoxUCpostaladdress);
+            this.groupBox5.Controls.Add(this.textBoxUCaddress);
+            this.groupBox5.Controls.Add(this.textBoxUCname);
+            this.groupBox5.Controls.Add(this.btnSearchCustomer);
             this.groupBox5.Controls.Add(this.label28);
             this.groupBox5.Controls.Add(this.label29);
             this.groupBox5.Controls.Add(this.label30);
@@ -1358,27 +1391,17 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Search/Update Customer";
             // 
-            // comboBox22
+            // comboBoxUCnumber
             // 
-            this.comboBox22.DataSource = this.customerBindingSource;
-            this.comboBox22.DisplayMember = "cNumber";
-            this.comboBox22.FormattingEnabled = true;
-            this.comboBox22.Location = new System.Drawing.Point(214, 40);
-            this.comboBox22.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox22.Name = "comboBox22";
-            this.comboBox22.Size = new System.Drawing.Size(234, 33);
-            this.comboBox22.TabIndex = 29;
-            this.comboBox22.ValueMember = "cNumber";
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "Customer";
-            this.customerBindingSource.DataSource = this.createCookieDataSet;
-            // 
-            // createCookieDataSet
-            // 
-            this.createCookieDataSet.DataSetName = "CreateCookieDataSet";
-            this.createCookieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.comboBoxUCnumber.DataSource = this.customerBindingSource2;
+            this.comboBoxUCnumber.DisplayMember = "cNumber";
+            this.comboBoxUCnumber.FormattingEnabled = true;
+            this.comboBoxUCnumber.Location = new System.Drawing.Point(214, 40);
+            this.comboBoxUCnumber.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxUCnumber.Name = "comboBoxUCnumber";
+            this.comboBoxUCnumber.Size = new System.Drawing.Size(234, 33);
+            this.comboBoxUCnumber.TabIndex = 29;
+            this.comboBoxUCnumber.ValueMember = "cNumber";
             // 
             // label33
             // 
@@ -1390,66 +1413,72 @@
             this.label33.TabIndex = 28;
             this.label33.Text = "Customer\'s Number";
             // 
-            // comboBox21
+            // comboBoxUCcountry
             // 
-            this.comboBox21.FormattingEnabled = true;
-            this.comboBox21.Location = new System.Drawing.Point(214, 287);
-            this.comboBox21.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox21.Name = "comboBox21";
-            this.comboBox21.Size = new System.Drawing.Size(234, 33);
-            this.comboBox21.TabIndex = 27;
+            this.comboBoxUCcountry.FormattingEnabled = true;
+            this.comboBoxUCcountry.Items.AddRange(new object[] {
+            "Sweden",
+            "Norrway",
+            "Finland",
+            "Denmark",
+            "Iceland"});
+            this.comboBoxUCcountry.Location = new System.Drawing.Point(214, 287);
+            this.comboBoxUCcountry.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxUCcountry.Name = "comboBoxUCcountry";
+            this.comboBoxUCcountry.Size = new System.Drawing.Size(234, 33);
+            this.comboBoxUCcountry.TabIndex = 27;
             // 
-            // button15
+            // btnUppdateCustomer
             // 
-            this.button15.Location = new System.Drawing.Point(12, 429);
-            this.button15.Margin = new System.Windows.Forms.Padding(4);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(436, 44);
-            this.button15.TabIndex = 26;
-            this.button15.Text = "Update Customer";
-            this.button15.UseVisualStyleBackColor = true;
+            this.btnUppdateCustomer.Location = new System.Drawing.Point(12, 429);
+            this.btnUppdateCustomer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUppdateCustomer.Name = "btnUppdateCustomer";
+            this.btnUppdateCustomer.Size = new System.Drawing.Size(436, 44);
+            this.btnUppdateCustomer.TabIndex = 26;
+            this.btnUppdateCustomer.Text = "Update Customer";
+            this.btnUppdateCustomer.UseVisualStyleBackColor = true;
             // 
-            // textBox15
+            // textBoxUCemail
             // 
-            this.textBox15.Location = new System.Drawing.Point(214, 338);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(234, 31);
-            this.textBox15.TabIndex = 25;
+            this.textBoxUCemail.Location = new System.Drawing.Point(214, 338);
+            this.textBoxUCemail.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxUCemail.Name = "textBoxUCemail";
+            this.textBoxUCemail.Size = new System.Drawing.Size(234, 31);
+            this.textBoxUCemail.TabIndex = 25;
             // 
-            // textBox17
+            // textBoxUCpostaladdress
             // 
-            this.textBox17.Location = new System.Drawing.Point(214, 240);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(234, 31);
-            this.textBox17.TabIndex = 24;
+            this.textBoxUCpostaladdress.Location = new System.Drawing.Point(214, 240);
+            this.textBoxUCpostaladdress.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxUCpostaladdress.Name = "textBoxUCpostaladdress";
+            this.textBoxUCpostaladdress.Size = new System.Drawing.Size(234, 31);
+            this.textBoxUCpostaladdress.TabIndex = 24;
             // 
-            // textBox18
+            // textBoxUCaddress
             // 
-            this.textBox18.Location = new System.Drawing.Point(214, 188);
-            this.textBox18.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(234, 31);
-            this.textBox18.TabIndex = 23;
+            this.textBoxUCaddress.Location = new System.Drawing.Point(214, 188);
+            this.textBoxUCaddress.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxUCaddress.Name = "textBoxUCaddress";
+            this.textBoxUCaddress.Size = new System.Drawing.Size(234, 31);
+            this.textBoxUCaddress.TabIndex = 23;
             // 
-            // textBox19
+            // textBoxUCname
             // 
-            this.textBox19.Location = new System.Drawing.Point(214, 146);
-            this.textBox19.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(234, 31);
-            this.textBox19.TabIndex = 22;
+            this.textBoxUCname.Location = new System.Drawing.Point(214, 146);
+            this.textBoxUCname.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxUCname.Name = "textBoxUCname";
+            this.textBoxUCname.Size = new System.Drawing.Size(234, 31);
+            this.textBoxUCname.TabIndex = 22;
             // 
-            // button16
+            // btnSearchCustomer
             // 
-            this.button16.Location = new System.Drawing.Point(214, 90);
-            this.button16.Margin = new System.Windows.Forms.Padding(4);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(234, 40);
-            this.button16.TabIndex = 20;
-            this.button16.Text = "Search Customer";
-            this.button16.UseVisualStyleBackColor = true;
+            this.btnSearchCustomer.Location = new System.Drawing.Point(214, 90);
+            this.btnSearchCustomer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearchCustomer.Name = "btnSearchCustomer";
+            this.btnSearchCustomer.Size = new System.Drawing.Size(234, 40);
+            this.btnSearchCustomer.TabIndex = 20;
+            this.btnSearchCustomer.Text = "Search Customer";
+            this.btnSearchCustomer.UseVisualStyleBackColor = true;
             // 
             // label28
             // 
@@ -1503,7 +1532,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.NewCustomer);
+            this.groupBox4.Controls.Add(this.btnNewCustomer);
             this.groupBox4.Controls.Add(this.comboBoxCcountry);
             this.groupBox4.Controls.Add(this.buttonRegCustomer);
             this.groupBox4.Controls.Add(this.textBoxCemail);
@@ -1526,16 +1555,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Register New Customer";
             // 
-            // NewCustomer
+            // btnNewCustomer
             // 
-            this.NewCustomer.Location = new System.Drawing.Point(16, 409);
-            this.NewCustomer.Margin = new System.Windows.Forms.Padding(4);
-            this.NewCustomer.Name = "NewCustomer";
-            this.NewCustomer.Size = new System.Drawing.Size(444, 44);
-            this.NewCustomer.TabIndex = 15;
-            this.NewCustomer.Text = "New Customer";
-            this.NewCustomer.UseVisualStyleBackColor = true;
-            this.NewCustomer.Click += new System.EventHandler(this.NewCustomer_Click);
+            this.btnNewCustomer.Location = new System.Drawing.Point(16, 409);
+            this.btnNewCustomer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNewCustomer.Name = "btnNewCustomer";
+            this.btnNewCustomer.Size = new System.Drawing.Size(444, 44);
+            this.btnNewCustomer.TabIndex = 15;
+            this.btnNewCustomer.Text = "New Customer";
+            this.btnNewCustomer.UseVisualStyleBackColor = true;
             // 
             // comboBoxCcountry
             // 
@@ -1602,7 +1630,6 @@
             this.textBoxCnumber.Name = "textBoxCnumber";
             this.textBoxCnumber.Size = new System.Drawing.Size(234, 31);
             this.textBoxCnumber.TabIndex = 7;
-           
             // 
             // button13
             // 
@@ -1865,6 +1892,16 @@
             this.label36.Size = new System.Drawing.Size(319, 25);
             this.label36.TabIndex = 1;
             this.label36.Text = "Choose from produced products";
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "Customer";
+            this.customerBindingSource.DataSource = this.createCookieDataSet;
+            // 
+            // createCookieDataSet
+            // 
+            this.createCookieDataSet.DataSetName = "CreateCookieDataSet";
+            this.createCookieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label5
             // 
@@ -2202,6 +2239,14 @@
             // 
             this.customerTableAdapter.ClearBeforeFill = true;
             // 
+            // customerTableAdapter1
+            // 
+            this.customerTableAdapter1.ClearBeforeFill = true;
+            // 
+            // customerTableAdapter2
+            // 
+            this.customerTableAdapter2.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -2244,17 +2289,21 @@
             this.tabPage1.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookieDataSet1)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet1)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createCookieDataSet)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookieDataSet)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource1)).EndInit();
@@ -2388,25 +2437,25 @@
         private System.Windows.Forms.TextBox textBoxCname;
         private System.Windows.Forms.Button buttonRegCustomer;
         private System.Windows.Forms.ComboBox comboBoxCcountry;
-        private System.Windows.Forms.ComboBox comboBox21;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.ComboBox comboBoxUCcountry;
+        private System.Windows.Forms.Button btnUppdateCustomer;
+        private System.Windows.Forms.TextBox textBoxUCemail;
+        private System.Windows.Forms.TextBox textBoxUCpostaladdress;
+        private System.Windows.Forms.TextBox textBoxUCaddress;
+        private System.Windows.Forms.TextBox textBoxUCname;
+        private System.Windows.Forms.Button btnSearchCustomer;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.ComboBox comboBox22;
+        private System.Windows.Forms.ComboBox comboBoxUCnumber;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView listViewCustomersOrders;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.ComboBox comboBox23;
+        private System.Windows.Forms.Button btnDeleteCustomer;
+        private System.Windows.Forms.ComboBox comboBoxDCnumber;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.BindingSource ingredientBindingSource1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
@@ -2444,8 +2493,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.ComboBox comboBox20;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.ComboBox comboBoxOCnumber;
+        private System.Windows.Forms.Button btnSeeOrders;
         private System.Windows.Forms.ComboBox comboBox29;
         private System.Windows.Forms.ComboBox comboBox28;
         private System.Windows.Forms.Label label44;
@@ -2462,7 +2511,13 @@
         private CreateCookieDataSet createCookieDataSet;
         private System.Windows.Forms.BindingSource customerBindingSource;
         private CreateCookieDataSetTableAdapters.CustomerTableAdapter customerTableAdapter;
-        private System.Windows.Forms.Button NewCustomer;
+        private System.Windows.Forms.Button btnNewCustomer;
+        private CreateCookieDataSet1 createCookieDataSet1;
+        private System.Windows.Forms.BindingSource customerBindingSource1;
+        private CreateCookieDataSet1TableAdapters.CustomerTableAdapter customerTableAdapter1;
+        private CreateCookiesDataSet1 createCookiesDataSet1;
+        private System.Windows.Forms.BindingSource customerBindingSource2;
+        private CreateCookiesDataSet1TableAdapters.CustomerTableAdapter customerTableAdapter2;
     }
 }
 

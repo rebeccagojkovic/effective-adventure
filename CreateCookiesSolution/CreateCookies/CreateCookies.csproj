@@ -69,10 +69,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateCookieDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CreateCookieDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateCookieDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CreateCookiesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateCookiesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CreateCookiesDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateCookiesDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Database.cs" />
@@ -132,6 +142,17 @@
     <None Include="CreateCookieDataSet.xss">
       <DependentUpon>CreateCookieDataSet.xsd</DependentUpon>
     </None>
+    <None Include="CreateCookieDataSet1.xsc">
+      <DependentUpon>CreateCookieDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CreateCookieDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CreateCookieDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CreateCookieDataSet1.xss">
+      <DependentUpon>CreateCookieDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="CreateCookiesDataSet.xsc">
       <DependentUpon>CreateCookiesDataSet.xsd</DependentUpon>
     </None>
@@ -142,6 +163,17 @@
     </None>
     <None Include="CreateCookiesDataSet.xss">
       <DependentUpon>CreateCookiesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CreateCookiesDataSet1.xsc">
+      <DependentUpon>CreateCookiesDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CreateCookiesDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CreateCookiesDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CreateCookiesDataSet1.xss">
+      <DependentUpon>CreateCookiesDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
