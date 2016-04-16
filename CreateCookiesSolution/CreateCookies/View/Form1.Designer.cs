@@ -233,13 +233,19 @@
             this.customerTableAdapter = new CreateCookies.CreateCookieDataSetTableAdapters.CustomerTableAdapter();
             this.customerTableAdapter1 = new CreateCookies.CreateCookieDataSet1TableAdapters.CustomerTableAdapter();
             this.customerTableAdapter2 = new CreateCookies.CreateCookiesDataSet1TableAdapters.CustomerTableAdapter();
-            this.comboBoxIngredient = new System.Windows.Forms.ComboBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productDataSet = new CreateCookies.productDataSet();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productTableAdapter = new CreateCookies.productDataSetTableAdapters.ProductTableAdapter();
+            this.ordeDataSet = new CreateCookies.OrdeDataSet();
+            this.ordeBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.ordeTableAdapter1 = new CreateCookies.OrdeDataSetTableAdapters.OrdeTableAdapter();
+            this.textBoxAddIngredient = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).BeginInit();
@@ -280,6 +286,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // ingredientBindingSource
@@ -321,7 +331,7 @@
             // 
             // groupBox12
             // 
-            this.groupBox12.Controls.Add(this.comboBoxIngredient);
+            this.groupBox12.Controls.Add(this.textBoxAddIngredient);
             this.groupBox12.Controls.Add(this.comboBoxSlocation);
             this.groupBox12.Controls.Add(this.btnAddSupplier);
             this.groupBox12.Controls.Add(this.textBoxSupplierName);
@@ -340,6 +350,12 @@
             // comboBoxSlocation
             // 
             this.comboBoxSlocation.FormattingEnabled = true;
+            this.comboBoxSlocation.Items.AddRange(new object[] {
+            "Denmark",
+            "Finland ",
+            "Iceland",
+            "Norrway",
+            "Sweden"});
             this.comboBoxSlocation.Location = new System.Drawing.Point(296, 149);
             this.comboBoxSlocation.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxSlocation.Name = "comboBoxSlocation";
@@ -857,6 +873,27 @@
             // comboBoxPalletAmount
             // 
             this.comboBoxPalletAmount.FormattingEnabled = true;
+            this.comboBoxPalletAmount.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
             this.comboBoxPalletAmount.Location = new System.Drawing.Point(360, 179);
             this.comboBoxPalletAmount.Name = "comboBoxPalletAmount";
             this.comboBoxPalletAmount.Size = new System.Drawing.Size(370, 33);
@@ -864,6 +901,8 @@
             // 
             // comboBoxProductToProduce
             // 
+            this.comboBoxProductToProduce.DataSource = this.productBindingSource;
+            this.comboBoxProductToProduce.DisplayMember = "pName";
             this.comboBoxProductToProduce.FormattingEnabled = true;
             this.comboBoxProductToProduce.Location = new System.Drawing.Point(360, 97);
             this.comboBoxProductToProduce.Name = "comboBoxProductToProduce";
@@ -882,7 +921,7 @@
             // 
             // btnProduce
             // 
-            this.btnProduce.Location = new System.Drawing.Point(360, 370);
+            this.btnProduce.Location = new System.Drawing.Point(360, 324);
             this.btnProduce.Margin = new System.Windows.Forms.Padding(4);
             this.btnProduce.Name = "btnProduce";
             this.btnProduce.Size = new System.Drawing.Size(370, 47);
@@ -957,7 +996,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(926, 140);
+            this.groupBox3.Size = new System.Drawing.Size(926, 158);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Delete Order";
@@ -974,6 +1013,8 @@
             // 
             // comboBoxChooseOrder
             // 
+            this.comboBoxChooseOrder.DataSource = this.ordeBindingSource;
+            this.comboBoxChooseOrder.DisplayMember = "oNumber";
             this.comboBoxChooseOrder.FormattingEnabled = true;
             this.comboBoxChooseOrder.Location = new System.Drawing.Point(234, 31);
             this.comboBoxChooseOrder.Margin = new System.Windows.Forms.Padding(4);
@@ -1191,6 +1232,8 @@
             // 
             // comboBoxAOCnumber
             // 
+            this.comboBoxAOCnumber.DataSource = this.customerBindingSource2;
+            this.comboBoxAOCnumber.DisplayMember = "cNumber";
             this.comboBoxAOCnumber.FormattingEnabled = true;
             this.comboBoxAOCnumber.Location = new System.Drawing.Point(208, 398);
             this.comboBoxAOCnumber.Margin = new System.Windows.Forms.Padding(6);
@@ -1230,6 +1273,8 @@
             // 
             // comboBoxChooseCookies
             // 
+            this.comboBoxChooseCookies.DataSource = this.productBindingSource;
+            this.comboBoxChooseCookies.DisplayMember = "pName";
             this.comboBoxChooseCookies.FormattingEnabled = true;
             this.comboBoxChooseCookies.Location = new System.Drawing.Point(208, 119);
             this.comboBoxChooseCookies.Margin = new System.Windows.Forms.Padding(6);
@@ -1293,7 +1338,8 @@
             // 
             // comboBoxOCnumber
             // 
-            this.comboBoxOCnumber.DataSource = this.customerBindingSource1;
+            this.comboBoxOCnumber.DataSource = this.customerBindingSource2;
+            this.comboBoxOCnumber.DisplayMember = "cNumber";
             this.comboBoxOCnumber.FormattingEnabled = true;
             this.comboBoxOCnumber.Location = new System.Drawing.Point(233, 361);
             this.comboBoxOCnumber.Name = "comboBoxOCnumber";
@@ -1388,6 +1434,7 @@
             // comboBoxDCnumber
             // 
             this.comboBoxDCnumber.DataSource = this.customerBindingSource2;
+            this.comboBoxDCnumber.DisplayMember = "cNumber";
             this.comboBoxDCnumber.FormattingEnabled = true;
             this.comboBoxDCnumber.Location = new System.Drawing.Point(222, 65);
             this.comboBoxDCnumber.Margin = new System.Windows.Forms.Padding(4);
@@ -2245,15 +2292,6 @@
             // 
             this.customerTableAdapter2.ClearBeforeFill = true;
             // 
-            // comboBoxIngredient
-            // 
-            this.comboBoxIngredient.FormattingEnabled = true;
-            this.comboBoxIngredient.Location = new System.Drawing.Point(296, 57);
-            this.comboBoxIngredient.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxIngredient.Name = "comboBoxIngredient";
-            this.comboBoxIngredient.Size = new System.Drawing.Size(354, 33);
-            this.comboBoxIngredient.TabIndex = 15;
-            // 
             // label35
             // 
             this.label35.AutoSize = true;
@@ -2310,6 +2348,42 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "iQuantityInStock";
             this.dataGridViewTextBoxColumn6.HeaderText = "QuantityInStock (g)";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // productDataSet
+            // 
+            this.productDataSet.DataSetName = "productDataSet";
+            this.productDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataMember = "Product";
+            this.productBindingSource.DataSource = this.productDataSet;
+            // 
+            // productTableAdapter
+            // 
+            this.productTableAdapter.ClearBeforeFill = true;
+            // 
+            // ordeDataSet
+            // 
+            this.ordeDataSet.DataSetName = "OrdeDataSet";
+            this.ordeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ordeBindingSource3
+            // 
+            this.ordeBindingSource3.DataMember = "Orde";
+            this.ordeBindingSource3.DataSource = this.ordeDataSet;
+            // 
+            // ordeTableAdapter1
+            // 
+            this.ordeTableAdapter1.ClearBeforeFill = true;
+            // 
+            // textBoxAddIngredient
+            // 
+            this.textBoxAddIngredient.Location = new System.Drawing.Point(296, 54);
+            this.textBoxAddIngredient.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxAddIngredient.Name = "textBoxAddIngredient";
+            this.textBoxAddIngredient.Size = new System.Drawing.Size(354, 31);
+            this.textBoxAddIngredient.TabIndex = 15;
             // 
             // Form1
             // 
@@ -2375,6 +2449,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2584,13 +2662,19 @@
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.DateTimePicker dateTimePickerPProductTime;
         private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.ComboBox comboBoxIngredient;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private productDataSet productDataSet;
+        private System.Windows.Forms.BindingSource productBindingSource;
+        private productDataSetTableAdapters.ProductTableAdapter productTableAdapter;
+        private OrdeDataSet ordeDataSet;
+        private System.Windows.Forms.BindingSource ordeBindingSource3;
+        private OrdeDataSetTableAdapters.OrdeTableAdapter ordeTableAdapter1;
+        private System.Windows.Forms.TextBox textBoxAddIngredient;
     }
 }
 

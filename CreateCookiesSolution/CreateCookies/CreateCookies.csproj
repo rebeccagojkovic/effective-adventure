@@ -84,6 +84,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateCookiesDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CreateCookiesDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateCookiesDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Database.cs" />
     <Compile Include="Model\Ingredient.cs" />
@@ -93,6 +98,16 @@
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Recipe.cs" />
     <Compile Include="Model\Supplier.cs" />
+    <Compile Include="OrdeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="productDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>productDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="View\Customer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +189,39 @@
     </None>
     <None Include="CreateCookiesDataSet1.xss">
       <DependentUpon>CreateCookiesDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CreateCookiesDataSet2.xsc">
+      <DependentUpon>CreateCookiesDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CreateCookiesDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CreateCookiesDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CreateCookiesDataSet2.xss">
+      <DependentUpon>CreateCookiesDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="OrdeDataSet.xsc">
+      <DependentUpon>OrdeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OrdeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrdeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OrdeDataSet.xss">
+      <DependentUpon>OrdeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="productDataSet.xsc">
+      <DependentUpon>productDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="productDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>productDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="productDataSet.xss">
+      <DependentUpon>productDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
