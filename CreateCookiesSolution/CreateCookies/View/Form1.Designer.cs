@@ -234,13 +234,13 @@
             this.customerTableAdapter = new CreateCookies.CreateCookieDataSetTableAdapters.CustomerTableAdapter();
             this.customerTableAdapter1 = new CreateCookies.CreateCookieDataSet1TableAdapters.CustomerTableAdapter();
             this.customerTableAdapter2 = new CreateCookies.CreateCookiesDataSet1TableAdapters.CustomerTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewStorage = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label46 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerPProductTime = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).BeginInit();
@@ -279,7 +279,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStorage)).BeginInit();
             this.SuspendLayout();
             // 
             // ingredientBindingSource
@@ -809,10 +809,10 @@
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.dateTimePicker1);
+            this.groupBox9.Controls.Add(this.dateTimePickerPProductTime);
             this.groupBox9.Controls.Add(this.label47);
             this.groupBox9.Controls.Add(this.label46);
-            this.groupBox9.Controls.Add(this.dataGridView1);
+            this.groupBox9.Controls.Add(this.dataGridViewStorage);
             this.groupBox9.Controls.Add(this.comboBoxPalletAmount);
             this.groupBox9.Controls.Add(this.comboBoxProductToProduce);
             this.groupBox9.Controls.Add(this.label44);
@@ -2259,21 +2259,21 @@
             // 
             this.customerTableAdapter2.ClearBeforeFill = true;
             // 
-            // dataGridView1
+            // dataGridViewStorage
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewStorage.AutoGenerateColumns = false;
+            this.dataGridViewStorage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStorage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            this.dataGridView1.DataSource = this.ingredientBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(762, 88);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(742, 329);
-            this.dataGridView1.TabIndex = 6;
+            this.dataGridViewStorage.DataSource = this.ingredientBindingSource;
+            this.dataGridViewStorage.Location = new System.Drawing.Point(762, 88);
+            this.dataGridViewStorage.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridViewStorage.Name = "dataGridViewStorage";
+            this.dataGridViewStorage.RowTemplate.Height = 33;
+            this.dataGridViewStorage.Size = new System.Drawing.Size(742, 329);
+            this.dataGridViewStorage.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -2316,12 +2316,12 @@
             this.label47.TabIndex = 8;
             this.label47.Text = "Product time";
             // 
-            // dateTimePicker1
+            // dateTimePickerPProductTime
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(360, 255);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(370, 31);
-            this.dateTimePicker1.TabIndex = 9;
+            this.dateTimePickerPProductTime.Location = new System.Drawing.Point(360, 255);
+            this.dateTimePickerPProductTime.Name = "dateTimePickerPProductTime";
+            this.dateTimePickerPProductTime.Size = new System.Drawing.Size(370, 31);
+            this.dateTimePickerPProductTime.TabIndex = 9;
             // 
             // Form1
             // 
@@ -2384,7 +2384,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStorage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2595,12 +2595,12 @@
         private CreateCookiesDataSet1 createCookiesDataSet1;
         private System.Windows.Forms.BindingSource customerBindingSource2;
         private CreateCookiesDataSet1TableAdapters.CustomerTableAdapter customerTableAdapter2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewStorage;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerPProductTime;
         private System.Windows.Forms.Label label47;
     }
 }
