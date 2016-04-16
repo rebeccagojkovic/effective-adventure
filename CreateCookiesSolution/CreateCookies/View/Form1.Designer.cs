@@ -332,11 +332,11 @@
             this.groupBox12.Controls.Add(this.label37);
             this.groupBox12.Controls.Add(this.label38);
             this.groupBox12.Controls.Add(this.label39);
-            this.groupBox12.Location = new System.Drawing.Point(18, 712);
+            this.groupBox12.Location = new System.Drawing.Point(18, 734);
             this.groupBox12.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox12.Size = new System.Drawing.Size(742, 281);
+            this.groupBox12.Size = new System.Drawing.Size(742, 259);
             this.groupBox12.TabIndex = 17;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Register New Supplier";
@@ -344,7 +344,7 @@
             // comboBoxSlocation
             // 
             this.comboBoxSlocation.FormattingEnabled = true;
-            this.comboBoxSlocation.Location = new System.Drawing.Point(296, 167);
+            this.comboBoxSlocation.Location = new System.Drawing.Point(296, 149);
             this.comboBoxSlocation.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxSlocation.Name = "comboBoxSlocation";
             this.comboBoxSlocation.Size = new System.Drawing.Size(354, 33);
@@ -352,7 +352,7 @@
             // 
             // btnAddSupplier
             // 
-            this.btnAddSupplier.Location = new System.Drawing.Point(63, 225);
+            this.btnAddSupplier.Location = new System.Drawing.Point(63, 207);
             this.btnAddSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddSupplier.Name = "btnAddSupplier";
             this.btnAddSupplier.Size = new System.Drawing.Size(587, 44);
@@ -362,7 +362,7 @@
             // 
             // textBoxSupplierName
             // 
-            this.textBoxSupplierName.Location = new System.Drawing.Point(296, 124);
+            this.textBoxSupplierName.Location = new System.Drawing.Point(296, 106);
             this.textBoxSupplierName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSupplierName.Name = "textBoxSupplierName";
             this.textBoxSupplierName.Size = new System.Drawing.Size(354, 31);
@@ -371,7 +371,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(58, 78);
+            this.label37.Location = new System.Drawing.Point(58, 60);
             this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(151, 25);
@@ -381,7 +381,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(58, 130);
+            this.label38.Location = new System.Drawing.Point(58, 112);
             this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(168, 25);
@@ -391,7 +391,7 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(58, 170);
+            this.label39.Location = new System.Drawing.Point(58, 152);
             this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(94, 25);
@@ -886,10 +886,10 @@
             // 
             // btnProduce
             // 
-            this.btnProduce.Location = new System.Drawing.Point(360, 336);
+            this.btnProduce.Location = new System.Drawing.Point(360, 370);
             this.btnProduce.Margin = new System.Windows.Forms.Padding(4);
             this.btnProduce.Name = "btnProduce";
-            this.btnProduce.Size = new System.Drawing.Size(370, 65);
+            this.btnProduce.Size = new System.Drawing.Size(370, 47);
             this.btnProduce.TabIndex = 2;
             this.btnProduce.Text = "Produce";
             this.btnProduce.UseVisualStyleBackColor = true;
@@ -2293,7 +2293,7 @@
             // comboBoxIngredient
             // 
             this.comboBoxIngredient.FormattingEnabled = true;
-            this.comboBoxIngredient.Location = new System.Drawing.Point(296, 75);
+            this.comboBoxIngredient.Location = new System.Drawing.Point(296, 57);
             this.comboBoxIngredient.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxIngredient.Name = "comboBoxIngredient";
             this.comboBoxIngredient.Size = new System.Drawing.Size(354, 33);
@@ -2332,7 +2332,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(742, 279);
+            this.dataGridView1.Size = new System.Drawing.Size(742, 301);
             this.dataGridView1.TabIndex = 38;
             // 
             // dataGridViewTextBoxColumn4
