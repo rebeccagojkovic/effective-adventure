@@ -77,15 +77,15 @@
             this.iQuantityInStockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.listView3 = new System.Windows.Forms.ListView();
+            this.listViewProducedProducts = new System.Windows.Forms.ListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.comboBox29 = new System.Windows.Forms.ComboBox();
-            this.comboBox28 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPalletAmount = new System.Windows.Forms.ComboBox();
+            this.comboBoxProductToProduce = new System.Windows.Forms.ComboBox();
             this.label44 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
+            this.btnProduce = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -760,7 +760,7 @@
             // 
             // groupBox13
             // 
-            this.groupBox13.Controls.Add(this.listView3);
+            this.groupBox13.Controls.Add(this.listViewProducedProducts);
             this.groupBox13.Location = new System.Drawing.Point(40, 513);
             this.groupBox13.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox13.Name = "groupBox13";
@@ -770,19 +770,19 @@
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Produced products";
             // 
-            // listView3
+            // listViewProducedProducts
             // 
-            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewProducedProducts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
-            this.listView3.Location = new System.Drawing.Point(36, 58);
-            this.listView3.Margin = new System.Windows.Forms.Padding(4);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(1480, 409);
-            this.listView3.TabIndex = 0;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.Details;
+            this.listViewProducedProducts.Location = new System.Drawing.Point(36, 58);
+            this.listViewProducedProducts.Margin = new System.Windows.Forms.Padding(4);
+            this.listViewProducedProducts.Name = "listViewProducedProducts";
+            this.listViewProducedProducts.Size = new System.Drawing.Size(1480, 409);
+            this.listViewProducedProducts.TabIndex = 0;
+            this.listViewProducedProducts.UseCompatibleStateImageBehavior = false;
+            this.listViewProducedProducts.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader4
             // 
@@ -801,10 +801,10 @@
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.comboBox29);
-            this.groupBox9.Controls.Add(this.comboBox28);
+            this.groupBox9.Controls.Add(this.comboBoxPalletAmount);
+            this.groupBox9.Controls.Add(this.comboBoxProductToProduce);
             this.groupBox9.Controls.Add(this.label44);
-            this.groupBox9.Controls.Add(this.button11);
+            this.groupBox9.Controls.Add(this.btnProduce);
             this.groupBox9.Controls.Add(this.label20);
             this.groupBox9.Location = new System.Drawing.Point(40, 38);
             this.groupBox9.Margin = new System.Windows.Forms.Padding(4);
@@ -815,21 +815,21 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Production";
             // 
-            // comboBox29
+            // comboBoxPalletAmount
             // 
-            this.comboBox29.FormattingEnabled = true;
-            this.comboBox29.Location = new System.Drawing.Point(511, 213);
-            this.comboBox29.Name = "comboBox29";
-            this.comboBox29.Size = new System.Drawing.Size(303, 33);
-            this.comboBox29.TabIndex = 5;
+            this.comboBoxPalletAmount.FormattingEnabled = true;
+            this.comboBoxPalletAmount.Location = new System.Drawing.Point(511, 213);
+            this.comboBoxPalletAmount.Name = "comboBoxPalletAmount";
+            this.comboBoxPalletAmount.Size = new System.Drawing.Size(303, 33);
+            this.comboBoxPalletAmount.TabIndex = 5;
             // 
-            // comboBox28
+            // comboBoxProductToProduce
             // 
-            this.comboBox28.FormattingEnabled = true;
-            this.comboBox28.Location = new System.Drawing.Point(511, 112);
-            this.comboBox28.Name = "comboBox28";
-            this.comboBox28.Size = new System.Drawing.Size(303, 33);
-            this.comboBox28.TabIndex = 4;
+            this.comboBoxProductToProduce.FormattingEnabled = true;
+            this.comboBoxProductToProduce.Location = new System.Drawing.Point(511, 112);
+            this.comboBoxProductToProduce.Name = "comboBoxProductToProduce";
+            this.comboBoxProductToProduce.Size = new System.Drawing.Size(303, 33);
+            this.comboBoxProductToProduce.TabIndex = 4;
             // 
             // label44
             // 
@@ -841,15 +841,15 @@
             this.label44.TabIndex = 3;
             this.label44.Text = "Pallet amount";
             // 
-            // button11
+            // btnProduce
             // 
-            this.button11.Location = new System.Drawing.Point(511, 298);
-            this.button11.Margin = new System.Windows.Forms.Padding(4);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(303, 75);
-            this.button11.TabIndex = 2;
-            this.button11.Text = "Produce";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnProduce.Location = new System.Drawing.Point(511, 298);
+            this.btnProduce.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProduce.Name = "btnProduce";
+            this.btnProduce.Size = new System.Drawing.Size(303, 75);
+            this.btnProduce.TabIndex = 2;
+            this.btnProduce.Text = "Produce";
+            this.btnProduce.UseVisualStyleBackColor = true;
             // 
             // label20
             // 
@@ -2331,7 +2331,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iQuantityInStockDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnProduce;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox8;
@@ -2478,7 +2478,7 @@
         private System.Windows.Forms.ComboBox comboBox26;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ListView listViewProducedProducts;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.ComboBox comboBox27;
         private System.Windows.Forms.TextBox textBox21;
@@ -2495,8 +2495,8 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.ComboBox comboBoxOCnumber;
         private System.Windows.Forms.Button btnSeeOrders;
-        private System.Windows.Forms.ComboBox comboBox29;
-        private System.Windows.Forms.ComboBox comboBox28;
+        private System.Windows.Forms.ComboBox comboBoxPalletAmount;
+        private System.Windows.Forms.ComboBox comboBoxProductToProduce;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
