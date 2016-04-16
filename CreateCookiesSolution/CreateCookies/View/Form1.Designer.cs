@@ -808,7 +808,7 @@
             // 
             // dateTimePickerPProductTime
             // 
-            this.dateTimePickerPProductTime.Location = new System.Drawing.Point(360, 255);
+            this.dateTimePickerPProductTime.Location = new System.Drawing.Point(320, 255);
             this.dateTimePickerPProductTime.Name = "dateTimePickerPProductTime";
             this.dateTimePickerPProductTime.Size = new System.Drawing.Size(370, 31);
             this.dateTimePickerPProductTime.TabIndex = 9;
@@ -816,7 +816,7 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(81, 260);
+            this.label47.Location = new System.Drawing.Point(41, 260);
             this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(104, 25);
@@ -894,7 +894,7 @@
             "18",
             "19",
             "20"});
-            this.comboBoxPalletAmount.Location = new System.Drawing.Point(360, 179);
+            this.comboBoxPalletAmount.Location = new System.Drawing.Point(320, 179);
             this.comboBoxPalletAmount.Name = "comboBoxPalletAmount";
             this.comboBoxPalletAmount.Size = new System.Drawing.Size(370, 33);
             this.comboBoxPalletAmount.TabIndex = 5;
@@ -904,7 +904,7 @@
             this.comboBoxProductToProduce.DataSource = this.productBindingSource;
             this.comboBoxProductToProduce.DisplayMember = "pName";
             this.comboBoxProductToProduce.FormattingEnabled = true;
-            this.comboBoxProductToProduce.Location = new System.Drawing.Point(360, 97);
+            this.comboBoxProductToProduce.Location = new System.Drawing.Point(320, 97);
             this.comboBoxProductToProduce.Name = "comboBoxProductToProduce";
             this.comboBoxProductToProduce.Size = new System.Drawing.Size(370, 33);
             this.comboBoxProductToProduce.TabIndex = 4;
@@ -912,7 +912,7 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(81, 182);
+            this.label44.Location = new System.Drawing.Point(41, 182);
             this.label44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(143, 25);
@@ -921,7 +921,7 @@
             // 
             // btnProduce
             // 
-            this.btnProduce.Location = new System.Drawing.Point(360, 324);
+            this.btnProduce.Location = new System.Drawing.Point(320, 324);
             this.btnProduce.Margin = new System.Windows.Forms.Padding(4);
             this.btnProduce.Name = "btnProduce";
             this.btnProduce.Size = new System.Drawing.Size(370, 47);
@@ -932,7 +932,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(81, 100);
+            this.label20.Location = new System.Drawing.Point(41, 100);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(272, 25);
