@@ -1717,6 +1717,7 @@
             this.btnNewCustomer.TabIndex = 15;
             this.btnNewCustomer.Text = "New Customer";
             this.btnNewCustomer.UseVisualStyleBackColor = true;
+            this.btnNewCustomer.Click += new System.EventHandler(this.btnNewCustomer_Click);
             // 
             // comboBoxCcountry
             // 

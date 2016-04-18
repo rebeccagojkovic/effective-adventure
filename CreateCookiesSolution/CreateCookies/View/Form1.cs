@@ -64,17 +64,7 @@ namespace CreateCookies
         }
 
 
-
-        private void btnNewCustomer_Click(object sender, EventArgs e)
-        {
-            textBoxCnumber.Clear();
-            textBoxCname.Clear();
-            textBoxCaddress.Clear();
-            textBoxCpostalAddress.Clear();
-            comboBoxCcountry.SelectedIndex = -1;
-            textBoxCemail.Clear();
-            textBoxCnumber.Focus();
-        }
+        
 
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
         {
@@ -111,7 +101,18 @@ namespace CreateCookies
                 DR.Close();
                 SelectCustomerConnection.Close();
             }
-        }  
+
+        private void btnNewCustomer_Click(object sender, EventArgs e)
+        {
+            textBoxCnumber.Clear();
+            textBoxCname.Clear();
+            textBoxCaddress.Clear();
+            textBoxCpostalAddress.Clear();
+            comboBoxCcountry.SelectedIndex=-1;
+            textBoxCemail.Clear();
+        }
     }
+    }  
+    
 
 
