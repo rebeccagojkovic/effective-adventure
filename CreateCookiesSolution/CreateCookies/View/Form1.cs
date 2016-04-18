@@ -79,7 +79,7 @@ namespace CreateCookies
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
         {
             SqlConnection DeleteCustomerConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-            SqlCommand DeleteCustomerCommand = new SqlCommand("delete from Customer where cNumber='" + comboBoxDCnumber.SelectedIndex + "'", DeleteCustomerConnection);
+            SqlCommand DeleteCustomerCommand = new SqlCommand("delete from Customer where cNumber='" + comboBoxUCnumber.Text.Trim() + "'", DeleteCustomerConnection);
             if (comboBoxDCnumber.SelectedIndex !=-1)
             {
                DeleteCustomerConnection.Open();
@@ -92,22 +92,19 @@ namespace CreateCookies
         private void btnSearchCustomer_Click(object sender, EventArgs e)
         {
             SqlConnection SelectCustomerConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-            SqlCommand SelectCustommerCommand = new SqlCommand("select * from Customer", SelectCustomerConnection);
+            SqlCommand SelectCustommerCommand = new SqlCommand("select * from Customer where cNumber='" + comboBoxUCnumber.Text.Trim() + "'", SelectCustomerConnection);
             SelectCustomerConnection.Open();
             SqlDataReader DR = SelectCustommerCommand.ExecuteReader();
-            DataTable DT = new DataTable();
+            
             if (DR.Read())
             {
-                if (comboBoxUCnumber.SelectedIndex != -1)
-                {
-                 
-                    if (DT.Rows.Count > 0)
+                    if (comboBoxUCnumber.SelectedIndex != -1)
                     {
-                        textBoxUCname.Text = DT.Rows[comboBoxUCnumber.SelectedIndex]["cName"].ToString();
-                        textBoxUCaddress.Text = DT.Rows[comboBoxUCnumber.SelectedIndex]["cAddress"].ToString();
-                        textBoxUCpostaladdress.Text = DT.Rows[comboBoxUCnumber.SelectedIndex]["cPostalAddress"].ToString();
-                        comboBoxUCcountry.Text = DT.Rows[comboBoxUCnumber.SelectedIndex]["cCountry"].ToString();
-                        textBoxUCemail.Text = DT.Rows[comboBoxUCnumber.SelectedIndex]["cEmail"].ToString();
+                        textBoxUCname.Text =DR["cName"].ToString();
+                        textBoxUCaddress.Text = DR["cAddress"].ToString();
+                        textBoxUCpostaladdress.Text = DR["cPostalAddress"].ToString();
+                        comboBoxUCcountry.Text = DR["cCountry"].ToString();
+                        textBoxUCemail.Text = DR["cEmail"].ToString();
                     }
                 }
 
@@ -116,5 +113,5 @@ namespace CreateCookies
             }
         }  
     }
-}
+
 
