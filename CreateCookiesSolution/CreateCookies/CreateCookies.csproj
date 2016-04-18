@@ -90,6 +90,7 @@
       <DependentUpon>CreateCookiesDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\DAL.cs" />
     <Compile Include="Model\Database.cs" />
     <Compile Include="Model\Ingredient.cs" />
     <Compile Include="Model\Order.cs" />
@@ -247,15 +248,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="CreateCookie.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="CreateCookie_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>CreateCookie.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

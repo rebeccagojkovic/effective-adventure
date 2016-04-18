@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using CreateCookies.Model;
 
 
 namespace CreateCookies
@@ -28,10 +29,6 @@ namespace CreateCookies
             this.productTableAdapter.Fill(this.productDataSet.Product);
             // TODO: This line of code loads data into the 'createCookiesDataSet1.Customer' table. You can move, or remove it, as needed.
             this.customerTableAdapter2.Fill(this.createCookiesDataSet1.Customer);
-            // TODO: This line of code loads data into the 'createCookieDataSet1.Customer' table. You can move, or remove it, as needed.
-            this.customerTableAdapter1.Fill(this.createCookieDataSet1.Customer);
-            // TODO: This line of code loads data into the 'createCookieDataSet.Customer' table. You can move, or remove it, as needed.
-            this.customerTableAdapter.Fill(this.createCookieDataSet.Customer);
             // TODO: This line of code loads data into the 'createCookiesDataSet.Orderspecification' table. You can move, or remove it, as needed.
             this.orderspecificationTableAdapter.Fill(this.createCookiesDataSet.Orderspecification);
             // TODO: This line of code loads data into the 'createCookiesDataSet.Ingredient' table. You can move, or remove it, as needed.
@@ -79,7 +76,45 @@ namespace CreateCookies
             textBoxCnumber.Focus();
         }
 
-      
+        private void btnDeleteCustomer_Click(object sender, EventArgs e)
+        {
+            SqlConnection DeleteCustomerConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+            SqlCommand DeleteCustomerCommand = new SqlCommand("delete from Customer where cNumber='" + comboBoxDCnumber.SelectedIndex + "'", DeleteCustomerConnection);
+            if (comboBoxDCnumber.SelectedIndex !=-1)
+            {
+               DeleteCustomerConnection.Open();
+               DeleteCustomerCommand.ExecuteNonQuery();
+               DeleteCustomerConnection.Close();
+            }
+
+        }
+
+        private void btnSearchCustomer_Click(object sender, EventArgs e)
+        {
+            SqlConnection SelectCustomerConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+            SqlCommand SelectCustommerCommand = new SqlCommand("select * from Customer", SelectCustomerConnection);
+            SelectCustomerConnection.Open();
+            SqlDataReader DR = SelectCustommerCommand.ExecuteReader();
+            DataTable DT = new DataTable();
+            if (DR.Read())
+            {
+                if (comboBoxUCnumber.SelectedIndex != -1)
+                {
+                 
+                    if (DT.Rows.Count > 0)
+                    {
+                        textBoxUCname.Text = DT.Rows[comboBoxUCnumber.SelectedIndex]["cName"].ToString();
+                        textBoxUCaddress.Text = DT.Rows[comboBoxUCnumber.SelectedIndex]["cAddress"].ToString();
+                        textBoxUCpostaladdress.Text = DT.Rows[comboBoxUCnumber.SelectedIndex]["cPostalAddress"].ToString();
+                        comboBoxUCcountry.Text = DT.Rows[comboBoxUCnumber.SelectedIndex]["cCountry"].ToString();
+                        textBoxUCemail.Text = DT.Rows[comboBoxUCnumber.SelectedIndex]["cEmail"].ToString();
+                    }
+                }
+
+                DR.Close();
+                SelectCustomerConnection.Close();
+            }
+        }  
     }
 }
 

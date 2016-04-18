@@ -16,6 +16,19 @@ namespace CreateCookies.Model
         private string cEmail;
         private List<Order> order;
 
+        public Customer(string cNumber, string cName, string cAddress, string cPostalAddress, string cCountry, string cEmail)
+        {
+            this.cNumber = cNumber;
+            this.cName = cName;
+            this.cAddress = cAddress;
+            this.cPostalAddress = cPostalAddress;
+            this.cCountry = cCountry;
+            this.cEmail = cEmail;
+        }
+        public Customer()
+        {
+
+        }
         public string CNumber
         {
             get
