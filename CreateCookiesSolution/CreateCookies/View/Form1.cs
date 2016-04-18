@@ -67,11 +67,12 @@ namespace CreateCookies
         {
             SqlConnection DeleteCustomerConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
             SqlCommand DeleteCustomerCommand = new SqlCommand("delete from Customer where cNumber='" + comboBoxUCnumber.Text.Trim() + "'", DeleteCustomerConnection);
-            if (comboBoxDCnumber.SelectedIndex !=-1)
+
+            if (comboBoxDCnumber.SelectedIndex != -1)
             {
-               DeleteCustomerConnection.Open();
-               DeleteCustomerCommand.ExecuteNonQuery();
-               DeleteCustomerConnection.Close();
+                DeleteCustomerConnection.Open();
+                DeleteCustomerCommand.ExecuteNonQuery();
+                DeleteCustomerConnection.Close();
             }
         }
 
@@ -79,24 +80,26 @@ namespace CreateCookies
         {
             SqlConnection SelectCustomerConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
             SqlCommand SelectCustommerCommand = new SqlCommand("select * from Customer where cNumber='" + comboBoxUCnumber.Text.Trim() + "'", SelectCustomerConnection);
+
             SelectCustomerConnection.Open();
+
             SqlDataReader DR = SelectCustommerCommand.ExecuteReader();
-            
+
             if (DR.Read())
             {
-                    if (comboBoxUCnumber.SelectedIndex != -1)
-                    {
-                        textBoxUCname.Text =DR["cName"].ToString();
-                        textBoxUCaddress.Text = DR["cAddress"].ToString();
-                        textBoxUCpostaladdress.Text = DR["cPostalAddress"].ToString();
-                        comboBoxUCcountry.Text = DR["cCountry"].ToString();
-                        textBoxUCemail.Text = DR["cEmail"].ToString();
-                    }
+                if (comboBoxUCnumber.SelectedIndex != -1)
+                {
+                    textBoxUCname.Text = DR["cName"].ToString();
+                    textBoxUCaddress.Text = DR["cAddress"].ToString();
+                    textBoxUCpostaladdress.Text = DR["cPostalAddress"].ToString();
+                    comboBoxUCcountry.Text = DR["cCountry"].ToString();
+                    textBoxUCemail.Text = DR["cEmail"].ToString();
                 }
-
-                DR.Close();
-                SelectCustomerConnection.Close();
             }
+
+            DR.Close();
+            SelectCustomerConnection.Close();
+        }
 
         private void btnNewCustomer_Click(object sender, EventArgs e)
         {
@@ -104,7 +107,7 @@ namespace CreateCookies
             textBoxCname.Clear();
             textBoxCaddress.Clear();
             textBoxCpostalAddress.Clear();
-            comboBoxCcountry.SelectedIndex=-1;
+            comboBoxCcountry.SelectedIndex = -1;
             textBoxCemail.Clear();
         }
 
@@ -126,9 +129,36 @@ namespace CreateCookies
             UpdateCustommerCommand.ExecuteNonQuery();
             UpdateCustomerConnection.Close();
         }
+
+        private void btnSeeOrders_Click(object sender, EventArgs e)
+        {
+          
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection SeeCustomerOrdersConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+
+            SeeCustomerOrdersConnection.Open();
+
+            SqlDataAdapter ada = new SqlDataAdapter("Select * from Orde", SeeCustomerOrdersConnection);
+            DataTable dt = new DataTable();
+            ada.Fill(dt);
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                DataRow dr = dt.Rows[i];
+                ListViewItem listViewItem = new ListViewItem(dr["oNumber"].ToString());
+                listViewItem.SubItems.Add(dr["isDelivered"].ToString());
+                listViewItem.SubItems.Add(dr["cNumber_FK"].ToString());
+                listViewCustomersOrders.Items.Add(listViewItem);
+            }
+
+            SeeCustomerOrdersConnection.Close();
+        }
     }
-    }  
+}  
     
 
 

@@ -246,6 +246,7 @@
             this.ordeDataSet = new CreateCookies.OrdeDataSet();
             this.ordeBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.ordeTableAdapter1 = new CreateCookies.OrdeDataSetTableAdapters.OrdeTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).BeginInit();
@@ -1398,6 +1399,7 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.button1);
             this.groupBox7.Controls.Add(this.label43);
             this.groupBox7.Controls.Add(this.comboBoxOCnumber);
             this.groupBox7.Controls.Add(this.btnSeeOrders);
@@ -1433,12 +1435,13 @@
             // 
             // btnSeeOrders
             // 
-            this.btnSeeOrders.Location = new System.Drawing.Point(461, 351);
+            this.btnSeeOrders.Location = new System.Drawing.Point(459, 351);
             this.btnSeeOrders.Name = "btnSeeOrders";
             this.btnSeeOrders.Size = new System.Drawing.Size(195, 50);
             this.btnSeeOrders.TabIndex = 1;
             this.btnSeeOrders.Text = "See orders";
             this.btnSeeOrders.UseVisualStyleBackColor = true;
+            this.btnSeeOrders.Click += new System.EventHandler(this.btnSeeOrders_Click);
             // 
             // listViewCustomersOrders
             // 
@@ -2389,6 +2392,16 @@
             // 
             this.ordeTableAdapter1.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(876, 351);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(317, 50);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "See All Customers\'s orders";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -2679,6 +2692,7 @@
         private System.Windows.Forms.BindingSource ordeBindingSource3;
         private OrdeDataSetTableAdapters.OrdeTableAdapter ordeTableAdapter1;
         private System.Windows.Forms.TextBox textBoxAddIngredient;
+        private System.Windows.Forms.Button button1;
     }
 }
 
