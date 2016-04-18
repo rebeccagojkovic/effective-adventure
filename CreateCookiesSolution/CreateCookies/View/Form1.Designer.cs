@@ -1589,6 +1589,7 @@
             this.btnUppdateCustomer.TabIndex = 26;
             this.btnUppdateCustomer.Text = "Update Customer";
             this.btnUppdateCustomer.UseVisualStyleBackColor = true;
+            this.btnUppdateCustomer.Click += new System.EventHandler(this.btnUppdateCustomer_Click);
             // 
             // textBoxUCemail
             // 

@@ -63,9 +63,6 @@ namespace CreateCookies
             controller.RegisterCustomer(cNumber, cAddress, cCountry, cEmail, cName, cPostalAddress);
         }
 
-
-        
-
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
         {
             SqlConnection DeleteCustomerConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
@@ -76,7 +73,6 @@ namespace CreateCookies
                DeleteCustomerCommand.ExecuteNonQuery();
                DeleteCustomerConnection.Close();
             }
-
         }
 
         private void btnSearchCustomer_Click(object sender, EventArgs e)
@@ -111,6 +107,26 @@ namespace CreateCookies
             comboBoxCcountry.SelectedIndex=-1;
             textBoxCemail.Clear();
         }
+
+        private void btnUppdateCustomer_Click(object sender, EventArgs e)
+        {
+            SqlConnection UpdateCustomerConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+
+            UpdateCustomerConnection.Open();
+
+            SqlCommand UpdateCustommerCommand = new SqlCommand("update Customer set cName=@cName, cAddress= @cAddress, cPostalAddress=@cPostalAddress, cCountry = @cCountry,  cEmail = @cEmail where cNumber=@cNumber", UpdateCustomerConnection);
+
+            UpdateCustommerCommand.Parameters.AddWithValue("@cNumber", comboBoxUCnumber.Text);
+            UpdateCustommerCommand.Parameters.AddWithValue("@cName", textBoxUCname.Text);
+            UpdateCustommerCommand.Parameters.AddWithValue("@cAddress", textBoxUCaddress.Text);
+            UpdateCustommerCommand.Parameters.AddWithValue("@cPostalAddress", textBoxUCpostaladdress.Text);
+            UpdateCustommerCommand.Parameters.AddWithValue("@cCountry", comboBoxUCcountry.Text);
+            UpdateCustommerCommand.Parameters.AddWithValue("@cEmail", textBoxUCemail.Text);
+
+            UpdateCustommerCommand.ExecuteNonQuery();
+            UpdateCustomerConnection.Close();
+        }
+            
     }
     }  
     
