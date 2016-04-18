@@ -136,6 +136,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnSeeAllOrders = new System.Windows.Forms.Button();
             this.label43 = new System.Windows.Forms.Label();
             this.comboBoxOCnumber = new System.Windows.Forms.ComboBox();
             this.btnSeeOrders = new System.Windows.Forms.Button();
@@ -246,7 +247,6 @@
             this.ordeDataSet = new CreateCookies.OrdeDataSet();
             this.ordeBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.ordeTableAdapter1 = new CreateCookies.OrdeDataSetTableAdapters.OrdeTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).BeginInit();
@@ -1399,7 +1399,7 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.button1);
+            this.groupBox7.Controls.Add(this.btnSeeAllOrders);
             this.groupBox7.Controls.Add(this.label43);
             this.groupBox7.Controls.Add(this.comboBoxOCnumber);
             this.groupBox7.Controls.Add(this.btnSeeOrders);
@@ -1412,6 +1412,16 @@
             this.groupBox7.TabIndex = 19;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Customer\'s Orders";
+            // 
+            // btnSeeAllOrders
+            // 
+            this.btnSeeAllOrders.Location = new System.Drawing.Point(876, 351);
+            this.btnSeeAllOrders.Name = "btnSeeAllOrders";
+            this.btnSeeAllOrders.Size = new System.Drawing.Size(317, 50);
+            this.btnSeeAllOrders.TabIndex = 16;
+            this.btnSeeAllOrders.Text = "See All Customers\'s orders";
+            this.btnSeeAllOrders.UseVisualStyleBackColor = true;
+            this.btnSeeAllOrders.Click += new System.EventHandler(this.btnSeeAllOrders_Click);
             // 
             // label43
             // 
@@ -2392,16 +2402,6 @@
             // 
             this.ordeTableAdapter1.ClearBeforeFill = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(876, 351);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(317, 50);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "See All Customers\'s orders";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -2692,7 +2692,7 @@
         private System.Windows.Forms.BindingSource ordeBindingSource3;
         private OrdeDataSetTableAdapters.OrdeTableAdapter ordeTableAdapter1;
         private System.Windows.Forms.TextBox textBoxAddIngredient;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSeeAllOrders;
     }
 }
 

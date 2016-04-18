@@ -136,7 +136,7 @@ namespace CreateCookies
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSeeAllOrders_Click(object sender, EventArgs e)
         {
             SqlConnection SeeCustomerOrdersConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
 
@@ -149,7 +149,7 @@ namespace CreateCookies
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 DataRow dr = dt.Rows[i];
-                ListViewItem listViewItemSeeAllOrders= new ListViewItem(dr["oNumber"].ToString());
+                ListViewItem listViewItemSeeAllOrders = new ListViewItem(dr["oNumber"].ToString());
                 listViewItemSeeAllOrders.SubItems.Add(dr["isDelivered"].ToString());
                 listViewItemSeeAllOrders.SubItems.Add(dr["cNumber_FK"].ToString());
                 listViewCustomersOrders.Items.Add(listViewItemSeeAllOrders);
