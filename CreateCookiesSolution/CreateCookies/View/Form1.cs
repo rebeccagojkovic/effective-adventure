@@ -132,8 +132,25 @@ namespace CreateCookies
 
         private void btnSeeOrders_Click(object sender, EventArgs e)
         {
-          
-            
+            SqlConnection SeeCustomerOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+
+            SeeCustomerOrderConnection.Open();
+
+            SqlDataAdapter SeeAllOrdersAdapter = new SqlDataAdapter("Select * from Orde where cNumber_FK= '" + comboBoxOCnumber.Text.Trim()+"'", SeeCustomerOrderConnection);
+            DataTable dt = new DataTable();
+            SeeAllOrdersAdapter.Fill(dt);
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                DataRow dr = dt.Rows[i];
+                ListViewItem listViewItemSeeAllOrders = new ListViewItem(dr["oNumber"].ToString());
+                listViewItemSeeAllOrders.SubItems.Add(dr["isDelivered"].ToString());
+                listViewItemSeeAllOrders.SubItems.Add(dr["cNumber_FK"].ToString());
+                listViewCustomersOrders.Items.Add(listViewItemSeeAllOrders);
+            }
+
+            SeeCustomerOrderConnection.Close();
+
         }
 
         private void btnSeeAllOrders_Click(object sender, EventArgs e)
