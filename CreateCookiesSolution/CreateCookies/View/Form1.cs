@@ -142,17 +142,17 @@ namespace CreateCookies
 
             SeeCustomerOrdersConnection.Open();
 
-            SqlDataAdapter ada = new SqlDataAdapter("Select * from Orde", SeeCustomerOrdersConnection);
+            SqlDataAdapter SeeAllOrdersAdapter = new SqlDataAdapter("Select * from Orde", SeeCustomerOrdersConnection);
             DataTable dt = new DataTable();
-            ada.Fill(dt);
+            SeeAllOrdersAdapter.Fill(dt);
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 DataRow dr = dt.Rows[i];
-                ListViewItem listViewItem = new ListViewItem(dr["oNumber"].ToString());
-                listViewItem.SubItems.Add(dr["isDelivered"].ToString());
-                listViewItem.SubItems.Add(dr["cNumber_FK"].ToString());
-                listViewCustomersOrders.Items.Add(listViewItem);
+                ListViewItem listViewItemSeeAllOrders= new ListViewItem(dr["oNumber"].ToString());
+                listViewItemSeeAllOrders.SubItems.Add(dr["isDelivered"].ToString());
+                listViewItemSeeAllOrders.SubItems.Add(dr["cNumber_FK"].ToString());
+                listViewCustomersOrders.Items.Add(listViewItemSeeAllOrders);
             }
 
             SeeCustomerOrdersConnection.Close();
