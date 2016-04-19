@@ -246,6 +246,14 @@
             this.ordeBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.ordeTableAdapter1 = new CreateCookies.OrdeDataSetTableAdapters.OrdeTableAdapter();
             this.label40 = new System.Windows.Forms.Label();
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label42 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.orderspecification = new CreateCookies.orderspecification();
+            this.orderspecificationBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.orderspecificationTableAdapter1 = new CreateCookies.orderspecificationTableAdapters.OrderspecificationTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).BeginInit();
@@ -288,6 +296,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderspecification)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // ingredientBindingSource
@@ -1030,6 +1040,8 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.comboBox1);
+            this.groupBox8.Controls.Add(this.label42);
             this.groupBox8.Controls.Add(this.listViewOrderInformation);
             this.groupBox8.Controls.Add(this.btnChoosenOrderInformation);
             this.groupBox8.Location = new System.Drawing.Point(644, 442);
@@ -1043,22 +1055,28 @@
             // 
             // listViewOrderInformation
             // 
+            this.listViewOrderInformation.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader13});
             this.listViewOrderInformation.Location = new System.Drawing.Point(4, 29);
             this.listViewOrderInformation.Margin = new System.Windows.Forms.Padding(6);
             this.listViewOrderInformation.Name = "listViewOrderInformation";
             this.listViewOrderInformation.Size = new System.Drawing.Size(908, 269);
             this.listViewOrderInformation.TabIndex = 2;
             this.listViewOrderInformation.UseCompatibleStateImageBehavior = false;
+            this.listViewOrderInformation.View = System.Windows.Forms.View.Details;
             // 
             // btnChoosenOrderInformation
             // 
-            this.btnChoosenOrderInformation.Location = new System.Drawing.Point(8, 308);
+            this.btnChoosenOrderInformation.Location = new System.Drawing.Point(558, 308);
             this.btnChoosenOrderInformation.Margin = new System.Windows.Forms.Padding(4);
             this.btnChoosenOrderInformation.Name = "btnChoosenOrderInformation";
             this.btnChoosenOrderInformation.Size = new System.Drawing.Size(356, 42);
             this.btnChoosenOrderInformation.TabIndex = 1;
             this.btnChoosenOrderInformation.Text = "Show chosen order information";
             this.btnChoosenOrderInformation.UseVisualStyleBackColor = true;
+            this.btnChoosenOrderInformation.Click += new System.EventHandler(this.btnChoosenOrderInformation_Click);
             // 
             // groupBox3
             // 
@@ -1083,6 +1101,7 @@
             this.btnDeleteOrder.TabIndex = 3;
             this.btnDeleteOrder.Text = "Delete Order";
             this.btnDeleteOrder.UseVisualStyleBackColor = true;
+            this.btnDeleteOrder.Click += new System.EventHandler(this.btnDeleteOrder_Click);
             // 
             // comboBoxChooseOrder
             // 
@@ -2385,6 +2404,57 @@
             this.label40.TabIndex = 12;
             this.label40.Text = "Search in orders";
             // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Order number";
+            this.columnHeader11.Width = 163;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Product number";
+            this.columnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader12.Width = 187;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Product Name";
+            this.columnHeader13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader13.Width = 177;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(24, 317);
+            this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(146, 25);
+            this.label42.TabIndex = 4;
+            this.label42.Text = "Choose Order";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.orderspecificationBindingSource1;
+            this.comboBox1.DisplayMember = "oNumber";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(177, 314);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(363, 33);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // orderspecification
+            // 
+            this.orderspecification.DataSetName = "orderspecification";
+            this.orderspecification.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // orderspecificationBindingSource1
+            // 
+            this.orderspecificationBindingSource1.DataMember = "Orderspecification";
+            this.orderspecificationBindingSource1.DataSource = this.orderspecification;
+            // 
+            // orderspecificationTableAdapter1
+            // 
+            this.orderspecificationTableAdapter1.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -2416,6 +2486,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.productDataSet)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource)).EndInit();
@@ -2449,6 +2520,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderspecification)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2671,6 +2744,14 @@
         private System.Windows.Forms.TextBox textBoxSearchOrder;
         private System.Windows.Forms.ComboBox comboBoxSearchOrder;
         private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label42;
+        private orderspecification orderspecification;
+        private System.Windows.Forms.BindingSource orderspecificationBindingSource1;
+        private orderspecificationTableAdapters.OrderspecificationTableAdapter orderspecificationTableAdapter1;
     }
 }
 

@@ -104,6 +104,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OrdeDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="orderspecification.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>orderspecification.xsd</DependentUpon>
+    </Compile>
     <Compile Include="productDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -212,6 +217,17 @@
     </None>
     <None Include="OrdeDataSet.xss">
       <DependentUpon>OrdeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="orderspecification.xsc">
+      <DependentUpon>orderspecification.xsd</DependentUpon>
+    </None>
+    <None Include="orderspecification.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>orderspecification.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="orderspecification.xss">
+      <DependentUpon>orderspecification.xsd</DependentUpon>
     </None>
     <None Include="productDataSet.xsc">
       <DependentUpon>productDataSet.xsd</DependentUpon>

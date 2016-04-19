@@ -23,6 +23,8 @@ namespace CreateCookies
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'orderspecification.Orderspecification' table. You can move, or remove it, as needed.
+            this.orderspecificationTableAdapter1.Fill(this.orderspecification.Orderspecification);
             // TODO: This line of code loads data into the 'ordeDataSet.Orde' table. You can move, or remove it, as needed.
             this.ordeTableAdapter1.Fill(this.ordeDataSet.Orde);
             // TODO: This line of code loads data into the 'productDataSet.Product' table. You can move, or remove it, as needed.
@@ -38,18 +40,8 @@ namespace CreateCookies
 
         }
 
-        private void findOrderToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.ordeTableAdapter.FindOrder(this.createCookiesDataSet.Orde, searchToolStripTextBoxOrderControl.Text);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
+       
+        
 
         private void buttonRegCustomer_Click(object sender, EventArgs e)
         {
@@ -211,6 +203,46 @@ namespace CreateCookies
                 da.Fill(SearchOrderGrid);
                 dataGridViewOrderControl.DataSource = SearchOrderGrid;
             }
+        }
+
+        private void btnDeleteOrder_Click(object sender, EventArgs e)
+        {
+            SqlConnection DeleteOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+            SqlCommand DeleteOrderCommand = new SqlCommand("delete from Orde where oNumber='" + comboBoxChooseOrder.Text.Trim() + "'", DeleteOrderConnection);
+
+            if (comboBoxDCnumber.SelectedIndex != -1)
+            {
+                DeleteOrderConnection.Open();
+                DeleteOrderCommand.ExecuteNonQuery();
+                DeleteOrderConnection.Close();
+                
+            }
+        }
+
+        private void btnChoosenOrderInformation_Click(object sender, EventArgs e)
+        {
+            SqlConnection ChooseOrderInformationConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+
+            ChooseOrderInformationConnection.Open();
+
+            SqlDataAdapter ChooseOrderinformationAdapter = new SqlDataAdapter(@"Select Orderspecification.oNumber,Orderspecification.pNumber, Product.pName 
+                from Orderspecification inner join Product on (Orderspecification.pNumber = Product.pNumber) where oNumber= '" + comboBox1.Text.Trim() + "'", ChooseOrderInformationConnection);
+            DataTable dtChooseOrderinfo = new DataTable();
+            ChooseOrderinformationAdapter.Fill(dtChooseOrderinfo);
+
+            listViewOrderInformation.Items.Clear();
+
+            for (int i = 0; i < dtChooseOrderinfo.Rows.Count; i++)
+            {
+                DataRow dr = dtChooseOrderinfo.Rows[i];
+                
+                ListViewItem listViewItemorderInfo = new ListViewItem(dr["oNumber"].ToString());
+                listViewItemorderInfo.SubItems.Add(dr["pNumber"].ToString());
+                listViewItemorderInfo.SubItems.Add(dr["pName"].ToString());
+                listViewOrderInformation.Items.Add(listViewItemorderInfo);
+
+            }
+            ChooseOrderInformationConnection.Close();
         }
     }
 }  
