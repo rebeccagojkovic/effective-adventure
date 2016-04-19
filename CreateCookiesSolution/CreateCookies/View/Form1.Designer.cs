@@ -1595,7 +1595,7 @@
             // 
             // btnUppdateCustomer
             // 
-            this.btnUppdateCustomer.Location = new System.Drawing.Point(12, 429);
+            this.btnUppdateCustomer.Location = new System.Drawing.Point(11, 409);
             this.btnUppdateCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.btnUppdateCustomer.Name = "btnUppdateCustomer";
             this.btnUppdateCustomer.Size = new System.Drawing.Size(436, 44);
@@ -2332,17 +2332,17 @@
             this.toolStripSeparator1,
             this.toolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(331, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(306, 46);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(327, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(302, 6);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(330, 38);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(305, 36);
             this.toolStripMenuItem1.Text = "toolStripMenuItem1";
             // 
             // ordeBindingSource2
