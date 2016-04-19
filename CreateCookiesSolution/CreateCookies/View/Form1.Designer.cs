@@ -109,10 +109,8 @@
             this.ordeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.findOrderToolStrip = new System.Windows.Forms.ToolStrip();
-            this.searchToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.searchToolStripTextBoxOrderControl = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.textBoxSearchOrder = new System.Windows.Forms.TextBox();
+            this.comboBoxSearchOrder = new System.Windows.Forms.ComboBox();
             this.dataGridViewOrderControl = new System.Windows.Forms.DataGridView();
             this.oNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.expectedDeliveryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -247,6 +245,7 @@
             this.ordeDataSet = new CreateCookies.OrdeDataSet();
             this.ordeBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.ordeTableAdapter1 = new CreateCookies.OrdeDataSetTableAdapters.OrdeTableAdapter();
+            this.label40 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).BeginInit();
@@ -267,8 +266,6 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.findOrderToolStrip.SuspendLayout();
-            this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrderControl)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).BeginInit();
@@ -1115,8 +1112,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.findOrderToolStrip);
-            this.groupBox2.Controls.Add(this.toolStripContainer1);
+            this.groupBox2.Controls.Add(this.label40);
+            this.groupBox2.Controls.Add(this.textBoxSearchOrder);
+            this.groupBox2.Controls.Add(this.comboBoxSearchOrder);
             this.groupBox2.Controls.Add(this.dataGridViewOrderControl);
             this.groupBox2.Location = new System.Drawing.Point(6, 13);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(6);
@@ -1127,51 +1125,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Order control";
             // 
-            // findOrderToolStrip
+            // textBoxSearchOrder
             // 
-            this.findOrderToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.findOrderToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.findOrderToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.searchToolStripLabel,
-            this.searchToolStripTextBoxOrderControl});
-            this.findOrderToolStrip.Location = new System.Drawing.Point(26, 350);
-            this.findOrderToolStrip.Name = "findOrderToolStrip";
-            this.findOrderToolStrip.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.findOrderToolStrip.Size = new System.Drawing.Size(302, 39);
-            this.findOrderToolStrip.TabIndex = 1;
-            this.findOrderToolStrip.Text = "findOrderToolStrip";
-            this.findOrderToolStrip.TextChanged += new System.EventHandler(this.findOrderToolStripButton_Click);
+            this.textBoxSearchOrder.Location = new System.Drawing.Point(535, 359);
+            this.textBoxSearchOrder.Name = "textBoxSearchOrder";
+            this.textBoxSearchOrder.Size = new System.Drawing.Size(238, 31);
+            this.textBoxSearchOrder.TabIndex = 7;
+            this.textBoxSearchOrder.TextChanged += new System.EventHandler(this.textBoxSearchOrder_TextChanged);
             // 
-            // searchToolStripLabel
+            // comboBoxSearchOrder
             // 
-            this.searchToolStripLabel.Name = "searchToolStripLabel";
-            this.searchToolStripLabel.Size = new System.Drawing.Size(91, 36);
-            this.searchToolStripLabel.Text = "Search:";
-            this.searchToolStripLabel.TextChanged += new System.EventHandler(this.findOrderToolStripButton_Click);
-            // 
-            // searchToolStripTextBoxOrderControl
-            // 
-            this.searchToolStripTextBoxOrderControl.Name = "searchToolStripTextBoxOrderControl";
-            this.searchToolStripTextBoxOrderControl.Size = new System.Drawing.Size(196, 39);
-            this.searchToolStripTextBoxOrderControl.TextChanged += new System.EventHandler(this.findOrderToolStripButton_Click);
-            // 
-            // toolStripContainer1
-            // 
-            // 
-            // toolStripContainer1.ContentPanel
-            // 
-            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(6);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(300, 27);
-            this.toolStripContainer1.Location = new System.Drawing.Point(26, 350);
-            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(6);
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(300, 52);
-            this.toolStripContainer1.TabIndex = 2;
-            this.toolStripContainer1.Text = "toolStripContainer1";
-            // 
-            // toolStripContainer1.TopToolStripPanel
-            // 
-            this.toolStripContainer1.TopToolStripPanel.Padding = new System.Windows.Forms.Padding(0, 0, 25, 25);
+            this.comboBoxSearchOrder.FormattingEnabled = true;
+            this.comboBoxSearchOrder.Items.AddRange(new object[] {
+            "Order_Number",
+            "Expected_Delivery_Date",
+            "Is_Delivered",
+            "Customer_Number"});
+            this.comboBoxSearchOrder.Location = new System.Drawing.Point(210, 357);
+            this.comboBoxSearchOrder.Name = "comboBoxSearchOrder";
+            this.comboBoxSearchOrder.Size = new System.Drawing.Size(291, 33);
+            this.comboBoxSearchOrder.TabIndex = 6;
             // 
             // dataGridViewOrderControl
             // 
@@ -1467,7 +1440,6 @@
             this.listViewCustomersOrders.TabIndex = 0;
             this.listViewCustomersOrders.UseCompatibleStateImageBehavior = false;
             this.listViewCustomersOrders.View = System.Windows.Forms.View.Details;
-           
             // 
             // columnHeader1
             // 
@@ -2333,17 +2305,17 @@
             this.toolStripSeparator1,
             this.toolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(306, 46);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(331, 48);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(302, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(327, 6);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(305, 36);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(330, 38);
             this.toolStripMenuItem1.Text = "toolStripMenuItem1";
             // 
             // ordeBindingSource2
@@ -2403,6 +2375,16 @@
             // 
             this.ordeTableAdapter1.ClearBeforeFill = true;
             // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(21, 362);
+            this.label40.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(170, 25);
+            this.label40.TabIndex = 12;
+            this.label40.Text = "Search in orders";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -2439,10 +2421,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.findOrderToolStrip.ResumeLayout(false);
-            this.findOrderToolStrip.PerformLayout();
-            this.toolStripContainer1.ResumeLayout(false);
-            this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrderControl)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -2505,10 +2483,6 @@
         private System.Windows.Forms.ComboBox comboBoxChooseOrder;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ToolStrip findOrderToolStrip;
-        private System.Windows.Forms.ToolStripLabel searchToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox searchToolStripTextBoxOrderControl;
-        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.DataGridView dataGridViewOrderControl;
         private System.Windows.Forms.DataGridViewTextBoxColumn oNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn expectedDeliveryDateDataGridViewTextBoxColumn;
@@ -2694,6 +2668,9 @@
         private OrdeDataSetTableAdapters.OrdeTableAdapter ordeTableAdapter1;
         private System.Windows.Forms.TextBox textBoxAddIngredient;
         private System.Windows.Forms.Button btnSeeAllOrders;
+        private System.Windows.Forms.TextBox textBoxSearchOrder;
+        private System.Windows.Forms.ComboBox comboBoxSearchOrder;
+        private System.Windows.Forms.Label label40;
     }
 }
 

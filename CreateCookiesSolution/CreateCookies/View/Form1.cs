@@ -136,7 +136,7 @@ namespace CreateCookies
 
             SeeCustomerOrderConnection.Open();
 
-            SqlDataAdapter SeeAllOrdersAdapter = new SqlDataAdapter("Select * from Orde where cNumber_FK= '" + comboBoxOCnumber.Text.Trim()+"'", SeeCustomerOrderConnection);
+            SqlDataAdapter SeeAllOrdersAdapter = new SqlDataAdapter("Select * from Orde where cNumber_FK= '" + comboBoxOCnumber.Text.Trim() + "'", SeeCustomerOrderConnection);
             DataTable dt = new DataTable();
             SeeAllOrdersAdapter.Fill(dt);
 
@@ -145,12 +145,12 @@ namespace CreateCookies
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 DataRow dr = dt.Rows[i];
-                
+
                 ListViewItem listViewItemSeeAllOrders = new ListViewItem(dr["oNumber"].ToString());
                 listViewItemSeeAllOrders.SubItems.Add(dr["isDelivered"].ToString());
                 listViewItemSeeAllOrders.SubItems.Add(dr["cNumber_FK"].ToString());
                 listViewCustomersOrders.Items.Add(listViewItemSeeAllOrders);
-               
+
             }
             SeeCustomerOrderConnection.Close();
 
@@ -177,7 +177,40 @@ namespace CreateCookies
                 listViewCustomersOrders.Items.Add(listViewItemSeeAllOrders);
             }
 
-            SeeCustomerOrdersConnection.Close();
+        }
+
+        private void textBoxSearchOrder_TextChanged(object sender, EventArgs e)
+        {
+            SqlConnection SearchOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+
+            if (comboBoxSearchOrder.Text == "Order_Number")
+            {
+                SqlDataAdapter dataadapterOrder = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber_FK from Orde where oNumber like '"+ textBoxSearchOrder.Text+"%'",SearchOrderConnection );
+                DataTable SearchOrderGrid = new DataTable();
+                dataadapterOrder.Fill(SearchOrderGrid);
+                dataGridViewOrderControl.DataSource = SearchOrderGrid;
+            }
+            else if (comboBoxSearchOrder.Text == "Expected_Delivery_Date")
+            {
+                SqlDataAdapter da = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber_FK from Orde where expectedDeliveryDate like '" + textBoxSearchOrder.Text + "%'", SearchOrderConnection);
+                DataTable SearchOrderGrid = new DataTable();
+                da.Fill(SearchOrderGrid);
+                dataGridViewOrderControl.DataSource = SearchOrderGrid;
+            }
+            else if (comboBoxSearchOrder.Text == "Is_Delivered")
+            {
+                SqlDataAdapter da = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber_FK from Orde where isDelivered like '" + textBoxSearchOrder.Text + "%'", SearchOrderConnection);
+                DataTable SearchOrderGrid = new DataTable();
+                da.Fill(SearchOrderGrid);
+                dataGridViewOrderControl.DataSource = SearchOrderGrid;
+            }
+            else if (comboBoxSearchOrder.Text == "Customer_Number")
+            {
+                SqlDataAdapter da = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber_FK from Orde where cNumber_FK like '" + textBoxSearchOrder.Text + "%'", SearchOrderConnection);
+                DataTable SearchOrderGrid = new DataTable();
+                da.Fill(SearchOrderGrid);
+                dataGridViewOrderControl.DataSource = SearchOrderGrid;
+            }
         }
     }
 }  
