@@ -1467,6 +1467,7 @@
             this.listViewCustomersOrders.TabIndex = 0;
             this.listViewCustomersOrders.UseCompatibleStateImageBehavior = false;
             this.listViewCustomersOrders.View = System.Windows.Forms.View.Details;
+           
             // 
             // columnHeader1
             // 
