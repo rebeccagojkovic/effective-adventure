@@ -101,7 +101,14 @@
             this.label20 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.customerBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.createCookiesDataSet1 = new CreateCookies.CreateCookiesDataSet1();
+            this.label42 = new System.Windows.Forms.Label();
             this.listViewOrderInformation = new System.Windows.Forms.ListView();
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnChoosenOrderInformation = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnDeleteOrder = new System.Windows.Forms.Button();
@@ -109,6 +116,7 @@
             this.ordeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label40 = new System.Windows.Forms.Label();
             this.textBoxSearchOrder = new System.Windows.Forms.TextBox();
             this.comboBoxSearchOrder = new System.Windows.Forms.ComboBox();
             this.dataGridViewOrderControl = new System.Windows.Forms.DataGridView();
@@ -125,12 +133,12 @@
             this.btnAddCookies = new System.Windows.Forms.Button();
             this.dateTimePickerOrderdate = new System.Windows.Forms.DateTimePicker();
             this.comboBoxAOCnumber = new System.Windows.Forms.ComboBox();
-            this.customerBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.createCookiesDataSet1 = new CreateCookies.CreateCookiesDataSet1();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxChooseCookies = new System.Windows.Forms.ComboBox();
+            this.orderspecificationBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.orderspecification = new CreateCookies.orderspecification();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -245,14 +253,6 @@
             this.ordeDataSet = new CreateCookies.OrdeDataSet();
             this.ordeBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.ordeTableAdapter1 = new CreateCookies.OrdeDataSetTableAdapters.OrdeTableAdapter();
-            this.label40 = new System.Windows.Forms.Label();
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label42 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.orderspecification = new CreateCookies.orderspecification();
-            this.orderspecificationBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.orderspecificationTableAdapter1 = new CreateCookies.orderspecificationTableAdapters.OrderspecificationTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).BeginInit();
@@ -271,13 +271,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.productDataSet)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrderControl)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderspecification)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -296,8 +298,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderspecification)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // ingredientBindingSource
@@ -332,7 +332,7 @@
             this.tabPage4.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPage4.Size = new System.Drawing.Size(1640, 1020);
+            this.tabPage4.Size = new System.Drawing.Size(1652, 1020);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Supplier";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -813,7 +813,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPage3.Size = new System.Drawing.Size(1640, 1020);
+            this.tabPage3.Size = new System.Drawing.Size(1652, 1020);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Production";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1033,7 +1033,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPage2.Size = new System.Drawing.Size(1640, 1020);
+            this.tabPage2.Size = new System.Drawing.Size(1652, 1020);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Order";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1053,6 +1053,36 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Order Information";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.customerBindingSource2;
+            this.comboBox1.DisplayMember = "cNumber";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(177, 314);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(363, 33);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // customerBindingSource2
+            // 
+            this.customerBindingSource2.DataMember = "Customer";
+            this.customerBindingSource2.DataSource = this.createCookiesDataSet1;
+            // 
+            // createCookiesDataSet1
+            // 
+            this.createCookiesDataSet1.DataSetName = "CreateCookiesDataSet1";
+            this.createCookiesDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(24, 317);
+            this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(146, 25);
+            this.label42.TabIndex = 4;
+            this.label42.Text = "Choose Order";
+            // 
             // listViewOrderInformation
             // 
             this.listViewOrderInformation.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -1066,6 +1096,23 @@
             this.listViewOrderInformation.TabIndex = 2;
             this.listViewOrderInformation.UseCompatibleStateImageBehavior = false;
             this.listViewOrderInformation.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Order number";
+            this.columnHeader11.Width = 163;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Product number";
+            this.columnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader12.Width = 187;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Product Name";
+            this.columnHeader13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader13.Width = 177;
             // 
             // btnChoosenOrderInformation
             // 
@@ -1143,6 +1190,16 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Order control";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(21, 362);
+            this.label40.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(170, 25);
+            this.label40.TabIndex = 12;
+            this.label40.Text = "Search in orders";
             // 
             // textBoxSearchOrder
             // 
@@ -1309,16 +1366,6 @@
             this.comboBoxAOCnumber.Size = new System.Drawing.Size(388, 33);
             this.comboBoxAOCnumber.TabIndex = 5;
             // 
-            // customerBindingSource2
-            // 
-            this.customerBindingSource2.DataMember = "Customer";
-            this.customerBindingSource2.DataSource = this.createCookiesDataSet1;
-            // 
-            // createCookiesDataSet1
-            // 
-            this.createCookiesDataSet1.DataSetName = "CreateCookiesDataSet1";
-            this.createCookiesDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -1360,6 +1407,16 @@
             this.comboBoxChooseCookies.Size = new System.Drawing.Size(388, 33);
             this.comboBoxChooseCookies.TabIndex = 0;
             // 
+            // orderspecificationBindingSource1
+            // 
+            this.orderspecificationBindingSource1.DataMember = "Orderspecification";
+            this.orderspecificationBindingSource1.DataSource = this.orderspecification;
+            // 
+            // orderspecification
+            // 
+            this.orderspecification.DataSetName = "orderspecification";
+            this.orderspecification.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -1371,7 +1428,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1648, 1058);
+            this.tabControl1.Size = new System.Drawing.Size(1660, 1058);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -1384,7 +1441,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPage1.Size = new System.Drawing.Size(1640, 1020);
+            this.tabPage1.Size = new System.Drawing.Size(1652, 1020);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Customer";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1858,7 +1915,7 @@
             this.tabPage7.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage7.Size = new System.Drawing.Size(1640, 1020);
+            this.tabPage7.Size = new System.Drawing.Size(1652, 1020);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Storage";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -2394,63 +2451,6 @@
             // 
             this.ordeTableAdapter1.ClearBeforeFill = true;
             // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(21, 362);
-            this.label40.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(170, 25);
-            this.label40.TabIndex = 12;
-            this.label40.Text = "Search in orders";
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Order number";
-            this.columnHeader11.Width = 163;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "Product number";
-            this.columnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader12.Width = 187;
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "Product Name";
-            this.columnHeader13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader13.Width = 177;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(24, 317);
-            this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(146, 25);
-            this.label42.TabIndex = 4;
-            this.label42.Text = "Choose Order";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.orderspecificationBindingSource1;
-            this.comboBox1.DisplayMember = "oNumber";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(177, 314);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(363, 33);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // orderspecification
-            // 
-            this.orderspecification.DataSetName = "orderspecification";
-            this.orderspecification.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // orderspecificationBindingSource1
-            // 
-            this.orderspecificationBindingSource1.DataMember = "Orderspecification";
-            this.orderspecificationBindingSource1.DataSource = this.orderspecification;
-            // 
             // orderspecificationTableAdapter1
             // 
             this.orderspecificationTableAdapter1.ClearBeforeFill = true;
@@ -2487,6 +2487,8 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource)).EndInit();
@@ -2495,8 +2497,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrderControl)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderspecification)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
@@ -2520,8 +2522,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderspecification)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
