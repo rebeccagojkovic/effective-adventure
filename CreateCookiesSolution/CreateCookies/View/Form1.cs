@@ -166,6 +166,8 @@ namespace CreateCookies
             DataTable dt = new DataTable();
             SeeAllOrdersAdapter.Fill(dt);
 
+            listViewCustomersOrders.Items.Clear();
+
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 DataRow dr = dt.Rows[i];
