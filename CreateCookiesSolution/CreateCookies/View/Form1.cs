@@ -23,6 +23,10 @@ namespace CreateCookies
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'createCookiesDataSet.Supplier' table. You can move, or remove it, as needed.
+            this.supplierTableAdapter.Fill(this.createCookiesDataSet.Supplier);
+            // TODO: This line of code loads data into the 'createCookiesDataSet.Ingredient' table. You can move, or remove it, as needed.
+            this.ingredientTableAdapter.Fill(this.createCookiesDataSet.Ingredient);
             // TODO: This line of code loads data into the 'createCookiesDataSet.Product' table. You can move, or remove it, as needed.
             this.productTableAdapter.Fill(this.createCookiesDataSet.Product);
             // TODO: This line of code loads data into the 'createCookiesDataSet.Orde' table. You can move, or remove it, as needed.
@@ -273,7 +277,7 @@ namespace CreateCookies
         {
             SqlConnection AddOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
             SqlCommand AddOrderCommand1 = new SqlCommand("insert into Orde (oNumber, isDelivered,expectedDeliveryDate, cNumber) values(@oNumber, @isDelivered,@expectedDeliveryDate, @cNumber)", AddOrderConnection);
-           // SqlCommand AddOrderCommand2 = new SqlCommand("insert into Orderspecification (pNumber, oNumber, palletQuantity) values(@pNumber, @oNumber, @palletQuantity)", AddOrderConnection);
+           // SqlCommand AddOrderCommand2 = new SqlCommand("insert into Orderspecification (palletQuantity) values(@pNumber, @oNumber, @palletQuantity)", AddOrderConnection);
 
             AddOrderCommand1.Parameters.AddWithValue("@oNumber", textBoxGenerateOrderNumber.Text);
             AddOrderCommand1.Parameters.AddWithValue("@isDelivered", textBoxisDeliveredAO.Text);
