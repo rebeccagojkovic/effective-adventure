@@ -23,6 +23,8 @@ namespace CreateCookies
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'createCookiesDataSet.Product' table. You can move, or remove it, as needed.
+            this.productTableAdapter.Fill(this.createCookiesDataSet.Product);
             // TODO: This line of code loads data into the 'createCookiesDataSet.Orde' table. You can move, or remove it, as needed.
             this.ordeTableAdapter.Fill(this.createCookiesDataSet.Orde);
             // TODO: This line of code loads data into the 'createCookiesDataSet.Customer' table. You can move, or remove it, as needed.
@@ -181,7 +183,7 @@ namespace CreateCookies
 
             if (comboBoxSearchOrder.Text == "Order_Number")
             {
-                SqlDataAdapter dataadapterOrder = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber from Orde where oNumber like '"+ textBoxSearchOrder.Text+"%'",SearchOrderConnection );
+                SqlDataAdapter dataadapterOrder = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber from Orde where oNumber like '" + textBoxSearchOrder.Text + "%'", SearchOrderConnection);
                 DataTable SearchOrderGrid = new DataTable();
                 dataadapterOrder.Fill(SearchOrderGrid);
                 dataGridViewOrderControl.DataSource = SearchOrderGrid;
@@ -219,7 +221,7 @@ namespace CreateCookies
                 DeleteOrderConnection.Open();
                 DeleteOrderCommand.ExecuteNonQuery();
                 DeleteOrderConnection.Close();
-                
+
             }
         }
 
@@ -239,7 +241,7 @@ namespace CreateCookies
             for (int i = 0; i < dtChooseOrderinfo.Rows.Count; i++)
             {
                 DataRow dr = dtChooseOrderinfo.Rows[i];
-                
+
                 ListViewItem listViewItemorderInfo = new ListViewItem(dr["oNumber"].ToString());
                 listViewItemorderInfo.SubItems.Add(dr["pNumber"].ToString());
                 listViewItemorderInfo.SubItems.Add(dr["pName"].ToString());
@@ -248,6 +250,43 @@ namespace CreateCookies
 
             }
             ChooseOrderInformationConnection.Close();
+        }
+
+        private void comboBoxChooseCookies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection ChooseCookieConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+
+            ChooseCookieConnection.Open();
+
+            SqlCommand chooseCookiecmd = new SqlCommand("select * from Product where pName='" + comboBoxChooseCookies.Text + "'", ChooseCookieConnection);
+            SqlDataReader dr = chooseCookiecmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                textBoxProductNUmberOA.Text = dr["pNumber"].ToString();
+            }
+            dr.Close();
+            ChooseCookieConnection.Close();
+        }
+
+        private void btnAddOder_Click(object sender, EventArgs e)
+        {
+            SqlConnection AddOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+            SqlCommand AddOrderCommand1 = new SqlCommand("insert into Orde (oNumber, isDelivered,expectedDeliveryDate, cNumber) values(@oNumber, @isDelivered,@expectedDeliveryDate, @cNumber)", AddOrderConnection);
+           // SqlCommand AddOrderCommand2 = new SqlCommand("insert into Orderspecification (pNumber, oNumber, palletQuantity) values(@pNumber, @oNumber, @palletQuantity)", AddOrderConnection);
+
+            AddOrderCommand1.Parameters.AddWithValue("@oNumber", textBoxGenerateOrderNumber.Text);
+            AddOrderCommand1.Parameters.AddWithValue("@isDelivered", textBoxisDeliveredAO.Text);
+            AddOrderCommand1.Parameters.AddWithValue("@expectedDeliveryDate", dateTimePickerDeliveryDateAO.Text);
+            AddOrderCommand1.Parameters.AddWithValue("@cNumber", comboBoxAOCnumber.Text);
+
+            //AddOrderCommand2.Parameters.AddWithValue("@palletQuantity", comboBoxPalletQuantity.Text);
+          
+
+            AddOrderConnection.Open();
+            AddOrderCommand1.ExecuteNonQuery();
+            //AddOrderCommand2.ExecuteNonQuery();
+            AddOrderConnection.Close();
         }
     }
 }  
