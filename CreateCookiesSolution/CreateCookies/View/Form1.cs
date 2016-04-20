@@ -23,21 +23,7 @@ namespace CreateCookies
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'orderspecification.Orderspecification' table. You can move, or remove it, as needed.
-            this.orderspecificationTableAdapter1.Fill(this.orderspecification.Orderspecification);
-            // TODO: This line of code loads data into the 'ordeDataSet.Orde' table. You can move, or remove it, as needed.
-            this.ordeTableAdapter1.Fill(this.ordeDataSet.Orde);
-            // TODO: This line of code loads data into the 'productDataSet.Product' table. You can move, or remove it, as needed.
-            this.productTableAdapter.Fill(this.productDataSet.Product);
-            // TODO: This line of code loads data into the 'createCookiesDataSet1.Customer' table. You can move, or remove it, as needed.
-            this.customerTableAdapter2.Fill(this.createCookiesDataSet1.Customer);
-            // TODO: This line of code loads data into the 'createCookiesDataSet.Orderspecification' table. You can move, or remove it, as needed.
-            this.orderspecificationTableAdapter.Fill(this.createCookiesDataSet.Orderspecification);
-            // TODO: This line of code loads data into the 'createCookiesDataSet.Ingredient' table. You can move, or remove it, as needed.
-            this.ingredientTableAdapter.Fill(this.createCookiesDataSet.Ingredient);
-            // TODO: This line of code loads data into the 'createCookiesDataSet.Orde' table. You can move, or remove it, as needed.
-            this.ordeTableAdapter.Fill(this.createCookiesDataSet.Orde);
-
+            
         }
 
        

@@ -95,7 +95,6 @@
             this.comboBoxPalletAmount = new System.Windows.Forms.ComboBox();
             this.comboBoxProductToProduce = new System.Windows.Forms.ComboBox();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productDataSet = new CreateCookies.productDataSet();
             this.label44 = new System.Windows.Forms.Label();
             this.btnProduce = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
@@ -103,7 +102,6 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.customerBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.createCookiesDataSet1 = new CreateCookies.CreateCookiesDataSet1();
             this.label42 = new System.Windows.Forms.Label();
             this.listViewOrderInformation = new System.Windows.Forms.ListView();
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -138,7 +136,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxChooseCookies = new System.Windows.Forms.ComboBox();
             this.orderspecificationBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.orderspecification = new CreateCookies.orderspecification();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -202,9 +199,7 @@
             this.comboBoxCooseFromProducedProducts = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
             this.customerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.createCookieDataSet1 = new CreateCookies.CreateCookieDataSet1();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.createCookieDataSet = new CreateCookies.CreateCookieDataSet();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -246,14 +241,7 @@
             this.ordeTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.OrdeTableAdapter();
             this.ingredientTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.IngredientTableAdapter();
             this.orderspecificationTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.OrderspecificationTableAdapter();
-            this.customerTableAdapter = new CreateCookies.CreateCookieDataSetTableAdapters.CustomerTableAdapter();
-            this.customerTableAdapter1 = new CreateCookies.CreateCookieDataSet1TableAdapters.CustomerTableAdapter();
-            this.customerTableAdapter2 = new CreateCookies.CreateCookiesDataSet1TableAdapters.CustomerTableAdapter();
-            this.productTableAdapter = new CreateCookies.productDataSetTableAdapters.ProductTableAdapter();
-            this.ordeDataSet = new CreateCookies.OrdeDataSet();
             this.ordeBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.ordeTableAdapter1 = new CreateCookies.OrdeDataSetTableAdapters.OrdeTableAdapter();
-            this.orderspecificationTableAdapter1 = new CreateCookies.orderspecificationTableAdapters.OrderspecificationTableAdapter();
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).BeginInit();
@@ -269,18 +257,15 @@
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStorage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productDataSet)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrderControl)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderspecification)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -290,14 +275,12 @@
             this.tabPage7.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createCookieDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createCookieDataSet)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordeDataSet)).BeginInit();
+
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -983,16 +966,6 @@
             this.comboBoxProductToProduce.Size = new System.Drawing.Size(370, 33);
             this.comboBoxProductToProduce.TabIndex = 4;
             // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataMember = "Product";
-            this.productBindingSource.DataSource = this.productDataSet;
-            // 
-            // productDataSet
-            // 
-            this.productDataSet.DataSetName = "productDataSet";
-            this.productDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // label44
             // 
             this.label44.AutoSize = true;
@@ -1063,16 +1036,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(363, 33);
             this.comboBox1.TabIndex = 5;
-            // 
-            // customerBindingSource2
-            // 
-            this.customerBindingSource2.DataMember = "Customer";
-            this.customerBindingSource2.DataSource = this.createCookiesDataSet1;
-            // 
-            // createCookiesDataSet1
-            // 
-            this.createCookiesDataSet1.DataSetName = "CreateCookiesDataSet1";
-            this.createCookiesDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label42
             // 
@@ -1406,16 +1369,7 @@
             this.comboBoxChooseCookies.Name = "comboBoxChooseCookies";
             this.comboBoxChooseCookies.Size = new System.Drawing.Size(388, 33);
             this.comboBoxChooseCookies.TabIndex = 0;
-            // 
-            // orderspecificationBindingSource1
-            // 
-            this.orderspecificationBindingSource1.DataMember = "Orderspecification";
-            this.orderspecificationBindingSource1.DataSource = this.orderspecification;
-            // 
-            // orderspecification
-            // 
-            this.orderspecification.DataSetName = "orderspecification";
-            this.orderspecification.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+
             // 
             // tabControl1
             // 
@@ -2068,27 +2022,6 @@
             this.label36.Size = new System.Drawing.Size(319, 25);
             this.label36.TabIndex = 1;
             this.label36.Text = "Choose from produced products";
-            // 
-            // customerBindingSource1
-            // 
-            this.customerBindingSource1.DataMember = "Customer";
-            this.customerBindingSource1.DataSource = this.createCookieDataSet1;
-            // 
-            // createCookieDataSet1
-            // 
-            this.createCookieDataSet1.DataSetName = "CreateCookieDataSet1";
-            this.createCookieDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "Customer";
-            this.customerBindingSource.DataSource = this.createCookieDataSet;
-            // 
-            // createCookieDataSet
-            // 
-            this.createCookieDataSet.DataSetName = "CreateCookieDataSet";
-            this.createCookieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -2394,67 +2327,6 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(305, 36);
             this.toolStripMenuItem1.Text = "toolStripMenuItem1";
             // 
-            // ordeBindingSource2
-            // 
-            this.ordeBindingSource2.DataMember = "Orde";
-            this.ordeBindingSource2.DataSource = this.createCookiesDataSetBindingSource;
-            // 
-            // ingredientBindingSource1
-            // 
-            this.ingredientBindingSource1.DataMember = "Ingredient";
-            this.ingredientBindingSource1.DataSource = this.createCookiesDataSetBindingSource;
-            // 
-            // orderspecificationBindingSource
-            // 
-            this.orderspecificationBindingSource.DataMember = "Orderspecification";
-            this.orderspecificationBindingSource.DataSource = this.createCookiesDataSetBindingSource;
-            // 
-            // ordeTableAdapter
-            // 
-            this.ordeTableAdapter.ClearBeforeFill = true;
-            // 
-            // ingredientTableAdapter
-            // 
-            this.ingredientTableAdapter.ClearBeforeFill = true;
-            // 
-            // orderspecificationTableAdapter
-            // 
-            this.orderspecificationTableAdapter.ClearBeforeFill = true;
-            // 
-            // customerTableAdapter
-            // 
-            this.customerTableAdapter.ClearBeforeFill = true;
-            // 
-            // customerTableAdapter1
-            // 
-            this.customerTableAdapter1.ClearBeforeFill = true;
-            // 
-            // customerTableAdapter2
-            // 
-            this.customerTableAdapter2.ClearBeforeFill = true;
-            // 
-            // productTableAdapter
-            // 
-            this.productTableAdapter.ClearBeforeFill = true;
-            // 
-            // ordeDataSet
-            // 
-            this.ordeDataSet.DataSetName = "OrdeDataSet";
-            this.ordeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ordeBindingSource3
-            // 
-            this.ordeBindingSource3.DataMember = "Orde";
-            this.ordeBindingSource3.DataSource = this.ordeDataSet;
-            // 
-            // ordeTableAdapter1
-            // 
-            this.ordeTableAdapter1.ClearBeforeFill = true;
-            // 
-            // orderspecificationTableAdapter1
-            // 
-            this.orderspecificationTableAdapter1.ClearBeforeFill = true;
-            // 
             // columnHeader14
             // 
             this.columnHeader14.Text = "Pallet Quantity";
@@ -2489,12 +2361,10 @@
             this.groupBox9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStorage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productDataSet)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource)).EndInit();
@@ -2504,7 +2374,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderspecification)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
@@ -2519,14 +2388,11 @@
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createCookieDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createCookieDataSet)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource3)).EndInit();
             this.ResumeLayout(false);
 
@@ -2715,16 +2581,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.DateTimePicker dateTimePickerExpectedDeliveryDate;
         private System.Windows.Forms.Label label45;
-        private CreateCookieDataSet createCookieDataSet;
         private System.Windows.Forms.BindingSource customerBindingSource;
-        private CreateCookieDataSetTableAdapters.CustomerTableAdapter customerTableAdapter;
         private System.Windows.Forms.Button btnNewCustomer;
-        private CreateCookieDataSet1 createCookieDataSet1;
         private System.Windows.Forms.BindingSource customerBindingSource1;
-        private CreateCookieDataSet1TableAdapters.CustomerTableAdapter customerTableAdapter1;
-        private CreateCookiesDataSet1 createCookiesDataSet1;
         private System.Windows.Forms.BindingSource customerBindingSource2;
-        private CreateCookiesDataSet1TableAdapters.CustomerTableAdapter customerTableAdapter2;
         private System.Windows.Forms.DataGridView dataGridViewStorage;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -2738,12 +2598,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private productDataSet productDataSet;
         private System.Windows.Forms.BindingSource productBindingSource;
-        private productDataSetTableAdapters.ProductTableAdapter productTableAdapter;
-        private OrdeDataSet ordeDataSet;
         private System.Windows.Forms.BindingSource ordeBindingSource3;
-        private OrdeDataSetTableAdapters.OrdeTableAdapter ordeTableAdapter1;
         private System.Windows.Forms.TextBox textBoxAddIngredient;
         private System.Windows.Forms.Button btnSeeAllOrders;
         private System.Windows.Forms.TextBox textBoxSearchOrder;
@@ -2754,9 +2610,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label42;
-        private orderspecification orderspecification;
         private System.Windows.Forms.BindingSource orderspecificationBindingSource1;
-        private orderspecificationTableAdapters.OrderspecificationTableAdapter orderspecificationTableAdapter1;
         private System.Windows.Forms.TextBox textBoxGenerateOrderNumber;
         private System.Windows.Forms.ColumnHeader columnHeader14;
     }
