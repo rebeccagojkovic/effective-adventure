@@ -1055,8 +1055,8 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.customerBindingSource2;
-            this.comboBox1.DisplayMember = "cNumber";
+            this.comboBox1.DataSource = this.ordeBindingSource;
+            this.comboBox1.DisplayMember = "oNumber";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(177, 314);
             this.comboBox1.Name = "comboBox1";
@@ -1291,9 +1291,7 @@
             // 
             // textBoxGenerateOrderNumber
             // 
-            this.textBoxGenerateOrderNumber.Enabled = false;
             this.textBoxGenerateOrderNumber.Location = new System.Drawing.Point(208, 54);
-            this.textBoxGenerateOrderNumber.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxGenerateOrderNumber.Name = "textBoxGenerateOrderNumber";
             this.textBoxGenerateOrderNumber.Size = new System.Drawing.Size(386, 31);
             this.textBoxGenerateOrderNumber.TabIndex = 11;
@@ -2381,17 +2379,17 @@
             this.toolStripSeparator1,
             this.toolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(331, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(306, 46);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(327, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(302, 6);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(330, 38);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(305, 36);
             this.toolStripMenuItem1.Text = "toolStripMenuItem1";
             // 
             // ordeBindingSource2
@@ -2562,7 +2560,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn isDeliveredDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNumberFKDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBoxGenerateOrderNumber;
         private System.Windows.Forms.Button btnGenerateOrderNumber;
         private System.Windows.Forms.Button btnAddOder;
         private System.Windows.Forms.ComboBox comboBoxAddedCookies;
@@ -2752,6 +2749,7 @@
         private orderspecification orderspecification;
         private System.Windows.Forms.BindingSource orderspecificationBindingSource1;
         private orderspecificationTableAdapters.OrderspecificationTableAdapter orderspecificationTableAdapter1;
+        private System.Windows.Forms.TextBox textBoxGenerateOrderNumber;
     }
 }
 
