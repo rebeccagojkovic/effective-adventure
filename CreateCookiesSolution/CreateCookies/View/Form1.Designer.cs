@@ -254,6 +254,7 @@
             this.ordeBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.ordeTableAdapter1 = new CreateCookies.OrdeDataSetTableAdapters.OrdeTableAdapter();
             this.orderspecificationTableAdapter1 = new CreateCookies.orderspecificationTableAdapters.OrderspecificationTableAdapter();
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).BeginInit();
@@ -1088,7 +1089,8 @@
             this.listViewOrderInformation.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader11,
             this.columnHeader12,
-            this.columnHeader13});
+            this.columnHeader13,
+            this.columnHeader14});
             this.listViewOrderInformation.Location = new System.Drawing.Point(4, 29);
             this.listViewOrderInformation.Margin = new System.Windows.Forms.Padding(6);
             this.listViewOrderInformation.Name = "listViewOrderInformation";
@@ -2453,6 +2455,12 @@
             // 
             this.orderspecificationTableAdapter1.ClearBeforeFill = true;
             // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Pallet Quantity";
+            this.columnHeader14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader14.Width = 180;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -2750,6 +2758,7 @@
         private System.Windows.Forms.BindingSource orderspecificationBindingSource1;
         private orderspecificationTableAdapters.OrderspecificationTableAdapter orderspecificationTableAdapter1;
         private System.Windows.Forms.TextBox textBoxGenerateOrderNumber;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
     }
 }
 
