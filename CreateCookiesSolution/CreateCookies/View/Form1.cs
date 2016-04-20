@@ -23,11 +23,15 @@ namespace CreateCookies
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            // TODO: This line of code loads data into the 'createCookiesDataSet.Customer' table. You can move, or remove it, as needed.
+            this.customerTableAdapter.Fill(this.createCookiesDataSet.Customer);
+            // TODO: This line of code loads data into the 'createCookiesDataSet.Customer' table. You can move, or remove it, as needed.
+            this.customerTableAdapter.Fill(this.createCookiesDataSet.Customer);
+
         }
 
-       
-        
+
+
 
         private void buttonRegCustomer_Click(object sender, EventArgs e)
         {
@@ -42,7 +46,7 @@ namespace CreateCookies
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
         {
             SqlConnection DeleteCustomerConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-            SqlCommand DeleteCustomerCommand = new SqlCommand("delete from Customer where cNumber='" + comboBoxUCnumber.Text.Trim() + "'", DeleteCustomerConnection);
+            SqlCommand DeleteCustomerCommand = new SqlCommand("delete from Customer where cNumber='" + comboBoxDCnumber.Text.Trim() + "'", DeleteCustomerConnection);
 
             if (comboBoxDCnumber.SelectedIndex != -1)
             {
