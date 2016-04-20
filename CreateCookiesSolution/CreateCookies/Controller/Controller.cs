@@ -18,9 +18,9 @@ namespace CreateCookies.Controller
         {
 
         }
-        //public void RegisterCustomer(string cNumber, string cAddress, string cCountry, string cEmail, string cName, string cPostalAddress)
+        //public void RegisterCustomer(string cNumber, string cName, string cAddress)
         //{
-        //    CDAL.RegisterCustomerQuery(cNumber, cAddress, cCountry, cEmail, cName, cPostalAddress);
+        //    CDAL.RegisterCustomerQuery(cNumber, cName, cAddress);
         //}
         public void Customer(string cNumber, string cName, string cAddress)
         {

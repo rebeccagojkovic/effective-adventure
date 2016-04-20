@@ -34,11 +34,9 @@ namespace CreateCookies
             string cNumber = textBoxCnumber.Text;
             string cName = textBoxCname.Text;
             string cAddress = textBoxCaddress.Text;
-            string cCountry = comboBoxCcountry.Text;
-            string cEmail = textBoxCemail.Text;
-            string cPostalAddress = textBoxCpostalAddress.Text;
 
-            controller.RegisterCustomer(cNumber, cAddress, cCountry, cEmail, cName, cPostalAddress);
+
+            //  controller.RegisterCustomer(cNumber, cName, cAddress);
         }
 
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
