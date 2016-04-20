@@ -104,6 +104,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OrdeDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="orderspecification.cs">
+      <DependentUpon>orderspecification.xsd</DependentUpon>
+    </Compile>
     <Compile Include="orderspecification.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
