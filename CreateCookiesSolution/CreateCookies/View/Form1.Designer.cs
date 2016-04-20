@@ -218,6 +218,12 @@
             this.customerBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.customerTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.CustomerTableAdapter();
             this.customerBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.ordeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordeTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.OrdeTableAdapter();
+            this.oNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isDeliveredDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.expectedDeliveryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox12.SuspendLayout();
@@ -248,6 +254,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -895,6 +902,8 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.ordeBindingSource;
+            this.comboBox1.DisplayMember = "oNumber";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(176, 313);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -930,25 +939,25 @@
             // columnHeader11
             // 
             this.columnHeader11.Text = "Order number";
-            this.columnHeader11.Width = 163;
+            this.columnHeader11.Width = 100;
             // 
             // columnHeader12
             // 
             this.columnHeader12.Text = "Product number";
             this.columnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader12.Width = 187;
+            this.columnHeader12.Width = 110;
             // 
             // columnHeader13
             // 
             this.columnHeader13.Text = "Product Name";
             this.columnHeader13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader13.Width = 177;
+            this.columnHeader13.Width = 100;
             // 
             // columnHeader14
             // 
             this.columnHeader14.Text = "Pallet Quantity";
             this.columnHeader14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader14.Width = 180;
+            this.columnHeader14.Width = 100;
             // 
             // btnChoosenOrderInformation
             // 
@@ -988,6 +997,8 @@
             // 
             // comboBoxChooseOrder
             // 
+            this.comboBoxChooseOrder.DataSource = this.ordeBindingSource;
+            this.comboBoxChooseOrder.DisplayMember = "oNumber";
             this.comboBoxChooseOrder.FormattingEnabled = true;
             this.comboBoxChooseOrder.Location = new System.Drawing.Point(234, 31);
             this.comboBoxChooseOrder.Margin = new System.Windows.Forms.Padding(4);
@@ -1055,10 +1066,20 @@
             // 
             // dataGridViewOrderControl
             // 
+            this.dataGridViewOrderControl.AllowUserToAddRows = false;
+            this.dataGridViewOrderControl.AllowUserToDeleteRows = false;
+            this.dataGridViewOrderControl.AutoGenerateColumns = false;
             this.dataGridViewOrderControl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOrderControl.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.oNumberDataGridViewTextBoxColumn,
+            this.isDeliveredDataGridViewCheckBoxColumn,
+            this.expectedDeliveryDateDataGridViewTextBoxColumn,
+            this.cNumberDataGridViewTextBoxColumn});
+            this.dataGridViewOrderControl.DataSource = this.ordeBindingSource;
             this.dataGridViewOrderControl.Location = new System.Drawing.Point(26, 37);
             this.dataGridViewOrderControl.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridViewOrderControl.Name = "dataGridViewOrderControl";
+            this.dataGridViewOrderControl.ReadOnly = true;
             this.dataGridViewOrderControl.Size = new System.Drawing.Size(1494, 302);
             this.dataGridViewOrderControl.TabIndex = 5;
             // 
@@ -1355,7 +1376,7 @@
             // 
             // comboBoxDCnumber
             // 
-            this.comboBoxDCnumber.DataSource = this.customerBindingSource5;
+            this.comboBoxDCnumber.DataSource = this.customerBindingSource4;
             this.comboBoxDCnumber.DisplayMember = "cNumber";
             this.comboBoxDCnumber.FormattingEnabled = true;
             this.comboBoxDCnumber.Location = new System.Drawing.Point(222, 65);
@@ -2159,6 +2180,43 @@
             this.customerBindingSource5.DataMember = "Customer";
             this.customerBindingSource5.DataSource = this.createCookiesDataSet;
             // 
+            // ordeBindingSource
+            // 
+            this.ordeBindingSource.DataMember = "Orde";
+            this.ordeBindingSource.DataSource = this.createCookiesDataSet;
+            // 
+            // ordeTableAdapter
+            // 
+            this.ordeTableAdapter.ClearBeforeFill = true;
+            // 
+            // oNumberDataGridViewTextBoxColumn
+            // 
+            this.oNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.oNumberDataGridViewTextBoxColumn.DataPropertyName = "oNumber";
+            this.oNumberDataGridViewTextBoxColumn.HeaderText = "oNumber";
+            this.oNumberDataGridViewTextBoxColumn.Name = "oNumberDataGridViewTextBoxColumn";
+            // 
+            // isDeliveredDataGridViewCheckBoxColumn
+            // 
+            this.isDeliveredDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.isDeliveredDataGridViewCheckBoxColumn.DataPropertyName = "isDelivered";
+            this.isDeliveredDataGridViewCheckBoxColumn.HeaderText = "isDelivered";
+            this.isDeliveredDataGridViewCheckBoxColumn.Name = "isDeliveredDataGridViewCheckBoxColumn";
+            // 
+            // expectedDeliveryDateDataGridViewTextBoxColumn
+            // 
+            this.expectedDeliveryDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.expectedDeliveryDateDataGridViewTextBoxColumn.DataPropertyName = "expectedDeliveryDate";
+            this.expectedDeliveryDateDataGridViewTextBoxColumn.HeaderText = "expectedDeliveryDate";
+            this.expectedDeliveryDateDataGridViewTextBoxColumn.Name = "expectedDeliveryDateDataGridViewTextBoxColumn";
+            // 
+            // cNumberDataGridViewTextBoxColumn
+            // 
+            this.cNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cNumberDataGridViewTextBoxColumn.DataPropertyName = "cNumber";
+            this.cNumberDataGridViewTextBoxColumn.HeaderText = "cNumber";
+            this.cNumberDataGridViewTextBoxColumn.Name = "cNumberDataGridViewTextBoxColumn";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -2212,6 +2270,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2407,6 +2466,12 @@
         private System.Windows.Forms.BindingSource customerBindingSource4;
         private CreateCookiesDataSetTableAdapters.CustomerTableAdapter customerTableAdapter;
         private System.Windows.Forms.BindingSource customerBindingSource5;
+        private System.Windows.Forms.BindingSource ordeBindingSource;
+        private CreateCookiesDataSetTableAdapters.OrdeTableAdapter ordeTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isDeliveredDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn expectedDeliveryDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNumberDataGridViewTextBoxColumn;
     }
 }
 

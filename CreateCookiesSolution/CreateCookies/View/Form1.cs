@@ -23,6 +23,8 @@ namespace CreateCookies
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'createCookiesDataSet.Orde' table. You can move, or remove it, as needed.
+            this.ordeTableAdapter.Fill(this.createCookiesDataSet.Orde);
             // TODO: This line of code loads data into the 'createCookiesDataSet.Customer' table. You can move, or remove it, as needed.
             this.customerTableAdapter.Fill(this.createCookiesDataSet.Customer);
             // TODO: This line of code loads data into the 'createCookiesDataSet.Customer' table. You can move, or remove it, as needed.
@@ -35,9 +37,23 @@ namespace CreateCookies
 
         private void buttonRegCustomer_Click(object sender, EventArgs e)
         {
-            string cNumber = textBoxCnumber.Text;
-            string cName = textBoxCname.Text;
-            string cAddress = textBoxCaddress.Text;
+
+            SqlConnection RegisterCustomerConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+            SqlCommand RegisterCustommerCommand = new SqlCommand("insert into Customer (cNumber, cName, cAddress, cPostalAddress, cCountry, cEmail) values(@cNumber, @cName, @cAddress, @cPostalAddress, @cCountry, @cEmail)", RegisterCustomerConnection);
+
+            RegisterCustommerCommand.Parameters.AddWithValue("@cNumber", textBoxCnumber.Text);
+            RegisterCustommerCommand.Parameters.AddWithValue("@cName", textBoxCname.Text);
+            RegisterCustommerCommand.Parameters.AddWithValue("@cAddress", textBoxCaddress.Text);
+            RegisterCustommerCommand.Parameters.AddWithValue("@cPostalAddress", textBoxCpostalAddress.Text);
+            RegisterCustommerCommand.Parameters.AddWithValue("@cCountry", comboBoxCcountry.Text);
+            RegisterCustommerCommand.Parameters.AddWithValue("@cEmail", textBoxCemail.Text);
+
+            RegisterCustomerConnection.Open();
+            RegisterCustommerCommand.ExecuteNonQuery();
+            RegisterCustomerConnection.Close();
+            //string cNumber = textBoxCnumber.Text;
+            //string cName = textBoxCname.Text;
+            //string cAddress = textBoxCaddress.Text;
 
 
             //  controller.RegisterCustomer(cNumber, cName, cAddress);
@@ -46,7 +62,7 @@ namespace CreateCookies
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
         {
             SqlConnection DeleteCustomerConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-            SqlCommand DeleteCustomerCommand = new SqlCommand("delete from Customer where cNumber='" + comboBoxDCnumber.Text.Trim() + "'", DeleteCustomerConnection);
+            SqlCommand DeleteCustomerCommand = new SqlCommand("delete from Customer where cNumber ='" + comboBoxDCnumber.Text.Trim() + "'", DeleteCustomerConnection);
 
             if (comboBoxDCnumber.SelectedIndex != -1)
             {
@@ -186,7 +202,7 @@ namespace CreateCookies
             }
             else if (comboBoxSearchOrder.Text == "Customer_Number")
             {
-                SqlDataAdapter da = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber from Orde where cNumber_FK like '" + textBoxSearchOrder.Text + "%'", SearchOrderConnection);
+                SqlDataAdapter da = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber from Orde where cNumber like '" + textBoxSearchOrder.Text + "%'", SearchOrderConnection);
                 DataTable SearchOrderGrid = new DataTable();
                 da.Fill(SearchOrderGrid);
                 dataGridViewOrderControl.DataSource = SearchOrderGrid;
@@ -213,7 +229,7 @@ namespace CreateCookies
 
             ChooseOrderInformationConnection.Open();
 
-            SqlDataAdapter ChooseOrderinformationAdapter = new SqlDataAdapter(@"Select Orderspecification.oNumber,Orderspecification.pNumber,Orderspecification.pName, Product.pName 
+            SqlDataAdapter ChooseOrderinformationAdapter = new SqlDataAdapter(@"Select Orderspecification.oNumber,Orderspecification.pNumber,Orderspecification.palletQuantity, Product.pName 
                 from Orderspecification inner join Product on (Orderspecification.pNumber = Product.pNumber) where oNumber= '" + comboBox1.Text.Trim() + "'", ChooseOrderInformationConnection);
             DataTable dtChooseOrderinfo = new DataTable();
             ChooseOrderinformationAdapter.Fill(dtChooseOrderinfo);
