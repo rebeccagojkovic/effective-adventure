@@ -277,19 +277,21 @@ namespace CreateCookies
         {
             SqlConnection AddOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
             SqlCommand AddOrderCommand1 = new SqlCommand("insert into Orde (oNumber, isDelivered,expectedDeliveryDate, cNumber) values(@oNumber, @isDelivered,@expectedDeliveryDate, @cNumber)", AddOrderConnection);
-           // SqlCommand AddOrderCommand2 = new SqlCommand("insert into Orderspecification (palletQuantity) values(@pNumber, @oNumber, @palletQuantity)", AddOrderConnection);
+            SqlCommand AddOrderCommand2 = new SqlCommand("insert into Orderspecification (oNumber, pNumber, palletQuantity) values(@oNumber, @pNumber, @palletQuantity)", AddOrderConnection);
 
-            AddOrderCommand1.Parameters.AddWithValue("@oNumber", textBoxGenerateOrderNumber.Text);
+            AddOrderCommand1.Parameters.AddWithValue("@oNumber", textBoxGenerateOrderNumber.Text.ToString());
             AddOrderCommand1.Parameters.AddWithValue("@isDelivered", textBoxisDeliveredAO.Text);
-            AddOrderCommand1.Parameters.AddWithValue("@expectedDeliveryDate", dateTimePickerDeliveryDateAO.Text);
+            AddOrderCommand1.Parameters.AddWithValue("@expectedDeliveryDate", dateTimePickerDeliveryDateAO.Value.Date);
             AddOrderCommand1.Parameters.AddWithValue("@cNumber", comboBoxAOCnumber.Text);
 
-            //AddOrderCommand2.Parameters.AddWithValue("@palletQuantity", comboBoxPalletQuantity.Text);
-          
+            AddOrderCommand2.Parameters.AddWithValue("@oNumber", textBoxGenerateOrderNumber.Text.ToString());
+            AddOrderCommand2.Parameters.AddWithValue("@pNumber", textBoxProductNUmberOA.Text);
+            AddOrderCommand2.Parameters.AddWithValue("@palletQuantity", comboBoxPalletQuantity.Text);
+
 
             AddOrderConnection.Open();
             AddOrderCommand1.ExecuteNonQuery();
-            //AddOrderCommand2.ExecuteNonQuery();
+            AddOrderCommand2.ExecuteNonQuery();
             AddOrderConnection.Close();
         }
     }
