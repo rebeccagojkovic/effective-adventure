@@ -14,6 +14,16 @@ namespace CreateCookies.Model
         private List<Recipe> recipe;
         private Supplier supplier;
 
+        public Ingredient(string iNumber, string iName, double iQuantityInStock, List<Recipe> recipe, Supplier supplier)
+        {
+            this.iNumber = iNumber;
+            this.iName = iName;
+            this.iQuantityInStock = iQuantityInStock;
+            this.recipe = recipe;
+            this.supplier = supplier;
+
+        }
+
         public string INumber
         {
             get

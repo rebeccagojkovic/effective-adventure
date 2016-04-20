@@ -14,6 +14,11 @@ namespace CreateCookies.Model
         private Customer customer;
         private List<Orderspecification> orderspecification;
         private List<Pallet> pallet;
+
+        public Order(string oNumber, bool isDelivered, DateTime expectedDeliveryDate, Customer customer, List<Orderspecification> orderspecification, List<Pallet> pallet)
+        {
+
+        }
         public string ONumber
         {
             get

@@ -12,6 +12,10 @@ namespace CreateCookies.Model
         private string sLocation;
         private List<Ingredient> ingredient;
 
+        public Supplier(string sNumber, string sLocation, List<Ingredient> ingredient)
+        {
+
+        }
         public string SNumber
         {
             get

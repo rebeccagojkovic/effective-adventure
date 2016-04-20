@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CreateCookies.Model;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -6,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CreateCookies.View;
 
 namespace CreateCookies.Controller
 {
@@ -18,44 +18,46 @@ namespace CreateCookies.Controller
         {
 
         }
-        public void RegisterCustomer(string cNumber, string cAddress, string cCountry, string cEmail, string cName, string cPostalAddress)
+        //public void RegisterCustomer(string cNumber, string cAddress, string cCountry, string cEmail, string cName, string cPostalAddress)
+        //{
+        //    CDAL.RegisterCustomerQuery(cNumber, cAddress, cCountry, cEmail, cName, cPostalAddress);
+        //}
+        public void Customer(string cNumber, string cName, string cAddress)
         {
-            CDAL.RegisterCustomerQuery(cNumber, cAddress, cCountry, cEmail, cName, cPostalAddress);
+
         }
-        public void Ingredient(string iNumber, string iName, double iQuantityInStock, List<Recipe> recipe, Supplier supplier)
+        public void Ingredient(string iNumber, string iName, double iQuantityInStock)
         {
             
         }
-        public void Order(string oNumber, bool isDelivered, DateTime expectedDeliveryDate, Customer customer, List<orderspecification> orderspecification, List<Pallet> pallet, string oNumber)
+        public void Order(string oNumber, bool isDelivered, DateTime expectedDeliveryDate)
         {
             
         }
 
-        public void Orderspecification(int palletQuantity, Order order, Product product, int PalletQuantity)
+        public void Orderspecification(int palletQuantity)
         {
 
         }
-        public void Pallet(string palletNumber, DateTime palletTime, string pNumber, string oNumber, Order order, Product product, string PalletNumber)
+        public void Pallet(string palletNumber, DateTime palletTime, string pNumber, string oNumber)
         {
 
         }
-        public void Product(string pNumber, string pName, DateTime pTime, double price, List<Recipe> recipe, List<orderspecification> orderspecification, List<Pallet> pallet)
+        public void Product(string pNumber, string pName, DateTime pTime, double price)
         {
 
 
         }
-        public void Recipe(double quantity, Ingredient ingredient, Product product)
+        public void Recipe(double quantity)
         {
 
         }
 
-        public void Supplier(string sNumber, string sLocation, List<Ingredient> ingredient)
+        public void Supplier(string sNumber, string sLocation)
         {
 
         }
-        private string sNumber;
-        private string sLocation;
-        private List<Ingredient> ingredient;
+        
 
     }
 }

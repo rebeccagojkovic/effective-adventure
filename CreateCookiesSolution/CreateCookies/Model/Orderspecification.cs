@@ -12,6 +12,11 @@ namespace CreateCookies.Model
         private Order order;
         private Product product;
 
+        public Orderspecification(int palletQuantity, Order order, Product product)
+        {
+
+        }
+
         public int PalletQuantity
         {
             get

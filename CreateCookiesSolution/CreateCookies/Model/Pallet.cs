@@ -15,6 +15,11 @@ namespace CreateCookies.Model
         private Order order;
         private Product product;
 
+        public Pallet(string palletNumber, DateTime palletTime, string pNumber, string oNumber, Order order, Product product)
+        {
+
+        }
+
         public string PalletNumber
         {
             get

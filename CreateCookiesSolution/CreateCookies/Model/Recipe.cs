@@ -12,7 +12,10 @@ namespace CreateCookies.Model
         private Ingredient ingredient;
         private Product product;
 
-       
+       public Recipe(double quantity, Ingredient ingredient, Product product)
+        {
+
+        }
 
         public double Quantity
         {

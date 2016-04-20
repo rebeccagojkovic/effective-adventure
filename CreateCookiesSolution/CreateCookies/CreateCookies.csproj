@@ -69,7 +69,6 @@
       <DependentUpon>CreateCookiesDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Model\Customer.cs" />
-    <Compile Include="Model\Database.cs" />
     <Compile Include="Model\Ingredient.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\Orderspecification.cs" />

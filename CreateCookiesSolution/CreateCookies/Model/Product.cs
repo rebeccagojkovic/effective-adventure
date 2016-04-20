@@ -16,6 +16,11 @@ namespace CreateCookies.Model
         private List<Orderspecification> orderspecification;
         private List<Pallet> pallet;
 
+        public Product(string pNumber, string pName, DateTime pTime, double price, List<Recipe> recipe, List<Orderspecification> orderspecification, List<Pallet> pallet)
+        {
+
+        }
+
         public string PNumber
         {
             get
