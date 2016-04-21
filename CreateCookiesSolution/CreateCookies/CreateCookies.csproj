@@ -63,10 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Controller.cs" />
-    <Compile Include="CreateCookiesDataSet.Designer.cs">
+    <Compile Include="CreateCookiesDataSetTheOne.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CreateCookiesDataSet.xsd</DependentUpon>
+      <DependentUpon>CreateCookiesDataSetTheOne.xsd</DependentUpon>
     </Compile>
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Ingredient.cs" />
@@ -96,16 +96,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="CreateCookiesDataSet.xsc">
-      <DependentUpon>CreateCookiesDataSet.xsd</DependentUpon>
+    <None Include="CreateCookiesDataSetTheOne.xsc">
+      <DependentUpon>CreateCookiesDataSetTheOne.xsd</DependentUpon>
     </None>
-    <None Include="CreateCookiesDataSet.xsd">
+    <None Include="CreateCookiesDataSetTheOne.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CreateCookiesDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>CreateCookiesDataSetTheOne.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="CreateCookiesDataSet.xss">
-      <DependentUpon>CreateCookiesDataSet.xsd</DependentUpon>
+    <None Include="CreateCookiesDataSetTheOne.xss">
+      <DependentUpon>CreateCookiesDataSetTheOne.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

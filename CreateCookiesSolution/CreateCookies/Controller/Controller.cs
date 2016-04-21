@@ -12,7 +12,7 @@ namespace CreateCookies.Controller
 {
     public class Controller
     {
-        CreateCookiesDataSetTableAdapters.CustomerTableAdapter CDAL = new CreateCookiesDataSetTableAdapters.CustomerTableAdapter();
+        //CreateCookiesDataSetTableAdapters.CustomerTableAdapter CDAL = new CreateCookiesDataSetTableAdapters.CustomerTableAdapter();
 
         public Controller()
         {

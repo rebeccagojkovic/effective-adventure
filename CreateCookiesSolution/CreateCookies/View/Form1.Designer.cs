@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label48 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
@@ -68,6 +69,7 @@
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.dataGridViewSStorage = new System.Windows.Forms.DataGridView();
+            this.ingredientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.listViewProducedProducts = new System.Windows.Forms.ListView();
@@ -88,7 +90,6 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.ordeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.createCookiesDataSet = new CreateCookies.CreateCookiesDataSet();
             this.label42 = new System.Windows.Forms.Label();
             this.listViewOrderInformation = new System.Windows.Forms.ListView();
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -105,11 +106,11 @@
             this.textBoxSearchOrder = new System.Windows.Forms.TextBox();
             this.comboBoxSearchOrder = new System.Windows.Forms.ComboBox();
             this.dataGridViewOrderControl = new System.Windows.Forms.DataGridView();
-            this.oNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isDeliveredDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.expectedDeliveryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePickerDeliveryDateAO = new System.Windows.Forms.DateTimePicker();
+            this.textBoxisDeliveredAO = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.textBoxProductNUmberOA = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
             this.textBoxGenerateOrderNumber = new System.Windows.Forms.TextBox();
@@ -222,30 +223,25 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button8 = new System.Windows.Forms.Button();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.CustomerTableAdapter();
-            this.ordeTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.OrdeTableAdapter();
-            this.productTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.ProductTableAdapter();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.textBoxisDeliveredAO = new System.Windows.Forms.TextBox();
-            this.dateTimePickerDeliveryDateAO = new System.Windows.Forms.DateTimePicker();
-            this.ingredientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ingredientTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.IngredientTableAdapter();
-            this.iNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iQuantityInStockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.supplierTableAdapter = new CreateCookies.CreateCookiesDataSetTableAdapters.SupplierTableAdapter();
-            this.sNumberDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sLocationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createCookiesDataSetTheOne = new CreateCookies.CreateCookiesDataSetTheOne();
+            this.customerBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
+            this.customerTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.CustomerTableAdapter();
+            this.ordeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.ordeTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.OrdeTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ordeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.productTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.ProductTableAdapter();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             this.groupBox12.SuspendLayout();
             this.groupBox11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSStorage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -253,7 +249,6 @@
             this.tabPage2.SuspendLayout();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrderControl)).BeginInit();
@@ -273,8 +268,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetTheOne)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -298,10 +296,6 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sNumberDataGridViewTextBoxColumn1,
-            this.sNameDataGridViewTextBoxColumn,
-            this.sLocationDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.supplierBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(18, 425);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
@@ -309,6 +303,10 @@
             this.dataGridView1.RowTemplate.Height = 33;
             this.dataGridView1.Size = new System.Drawing.Size(792, 302);
             this.dataGridView1.TabIndex = 38;
+            // 
+            // supplierBindingSource
+            // 
+            this.supplierBindingSource.DataMember = "Supplier";
             // 
             // label48
             // 
@@ -708,12 +706,6 @@
             // 
             this.dataGridViewSStorage.AutoGenerateColumns = false;
             this.dataGridViewSStorage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSStorage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iNumberDataGridViewTextBoxColumn,
-            this.iNameDataGridViewTextBoxColumn,
-            this.iQuantityInStockDataGridViewTextBoxColumn,
-            this.sNumberDataGridViewTextBoxColumn,
-            this.pNumberDataGridViewTextBoxColumn});
             this.dataGridViewSStorage.DataSource = this.ingredientBindingSource;
             this.dataGridViewSStorage.Location = new System.Drawing.Point(18, 83);
             this.dataGridViewSStorage.Margin = new System.Windows.Forms.Padding(4);
@@ -721,6 +713,10 @@
             this.dataGridViewSStorage.RowTemplate.Height = 33;
             this.dataGridViewSStorage.Size = new System.Drawing.Size(792, 279);
             this.dataGridViewSStorage.TabIndex = 0;
+            // 
+            // ingredientBindingSource
+            // 
+            this.ingredientBindingSource.DataMember = "Ingredient";
             // 
             // tabPage3
             // 
@@ -936,7 +932,7 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.ordeBindingSource;
+            this.comboBox1.DataSource = this.ordeBindingSource2;
             this.comboBox1.DisplayMember = "oNumber";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(176, 313);
@@ -948,12 +944,6 @@
             // ordeBindingSource
             // 
             this.ordeBindingSource.DataMember = "Orde";
-            this.ordeBindingSource.DataSource = this.createCookiesDataSet;
-            // 
-            // createCookiesDataSet
-            // 
-            this.createCookiesDataSet.DataSetName = "CreateCookiesDataSet";
-            this.createCookiesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label42
             // 
@@ -1041,7 +1031,7 @@
             // 
             // comboBoxChooseOrder
             // 
-            this.comboBoxChooseOrder.DataSource = this.ordeBindingSource;
+            this.comboBoxChooseOrder.DataSource = this.ordeBindingSource2;
             this.comboBoxChooseOrder.DisplayMember = "oNumber";
             this.comboBoxChooseOrder.FormattingEnabled = true;
             this.comboBoxChooseOrder.Location = new System.Drawing.Point(234, 31);
@@ -1115,49 +1105,17 @@
             this.dataGridViewOrderControl.AutoGenerateColumns = false;
             this.dataGridViewOrderControl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewOrderControl.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.oNumberDataGridViewTextBoxColumn,
-            this.isDeliveredDataGridViewCheckBoxColumn,
-            this.expectedDeliveryDateDataGridViewTextBoxColumn,
-            this.cNumberDataGridViewTextBoxColumn});
-            this.dataGridViewOrderControl.DataSource = this.ordeBindingSource;
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewCheckBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.dataGridViewOrderControl.DataSource = this.ordeBindingSource1;
             this.dataGridViewOrderControl.Location = new System.Drawing.Point(26, 37);
             this.dataGridViewOrderControl.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridViewOrderControl.Name = "dataGridViewOrderControl";
             this.dataGridViewOrderControl.ReadOnly = true;
             this.dataGridViewOrderControl.Size = new System.Drawing.Size(1494, 302);
             this.dataGridViewOrderControl.TabIndex = 5;
-            // 
-            // oNumberDataGridViewTextBoxColumn
-            // 
-            this.oNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.oNumberDataGridViewTextBoxColumn.DataPropertyName = "oNumber";
-            this.oNumberDataGridViewTextBoxColumn.HeaderText = "oNumber";
-            this.oNumberDataGridViewTextBoxColumn.Name = "oNumberDataGridViewTextBoxColumn";
-            this.oNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // isDeliveredDataGridViewCheckBoxColumn
-            // 
-            this.isDeliveredDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.isDeliveredDataGridViewCheckBoxColumn.DataPropertyName = "isDelivered";
-            this.isDeliveredDataGridViewCheckBoxColumn.HeaderText = "isDelivered";
-            this.isDeliveredDataGridViewCheckBoxColumn.Name = "isDeliveredDataGridViewCheckBoxColumn";
-            this.isDeliveredDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // expectedDeliveryDateDataGridViewTextBoxColumn
-            // 
-            this.expectedDeliveryDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.expectedDeliveryDateDataGridViewTextBoxColumn.DataPropertyName = "expectedDeliveryDate";
-            this.expectedDeliveryDateDataGridViewTextBoxColumn.HeaderText = "expectedDeliveryDate";
-            this.expectedDeliveryDateDataGridViewTextBoxColumn.Name = "expectedDeliveryDateDataGridViewTextBoxColumn";
-            this.expectedDeliveryDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cNumberDataGridViewTextBoxColumn
-            // 
-            this.cNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cNumberDataGridViewTextBoxColumn.DataPropertyName = "cNumber";
-            this.cNumberDataGridViewTextBoxColumn.HeaderText = "cNumber";
-            this.cNumberDataGridViewTextBoxColumn.Name = "cNumberDataGridViewTextBoxColumn";
-            this.cNumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -1184,6 +1142,41 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Order";
+            // 
+            // dateTimePickerDeliveryDateAO
+            // 
+            this.dateTimePickerDeliveryDateAO.Location = new System.Drawing.Point(204, 296);
+            this.dateTimePickerDeliveryDateAO.Name = "dateTimePickerDeliveryDateAO";
+            this.dateTimePickerDeliveryDateAO.Size = new System.Drawing.Size(389, 31);
+            this.dateTimePickerDeliveryDateAO.TabIndex = 17;
+            // 
+            // textBoxisDeliveredAO
+            // 
+            this.textBoxisDeliveredAO.Location = new System.Drawing.Point(208, 352);
+            this.textBoxisDeliveredAO.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxisDeliveredAO.Name = "textBoxisDeliveredAO";
+            this.textBoxisDeliveredAO.Size = new System.Drawing.Size(386, 31);
+            this.textBoxisDeliveredAO.TabIndex = 16;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(12, 358);
+            this.label50.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(125, 25);
+            this.label50.TabIndex = 15;
+            this.label50.Text = "Is Delivered";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 296);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 25);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Delivery Date";
             // 
             // textBoxProductNUmberOA
             // 
@@ -1264,7 +1257,7 @@
             // 
             // comboBoxAOCnumber
             // 
-            this.comboBoxAOCnumber.DataSource = this.customerBindingSource4;
+            this.comboBoxAOCnumber.DataSource = this.customerBindingSource6;
             this.comboBoxAOCnumber.DisplayMember = "cNumber";
             this.comboBoxAOCnumber.FormattingEnabled = true;
             this.comboBoxAOCnumber.Location = new System.Drawing.Point(208, 406);
@@ -1276,7 +1269,6 @@
             // customerBindingSource4
             // 
             this.customerBindingSource4.DataMember = "Customer";
-            this.customerBindingSource4.DataSource = this.createCookiesDataSet;
             // 
             // label3
             // 
@@ -1300,7 +1292,7 @@
             // 
             // comboBoxChooseCookies
             // 
-            this.comboBoxChooseCookies.DataSource = this.productBindingSource;
+            this.comboBoxChooseCookies.DataSource = this.productBindingSource1;
             this.comboBoxChooseCookies.DisplayMember = "pName";
             this.comboBoxChooseCookies.FormattingEnabled = true;
             this.comboBoxChooseCookies.Location = new System.Drawing.Point(208, 119);
@@ -1313,7 +1305,6 @@
             // productBindingSource
             // 
             this.productBindingSource.DataMember = "Product";
-            this.productBindingSource.DataSource = this.createCookiesDataSet;
             // 
             // tabControl1
             // 
@@ -1383,7 +1374,7 @@
             // 
             // comboBoxOCnumber
             // 
-            this.comboBoxOCnumber.DataSource = this.customerBindingSource5;
+            this.comboBoxOCnumber.DataSource = this.customerBindingSource6;
             this.comboBoxOCnumber.DisplayMember = "cNumber";
             this.comboBoxOCnumber.FormattingEnabled = true;
             this.comboBoxOCnumber.Location = new System.Drawing.Point(232, 362);
@@ -1395,7 +1386,6 @@
             // customerBindingSource5
             // 
             this.customerBindingSource5.DataMember = "Customer";
-            this.customerBindingSource5.DataSource = this.createCookiesDataSet;
             // 
             // btnSeeOrders
             // 
@@ -1477,7 +1467,7 @@
             // 
             // comboBoxDCnumber
             // 
-            this.comboBoxDCnumber.DataSource = this.customerBindingSource4;
+            this.comboBoxDCnumber.DataSource = this.customerBindingSource6;
             this.comboBoxDCnumber.DisplayMember = "cNumber";
             this.comboBoxDCnumber.FormattingEnabled = true;
             this.comboBoxDCnumber.Location = new System.Drawing.Point(222, 65);
@@ -1513,8 +1503,7 @@
             // 
             // comboBoxUCnumber
             // 
-            this.comboBoxUCnumber.DataSource = this.customerBindingSource4;
-            this.comboBoxUCnumber.DisplayMember = "cNumber";
+            this.comboBoxUCnumber.DataSource = this.customerBindingSource6;
             this.comboBoxUCnumber.FormattingEnabled = true;
             this.comboBoxUCnumber.Location = new System.Drawing.Point(214, 40);
             this.comboBoxUCnumber.Margin = new System.Windows.Forms.Padding(4);
@@ -2262,126 +2251,73 @@
             this.button8.Text = "Show Orders";
             this.button8.UseVisualStyleBackColor = true;
             // 
+            // createCookiesDataSetTheOne
+            // 
+            this.createCookiesDataSetTheOne.DataSetName = "CreateCookiesDataSetTheOne";
+            this.createCookiesDataSetTheOne.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // customerBindingSource6
+            // 
+            this.customerBindingSource6.DataMember = "Customer";
+            this.customerBindingSource6.DataSource = this.createCookiesDataSetTheOne;
+            // 
             // customerTableAdapter
             // 
             this.customerTableAdapter.ClearBeforeFill = true;
+            // 
+            // ordeBindingSource1
+            // 
+            this.ordeBindingSource1.DataMember = "Orde";
+            this.ordeBindingSource1.DataSource = this.createCookiesDataSetTheOne;
             // 
             // ordeTableAdapter
             // 
             this.ordeTableAdapter.ClearBeforeFill = true;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "oNumber";
+            this.dataGridViewTextBoxColumn1.HeaderText = "oNumber";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "isDelivered";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "isDelivered";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "expectedDeliveryDate";
+            this.dataGridViewTextBoxColumn2.HeaderText = "expectedDeliveryDate";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "cNumber";
+            this.dataGridViewTextBoxColumn3.HeaderText = "cNumber";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // ordeBindingSource2
+            // 
+            this.ordeBindingSource2.DataMember = "Orde";
+            this.ordeBindingSource2.DataSource = this.createCookiesDataSetTheOne;
+            // 
+            // productBindingSource1
+            // 
+            this.productBindingSource1.DataMember = "Product";
+            this.productBindingSource1.DataSource = this.createCookiesDataSetTheOne;
+            // 
             // productTableAdapter
             // 
             this.productTableAdapter.ClearBeforeFill = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 296);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 25);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Delivery Date";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(12, 358);
-            this.label50.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(125, 25);
-            this.label50.TabIndex = 15;
-            this.label50.Text = "Is Delivered";
-            // 
-            // textBoxisDeliveredAO
-            // 
-            this.textBoxisDeliveredAO.Location = new System.Drawing.Point(208, 352);
-            this.textBoxisDeliveredAO.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxisDeliveredAO.Name = "textBoxisDeliveredAO";
-            this.textBoxisDeliveredAO.Size = new System.Drawing.Size(386, 31);
-            this.textBoxisDeliveredAO.TabIndex = 16;
-            // 
-            // dateTimePickerDeliveryDateAO
-            // 
-            this.dateTimePickerDeliveryDateAO.Location = new System.Drawing.Point(204, 296);
-            this.dateTimePickerDeliveryDateAO.Name = "dateTimePickerDeliveryDateAO";
-            this.dateTimePickerDeliveryDateAO.Size = new System.Drawing.Size(389, 31);
-            this.dateTimePickerDeliveryDateAO.TabIndex = 17;
-            // 
-            // ingredientBindingSource
-            // 
-            this.ingredientBindingSource.DataMember = "Ingredient";
-            this.ingredientBindingSource.DataSource = this.createCookiesDataSet;
-            // 
-            // ingredientTableAdapter
-            // 
-            this.ingredientTableAdapter.ClearBeforeFill = true;
-            // 
-            // iNumberDataGridViewTextBoxColumn
-            // 
-            this.iNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.iNumberDataGridViewTextBoxColumn.DataPropertyName = "iNumber";
-            this.iNumberDataGridViewTextBoxColumn.HeaderText = "iNumber";
-            this.iNumberDataGridViewTextBoxColumn.Name = "iNumberDataGridViewTextBoxColumn";
-            // 
-            // iNameDataGridViewTextBoxColumn
-            // 
-            this.iNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.iNameDataGridViewTextBoxColumn.DataPropertyName = "iName";
-            this.iNameDataGridViewTextBoxColumn.HeaderText = "iName";
-            this.iNameDataGridViewTextBoxColumn.Name = "iNameDataGridViewTextBoxColumn";
-            // 
-            // iQuantityInStockDataGridViewTextBoxColumn
-            // 
-            this.iQuantityInStockDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.iQuantityInStockDataGridViewTextBoxColumn.DataPropertyName = "iQuantityInStock";
-            this.iQuantityInStockDataGridViewTextBoxColumn.HeaderText = "iQuantityInStock";
-            this.iQuantityInStockDataGridViewTextBoxColumn.Name = "iQuantityInStockDataGridViewTextBoxColumn";
-            // 
-            // sNumberDataGridViewTextBoxColumn
-            // 
-            this.sNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sNumberDataGridViewTextBoxColumn.DataPropertyName = "sNumber";
-            this.sNumberDataGridViewTextBoxColumn.HeaderText = "sNumber";
-            this.sNumberDataGridViewTextBoxColumn.Name = "sNumberDataGridViewTextBoxColumn";
-            // 
-            // pNumberDataGridViewTextBoxColumn
-            // 
-            this.pNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.pNumberDataGridViewTextBoxColumn.DataPropertyName = "pNumber";
-            this.pNumberDataGridViewTextBoxColumn.HeaderText = "pNumber";
-            this.pNumberDataGridViewTextBoxColumn.Name = "pNumberDataGridViewTextBoxColumn";
-            // 
-            // supplierBindingSource
-            // 
-            this.supplierBindingSource.DataMember = "Supplier";
-            this.supplierBindingSource.DataSource = this.createCookiesDataSet;
-            // 
-            // supplierTableAdapter
-            // 
-            this.supplierTableAdapter.ClearBeforeFill = true;
-            // 
-            // sNumberDataGridViewTextBoxColumn1
-            // 
-            this.sNumberDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sNumberDataGridViewTextBoxColumn1.DataPropertyName = "sNumber";
-            this.sNumberDataGridViewTextBoxColumn1.HeaderText = "sNumber";
-            this.sNumberDataGridViewTextBoxColumn1.Name = "sNumberDataGridViewTextBoxColumn1";
-            // 
-            // sNameDataGridViewTextBoxColumn
-            // 
-            this.sNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sNameDataGridViewTextBoxColumn.DataPropertyName = "sName";
-            this.sNameDataGridViewTextBoxColumn.HeaderText = "sName";
-            this.sNameDataGridViewTextBoxColumn.Name = "sNameDataGridViewTextBoxColumn";
-            // 
-            // sLocationDataGridViewTextBoxColumn
-            // 
-            this.sLocationDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sLocationDataGridViewTextBoxColumn.DataPropertyName = "sLocation";
-            this.sLocationDataGridViewTextBoxColumn.HeaderText = "sLocation";
-            this.sLocationDataGridViewTextBoxColumn.Name = "sLocationDataGridViewTextBoxColumn";
             // 
             // Form1
             // 
@@ -2396,11 +2332,13 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSStorage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.groupBox13.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
@@ -2410,7 +2348,6 @@
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSet)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -2438,8 +2375,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetTheOne)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2628,18 +2568,14 @@
         private System.Windows.Forms.BindingSource customerBindingSource3;
         private System.Windows.Forms.BindingSource customerBindingSource1;
         private System.Windows.Forms.BindingSource customerBindingSource2;
-        private CreateCookiesDataSet createCookiesDataSet;
         private System.Windows.Forms.BindingSource customerBindingSource4;
-        private CreateCookiesDataSetTableAdapters.CustomerTableAdapter customerTableAdapter;
         private System.Windows.Forms.BindingSource customerBindingSource5;
         private System.Windows.Forms.BindingSource ordeBindingSource;
-        private CreateCookiesDataSetTableAdapters.OrdeTableAdapter ordeTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn oNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isDeliveredDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn expectedDeliveryDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource productBindingSource;
-        private CreateCookiesDataSetTableAdapters.ProductTableAdapter productTableAdapter;
         private System.Windows.Forms.TextBox textBoxProductNUmberOA;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.DateTimePicker dateTimePickerDeliveryDateAO;
@@ -2647,17 +2583,27 @@
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource ingredientBindingSource;
-        private CreateCookiesDataSetTableAdapters.IngredientTableAdapter ingredientTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iQuantityInStockDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource supplierBindingSource;
-        private CreateCookiesDataSetTableAdapters.SupplierTableAdapter supplierTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn sNumberDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn sNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sLocationDataGridViewTextBoxColumn;
+        private CreateCookiesDataSetTheOne createCookiesDataSetTheOne;
+        private System.Windows.Forms.BindingSource customerBindingSource6;
+        private CreateCookiesDataSetTheOneTableAdapters.CustomerTableAdapter customerTableAdapter;
+        private System.Windows.Forms.BindingSource ordeBindingSource1;
+        private CreateCookiesDataSetTheOneTableAdapters.OrdeTableAdapter ordeTableAdapter;
+        private System.Windows.Forms.BindingSource ordeBindingSource2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.BindingSource productBindingSource1;
+        private CreateCookiesDataSetTheOneTableAdapters.ProductTableAdapter productTableAdapter;
     }
 }
 

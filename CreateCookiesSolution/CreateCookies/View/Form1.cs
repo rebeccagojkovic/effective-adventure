@@ -23,23 +23,13 @@ namespace CreateCookies
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'createCookiesDataSet.Supplier' table. You can move, or remove it, as needed.
-            this.supplierTableAdapter.Fill(this.createCookiesDataSet.Supplier);
-            // TODO: This line of code loads data into the 'createCookiesDataSet.Ingredient' table. You can move, or remove it, as needed.
-            this.ingredientTableAdapter.Fill(this.createCookiesDataSet.Ingredient);
-            // TODO: This line of code loads data into the 'createCookiesDataSet.Product' table. You can move, or remove it, as needed.
-            this.productTableAdapter.Fill(this.createCookiesDataSet.Product);
-            // TODO: This line of code loads data into the 'createCookiesDataSet.Orde' table. You can move, or remove it, as needed.
-            this.ordeTableAdapter.Fill(this.createCookiesDataSet.Orde);
-            // TODO: This line of code loads data into the 'createCookiesDataSet.Customer' table. You can move, or remove it, as needed.
-            this.customerTableAdapter.Fill(this.createCookiesDataSet.Customer);
-            // TODO: This line of code loads data into the 'createCookiesDataSet.Customer' table. You can move, or remove it, as needed.
-            this.customerTableAdapter.Fill(this.createCookiesDataSet.Customer);
-
+            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Product' table. You can move, or remove it, as needed.
+            this.productTableAdapter.Fill(this.createCookiesDataSetTheOne.Product);
+            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Orde' table. You can move, or remove it, as needed.
+            this.ordeTableAdapter.Fill(this.createCookiesDataSetTheOne.Orde);
+            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Customer' table. You can move, or remove it, as needed.
+            this.customerTableAdapter.Fill(this.createCookiesDataSetTheOne.Customer);
         }
-
-
-
 
         private void buttonRegCustomer_Click(object sender, EventArgs e)
         {
@@ -287,7 +277,6 @@ namespace CreateCookies
             AddOrderCommand2.Parameters.AddWithValue("@oNumber", textBoxGenerateOrderNumber.Text.ToString());
             AddOrderCommand2.Parameters.AddWithValue("@pNumber", textBoxProductNUmberOA.Text);
             AddOrderCommand2.Parameters.AddWithValue("@palletQuantity", comboBoxPalletQuantity.Text);
-
 
             AddOrderConnection.Open();
             AddOrderCommand1.ExecuteNonQuery();
