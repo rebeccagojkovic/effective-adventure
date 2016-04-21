@@ -273,12 +273,12 @@ namespace CreateCookies
             SqlCommand AddOrderCommand1 = new SqlCommand("insert into Orde (oNumber, isDelivered,expectedDeliveryDate, cNumber) values(@oNumber, @isDelivered,@expectedDeliveryDate, @cNumber)", AddOrderConnection);
             SqlCommand AddOrderCommand2 = new SqlCommand("insert into Orderspecification (oNumber, pNumber, palletQuantity) values(@oNumber, @pNumber, @palletQuantity)", AddOrderConnection);
 
-            AddOrderCommand1.Parameters.AddWithValue("@oNumber", textBoxGenerateOrderNumber.Text.ToString());
+            AddOrderCommand1.Parameters.AddWithValue("@oNumber", textBoxGenerateOrderNumber.Text);
             AddOrderCommand1.Parameters.AddWithValue("@isDelivered", textBoxisDeliveredAO.Text);
             AddOrderCommand1.Parameters.AddWithValue("@expectedDeliveryDate", dateTimePickerDeliveryDateAO.Value.Date);
             AddOrderCommand1.Parameters.AddWithValue("@cNumber", comboBoxAOCnumber.Text);
 
-            AddOrderCommand2.Parameters.AddWithValue("@oNumber", textBoxGenerateOrderNumber.Text.ToString());
+            AddOrderCommand2.Parameters.AddWithValue("@oNumber", textBoxGenerateOrderNumber.Text);
             AddOrderCommand2.Parameters.AddWithValue("@pNumber", textBoxProductNUmberOA.Text);
             AddOrderCommand2.Parameters.AddWithValue("@palletQuantity", comboBoxPalletQuantity.Text);
 
@@ -286,6 +286,12 @@ namespace CreateCookies
             AddOrderCommand1.ExecuteNonQuery();
             AddOrderCommand2.ExecuteNonQuery();
             AddOrderConnection.Close();
+        }
+
+        private void btnProduce_Click(object sender, EventArgs e)
+        {
+            listViewProducedProducts.View = View.Details;
+            
         }
     }
 }  

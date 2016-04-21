@@ -874,17 +874,7 @@
             "7",
             "8",
             "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20"});
+            "10"});
             this.comboBoxPalletAmount.Location = new System.Drawing.Point(320, 179);
             this.comboBoxPalletAmount.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxPalletAmount.Name = "comboBoxPalletAmount";
@@ -893,6 +883,7 @@
             // 
             // comboBoxProductToProduce
             // 
+            this.comboBoxProductToProduce.DataSource = this.productBindingSource1;
             this.comboBoxProductToProduce.FormattingEnabled = true;
             this.comboBoxProductToProduce.Location = new System.Drawing.Point(320, 96);
             this.comboBoxProductToProduce.Margin = new System.Windows.Forms.Padding(4);
@@ -919,6 +910,7 @@
             this.btnProduce.TabIndex = 2;
             this.btnProduce.Text = "Produce";
             this.btnProduce.UseVisualStyleBackColor = true;
+            this.btnProduce.Click += new System.EventHandler(this.btnProduce_Click);
             // 
             // label20
             // 
