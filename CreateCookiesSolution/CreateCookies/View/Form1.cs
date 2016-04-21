@@ -23,6 +23,8 @@ namespace CreateCookies
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Produced' table. You can move, or remove it, as needed.
+            this.producedTableAdapter.Fill(this.createCookiesDataSetTheOne.Produced);
             // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Supplier' table. You can move, or remove it, as needed.
             this.supplierTableAdapter.Fill(this.createCookiesDataSetTheOne.Supplier);
             // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Ingredient' table. You can move, or remove it, as needed.
@@ -290,11 +292,74 @@ namespace CreateCookies
 
         private void btnProduce_Click(object sender, EventArgs e)
         {
-            listViewProducedProducts.View = View.Details;
+            SqlConnection produceConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+            SqlCommand registerCustommerCommand = new SqlCommand("insert into Produced ( pTime,pName, pPallet, pNumber) values(@pTime, @pName, @pPallet, @pNumber)", produceConnection);
+
+            registerCustommerCommand.Parameters.AddWithValue("@pTime", dateTimePickerPProductTime.Value.Date);
+            registerCustommerCommand.Parameters.AddWithValue("@pName", comboBoxProductToProduce.Text );
+            registerCustommerCommand.Parameters.AddWithValue("@pPallet", comboBoxPalletAmount.Text);
+            registerCustommerCommand.Parameters.AddWithValue("@pNumber", textBoxpNumberProduction.Text);
+
+            produceConnection.Open();
+            registerCustommerCommand.ExecuteNonQuery();
+
             
+            
+            //if (comboBoxProductToProduce.Text == "Amneris")
+            //{
+            //    SqlDataAdapter dataadapterProduction = new SqlDataAdapter("update Ingredient set  iNumber=@iNumber, iName=@iName,iQuantityInStock=@iQuantiryInStock, sNumber=@sNumber where i)", produceConnection);
+            //    DataTable SearchOrderGrid = new DataTable();
+            //    dataadapterProduction.Fill(SearchOrderGrid);
+            //    dataGridViewOrderControl.DataSource = SearchOrderGrid;
+            //}
+            //else if (comboBoxProductToProduce.Text == "Berliner")
+            //{
+                
+            //}
+            //else if (comboBoxProductToProduce.Text == "Nötkakor")
+            //{
+               
+            //}
+            //else if (comboBoxSearchOrder.Text == "Kokostoppar")
+            //{
+               
+            //}
+            //else if (comboBoxSearchOrder.Text == "Nötringar")
+            //{
+
+            //}
+            //else if (comboBoxSearchOrder.Text == "Tango")
+            //{
+
+            //}
+
+            //SqlCommand updateIngredientStockCommand = new SqlCommand("update Ingredient set  iNumber=@iNumber, iName=@iName,iQuantityInStock=@iQuantiryInStock, sNumber=@sNumber where i)", produceConnection);
+            //updateIngredientStockCommand.ExecuteNonQuery();
+
+            produceConnection.Close();
+        }
+
+        private void comboBoxProductToProduce_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection producttoProduceeConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+
+            producttoProduceeConnection.Open();
+
+            SqlCommand producttoProduceecmd = new SqlCommand("select * from Product where pName='" + comboBoxProductToProduce.Text + "'", producttoProduceeConnection);
+            SqlDataReader dr = producttoProduceecmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                textBoxpNumberProduction.Text = dr["pNumber"].ToString();
+            }
+            dr.Close();
+            producttoProduceeConnection.Close();
         }
     }
-}  
+} 
+
+    
+  
     
 
 
