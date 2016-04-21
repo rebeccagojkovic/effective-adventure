@@ -23,6 +23,10 @@ namespace CreateCookies
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Supplier' table. You can move, or remove it, as needed.
+            this.supplierTableAdapter.Fill(this.createCookiesDataSetTheOne.Supplier);
+            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Ingredient' table. You can move, or remove it, as needed.
+            this.ingredientTableAdapter.Fill(this.createCookiesDataSetTheOne.Ingredient);
             // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Product' table. You can move, or remove it, as needed.
             this.productTableAdapter.Fill(this.createCookiesDataSetTheOne.Product);
             // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Orde' table. You can move, or remove it, as needed.
