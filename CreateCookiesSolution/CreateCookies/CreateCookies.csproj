@@ -63,6 +63,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Controller.cs" />
+    <Compile Include="Controller\CustomerController.cs" />
+    <Compile Include="Controller\IngredientController.cs" />
+    <Compile Include="Controller\OrderController.cs" />
+    <Compile Include="Controller\OrderspecificationController.cs" />
+    <Compile Include="Controller\PalletController.cs" />
+    <Compile Include="Controller\ProductController.cs" />
+    <Compile Include="Controller\RecipeController.cs" />
+    <Compile Include="Controller\SupplierController.cs" />
     <Compile Include="CreateCookiesDataSetTheOne.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
