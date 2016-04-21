@@ -11,13 +11,19 @@ namespace CreateCookies.Model
         private string cNumber;
         private string cName;
         private string cAddress;
+        private string cPostalAddress;
+        private string cCountry;
+        private string cEmail;
         private List<Order> order;
 
-        public Customer(string cNumber, string cName, string cAddress)
+        public Customer(string cNumber, string cName, string cAddress, string cPostalAddress, string cCountry, string cEmail)
         {
             this.cNumber = cNumber;
             this.cName = cName;
             this.cAddress = cAddress;
+            this.cPostalAddress = cPostalAddress;
+            this.cCountry = cCountry;
+            this.cEmail = cEmail;
         }
         public Customer()
         {
@@ -59,6 +65,47 @@ namespace CreateCookies.Model
             set
             {
                 cAddress = value;
+            }
+
+        }
+
+
+        public string CPostalAddress
+        {
+            get
+            {
+                return cPostalAddress;
+            }
+
+            set
+            {
+                cPostalAddress = value;
+            }
+        }
+
+        public string CCountry
+        {
+            get
+            {
+                return cCountry;
+            }
+
+            set
+            {
+                cCountry = value;
+            }
+        }
+
+        public string CEmail
+        {
+            get
+            {
+                return cEmail;
+            }
+
+            set
+            {
+                cEmail = value;
             }
         }
         internal List<Order> Order
