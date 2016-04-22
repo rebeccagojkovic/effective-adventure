@@ -254,6 +254,12 @@
             this.ingredientTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.IngredientTableAdapter();
             this.supplierTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.SupplierTableAdapter();
             this.producedTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.ProducedTableAdapter();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource1)).BeginInit();
@@ -329,7 +335,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(792, 302);
+            this.dataGridView1.Size = new System.Drawing.Size(792, 282);
             this.dataGridView1.TabIndex = 38;
             // 
             // dataGridViewTextBoxColumn11
@@ -366,7 +372,7 @@
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(24, 385);
+            this.label48.Location = new System.Drawing.Point(22, 372);
             this.label48.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(91, 25);
@@ -385,6 +391,12 @@
             // 
             // groupBox12
             // 
+            this.groupBox12.Controls.Add(this.textBox12);
+            this.groupBox12.Controls.Add(this.label54);
+            this.groupBox12.Controls.Add(this.textBox11);
+            this.groupBox12.Controls.Add(this.label53);
+            this.groupBox12.Controls.Add(this.label52);
+            this.groupBox12.Controls.Add(this.textBox10);
             this.groupBox12.Controls.Add(this.textBoxAddIngredient);
             this.groupBox12.Controls.Add(this.comboBoxSlocation);
             this.groupBox12.Controls.Add(this.btnAddSupplier);
@@ -396,14 +408,14 @@
             this.groupBox12.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox12.Size = new System.Drawing.Size(792, 260);
+            this.groupBox12.Size = new System.Drawing.Size(1586, 260);
             this.groupBox12.TabIndex = 17;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Register New Supplier";
             // 
             // textBoxAddIngredient
             // 
-            this.textBoxAddIngredient.Location = new System.Drawing.Point(296, 54);
+            this.textBoxAddIngredient.Location = new System.Drawing.Point(1096, 61);
             this.textBoxAddIngredient.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxAddIngredient.Name = "textBoxAddIngredient";
             this.textBoxAddIngredient.Size = new System.Drawing.Size(424, 31);
@@ -426,10 +438,10 @@
             // 
             // btnAddSupplier
             // 
-            this.btnAddSupplier.Location = new System.Drawing.Point(64, 199);
+            this.btnAddSupplier.Location = new System.Drawing.Point(64, 208);
             this.btnAddSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddSupplier.Name = "btnAddSupplier";
-            this.btnAddSupplier.Size = new System.Drawing.Size(656, 44);
+            this.btnAddSupplier.Size = new System.Drawing.Size(1456, 44);
             this.btnAddSupplier.TabIndex = 13;
             this.btnAddSupplier.Text = "Register new Supplier";
             this.btnAddSupplier.UseVisualStyleBackColor = true;
@@ -445,12 +457,12 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(58, 60);
+            this.label37.Location = new System.Drawing.Point(881, 70);
             this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(151, 25);
+            this.label37.Size = new System.Drawing.Size(203, 25);
             this.label37.TabIndex = 2;
-            this.label37.Text = "Add Ingredient";
+            this.label37.Text = "Ingredient\'s Number";
             // 
             // label38
             // 
@@ -503,7 +515,7 @@
             this.groupBox11.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox11.Size = new System.Drawing.Size(760, 965);
+            this.groupBox11.Size = new System.Drawing.Size(760, 680);
             this.groupBox11.TabIndex = 1;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Supplier";
@@ -701,7 +713,7 @@
             // 
             // buttonSendOrderUpdateStorage
             // 
-            this.buttonSendOrderUpdateStorage.Location = new System.Drawing.Point(64, 612);
+            this.buttonSendOrderUpdateStorage.Location = new System.Drawing.Point(64, 596);
             this.buttonSendOrderUpdateStorage.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSendOrderUpdateStorage.Name = "buttonSendOrderUpdateStorage";
             this.buttonSendOrderUpdateStorage.Size = new System.Drawing.Size(674, 46);
@@ -771,7 +783,7 @@
             this.dataGridViewSStorage.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewSStorage.Name = "dataGridViewSStorage";
             this.dataGridViewSStorage.RowTemplate.Height = 33;
-            this.dataGridViewSStorage.Size = new System.Drawing.Size(792, 279);
+            this.dataGridViewSStorage.Size = new System.Drawing.Size(792, 259);
             this.dataGridViewSStorage.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn7
@@ -2488,6 +2500,60 @@
             // 
             this.producedTableAdapter.ClearBeforeFill = true;
             // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(296, 67);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(424, 31);
+            this.textBox10.TabIndex = 16;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(59, 70);
+            this.label52.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(187, 25);
+            this.label52.TabIndex = 17;
+            this.label52.Text = "Supplier\'s Number";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(881, 112);
+            this.label53.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(169, 25);
+            this.label53.TabIndex = 18;
+            this.label53.Text = "Ingredient Name";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(1096, 109);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(424, 31);
+            this.textBox11.TabIndex = 19;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(883, 152);
+            this.label54.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(175, 25);
+            this.label54.TabIndex = 20;
+            this.label54.Text = "Quantity In Stock";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(1096, 152);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(424, 31);
+            this.textBox12.TabIndex = 21;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -2797,6 +2863,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pPalletDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label label53;
     }
 }
 
