@@ -316,21 +316,82 @@ namespace CreateCookies
                 dataGridViewStorage.DataSource = ProduceStorageGrid;
 
               
-            }else if (comboBoxProductToProduce.Text == "Berliner")
+            }else if (comboBoxProductToProduce.Text == "Nötkakor" && comboBoxProductToProduce.Text != "")
             {
+                SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
+                      WHEN 'Ägg' THEN (iQuantityInStock -4)
+                      WHEN 'Mjöl' THEN (iQuantityInStock -50)
+                      WHEN 'Socker' THEN (iQuantityInStock -375) 
+                      WHEN 'Nötter' THEN (iQuantityInStock -1375)
+                      ELSE iQuantityInStock
+                      END
+                      WHERE iName IN('Ägg', 'Mjöl','Socker','Nötter')", produceConnection);
 
-            }else if (comboBoxProductToProduce.Text == "Nötkakor")
+                DataTable ProduceStorageGrid = new DataTable();
+                da.Fill(ProduceStorageGrid);
+                dataGridViewStorage.DataSource = ProduceStorageGrid;
+
+            }
+            else if (comboBoxProductToProduce.Text == "Berliner" && comboBoxProductToProduce.Text != "")
             {
+                SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
+                      WHEN 'Smör' THEN (iQuantityInStock -450)
+                      WHEN 'Mjöl' THEN (iQuantityInStock -450)
+                      WHEN 'Socker' THEN (iQuantityInStock -190) 
+                      WHEN 'Mjölk' THEN (iQuantityInStock -150)
+                      ELSE iQuantityInStock
+                      END
+                      WHERE iName IN('Smör', 'Mjöl','Socker','Nötter')", produceConnection);
 
-            }else if (comboBoxSearchOrder.Text == "Kokostoppar")
+                DataTable ProduceStorageGrid = new DataTable();
+                da.Fill(ProduceStorageGrid);
+                dataGridViewStorage.DataSource = ProduceStorageGrid;
+
+            }
+            else if (comboBoxProductToProduce.Text == "Kokostoppar" && comboBoxProductToProduce.Text != "")
             {
+                SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
+                      WHEN 'Marsipan' THEN (iQuantityInStock -600)
+                      WHEN 'vaniljsocker' THEN (iQuantityInStock -60)
+                      WHEN 'Choklad' THEN (iQuantityInStock -400) 
+                      WHEN 'Nötter' THEN (iQuantityInStock -600)
+                      ELSE iQuantityInStock
+                      END
+                      WHERE iName IN('Marsipan', 'vaniljsocker','Choklad','Nötter')", produceConnection);
 
-            } else if (comboBoxSearchOrder.Text == "Amneris")
+                DataTable ProduceStorageGrid = new DataTable();
+                da.Fill(ProduceStorageGrid);
+                dataGridViewStorage.DataSource = ProduceStorageGrid;
+
+            } else if (comboBoxProductToProduce.Text == "Amneris" && comboBoxProductToProduce.Text != "")
             {
+                SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
+                      WHEN 'Mjölk' THEN (iQuantityInStock -110)
+                      WHEN 'Mjöl' THEN (iQuantityInStock -400)
+                      WHEN 'Socker' THEN (iQuantityInStock -100) 
+                      WHEN 'Mandel' THEN (iQuantityInStock -300)
+                      ELSE iQuantityInStock
+                      END
+                      WHERE iName IN('Mjölk', 'Mjöl','Socker','Mandel')", produceConnection);
 
-            } else if (comboBoxSearchOrder.Text == "Tango")
+                DataTable ProduceStorageGrid = new DataTable();
+                da.Fill(ProduceStorageGrid);
+                dataGridViewStorage.DataSource = ProduceStorageGrid;
+
+            } else if (comboBoxProductToProduce.Text == "Tango" && comboBoxProductToProduce.Text != "")
             {
+                SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
+                      WHEN 'Marsipan' THEN (iQuantityInStock -550)
+                      WHEN 'Choklad' THEN (iQuantityInStock -300)
+                      WHEN 'vaniljsocker' THEN (iQuantityInStock -30) 
+                      WHEN 'Ägg' THEN (iQuantityInStock -10)
+                      ELSE iQuantityInStock
+                      END
+                      WHERE iName IN('Marsipan', 'Choklad','vaniljsocker','Ägg')", produceConnection);
 
+                DataTable ProduceStorageGrid = new DataTable();
+                da.Fill(ProduceStorageGrid);
+                dataGridViewStorage.DataSource = ProduceStorageGrid;
             }
 
 
