@@ -82,6 +82,11 @@
             this.ingredientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.pTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pPalletDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.producedBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.textBoxpNumberProduction = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
@@ -248,12 +253,7 @@
             this.productTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.ProductTableAdapter();
             this.ingredientTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.IngredientTableAdapter();
             this.supplierTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.SupplierTableAdapter();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.producedBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.producedTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.ProducedTableAdapter();
-            this.pTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pPalletDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource1)).BeginInit();
@@ -266,6 +266,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.groupBox13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.producedBindingSource)).BeginInit();
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStorage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).BeginInit();
@@ -295,8 +297,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.producedBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -840,6 +840,53 @@
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Produced products";
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.pTimeDataGridViewTextBoxColumn,
+            this.pNameDataGridViewTextBoxColumn,
+            this.pPalletDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.producedBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(21, 41);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowTemplate.Height = 33;
+            this.dataGridView2.Size = new System.Drawing.Size(1504, 426);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // pTimeDataGridViewTextBoxColumn
+            // 
+            this.pTimeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pTimeDataGridViewTextBoxColumn.DataPropertyName = "pTime";
+            this.pTimeDataGridViewTextBoxColumn.HeaderText = "pTime";
+            this.pTimeDataGridViewTextBoxColumn.Name = "pTimeDataGridViewTextBoxColumn";
+            this.pTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pNameDataGridViewTextBoxColumn
+            // 
+            this.pNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pNameDataGridViewTextBoxColumn.DataPropertyName = "pName";
+            this.pNameDataGridViewTextBoxColumn.HeaderText = "pName";
+            this.pNameDataGridViewTextBoxColumn.Name = "pNameDataGridViewTextBoxColumn";
+            this.pNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pPalletDataGridViewTextBoxColumn
+            // 
+            this.pPalletDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pPalletDataGridViewTextBoxColumn.DataPropertyName = "pPallet";
+            this.pPalletDataGridViewTextBoxColumn.HeaderText = "pPallet";
+            this.pPalletDataGridViewTextBoxColumn.Name = "pPalletDataGridViewTextBoxColumn";
+            this.pPalletDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // producedBindingSource
+            // 
+            this.producedBindingSource.DataMember = "Produced";
+            this.producedBindingSource.DataSource = this.createCookiesDataSetTheOne;
+            // 
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.textBoxpNumberProduction);
@@ -974,7 +1021,8 @@
             this.comboBoxProductToProduce.Name = "comboBoxProductToProduce";
             this.comboBoxProductToProduce.Size = new System.Drawing.Size(370, 33);
             this.comboBoxProductToProduce.TabIndex = 4;
-            
+            this.comboBoxProductToProduce.SelectedIndexChanged += new System.EventHandler(this.comboBoxProductToProduce_SelectedIndexChanged_1);
+            // 
             // productBindingSource2
             // 
             this.productBindingSource2.DataMember = "Product";
@@ -2436,56 +2484,9 @@
             // 
             this.supplierTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.pTimeDataGridViewTextBoxColumn,
-            this.pNameDataGridViewTextBoxColumn,
-            this.pPalletDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.producedBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(21, 41);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowTemplate.Height = 33;
-            this.dataGridView2.Size = new System.Drawing.Size(1504, 426);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // producedBindingSource
-            // 
-            this.producedBindingSource.DataMember = "Produced";
-            this.producedBindingSource.DataSource = this.createCookiesDataSetTheOne;
-            // 
             // producedTableAdapter
             // 
             this.producedTableAdapter.ClearBeforeFill = true;
-            // 
-            // pTimeDataGridViewTextBoxColumn
-            // 
-            this.pTimeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.pTimeDataGridViewTextBoxColumn.DataPropertyName = "pTime";
-            this.pTimeDataGridViewTextBoxColumn.HeaderText = "pTime";
-            this.pTimeDataGridViewTextBoxColumn.Name = "pTimeDataGridViewTextBoxColumn";
-            this.pTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pNameDataGridViewTextBoxColumn
-            // 
-            this.pNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.pNameDataGridViewTextBoxColumn.DataPropertyName = "pName";
-            this.pNameDataGridViewTextBoxColumn.HeaderText = "pName";
-            this.pNameDataGridViewTextBoxColumn.Name = "pNameDataGridViewTextBoxColumn";
-            this.pNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pPalletDataGridViewTextBoxColumn
-            // 
-            this.pPalletDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.pPalletDataGridViewTextBoxColumn.DataPropertyName = "pPallet";
-            this.pPalletDataGridViewTextBoxColumn.HeaderText = "pPallet";
-            this.pPalletDataGridViewTextBoxColumn.Name = "pPalletDataGridViewTextBoxColumn";
-            this.pPalletDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Form1
             // 
@@ -2512,6 +2513,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.groupBox13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.producedBindingSource)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStorage)).EndInit();
@@ -2551,8 +2554,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.producedBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

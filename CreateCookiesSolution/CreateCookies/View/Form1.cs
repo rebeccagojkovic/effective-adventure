@@ -293,53 +293,55 @@ namespace CreateCookies
         private void btnProduce_Click(object sender, EventArgs e)
         {
             SqlConnection produceConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-            SqlCommand registerCustommerCommand = new SqlCommand("insert into Produced ( pTime,pName, pPallet, pNumber) values(@pTime, @pName, @pPallet, @pNumber)", produceConnection);
+            SqlCommand producedCommand = new SqlCommand("insert into Produced ( pTime,pName, pPallet, pNumber) values(@pTime, @pName, @pPallet, @pNumber)", produceConnection);
 
-            registerCustommerCommand.Parameters.AddWithValue("@pTime", dateTimePickerPProductTime.Value.Date);
-            registerCustommerCommand.Parameters.AddWithValue("@pName", comboBoxProductToProduce.Text );
-            registerCustommerCommand.Parameters.AddWithValue("@pPallet", comboBoxPalletAmount.Text);
-            registerCustommerCommand.Parameters.AddWithValue("@pNumber", textBoxpNumberProduction.Text);
+            producedCommand.Parameters.AddWithValue("@pTime", dateTimePickerPProductTime.Value.Date);
+            producedCommand.Parameters.AddWithValue("@pName", comboBoxProductToProduce.Text );
+            producedCommand.Parameters.AddWithValue("@pPallet", comboBoxPalletAmount.Text);
+            producedCommand.Parameters.AddWithValue("@pNumber", textBoxpNumberProduction.Text);
+         
+            if (comboBoxProductToProduce.Text == "Nötingar" && comboBoxProductToProduce.Text!="")
+            {
+                SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
+                      WHEN 'Smör' THEN (iQuantityInStock -450)
+                      WHEN 'Mjöl' THEN (iQuantityInStock -450)
+                      WHEN 'Socker' THEN (iQuantityInStock -190) 
+                      WHEN 'Nötter' THEN (iQuantityInStock -225)
+                      ELSE iQuantityInStock
+                      END
+                      WHERE iName IN('Smör', 'Mjöl','Socker','Nötter')", produceConnection);
+
+                DataTable ProduceStorageGrid = new DataTable();
+                da.Fill(ProduceStorageGrid);
+                dataGridViewStorage.DataSource = ProduceStorageGrid;
+
+              
+            }else if (comboBoxProductToProduce.Text == "Berliner")
+            {
+
+            }else if (comboBoxProductToProduce.Text == "Nötkakor")
+            {
+
+            }else if (comboBoxSearchOrder.Text == "Kokostoppar")
+            {
+
+            } else if (comboBoxSearchOrder.Text == "Amneris")
+            {
+
+            } else if (comboBoxSearchOrder.Text == "Tango")
+            {
+
+            }
+
 
             produceConnection.Open();
-            registerCustommerCommand.ExecuteNonQuery();
-
-            
-            
-            //if (comboBoxProductToProduce.Text == "Amneris")
-            //{
-            //    SqlDataAdapter dataadapterProduction = new SqlDataAdapter("update Ingredient set  iNumber=@iNumber, iName=@iName,iQuantityInStock=@iQuantiryInStock, sNumber=@sNumber where i)", produceConnection);
-            //    DataTable SearchOrderGrid = new DataTable();
-            //    dataadapterProduction.Fill(SearchOrderGrid);
-            //    dataGridViewOrderControl.DataSource = SearchOrderGrid;
-            //}
-            //else if (comboBoxProductToProduce.Text == "Berliner")
-            //{
-                
-            //}
-            //else if (comboBoxProductToProduce.Text == "Nötkakor")
-            //{
-               
-            //}
-            //else if (comboBoxSearchOrder.Text == "Kokostoppar")
-            //{
-               
-            //}
-            //else if (comboBoxSearchOrder.Text == "Nötringar")
-            //{
-
-            //}
-            //else if (comboBoxSearchOrder.Text == "Tango")
-            //{
-
-            //}
-
-            //SqlCommand updateIngredientStockCommand = new SqlCommand("update Ingredient set  iNumber=@iNumber, iName=@iName,iQuantityInStock=@iQuantiryInStock, sNumber=@sNumber where i)", produceConnection);
-            //updateIngredientStockCommand.ExecuteNonQuery();
-
+            producedCommand.ExecuteNonQuery();
             produceConnection.Close();
         }
 
-        private void comboBoxProductToProduce_SelectedIndexChanged(object sender, EventArgs e)
+        
+
+        private void comboBoxProductToProduce_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             SqlConnection producttoProduceeConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
 
