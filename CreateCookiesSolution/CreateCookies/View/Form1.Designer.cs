@@ -396,7 +396,7 @@
             this.groupBox12.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox12.Size = new System.Drawing.Size(742, 260);
+            this.groupBox12.Size = new System.Drawing.Size(792, 260);
             this.groupBox12.TabIndex = 17;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Register New Supplier";
@@ -406,7 +406,7 @@
             this.textBoxAddIngredient.Location = new System.Drawing.Point(296, 54);
             this.textBoxAddIngredient.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxAddIngredient.Name = "textBoxAddIngredient";
-            this.textBoxAddIngredient.Size = new System.Drawing.Size(354, 31);
+            this.textBoxAddIngredient.Size = new System.Drawing.Size(424, 31);
             this.textBoxAddIngredient.TabIndex = 15;
             // 
             // comboBoxSlocation
@@ -421,15 +421,15 @@
             this.comboBoxSlocation.Location = new System.Drawing.Point(296, 148);
             this.comboBoxSlocation.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxSlocation.Name = "comboBoxSlocation";
-            this.comboBoxSlocation.Size = new System.Drawing.Size(354, 33);
+            this.comboBoxSlocation.Size = new System.Drawing.Size(424, 33);
             this.comboBoxSlocation.TabIndex = 14;
             // 
             // btnAddSupplier
             // 
-            this.btnAddSupplier.Location = new System.Drawing.Point(64, 208);
+            this.btnAddSupplier.Location = new System.Drawing.Point(64, 199);
             this.btnAddSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddSupplier.Name = "btnAddSupplier";
-            this.btnAddSupplier.Size = new System.Drawing.Size(588, 44);
+            this.btnAddSupplier.Size = new System.Drawing.Size(656, 44);
             this.btnAddSupplier.TabIndex = 13;
             this.btnAddSupplier.Text = "Register new Supplier";
             this.btnAddSupplier.UseVisualStyleBackColor = true;
@@ -439,7 +439,7 @@
             this.textBoxSupplierName.Location = new System.Drawing.Point(296, 106);
             this.textBoxSupplierName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSupplierName.Name = "textBoxSupplierName";
-            this.textBoxSupplierName.Size = new System.Drawing.Size(354, 31);
+            this.textBoxSupplierName.Size = new System.Drawing.Size(424, 31);
             this.textBoxSupplierName.TabIndex = 8;
             // 
             // label37
@@ -1350,7 +1350,7 @@
             // 
             this.dateTimePickerDeliveryDateAO.Location = new System.Drawing.Point(204, 296);
             this.dateTimePickerDeliveryDateAO.Name = "dateTimePickerDeliveryDateAO";
-            this.dateTimePickerDeliveryDateAO.Size = new System.Drawing.Size(389, 31);
+            this.dateTimePickerDeliveryDateAO.Size = new System.Drawing.Size(378, 31);
             this.dateTimePickerDeliveryDateAO.TabIndex = 17;
             // 
             // textBoxisDeliveredAO
@@ -1358,7 +1358,7 @@
             this.textBoxisDeliveredAO.Location = new System.Drawing.Point(208, 352);
             this.textBoxisDeliveredAO.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxisDeliveredAO.Name = "textBoxisDeliveredAO";
-            this.textBoxisDeliveredAO.Size = new System.Drawing.Size(386, 31);
+            this.textBoxisDeliveredAO.Size = new System.Drawing.Size(374, 31);
             this.textBoxisDeliveredAO.TabIndex = 16;
             // 
             // label50
@@ -1386,7 +1386,7 @@
             this.textBoxProductNUmberOA.Location = new System.Drawing.Point(210, 179);
             this.textBoxProductNUmberOA.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxProductNUmberOA.Name = "textBoxProductNUmberOA";
-            this.textBoxProductNUmberOA.Size = new System.Drawing.Size(386, 31);
+            this.textBoxProductNUmberOA.Size = new System.Drawing.Size(372, 31);
             this.textBoxProductNUmberOA.TabIndex = 13;
             // 
             // label49
@@ -1404,7 +1404,7 @@
             this.textBoxGenerateOrderNumber.Location = new System.Drawing.Point(208, 54);
             this.textBoxGenerateOrderNumber.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxGenerateOrderNumber.Name = "textBoxGenerateOrderNumber";
-            this.textBoxGenerateOrderNumber.Size = new System.Drawing.Size(386, 31);
+            this.textBoxGenerateOrderNumber.Size = new System.Drawing.Size(374, 31);
             this.textBoxGenerateOrderNumber.TabIndex = 11;
             // 
             // btnGenerateOrderNumber
@@ -1419,10 +1419,10 @@
             // 
             // btnAddOder
             // 
-            this.btnAddOder.Location = new System.Drawing.Point(12, 477);
+            this.btnAddOder.Location = new System.Drawing.Point(20, 458);
             this.btnAddOder.Margin = new System.Windows.Forms.Padding(6);
             this.btnAddOder.Name = "btnAddOder";
-            this.btnAddOder.Size = new System.Drawing.Size(582, 44);
+            this.btnAddOder.Size = new System.Drawing.Size(570, 44);
             this.btnAddOder.TabIndex = 9;
             this.btnAddOder.Text = "Add Order";
             this.btnAddOder.UseVisualStyleBackColor = true;
@@ -1445,7 +1445,7 @@
             this.comboBoxPalletQuantity.Location = new System.Drawing.Point(208, 232);
             this.comboBoxPalletQuantity.Margin = new System.Windows.Forms.Padding(6);
             this.comboBoxPalletQuantity.Name = "comboBoxPalletQuantity";
-            this.comboBoxPalletQuantity.Size = new System.Drawing.Size(386, 33);
+            this.comboBoxPalletQuantity.Size = new System.Drawing.Size(374, 33);
             this.comboBoxPalletQuantity.TabIndex = 8;
             // 
             // label4
@@ -1466,7 +1466,7 @@
             this.comboBoxAOCnumber.Location = new System.Drawing.Point(208, 406);
             this.comboBoxAOCnumber.Margin = new System.Windows.Forms.Padding(6);
             this.comboBoxAOCnumber.Name = "comboBoxAOCnumber";
-            this.comboBoxAOCnumber.Size = new System.Drawing.Size(388, 33);
+            this.comboBoxAOCnumber.Size = new System.Drawing.Size(374, 33);
             this.comboBoxAOCnumber.TabIndex = 5;
             // 
             // customerBindingSource6
@@ -1502,7 +1502,7 @@
             this.comboBoxChooseCookies.Location = new System.Drawing.Point(208, 119);
             this.comboBoxChooseCookies.Margin = new System.Windows.Forms.Padding(6);
             this.comboBoxChooseCookies.Name = "comboBoxChooseCookies";
-            this.comboBoxChooseCookies.Size = new System.Drawing.Size(388, 33);
+            this.comboBoxChooseCookies.Size = new System.Drawing.Size(374, 33);
             this.comboBoxChooseCookies.TabIndex = 0;
             this.comboBoxChooseCookies.SelectedIndexChanged += new System.EventHandler(this.comboBoxChooseCookies_SelectedIndexChanged);
             // 

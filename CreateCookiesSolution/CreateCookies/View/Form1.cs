@@ -39,7 +39,6 @@ namespace CreateCookies
 
         private void buttonRegCustomer_Click(object sender, EventArgs e)
         {
-
             SqlConnection RegisterCustomerConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
             SqlCommand RegisterCustommerCommand = new SqlCommand("insert into Customer (cNumber, cName, cAddress, cPostalAddress, cCountry, cEmail) values(@cNumber, @cName, @cAddress, @cPostalAddress, @cCountry, @cEmail)", RegisterCustomerConnection);
 
@@ -300,8 +299,8 @@ namespace CreateCookies
             producedCommand.Parameters.AddWithValue("@pPallet", comboBoxPalletAmount.Text);
             producedCommand.Parameters.AddWithValue("@pNumber", textBoxpNumberProduction.Text);
          
-            if (comboBoxProductToProduce.Text == "Nötingar" && comboBoxProductToProduce.Text!="" &&  != '0')
-            {
+            if (comboBoxProductToProduce.Text == "Nötingar" && comboBoxProductToProduce.Text!="" )
+            {  
                 SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
                       WHEN 'Smör' THEN (iQuantityInStock -450)
                       WHEN 'Mjöl' THEN (iQuantityInStock -450)
@@ -399,8 +398,6 @@ namespace CreateCookies
             producedCommand.ExecuteNonQuery();
             produceConnection.Close();
         }
-
-        
 
         private void comboBoxProductToProduce_SelectedIndexChanged_1(object sender, EventArgs e)
         {
