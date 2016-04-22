@@ -300,7 +300,7 @@ namespace CreateCookies
             producedCommand.Parameters.AddWithValue("@pPallet", comboBoxPalletAmount.Text);
             producedCommand.Parameters.AddWithValue("@pNumber", textBoxpNumberProduction.Text);
          
-            if (comboBoxProductToProduce.Text == "Nötingar" && comboBoxProductToProduce.Text!="")
+            if (comboBoxProductToProduce.Text == "Nötingar" && comboBoxProductToProduce.Text!="" &&  != '0')
             {
                 SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
                       WHEN 'Smör' THEN (iQuantityInStock -450)
@@ -348,7 +348,7 @@ namespace CreateCookies
                 dataGridViewStorage.DataSource = ProduceStorageGrid;
 
             }
-            else if (comboBoxProductToProduce.Text == "Kokostoppar" && comboBoxProductToProduce.Text != "")
+            else if (comboBoxProductToProduce.Text == "Kokostoppar" && comboBoxProductToProduce.Text != "" )
             {
                 SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
                       WHEN 'Marsipan' THEN (iQuantityInStock -600)
@@ -363,7 +363,7 @@ namespace CreateCookies
                 da.Fill(ProduceStorageGrid);
                 dataGridViewStorage.DataSource = ProduceStorageGrid;
 
-            } else if (comboBoxProductToProduce.Text == "Amneris" && comboBoxProductToProduce.Text != "")
+            } else if (comboBoxProductToProduce.Text == "Amneris" && comboBoxProductToProduce.Text != "" )
             {
                 SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
                       WHEN 'Mjölk' THEN (iQuantityInStock -110)
