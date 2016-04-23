@@ -46,6 +46,7 @@
             this.label52 = new System.Windows.Forms.Label();
             this.textBoxASNumber = new System.Windows.Forms.TextBox();
             this.textBoxASIngredientNumber = new System.Windows.Forms.TextBox();
+            this.comboBoxSlocation = new System.Windows.Forms.ComboBox();
             this.btnAddSupplier = new System.Windows.Forms.Button();
             this.textBoxSupplierName = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
@@ -93,6 +94,7 @@
             this.pPalletDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.producedBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.textBoxProductToProduce = new System.Windows.Forms.TextBox();
             this.textBoxpalletamountProduction = new System.Windows.Forms.TextBox();
             this.comboBoxOrderNumberProduction = new System.Windows.Forms.ComboBox();
             this.orderspecificationBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -106,10 +108,10 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.label44 = new System.Windows.Forms.Label();
             this.btnProduce = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
+            this.productBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -262,8 +264,6 @@
             this.supplierTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.SupplierTableAdapter();
             this.producedTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.ProducedTableAdapter();
             this.orderspecificationTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.OrderspecificationTableAdapter();
-            this.textBoxProductToProduce = new System.Windows.Forms.TextBox();
-            this.comboBoxSlocation = new System.Windows.Forms.ComboBox();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource1)).BeginInit();
@@ -485,6 +485,27 @@
             this.textBoxASIngredientNumber.Name = "textBoxASIngredientNumber";
             this.textBoxASIngredientNumber.Size = new System.Drawing.Size(424, 31);
             this.textBoxASIngredientNumber.TabIndex = 15;
+            // 
+            // comboBoxSlocation
+            // 
+            this.comboBoxSlocation.FormattingEnabled = true;
+            this.comboBoxSlocation.Items.AddRange(new object[] {
+            "Trellebord",
+            "Malmö",
+            "Örebro",
+            "Stockholm",
+            "Öland",
+            "Kalmar",
+            "Sjöbo",
+            "Happaranda",
+            "Varberg",
+            "Lund",
+            "Landskrona"});
+            this.comboBoxSlocation.Location = new System.Drawing.Point(296, 148);
+            this.comboBoxSlocation.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxSlocation.Name = "comboBoxSlocation";
+            this.comboBoxSlocation.Size = new System.Drawing.Size(424, 33);
+            this.comboBoxSlocation.TabIndex = 14;
             // 
             // btnAddSupplier
             // 
@@ -981,6 +1002,13 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Production";
             // 
+            // textBoxProductToProduce
+            // 
+            this.textBoxProductToProduce.Location = new System.Drawing.Point(320, 122);
+            this.textBoxProductToProduce.Name = "textBoxProductToProduce";
+            this.textBoxProductToProduce.Size = new System.Drawing.Size(370, 31);
+            this.textBoxProductToProduce.TabIndex = 15;
+            // 
             // textBoxpalletamountProduction
             // 
             this.textBoxpalletamountProduction.Location = new System.Drawing.Point(320, 238);
@@ -1097,11 +1125,6 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "QuantityInStock (g)";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // productBindingSource2
-            // 
-            this.productBindingSource2.DataMember = "Product";
-            this.productBindingSource2.DataSource = this.createCookiesDataSetTheOne;
-            // 
             // label44
             // 
             this.label44.AutoSize = true;
@@ -1132,6 +1155,11 @@
             this.label20.Size = new System.Drawing.Size(194, 25);
             this.label20.TabIndex = 0;
             this.label20.Text = "Product to produce";
+            // 
+            // productBindingSource2
+            // 
+            this.productBindingSource2.DataMember = "Product";
+            this.productBindingSource2.DataSource = this.createCookiesDataSetTheOne;
             // 
             // productBindingSource1
             // 
@@ -1757,6 +1785,7 @@
             this.comboBoxDCnumber.Name = "comboBoxDCnumber";
             this.comboBoxDCnumber.Size = new System.Drawing.Size(238, 33);
             this.comboBoxDCnumber.TabIndex = 0;
+           
             // 
             // groupBox5
             // 
@@ -1794,7 +1823,6 @@
             this.comboBoxUCnumber.Size = new System.Drawing.Size(234, 33);
             this.comboBoxUCnumber.TabIndex = 29;
             this.comboBoxUCnumber.ValueMember = "cNumber";
-            // 
             // label33
             // 
             this.label33.AutoSize = true;
@@ -2565,34 +2593,6 @@
             // orderspecificationTableAdapter
             // 
             this.orderspecificationTableAdapter.ClearBeforeFill = true;
-            // 
-            // textBoxProductToProduce
-            // 
-            this.textBoxProductToProduce.Location = new System.Drawing.Point(320, 122);
-            this.textBoxProductToProduce.Name = "textBoxProductToProduce";
-            this.textBoxProductToProduce.Size = new System.Drawing.Size(370, 31);
-            this.textBoxProductToProduce.TabIndex = 15;
-            // 
-            // comboBoxSlocation
-            // 
-            this.comboBoxSlocation.FormattingEnabled = true;
-            this.comboBoxSlocation.Items.AddRange(new object[] {
-            "Trellebord",
-            "Malmö",
-            "Örebro",
-            "Stockholm",
-            "Öland",
-            "Kalmar",
-            "Sjöbo",
-            "Happaranda",
-            "Varberg",
-            "Lund",
-            "Landskrona"});
-            this.comboBoxSlocation.Location = new System.Drawing.Point(296, 148);
-            this.comboBoxSlocation.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxSlocation.Name = "comboBoxSlocation";
-            this.comboBoxSlocation.Size = new System.Drawing.Size(424, 33);
-            this.comboBoxSlocation.TabIndex = 14;
             // 
             // Form1
             // 

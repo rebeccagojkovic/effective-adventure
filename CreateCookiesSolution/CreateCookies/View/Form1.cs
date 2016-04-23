@@ -54,12 +54,6 @@ namespace CreateCookies
             RegisterCustomerConnection.Open();
             RegisterCustommerCommand.ExecuteNonQuery();
             RegisterCustomerConnection.Close();
-            //string cNumber = textBoxCnumber.Text;
-            //string cName = textBoxCname.Text;
-            //string cAddress = textBoxCaddress.Text;
-
-
-            //  controller.RegisterCustomer(cNumber, cName, cAddress);
         }
 
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
@@ -381,19 +375,21 @@ namespace CreateCookies
             {
                 for (int j = 0; j <= Int32.Parse(textBoxpalletamountProduction.Text); j++)
                 {
-                    SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
-                      WHEN 'Mjölk' THEN (iQuantityInStock -110)
-                      WHEN 'Mjöl' THEN (iQuantityInStock -400)
-                      WHEN 'Socker' THEN (iQuantityInStock -100) 
-                      WHEN 'Mandel' THEN (iQuantityInStock -300)
-                      ELSE iQuantityInStock
-                      END
-                      WHERE iName IN('Mjölk', 'Mjöl','Socker','Mandel')", produceConnection);
+                  
+                        SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
+                          WHEN 'Mjölk' THEN (iQuantityInStock -110)
+                          WHEN 'Mjöl' THEN (iQuantityInStock -400)
+                          WHEN 'Socker' THEN (iQuantityInStock -100) 
+                          WHEN 'Mandel' THEN (iQuantityInStock -300)
+                          ELSE iQuantityInStock
+                          END
+                          WHERE iName IN('Mjölk', 'Mjöl','Socker','Mandel')", produceConnection);
 
-                    DataTable ProduceStorageGrid = new DataTable();
-                    da.Fill(ProduceStorageGrid);
-                    dataGridViewStorage.DataSource = ProduceStorageGrid;
-                    j++;
+                        DataTable ProduceStorageGrid = new DataTable();
+                        da.Fill(ProduceStorageGrid);
+                        dataGridViewStorage.DataSource = ProduceStorageGrid;
+                        j++;
+                    
                 }
             } else if (textBoxProductToProduce.Text == "Tango" && textBoxProductToProduce.Text != "")
             {
@@ -415,16 +411,17 @@ namespace CreateCookies
                 }
             }
 
+            SqlCommand DeleteingFromOrdersProduction = new SqlCommand("delete from Orderspecification  where oNumber= '" + comboBoxOrderNumberProduction.Text.Trim() + "'",produceConnection);
+            SqlCommand DeleteingFromOrdersProduction2 = new SqlCommand("delete from Orde  where oNumber= '" + comboBoxOrderNumberProduction.Text.Trim() + "'", produceConnection);
+           
+            comboBox1.Refresh();
+            dataGridViewOrderControl.Refresh();
+            listViewOrderInformation.Items.RemoveByKey(comboBoxOrderNumberProduction.Text.Trim());
             
-            //SqlCommand DeleteingFromOrders = new SqlCommand(@"delete Orderspecification.oNumber,Orderspecification.pNumber,Orderspecification.palletQuantity, Product.pName 
-            //from Orderspecification inner join Product on (Orderspecification.pNumber = Product.pNumber) where Orderspecification.oNumber= '" + comboBoxOrderNumberProduction.Text + "'", produceConnection);
-
-            //listViewOrderInformation.Items.RemoveByKey(comboBoxOrderNumberProduction.Text);
-
             produceConnection.Open();
             producedCommand.ExecuteNonQuery();
-            
-            //DeleteingFromOrders.ExecuteNonQuery();
+            DeleteingFromOrdersProduction.ExecuteNonQuery();
+            DeleteingFromOrdersProduction2.ExecuteNonQuery();
             produceConnection.Close();
         }
 
