@@ -161,10 +161,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnSeeOrders = new System.Windows.Forms.Button();
             this.btnSeeAllOrders = new System.Windows.Forms.Button();
             this.label43 = new System.Windows.Forms.Label();
             this.comboBoxOCnumber = new System.Windows.Forms.ComboBox();
-            this.btnSeeOrders = new System.Windows.Forms.Button();
             this.listViewCustomersOrders = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -212,13 +212,11 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label41 = new System.Windows.Forms.Label();
-            this.textBoxGeneratePalletID = new System.Windows.Forms.TextBox();
             this.button22 = new System.Windows.Forms.Button();
             this.btnUnstoreDelivery = new System.Windows.Forms.Button();
             this.btnStore = new System.Windows.Forms.Button();
             this.comboBoxCooseFromProducedProducts = new System.Windows.Forms.ComboBox();
+            this.producedBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label36 = new System.Windows.Forms.Label();
             this.customerBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.customerBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
@@ -264,6 +262,13 @@
             this.supplierTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.SupplierTableAdapter();
             this.producedTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.ProducedTableAdapter();
             this.orderspecificationTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.OrderspecificationTableAdapter();
+            this.textBoxPalletID = new System.Windows.Forms.TextBox();
+            this.textBoxStoragePNumber = new System.Windows.Forms.TextBox();
+            this.textBoxStorageONumber = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.textBoxStorageProduced = new System.Windows.Forms.TextBox();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource1)).BeginInit();
@@ -303,6 +308,7 @@
             this.groupBox4.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.producedBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).BeginInit();
@@ -1651,10 +1657,10 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.btnSeeOrders);
             this.groupBox7.Controls.Add(this.btnSeeAllOrders);
             this.groupBox7.Controls.Add(this.label43);
             this.groupBox7.Controls.Add(this.comboBoxOCnumber);
-            this.groupBox7.Controls.Add(this.btnSeeOrders);
             this.groupBox7.Controls.Add(this.listViewCustomersOrders);
             this.groupBox7.Location = new System.Drawing.Point(52, 567);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
@@ -1664,6 +1670,16 @@
             this.groupBox7.TabIndex = 19;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Customer\'s Orders";
+            // 
+            // btnSeeOrders
+            // 
+            this.btnSeeOrders.Location = new System.Drawing.Point(475, 352);
+            this.btnSeeOrders.Name = "btnSeeOrders";
+            this.btnSeeOrders.Size = new System.Drawing.Size(163, 47);
+            this.btnSeeOrders.TabIndex = 17;
+            this.btnSeeOrders.Text = "See Orders";
+            this.btnSeeOrders.UseVisualStyleBackColor = true;
+            this.btnSeeOrders.Click += new System.EventHandler(this.btnSeeOrders_Click_1);
             // 
             // btnSeeAllOrders
             // 
@@ -1696,17 +1712,6 @@
             this.comboBoxOCnumber.Name = "comboBoxOCnumber";
             this.comboBoxOCnumber.Size = new System.Drawing.Size(220, 33);
             this.comboBoxOCnumber.TabIndex = 2;
-            // 
-            // btnSeeOrders
-            // 
-            this.btnSeeOrders.Location = new System.Drawing.Point(460, 352);
-            this.btnSeeOrders.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSeeOrders.Name = "btnSeeOrders";
-            this.btnSeeOrders.Size = new System.Drawing.Size(196, 50);
-            this.btnSeeOrders.TabIndex = 1;
-            this.btnSeeOrders.Text = "See orders";
-            this.btnSeeOrders.UseVisualStyleBackColor = true;
-            this.btnSeeOrders.Click += new System.EventHandler(this.btnSeeOrders_Click);
             // 
             // listViewCustomersOrders
             // 
@@ -1785,7 +1790,6 @@
             this.comboBoxDCnumber.Name = "comboBoxDCnumber";
             this.comboBoxDCnumber.Size = new System.Drawing.Size(238, 33);
             this.comboBoxDCnumber.TabIndex = 0;
-           
             // 
             // groupBox5
             // 
@@ -1823,6 +1827,7 @@
             this.comboBoxUCnumber.Size = new System.Drawing.Size(234, 33);
             this.comboBoxUCnumber.TabIndex = 29;
             this.comboBoxUCnumber.ValueMember = "cNumber";
+            // 
             // label33
             // 
             this.label33.AutoSize = true;
@@ -2128,12 +2133,16 @@
             // 
             // groupBox10
             // 
+            this.groupBox10.Controls.Add(this.textBoxStorageProduced);
+            this.groupBox10.Controls.Add(this.label41);
+            this.groupBox10.Controls.Add(this.label57);
+            this.groupBox10.Controls.Add(this.label56);
+            this.groupBox10.Controls.Add(this.textBoxStorageONumber);
+            this.groupBox10.Controls.Add(this.textBoxStoragePNumber);
+            this.groupBox10.Controls.Add(this.textBoxPalletID);
             this.groupBox10.Controls.Add(this.dateTimePickerExpectedDeliveryDate);
             this.groupBox10.Controls.Add(this.label45);
             this.groupBox10.Controls.Add(this.listViewStorage);
-            this.groupBox10.Controls.Add(this.dateTimePicker3);
-            this.groupBox10.Controls.Add(this.label41);
-            this.groupBox10.Controls.Add(this.textBoxGeneratePalletID);
             this.groupBox10.Controls.Add(this.button22);
             this.groupBox10.Controls.Add(this.btnUnstoreDelivery);
             this.groupBox10.Controls.Add(this.btnStore);
@@ -2201,39 +2210,12 @@
             this.columnHeader10.Text = "Valid Untill";
             this.columnHeader10.Width = 160;
             // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(374, 763);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(384, 31);
-            this.dateTimePicker3.TabIndex = 19;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(52, 767);
-            this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(106, 25);
-            this.label41.TabIndex = 18;
-            this.label41.Text = "Valid until";
-            // 
-            // textBoxGeneratePalletID
-            // 
-            this.textBoxGeneratePalletID.Enabled = false;
-            this.textBoxGeneratePalletID.Location = new System.Drawing.Point(376, 658);
-            this.textBoxGeneratePalletID.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxGeneratePalletID.Name = "textBoxGeneratePalletID";
-            this.textBoxGeneratePalletID.Size = new System.Drawing.Size(386, 31);
-            this.textBoxGeneratePalletID.TabIndex = 13;
-            // 
             // button22
             // 
-            this.button22.Location = new System.Drawing.Point(56, 637);
+            this.button22.Location = new System.Drawing.Point(50, 746);
             this.button22.Margin = new System.Windows.Forms.Padding(4);
             this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(292, 73);
+            this.button22.Size = new System.Drawing.Size(263, 52);
             this.button22.TabIndex = 12;
             this.button22.Text = "Generate PalletID";
             this.button22.UseVisualStyleBackColor = true;
@@ -2250,22 +2232,31 @@
             // 
             // btnStore
             // 
-            this.btnStore.Location = new System.Drawing.Point(56, 838);
+            this.btnStore.Location = new System.Drawing.Point(50, 890);
             this.btnStore.Margin = new System.Windows.Forms.Padding(4);
             this.btnStore.Name = "btnStore";
             this.btnStore.Size = new System.Drawing.Size(704, 40);
             this.btnStore.TabIndex = 7;
             this.btnStore.Text = "Store";
             this.btnStore.UseVisualStyleBackColor = true;
+            this.btnStore.Click += new System.EventHandler(this.btnStore_Click);
             // 
             // comboBoxCooseFromProducedProducts
             // 
+            this.comboBoxCooseFromProducedProducts.DataSource = this.producedBindingSource1;
+            this.comboBoxCooseFromProducedProducts.DisplayMember = "pName";
             this.comboBoxCooseFromProducedProducts.FormattingEnabled = true;
             this.comboBoxCooseFromProducedProducts.Location = new System.Drawing.Point(380, 579);
             this.comboBoxCooseFromProducedProducts.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxCooseFromProducedProducts.Name = "comboBoxCooseFromProducedProducts";
-            this.comboBoxCooseFromProducedProducts.Size = new System.Drawing.Size(384, 33);
+            this.comboBoxCooseFromProducedProducts.Size = new System.Drawing.Size(378, 33);
             this.comboBoxCooseFromProducedProducts.TabIndex = 2;
+            this.comboBoxCooseFromProducedProducts.SelectedIndexChanged += new System.EventHandler(this.comboBoxCooseFromProducedProducts_SelectedIndexChanged);
+            // 
+            // producedBindingSource1
+            // 
+            this.producedBindingSource1.DataMember = "Produced";
+            this.producedBindingSource1.DataSource = this.createCookiesDataSetTheOne;
             // 
             // label36
             // 
@@ -2594,6 +2585,68 @@
             // 
             this.orderspecificationTableAdapter.ClearBeforeFill = true;
             // 
+            // textBoxPalletID
+            // 
+            this.textBoxPalletID.Location = new System.Drawing.Point(376, 757);
+            this.textBoxPalletID.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPalletID.Name = "textBoxPalletID";
+            this.textBoxPalletID.Size = new System.Drawing.Size(378, 31);
+            this.textBoxPalletID.TabIndex = 23;
+            // 
+            // textBoxStoragePNumber
+            // 
+            this.textBoxStoragePNumber.Location = new System.Drawing.Point(380, 637);
+            this.textBoxStoragePNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxStoragePNumber.Name = "textBoxStoragePNumber";
+            this.textBoxStoragePNumber.Size = new System.Drawing.Size(378, 31);
+            this.textBoxStoragePNumber.TabIndex = 24;
+            // 
+            // textBoxStorageONumber
+            // 
+            this.textBoxStorageONumber.Location = new System.Drawing.Point(380, 693);
+            this.textBoxStorageONumber.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxStorageONumber.Name = "textBoxStorageONumber";
+            this.textBoxStorageONumber.Size = new System.Drawing.Size(378, 31);
+            this.textBoxStorageONumber.TabIndex = 25;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(51, 637);
+            this.label56.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(167, 25);
+            this.label56.TabIndex = 26;
+            this.label56.Text = "Product Number";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(53, 693);
+            this.label57.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(147, 25);
+            this.label57.TabIndex = 27;
+            this.label57.Text = "Order Number";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(45, 824);
+            this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(104, 25);
+            this.label41.TabIndex = 28;
+            this.label41.Text = "Produced";
+            // 
+            // textBoxStorageProduced
+            // 
+            this.textBoxStorageProduced.Location = new System.Drawing.Point(376, 821);
+            this.textBoxStorageProduced.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxStorageProduced.Name = "textBoxStorageProduced";
+            this.textBoxStorageProduced.Size = new System.Drawing.Size(378, 31);
+            this.textBoxStorageProduced.TabIndex = 29;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -2656,6 +2709,7 @@
             this.tabPage7.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.producedBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).EndInit();
@@ -2798,12 +2852,9 @@
         private System.Windows.Forms.ComboBox comboBoxCooseFromProducedProducts;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.TextBox textBoxGeneratePalletID;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button btnUnstoreDelivery;
         private System.Windows.Forms.Button btnStore;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.Label label41;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -2914,6 +2965,14 @@
         private System.Windows.Forms.TextBox textBoxpalletamountProduction;
         private System.Windows.Forms.TextBox textBoxProductToProduce;
         private System.Windows.Forms.ComboBox comboBoxSlocation;
+        private System.Windows.Forms.BindingSource producedBindingSource1;
+        private System.Windows.Forms.TextBox textBoxPalletID;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.TextBox textBoxStorageONumber;
+        private System.Windows.Forms.TextBox textBoxStoragePNumber;
+        private System.Windows.Forms.TextBox textBoxStorageProduced;
+        private System.Windows.Forms.Label label41;
     }
 }
 

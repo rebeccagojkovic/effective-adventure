@@ -146,9 +146,7 @@ namespace CreateCookies
 
             }
             SeeCustomerOrderConnection.Close();
-
         }
-
         private void btnSeeAllOrders_Click(object sender, EventArgs e)
         {
             SqlConnection SeeCustomerOrdersConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
@@ -291,28 +289,29 @@ namespace CreateCookies
             SqlCommand producedCommand = new SqlCommand("insert into Produced ( pTime,pName, pPallet, pNumber) values(@pTime, @pName, @pPallet, @pNumber)", produceConnection);
 
             producedCommand.Parameters.AddWithValue("@pTime", dateTimePickerPProductTime.Value.Date);
-            producedCommand.Parameters.AddWithValue("@pName", textBoxProductToProduce.Text );
+            producedCommand.Parameters.AddWithValue("@pName", textBoxProductToProduce.Text);
             producedCommand.Parameters.AddWithValue("@pPallet", textBoxpalletamountProduction.Text);
             producedCommand.Parameters.AddWithValue("@pNumber", textBoxpNumberProduction.Text);
-         
-            if (textBoxProductToProduce.Text == "Nötingar" && textBoxProductToProduce.Text!="" )
+
+            if (textBoxProductToProduce.Text == "Nötingar" && textBoxProductToProduce.Text != "")
             {
-                for (int j=0; j<= Int32.Parse(textBoxpalletamountProduction.Text); j++) { 
+                for (int j = 0; j <= Int32.Parse(textBoxpalletamountProduction.Text); j++)
+                {
                     SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
-                          WHEN 'Smör' THEN (iQuantityInStock -450)
-                          WHEN 'Mjöl' THEN (iQuantityInStock -450)
-                          WHEN 'Socker' THEN (iQuantityInStock -190) 
-                          WHEN 'Nötter' THEN (iQuantityInStock -225)
-                          ELSE iQuantityInStock
-                          END
-                          WHERE iName IN('Smör', 'Mjöl','Socker','Nötter')", produceConnection);
-                   
+                              WHEN 'Smör' THEN (iQuantityInStock -450)
+                              WHEN 'Mjöl' THEN (iQuantityInStock -450)
+                              WHEN 'Socker' THEN (iQuantityInStock -190) 
+                              WHEN 'Nötter' THEN (iQuantityInStock -225)
+                              ELSE iQuantityInStock
+                              END
+                              WHERE iName IN('Smör', 'Mjöl','Socker','Nötter')", produceConnection);
+
                     DataTable ProduceStorageGrid = new DataTable();
                     da.Fill(ProduceStorageGrid);
                     dataGridViewStorage.DataSource = ProduceStorageGrid;
                     j++;
                 }
-                
+
             }
             else if (textBoxProductToProduce.Text == "Nötkakor" && textBoxProductToProduce.Text != "")
             {
@@ -352,7 +351,7 @@ namespace CreateCookies
                     j++;
                 }
             }
-            else if (textBoxProductToProduce.Text == "Kokostoppar" && textBoxProductToProduce.Text != "" )
+            else if (textBoxProductToProduce.Text == "Kokostoppar" && textBoxProductToProduce.Text != "")
             {
                 for (int j = 0; j <= Int32.Parse(textBoxpalletamountProduction.Text); j++)
                 {
@@ -371,12 +370,13 @@ namespace CreateCookies
                     j++;
                 }
 
-            } else if (textBoxProductToProduce.Text == "Amneris" && textBoxProductToProduce.Text != "" )
+            }
+            else if (textBoxProductToProduce.Text == "Amneris" && textBoxProductToProduce.Text != "")
             {
                 for (int j = 0; j <= Int32.Parse(textBoxpalletamountProduction.Text); j++)
                 {
-                  
-                        SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
+
+                    SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
                           WHEN 'Mjölk' THEN (iQuantityInStock -110)
                           WHEN 'Mjöl' THEN (iQuantityInStock -400)
                           WHEN 'Socker' THEN (iQuantityInStock -100) 
@@ -385,13 +385,14 @@ namespace CreateCookies
                           END
                           WHERE iName IN('Mjölk', 'Mjöl','Socker','Mandel')", produceConnection);
 
-                        DataTable ProduceStorageGrid = new DataTable();
-                        da.Fill(ProduceStorageGrid);
-                        dataGridViewStorage.DataSource = ProduceStorageGrid;
-                        j++;
-                    
+                    DataTable ProduceStorageGrid = new DataTable();
+                    da.Fill(ProduceStorageGrid);
+                    dataGridViewStorage.DataSource = ProduceStorageGrid;
+                    j++;
+
                 }
-            } else if (textBoxProductToProduce.Text == "Tango" && textBoxProductToProduce.Text != "")
+            }
+            else if (textBoxProductToProduce.Text == "Tango" && textBoxProductToProduce.Text != "")
             {
                 for (int j = 0; j <= Int32.Parse(textBoxpalletamountProduction.Text); j++)
                 {
@@ -411,13 +412,13 @@ namespace CreateCookies
                 }
             }
 
-            SqlCommand DeleteingFromOrdersProduction = new SqlCommand("delete from Orderspecification  where oNumber= '" + comboBoxOrderNumberProduction.Text.Trim() + "'",produceConnection);
+            SqlCommand DeleteingFromOrdersProduction = new SqlCommand("delete from Orderspecification  where oNumber= '" + comboBoxOrderNumberProduction.Text.Trim() + "'", produceConnection);
             SqlCommand DeleteingFromOrdersProduction2 = new SqlCommand("delete from Orde  where oNumber= '" + comboBoxOrderNumberProduction.Text.Trim() + "'", produceConnection);
-           
+
             comboBox1.Refresh();
             dataGridViewOrderControl.Refresh();
             listViewOrderInformation.Items.RemoveByKey(comboBoxOrderNumberProduction.Text.Trim());
-            
+
             produceConnection.Open();
             producedCommand.ExecuteNonQuery();
             DeleteingFromOrdersProduction.ExecuteNonQuery();
@@ -446,23 +447,97 @@ namespace CreateCookies
 
         private void btnAddSupplier_Click(object sender, EventArgs e)
         {
-            SqlConnection AddSupplierConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-            SqlCommand AddSupplierCommand1 = new SqlCommand("insert into Supplier (sNumber, sName, sLocation) values(@sNumber, @sName, @sLocation)", AddSupplierConnection);
-            SqlCommand AddSupplierCommand2 = new SqlCommand("insert into Ingredient (iNumber, iName, iQuantityInStock,sNumber) values(@iNumber, @iName, @iQuantityInStock, @sNumber)", AddSupplierConnection);
+            SqlConnection addSupplierConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+            SqlCommand addSupplierCommand1 = new SqlCommand("insert into Supplier (sNumber, sName, sLocation) values(@sNumber, @sName, @sLocation)", addSupplierConnection);
+            SqlCommand addSupplierCommand2 = new SqlCommand("insert into Ingredient (iNumber, iName, iQuantityInStock,sNumber) values(@iNumber, @iName, @iQuantityInStock, @sNumber)", addSupplierConnection);
 
-            AddSupplierCommand1.Parameters.AddWithValue("@sNumber", textBoxASNumber.Text);
-            AddSupplierCommand1.Parameters.AddWithValue("@sName", textBoxSupplierName.Text);
-            AddSupplierCommand1.Parameters.AddWithValue("@sLocation", comboBoxSlocation.Text);
-           
-            AddSupplierCommand2.Parameters.AddWithValue("@iNumber", textBoxASIngredientNumber.Text);
-            AddSupplierCommand2.Parameters.AddWithValue("@iName", textBoxASIngredientName.Text);
-            AddSupplierCommand2.Parameters.AddWithValue("@iQuantityInStock", textBoxASQuantityInStock.Text);
-            AddSupplierCommand2.Parameters.AddWithValue("@sNumber", textBoxASNumber.Text);
+            addSupplierCommand1.Parameters.AddWithValue("@sNumber", textBoxASNumber.Text);
+            addSupplierCommand1.Parameters.AddWithValue("@sName", textBoxSupplierName.Text);
+            addSupplierCommand1.Parameters.AddWithValue("@sLocation", comboBoxSlocation.Text);
 
-            AddSupplierConnection.Open();
-            AddSupplierCommand1.ExecuteNonQuery();
-            AddSupplierCommand2.ExecuteNonQuery();
-            AddSupplierConnection.Close();
+            addSupplierCommand2.Parameters.AddWithValue("@iNumber", textBoxASIngredientNumber.Text);
+            addSupplierCommand2.Parameters.AddWithValue("@iName", textBoxASIngredientName.Text);
+            addSupplierCommand2.Parameters.AddWithValue("@iQuantityInStock", textBoxASQuantityInStock.Text);
+            addSupplierCommand2.Parameters.AddWithValue("@sNumber", textBoxASNumber.Text);
+
+            addSupplierConnection.Open();
+            addSupplierCommand1.ExecuteNonQuery();
+            addSupplierCommand2.ExecuteNonQuery();
+            addSupplierConnection.Close();
+        }
+
+        private void btnSeeOrders_Click_1(object sender, EventArgs e)
+        {
+            SqlConnection SeeCustomerOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+
+            SeeCustomerOrderConnection.Open();
+
+            SqlDataAdapter SeeAllOrdersAdapter = new SqlDataAdapter("Select * from Orde where cNumber= '" + comboBoxOCnumber.Text.Trim() + "'", SeeCustomerOrderConnection);
+            DataTable dt = new DataTable();
+            SeeAllOrdersAdapter.Fill(dt);
+
+            listViewCustomersOrders.Items.Clear();
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                DataRow dr = dt.Rows[i];
+
+                ListViewItem listViewItemSeeAllOrders = new ListViewItem(dr["oNumber"].ToString());
+                listViewItemSeeAllOrders.SubItems.Add(dr["isDelivered"].ToString());
+                listViewItemSeeAllOrders.SubItems.Add(dr["cNumber"].ToString());
+                listViewCustomersOrders.Items.Add(listViewItemSeeAllOrders);
+
+            }
+            SeeCustomerOrderConnection.Close();
+        }
+
+        private void btnStore_Click(object sender, EventArgs e)
+        {
+            SqlConnection storeConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+
+            SqlCommand insertIntoPalletCommand = new SqlCommand("insert into Pallet (palletNumber, palletTime, pNumber,oNumber) values(@palletNumber, @palletTime, @pNumber, @oNumber)", storeConnection);
+
+            insertIntoPalletCommand.Parameters.AddWithValue("@palletNumber", textBoxPalletID.Text);
+            insertIntoPalletCommand.Parameters.AddWithValue("@palletTime", textBoxStorageProduced.Text);
+            insertIntoPalletCommand.Parameters.AddWithValue("@pNumber", textBoxStoragePNumber.Text);
+            insertIntoPalletCommand.Parameters.AddWithValue("@oNumber", textBoxStorageONumber.Text);
+
+            storeConnection.Open();
+
+            SqlDataAdapter storeAdapter = new SqlDataAdapter(@"Select Pallet.palletNumber,Produced.pName,Produced.pTime,palletQuantity, from Orderspecification inner join Product on (Orderspecification.pNumber = Product.pNumber) where oNumber= '" + comboBox1.Text.Trim() + "'", storeConnection);
+            DataTable dtstore = new DataTable();
+            storeAdapter.Fill(dtstore);
+
+          
+            for (int i = 0; i < dtstore.Rows.Count; i++)
+            {
+                DataRow dr = dtstore.Rows[i];
+
+                ListViewItem listViewstore = new ListViewItem(dr["oNumber"].ToString());
+                listViewstore.SubItems.Add(dr["pNumber"].ToString());
+                listViewstore.SubItems.Add(dr["pName"].ToString());
+                listViewstore.SubItems.Add(dr["palletQuantity"].ToString());
+                listViewStorage.Items.Add(listViewstore);
+            }
+        }
+
+        private void comboBoxCooseFromProducedProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection selectStoreInfoConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+
+            selectStoreInfoConnection.Open();
+
+            SqlCommand selectStoragecmd = new SqlCommand("select* from Produced where pName='" + comboBoxCooseFromProducedProducts.Text + "'", selectStoreInfoConnection);
+            SqlDataReader dr = selectStoragecmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                textBoxStoragePNumber.Text = dr["pNumber"].ToString();
+                textBoxStorageONumber.Text = dr["oNumber"].ToString();
+                textBoxStorageProduced.Text= dr["pTime"].ToString();
+            }
+            dr.Close();
+            selectStoreInfoConnection.Close();
         }
     }
 } 
