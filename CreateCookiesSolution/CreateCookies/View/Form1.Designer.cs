@@ -31,13 +31,21 @@
             this.components = new System.ComponentModel.Container();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supplierBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.createCookiesDataSetTheOne = new CreateCookies.CreateCookiesDataSetTheOne();
             this.label48 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.textBoxAddIngredient = new System.Windows.Forms.TextBox();
-            this.comboBoxSlocation = new System.Windows.Forms.ComboBox();
+            this.textBoxASQuantityInStock = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.textBoxASIngredientName = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.textBoxASNumber = new System.Windows.Forms.TextBox();
+            this.textBoxASIngredientNumber = new System.Windows.Forms.TextBox();
             this.btnAddSupplier = new System.Windows.Forms.Button();
             this.textBoxSupplierName = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
@@ -70,6 +78,10 @@
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.dataGridViewSStorage = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ingredientBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ingredientBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -81,6 +93,10 @@
             this.pPalletDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.producedBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.textBoxpalletamountProduction = new System.Windows.Forms.TextBox();
+            this.comboBoxOrderNumberProduction = new System.Windows.Forms.ComboBox();
+            this.orderspecificationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label55 = new System.Windows.Forms.Label();
             this.textBoxpNumberProduction = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
             this.dateTimePickerPProductTime = new System.Windows.Forms.DateTimePicker();
@@ -90,8 +106,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBoxPalletAmount = new System.Windows.Forms.ComboBox();
-            this.comboBoxProductToProduce = new System.Windows.Forms.ComboBox();
             this.productBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.label44 = new System.Windows.Forms.Label();
             this.btnProduce = new System.Windows.Forms.Button();
@@ -247,19 +261,9 @@
             this.ingredientTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.IngredientTableAdapter();
             this.supplierTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.SupplierTableAdapter();
             this.producedTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.ProducedTableAdapter();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderspecificationTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.OrderspecificationTableAdapter();
+            this.textBoxProductToProduce = new System.Windows.Forms.TextBox();
+            this.comboBoxSlocation = new System.Windows.Forms.ComboBox();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource1)).BeginInit();
@@ -275,6 +279,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.producedBindingSource)).BeginInit();
             this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStorage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
@@ -341,6 +346,30 @@
             this.dataGridView1.Size = new System.Drawing.Size(792, 282);
             this.dataGridView1.TabIndex = 38;
             // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "sNumber";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Supplier\'s umber";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "sName";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Supplier\'s Name";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "sLocation";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Supplier\'s Location";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
             // supplierBindingSource1
             // 
             this.supplierBindingSource1.DataMember = "Supplier";
@@ -373,13 +402,13 @@
             // 
             // groupBox12
             // 
-            this.groupBox12.Controls.Add(this.textBox12);
+            this.groupBox12.Controls.Add(this.textBoxASQuantityInStock);
             this.groupBox12.Controls.Add(this.label54);
-            this.groupBox12.Controls.Add(this.textBox11);
+            this.groupBox12.Controls.Add(this.textBoxASIngredientName);
             this.groupBox12.Controls.Add(this.label53);
             this.groupBox12.Controls.Add(this.label52);
-            this.groupBox12.Controls.Add(this.textBox10);
-            this.groupBox12.Controls.Add(this.textBoxAddIngredient);
+            this.groupBox12.Controls.Add(this.textBoxASNumber);
+            this.groupBox12.Controls.Add(this.textBoxASIngredientNumber);
             this.groupBox12.Controls.Add(this.comboBoxSlocation);
             this.groupBox12.Controls.Add(this.btnAddSupplier);
             this.groupBox12.Controls.Add(this.textBoxSupplierName);
@@ -390,43 +419,83 @@
             this.groupBox12.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox12.Size = new System.Drawing.Size(1586, 260);
+            this.groupBox12.Size = new System.Drawing.Size(1586, 281);
             this.groupBox12.TabIndex = 17;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Register New Supplier";
             // 
-            // textBoxAddIngredient
+            // textBoxASQuantityInStock
             // 
-            this.textBoxAddIngredient.Location = new System.Drawing.Point(1096, 61);
-            this.textBoxAddIngredient.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxAddIngredient.Name = "textBoxAddIngredient";
-            this.textBoxAddIngredient.Size = new System.Drawing.Size(424, 31);
-            this.textBoxAddIngredient.TabIndex = 15;
+            this.textBoxASQuantityInStock.Location = new System.Drawing.Point(1096, 152);
+            this.textBoxASQuantityInStock.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxASQuantityInStock.Name = "textBoxASQuantityInStock";
+            this.textBoxASQuantityInStock.Size = new System.Drawing.Size(424, 31);
+            this.textBoxASQuantityInStock.TabIndex = 21;
             // 
-            // comboBoxSlocation
+            // label54
             // 
-            this.comboBoxSlocation.FormattingEnabled = true;
-            this.comboBoxSlocation.Items.AddRange(new object[] {
-            "Denmark",
-            "Finland ",
-            "Iceland",
-            "Norrway",
-            "Sweden"});
-            this.comboBoxSlocation.Location = new System.Drawing.Point(296, 148);
-            this.comboBoxSlocation.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxSlocation.Name = "comboBoxSlocation";
-            this.comboBoxSlocation.Size = new System.Drawing.Size(424, 33);
-            this.comboBoxSlocation.TabIndex = 14;
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(883, 152);
+            this.label54.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(175, 25);
+            this.label54.TabIndex = 20;
+            this.label54.Text = "Quantity In Stock";
+            // 
+            // textBoxASIngredientName
+            // 
+            this.textBoxASIngredientName.Location = new System.Drawing.Point(1096, 109);
+            this.textBoxASIngredientName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxASIngredientName.Name = "textBoxASIngredientName";
+            this.textBoxASIngredientName.Size = new System.Drawing.Size(424, 31);
+            this.textBoxASIngredientName.TabIndex = 19;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(881, 112);
+            this.label53.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(169, 25);
+            this.label53.TabIndex = 18;
+            this.label53.Text = "Ingredient Name";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(59, 70);
+            this.label52.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(187, 25);
+            this.label52.TabIndex = 17;
+            this.label52.Text = "Supplier\'s Number";
+            // 
+            // textBoxASNumber
+            // 
+            this.textBoxASNumber.Location = new System.Drawing.Point(296, 67);
+            this.textBoxASNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxASNumber.Name = "textBoxASNumber";
+            this.textBoxASNumber.Size = new System.Drawing.Size(424, 31);
+            this.textBoxASNumber.TabIndex = 16;
+            // 
+            // textBoxASIngredientNumber
+            // 
+            this.textBoxASIngredientNumber.Location = new System.Drawing.Point(1096, 61);
+            this.textBoxASIngredientNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxASIngredientNumber.Name = "textBoxASIngredientNumber";
+            this.textBoxASIngredientNumber.Size = new System.Drawing.Size(424, 31);
+            this.textBoxASIngredientNumber.TabIndex = 15;
             // 
             // btnAddSupplier
             // 
-            this.btnAddSupplier.Location = new System.Drawing.Point(64, 208);
+            this.btnAddSupplier.Location = new System.Drawing.Point(64, 217);
             this.btnAddSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddSupplier.Name = "btnAddSupplier";
             this.btnAddSupplier.Size = new System.Drawing.Size(1456, 44);
             this.btnAddSupplier.TabIndex = 13;
             this.btnAddSupplier.Text = "Register new Supplier";
             this.btnAddSupplier.UseVisualStyleBackColor = true;
+            this.btnAddSupplier.Click += new System.EventHandler(this.btnAddSupplier_Click);
             // 
             // textBoxSupplierName
             // 
@@ -771,6 +840,38 @@
             this.dataGridViewSStorage.Size = new System.Drawing.Size(792, 259);
             this.dataGridViewSStorage.TabIndex = 0;
             // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "iNumber";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Ingredient Number";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "iName";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Ingredient Name";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "iQuantityInStock";
+            this.dataGridViewTextBoxColumn9.HeaderText = "QuantityInStock";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "sNumber";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Supplier\'s Number";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
             // ingredientBindingSource1
             // 
             this.ingredientBindingSource1.DataMember = "Ingredient";
@@ -831,7 +932,7 @@
             // 
             this.pTimeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.pTimeDataGridViewTextBoxColumn.DataPropertyName = "pTime";
-            this.pTimeDataGridViewTextBoxColumn.HeaderText = "pTime";
+            this.pTimeDataGridViewTextBoxColumn.HeaderText = "Production Time";
             this.pTimeDataGridViewTextBoxColumn.Name = "pTimeDataGridViewTextBoxColumn";
             this.pTimeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -839,7 +940,7 @@
             // 
             this.pNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.pNameDataGridViewTextBoxColumn.DataPropertyName = "pName";
-            this.pNameDataGridViewTextBoxColumn.HeaderText = "pName";
+            this.pNameDataGridViewTextBoxColumn.HeaderText = "Product Name";
             this.pNameDataGridViewTextBoxColumn.Name = "pNameDataGridViewTextBoxColumn";
             this.pNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -847,7 +948,7 @@
             // 
             this.pPalletDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.pPalletDataGridViewTextBoxColumn.DataPropertyName = "pPallet";
-            this.pPalletDataGridViewTextBoxColumn.HeaderText = "pPallet";
+            this.pPalletDataGridViewTextBoxColumn.HeaderText = "Pallet Quantity";
             this.pPalletDataGridViewTextBoxColumn.Name = "pPalletDataGridViewTextBoxColumn";
             this.pPalletDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -858,14 +959,16 @@
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.textBoxProductToProduce);
+            this.groupBox9.Controls.Add(this.textBoxpalletamountProduction);
+            this.groupBox9.Controls.Add(this.comboBoxOrderNumberProduction);
+            this.groupBox9.Controls.Add(this.label55);
             this.groupBox9.Controls.Add(this.textBoxpNumberProduction);
             this.groupBox9.Controls.Add(this.label51);
             this.groupBox9.Controls.Add(this.dateTimePickerPProductTime);
             this.groupBox9.Controls.Add(this.label47);
             this.groupBox9.Controls.Add(this.label46);
             this.groupBox9.Controls.Add(this.dataGridViewStorage);
-            this.groupBox9.Controls.Add(this.comboBoxPalletAmount);
-            this.groupBox9.Controls.Add(this.comboBoxProductToProduce);
             this.groupBox9.Controls.Add(this.label44);
             this.groupBox9.Controls.Add(this.btnProduce);
             this.groupBox9.Controls.Add(this.label20);
@@ -878,9 +981,43 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Production";
             // 
+            // textBoxpalletamountProduction
+            // 
+            this.textBoxpalletamountProduction.Location = new System.Drawing.Point(320, 238);
+            this.textBoxpalletamountProduction.Name = "textBoxpalletamountProduction";
+            this.textBoxpalletamountProduction.Size = new System.Drawing.Size(370, 31);
+            this.textBoxpalletamountProduction.TabIndex = 14;
+            // 
+            // comboBoxOrderNumberProduction
+            // 
+            this.comboBoxOrderNumberProduction.DataSource = this.orderspecificationBindingSource;
+            this.comboBoxOrderNumberProduction.DisplayMember = "oNumber";
+            this.comboBoxOrderNumberProduction.FormattingEnabled = true;
+            this.comboBoxOrderNumberProduction.Location = new System.Drawing.Point(320, 67);
+            this.comboBoxOrderNumberProduction.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxOrderNumberProduction.Name = "comboBoxOrderNumberProduction";
+            this.comboBoxOrderNumberProduction.Size = new System.Drawing.Size(370, 33);
+            this.comboBoxOrderNumberProduction.TabIndex = 13;
+            this.comboBoxOrderNumberProduction.SelectedIndexChanged += new System.EventHandler(this.comboBoxOrderNumberProduction_SelectedIndexChanged);
+            // 
+            // orderspecificationBindingSource
+            // 
+            this.orderspecificationBindingSource.DataMember = "Orderspecification";
+            this.orderspecificationBindingSource.DataSource = this.createCookiesDataSetTheOne;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(40, 70);
+            this.label55.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(147, 25);
+            this.label55.TabIndex = 12;
+            this.label55.Text = "Order Number";
+            // 
             // textBoxpNumberProduction
             // 
-            this.textBoxpNumberProduction.Location = new System.Drawing.Point(320, 157);
+            this.textBoxpNumberProduction.Location = new System.Drawing.Point(320, 179);
             this.textBoxpNumberProduction.Name = "textBoxpNumberProduction";
             this.textBoxpNumberProduction.Size = new System.Drawing.Size(370, 31);
             this.textBoxpNumberProduction.TabIndex = 11;
@@ -888,7 +1025,7 @@
             // label51
             // 
             this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(40, 160);
+            this.label51.Location = new System.Drawing.Point(40, 182);
             this.label51.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(167, 25);
@@ -897,7 +1034,7 @@
             // 
             // dateTimePickerPProductTime
             // 
-            this.dateTimePickerPProductTime.Location = new System.Drawing.Point(320, 304);
+            this.dateTimePickerPProductTime.Location = new System.Drawing.Point(320, 288);
             this.dateTimePickerPProductTime.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerPProductTime.Name = "dateTimePickerPProductTime";
             this.dateTimePickerPProductTime.Size = new System.Drawing.Size(370, 31);
@@ -906,7 +1043,7 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(40, 308);
+            this.label47.Location = new System.Drawing.Point(40, 293);
             this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(104, 25);
@@ -916,7 +1053,7 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(756, 60);
+            this.label46.Location = new System.Drawing.Point(757, 28);
             this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(87, 25);
@@ -932,11 +1069,11 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.dataGridViewStorage.DataSource = this.ingredientBindingSource1;
-            this.dataGridViewStorage.Location = new System.Drawing.Point(762, 88);
+            this.dataGridViewStorage.Location = new System.Drawing.Point(762, 57);
             this.dataGridViewStorage.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewStorage.Name = "dataGridViewStorage";
             this.dataGridViewStorage.RowTemplate.Height = 33;
-            this.dataGridViewStorage.Size = new System.Drawing.Size(742, 329);
+            this.dataGridViewStorage.Size = new System.Drawing.Size(742, 360);
             this.dataGridViewStorage.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn4
@@ -960,38 +1097,6 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "QuantityInStock (g)";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // comboBoxPalletAmount
-            // 
-            this.comboBoxPalletAmount.FormattingEnabled = true;
-            this.comboBoxPalletAmount.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10"});
-            this.comboBoxPalletAmount.Location = new System.Drawing.Point(320, 227);
-            this.comboBoxPalletAmount.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxPalletAmount.Name = "comboBoxPalletAmount";
-            this.comboBoxPalletAmount.Size = new System.Drawing.Size(370, 33);
-            this.comboBoxPalletAmount.TabIndex = 5;
-            // 
-            // comboBoxProductToProduce
-            // 
-            this.comboBoxProductToProduce.DataSource = this.productBindingSource2;
-            this.comboBoxProductToProduce.DisplayMember = "pName";
-            this.comboBoxProductToProduce.FormattingEnabled = true;
-            this.comboBoxProductToProduce.Location = new System.Drawing.Point(320, 96);
-            this.comboBoxProductToProduce.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxProductToProduce.Name = "comboBoxProductToProduce";
-            this.comboBoxProductToProduce.Size = new System.Drawing.Size(370, 33);
-            this.comboBoxProductToProduce.TabIndex = 4;
-            this.comboBoxProductToProduce.SelectedIndexChanged += new System.EventHandler(this.comboBoxProductToProduce_SelectedIndexChanged_1);
-            // 
             // productBindingSource2
             // 
             this.productBindingSource2.DataMember = "Product";
@@ -1000,7 +1105,7 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(40, 231);
+            this.label44.Location = new System.Drawing.Point(40, 238);
             this.label44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(143, 25);
@@ -1009,7 +1114,7 @@
             // 
             // btnProduce
             // 
-            this.btnProduce.Location = new System.Drawing.Point(320, 371);
+            this.btnProduce.Location = new System.Drawing.Point(320, 359);
             this.btnProduce.Margin = new System.Windows.Forms.Padding(4);
             this.btnProduce.Name = "btnProduce";
             this.btnProduce.Size = new System.Drawing.Size(370, 46);
@@ -1021,12 +1126,12 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(40, 100);
+            this.label20.Location = new System.Drawing.Point(40, 122);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(272, 25);
+            this.label20.Size = new System.Drawing.Size(194, 25);
             this.label20.TabIndex = 0;
-            this.label20.Text = "Choose product to produce";
+            this.label20.Text = "Product to produce";
             // 
             // productBindingSource1
             // 
@@ -2457,115 +2562,37 @@
             // 
             this.producedTableAdapter.ClearBeforeFill = true;
             // 
-            // textBox10
+            // orderspecificationTableAdapter
             // 
-            this.textBox10.Location = new System.Drawing.Point(296, 67);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(424, 31);
-            this.textBox10.TabIndex = 16;
+            this.orderspecificationTableAdapter.ClearBeforeFill = true;
             // 
-            // label52
+            // textBoxProductToProduce
             // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(59, 70);
-            this.label52.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(187, 25);
-            this.label52.TabIndex = 17;
-            this.label52.Text = "Supplier\'s Number";
+            this.textBoxProductToProduce.Location = new System.Drawing.Point(320, 122);
+            this.textBoxProductToProduce.Name = "textBoxProductToProduce";
+            this.textBoxProductToProduce.Size = new System.Drawing.Size(370, 31);
+            this.textBoxProductToProduce.TabIndex = 15;
             // 
-            // label53
+            // comboBoxSlocation
             // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(881, 112);
-            this.label53.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(169, 25);
-            this.label53.TabIndex = 18;
-            this.label53.Text = "Ingredient Name";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(1096, 109);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(424, 31);
-            this.textBox11.TabIndex = 19;
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(883, 152);
-            this.label54.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(175, 25);
-            this.label54.TabIndex = 20;
-            this.label54.Text = "Quantity In Stock";
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(1096, 152);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(424, 31);
-            this.textBox12.TabIndex = 21;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "sNumber";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Supplier\'s umber";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "sName";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Supplier\'s Name";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "sLocation";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Supplier\'s Location";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "iNumber";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Ingredient Number";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "iName";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Ingredient Name";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "iQuantityInStock";
-            this.dataGridViewTextBoxColumn9.HeaderText = "QuantityInStock";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "sNumber";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Supplier\'s Number";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.comboBoxSlocation.FormattingEnabled = true;
+            this.comboBoxSlocation.Items.AddRange(new object[] {
+            "Trellebord",
+            "Malmö",
+            "Örebro",
+            "Stockholm",
+            "Öland",
+            "Kalmar",
+            "Sjöbo",
+            "Happaranda",
+            "Varberg",
+            "Lund",
+            "Landskrona"});
+            this.comboBoxSlocation.Location = new System.Drawing.Point(296, 148);
+            this.comboBoxSlocation.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxSlocation.Name = "comboBoxSlocation";
+            this.comboBoxSlocation.Size = new System.Drawing.Size(424, 33);
+            this.comboBoxSlocation.TabIndex = 14;
             // 
             // Form1
             // 
@@ -2596,6 +2623,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.producedBindingSource)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStorage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
@@ -2762,7 +2790,6 @@
         private System.Windows.Forms.ComboBox comboBoxDCnumber;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.ComboBox comboBoxSlocation;
         private System.Windows.Forms.Button btnAddSupplier;
         private System.Windows.Forms.TextBox textBoxSupplierName;
         private System.Windows.Forms.Label label37;
@@ -2783,8 +2810,6 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.ComboBox comboBoxOCnumber;
         private System.Windows.Forms.Button btnSeeOrders;
-        private System.Windows.Forms.ComboBox comboBoxPalletAmount;
-        private System.Windows.Forms.ComboBox comboBoxProductToProduce;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.ListView listViewStorage;
         private System.Windows.Forms.ColumnHeader columnHeader7;
@@ -2801,7 +2826,7 @@
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBoxAddIngredient;
+        private System.Windows.Forms.TextBox textBoxASIngredientNumber;
         private System.Windows.Forms.Button btnSeeAllOrders;
         private System.Windows.Forms.TextBox textBoxSearchOrder;
         private System.Windows.Forms.ComboBox comboBoxSearchOrder;
@@ -2866,14 +2891,11 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingSource producedBindingSource;
         private CreateCookiesDataSetTheOneTableAdapters.ProducedTableAdapter producedTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pPalletDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBoxASNumber;
+        private System.Windows.Forms.TextBox textBoxASQuantityInStock;
         private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBoxASIngredientName;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
@@ -2882,6 +2904,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pPalletDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.ComboBox comboBoxOrderNumberProduction;
+        private System.Windows.Forms.BindingSource orderspecificationBindingSource;
+        private CreateCookiesDataSetTheOneTableAdapters.OrderspecificationTableAdapter orderspecificationTableAdapter;
+        private System.Windows.Forms.TextBox textBoxpalletamountProduction;
+        private System.Windows.Forms.TextBox textBoxProductToProduce;
+        private System.Windows.Forms.ComboBox comboBoxSlocation;
     }
 }
 
