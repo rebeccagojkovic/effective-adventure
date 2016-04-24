@@ -286,12 +286,13 @@ namespace CreateCookies
         private void btnProduce_Click(object sender, EventArgs e)
         {
             SqlConnection produceConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-            SqlCommand producedCommand = new SqlCommand("insert into Produced ( pTime,pName, pPallet, pNumber) values(@pTime, @pName, @pPallet, @pNumber)", produceConnection);
+            SqlCommand producedCommand = new SqlCommand("insert into Produced ( pTime,pName, pPallet, pNumber,oNumber) values(@pTime, @pName, @pPallet, @pNumber, @oNumber)", produceConnection);
 
             producedCommand.Parameters.AddWithValue("@pTime", dateTimePickerPProductTime.Value.Date);
             producedCommand.Parameters.AddWithValue("@pName", textBoxProductToProduce.Text);
             producedCommand.Parameters.AddWithValue("@pPallet", textBoxpalletamountProduction.Text);
             producedCommand.Parameters.AddWithValue("@pNumber", textBoxpNumberProduction.Text);
+            producedCommand.Parameters.AddWithValue("@oNumber", comboBoxOrderNumberProduction.Text);
 
             if (textBoxProductToProduce.Text == "Nötingar" && textBoxProductToProduce.Text != "")
             {
@@ -497,28 +498,36 @@ namespace CreateCookies
 
             SqlCommand insertIntoPalletCommand = new SqlCommand("insert into Pallet (palletNumber, palletTime, pNumber,oNumber) values(@palletNumber, @palletTime, @pNumber, @oNumber)", storeConnection);
 
+            storeConnection.Open();
+
             insertIntoPalletCommand.Parameters.AddWithValue("@palletNumber", textBoxPalletID.Text);
             insertIntoPalletCommand.Parameters.AddWithValue("@palletTime", textBoxStorageProduced.Text);
             insertIntoPalletCommand.Parameters.AddWithValue("@pNumber", textBoxStoragePNumber.Text);
             insertIntoPalletCommand.Parameters.AddWithValue("@oNumber", textBoxStorageONumber.Text);
 
-            storeConnection.Open();
 
-            SqlDataAdapter storeAdapter = new SqlDataAdapter(@"Select Pallet.palletNumber,Produced.pName,Produced.pTime,palletQuantity, from Orderspecification inner join Product on (Orderspecification.pNumber = Product.pNumber) where oNumber= '" + comboBox1.Text.Trim() + "'", storeConnection);
+            SqlDataAdapter storeAdapter = new SqlDataAdapter(@"Select Pallet.palletNumber,Pallet.oNumber,Produced.pName,Produced.pTime,Produced.pNumber,Produced.pPallet from Pallet inner join 
+                Produced on (Pallet.pNumber=Produced.pNumber) where pName= '" + comboBoxCooseFromProducedProducts.Text.Trim() + "'", storeConnection);
             DataTable dtstore = new DataTable();
             storeAdapter.Fill(dtstore);
 
-          
             for (int i = 0; i < dtstore.Rows.Count; i++)
             {
                 DataRow dr = dtstore.Rows[i];
 
-                ListViewItem listViewstore = new ListViewItem(dr["oNumber"].ToString());
+                ListViewItem listViewstore = new ListViewItem(dr["palletNumber"].ToString());
+                listViewstore.SubItems.Add(dr["palletTime"].ToString());
                 listViewstore.SubItems.Add(dr["pNumber"].ToString());
-                listViewstore.SubItems.Add(dr["pName"].ToString());
-                listViewstore.SubItems.Add(dr["palletQuantity"].ToString());
+                listViewstore.SubItems.Add(dr["oNumber"].ToString());
+                listViewstore.SubItems.Add(dr["pPallet"].ToString());
                 listViewStorage.Items.Add(listViewstore);
             }
+
+            SqlCommand deleteInProducedCommand = new SqlCommand("Delete from Produced where oNumber='"+ textBoxStorageONumber.Text + "'", storeConnection);
+
+            insertIntoPalletCommand.ExecuteNonQuery();
+            deleteInProducedCommand.ExecuteNonQuery();
+            storeConnection.Close();
         }
 
         private void comboBoxCooseFromProducedProducts_SelectedIndexChanged(object sender, EventArgs e)
@@ -535,6 +544,7 @@ namespace CreateCookies
                 textBoxStoragePNumber.Text = dr["pNumber"].ToString();
                 textBoxStorageONumber.Text = dr["oNumber"].ToString();
                 textBoxStorageProduced.Text= dr["pTime"].ToString();
+                textBoxStorageProduced.Text = dr["pPallet"].ToString();
             }
             dr.Close();
             selectStoreInfoConnection.Close();

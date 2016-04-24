@@ -269,6 +269,7 @@
             this.label57 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.textBoxStorageProduced = new System.Windows.Forms.TextBox();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource1)).BeginInit();
@@ -2181,8 +2182,9 @@
             this.columnHeader7,
             this.columnHeader8,
             this.columnHeader9,
-            this.columnHeader10});
-            this.listViewStorage.Location = new System.Drawing.Point(56, 46);
+            this.columnHeader10,
+            this.columnHeader4});
+            this.listViewStorage.Location = new System.Drawing.Point(56, 54);
             this.listViewStorage.Margin = new System.Windows.Forms.Padding(4);
             this.listViewStorage.Name = "listViewStorage";
             this.listViewStorage.Size = new System.Drawing.Size(1472, 504);
@@ -2198,17 +2200,20 @@
             // columnHeader8
             // 
             this.columnHeader8.Text = "Product";
+            this.columnHeader8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader8.Width = 114;
             // 
             // columnHeader9
             // 
             this.columnHeader9.Text = "Produced";
+            this.columnHeader9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader9.Width = 144;
             // 
             // columnHeader10
             // 
-            this.columnHeader10.Text = "Valid Untill";
-            this.columnHeader10.Width = 160;
+            this.columnHeader10.Text = "Product Number";
+            this.columnHeader10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader10.Width = 190;
             // 
             // button22
             // 
@@ -2647,6 +2652,12 @@
             this.textBoxStorageProduced.Size = new System.Drawing.Size(378, 31);
             this.textBoxStorageProduced.TabIndex = 29;
             // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Order Number";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader4.Width = 178;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -2973,6 +2984,7 @@
         private System.Windows.Forms.TextBox textBoxStoragePNumber;
         private System.Windows.Forms.TextBox textBoxStorageProduced;
         private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
 
