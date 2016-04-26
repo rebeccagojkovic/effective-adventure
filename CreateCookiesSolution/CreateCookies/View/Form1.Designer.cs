@@ -205,6 +205,13 @@
             this.label22 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.textBoxStorageProduced = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.textBoxStorageONumber = new System.Windows.Forms.TextBox();
+            this.textBoxStoragePNumber = new System.Windows.Forms.TextBox();
+            this.textBoxPalletID = new System.Windows.Forms.TextBox();
             this.dateTimePickerExpectedDeliveryDate = new System.Windows.Forms.DateTimePicker();
             this.label45 = new System.Windows.Forms.Label();
             this.listViewStorage = new System.Windows.Forms.ListView();
@@ -212,6 +219,7 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button22 = new System.Windows.Forms.Button();
             this.btnUnstoreDelivery = new System.Windows.Forms.Button();
             this.btnStore = new System.Windows.Forms.Button();
@@ -262,14 +270,8 @@
             this.supplierTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.SupplierTableAdapter();
             this.producedTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.ProducedTableAdapter();
             this.orderspecificationTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.OrderspecificationTableAdapter();
-            this.textBoxPalletID = new System.Windows.Forms.TextBox();
-            this.textBoxStoragePNumber = new System.Windows.Forms.TextBox();
-            this.textBoxStorageONumber = new System.Windows.Forms.TextBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.textBoxStorageProduced = new System.Windows.Forms.TextBox();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.textBoxEDDProduction = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource1)).BeginInit();
@@ -987,6 +989,8 @@
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.label58);
+            this.groupBox9.Controls.Add(this.textBoxEDDProduction);
             this.groupBox9.Controls.Add(this.textBoxProductToProduce);
             this.groupBox9.Controls.Add(this.textBoxpalletamountProduction);
             this.groupBox9.Controls.Add(this.comboBoxOrderNumberProduction);
@@ -1108,7 +1112,7 @@
             this.dataGridViewStorage.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewStorage.Name = "dataGridViewStorage";
             this.dataGridViewStorage.RowTemplate.Height = 33;
-            this.dataGridViewStorage.Size = new System.Drawing.Size(742, 360);
+            this.dataGridViewStorage.Size = new System.Drawing.Size(742, 381);
             this.dataGridViewStorage.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn4
@@ -1144,7 +1148,7 @@
             // 
             // btnProduce
             // 
-            this.btnProduce.Location = new System.Drawing.Point(320, 359);
+            this.btnProduce.Location = new System.Drawing.Point(320, 392);
             this.btnProduce.Margin = new System.Windows.Forms.Padding(4);
             this.btnProduce.Name = "btnProduce";
             this.btnProduce.Size = new System.Drawing.Size(370, 46);
@@ -2158,6 +2162,68 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Storage";
             // 
+            // textBoxStorageProduced
+            // 
+            this.textBoxStorageProduced.Location = new System.Drawing.Point(376, 821);
+            this.textBoxStorageProduced.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxStorageProduced.Name = "textBoxStorageProduced";
+            this.textBoxStorageProduced.Size = new System.Drawing.Size(378, 31);
+            this.textBoxStorageProduced.TabIndex = 29;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(45, 824);
+            this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(104, 25);
+            this.label41.TabIndex = 28;
+            this.label41.Text = "Produced";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(53, 693);
+            this.label57.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(147, 25);
+            this.label57.TabIndex = 27;
+            this.label57.Text = "Order Number";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(51, 637);
+            this.label56.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(167, 25);
+            this.label56.TabIndex = 26;
+            this.label56.Text = "Product Number";
+            // 
+            // textBoxStorageONumber
+            // 
+            this.textBoxStorageONumber.Location = new System.Drawing.Point(380, 693);
+            this.textBoxStorageONumber.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxStorageONumber.Name = "textBoxStorageONumber";
+            this.textBoxStorageONumber.Size = new System.Drawing.Size(378, 31);
+            this.textBoxStorageONumber.TabIndex = 25;
+            // 
+            // textBoxStoragePNumber
+            // 
+            this.textBoxStoragePNumber.Location = new System.Drawing.Point(380, 637);
+            this.textBoxStoragePNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxStoragePNumber.Name = "textBoxStoragePNumber";
+            this.textBoxStoragePNumber.Size = new System.Drawing.Size(378, 31);
+            this.textBoxStoragePNumber.TabIndex = 24;
+            // 
+            // textBoxPalletID
+            // 
+            this.textBoxPalletID.Location = new System.Drawing.Point(376, 757);
+            this.textBoxPalletID.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPalletID.Name = "textBoxPalletID";
+            this.textBoxPalletID.Size = new System.Drawing.Size(378, 31);
+            this.textBoxPalletID.TabIndex = 23;
+            // 
             // dateTimePickerExpectedDeliveryDate
             // 
             this.dateTimePickerExpectedDeliveryDate.Location = new System.Drawing.Point(1148, 579);
@@ -2214,6 +2280,12 @@
             this.columnHeader10.Text = "Product Number";
             this.columnHeader10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader10.Width = 190;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Order Number";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader4.Width = 178;
             // 
             // button22
             // 
@@ -2590,73 +2662,22 @@
             // 
             this.orderspecificationTableAdapter.ClearBeforeFill = true;
             // 
-            // textBoxPalletID
+            // textBoxEDDProduction
             // 
-            this.textBoxPalletID.Location = new System.Drawing.Point(376, 757);
-            this.textBoxPalletID.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxPalletID.Name = "textBoxPalletID";
-            this.textBoxPalletID.Size = new System.Drawing.Size(378, 31);
-            this.textBoxPalletID.TabIndex = 23;
+            this.textBoxEDDProduction.Location = new System.Drawing.Point(320, 341);
+            this.textBoxEDDProduction.Name = "textBoxEDDProduction";
+            this.textBoxEDDProduction.Size = new System.Drawing.Size(370, 31);
+            this.textBoxEDDProduction.TabIndex = 16;
             // 
-            // textBoxStoragePNumber
+            // label58
             // 
-            this.textBoxStoragePNumber.Location = new System.Drawing.Point(380, 637);
-            this.textBoxStoragePNumber.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxStoragePNumber.Name = "textBoxStoragePNumber";
-            this.textBoxStoragePNumber.Size = new System.Drawing.Size(378, 31);
-            this.textBoxStoragePNumber.TabIndex = 24;
-            // 
-            // textBoxStorageONumber
-            // 
-            this.textBoxStorageONumber.Location = new System.Drawing.Point(380, 693);
-            this.textBoxStorageONumber.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxStorageONumber.Name = "textBoxStorageONumber";
-            this.textBoxStorageONumber.Size = new System.Drawing.Size(378, 31);
-            this.textBoxStorageONumber.TabIndex = 25;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(51, 637);
-            this.label56.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(167, 25);
-            this.label56.TabIndex = 26;
-            this.label56.Text = "Product Number";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(53, 693);
-            this.label57.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(147, 25);
-            this.label57.TabIndex = 27;
-            this.label57.Text = "Order Number";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(45, 824);
-            this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(104, 25);
-            this.label41.TabIndex = 28;
-            this.label41.Text = "Produced";
-            // 
-            // textBoxStorageProduced
-            // 
-            this.textBoxStorageProduced.Location = new System.Drawing.Point(376, 821);
-            this.textBoxStorageProduced.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxStorageProduced.Name = "textBoxStorageProduced";
-            this.textBoxStorageProduced.Size = new System.Drawing.Size(378, 31);
-            this.textBoxStorageProduced.TabIndex = 29;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Order Number";
-            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader4.Width = 178;
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(40, 347);
+            this.label58.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(234, 25);
+            this.label58.TabIndex = 17;
+            this.label58.Text = "Expected Delivery date";
             // 
             // Form1
             // 
@@ -2985,6 +3006,8 @@
         private System.Windows.Forms.TextBox textBoxStorageProduced;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.TextBox textBoxEDDProduction;
     }
 }
 

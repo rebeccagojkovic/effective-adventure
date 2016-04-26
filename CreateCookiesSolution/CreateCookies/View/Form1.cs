@@ -433,7 +433,7 @@ namespace CreateCookies
 
             producttoProduceeConnection.Open();
 
-            SqlCommand producttoProduceecmd = new SqlCommand("select * from Orderspecification inner join Product on (Orderspecification.pNumber=Product.pNumber) where oNumber='" + comboBoxOrderNumberProduction.Text + "'", producttoProduceeConnection);
+            SqlCommand producttoProduceecmd = new SqlCommand("select * from Product inner join  Orderspecification on (Product.pNumber=Orderspecification.pNumber) inner join Orde on (Orderspecification.oNumber=Orde.oNumber)", producttoProduceeConnection);
             SqlDataReader dr = producttoProduceecmd.ExecuteReader();
 
             if (dr.Read())
@@ -441,6 +441,7 @@ namespace CreateCookies
                 textBoxpNumberProduction.Text = dr["pNumber"].ToString();
                 textBoxpalletamountProduction.Text = dr["palletQuantity"].ToString();
                 textBoxProductToProduce.Text = dr["pName"].ToString();
+                textBoxEDDProduction.Text = dr["expectedDeliveryDate"].ToString();
             }
             dr.Close();
             producttoProduceeConnection.Close();
