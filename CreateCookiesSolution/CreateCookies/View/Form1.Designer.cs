@@ -89,11 +89,10 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.pTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pPalletDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.producedBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.textBoxEDDProduction = new System.Windows.Forms.TextBox();
             this.textBoxProductToProduce = new System.Windows.Forms.TextBox();
             this.textBoxpalletamountProduction = new System.Windows.Forms.TextBox();
             this.comboBoxOrderNumberProduction = new System.Windows.Forms.ComboBox();
@@ -270,8 +269,10 @@
             this.supplierTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.SupplierTableAdapter();
             this.producedTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.ProducedTableAdapter();
             this.orderspecificationTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.OrderspecificationTableAdapter();
-            this.textBoxEDDProduction = new System.Windows.Forms.TextBox();
-            this.label58 = new System.Windows.Forms.Label();
+            this.pTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pPalletDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource1)).BeginInit();
@@ -948,6 +949,7 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pTimeDataGridViewTextBoxColumn,
+            this.oNumber,
             this.pNameDataGridViewTextBoxColumn,
             this.pPalletDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.producedBindingSource;
@@ -957,30 +959,6 @@
             this.dataGridView2.RowTemplate.Height = 33;
             this.dataGridView2.Size = new System.Drawing.Size(1504, 426);
             this.dataGridView2.TabIndex = 0;
-            // 
-            // pTimeDataGridViewTextBoxColumn
-            // 
-            this.pTimeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.pTimeDataGridViewTextBoxColumn.DataPropertyName = "pTime";
-            this.pTimeDataGridViewTextBoxColumn.HeaderText = "Production Time";
-            this.pTimeDataGridViewTextBoxColumn.Name = "pTimeDataGridViewTextBoxColumn";
-            this.pTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pNameDataGridViewTextBoxColumn
-            // 
-            this.pNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.pNameDataGridViewTextBoxColumn.DataPropertyName = "pName";
-            this.pNameDataGridViewTextBoxColumn.HeaderText = "Product Name";
-            this.pNameDataGridViewTextBoxColumn.Name = "pNameDataGridViewTextBoxColumn";
-            this.pNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pPalletDataGridViewTextBoxColumn
-            // 
-            this.pPalletDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.pPalletDataGridViewTextBoxColumn.DataPropertyName = "pPallet";
-            this.pPalletDataGridViewTextBoxColumn.HeaderText = "Pallet Quantity";
-            this.pPalletDataGridViewTextBoxColumn.Name = "pPalletDataGridViewTextBoxColumn";
-            this.pPalletDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // producedBindingSource
             // 
@@ -1012,6 +990,23 @@
             this.groupBox9.TabIndex = 0;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Production";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(40, 347);
+            this.label58.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(234, 25);
+            this.label58.TabIndex = 17;
+            this.label58.Text = "Expected Delivery date";
+            // 
+            // textBoxEDDProduction
+            // 
+            this.textBoxEDDProduction.Location = new System.Drawing.Point(320, 341);
+            this.textBoxEDDProduction.Name = "textBoxEDDProduction";
+            this.textBoxEDDProduction.Size = new System.Drawing.Size(370, 31);
+            this.textBoxEDDProduction.TabIndex = 16;
             // 
             // textBoxProductToProduce
             // 
@@ -1142,9 +1137,9 @@
             this.label44.Location = new System.Drawing.Point(40, 238);
             this.label44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(143, 25);
+            this.label44.Size = new System.Drawing.Size(152, 25);
             this.label44.TabIndex = 3;
-            this.label44.Text = "Pallet amount";
+            this.label44.Text = "Pallet Quantity";
             // 
             // btnProduce
             // 
@@ -2662,22 +2657,37 @@
             // 
             this.orderspecificationTableAdapter.ClearBeforeFill = true;
             // 
-            // textBoxEDDProduction
+            // pTimeDataGridViewTextBoxColumn
             // 
-            this.textBoxEDDProduction.Location = new System.Drawing.Point(320, 341);
-            this.textBoxEDDProduction.Name = "textBoxEDDProduction";
-            this.textBoxEDDProduction.Size = new System.Drawing.Size(370, 31);
-            this.textBoxEDDProduction.TabIndex = 16;
+            this.pTimeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pTimeDataGridViewTextBoxColumn.DataPropertyName = "pTime";
+            this.pTimeDataGridViewTextBoxColumn.HeaderText = "Production Time";
+            this.pTimeDataGridViewTextBoxColumn.Name = "pTimeDataGridViewTextBoxColumn";
+            this.pTimeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // label58
+            // oNumber
             // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(40, 347);
-            this.label58.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(234, 25);
-            this.label58.TabIndex = 17;
-            this.label58.Text = "Expected Delivery date";
+            this.oNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.oNumber.DataPropertyName = "oNumber";
+            this.oNumber.HeaderText = "Order Number";
+            this.oNumber.Name = "oNumber";
+            this.oNumber.ReadOnly = true;
+            // 
+            // pNameDataGridViewTextBoxColumn
+            // 
+            this.pNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pNameDataGridViewTextBoxColumn.DataPropertyName = "pName";
+            this.pNameDataGridViewTextBoxColumn.HeaderText = "Product Name";
+            this.pNameDataGridViewTextBoxColumn.Name = "pNameDataGridViewTextBoxColumn";
+            this.pNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pPalletDataGridViewTextBoxColumn
+            // 
+            this.pPalletDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pPalletDataGridViewTextBoxColumn.DataPropertyName = "pPallet";
+            this.pPalletDataGridViewTextBoxColumn.HeaderText = "Pallet Quantity";
+            this.pPalletDataGridViewTextBoxColumn.Name = "pPalletDataGridViewTextBoxColumn";
+            this.pPalletDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Form1
             // 
@@ -2987,9 +2997,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pPalletDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.ComboBox comboBoxOrderNumberProduction;
         private System.Windows.Forms.BindingSource orderspecificationBindingSource;
@@ -3008,6 +3015,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.TextBox textBoxEDDProduction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pPalletDataGridViewTextBoxColumn;
     }
 }
 

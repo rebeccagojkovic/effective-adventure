@@ -58,9 +58,9 @@ namespace CreateCookies {
         
         private global::System.Data.DataRelation relationRecipe_pNumber_FK;
         
-        private global::System.Data.DataRelation relationProduct_pTime_FK;
-        
         private global::System.Data.DataRelation relationProduced_pNumber_FK;
+        
+        private global::System.Data.DataRelation relationProduced_oNumber_FK;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -414,8 +414,8 @@ namespace CreateCookies {
             this.relationPallet_pNumber_FK = this.Relations["Pallet_pNumber_FK"];
             this.relationRecipe_iNumber_FK = this.Relations["Recipe_iNumber_FK"];
             this.relationRecipe_pNumber_FK = this.Relations["Recipe_pNumber_FK"];
-            this.relationProduct_pTime_FK = this.Relations["Product_pTime_FK"];
             this.relationProduced_pNumber_FK = this.Relations["Produced_pNumber_FK"];
+            this.relationProduced_oNumber_FK = this.Relations["Produced_oNumber_FK"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -476,14 +476,14 @@ namespace CreateCookies {
                         this.tableProduct.pNumberColumn}, new global::System.Data.DataColumn[] {
                         this.tableRecipe.pNumberColumn}, false);
             this.Relations.Add(this.relationRecipe_pNumber_FK);
-            this.relationProduct_pTime_FK = new global::System.Data.DataRelation("Product_pTime_FK", new global::System.Data.DataColumn[] {
-                        this.tableProduced.pTimeColumn}, new global::System.Data.DataColumn[] {
-                        this.tableProduct.pTimeColumn}, false);
-            this.Relations.Add(this.relationProduct_pTime_FK);
             this.relationProduced_pNumber_FK = new global::System.Data.DataRelation("Produced_pNumber_FK", new global::System.Data.DataColumn[] {
                         this.tableProduct.pNumberColumn}, new global::System.Data.DataColumn[] {
                         this.tableProduced.pNumberColumn}, false);
             this.Relations.Add(this.relationProduced_pNumber_FK);
+            this.relationProduced_oNumber_FK = new global::System.Data.DataRelation("Produced_oNumber_FK", new global::System.Data.DataColumn[] {
+                        this.tableOrde.oNumberColumn}, new global::System.Data.DataColumn[] {
+                        this.tableProduced.oNumberColumn}, false);
+            this.Relations.Add(this.relationProduced_oNumber_FK);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2187,10 +2187,6 @@ namespace CreateCookies {
             
             private global::System.Data.DataColumn columnpName;
             
-            private global::System.Data.DataColumn columnpTime;
-            
-            private global::System.Data.DataColumn columnpPrice;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ProductDataTable() {
@@ -2242,22 +2238,6 @@ namespace CreateCookies {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn pTimeColumn {
-                get {
-                    return this.columnpTime;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn pPriceColumn {
-                get {
-                    return this.columnpPrice;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2293,16 +2273,11 @@ namespace CreateCookies {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ProductRow AddProductRow(string pNumber, string pName, ProducedRow parentProducedRowByProduct_pTime_FK, int pPrice) {
+            public ProductRow AddProductRow(string pNumber, string pName) {
                 ProductRow rowProductRow = ((ProductRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         pNumber,
-                        pName,
-                        null,
-                        pPrice};
-                if ((parentProducedRowByProduct_pTime_FK != null)) {
-                    columnValuesArray[2] = parentProducedRowByProduct_pTime_FK[0];
-                }
+                        pName};
                 rowProductRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProductRow);
                 return rowProductRow;
@@ -2334,8 +2309,6 @@ namespace CreateCookies {
             internal void InitVars() {
                 this.columnpNumber = base.Columns["pNumber"];
                 this.columnpName = base.Columns["pName"];
-                this.columnpTime = base.Columns["pTime"];
-                this.columnpPrice = base.Columns["pPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2345,10 +2318,6 @@ namespace CreateCookies {
                 base.Columns.Add(this.columnpNumber);
                 this.columnpName = new global::System.Data.DataColumn("pName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpName);
-                this.columnpTime = new global::System.Data.DataColumn("pTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpTime);
-                this.columnpPrice = new global::System.Data.DataColumn("pPrice", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnpNumber}, true));
                 this.columnpNumber.AllowDBNull = false;
@@ -3081,6 +3050,8 @@ namespace CreateCookies {
             
             private global::System.Data.DataColumn columnpNumber;
             
+            private global::System.Data.DataColumn columnoNumber;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ProducedDataTable() {
@@ -3148,6 +3119,14 @@ namespace CreateCookies {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn oNumberColumn {
+                get {
+                    return this.columnoNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3183,15 +3162,19 @@ namespace CreateCookies {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ProducedRow AddProducedRow(System.DateTime pTime, string pName, int pPallet, ProductRow parentProductRowByProduced_pNumber_FK) {
+            public ProducedRow AddProducedRow(System.DateTime pTime, string pName, int pPallet, ProductRow parentProductRowByProduced_pNumber_FK, OrdeRow parentOrdeRowByProduced_oNumber_FK) {
                 ProducedRow rowProducedRow = ((ProducedRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         pTime,
                         pName,
                         pPallet,
+                        null,
                         null};
                 if ((parentProductRowByProduced_pNumber_FK != null)) {
                     columnValuesArray[3] = parentProductRowByProduced_pNumber_FK[0];
+                }
+                if ((parentOrdeRowByProduced_oNumber_FK != null)) {
+                    columnValuesArray[4] = parentOrdeRowByProduced_oNumber_FK[0];
                 }
                 rowProducedRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProducedRow);
@@ -3226,6 +3209,7 @@ namespace CreateCookies {
                 this.columnpName = base.Columns["pName"];
                 this.columnpPallet = base.Columns["pPallet"];
                 this.columnpNumber = base.Columns["pNumber"];
+                this.columnoNumber = base.Columns["oNumber"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3239,12 +3223,15 @@ namespace CreateCookies {
                 base.Columns.Add(this.columnpPallet);
                 this.columnpNumber = new global::System.Data.DataColumn("pNumber", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpNumber);
+                this.columnoNumber = new global::System.Data.DataColumn("oNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnoNumber);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnpTime}, true));
                 this.columnpTime.AllowDBNull = false;
                 this.columnpTime.Unique = true;
                 this.columnpName.MaxLength = 50;
                 this.columnpNumber.MaxLength = 10;
+                this.columnoNumber.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3787,6 +3774,17 @@ namespace CreateCookies {
                     return ((PalletRow[])(base.GetChildRows(this.Table.ChildRelations["Pallet_oNumber_FK"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ProducedRow[] GetProducedRows() {
+                if ((this.Table.ChildRelations["Produced_oNumber_FK"] == null)) {
+                    return new ProducedRow[0];
+                }
+                else {
+                    return ((ProducedRow[])(base.GetChildRows(this.Table.ChildRelations["Produced_oNumber_FK"])));
+                }
+            }
         }
         
         /// <summary>
@@ -4017,49 +4015,6 @@ namespace CreateCookies {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime pTime {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableProduct.pTimeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pTime\' in table \'Product\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableProduct.pTimeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int pPrice {
-                get {
-                    try {
-                        return ((int)(this[this.tableProduct.pPriceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pPrice\' in table \'Product\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableProduct.pPriceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ProducedRow ProducedRow {
-                get {
-                    return ((ProducedRow)(this.GetParentRow(this.Table.ParentRelations["Product_pTime_FK"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Product_pTime_FK"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IspNameNull() {
                 return this.IsNull(this.tableProduct.pNameColumn);
             }
@@ -4068,30 +4023,6 @@ namespace CreateCookies {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetpNameNull() {
                 this[this.tableProduct.pNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IspTimeNull() {
-                return this.IsNull(this.tableProduct.pTimeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetpTimeNull() {
-                this[this.tableProduct.pTimeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IspPriceNull() {
-                return this.IsNull(this.tableProduct.pPriceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetpPriceNull() {
-                this[this.tableProduct.pPriceColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4394,12 +4325,39 @@ namespace CreateCookies {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string oNumber {
+                get {
+                    try {
+                        return ((string)(this[this.tableProduced.oNumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'oNumber\' in table \'Produced\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProduced.oNumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ProductRow ProductRow {
                 get {
                     return ((ProductRow)(this.GetParentRow(this.Table.ParentRelations["Produced_pNumber_FK"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["Produced_pNumber_FK"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public OrdeRow OrdeRow {
+                get {
+                    return ((OrdeRow)(this.GetParentRow(this.Table.ParentRelations["Produced_oNumber_FK"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Produced_oNumber_FK"]);
                 }
             }
             
@@ -4441,13 +4399,14 @@ namespace CreateCookies {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ProductRow[] GetProductRows() {
-                if ((this.Table.ChildRelations["Product_pTime_FK"] == null)) {
-                    return new ProductRow[0];
-                }
-                else {
-                    return ((ProductRow[])(base.GetChildRows(this.Table.ChildRelations["Product_pTime_FK"])));
-                }
+            public bool IsoNumberNull() {
+                return this.IsNull(this.tableProduced.oNumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetoNumberNull() {
+                this[this.tableProduced.oNumberColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6969,46 +6928,33 @@ SELECT palletNumber, palletTime, pNumber, oNumber FROM Pallet WHERE (palletNumbe
             tableMapping.DataSetTable = "Product";
             tableMapping.ColumnMappings.Add("pNumber", "pNumber");
             tableMapping.ColumnMappings.Add("pName", "pName");
-            tableMapping.ColumnMappings.Add("pTime", "pTime");
-            tableMapping.ColumnMappings.Add("pPrice", "pPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Product] WHERE (([pNumber] = @Original_pNumber) AND ((@IsNull_pName = 1 AND [pName] IS NULL) OR ([pName] = @Original_pName)) AND ((@IsNull_pTime = 1 AND [pTime] IS NULL) OR ([pTime] = @Original_pTime)) AND ((@IsNull_pPrice = 1 AND [pPrice] IS NULL) OR ([pPrice] = @Original_pPrice)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Product] WHERE (([pNumber] = @Original_pNumber) AND ((@IsNull_pName " +
+                "= 1 AND [pName] IS NULL) OR ([pName] = @Original_pName)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pPrice", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Product] ([pNumber], [pName], [pTime], [pPrice]) VALUES (@pNumber, @" +
-                "pName, @pTime, @pPrice);\r\nSELECT pNumber, pName, pTime, pPrice FROM Product WHER" +
-                "E (pNumber = @pNumber)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Product] ([pNumber], [pName]) VALUES (@pNumber, @pName);\r\nSELECT pNu" +
+                "mber, pName FROM Product WHERE (pNumber = @pNumber)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Product] SET [pNumber] = @pNumber, [pName] = @pName, [pTime] = @pTime, [pPrice] = @pPrice WHERE (([pNumber] = @Original_pNumber) AND ((@IsNull_pName = 1 AND [pName] IS NULL) OR ([pName] = @Original_pName)) AND ((@IsNull_pTime = 1 AND [pTime] IS NULL) OR ([pTime] = @Original_pTime)) AND ((@IsNull_pPrice = 1 AND [pPrice] IS NULL) OR ([pPrice] = @Original_pPrice)));
-SELECT pNumber, pName, pTime, pPrice FROM Product WHERE (pNumber = @pNumber)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Product] SET [pNumber] = @pNumber, [pName] = @pName WHERE (([pNumber] = @" +
+                "Original_pNumber) AND ((@IsNull_pName = 1 AND [pName] IS NULL) OR ([pName] = @Or" +
+                "iginal_pName)));\r\nSELECT pNumber, pName FROM Product WHERE (pNumber = @pNumber)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pPrice", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7024,7 +6970,7 @@ SELECT pNumber, pName, pTime, pPrice FROM Product WHERE (pNumber = @pNumber)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT pNumber, pName, pTime, pPrice FROM Product";
+            this._commandCollection[0].CommandText = "SELECT pNumber, pName FROM Product";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7085,7 +7031,7 @@ SELECT pNumber, pName, pTime, pPrice FROM Product WHERE (pNumber = @pNumber)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_pNumber, string Original_pName, global::System.Nullable<global::System.DateTime> Original_pTime, global::System.Nullable<int> Original_pPrice) {
+        public virtual int Delete(string Original_pNumber, string Original_pName) {
             if ((Original_pNumber == null)) {
                 throw new global::System.ArgumentNullException("Original_pNumber");
             }
@@ -7099,22 +7045,6 @@ SELECT pNumber, pName, pTime, pPrice FROM Product WHERE (pNumber = @pNumber)";
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_pName));
-            }
-            if ((Original_pTime.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_pTime.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Original_pPrice.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_pPrice.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -7136,7 +7066,7 @@ SELECT pNumber, pName, pTime, pPrice FROM Product WHERE (pNumber = @pNumber)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string pNumber, string pName, global::System.Nullable<global::System.DateTime> pTime, global::System.Nullable<int> pPrice) {
+        public virtual int Insert(string pNumber, string pName) {
             if ((pNumber == null)) {
                 throw new global::System.ArgumentNullException("pNumber");
             }
@@ -7148,18 +7078,6 @@ SELECT pNumber, pName, pTime, pPrice FROM Product WHERE (pNumber = @pNumber)";
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(pName));
-            }
-            if ((pTime.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(pTime.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((pPrice.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(pPrice.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -7181,7 +7099,7 @@ SELECT pNumber, pName, pTime, pPrice FROM Product WHERE (pNumber = @pNumber)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string pNumber, string pName, global::System.Nullable<global::System.DateTime> pTime, global::System.Nullable<int> pPrice, string Original_pNumber, string Original_pName, global::System.Nullable<global::System.DateTime> Original_pTime, global::System.Nullable<int> Original_pPrice) {
+        public virtual int Update(string pNumber, string pName, string Original_pNumber, string Original_pName) {
             if ((pNumber == null)) {
                 throw new global::System.ArgumentNullException("pNumber");
             }
@@ -7194,47 +7112,19 @@ SELECT pNumber, pName, pTime, pPrice FROM Product WHERE (pNumber = @pNumber)";
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(pName));
             }
-            if ((pTime.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(pTime.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((pPrice.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(pPrice.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
             if ((Original_pNumber == null)) {
                 throw new global::System.ArgumentNullException("Original_pNumber");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_pNumber));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_pNumber));
             }
             if ((Original_pName == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_pName));
-            }
-            if ((Original_pTime.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_pTime.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Original_pPrice.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_pPrice.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_pName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -7256,8 +7146,8 @@ SELECT pNumber, pName, pTime, pPrice FROM Product WHERE (pNumber = @pNumber)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string pName, global::System.Nullable<global::System.DateTime> pTime, global::System.Nullable<int> pPrice, string Original_pNumber, string Original_pName, global::System.Nullable<global::System.DateTime> Original_pTime, global::System.Nullable<int> Original_pPrice) {
-            return this.Update(Original_pNumber, pName, pTime, pPrice, Original_pNumber, Original_pName, Original_pTime, Original_pPrice);
+        public virtual int Update(string pName, string Original_pNumber, string Original_pName) {
+            return this.Update(Original_pNumber, pName, Original_pNumber, Original_pName);
         }
     }
     
@@ -8144,44 +8034,47 @@ SELECT sNumber, sName, sLocation FROM Supplier WHERE (sNumber = @sNumber)";
             tableMapping.ColumnMappings.Add("pName", "pName");
             tableMapping.ColumnMappings.Add("pPallet", "pPallet");
             tableMapping.ColumnMappings.Add("pNumber", "pNumber");
+            tableMapping.ColumnMappings.Add("oNumber", "oNumber");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Produced] WHERE (([pTime] = @Original_pTime) AND ((@IsNull_pName = 1 AND [pName] IS NULL) OR ([pName] = @Original_pName)) AND ((@IsNull_pPallet = 1 AND [pPallet] IS NULL) OR ([pPallet] = @Original_pPallet)) AND ((@IsNull_pNumber = 1 AND [pNumber] IS NULL) OR ([pNumber] = @Original_pNumber)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Produced] WHERE (([pTime] = @Original_pTime) AND ([pName] = @Original_pName) AND ((@IsNull_pPallet = 1 AND [pPallet] IS NULL) OR ([pPallet] = @Original_pPallet)) AND ([pNumber] = @Original_pNumber) AND ((@IsNull_oNumber = 1 AND [oNumber] IS NULL) OR ([oNumber] = @Original_oNumber)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pPallet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pPallet", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pPallet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pPallet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pNumber", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_oNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "oNumber", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_oNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "oNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Produced] ([pTime], [pName], [pPallet], [pNumber]) VALUES (@pT" +
-                "ime, @pName, @pPallet, @pNumber);\r\nSELECT pTime, pName, pPallet, pNumber FROM Pr" +
-                "oduced WHERE (pTime = @pTime)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Produced] ([pTime], [pName], [pPallet], [pNumber], [oNumber]) VALUES" +
+                " (@pTime, @pName, @pPallet, @pNumber, @oNumber);\r\nSELECT pTime, pName, pPallet, " +
+                "pNumber, oNumber FROM Produced WHERE (pName = @pName) AND (pTime = @pTime)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pPallet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pPallet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@oNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "oNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Produced] SET [pTime] = @pTime, [pName] = @pName, [pPallet] = @pPallet, [pNumber] = @pNumber WHERE (([pTime] = @Original_pTime) AND ((@IsNull_pName = 1 AND [pName] IS NULL) OR ([pName] = @Original_pName)) AND ((@IsNull_pPallet = 1 AND [pPallet] IS NULL) OR ([pPallet] = @Original_pPallet)) AND ((@IsNull_pNumber = 1 AND [pNumber] IS NULL) OR ([pNumber] = @Original_pNumber)));
-SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Produced] SET [pTime] = @pTime, [pName] = @pName, [pPallet] = @pPallet, [pNumber] = @pNumber, [oNumber] = @oNumber WHERE (([pTime] = @Original_pTime) AND ([pName] = @Original_pName) AND ((@IsNull_pPallet = 1 AND [pPallet] IS NULL) OR ([pPallet] = @Original_pPallet)) AND ([pNumber] = @Original_pNumber) AND ((@IsNull_oNumber = 1 AND [oNumber] IS NULL) OR ([oNumber] = @Original_oNumber)));
+SELECT pTime, pName, pPallet, pNumber, oNumber FROM Produced WHERE (pName = @pName) AND (pTime = @pTime)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pPallet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pPallet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@oNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "oNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pPallet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pPallet", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pPallet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pPallet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pNumber", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_oNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "oNumber", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_oNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "oNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8197,7 +8090,7 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT pTime, pName, pPallet, pNumber FROM dbo.Produced";
+            this._commandCollection[0].CommandText = "SELECT pTime, pName, pPallet, pNumber, oNumber FROM Produced";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -8258,31 +8151,35 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(System.DateTime Original_pTime, string Original_pName, global::System.Nullable<int> Original_pPallet, string Original_pNumber) {
+        public virtual int Delete(System.DateTime Original_pTime, string Original_pName, global::System.Nullable<int> Original_pPallet, string Original_pNumber, string Original_oNumber) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((System.DateTime)(Original_pTime));
             if ((Original_pName == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_pName");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_pName));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_pName));
             }
             if ((Original_pPallet.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_pPallet.Value));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_pPallet.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             if ((Original_pNumber == null)) {
+                throw new global::System.ArgumentNullException("Original_pNumber");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_pNumber));
+            }
+            if ((Original_oNumber == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_pNumber));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_oNumber));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8304,10 +8201,10 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(System.DateTime pTime, string pName, global::System.Nullable<int> pPallet, string pNumber) {
+        public virtual int Insert(System.DateTime pTime, string pName, global::System.Nullable<int> pPallet, string pNumber, string oNumber) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(pTime));
             if ((pName == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("pName");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(pName));
@@ -8319,10 +8216,16 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((pNumber == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("pNumber");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(pNumber));
+            }
+            if ((oNumber == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(oNumber));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8344,10 +8247,10 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(System.DateTime pTime, string pName, global::System.Nullable<int> pPallet, string pNumber, System.DateTime Original_pTime, string Original_pName, global::System.Nullable<int> Original_pPallet, string Original_pNumber) {
+        public virtual int Update(System.DateTime pTime, string pName, global::System.Nullable<int> pPallet, string pNumber, string oNumber, System.DateTime Original_pTime, string Original_pName, global::System.Nullable<int> Original_pPallet, string Original_pNumber, string Original_oNumber) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(pTime));
             if ((pName == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("pName");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(pName));
@@ -8359,18 +8262,22 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((pNumber == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("pNumber");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(pNumber));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Original_pTime));
-            if ((Original_pName == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            if ((oNumber == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(oNumber));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_pTime));
+            if ((Original_pName == null)) {
+                throw new global::System.ArgumentNullException("Original_pName");
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_pName));
             }
             if ((Original_pPallet.HasValue == true)) {
@@ -8382,12 +8289,18 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             if ((Original_pNumber == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_pNumber");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_pNumber));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_pNumber));
+            }
+            if ((Original_oNumber == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_oNumber));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8409,8 +8322,8 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string pName, global::System.Nullable<int> pPallet, string pNumber, System.DateTime Original_pTime, string Original_pName, global::System.Nullable<int> Original_pPallet, string Original_pNumber) {
-            return this.Update(Original_pTime, pName, pPallet, pNumber, Original_pTime, Original_pName, Original_pPallet, Original_pNumber);
+        public virtual int Update(string pName, global::System.Nullable<int> pPallet, string pNumber, string oNumber, System.DateTime Original_pTime, string Original_pName, global::System.Nullable<int> Original_pPallet, string Original_pNumber, string Original_oNumber) {
+            return this.Update(Original_pTime, pName, pPallet, pNumber, oNumber, Original_pTime, Original_pName, Original_pPallet, Original_pNumber, Original_oNumber);
         }
     }
     
@@ -8691,15 +8604,6 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(CreateCookiesDataSetTheOne dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._productTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Product.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._productTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._customerTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Customer.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -8718,15 +8622,6 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._producedTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Produced.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._producedTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._ingredientTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Ingredient.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -8742,6 +8637,15 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._ordeTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._productTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Product.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._productTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -8772,6 +8676,15 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._producedTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Produced.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._producedTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -8782,14 +8695,6 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(CreateCookiesDataSetTheOne dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._productTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Product.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._productTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._customerTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Customer.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -8806,14 +8711,6 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._producedTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Produced.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._producedTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._ingredientTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Ingredient.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -8827,6 +8724,14 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._ordeTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._productTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Product.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._productTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -8854,6 +8759,14 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._producedTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Produced.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._producedTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -8864,6 +8777,14 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(CreateCookiesDataSetTheOne dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._producedTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Produced.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._producedTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._recipeTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Recipe.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -8888,6 +8809,14 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._productTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Product.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._productTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._ordeTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Orde.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -8904,14 +8833,6 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._producedTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Produced.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._producedTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._supplierTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Supplier.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -8925,14 +8846,6 @@ SELECT pTime, pName, pPallet, pNumber FROM Produced WHERE (pTime = @pTime)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._customerTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._productTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Product.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._productTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
