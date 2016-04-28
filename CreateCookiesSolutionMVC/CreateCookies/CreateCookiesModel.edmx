@@ -13,7 +13,258 @@
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="CreateCookiesModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="CreateCookiesModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="CreateCookiesModel.Customer" />
+          <EntitySet Name="Orders" EntityType="CreateCookiesModel.Order" />
+          <AssociationSet Name="CustomerOrder" Association="CreateCookiesModel.CustomerOrder">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <EntitySet Name="Orderspecifications" EntityType="CreateCookiesModel.Orderspecification" />
+          <EntitySet Name="Products" EntityType="CreateCookiesModel.Product" />
+          <AssociationSet Name="OrderOrderspecification" Association="CreateCookiesModel.OrderOrderspecification">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Orderspecification" EntitySet="Orderspecifications" />
+          </AssociationSet>
+          <AssociationSet Name="ProductOrderspecification" Association="CreateCookiesModel.ProductOrderspecification">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Orderspecification" EntitySet="Orderspecifications" />
+          </AssociationSet>
+          <EntitySet Name="Pallets" EntityType="CreateCookiesModel.Pallet" />
+          <AssociationSet Name="OrderPallet" Association="CreateCookiesModel.OrderPallet">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Pallet" EntitySet="Pallets" />
+          </AssociationSet>
+          <AssociationSet Name="PalletProduct" Association="CreateCookiesModel.PalletProduct">
+            <End Role="Pallet" EntitySet="Pallets" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <EntitySet Name="Recipes" EntityType="CreateCookiesModel.Recipe" />
+          <AssociationSet Name="RecipeProduct" Association="CreateCookiesModel.RecipeProduct">
+            <End Role="Recipe" EntitySet="Recipes" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <EntitySet Name="Ingredients" EntityType="CreateCookiesModel.Ingredient" />
+          <AssociationSet Name="IngredientRecipe" Association="CreateCookiesModel.IngredientRecipe">
+            <End Role="Ingredient" EntitySet="Ingredients" />
+            <End Role="Recipe" EntitySet="Recipes" />
+          </AssociationSet>
+          <EntitySet Name="Suppliers" EntityType="CreateCookiesModel.Supplier" />
+          <AssociationSet Name="SupplierIngredient" Association="CreateCookiesModel.SupplierIngredient">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="Ingredient" EntitySet="Ingredients" />
+          </AssociationSet>
+          <EntitySet Name="Produceds" EntityType="CreateCookiesModel.Produced" />
+          <AssociationSet Name="ProductProduced" Association="CreateCookiesModel.ProductProduced">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Produced" EntitySet="Produceds" />
+          </AssociationSet>
+          <AssociationSet Name="OrderProduced" Association="CreateCookiesModel.OrderProduced">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Produced" EntitySet="Produceds" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CNumber" />
+          </Key>
+          <Property Name="CNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CName" Type="String" Nullable="false" />
+          <Property Name="CAddress" Type="String" Nullable="false" />
+          <Property Name="CPostalAddress" Type="String" Nullable="false" />
+          <Property Name="CCountry" Type="String" Nullable="false" />
+          <Property Name="CEmail" Type="String" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="CreateCookiesModel.CustomerOrder" FromRole="Customer" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="ONumber" />
+          </Key>
+          <Property Name="ONumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsDelivered" Type="Boolean" Nullable="false" />
+          <Property Name="ExpectedDeliveryDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="CreateCookiesModel.CustomerOrder" FromRole="Order" ToRole="Customer" />
+          <Property Name="CustomerCNumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Orderspecification" Relationship="CreateCookiesModel.OrderOrderspecification" FromRole="Order" ToRole="Orderspecification" />
+          <NavigationProperty Name="Pallet" Relationship="CreateCookiesModel.OrderPallet" FromRole="Order" ToRole="Pallet" />
+          <NavigationProperty Name="Produced" Relationship="CreateCookiesModel.OrderProduced" FromRole="Order" ToRole="Produced" />
+        </EntityType>
+        <Association Name="CustomerOrder">
+          <End Type="CreateCookiesModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="CreateCookiesModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CNumber" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="CustomerCNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Orderspecification" >
+          <Property Name="PalletQuantity" Type="String" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="CreateCookiesModel.OrderOrderspecification" FromRole="Orderspecification" ToRole="Order" />
+          <Property Name="OrderONumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="CreateCookiesModel.ProductOrderspecification" FromRole="Orderspecification" ToRole="Product" />
+          <Property Name="ProductPNumber" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="PNumber" />
+          </Key>
+          <Property Name="PNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PName" Type="String" Nullable="false" />
+          <NavigationProperty Name="Orderspecification" Relationship="CreateCookiesModel.ProductOrderspecification" FromRole="Product" ToRole="Orderspecification" />
+          <NavigationProperty Name="Pallet" Relationship="CreateCookiesModel.PalletProduct" FromRole="Product" ToRole="Pallet" />
+          <NavigationProperty Name="Recipe" Relationship="CreateCookiesModel.RecipeProduct" FromRole="Product" ToRole="Recipe" />
+          <NavigationProperty Name="Produced" Relationship="CreateCookiesModel.ProductProduced" FromRole="Product" ToRole="Produced" />
+        </EntityType>
+        <Association Name="OrderOrderspecification">
+          <End Type="CreateCookiesModel.Order" Role="Order" Multiplicity="1" />
+          <End Type="CreateCookiesModel.Orderspecification" Role="Orderspecification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ONumber" />
+            </Principal>
+            <Dependent Role="Orderspecification">
+              <PropertyRef Name="OrderONumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProductOrderspecification">
+          <End Type="CreateCookiesModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="CreateCookiesModel.Orderspecification" Role="Orderspecification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="PNumber" />
+            </Principal>
+            <Dependent Role="Orderspecification">
+              <PropertyRef Name="ProductPNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Pallet">
+          <Key>
+            <PropertyRef Name="PalletID" />
+          </Key>
+          <Property Name="PalletID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PalletTime" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="CreateCookiesModel.OrderPallet" FromRole="Pallet" ToRole="Order" />
+          <Property Name="OrderONumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="CreateCookiesModel.PalletProduct" FromRole="Pallet" ToRole="Product" />
+          <Property Name="ProductPNumber" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="OrderPallet">
+          <End Type="CreateCookiesModel.Order" Role="Order" Multiplicity="1" />
+          <End Type="CreateCookiesModel.Pallet" Role="Pallet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ONumber" />
+            </Principal>
+            <Dependent Role="Pallet">
+              <PropertyRef Name="OrderONumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PalletProduct">
+          <End Type="CreateCookiesModel.Pallet" Role="Pallet" Multiplicity="*" />
+          <End Type="CreateCookiesModel.Product" Role="Product" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="PNumber" />
+            </Principal>
+            <Dependent Role="Pallet">
+              <PropertyRef Name="ProductPNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Recipe" >
+          <Property Name="RQuantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="CreateCookiesModel.RecipeProduct" FromRole="Recipe" ToRole="Product" />
+          <NavigationProperty Name="Ingredient" Relationship="CreateCookiesModel.IngredientRecipe" FromRole="Recipe" ToRole="Ingredient" />
+          <Property Name="IngredientINumber" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="RecipeProduct">
+          <End Type="CreateCookiesModel.Recipe" Role="Recipe" Multiplicity="*" />
+          <End Type="CreateCookiesModel.Product" Role="Product" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Ingredient">
+          <Key>
+            <PropertyRef Name="INumber" />
+          </Key>
+          <Property Name="INumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Recipe" Relationship="CreateCookiesModel.IngredientRecipe" FromRole="Ingredient" ToRole="Recipe" />
+          <NavigationProperty Name="Supplier" Relationship="CreateCookiesModel.SupplierIngredient" FromRole="Ingredient" ToRole="Supplier" />
+          <Property Name="SupplierSNumber" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="IngredientRecipe">
+          <End Type="CreateCookiesModel.Ingredient" Role="Ingredient" Multiplicity="1" />
+          <End Type="CreateCookiesModel.Recipe" Role="Recipe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="INumber" />
+            </Principal>
+            <Dependent Role="Recipe">
+              <PropertyRef Name="IngredientINumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="SNumber" />
+          </Key>
+          <Property Name="SNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SName" Type="String" Nullable="false" />
+          <Property Name="SLocation" Type="String" Nullable="false" />
+          <NavigationProperty Name="Ingredient" Relationship="CreateCookiesModel.SupplierIngredient" FromRole="Supplier" ToRole="Ingredient" />
+        </EntityType>
+        <Association Name="SupplierIngredient">
+          <End Type="CreateCookiesModel.Supplier" Role="Supplier" Multiplicity="1" />
+          <End Type="CreateCookiesModel.Ingredient" Role="Ingredient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="SNumber" />
+            </Principal>
+            <Dependent Role="Ingredient">
+              <PropertyRef Name="SupplierSNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Produced">
+          <Key>
+            <PropertyRef Name="PTime" />
+          </Key>
+          <Property Name="PTime" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="PName" Type="String" Nullable="false" />
+          <Property Name="PPallet" Type="String" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="CreateCookiesModel.ProductProduced" FromRole="Produced" ToRole="Product" />
+          <Property Name="ProductPNumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="CreateCookiesModel.OrderProduced" FromRole="Produced" ToRole="Order" />
+          <Property Name="OrderONumber" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ProductProduced">
+          <End Type="CreateCookiesModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="CreateCookiesModel.Produced" Role="Produced" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="PNumber" />
+            </Principal>
+            <Dependent Role="Produced">
+              <PropertyRef Name="ProductPNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OrderProduced">
+          <End Type="CreateCookiesModel.Order" Role="Order" Multiplicity="1" />
+          <End Type="CreateCookiesModel.Produced" Role="Produced" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ONumber" />
+            </Principal>
+            <Dependent Role="Produced">
+              <PropertyRef Name="OrderONumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
