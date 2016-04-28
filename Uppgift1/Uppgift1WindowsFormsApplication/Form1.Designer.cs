@@ -28,20 +28,100 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.openFilebutton = new System.Windows.Forms.Button();
+            this.fileNametextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.richTextBox = new System.Windows.Forms.RichTextBox();
+            this.groupBox1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.flowLayoutPanel2);
+            this.groupBox1.Controls.Add(this.flowLayoutPanel1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(311, 267);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Uppgift1";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Controls.Add(this.fileNametextBox);
+            this.flowLayoutPanel1.Controls.Add(this.openFilebutton);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 19);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(187, 29);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // openFilebutton
+            // 
+            this.openFilebutton.Location = new System.Drawing.Point(109, 3);
+            this.openFilebutton.Name = "openFilebutton";
+            this.openFilebutton.Size = new System.Drawing.Size(75, 23);
+            this.openFilebutton.TabIndex = 0;
+            this.openFilebutton.Text = "Öppna";
+            this.openFilebutton.UseVisualStyleBackColor = true;
+            this.openFilebutton.Click += new System.EventHandler(this.openFilebutton_Click);
+            // 
+            // fileNametextBox
+            // 
+            this.fileNametextBox.Location = new System.Drawing.Point(3, 3);
+            this.fileNametextBox.Name = "fileNametextBox";
+            this.fileNametextBox.Size = new System.Drawing.Size(100, 20);
+            this.fileNametextBox.TabIndex = 1;
+            this.fileNametextBox.Text = "Skriv filnamn";
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.richTextBox);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 54);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(299, 194);
+            this.flowLayoutPanel2.TabIndex = 1;
+            // 
+            // richTextBox
+            // 
+            this.richTextBox.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox.Name = "richTextBox";
+            this.richTextBox.ReadOnly = true;
+            this.richTextBox.Size = new System.Drawing.Size(296, 191);
+            this.richTextBox.TabIndex = 0;
+            this.richTextBox.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(330, 291);
+            this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.RichTextBox richTextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.TextBox fileNametextBox;
+        private System.Windows.Forms.Button openFilebutton;
     }
 }
 

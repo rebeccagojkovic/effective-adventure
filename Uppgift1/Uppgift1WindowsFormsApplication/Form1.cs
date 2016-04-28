@@ -16,5 +16,12 @@ namespace Uppgift1WindowsFormsApplication
         {
             InitializeComponent();
         }
+
+        private void openFilebutton_Click(object sender, EventArgs e)
+        {
+            localhost.WebService obj = new localhost.WebService();
+            String filename = Convert.ToString(fileNametextBox.Text);
+            richTextBox.Text = obj.txtFile(filename);
+        }
     }
 }

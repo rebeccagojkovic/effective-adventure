@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uppgift1ConsoleApplication", "Uppgift1ConsoleApplication\Uppgift1ConsoleApplication.csproj", "{EDCACED4-DED0-4739-A78F-81B1E8B5C9A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uppgift1WindowsFormsApplication", "Uppgift1WindowsFormsApplication\Uppgift1WindowsFormsApplication.csproj", "{AF37D8B0-04D0-4A28-B86D-76575C61B7B0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BEE99E41-63C7-44CB-8BFA-534C717D0107} = {BEE99E41-63C7-44CB-8BFA-534C717D0107}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
