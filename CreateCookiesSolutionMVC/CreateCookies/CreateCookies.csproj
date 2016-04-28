@@ -48,9 +48,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,10 +82,10 @@
     <Compile Include="Controller\ProductController.cs" />
     <Compile Include="Controller\RecipeController.cs" />
     <Compile Include="Controller\SupplierController.cs" />
-    <Compile Include="CreateCookiesDataSetTheOne.Designer.cs">
+    <Compile Include="CreateCookiesModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CreateCookiesDataSetTheOne.xsd</DependentUpon>
+      <DependentUpon>CreateCookiesModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Ingredient.cs" />
@@ -104,17 +115,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="CreateCookiesDataSetTheOne.xsc">
-      <DependentUpon>CreateCookiesDataSetTheOne.xsd</DependentUpon>
+    <EntityDeploy Include="CreateCookiesModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CreateCookiesModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CreateCookiesModel.edmx.diagram">
+      <DependentUpon>CreateCookiesModel.edmx</DependentUpon>
     </None>
-    <None Include="CreateCookiesDataSetTheOne.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CreateCookiesDataSetTheOne.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CreateCookiesDataSetTheOne.xss">
-      <DependentUpon>CreateCookiesDataSetTheOne.xsd</DependentUpon>
-    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
