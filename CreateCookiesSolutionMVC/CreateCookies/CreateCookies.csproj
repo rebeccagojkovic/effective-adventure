@@ -82,10 +82,26 @@
     <Compile Include="Controller\ProductController.cs" />
     <Compile Include="Controller\RecipeController.cs" />
     <Compile Include="Controller\SupplierController.cs" />
+    <Compile Include="CreateCookiesModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateCookiesModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreateCookiesModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateCookiesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="CreateCookiesModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateCookiesModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>CreateCookiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ingredient.cs">
+      <DependentUpon>CreateCookiesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Ingredient.cs" />
@@ -95,6 +111,27 @@
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Recipe.cs" />
     <Compile Include="Model\Supplier.cs" />
+    <Compile Include="Order.cs">
+      <DependentUpon>CreateCookiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Orderspecification.cs">
+      <DependentUpon>CreateCookiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pallet.cs">
+      <DependentUpon>CreateCookiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Produced.cs">
+      <DependentUpon>CreateCookiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>CreateCookiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Recipe.cs">
+      <DependentUpon>CreateCookiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>CreateCookiesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +184,22 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CreateCookiesModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CreateCookiesModel.Context.cs</LastGenOutput>
+      <DependentUpon>CreateCookiesModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="CreateCookiesModel.edmx.sql" />
+    <Content Include="CreateCookiesModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CreateCookiesModel.cs</LastGenOutput>
+      <DependentUpon>CreateCookiesModel.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
