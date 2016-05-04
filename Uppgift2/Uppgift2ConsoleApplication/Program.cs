@@ -10,12 +10,16 @@ namespace Uppgift2ConsoleApplication
     {
         static void Main(string[] args)
         {
+           
             localhost.WebService obj = new localhost.WebService();
-            
-            list.ForEach(i => Console.Write("{0}\t", i));
+            Console.WriteLine(obj);
+            Console.ReadLine();
 
-            Console.WriteLine("{0}\t", obj.ReadCustomer());
-            Console.Read();
+
+
+
+
         }
+
     }
 }
