@@ -22,10 +22,10 @@ namespace Uppgift2
     {
 
         [WebMethod]
-        public List<Customer> ReadCustomer()
+        public List<String> ReadCustomer()
         {
 
-            var list = new List<Customer>();
+            List<String> list = new List<String>();
 
             String connString = @"Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15";
             SqlConnection sqlConn = new SqlConnection(connString);

@@ -10,11 +10,19 @@ namespace Uppgift2ConsoleApplication
     {
         static void Main(string[] args)
         {
-            localhost.WebService obj = new localhost.WebService();
-            
-            list.ForEach(i => Console.Write("{0}\t", i));
+            //ServiceReference1.Customer obj = new ServiceReference1.Customer();
 
-            Console.WriteLine("{0}\t", obj.ReadCustomer());
+            //var service = new localhost.WebService();
+            //Console.WriteLine("Service result: " + service.XMLRequest(xml));
+
+            //var list = new List<int>(Enumerable.Range(0, 50));
+            //    list.ForEach(i => Console.Write("{0}\t", i));
+
+
+            var service = new ServiceReference1.Customer();
+            Console.WriteLine("\n Calling show Method");
+            Console.WriteLine("  " + service.CNumber);
+            
             Console.Read();
         }
     }

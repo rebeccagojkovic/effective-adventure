@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uppgift2", "Uppgift2\Uppgift2.csproj", "{21FDE6B3-0B05-4D7E-B806-DBA1F42905D5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uppgift2ConsoleApplication", "Uppgift2ConsoleApplication\Uppgift2ConsoleApplication.csproj", "{107878A5-851A-4D39-9B57-06AF43D388A3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{21FDE6B3-0B05-4D7E-B806-DBA1F42905D5} = {21FDE6B3-0B05-4D7E-B806-DBA1F42905D5}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
