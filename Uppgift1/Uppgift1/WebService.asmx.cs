@@ -22,7 +22,7 @@ namespace Uppgift1
         public String txtFile(string filename)
         {
 
-            StreamReader sr = File.OpenText("C:\\Users\\erik.aberg\\Desktop\\" + filename);
+            StreamReader sr = File.OpenText("C:\\Users\\erik.aberg\\" + filename);
             {
                 String line = sr.ReadToEnd();
                 return line;

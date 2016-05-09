@@ -16,5 +16,13 @@ namespace Uppgift2WindowsFormsApplication
         {
             InitializeComponent();
         }
+        localhost.WebService service = new localhost.WebService();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (string s in service.GetCustomers())
+            {
+                richTextBox1.Text += s + "\n";
+            }
+        }
     }
 }
