@@ -22,18 +22,10 @@ namespace NavWS
         [WebMethod]
         public List<string> GetEmployees()
         {
-            
-            String con = @"Data Source=klippan.privatedns.org;Initial Catalog=Demo Database NAV (5-0);Persist Security Info=True;User ID=grupp15;Password=Grupp15";
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Company", con);
-            DataSet ds = new DataSet();
-            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            adapter.Fill(ds, "Company");
-            List<string> EmployeeList = new List<string>();
-            foreach (DataRow dataRow in ds.Tables["Company"].Rows)
-            {
-                EmployeeList.Add(string.Join(", ", dataRow.ItemArray.Select(item => item.ToString())));
-            }
-            return EmployeeList;
+
+            Controllers.Controller.
+                
+
         }
     }
     }

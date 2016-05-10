@@ -23,19 +23,20 @@ namespace NavWindowApp
         }
 
 
-
+        localhost.WebService1 service = new localhost.WebService1();
         private void insertButton_Click(object sender, EventArgs e)
         {
-            SqlConnection InsertEmployeeConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=Demo Database NAV (5-0);Persist Security Info=True;User ID=grupp15;Password=Grupp15");
 
-            SqlCommand InsertEmployeeCommand = new SqlCommand("insert into Employee (No_) values (@No_)", InsertEmployeeConnection);
+            foreach (string s in service.GetEmployees())
+            {
+                richTextBox1.Text += s + "\n";
+            }
 
-            InsertEmployeeCommand.Parameters.AddWithValue("@No_", textBox1.Text);
+        }
 
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
 
-            InsertEmployeeConnection.Open();
-            InsertEmployeeCommand.ExecuteNonQuery();
-            InsertEmployeeConnection.Close();
         }
     }
 }
