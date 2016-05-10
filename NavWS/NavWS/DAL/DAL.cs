@@ -32,13 +32,14 @@ namespace NavWS.DAL
 
             try
             {
-                SqlDataAdapter adapterEmployees = new SqlDataAdapter("SELECT * FROM Company", con);
+                SqlDataAdapter adapterEmployees = new SqlDataAdapter("SELECT * FROM [Demo Database NAV (5-0)].[dbo].[CRONUS Sverige AB$Employee]", con);
 
                 DataSet dt = new DataSet();
+                adapterEmployees.MissingSchemaAction = MissingSchemaAction.AddWithKey;
 
-               adapterEmployees.Fill(dt);
+                adapterEmployees.Fill(dt, "[Demo Database NAV (5-0)].[dbo].[CRONUS Sverige AB$Employee]");
                 List<string> EmployeeList = new List<string>();
-                foreach (DataRow dataRow in dt.Tables["Company"].Rows)
+                foreach (DataRow dataRow in dt.Tables["[Demo Database NAV (5-0)].[dbo].[CRONUS Sverige AB$Employee]"].Rows)
                 {
                     EmployeeList.Add(string.Join(", ", dataRow.ItemArray.Select(item => item.ToString())));
                 }
@@ -63,10 +64,7 @@ namespace NavWS.DAL
                 //DataTable dt = new DataTable();
                 //SeeAllOrdersAdapter.Fill(dt);
             }
-            catch (Exception Ex)
-            {
-                throw Ex;
-            }
+ 
 
             finally
             {
