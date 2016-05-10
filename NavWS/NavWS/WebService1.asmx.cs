@@ -20,12 +20,23 @@ namespace NavWS
     {
 
         [WebMethod]
-       public List<string> GetEmployees()
+        public List<string> GetEmployees()
         {
 
             Controllers.Controller cont = new Controllers.Controller();
             return cont.showAllEmployees();
-
+        }
+        [WebMethod]
+        public List<Models.EmployeeModel> ShowAllEmployeesListDAL()
+        {
+            Controllers.Controller cont = new Controllers.Controller();
+            return cont.ShowAllEmployeesListDAL();
+        }
+        [WebMethod]
+        public List<List<string>> GetEmployeesList()
+        {
+            Controllers.Controller cont = new Controllers.Controller();
+            return cont.GetEmployees();
         }
     }
-    }
+}

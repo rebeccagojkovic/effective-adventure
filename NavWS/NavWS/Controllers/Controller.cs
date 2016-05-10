@@ -15,18 +15,20 @@ namespace NavWS.Controllers
         {
 
         }
-      
-
         //Employee
 
-      
         public List<String> showAllEmployees()
         {
-            return dal.ShowAllEmployeesDAL(); 
-
-
+            return dal.ShowAllEmployeesDAL();
         }
-
+        public List<Models.EmployeeModel> ShowAllEmployeesListDAL()
+        {
+            return dal.ShowAllEmployeesListDAL();
+        }
+        public List<List<string>> GetEmployees()
+        {
+            return dal.GetEmployees();
+        }
 
 
     }
