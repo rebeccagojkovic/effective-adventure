@@ -40,17 +40,3 @@ namespace NavWindowApp
     }
 }
 
-
-public class DAL
-{
-    SqlConnection con = new SqlConnection();
-
-    public DAL()
-    {
-        con.ConnectionString =
-"user id=cronus;" +
-"password=cronus;server=localhost;" +
-"Trusted_Connection=yes;" +
-"database=Demo Database NAV (5-0); " +
-"connection timeout=30";
-    }
