@@ -26,7 +26,7 @@ namespace NavWS.DAL
         }
 
 
-        public void ShowAllEmployeesDAL()
+        public List<String> ShowAllEmployeesDAL()
         {
             con.Open();
 
@@ -36,12 +36,18 @@ namespace NavWS.DAL
 
                 DataSet dt = new DataSet();
 
-                adapterEmployees.Fill(dt);
+               adapterEmployees.Fill(dt);
                 List<string> EmployeeList = new List<string>();
                 foreach (DataRow dataRow in dt.Tables["Company"].Rows)
                 {
                     EmployeeList.Add(string.Join(", ", dataRow.ItemArray.Select(item => item.ToString())));
                 }
+                return EmployeeList;
+
+
+
+
+
 
                 //adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 //adapter.Fill(ds, "Company");

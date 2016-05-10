@@ -15,13 +15,16 @@ namespace NavWS.Controllers
         {
 
         }
-
+      
 
         //Employee
-        public void showAllEmployees()
+
+      
+        public List<String> showAllEmployees()
         {
-                   
-           dal.ShowAllEmployeesDAL();
+            return dal.ShowAllEmployeesDAL(); 
+
+
         }
 
 

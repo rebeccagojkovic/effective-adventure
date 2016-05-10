@@ -20,11 +20,11 @@ namespace NavWS
     {
 
         [WebMethod]
-        public List<string> GetEmployees()
+       public List<string> GetEmployees()
         {
 
-            Controllers.Controller.
-                
+            Controllers.Controller cont = new Controllers.Controller();
+            return cont.showAllEmployees();
 
         }
     }
