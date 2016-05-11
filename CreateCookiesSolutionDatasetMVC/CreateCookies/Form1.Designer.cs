@@ -273,6 +273,8 @@
             this.supplierTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.SupplierTableAdapter();
             this.producedTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.ProducedTableAdapter();
             this.orderspecificationTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.OrderspecificationTableAdapter();
+            this.createCookiesDataSetTheOne1 = new CreateCookies.CreateCookiesDataSetTheOne();
+            this.orderspecificationBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource1)).BeginInit();
@@ -318,6 +320,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetTheOne1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -1056,7 +1060,7 @@
             // 
             // ComboBoxOrderNumberProduction
             // 
-            this.ComboBoxOrderNumberProduction.DataSource = this.orderspecificationBindingSource;
+            this.ComboBoxOrderNumberProduction.DataSource = this.orderspecificationBindingSource1;
             this.ComboBoxOrderNumberProduction.DisplayMember = "oNumber";
             this.ComboBoxOrderNumberProduction.FormattingEnabled = true;
             this.ComboBoxOrderNumberProduction.Location = new System.Drawing.Point(320, 67);
@@ -2689,6 +2693,16 @@
             // 
             this.orderspecificationTableAdapter.ClearBeforeFill = true;
             // 
+            // createCookiesDataSetTheOne1
+            // 
+            this.createCookiesDataSetTheOne1.DataSetName = "CreateCookiesDataSetTheOne";
+            this.createCookiesDataSetTheOne1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // orderspecificationBindingSource1
+            // 
+            this.orderspecificationBindingSource1.DataMember = "Orderspecification";
+            this.orderspecificationBindingSource1.DataSource = this.createCookiesDataSetTheOne1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -2757,6 +2771,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetTheOne1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3019,6 +3035,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn oNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn pNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pPalletDataGridViewTextBoxColumn;
+        private CreateCookiesDataSetTheOne createCookiesDataSetTheOne1;
+        private System.Windows.Forms.BindingSource orderspecificationBindingSource1;
     }
 }
 

@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using CreateCookies.Model;
 
 
 namespace CreateCookies
@@ -23,8 +22,10 @@ namespace CreateCookies
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-           
-          
+            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne1.Orderspecification' table. You can move, or remove it, as needed.
+            this.orderspecificationTableAdapter.Fill(this.createCookiesDataSetTheOne1.Orderspecification);
+
+
             // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Produced' table. You can move, or remove it, as needed.
             this.producedTableAdapter.Fill(this.createCookiesDataSetTheOne.Produced);
             // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Supplier' table. You can move, or remove it, as needed.
@@ -41,57 +42,67 @@ namespace CreateCookies
 
         private void ButtonRegCustomer_Click(object sender, EventArgs e)
         {
-            SqlConnection RegisterCustomerConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-            SqlCommand RegisterCustommerCommand = new SqlCommand("insert into Customer (cNumber, cName, cAddress, cPostalAddress, cCountry, cEmail) values(@cNumber, @cName, @cAddress, @cPostalAddress, @cCountry, @cEmail)", RegisterCustomerConnection);
+            string[] customer = new string[6];
+            try
+            {
+                customer[0] = TextBoxCnumber.Text;
+                customer[1] = TextBoxCname.Text;
+                customer[2] = TextBoxCaddress.Text;
+                customer[3] = TextBoxCpostalAddress.Text;
+                customer[4] = ComboBoxCcountry.Text;
+                customer[5] = TextBoxCemail.Text;
 
-            RegisterCustommerCommand.Parameters.AddWithValue("@cNumber", TextBoxCnumber.Text);
-            RegisterCustommerCommand.Parameters.AddWithValue("@cName", TextBoxCname.Text);
-            RegisterCustommerCommand.Parameters.AddWithValue("@cAddress", TextBoxCaddress.Text);
-            RegisterCustommerCommand.Parameters.AddWithValue("@cPostalAddress", TextBoxCpostalAddress.Text);
-            RegisterCustommerCommand.Parameters.AddWithValue("@cCountry", ComboBoxCcountry.Text);
-            RegisterCustommerCommand.Parameters.AddWithValue("@cEmail", TextBoxCemail.Text);
-
-            RegisterCustomerConnection.Open();
-            RegisterCustommerCommand.ExecuteNonQuery();
-            RegisterCustomerConnection.Close();
+                controller.RegisterCustomer(customer);
+            }
+            catch (Exception Ex)
+            {
+                string errorMessage = controller.Exception(Ex);
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
+
 
         private void BtnDeleteCustomer_Click(object sender, EventArgs e)
         {
-            SqlConnection DeleteCustomerConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-            SqlCommand DeleteCustomerCommand = new SqlCommand("delete from Customer where cNumber ='" + ComboBoxDCnumber.Text.Trim() + "'", DeleteCustomerConnection);
-
-            if (ComboBoxDCnumber.SelectedIndex != -1)
+            try
             {
-                DeleteCustomerConnection.Open();
-                DeleteCustomerCommand.ExecuteNonQuery();
-                DeleteCustomerConnection.Close();
+                if (ComboBoxDCnumber.SelectedIndex != -1)
+                {
+                    String cNumber = ComboBoxDCnumber.Text;
+                    controller.DeleteCustomer(cNumber);
+                }
             }
-        }
+            catch (Exception Ex)
+            {
+                string errorMessage = controller.Exception(Ex);
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
+        }
         private void BtnSearchCustomer_Click(object sender, EventArgs e)
         {
-            SqlConnection SelectCustomerConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-            SqlCommand SelectCustommerCommand = new SqlCommand("select * from Customer where cNumber='" + ComboBoxUCnumber.Text.Trim() + "'", SelectCustomerConnection);
-
-            SelectCustomerConnection.Open();
-
-            SqlDataReader DR = SelectCustommerCommand.ExecuteReader();
-
-            if (DR.Read())
+            try
             {
                 if (ComboBoxUCnumber.SelectedIndex != -1)
                 {
-                    TextBoxUCname.Text = DR["cName"].ToString();
-                    TextBoxUCaddress.Text = DR["cAddress"].ToString();
-                    TextBoxUCpostaladdress.Text = DR["cPostalAddress"].ToString();
-                    ComboBoxUCcountry.Text = DR["cCountry"].ToString();
-                    TextBoxUCemail.Text = DR["cEmail"].ToString();
+                    string cNumber = ComboBoxUCnumber.Text;
+                    string[] searchCustomerValues = controller.SearchCustomer(cNumber);
+
+                    foreach (string s in searchCustomerValues)
+                    {
+                        searchCustomerValues[0] = TextBoxUCname.Text;
+                        searchCustomerValues[1] = TextBoxUCaddress.Text;
+                        searchCustomerValues[2] = TextBoxUCpostaladdress.Text;
+                        searchCustomerValues[3] = ComboBoxUCcountry.Text;
+                        searchCustomerValues[4] = TextBoxUCemail.Text;
+                    }
                 }
             }
-
-            DR.Close();
-            SelectCustomerConnection.Close();
+            catch (Exception Ex)
+            {
+                string errorMessage = controller.Exception(Ex);
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void BtnNewCustomer_Click(object sender, EventArgs e)
@@ -106,21 +117,25 @@ namespace CreateCookies
 
         private void BtnUppdateCustomer_Click(object sender, EventArgs e)
         {
-            SqlConnection UpdateCustomerConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+            string[] customer = new string[6]; 
 
-            UpdateCustomerConnection.Open();
+            try
+            {
+                customer[0] = ComboBoxUCnumber.Text;
+                customer[1] = TextBoxUCname.Text;
+                customer[2] = TextBoxUCaddress.Text;
+                customer[3] = TextBoxUCpostaladdress.Text;
+                customer[4] = ComboBoxUCcountry.Text;
+                customer[5] = TextBoxUCemail.Text;
 
-            SqlCommand UpdateCustommerCommand = new SqlCommand("update Customer set cName=@cName, cAddress= @cAddress, cPostalAddress=@cPostalAddress, cCountry = @cCountry,  cEmail = @cEmail where cNumber=@cNumber", UpdateCustomerConnection);
+                controller.UpdateCustomer(customer);
 
-            UpdateCustommerCommand.Parameters.AddWithValue("@cNumber", ComboBoxUCnumber.Text);
-            UpdateCustommerCommand.Parameters.AddWithValue("@cName", TextBoxUCname.Text);
-            UpdateCustommerCommand.Parameters.AddWithValue("@cAddress", TextBoxUCaddress.Text);
-            UpdateCustommerCommand.Parameters.AddWithValue("@cPostalAddress", TextBoxUCpostaladdress.Text);
-            UpdateCustommerCommand.Parameters.AddWithValue("@cCountry", ComboBoxUCcountry.Text);
-            UpdateCustommerCommand.Parameters.AddWithValue("@cEmail", TextBoxUCemail.Text);
-
-            UpdateCustommerCommand.ExecuteNonQuery();
-            UpdateCustomerConnection.Close();
+            }
+            catch (Exception Ex)
+            {
+                string errorMessage = controller.Exception(Ex);
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void BtnSeeOrders_Click(object sender, EventArgs e)
@@ -172,6 +187,8 @@ namespace CreateCookies
 
         private void textBoxSearchOrder_TextChanged(object sender, EventArgs e)
         {
+            String searchOrder = TextBoxSearchOrder.Text;
+
             SqlConnection SearchOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
 
             if (ComboBoxSearchOrder.Text == "Order_Number")
@@ -206,15 +223,18 @@ namespace CreateCookies
 
         private void BtnDeleteOrder_Click(object sender, EventArgs e)
         {
-            SqlConnection DeleteOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-            SqlCommand DeleteOrderCommand = new SqlCommand("delete from Orde where oNumber='" + ComboBoxChooseOrder.Text.Trim() + "'", DeleteOrderConnection);
-
-            if (ComboBoxDCnumber.SelectedIndex != -1)
+            try 
             {
-                DeleteOrderConnection.Open();
-                DeleteOrderCommand.ExecuteNonQuery();
-                DeleteOrderConnection.Close();
-
+                if (ComboBoxDCnumber.SelectedIndex != -1)
+                {
+                    string oNumber = ComboBoxChooseOrder.Text;
+                    controller.DeleteOrder(oNumber);
+                }
+            }
+            catch (Exception Ex)
+            {
+                string errorMessage = controller.Exception(Ex);
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -264,29 +284,36 @@ namespace CreateCookies
 
         private void BtnAddOder_Click(object sender, EventArgs e)
         {
-            SqlConnection AddOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-            SqlCommand AddOrderCommand1 = new SqlCommand("insert into Orde (oNumber, isDelivered,expectedDeliveryDate, cNumber) values(@oNumber, @isDelivered,@expectedDeliveryDate, @cNumber)", AddOrderConnection);
-            SqlCommand AddOrderCommand2 = new SqlCommand("insert into Orderspecification (oNumber, pNumber, palletQuantity) values(@oNumber, @pNumber, @palletQuantity)", AddOrderConnection);
+            
+            String[] Order = new String[4];
+            String[] Orderspecification = new String[3];
 
-            AddOrderCommand1.Parameters.AddWithValue("@oNumber", TextBoxGenerateOrderNumber.Text);
-            AddOrderCommand1.Parameters.AddWithValue("@isDelivered", TextBoxisDeliveredAO.Text);
-            AddOrderCommand1.Parameters.AddWithValue("@expectedDeliveryDate", DateTimePickerDeliveryDateAO.Value.Date);
-            AddOrderCommand1.Parameters.AddWithValue("@cNumber", ComboBoxAOCnumber.Text);
+            try
+            {
 
-            AddOrderCommand2.Parameters.AddWithValue("@oNumber", TextBoxGenerateOrderNumber.Text);
-            AddOrderCommand2.Parameters.AddWithValue("@pNumber", TextBoxProductNUmberOA.Text);
-            AddOrderCommand2.Parameters.AddWithValue("@palletQuantity", ComboBoxPalletQuantity.Text);
+                Order[0] = TextBoxGenerateOrderNumber.Text;
+                Order[1] = TextBoxisDeliveredAO.Text;
+                Order[2] = (DateTimePickerDeliveryDateAO.ToString());
+                Order[3] = ComboBoxAOCnumber.Text;
 
-            AddOrderConnection.Open();
-            AddOrderCommand1.ExecuteNonQuery();
-            AddOrderCommand2.ExecuteNonQuery();
-            AddOrderConnection.Close();
+                Orderspecification[0] = TextBoxGenerateOrderNumber.Text;
+                Orderspecification[1] = TextBoxProductNUmberOA.Text;
+                Orderspecification[2] = ComboBoxPalletQuantity.Text;
+
+                controller.RegisterOrder(Order, Orderspecification);
+
+            }
+            catch (Exception Ex)
+            {
+                string errorMessage = controller.Exception(Ex);
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void BtnProduce_Click(object sender, EventArgs e)
         {
             SqlConnection produceConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-            SqlCommand producedCommand = new SqlCommand("insert into Produced ( pTime,pName, pPallet, pNumber,oNumber) values(@pTime, @pName, @pPallet, @pNumber, @oNumber)", produceConnection);
+            SqlCommand producedCommand = new SqlCommand("insert into Produced( pTime,pName, pPallet, pNumber, oNumber) values(@pTime, @pName, @pPallet, @pNumber, @oNumber)", produceConnection);
 
             producedCommand.Parameters.AddWithValue("@pTime", DateTimePickerPProductTime.Value.Date);
             producedCommand.Parameters.AddWithValue("@pName", TextBoxProductToProduce.Text);
@@ -412,13 +439,13 @@ namespace CreateCookies
                     j++;
                 }
             }
+            
 
             SqlCommand DeleteingFromOrdersProduction = new SqlCommand("delete from Orderspecification  where oNumber= '" + ComboBoxOrderNumberProduction.Text.Trim() + "'", produceConnection);
             SqlCommand DeleteingFromOrdersProduction2 = new SqlCommand("delete from Orde  where oNumber= '" + ComboBoxOrderNumberProduction.Text.Trim() + "'", produceConnection);
 
-            ComboBox1.Refresh();
-            dataGridViewOrderControl.Refresh();
-            listViewOrderInformation.Items.RemoveByKey(ComboBoxOrderNumberProduction.Text.Trim());
+
+            listViewOrderInformation.Items.RemoveByKey(ComboBoxOrderNumberProduction.Text);
 
             produceConnection.Open();
             producedCommand.ExecuteNonQuery();
@@ -426,25 +453,26 @@ namespace CreateCookies
             DeleteingFromOrdersProduction2.ExecuteNonQuery();
             produceConnection.Close();
         }
-
+    
         private void ComboBoxOrderNumberProduction_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlConnection producttoProduceeConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-
-            producttoProduceeConnection.Open();
-
-            SqlCommand producttoProduceecmd = new SqlCommand("select * from Product inner join  Orderspecification on (Product.pNumber=Orderspecification.pNumber) inner join Orde on (Orderspecification.oNumber=Orde.oNumber)", producttoProduceeConnection);
-            SqlDataReader dr = producttoProduceecmd.ExecuteReader();
-
-            if (dr.Read())
+            string[] prList = controller.GetProductToProduceValues();
+           
+            try
             {
-                TextBoxpNumberProduction.Text = dr["pNumber"].ToString();
-                TextBoxpalletamountProduction.Text = dr["palletQuantity"].ToString();
-                TextBoxProductToProduce.Text = dr["pName"].ToString();
-                TextBoxEDDProduction.Text = dr["expectedDeliveryDate"].ToString();
+                foreach (string s in prList)
+                {
+                    TextBoxpNumberProduction.Text = prList[0];
+                    TextBoxpalletamountProduction.Text = prList[1];
+                    TextBoxProductToProduce.Text = prList[2];
+                    TextBoxEDDProduction.Text = prList[3];
+                }
             }
-            dr.Close();
-            producttoProduceeConnection.Close();
+            catch (Exception Ex)
+            {
+                string errorMessage = controller.Exception(Ex);
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void BtnAddSupplier_Click(object sender, EventArgs e)
@@ -502,7 +530,7 @@ namespace CreateCookies
             storeConnection.Open();
 
             insertIntoPalletCommand.Parameters.AddWithValue("@palletNumber", TextBoxPalletID.Text);
-            insertIntoPalletCommand.Parameters.AddWithValue("@palletTime", TextBoxStorageProduced.Text);
+            insertIntoPalletCommand.Parameters.AddWithValue("@palletTime",TextBoxStorageProduced.Text);
             insertIntoPalletCommand.Parameters.AddWithValue("@pNumber", TextBoxStoragePNumber.Text);
             insertIntoPalletCommand.Parameters.AddWithValue("@oNumber", TextBoxStorageONumber.Text);
 
