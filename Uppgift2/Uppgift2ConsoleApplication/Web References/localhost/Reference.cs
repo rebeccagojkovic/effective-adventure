@@ -31,6 +31,8 @@ namespace Uppgift2ConsoleApplication.localhost {
         
         private System.Threading.SendOrPostCallback ReadCustomerOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetCustomersOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -73,6 +75,9 @@ namespace Uppgift2ConsoleApplication.localhost {
         public event ReadCustomerCompletedEventHandler ReadCustomerCompleted;
         
         /// <remarks/>
+        public event GetCustomersCompletedEventHandler GetCustomersCompleted;
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ReadCustomer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public Customer[] ReadCustomer() {
             object[] results = this.Invoke("ReadCustomer", new object[0]);
@@ -96,6 +101,33 @@ namespace Uppgift2ConsoleApplication.localhost {
             if ((this.ReadCustomerCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.ReadCustomerCompleted(this, new ReadCustomerCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetCustomers", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string[] GetCustomers() {
+            object[] results = this.Invoke("GetCustomers", new object[0]);
+            return ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetCustomersAsync() {
+            this.GetCustomersAsync(null);
+        }
+        
+        /// <remarks/>
+        public void GetCustomersAsync(object userState) {
+            if ((this.GetCustomersOperationCompleted == null)) {
+                this.GetCustomersOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCustomersOperationCompleted);
+            }
+            this.InvokeAsync("GetCustomers", new object[0], this.GetCustomersOperationCompleted, userState);
+        }
+        
+        private void OnGetCustomersOperationCompleted(object arg) {
+            if ((this.GetCustomersCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetCustomersCompleted(this, new GetCustomersCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -221,6 +253,32 @@ namespace Uppgift2ConsoleApplication.localhost {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((Customer[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1567.0")]
+    public delegate void GetCustomersCompletedEventHandler(object sender, GetCustomersCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1567.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetCustomersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetCustomersCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
             }
         }
     }

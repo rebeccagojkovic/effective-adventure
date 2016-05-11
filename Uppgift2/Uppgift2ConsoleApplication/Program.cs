@@ -10,11 +10,13 @@ namespace Uppgift2ConsoleApplication
     {
         static void Main(string[] args)
         {
-            localhost.WebService obj = new localhost.WebService();
-            
-            list.ForEach(i => Console.Write("{0}\t", i));
-
-            Console.WriteLine("{0}\t", obj.ReadCustomer());
+            localhost.WebService service = new localhost.WebService();
+            foreach (string s in service.GetCustomers())
+            {
+                Console.WriteLine("\n Calling show Method");
+                Console.WriteLine(s + "\n");
+            }
+                       
             Console.Read();
         }
     }

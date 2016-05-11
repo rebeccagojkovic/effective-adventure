@@ -25,7 +25,7 @@ namespace Uppgift2
         public List<Customer> ReadCustomer()
         {
 
-            var list = new List<Customer>();
+            List<Customer> list = new List<Customer>();
 
             String connString = @"Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15";
             SqlConnection sqlConn = new SqlConnection(connString);
@@ -58,6 +58,21 @@ namespace Uppgift2
             }
 
             return list;
+        }
+        [WebMethod]
+        public List<string> GetCustomers()
+        {
+            String con = @"Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15";
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Customer", con);
+            DataSet ds = new DataSet();
+            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adapter.Fill(ds, "Customer");
+            List<string> customerList = new List<string>();
+            foreach (DataRow dataRow in ds.Tables["Customer"].Rows)
+            {
+                customerList.Add(string.Join(", ", dataRow.ItemArray.Select(item => item.ToString())));
+            }
+            return customerList;
         }
 
     }
