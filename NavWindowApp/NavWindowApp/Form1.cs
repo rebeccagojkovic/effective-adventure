@@ -40,15 +40,15 @@ namespace NavWindowApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach (String[] s in service.GetEmployeesList())
-            {
-                foreach (String item in s)
-                {
-                    richTextBox1.Text += s + "\n";
-                }
-                //dataGridView1.DataSource = s.ToString();
+            //foreach (String[] s in service.GetEmployeesList())
+            //{
+            //    foreach (String item in s)
+            //    {
+            //        richTextBox1.Text += s + "\n";
+            //    }
+            //    //dataGridView1.DataSource = s.ToString();
                 
-            }
+            //}
             dataGridView1.DataSource = service.ShowAllEmployeesListDAL().ToList();
             //richTextBox1.Text = webservice.ToString();
         }
