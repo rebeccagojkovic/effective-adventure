@@ -97,20 +97,22 @@ namespace NavWS.DAL
                 con.Close();
             }
         }
-        public List<Models.EmployeeModel> ShowAllEmployeesListDAL()
+        public List<Models.EmployeeModel> GetAllEmployeesList()
         {
             con.Open();
             try
             {
                 List<Models.EmployeeModel> list = new List<Models.EmployeeModel>();
 
-                String query = "SELECT [First_Name] FROM [Demo Database NAV (5-0)].[dbo].[CRONUS Sverige AB$Employee]";
+                String query = "SELECT [Employee_No_], [First_Name], [Last_Name] FROM [Demo Database NAV (5-0)].[dbo].[CRONUS Sverige AB$Employee]";
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     var result = new Models.EmployeeModel();
-                    result.First_Name = reader.GetString(0);
+                    result.Employee_No_ = reader.GetString(0);
+                    result.First_Name = reader.GetString(1);
+                    result.Last_Name = reader.GetString(2);
 
                     list.Add(result);
 
@@ -124,43 +126,44 @@ namespace NavWS.DAL
             }
             finally
             {
-              
+                con.Close();
             }
 
         }
-        public List<List<string>> GetEmployees()
+
+        public List<Models.EmployeeMeta> GetEmployeesMeta()
         {
             con.Open();
-            string sqlQuery = "select top 200 [Employee_No_], [First_Name], [Last_Name] from [CRONUS Sverige AB$Employee]";
-
-            SqlCommand s = new SqlCommand(sqlQuery, con);
-
-            return SqlConvert(s.ExecuteReader());
-        }
-        public void AddEmployeeDAL(string id, string firstName)
-        {
-            Connect();
-
             try
             {
-                SqlDataAdapter adapterEmployees = new SqlDataAdapter("insert into[CRONUS Sverige AB$Employee](Employee_No_, [First_Name])" + " values (@id, @firstName)", con);
-                DataSet dt = new DataSet();
-                adapterEmployees.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                adapterEmployees.Fill(dt, "[Demo Database NAV (5-0)].[dbo].[CRONUS Sverige AB$Employee]");
+                List<Models.EmployeeMeta> list = new List<Models.EmployeeMeta>();
 
+                String query = "SELECT Table_Name, Column_name from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'CRONUS Sverige AB$Employee'";
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    var result = new Models.EmployeeMeta();
+                    result.Table_Name = reader.GetString(0);
+                    result.Column_Name = reader.GetString(1);
+                    
+                    list.Add(result);
+
+                }
+                return list;
             }
             catch (Exception)
             {
 
                 throw;
             }
-        }
-        public void asdasdjlDAL()
-        {
-
+            finally
+            {
+                con.Close();
+            }
         }
         //1a lösningen
-        public List<List<string>> GetEmployeesMeta()
+        public List<List<string>> GetEmployeesMetaold()
         {
             Connect();
 

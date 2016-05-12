@@ -18,17 +18,9 @@ namespace NavWS.Controllers
         }
         //Employee
 
-        public List<String> showAllEmployees()
+        public List<Models.EmployeeModel> GetEmployees()
         {
-            return dal.ShowAllEmployeesDAL();
-        }
-        public List<Models.EmployeeModel> ShowAllEmployeesListDAL()
-        {
-            return dal.ShowAllEmployeesListDAL();
-        }
-        public List<List<string>> GetEmployees()
-        {
-            return dal.GetEmployees();
+            return dal.GetAllEmployeesList();
         }
 
         public List<List<string>> GetRelative()
@@ -71,7 +63,7 @@ namespace NavWS.Controllers
             return dal.GetAllTables2();
         }
 
-        public List<List<string>> GetEmployeesMeta()
+        public List<Models.EmployeeMeta> GetEmployeesMeta()
         {
             return dal.GetEmployeesMeta();
         }

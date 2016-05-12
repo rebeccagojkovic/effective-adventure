@@ -20,27 +20,14 @@ namespace NavWS
     {
 
         Controllers.Controller cont = new Controllers.Controller();
+      
         [WebMethod]
-        public List<string> GetEmployees()
-        {
-
-            Controllers.Controller cont = new Controllers.Controller();
-            return cont.showAllEmployees();
-        }
-        [WebMethod]
-        public List<Models.EmployeeModel> ShowAllEmployeesListDAL()
-        {
-            Controllers.Controller cont = new Controllers.Controller();
-            return cont.ShowAllEmployeesListDAL();
-        }
-        [WebMethod]
-        public List<List<string>> GetEmployeesList()
+        public List<Models.EmployeeModel> GetEmployees()
         {
             Controllers.Controller cont = new Controllers.Controller();
             return cont.GetEmployees();
         }
-
-
+        
         [WebMethod]
         public List<List<string>> GetRelative()
         {
@@ -92,7 +79,7 @@ namespace NavWS
         }
 
         [WebMethod]
-        public List<List<string>> GetEmployeesMeta()
+        public List<Models.EmployeeMeta> GetEmployeesMeta()
         {
             return cont.GetEmployeesMeta();
         }

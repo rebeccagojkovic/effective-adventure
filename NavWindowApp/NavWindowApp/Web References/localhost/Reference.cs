@@ -556,25 +556,252 @@ namespace NavWindowApp.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AddEmployee", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void AddEmployee(string id, string firstName) {
+        public void AddEmployee(
+                    System.DateTime timestamp, 
+                    string id, 
+                    string firstName, 
+                    string middleName, 
+                    string lastName, 
+                    string initials, 
+                    string jobTitle, 
+                    string searchName, 
+                    string adress, 
+                    string adress2, 
+                    string city, 
+                    string postCode, 
+                    string county, 
+                    string phoneNumber, 
+                    string mobilePhoneNumber, 
+                    string eMail, 
+                    string altAdress, 
+                    System.DateTime altAdressStart, 
+                    System.DateTime altAdressEnd, 
+                    string picture, 
+                    System.DateTime birthDate, 
+                    string socialSecurityNumber, 
+                    string unionCode, 
+                    string unionMembershipNumber, 
+                    int sex, 
+                    string countryRegionCode, 
+                    string managerNumber, 
+                    string employmentContractCode, 
+                    string statisticsGroupCode, 
+                    System.DateTime employmentDate, 
+                    int status, 
+                    System.DateTime inactivityDate, 
+                    string causeOfInactivity, 
+                    System.DateTime terminationDate, 
+                    string groundsForTermCode, 
+                    string globalDimension1Code, 
+                    string globalDimension2Code, 
+                    string resourceNumber, 
+                    System.DateTime lastDateModified, 
+                    string extension, 
+                    string pager, 
+                    string faxNumber, 
+                    string companyEmail, 
+                    string title, 
+                    string salesPerPurchCode, 
+                    string noSeries) {
             this.Invoke("AddEmployee", new object[] {
+                        timestamp,
                         id,
-                        firstName});
+                        firstName,
+                        middleName,
+                        lastName,
+                        initials,
+                        jobTitle,
+                        searchName,
+                        adress,
+                        adress2,
+                        city,
+                        postCode,
+                        county,
+                        phoneNumber,
+                        mobilePhoneNumber,
+                        eMail,
+                        altAdress,
+                        altAdressStart,
+                        altAdressEnd,
+                        picture,
+                        birthDate,
+                        socialSecurityNumber,
+                        unionCode,
+                        unionMembershipNumber,
+                        sex,
+                        countryRegionCode,
+                        managerNumber,
+                        employmentContractCode,
+                        statisticsGroupCode,
+                        employmentDate,
+                        status,
+                        inactivityDate,
+                        causeOfInactivity,
+                        terminationDate,
+                        groundsForTermCode,
+                        globalDimension1Code,
+                        globalDimension2Code,
+                        resourceNumber,
+                        lastDateModified,
+                        extension,
+                        pager,
+                        faxNumber,
+                        companyEmail,
+                        title,
+                        salesPerPurchCode,
+                        noSeries});
         }
         
         /// <remarks/>
-        public void AddEmployeeAsync(string id, string firstName) {
-            this.AddEmployeeAsync(id, firstName, null);
+        public void AddEmployeeAsync(
+                    System.DateTime timestamp, 
+                    string id, 
+                    string firstName, 
+                    string middleName, 
+                    string lastName, 
+                    string initials, 
+                    string jobTitle, 
+                    string searchName, 
+                    string adress, 
+                    string adress2, 
+                    string city, 
+                    string postCode, 
+                    string county, 
+                    string phoneNumber, 
+                    string mobilePhoneNumber, 
+                    string eMail, 
+                    string altAdress, 
+                    System.DateTime altAdressStart, 
+                    System.DateTime altAdressEnd, 
+                    string picture, 
+                    System.DateTime birthDate, 
+                    string socialSecurityNumber, 
+                    string unionCode, 
+                    string unionMembershipNumber, 
+                    int sex, 
+                    string countryRegionCode, 
+                    string managerNumber, 
+                    string employmentContractCode, 
+                    string statisticsGroupCode, 
+                    System.DateTime employmentDate, 
+                    int status, 
+                    System.DateTime inactivityDate, 
+                    string causeOfInactivity, 
+                    System.DateTime terminationDate, 
+                    string groundsForTermCode, 
+                    string globalDimension1Code, 
+                    string globalDimension2Code, 
+                    string resourceNumber, 
+                    System.DateTime lastDateModified, 
+                    string extension, 
+                    string pager, 
+                    string faxNumber, 
+                    string companyEmail, 
+                    string title, 
+                    string salesPerPurchCode, 
+                    string noSeries) {
+            this.AddEmployeeAsync(timestamp, id, firstName, middleName, lastName, initials, jobTitle, searchName, adress, adress2, city, postCode, county, phoneNumber, mobilePhoneNumber, eMail, altAdress, altAdressStart, altAdressEnd, picture, birthDate, socialSecurityNumber, unionCode, unionMembershipNumber, sex, countryRegionCode, managerNumber, employmentContractCode, statisticsGroupCode, employmentDate, status, inactivityDate, causeOfInactivity, terminationDate, groundsForTermCode, globalDimension1Code, globalDimension2Code, resourceNumber, lastDateModified, extension, pager, faxNumber, companyEmail, title, salesPerPurchCode, noSeries, null);
         }
         
         /// <remarks/>
-        public void AddEmployeeAsync(string id, string firstName, object userState) {
+        public void AddEmployeeAsync(
+                    System.DateTime timestamp, 
+                    string id, 
+                    string firstName, 
+                    string middleName, 
+                    string lastName, 
+                    string initials, 
+                    string jobTitle, 
+                    string searchName, 
+                    string adress, 
+                    string adress2, 
+                    string city, 
+                    string postCode, 
+                    string county, 
+                    string phoneNumber, 
+                    string mobilePhoneNumber, 
+                    string eMail, 
+                    string altAdress, 
+                    System.DateTime altAdressStart, 
+                    System.DateTime altAdressEnd, 
+                    string picture, 
+                    System.DateTime birthDate, 
+                    string socialSecurityNumber, 
+                    string unionCode, 
+                    string unionMembershipNumber, 
+                    int sex, 
+                    string countryRegionCode, 
+                    string managerNumber, 
+                    string employmentContractCode, 
+                    string statisticsGroupCode, 
+                    System.DateTime employmentDate, 
+                    int status, 
+                    System.DateTime inactivityDate, 
+                    string causeOfInactivity, 
+                    System.DateTime terminationDate, 
+                    string groundsForTermCode, 
+                    string globalDimension1Code, 
+                    string globalDimension2Code, 
+                    string resourceNumber, 
+                    System.DateTime lastDateModified, 
+                    string extension, 
+                    string pager, 
+                    string faxNumber, 
+                    string companyEmail, 
+                    string title, 
+                    string salesPerPurchCode, 
+                    string noSeries, 
+                    object userState) {
             if ((this.AddEmployeeOperationCompleted == null)) {
                 this.AddEmployeeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAddEmployeeOperationCompleted);
             }
             this.InvokeAsync("AddEmployee", new object[] {
+                        timestamp,
                         id,
-                        firstName}, this.AddEmployeeOperationCompleted, userState);
+                        firstName,
+                        middleName,
+                        lastName,
+                        initials,
+                        jobTitle,
+                        searchName,
+                        adress,
+                        adress2,
+                        city,
+                        postCode,
+                        county,
+                        phoneNumber,
+                        mobilePhoneNumber,
+                        eMail,
+                        altAdress,
+                        altAdressStart,
+                        altAdressEnd,
+                        picture,
+                        birthDate,
+                        socialSecurityNumber,
+                        unionCode,
+                        unionMembershipNumber,
+                        sex,
+                        countryRegionCode,
+                        managerNumber,
+                        employmentContractCode,
+                        statisticsGroupCode,
+                        employmentDate,
+                        status,
+                        inactivityDate,
+                        causeOfInactivity,
+                        terminationDate,
+                        groundsForTermCode,
+                        globalDimension1Code,
+                        globalDimension2Code,
+                        resourceNumber,
+                        lastDateModified,
+                        extension,
+                        pager,
+                        faxNumber,
+                        companyEmail,
+                        title,
+                        salesPerPurchCode,
+                        noSeries}, this.AddEmployeeOperationCompleted, userState);
         }
         
         private void OnAddEmployeeOperationCompleted(object arg) {
@@ -669,8 +896,6 @@ namespace NavWindowApp.localhost {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public partial class EmployeeModel {
         
-        private string timestampField;
-        
         private string employee_No_Field;
         
         private string first_NameField;
@@ -707,7 +932,7 @@ namespace NavWindowApp.localhost {
         
         private System.DateTime alt__Address_End_DateField;
         
-        private string pictureField;
+        private byte[] pictureField;
         
         private System.DateTime birth_DateField;
         
@@ -760,16 +985,6 @@ namespace NavWindowApp.localhost {
         private string salespers__Purch__CodeField;
         
         private string no__SeriesField;
-        
-        /// <remarks/>
-        public string timestamp {
-            get {
-                return this.timestampField;
-            }
-            set {
-                this.timestampField = value;
-            }
-        }
         
         /// <remarks/>
         public string Employee_No_ {
@@ -952,7 +1167,8 @@ namespace NavWindowApp.localhost {
         }
         
         /// <remarks/>
-        public string Picture {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] Picture {
             get {
                 return this.pictureField;
             }

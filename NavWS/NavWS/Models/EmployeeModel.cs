@@ -7,7 +7,7 @@ namespace NavWS.Models
 {
     public class EmployeeModel
     {
-        public byte[] timestamp { get; set; }
+        //public byte[] timestamp { get; set; }
         public string Employee_No_ { get; set; }
         public string First_Name { get; set; }
         public string Middle_Name { get; set; }
