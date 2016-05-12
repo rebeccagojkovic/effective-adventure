@@ -7,7 +7,7 @@ namespace NavWS.Models
 {
     public class EmployeeModel
     {
-        public string timestamp { get; set; }
+        public byte[] timestamp { get; set; }
         public string Employee_No_ { get; set; }
         public string First_Name { get; set; }
         public string Middle_Name { get; set; }
@@ -26,7 +26,7 @@ namespace NavWS.Models
         public string Alt__Address_Code { get; set; }
         public System.DateTime Alt__Address_Start_Date { get; set; }
         public System.DateTime Alt__Address_End_Date { get; set; }
-        public string Picture { get; set; }
+        public byte[] Picture { get; set; }
         public System.DateTime Birth_Date { get; set; }
         public string Social_Security_No_ { get; set; }
         public string Union_Code { get; set; }
