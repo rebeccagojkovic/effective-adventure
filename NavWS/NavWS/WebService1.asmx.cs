@@ -19,6 +19,7 @@ namespace NavWS
     public class WebService1 : System.Web.Services.WebService
     {
 
+        Controllers.Controller cont = new Controllers.Controller();
         [WebMethod]
         public List<string> GetEmployees()
         {
@@ -37,6 +38,106 @@ namespace NavWS
         {
             Controllers.Controller cont = new Controllers.Controller();
             return cont.GetEmployees();
+        }
+
+
+        [WebMethod]
+        public List<List<string>> GetRelative()
+        {
+
+            return GetRelative();
+        }
+
+        [WebMethod]
+        public List<List<string>> GetEmployeeAbsence()
+        {
+            return cont.GetEmployeeAbsence();
+        }
+
+        [WebMethod]
+        public List<List<string>> GetSickestEmployee()
+        {
+            return cont.GetSickestEmployee();
+        }
+
+        //SQL META
+        [WebMethod]
+        public List<List<string>> GetKeys()
+        {
+            return cont.GetKeys();
+        }
+
+        [WebMethod]
+        public List<List<string>> GetIndexes()
+        {
+            return cont.GetIndexes();
+        }
+
+        [WebMethod]
+        public List<List<string>> GetConstraints()
+        {
+            return cont.GetConstraints();
+        }
+
+        [WebMethod]
+        public List<List<string>> GetAllTables()
+        {
+            return cont.GetAllTables();
+        }
+
+        [WebMethod]
+        public List<List<string>> GetAllTables2()
+        {
+            return cont.GetAllTables2();
+        }
+
+        [WebMethod]
+        public List<List<string>> GetEmployeesMeta()
+        {
+            return cont.GetEmployeesMeta();
+        }
+
+        [WebMethod]
+        public List<List<string>> GetEmployeesMeta2()
+        {
+            return cont.GetEmployeesMeta2();
+        }
+
+        //-----Add/remove/insert/update---------
+
+        [WebMethod]
+        public Models.EmployeeModel GetEmployee(string id)
+        {
+            SqlDataReader sqlReader = cont.GetEmployee(id);
+
+            Models.EmployeeModel emp = null;
+
+            while (sqlReader.Read())
+            {
+                emp = new Models.EmployeeModel();
+                emp.Employee_No_ = sqlReader.GetString(0);
+                emp.First_Name = sqlReader.GetString(1);
+            }
+
+            return emp;
+        }
+
+        [WebMethod]
+        public void AddEmployee(string id, string firstName)
+        {
+            cont.AddEmployee(id, firstName);
+        }
+
+        [WebMethod]
+        public void DeleteEmployee(string id)
+        {
+            cont.DeleteEmployee(id);
+        }
+
+        [WebMethod]
+        public void UpdateEmployee(string id, string firstName)
+        {
+            cont.UpdateEmployee(id, firstName);
         }
     }
 }
