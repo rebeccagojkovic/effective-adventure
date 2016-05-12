@@ -123,9 +123,9 @@ namespace NavWS
         }
 
         [WebMethod]
-        public void AddEmployee(string id, string firstName)
+        public void AddEmployee(DateTime timestamp, string id, string firstName, string middleName, string lastName, string initials, string jobTitle, string searchName, string adress, string adress2, string city, string postCode, string county, string phoneNumber, string mobilePhoneNumber, string eMail, string altAdress, DateTime altAdressStart, DateTime altAdressEnd, string picture, DateTime birthDate, string socialSecurityNumber, string unionCode, string unionMembershipNumber, int sex, string countryRegionCode, string managerNumber, string employmentContractCode, string statisticsGroupCode, DateTime employmentDate, int status, DateTime inactivityDate, string causeOfInactivity, DateTime terminationDate, string groundsForTermCode, string globalDimension1Code, string globalDimension2Code, string resourceNumber, DateTime lastDateModified, string extension, string pager, string faxNumber, string companyEmail, string title, string salesPerPurchCode, string noSeries)
         {
-            cont.AddEmployee(id, firstName);
+            cont.AddEmployee(timestamp, id,  firstName,  middleName,  lastName,  initials,  jobTitle,  searchName,  adress,  adress2,  city,  postCode,  county,  phoneNumber,  mobilePhoneNumber,  eMail,  altAdress,  altAdressStart,  altAdressEnd,  picture,  birthDate,  socialSecurityNumber,  unionCode,  unionMembershipNumber,  sex,countryRegionCode,  managerNumber,  employmentContractCode,  statisticsGroupCode, employmentDate,  status, inactivityDate,  causeOfInactivity,  terminationDate,  groundsForTermCode,  globalDimension1Code,  globalDimension2Code, resourceNumber,  lastDateModified,  extension,  pager,  faxNumber,  companyEmail,  title,  salesPerPurchCode,  noSeries);
         }
 
         [WebMethod]
