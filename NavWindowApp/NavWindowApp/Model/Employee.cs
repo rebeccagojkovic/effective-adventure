@@ -8,28 +8,6 @@ namespace NavWindowApp.Model
 {
     class Employee
     {
-        
-        public Employee(string No_)
-        {
-            this.No_ = No_;
-        }
-
-       
-        public string No_
-        { 
-            get
-            {
-                return No_;
-            }
-
-            set
-            {
-                No_ = value;
-            }
-        }
-
-        public partial class CRONUS_Sverige_AB_Employee
-        {
             public byte[] timestamp { get; set; }
             public string Employee_No_ { get; set; }
             public string First_Name { get; set; }
@@ -79,7 +57,7 @@ namespace NavWindowApp.Model
         }
 
     }
-    }
+    
 
 
 

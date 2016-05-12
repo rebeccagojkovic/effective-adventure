@@ -21,7 +21,6 @@ namespace NavWindowApp
             InitializeComponent();
         }
 
-        ServiceReference1.GetEmployeesListResponseBody webservice = new ServiceReference1.GetEmployeesListResponseBody();
         localhost.WebService1 service = new localhost.WebService1();
         private void insertButton_Click(object sender, EventArgs e)
         {
@@ -41,12 +40,16 @@ namespace NavWindowApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach (string[] s in webservice.GetEmployeesListResult)
+            foreach (String[] s in service.GetEmployeesList())
             {
-                dataGridView1.DataSource = webservice.ToString();
-                richTextBox1.Text += s + "\n";
+                foreach (String item in s)
+                {
+                    richTextBox1.Text += s + "\n";
+                }
+                //dataGridView1.DataSource = s.ToString();
+                
             }
-            //dataGridView1.DataSource = webservice.ToString();
+            dataGridView1.DataSource = service.ShowAllEmployeesListDAL().ToList();
             //richTextBox1.Text = webservice.ToString();
         }
     }
