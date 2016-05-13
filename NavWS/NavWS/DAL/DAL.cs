@@ -10,7 +10,7 @@ namespace NavWS.DAL
 {
     public class DAL
     {
-       
+
         SqlConnection sqlConnection;
         public DAL()
         {
@@ -20,7 +20,7 @@ namespace NavWS.DAL
             sqlConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=Demo Database NAV (5-0);Persist Security Info=True;User ID=grupp15;Password=Grupp15;");
             sqlConnection.Open();
         }
-       
+
 
 
         SqlConnection con = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=Demo Database NAV (5-0);Persist Security Info=True;User ID=grupp15;Password=Grupp15;");
@@ -116,6 +116,8 @@ namespace NavWS.DAL
 
                     list.Add(result);
 
+
+
                 }
                 return list;
             }
@@ -146,7 +148,7 @@ namespace NavWS.DAL
                     var result = new Models.EmployeeMeta();
                     result.Table_Name = reader.GetString(0);
                     result.Column_Name = reader.GetString(1);
-                    
+
                     list.Add(result);
 
                 }
@@ -223,7 +225,7 @@ namespace NavWS.DAL
             SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
 
             return SqlConvert(s.ExecuteReader());
-        
+
 
         }
 
@@ -257,58 +259,58 @@ namespace NavWS.DAL
 
         public void AddEmployee(DateTime timestamp, string id, string firstName, string middleName, string lastName, string initials, string jobTitle, string searchName, string adress, string adress2, string city, string postCode, string county, string phoneNumber, string mobilePhoneNumber, string eMail, string altAdress, DateTime altAdressStart, DateTime altAdressEnd, string picture, DateTime birthDate, string socialSecurityNumber, string unionCode, string unionMembershipNumber, int sex, string countryRegionCode, string managerNumber, string employmentContractCode, string statisticsGroupCode, DateTime employmentDate, int status, DateTime inactivityDate, string causeOfInactivity, DateTime terminationDate, string groundsForTermCode, string globalDimension1Code, string globalDimension2Code, string resourceNumber, DateTime lastDateModified, string extension, string pager, string faxNumber, string companyEmail, string title, string salesPerPurchCode, string noSeries)
         {
-            Connect() ;
+            Connect();
             string sqlQuery = "INSERT INTO [dbo].[CRONUS Sverige AB$Employee]([Employee_No_],[First_Name],[Middle_Name],[Last_Name],[Initials],[Job_Title],[Search_Name],[Address],[Address 2],[City],[Post_Code],[County],[Phone_No_],[Mobile_PhoneNo_],[E - Mail],[Alt_ Address Code],[Alt_ Address Start Date],[Alt_ Address End Date],[Picture],[Birth_Date],[Social_Security No_],[Union_Code],[Union_Membership No_],[Sex],[Country_Region Code],[Manager_No_],[Emplymt_ Contract Code],[Statistics_Group_Code],[Employment_Date],[Status],[Inactive_Date],[Cause_of_Inactivity Code],[Termination_Date],[Grounds for Term_ Code],[Global Dimension 1 Code],[Global Dimension 2 Code],[Resource No_],[Last Date Modified],[Extension],[Pager],[Fax No_],[Company E - Mail],[Title],[Salespers__Purch_ Code],[No_ Series]) "
                      + "VALUES (< Employee_No_, varchar(20),> ,< First_Name, varchar(30),> ,< Middle_Name, varchar(30),>,< Last_Name, varchar(30),>,< Initials, varchar(30),>,< Job_Title, varchar(30),>,< Search_Name, varchar(30),>,< Address, varchar(50),>,< Address 2, varchar(50),>,< City, varchar(30),>,< Post_Code, varchar(20),>,< County, varchar(30),>,< Phone_No_, varchar(30),>,< Mobile_PhoneNo_, varchar(30),>,< E - Mail, varchar(80),>,< Alt_ Address Code, varchar(10),>,< Alt_ Address Start Date, datetime,>,< Alt_ Address End Date, datetime,>,< Picture, image,>,< Birth_Date, datetime,>,< Social_Security No_, varchar(30),>,< Union_Code, varchar(10),>,< Union_Membership No_, varchar(30),>,< Sex, int,>,< Country_Region Code, varchar(10),>,< Manager_No_, varchar(20),>,< Emplymt_ Contract Code, varchar(10),>,< Statistics_Group_Code, varchar(10),>,< Employment_Date, datetime,>,< Status, int,>,< Inactive_Date, datetime,>,< Cause_of_Inactivity Code, varchar(10),>< Termination_Date, datetime,>,< Grounds for Term_ Code, varchar(10),>,< Global Dimension 1 Code, varchar(20),>< Global Dimension 2 Code, varchar(20),>,< Resource No_, varchar(20),>,< Last Date Modified, datetime,>,< Extension, varchar(30),>,< Pager, varchar(30),>,< Fax No_, varchar(30),>,< Company E - Mail, varchar(80),>,< Title, varchar(30),>,< Salespers__Purch_ Code, varchar(10),>,< No_ Series, varchar(10),>) ";
 
 
-                SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
-                s.Parameters.Add("@timestamp", SqlDbType.Bit, 30).Value = timestamp;
-                s.Parameters.Add("@id", SqlDbType.VarChar, 30).Value = id;
-                s.Parameters.Add("@firstName", SqlDbType.VarChar, 40).Value = firstName;
-                s.Parameters.Add("@middleName", SqlDbType.VarChar, 30).Value = middleName;
-                s.Parameters.Add("@lastName", SqlDbType.VarChar, 30).Value = lastName;
-                s.Parameters.Add("@initials", SqlDbType.VarChar, 30).Value = initials;
-                s.Parameters.Add("@jobTitle", SqlDbType.VarChar, 30).Value = jobTitle;
-                s.Parameters.Add("@searchName", SqlDbType.VarChar, 30).Value = searchName;
-                s.Parameters.Add("@adress", SqlDbType.VarChar, 30).Value = adress;
-                s.Parameters.Add("@adress2", SqlDbType.VarChar, 30).Value = adress2;
-                s.Parameters.Add("@city", SqlDbType.VarChar, 30).Value = city;
-                s.Parameters.Add("@postCode", SqlDbType.VarChar, 30).Value = postCode;
-                s.Parameters.Add("@county", SqlDbType.VarChar, 30).Value = county;
-                s.Parameters.Add("@phoneNumber", SqlDbType.VarChar, 30).Value = phoneNumber;
-                s.Parameters.Add("@mobilePhoneNumber", SqlDbType.VarChar, 30).Value = mobilePhoneNumber;
-                s.Parameters.Add("@eMail", SqlDbType.VarChar, 30).Value = eMail;
-                s.Parameters.Add("@altAdressCode", SqlDbType.VarChar, 30).Value = altAdress;
-                s.Parameters.Add("@altAdressStart", SqlDbType.DateTime, 30).Value = altAdressStart;
-                s.Parameters.Add("@altAdressEnd", SqlDbType.DateTime, 30).Value = altAdressEnd;
-                s.Parameters.Add("@picture", SqlDbType.VarChar, 30).Value = picture;
-                s.Parameters.Add("@birthDate", SqlDbType.DateTime, 30).Value = birthDate;
-                s.Parameters.Add("@socialSecurityNumber", SqlDbType.VarChar, 30).Value = socialSecurityNumber;
-                s.Parameters.Add("@unionCode", SqlDbType.VarChar, 30).Value = unionCode;
-                s.Parameters.Add("@unionMembershipNumber", SqlDbType.VarChar, 30).Value = unionMembershipNumber;
-                s.Parameters.Add("@sex", SqlDbType.Int, 30).Value = sex;
-                s.Parameters.Add("@countryRegionCode", SqlDbType.VarChar, 30).Value = countryRegionCode;
-                s.Parameters.Add("@managerNumber", SqlDbType.VarChar, 30).Value = managerNumber;
-                s.Parameters.Add("@employmentContractCode", SqlDbType.VarChar, 30).Value = employmentContractCode;
-                s.Parameters.Add("@statisticsGroupCode", SqlDbType.VarChar, 30).Value = statisticsGroupCode;
-                s.Parameters.Add("@employmentDate", SqlDbType.DateTime, 30).Value = employmentDate;
-                s.Parameters.Add("@status", SqlDbType.VarChar, 30).Value = status;
-                s.Parameters.Add("@inactivityDate", SqlDbType.DateTime, 30).Value = inactivityDate;
-                s.Parameters.Add("@causeOfInactivity", SqlDbType.VarChar, 30).Value = causeOfInactivity;
-                s.Parameters.Add("@terminationDate", SqlDbType.DateTime, 30).Value = terminationDate;
-                s.Parameters.Add("@groundsForTermCode", SqlDbType.VarChar, 30).Value = groundsForTermCode;
-                s.Parameters.Add("@globalDimension1Code", SqlDbType.VarChar, 30).Value = globalDimension1Code;
-                s.Parameters.Add("@globalDimension2Code", SqlDbType.VarChar, 30).Value = globalDimension2Code;
-                s.Parameters.Add("@resourceNumber", SqlDbType.VarChar, 30).Value = resourceNumber;
-                s.Parameters.Add("@lastDateModified", SqlDbType.DateTime, 30).Value = lastDateModified;
-                s.Parameters.Add("@extension", SqlDbType.VarChar, 30).Value = extension;
-                s.Parameters.Add("@pager", SqlDbType.VarChar, 30).Value = pager;
-                s.Parameters.Add("@faxNumber", SqlDbType.VarChar, 30).Value = faxNumber;
-                s.Parameters.Add("@companyEmail", SqlDbType.VarChar, 30).Value = companyEmail;
-                s.Parameters.Add("@title", SqlDbType.VarChar, 30).Value = title;
-                s.Parameters.Add("@salesPerPurchCode", SqlDbType.VarChar, 30).Value = salesPerPurchCode;
-                s.Parameters.Add("@noSeries", SqlDbType.VarChar, 30).Value = noSeries;
+            SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+            s.Parameters.Add("@timestamp", SqlDbType.Bit, 30).Value = timestamp;
+            s.Parameters.Add("@id", SqlDbType.VarChar, 30).Value = id;
+            s.Parameters.Add("@firstName", SqlDbType.VarChar, 40).Value = firstName;
+            s.Parameters.Add("@middleName", SqlDbType.VarChar, 30).Value = middleName;
+            s.Parameters.Add("@lastName", SqlDbType.VarChar, 30).Value = lastName;
+            s.Parameters.Add("@initials", SqlDbType.VarChar, 30).Value = initials;
+            s.Parameters.Add("@jobTitle", SqlDbType.VarChar, 30).Value = jobTitle;
+            s.Parameters.Add("@searchName", SqlDbType.VarChar, 30).Value = searchName;
+            s.Parameters.Add("@adress", SqlDbType.VarChar, 30).Value = adress;
+            s.Parameters.Add("@adress2", SqlDbType.VarChar, 30).Value = adress2;
+            s.Parameters.Add("@city", SqlDbType.VarChar, 30).Value = city;
+            s.Parameters.Add("@postCode", SqlDbType.VarChar, 30).Value = postCode;
+            s.Parameters.Add("@county", SqlDbType.VarChar, 30).Value = county;
+            s.Parameters.Add("@phoneNumber", SqlDbType.VarChar, 30).Value = phoneNumber;
+            s.Parameters.Add("@mobilePhoneNumber", SqlDbType.VarChar, 30).Value = mobilePhoneNumber;
+            s.Parameters.Add("@eMail", SqlDbType.VarChar, 30).Value = eMail;
+            s.Parameters.Add("@altAdressCode", SqlDbType.VarChar, 30).Value = altAdress;
+            s.Parameters.Add("@altAdressStart", SqlDbType.DateTime, 30).Value = altAdressStart;
+            s.Parameters.Add("@altAdressEnd", SqlDbType.DateTime, 30).Value = altAdressEnd;
+            s.Parameters.Add("@picture", SqlDbType.VarChar, 30).Value = picture;
+            s.Parameters.Add("@birthDate", SqlDbType.DateTime, 30).Value = birthDate;
+            s.Parameters.Add("@socialSecurityNumber", SqlDbType.VarChar, 30).Value = socialSecurityNumber;
+            s.Parameters.Add("@unionCode", SqlDbType.VarChar, 30).Value = unionCode;
+            s.Parameters.Add("@unionMembershipNumber", SqlDbType.VarChar, 30).Value = unionMembershipNumber;
+            s.Parameters.Add("@sex", SqlDbType.Int, 30).Value = sex;
+            s.Parameters.Add("@countryRegionCode", SqlDbType.VarChar, 30).Value = countryRegionCode;
+            s.Parameters.Add("@managerNumber", SqlDbType.VarChar, 30).Value = managerNumber;
+            s.Parameters.Add("@employmentContractCode", SqlDbType.VarChar, 30).Value = employmentContractCode;
+            s.Parameters.Add("@statisticsGroupCode", SqlDbType.VarChar, 30).Value = statisticsGroupCode;
+            s.Parameters.Add("@employmentDate", SqlDbType.DateTime, 30).Value = employmentDate;
+            s.Parameters.Add("@status", SqlDbType.VarChar, 30).Value = status;
+            s.Parameters.Add("@inactivityDate", SqlDbType.DateTime, 30).Value = inactivityDate;
+            s.Parameters.Add("@causeOfInactivity", SqlDbType.VarChar, 30).Value = causeOfInactivity;
+            s.Parameters.Add("@terminationDate", SqlDbType.DateTime, 30).Value = terminationDate;
+            s.Parameters.Add("@groundsForTermCode", SqlDbType.VarChar, 30).Value = groundsForTermCode;
+            s.Parameters.Add("@globalDimension1Code", SqlDbType.VarChar, 30).Value = globalDimension1Code;
+            s.Parameters.Add("@globalDimension2Code", SqlDbType.VarChar, 30).Value = globalDimension2Code;
+            s.Parameters.Add("@resourceNumber", SqlDbType.VarChar, 30).Value = resourceNumber;
+            s.Parameters.Add("@lastDateModified", SqlDbType.DateTime, 30).Value = lastDateModified;
+            s.Parameters.Add("@extension", SqlDbType.VarChar, 30).Value = extension;
+            s.Parameters.Add("@pager", SqlDbType.VarChar, 30).Value = pager;
+            s.Parameters.Add("@faxNumber", SqlDbType.VarChar, 30).Value = faxNumber;
+            s.Parameters.Add("@companyEmail", SqlDbType.VarChar, 30).Value = companyEmail;
+            s.Parameters.Add("@title", SqlDbType.VarChar, 30).Value = title;
+            s.Parameters.Add("@salesPerPurchCode", SqlDbType.VarChar, 30).Value = salesPerPurchCode;
+            s.Parameters.Add("@noSeries", SqlDbType.VarChar, 30).Value = noSeries;
             try
             {
 
@@ -426,7 +428,7 @@ namespace NavWS.DAL
             return SqlConvert(s.ExecuteReader());
         }
 
-     
+
 
     }
 }

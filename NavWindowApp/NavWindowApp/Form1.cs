@@ -19,38 +19,24 @@ namespace NavWindowApp
         {
 
             InitializeComponent();
+
+
+            Controllers.Controller cont = new Controllers.Controller();
+            this.comboBox1.DataSource = cont.GetQueries();
+            this.comboBox1.DisplayMember = "Name";
+            this.comboBox1.ValueMember = "Value";
+            this.comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         localhost.WebService1 service = new localhost.WebService1();
-        private void insertButton_Click(object sender, EventArgs e)
-        {
-
-            foreach (string s in service.GetEmployees())
-            {
-                
-                richTextBox1.Text += s + "\n";
-            }
-
-        }
+        
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            dataGridView1.DataSource = comboBox1.SelectedValue;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //foreach (String[] s in service.GetEmployeesList())
-            //{
-
-            //        richTextBox1.Text += s + "\n";
-            //        dataGridView1.DataSource = s.ToList();
-
-            //}
-            //dataGridView1.DataSource = service.GetEmployeesList();
-            dataGridView1.DataSource = service.ShowAllEmployeesListDAL().ToList();
-            //richTextBox1.Text = webservice.ToString();
-        }
+       
     }
 }
 

@@ -31,10 +31,6 @@ namespace NavWindowApp.localhost {
         
         private System.Threading.SendOrPostCallback GetEmployeesOperationCompleted;
         
-        private System.Threading.SendOrPostCallback ShowAllEmployeesListDALOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetEmployeesListOperationCompleted;
-        
         private System.Threading.SendOrPostCallback GetRelativeOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetEmployeeAbsenceOperationCompleted;
@@ -105,12 +101,6 @@ namespace NavWindowApp.localhost {
         public event GetEmployeesCompletedEventHandler GetEmployeesCompleted;
         
         /// <remarks/>
-        public event ShowAllEmployeesListDALCompletedEventHandler ShowAllEmployeesListDALCompleted;
-        
-        /// <remarks/>
-        public event GetEmployeesListCompletedEventHandler GetEmployeesListCompleted;
-        
-        /// <remarks/>
         public event GetRelativeCompletedEventHandler GetRelativeCompleted;
         
         /// <remarks/>
@@ -154,9 +144,9 @@ namespace NavWindowApp.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetEmployees", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string[] GetEmployees() {
+        public EmployeeModel[] GetEmployees() {
             object[] results = this.Invoke("GetEmployees", new object[0]);
-            return ((string[])(results[0]));
+            return ((EmployeeModel[])(results[0]));
         }
         
         /// <remarks/>
@@ -176,62 +166,6 @@ namespace NavWindowApp.localhost {
             if ((this.GetEmployeesCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.GetEmployeesCompleted(this, new GetEmployeesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ShowAllEmployeesListDAL", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public EmployeeModel[] ShowAllEmployeesListDAL() {
-            object[] results = this.Invoke("ShowAllEmployeesListDAL", new object[0]);
-            return ((EmployeeModel[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void ShowAllEmployeesListDALAsync() {
-            this.ShowAllEmployeesListDALAsync(null);
-        }
-        
-        /// <remarks/>
-        public void ShowAllEmployeesListDALAsync(object userState) {
-            if ((this.ShowAllEmployeesListDALOperationCompleted == null)) {
-                this.ShowAllEmployeesListDALOperationCompleted = new System.Threading.SendOrPostCallback(this.OnShowAllEmployeesListDALOperationCompleted);
-            }
-            this.InvokeAsync("ShowAllEmployeesListDAL", new object[0], this.ShowAllEmployeesListDALOperationCompleted, userState);
-        }
-        
-        private void OnShowAllEmployeesListDALOperationCompleted(object arg) {
-            if ((this.ShowAllEmployeesListDALCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.ShowAllEmployeesListDALCompleted(this, new ShowAllEmployeesListDALCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetEmployeesList", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute("ArrayOfString")]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute(NestingLevel=1)]
-        public string[][] GetEmployeesList() {
-            object[] results = this.Invoke("GetEmployeesList", new object[0]);
-            return ((string[][])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetEmployeesListAsync() {
-            this.GetEmployeesListAsync(null);
-        }
-        
-        /// <remarks/>
-        public void GetEmployeesListAsync(object userState) {
-            if ((this.GetEmployeesListOperationCompleted == null)) {
-                this.GetEmployeesListOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetEmployeesListOperationCompleted);
-            }
-            this.InvokeAsync("GetEmployeesList", new object[0], this.GetEmployeesListOperationCompleted, userState);
-        }
-        
-        private void OnGetEmployeesListOperationCompleted(object arg) {
-            if ((this.GetEmployeesListCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetEmployeesListCompleted(this, new GetEmployeesListCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -469,11 +403,9 @@ namespace NavWindowApp.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetEmployeesMeta", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute("ArrayOfString")]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute(NestingLevel=1)]
-        public string[][] GetEmployeesMeta() {
+        public EmployeeMeta[] GetEmployeesMeta() {
             object[] results = this.Invoke("GetEmployeesMeta", new object[0]);
-            return ((string[][])(results[0]));
+            return ((EmployeeMeta[])(results[0]));
         }
         
         /// <remarks/>
@@ -1439,6 +1371,39 @@ namespace NavWindowApp.localhost {
     }
     
     /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1567.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class EmployeeMeta {
+        
+        private string table_NameField;
+        
+        private string column_NameField;
+        
+        /// <remarks/>
+        public string Table_Name {
+            get {
+                return this.table_NameField;
+            }
+            set {
+                this.table_NameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Column_Name {
+            get {
+                return this.column_NameField;
+            }
+            set {
+                this.column_NameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1567.0")]
     public delegate void GetEmployeesCompletedEventHandler(object sender, GetEmployeesCompletedEventArgs e);
     
@@ -1456,62 +1421,10 @@ namespace NavWindowApp.localhost {
         }
         
         /// <remarks/>
-        public string[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1567.0")]
-    public delegate void ShowAllEmployeesListDALCompletedEventHandler(object sender, ShowAllEmployeesListDALCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1567.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ShowAllEmployeesListDALCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ShowAllEmployeesListDALCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
         public EmployeeModel[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((EmployeeModel[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1567.0")]
-    public delegate void GetEmployeesListCompletedEventHandler(object sender, GetEmployeesListCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1567.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetEmployeesListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetEmployeesListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string[][] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string[][])(this.results[0]));
             }
         }
     }
@@ -1742,10 +1655,10 @@ namespace NavWindowApp.localhost {
         }
         
         /// <remarks/>
-        public string[][] Result {
+        public EmployeeMeta[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string[][])(this.results[0]));
+                return ((EmployeeMeta[])(this.results[0]));
             }
         }
     }

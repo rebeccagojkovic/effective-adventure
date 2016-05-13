@@ -8,22 +8,7 @@
       <s:element name="GetEmployeesResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeesResult" type="tns:ArrayOfString" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfString">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="ShowAllEmployeesListDAL">
-        <s:complexType />
-      </s:element>
-      <s:element name="ShowAllEmployeesListDALResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ShowAllEmployeesListDALResult" type="tns:ArrayOfEmployeeModel" />
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeesResult" type="tns:ArrayOfEmployeeModel" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -81,21 +66,6 @@
           <s:element minOccurs="0" maxOccurs="1" name="No__Series" type="s:string" />
         </s:sequence>
       </s:complexType>
-      <s:element name="GetEmployeesList">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetEmployeesListResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeesListResult" type="tns:ArrayOfArrayOfString" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfArrayOfString">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="GetRelative">
         <s:complexType />
       </s:element>
@@ -106,6 +76,16 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="ArrayOfArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="GetEmployeeAbsence">
         <s:complexType />
       </s:element>
@@ -182,10 +162,21 @@
       <s:element name="GetEmployeesMetaResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeesMetaResult" type="tns:ArrayOfArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeesMetaResult" type="tns:ArrayOfEmployeeMeta" />
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="ArrayOfEmployeeMeta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EmployeeMeta" nillable="true" type="tns:EmployeeMeta" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EmployeeMeta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Table_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Column_Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="GetEmployeesMeta2">
         <s:complexType />
       </s:element>
@@ -294,18 +285,6 @@
   <wsdl:message name="GetEmployeesSoapOut">
     <wsdl:part name="parameters" element="tns:GetEmployeesResponse" />
   </wsdl:message>
-  <wsdl:message name="ShowAllEmployeesListDALSoapIn">
-    <wsdl:part name="parameters" element="tns:ShowAllEmployeesListDAL" />
-  </wsdl:message>
-  <wsdl:message name="ShowAllEmployeesListDALSoapOut">
-    <wsdl:part name="parameters" element="tns:ShowAllEmployeesListDALResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetEmployeesListSoapIn">
-    <wsdl:part name="parameters" element="tns:GetEmployeesList" />
-  </wsdl:message>
-  <wsdl:message name="GetEmployeesListSoapOut">
-    <wsdl:part name="parameters" element="tns:GetEmployeesListResponse" />
-  </wsdl:message>
   <wsdl:message name="GetRelativeSoapIn">
     <wsdl:part name="parameters" element="tns:GetRelative" />
   </wsdl:message>
@@ -395,14 +374,6 @@
       <wsdl:input message="tns:GetEmployeesSoapIn" />
       <wsdl:output message="tns:GetEmployeesSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="ShowAllEmployeesListDAL">
-      <wsdl:input message="tns:ShowAllEmployeesListDALSoapIn" />
-      <wsdl:output message="tns:ShowAllEmployeesListDALSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetEmployeesList">
-      <wsdl:input message="tns:GetEmployeesListSoapIn" />
-      <wsdl:output message="tns:GetEmployeesListSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="GetRelative">
       <wsdl:input message="tns:GetRelativeSoapIn" />
       <wsdl:output message="tns:GetRelativeSoapOut" />
@@ -464,24 +435,6 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetEmployees">
       <soap:operation soapAction="http://tempuri.org/GetEmployees" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ShowAllEmployeesListDAL">
-      <soap:operation soapAction="http://tempuri.org/ShowAllEmployeesListDAL" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetEmployeesList">
-      <soap:operation soapAction="http://tempuri.org/GetEmployeesList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -620,24 +573,6 @@
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetEmployees">
       <soap12:operation soapAction="http://tempuri.org/GetEmployees" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ShowAllEmployeesListDAL">
-      <soap12:operation soapAction="http://tempuri.org/ShowAllEmployeesListDAL" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetEmployeesList">
-      <soap12:operation soapAction="http://tempuri.org/GetEmployeesList" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
