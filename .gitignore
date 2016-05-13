@@ -295,3 +295,4 @@ local.properties
 # Code Recommenders
 .recommenders/
 /Uppgift2Java/dist/
+/NavJava/nbproject/private/
