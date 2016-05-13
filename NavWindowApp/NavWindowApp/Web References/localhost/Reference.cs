@@ -441,10 +441,10 @@ namespace NavWindowApp.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetEmployee", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Employee GetEmployee(string id) {
+        public Employee[] GetEmployee(string id) {
             object[] results = this.Invoke("GetEmployee", new object[] {
                         id});
-            return ((Employee)(results[0]));
+            return ((Employee[])(results[0]));
         }
         
         /// <remarks/>
@@ -471,7 +471,6 @@ namespace NavWindowApp.localhost {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AddEmployee", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public void AddEmployee(
-                    System.DateTime timestamp, 
                     string id, 
                     string firstName, 
                     string middleName, 
@@ -518,7 +517,6 @@ namespace NavWindowApp.localhost {
                     string salesPerPurchCode, 
                     string noSeries) {
             this.Invoke("AddEmployee", new object[] {
-                        timestamp,
                         id,
                         firstName,
                         middleName,
@@ -568,7 +566,6 @@ namespace NavWindowApp.localhost {
         
         /// <remarks/>
         public void AddEmployeeAsync(
-                    System.DateTime timestamp, 
                     string id, 
                     string firstName, 
                     string middleName, 
@@ -614,12 +611,11 @@ namespace NavWindowApp.localhost {
                     string title, 
                     string salesPerPurchCode, 
                     string noSeries) {
-            this.AddEmployeeAsync(timestamp, id, firstName, middleName, lastName, initials, jobTitle, searchName, adress, adress2, city, postCode, county, phoneNumber, mobilePhoneNumber, eMail, altAdress, altAdressStart, altAdressEnd, picture, birthDate, socialSecurityNumber, unionCode, unionMembershipNumber, sex, countryRegionCode, managerNumber, employmentContractCode, statisticsGroupCode, employmentDate, status, inactivityDate, causeOfInactivity, terminationDate, groundsForTermCode, globalDimension1Code, globalDimension2Code, resourceNumber, lastDateModified, extension, pager, faxNumber, companyEmail, title, salesPerPurchCode, noSeries, null);
+            this.AddEmployeeAsync(id, firstName, middleName, lastName, initials, jobTitle, searchName, adress, adress2, city, postCode, county, phoneNumber, mobilePhoneNumber, eMail, altAdress, altAdressStart, altAdressEnd, picture, birthDate, socialSecurityNumber, unionCode, unionMembershipNumber, sex, countryRegionCode, managerNumber, employmentContractCode, statisticsGroupCode, employmentDate, status, inactivityDate, causeOfInactivity, terminationDate, groundsForTermCode, globalDimension1Code, globalDimension2Code, resourceNumber, lastDateModified, extension, pager, faxNumber, companyEmail, title, salesPerPurchCode, noSeries, null);
         }
         
         /// <remarks/>
         public void AddEmployeeAsync(
-                    System.DateTime timestamp, 
                     string id, 
                     string firstName, 
                     string middleName, 
@@ -670,7 +666,6 @@ namespace NavWindowApp.localhost {
                 this.AddEmployeeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAddEmployeeOperationCompleted);
             }
             this.InvokeAsync("AddEmployee", new object[] {
-                        timestamp,
                         id,
                         firstName,
                         middleName,
@@ -810,6 +805,8 @@ namespace NavWindowApp.localhost {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public partial class Employee {
         
+        private byte[] timestampField;
+        
         private string employee_No_Field;
         
         private string first_NameField;
@@ -899,6 +896,17 @@ namespace NavWindowApp.localhost {
         private string salespers__Purch__CodeField;
         
         private string no__SeriesField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] timestamp {
+            get {
+                return this.timestampField;
+            }
+            set {
+                this.timestampField = value;
+            }
+        }
         
         /// <remarks/>
         public string Employee_No_ {
@@ -1985,10 +1993,10 @@ namespace NavWindowApp.localhost {
         }
         
         /// <remarks/>
-        public Employee Result {
+        public Employee[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((Employee)(this.results[0]));
+                return ((Employee[])(this.results[0]));
             }
         }
     }

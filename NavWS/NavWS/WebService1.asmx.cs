@@ -93,26 +93,27 @@ namespace NavWS
         //-----Add/remove/insert/update---------
 
         [WebMethod]
-        public Models.Employee GetEmployee(string id)
+        public List<Models.Employee> GetEmployee(string id)
         {
-            SqlDataReader sqlReader = cont.GetEmployee(id);
+            //SqlDataReader sqlReader = cont.GetEmployee(id);
 
-            Models.Employee emp = null;
+            //Models.Employee emp = null;
 
-            while (sqlReader.Read())
-            {
-                emp = new Models.Employee();
-                emp.Employee_No_ = sqlReader.GetString(0);
-                emp.First_Name = sqlReader.GetString(1);
-            }
+            //while (sqlReader.Read())
+            //{
+            //    emp = new Models.Employee();
+            //    emp.Employee_No_ = sqlReader.GetString(0);
+            //    emp.First_Name = sqlReader.GetString(1);
+            //}
 
-            return emp;
+            //return emp;
+            return cont.GetEmployee(id);
         }
 
         [WebMethod]
-        public void AddEmployee(DateTime timestamp, string id, string firstName, string middleName, string lastName, string initials, string jobTitle, string searchName, string adress, string adress2, string city, string postCode, string county, string phoneNumber, string mobilePhoneNumber, string eMail, string altAdress, DateTime altAdressStart, DateTime altAdressEnd, string picture, DateTime birthDate, string socialSecurityNumber, string unionCode, string unionMembershipNumber, int sex, string countryRegionCode, string managerNumber, string employmentContractCode, string statisticsGroupCode, DateTime employmentDate, int status, DateTime inactivityDate, string causeOfInactivity, DateTime terminationDate, string groundsForTermCode, string globalDimension1Code, string globalDimension2Code, string resourceNumber, DateTime lastDateModified, string extension, string pager, string faxNumber, string companyEmail, string title, string salesPerPurchCode, string noSeries)
+        public void AddEmployee(string id, string firstName, string middleName, string lastName, string initials, string jobTitle, string searchName, string adress, string adress2, string city, string postCode, string county, string phoneNumber, string mobilePhoneNumber, string eMail, string altAdress, DateTime altAdressStart, DateTime altAdressEnd, string picture, DateTime birthDate, string socialSecurityNumber, string unionCode, string unionMembershipNumber, int sex, string countryRegionCode, string managerNumber, string employmentContractCode, string statisticsGroupCode, DateTime employmentDate, int status, DateTime inactivityDate, string causeOfInactivity, DateTime terminationDate, string groundsForTermCode, string globalDimension1Code, string globalDimension2Code, string resourceNumber, DateTime lastDateModified, string extension, string pager, string faxNumber, string companyEmail, string title, string salesPerPurchCode, string noSeries)
         {
-            cont.AddEmployee(timestamp, id,  firstName,  middleName,  lastName,  initials,  jobTitle,  searchName,  adress,  adress2,  city,  postCode,  county,  phoneNumber,  mobilePhoneNumber,  eMail,  altAdress,  altAdressStart,  altAdressEnd,  picture,  birthDate,  socialSecurityNumber,  unionCode,  unionMembershipNumber,  sex,countryRegionCode,  managerNumber,  employmentContractCode,  statisticsGroupCode, employmentDate,  status, inactivityDate,  causeOfInactivity,  terminationDate,  groundsForTermCode,  globalDimension1Code,  globalDimension2Code, resourceNumber,  lastDateModified,  extension,  pager,  faxNumber,  companyEmail,  title,  salesPerPurchCode,  noSeries);
+            cont.AddEmployee(id,  firstName,  middleName,  lastName,  initials,  jobTitle,  searchName,  adress,  adress2,  city,  postCode,  county,  phoneNumber,  mobilePhoneNumber,  eMail,  altAdress,  altAdressStart,  altAdressEnd,  picture,  birthDate,  socialSecurityNumber,  unionCode,  unionMembershipNumber,  sex,countryRegionCode,  managerNumber,  employmentContractCode,  statisticsGroupCode, employmentDate,  status, inactivityDate,  causeOfInactivity,  terminationDate,  groundsForTermCode,  globalDimension1Code,  globalDimension2Code, resourceNumber,  lastDateModified,  extension,  pager,  faxNumber,  companyEmail,  title,  salesPerPurchCode,  noSeries);
         }
 
         [WebMethod]
