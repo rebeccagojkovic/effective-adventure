@@ -158,7 +158,22 @@ namespace NavWindowApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            service.DeleteEmployee(employeeDataGridView.SelectedRows[0].Cells[0].Value + string.Empty);
+            service.DeleteEmployee(textBox2.Text);
+            employeeDataGridView.DataSource = service.GetEmployees();
+
+            Action<Control.ControlCollection> func = null;
+
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
+                    if (control is TextBox)
+                        (control as TextBox).Clear();
+                    else
+                        func(control.Controls);
+            };
+
+            func(Controls);
+
         }
 
         private void button3_Click(object sender, EventArgs e)

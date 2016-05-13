@@ -579,7 +579,7 @@ namespace NavWS.DAL
         public void DeleteEmployee(string id)
         {
             Connect();
-            string sqlQuery = "delete from [CRONUS Sverige AB$Employee] where No_ = @id";
+            string sqlQuery = "delete from [CRONUS Sverige AB$Employee] where Employee_No_ = @id";
 
             SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
 
