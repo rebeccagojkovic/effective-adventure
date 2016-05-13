@@ -42,7 +42,7 @@ namespace NavWS
         }
 
         [WebMethod]
-        public List<Models.EmployeeAbsence> GetSickestEmployee()
+        public List<Models.Employee> GetSickestEmployee()
         {
             return cont.GetSickestEmployee();
         }

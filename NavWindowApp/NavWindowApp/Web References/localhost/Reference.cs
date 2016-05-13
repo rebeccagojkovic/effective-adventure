@@ -144,9 +144,9 @@ namespace NavWindowApp.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetEmployees", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public EmployeeModel[] GetEmployees() {
+        public Employee[] GetEmployees() {
             object[] results = this.Invoke("GetEmployees", new object[0]);
-            return ((EmployeeModel[])(results[0]));
+            return ((Employee[])(results[0]));
         }
         
         /// <remarks/>
@@ -171,11 +171,9 @@ namespace NavWindowApp.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetRelative", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute("ArrayOfString")]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute(NestingLevel=1)]
-        public string[][] GetRelative() {
+        public EmployeeRelative[] GetRelative() {
             object[] results = this.Invoke("GetRelative", new object[0]);
-            return ((string[][])(results[0]));
+            return ((EmployeeRelative[])(results[0]));
         }
         
         /// <remarks/>
@@ -200,11 +198,9 @@ namespace NavWindowApp.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetEmployeeAbsence", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute("ArrayOfString")]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute(NestingLevel=1)]
-        public string[][] GetEmployeeAbsence() {
+        public EmployeeAbsence[] GetEmployeeAbsence() {
             object[] results = this.Invoke("GetEmployeeAbsence", new object[0]);
-            return ((string[][])(results[0]));
+            return ((EmployeeAbsence[])(results[0]));
         }
         
         /// <remarks/>
@@ -229,11 +225,9 @@ namespace NavWindowApp.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetSickestEmployee", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute("ArrayOfString")]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute(NestingLevel=1)]
-        public string[][] GetSickestEmployee() {
+        public Employee[] GetSickestEmployee() {
             object[] results = this.Invoke("GetSickestEmployee", new object[0]);
-            return ((string[][])(results[0]));
+            return ((Employee[])(results[0]));
         }
         
         /// <remarks/>
@@ -258,11 +252,9 @@ namespace NavWindowApp.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetKeys", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute("ArrayOfString")]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute(NestingLevel=1)]
-        public string[][] GetKeys() {
+        public EmployeeMeta[] GetKeys() {
             object[] results = this.Invoke("GetKeys", new object[0]);
-            return ((string[][])(results[0]));
+            return ((EmployeeMeta[])(results[0]));
         }
         
         /// <remarks/>
@@ -287,11 +279,9 @@ namespace NavWindowApp.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetIndexes", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute("ArrayOfString")]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute(NestingLevel=1)]
-        public string[][] GetIndexes() {
+        public EmployeeMeta[] GetIndexes() {
             object[] results = this.Invoke("GetIndexes", new object[0]);
-            return ((string[][])(results[0]));
+            return ((EmployeeMeta[])(results[0]));
         }
         
         /// <remarks/>
@@ -316,11 +306,9 @@ namespace NavWindowApp.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetConstraints", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute("ArrayOfString")]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute(NestingLevel=1)]
-        public string[][] GetConstraints() {
+        public EmployeeMeta[] GetConstraints() {
             object[] results = this.Invoke("GetConstraints", new object[0]);
-            return ((string[][])(results[0]));
+            return ((EmployeeMeta[])(results[0]));
         }
         
         /// <remarks/>
@@ -345,11 +333,9 @@ namespace NavWindowApp.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetAllTables", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute("ArrayOfString")]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute(NestingLevel=1)]
-        public string[][] GetAllTables() {
+        public EmployeeMeta[] GetAllTables() {
             object[] results = this.Invoke("GetAllTables", new object[0]);
-            return ((string[][])(results[0]));
+            return ((EmployeeMeta[])(results[0]));
         }
         
         /// <remarks/>
@@ -374,11 +360,9 @@ namespace NavWindowApp.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetAllTables2", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute("ArrayOfString")]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute(NestingLevel=1)]
-        public string[][] GetAllTables2() {
+        public EmployeeMeta[] GetAllTables2() {
             object[] results = this.Invoke("GetAllTables2", new object[0]);
-            return ((string[][])(results[0]));
+            return ((EmployeeMeta[])(results[0]));
         }
         
         /// <remarks/>
@@ -430,11 +414,9 @@ namespace NavWindowApp.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetEmployeesMeta2", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute("ArrayOfString")]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute(NestingLevel=1)]
-        public string[][] GetEmployeesMeta2() {
+        public EmployeeMeta[] GetEmployeesMeta2() {
             object[] results = this.Invoke("GetEmployeesMeta2", new object[0]);
-            return ((string[][])(results[0]));
+            return ((EmployeeMeta[])(results[0]));
         }
         
         /// <remarks/>
@@ -459,10 +441,10 @@ namespace NavWindowApp.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetEmployee", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public EmployeeModel GetEmployee(string id) {
+        public Employee GetEmployee(string id) {
             object[] results = this.Invoke("GetEmployee", new object[] {
                         id});
-            return ((EmployeeModel)(results[0]));
+            return ((Employee)(results[0]));
         }
         
         /// <remarks/>
@@ -826,7 +808,7 @@ namespace NavWindowApp.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class EmployeeModel {
+    public partial class Employee {
         
         private string employee_No_Field;
         
@@ -1382,6 +1364,10 @@ namespace NavWindowApp.localhost {
         
         private string column_NameField;
         
+        private int object_IDField;
+        
+        private string constraint_NameField;
+        
         /// <remarks/>
         public string Table_Name {
             get {
@@ -1399,6 +1385,298 @@ namespace NavWindowApp.localhost {
             }
             set {
                 this.column_NameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Object_ID {
+            get {
+                return this.object_IDField;
+            }
+            set {
+                this.object_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Constraint_Name {
+            get {
+                return this.constraint_NameField;
+            }
+            set {
+                this.constraint_NameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1567.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class EmployeeAbsence {
+        
+        private byte[] timestampField;
+        
+        private int entry_No_Field;
+        
+        private string employee_No_Field;
+        
+        private System.DateTime from_DateField;
+        
+        private System.DateTime to_DateField;
+        
+        private string cause_of_Absence_CodeField;
+        
+        private string descriptionField;
+        
+        private decimal quantityField;
+        
+        private string unit_of_Measure_CodeField;
+        
+        private decimal quantity__Base_Field;
+        
+        private decimal qty__per_Unit_of_MeasureField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] timestamp {
+            get {
+                return this.timestampField;
+            }
+            set {
+                this.timestampField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Entry_No_ {
+            get {
+                return this.entry_No_Field;
+            }
+            set {
+                this.entry_No_Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Employee_No_ {
+            get {
+                return this.employee_No_Field;
+            }
+            set {
+                this.employee_No_Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime From_Date {
+            get {
+                return this.from_DateField;
+            }
+            set {
+                this.from_DateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime To_Date {
+            get {
+                return this.to_DateField;
+            }
+            set {
+                this.to_DateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Cause_of_Absence_Code {
+            get {
+                return this.cause_of_Absence_CodeField;
+            }
+            set {
+                this.cause_of_Absence_CodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public decimal Quantity {
+            get {
+                return this.quantityField;
+            }
+            set {
+                this.quantityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Unit_of_Measure_Code {
+            get {
+                return this.unit_of_Measure_CodeField;
+            }
+            set {
+                this.unit_of_Measure_CodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public decimal Quantity__Base_ {
+            get {
+                return this.quantity__Base_Field;
+            }
+            set {
+                this.quantity__Base_Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public decimal Qty__per_Unit_of_Measure {
+            get {
+                return this.qty__per_Unit_of_MeasureField;
+            }
+            set {
+                this.qty__per_Unit_of_MeasureField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1567.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class EmployeeRelative {
+        
+        private byte[] timestampField;
+        
+        private string employee_No_Field;
+        
+        private int line_No_Field;
+        
+        private string relative_CodeField;
+        
+        private string first_NameField;
+        
+        private string middle_NameField;
+        
+        private string last_NameField;
+        
+        private System.DateTime birth_DateField;
+        
+        private string phone_No_Field;
+        
+        private string relative_s_Employee_No_Field;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] timestamp {
+            get {
+                return this.timestampField;
+            }
+            set {
+                this.timestampField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Employee_No_ {
+            get {
+                return this.employee_No_Field;
+            }
+            set {
+                this.employee_No_Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Line_No_ {
+            get {
+                return this.line_No_Field;
+            }
+            set {
+                this.line_No_Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Relative_Code {
+            get {
+                return this.relative_CodeField;
+            }
+            set {
+                this.relative_CodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string First_Name {
+            get {
+                return this.first_NameField;
+            }
+            set {
+                this.first_NameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Middle_Name {
+            get {
+                return this.middle_NameField;
+            }
+            set {
+                this.middle_NameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Last_Name {
+            get {
+                return this.last_NameField;
+            }
+            set {
+                this.last_NameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Birth_Date {
+            get {
+                return this.birth_DateField;
+            }
+            set {
+                this.birth_DateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Phone_No_ {
+            get {
+                return this.phone_No_Field;
+            }
+            set {
+                this.phone_No_Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Relative_s_Employee_No_ {
+            get {
+                return this.relative_s_Employee_No_Field;
+            }
+            set {
+                this.relative_s_Employee_No_Field = value;
             }
         }
     }
@@ -1421,10 +1699,10 @@ namespace NavWindowApp.localhost {
         }
         
         /// <remarks/>
-        public EmployeeModel[] Result {
+        public Employee[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((EmployeeModel[])(this.results[0]));
+                return ((Employee[])(this.results[0]));
             }
         }
     }
@@ -1447,10 +1725,10 @@ namespace NavWindowApp.localhost {
         }
         
         /// <remarks/>
-        public string[][] Result {
+        public EmployeeRelative[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string[][])(this.results[0]));
+                return ((EmployeeRelative[])(this.results[0]));
             }
         }
     }
@@ -1473,10 +1751,10 @@ namespace NavWindowApp.localhost {
         }
         
         /// <remarks/>
-        public string[][] Result {
+        public EmployeeAbsence[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string[][])(this.results[0]));
+                return ((EmployeeAbsence[])(this.results[0]));
             }
         }
     }
@@ -1499,10 +1777,10 @@ namespace NavWindowApp.localhost {
         }
         
         /// <remarks/>
-        public string[][] Result {
+        public Employee[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string[][])(this.results[0]));
+                return ((Employee[])(this.results[0]));
             }
         }
     }
@@ -1525,10 +1803,10 @@ namespace NavWindowApp.localhost {
         }
         
         /// <remarks/>
-        public string[][] Result {
+        public EmployeeMeta[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string[][])(this.results[0]));
+                return ((EmployeeMeta[])(this.results[0]));
             }
         }
     }
@@ -1551,10 +1829,10 @@ namespace NavWindowApp.localhost {
         }
         
         /// <remarks/>
-        public string[][] Result {
+        public EmployeeMeta[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string[][])(this.results[0]));
+                return ((EmployeeMeta[])(this.results[0]));
             }
         }
     }
@@ -1577,10 +1855,10 @@ namespace NavWindowApp.localhost {
         }
         
         /// <remarks/>
-        public string[][] Result {
+        public EmployeeMeta[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string[][])(this.results[0]));
+                return ((EmployeeMeta[])(this.results[0]));
             }
         }
     }
@@ -1603,10 +1881,10 @@ namespace NavWindowApp.localhost {
         }
         
         /// <remarks/>
-        public string[][] Result {
+        public EmployeeMeta[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string[][])(this.results[0]));
+                return ((EmployeeMeta[])(this.results[0]));
             }
         }
     }
@@ -1629,10 +1907,10 @@ namespace NavWindowApp.localhost {
         }
         
         /// <remarks/>
-        public string[][] Result {
+        public EmployeeMeta[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string[][])(this.results[0]));
+                return ((EmployeeMeta[])(this.results[0]));
             }
         }
     }
@@ -1681,10 +1959,10 @@ namespace NavWindowApp.localhost {
         }
         
         /// <remarks/>
-        public string[][] Result {
+        public EmployeeMeta[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string[][])(this.results[0]));
+                return ((EmployeeMeta[])(this.results[0]));
             }
         }
     }
@@ -1707,10 +1985,10 @@ namespace NavWindowApp.localhost {
         }
         
         /// <remarks/>
-        public EmployeeModel Result {
+        public Employee Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((EmployeeModel)(this.results[0]));
+                return ((Employee)(this.results[0]));
             }
         }
     }

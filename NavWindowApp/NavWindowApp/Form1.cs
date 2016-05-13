@@ -56,20 +56,46 @@ namespace NavWindowApp
         {
             if (employeeDataGridView.SelectedRows.Count > 0)
             {
-                string cell1 = employeeDataGridView.SelectedRows[0].Cells[0].Value + string.Empty;
-                string cell2 = employeeDataGridView.SelectedRows[0].Cells[1].Value + string.Empty;
-                string label_1 = employeeDataGridView.SelectedRows[0].Cells[0].OwningColumn.Name;
-                string label_2 = employeeDataGridView.SelectedRows[0].Cells[1].OwningColumn.Name;
-                textBox1.Text = cell1;
-                textBox2.Text = cell2;
-                label1.Text = label_1;
-                label2.Text = label_2;
+                textBox1.Text = employeeDataGridView.SelectedRows[0].Cells[0].Value + string.Empty;
+                textBox2.Text = employeeDataGridView.SelectedRows[0].Cells[1].Value + string.Empty;
+                textBox3.Text = employeeDataGridView.SelectedRows[0].Cells[2].Value + string.Empty;
+                textBox4.Text = employeeDataGridView.SelectedRows[0].Cells[3].Value + string.Empty;
+                textBox5.Text = employeeDataGridView.SelectedRows[0].Cells[4].Value + string.Empty;
+                textBox6.Text = employeeDataGridView.SelectedRows[0].Cells[5].Value + string.Empty;
+                textBox7.Text = employeeDataGridView.SelectedRows[0].Cells[6].Value + string.Empty;
+                string cell8 = employeeDataGridView.SelectedRows[0].Cells[7].Value + string.Empty;
+                string cell9 = employeeDataGridView.SelectedRows[0].Cells[8].Value + string.Empty;
+                string cell10 = employeeDataGridView.SelectedRows[0].Cells[9].Value + string.Empty;
+                string cell11 = employeeDataGridView.SelectedRows[0].Cells[10].Value + string.Empty;
+                string cell12 = employeeDataGridView.SelectedRows[0].Cells[11].Value + string.Empty;
+                string cell13 = employeeDataGridView.SelectedRows[0].Cells[12].Value + string.Empty;
+                string cell14 = employeeDataGridView.SelectedRows[0].Cells[13].Value + string.Empty;
+                string cell15 = employeeDataGridView.SelectedRows[0].Cells[14].Value + string.Empty;
+                string cell16 = employeeDataGridView.SelectedRows[0].Cells[15].Value + string.Empty;
+                string cell17 = employeeDataGridView.SelectedRows[0].Cells[16].Value + string.Empty;
+
+
+                label1.Text = employeeDataGridView.SelectedRows[0].Cells[0].OwningColumn.Name;
+                label2.Text = employeeDataGridView.SelectedRows[0].Cells[1].OwningColumn.Name;
+                label3.Text = employeeDataGridView.SelectedRows[0].Cells[2].OwningColumn.Name;
+                label4.Text = employeeDataGridView.SelectedRows[0].Cells[3].OwningColumn.Name;
+                label5.Text = employeeDataGridView.SelectedRows[0].Cells[4].OwningColumn.Name;
+                label6.Text = employeeDataGridView.SelectedRows[0].Cells[5].OwningColumn.Name;
+                label7.Text = employeeDataGridView.SelectedRows[0].Cells[6].OwningColumn.Name;
+
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             service.DeleteEmployee(employeeDataGridView.SelectedRows[0].Cells[0].Value + string.Empty);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            service.UpdateEmployee(textBox1.Text, textBox2.Text);
+            employeeDataGridView.DataSource = service.GetEmployees().ToList();
         }
     }
 }

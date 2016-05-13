@@ -33,7 +33,7 @@ namespace NavWS.Controllers
             return dal.GetEmployeeAbsence();
         }
 
-        public List<Models.EmployeeAbsence> GetSickestEmployee()
+        public List<Models.Employee> GetSickestEmployee()
         {
             return dal.GetSickestEmployee();
         }

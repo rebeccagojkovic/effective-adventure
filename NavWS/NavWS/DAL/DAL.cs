@@ -20,56 +20,53 @@ namespace NavWS.DAL
             sqlConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=Demo Database NAV (5-0);Persist Security Info=True;User ID=grupp15;Password=Grupp15;");
             sqlConnection.Open();
         }
-
-
-
         SqlConnection con = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=Demo Database NAV (5-0);Persist Security Info=True;User ID=grupp15;Password=Grupp15;");
 
 
-        public List<List<string>> SqlConvert(SqlDataReader sqlReader)
-        {
-            if (sqlReader != null)
-            {
-                List<List<string>> returnList = new List<List<string>>();
+        //public List<List<string>> SqlConvert(SqlDataReader sqlReader)
+        //{
+        //    if (sqlReader != null)
+        //    {
+        //        List<List<string>> returnList = new List<List<string>>();
 
-                while (sqlReader.Read())
-                {
-                    List<string> tmpList = new List<string>();
+        //        while (sqlReader.Read())
+        //        {
+        //            List<string> tmpList = new List<string>();
 
-                    for (int i = 0; i < sqlReader.FieldCount; i++)
-                    {
-                        string data = "";
-                        try
-                        {
-                            if (sqlReader.GetFieldType(i) == typeof(string))
-                            {
-                                data = sqlReader.GetString(i);
-                            }
+        //            for (int i = 0; i < sqlReader.FieldCount; i++)
+        //            {
+        //                string data = "";
+        //                try
+        //                {
+        //                    if (sqlReader.GetFieldType(i) == typeof(string))
+        //                    {
+        //                        data = sqlReader.GetString(i);
+        //                    }
 
-                            if (sqlReader.GetFieldType(i) == typeof(int))
-                            {
-                                int integer = sqlReader.GetInt32(i);
-                                data = integer.ToString();
-                            }
+        //                    if (sqlReader.GetFieldType(i) == typeof(int))
+        //                    {
+        //                        int integer = sqlReader.GetInt32(i);
+        //                        data = integer.ToString();
+        //                    }
 
 
-                        }
-                        catch (SqlNullValueException)
-                        {
-                            data = "null";
-                        }
+        //                }
+        //                catch (SqlNullValueException)
+        //                {
+        //                    data = "null";
+        //                }
 
-                        tmpList.Add(data);
-                    }
+        //                tmpList.Add(data);
+        //            }
 
-                    returnList.Add(tmpList);
-                }
+        //            returnList.Add(tmpList);
+        //        }
 
-                return returnList;
-            }
+        //        return returnList;
+        //    }
 
-            return null;
-        }
+        //    return null;
+        //}
         //public List<String> ShowAllEmployeesDAL()
         //{
         //    con.Open();
@@ -104,21 +101,66 @@ namespace NavWS.DAL
             {
                 List<Models.Employee> list = new List<Models.Employee>();
 
-                String query = "SELECT [Employee_No_], [First_Name], [Last_Name] FROM [Demo Database NAV (5-0)].[dbo].[CRONUS Sverige AB$Employee]";
+                String query = "SELECT * FROM [Demo Database NAV (5-0)].[dbo].[CRONUS Sverige AB$Employee]";
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataReader reader = cmd.ExecuteReader();
+
                 while (reader.Read())
                 {
+
                     var result = new Models.Employee();
-                    result.Employee_No_ = reader.GetString(0);
-                    result.First_Name = reader.GetString(1);
-                    result.Last_Name = reader.GetString(2);
+                    byte[] b = null;
+                    reader.GetBytes(0, 0, b, 0, 1024);
+                    result.Employee_No_ = reader.GetString(1);
+                    result.First_Name = reader.GetString(2);
+                    result.Middle_Name = reader.GetString(3);
+                    result.Last_Name = reader.GetString(4);
+                    result.Initials = reader.GetString(5);
+                    result.Job_Title = reader.GetString(6);
+                    result.Search_Name = reader.GetString(7);
+                    result.Address = reader.GetString(8);
+                    result.Address_2 = reader.GetString(9);
+                    result.City = reader.GetString(10);
+                    result.Post_Code = reader.GetString(11);
+                    result.County = reader.GetString(12);
+                    result.Phone_No_ = reader.GetString(13);
+                    result.Mobile_PhoneNo_ = reader.GetString(14);
+                    result.E_Mail = reader.GetString(15);
+                    result.Alt__Address_Code = reader.GetString(16);
+                    result.Alt__Address_Start_Date = reader.GetDateTime(17);
+                    result.Alt__Address_End_Date = reader.GetDateTime(18);
+                    result.Birth_Date = reader.GetDateTime(20);
+                    result.Social_Security_No_ = reader.GetString(21);
+                    result.Union_Code = reader.GetString(22);
+                    result.Union_Membership_No_ = reader.GetString(23);
+                    result.Sex = reader.GetInt32(24);
+                    result.Country_Region_Code = reader.GetString(25);
+                    result.Manager_No_ = reader.GetString(26);
+                    result.Emplymt__Contract_Code = reader.GetString(27);
+                    result.Statistics_Group_Code = reader.GetString(28);
+                    result.Employment_Date = reader.GetDateTime(29);
+                    result.Status = reader.GetInt32(30);
+                    result.Inactive_Date = reader.GetDateTime(31);
+                    result.Cause_of_Inactivity_Code = reader.GetString(32);
+                    result.Termination_Date = reader.GetDateTime(33);
+                    result.Grounds_for_Term__Code = reader.GetString(34);
+                    result.Global_Dimension_1_Code = reader.GetString(35);
+                    result.Global_Dimension_2_Code = reader.GetString(36);
+                    result.Resource_No_ = reader.GetString(37);
+                    result.Last_Date_Modified = reader.GetDateTime(38);
+                    result.Extension = reader.GetString(39);
+                    result.Pager = reader.GetString(40);
+                    result.Fax_No_ = reader.GetString(41);
+                    result.Company_E_Mail = reader.GetString(42);
+                    result.Title = reader.GetString(43);
+                    result.Salespers__Purch__Code = reader.GetString(44);
+                    result.No__Series = reader.GetString(45);
 
                     list.Add(result);
 
-
-
                 }
+
+
                 return list;
             }
             catch (Exception)
@@ -313,12 +355,12 @@ namespace NavWS.DAL
         //    return SqlConvert(s.ExecuteReader());
         //}
 
-        public List<Models.EmployeeAbsence> GetSickestEmployee()
+        public List<Models.Employee> GetSickestEmployee()
         {
             con.Open();
             try
             {
-                List<Models.EmployeeAbsence> list = new List<Models.EmployeeAbsence>();
+                List<Models.Employee> list = new List<Models.Employee>();
 
                 String query = "select top 1 a.[First_Name] from [CRONUS Sverige AB$Employee] a inner join"
                 + " [CRONUS Sverige AB$Employee Absence] b on a.Employee_No_ = b.[Employee No_] and b.[Cause of Absence Code]"
@@ -327,9 +369,9 @@ namespace NavWS.DAL
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    var result = new Models.EmployeeAbsence();
-                    result.Employee_No_ = reader.GetString(0);
-                    result.Cause_of_Absence_Code = reader.GetString(1);
+                    var result = new Models.Employee();
+                    result.First_Name = reader.GetString(0);
+
 
                     list.Add(result);
 
