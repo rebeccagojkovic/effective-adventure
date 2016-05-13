@@ -79,6 +79,8 @@
     <Content Include="WebService.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller.cs" />
+    <Compile Include="DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebService.asmx.cs">
       <DependentUpon>WebService.asmx</DependentUpon>

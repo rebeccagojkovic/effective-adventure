@@ -19,14 +19,14 @@ namespace Uppgift1
     {
 
         [WebMethod]
-        public String txtFile(string filename)
+        public string txtFile(string filename)
         {
+            Controller cont = new Controller();
+            string sr = cont.txtFile(filename);
 
-            StreamReader sr = File.OpenText("C:\\Users\\erik.aberg\\" + filename);
-            {
-                String line = sr.ReadToEnd();
-                return line;
-            }
+            return sr;
+
         }
     }
 }
+
