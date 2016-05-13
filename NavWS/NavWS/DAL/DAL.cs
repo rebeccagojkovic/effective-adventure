@@ -70,46 +70,46 @@ namespace NavWS.DAL
 
             return null;
         }
-        public List<String> ShowAllEmployeesDAL()
+        //public List<String> ShowAllEmployeesDAL()
+        //{
+        //    con.Open();
+
+        //    try
+        //    {
+        //        SqlDataAdapter adapterEmployees = new SqlDataAdapter("SELECT * FROM [Demo Database NAV (5-0)].[dbo].[CRONUS Sverige AB$Employee]", con);
+        //        DataSet dt = new DataSet();
+        //        adapterEmployees.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+        //        adapterEmployees.Fill(dt, "[Demo Database NAV (5-0)].[dbo].[CRONUS Sverige AB$Employee]");
+
+        //        List<string> EmployeeList = new List<string>();
+        //        foreach (DataRow dataRow in dt.Tables["[Demo Database NAV (5-0)].[dbo].[CRONUS Sverige AB$Employee]"].Rows)
+        //        {
+        //            EmployeeList.Add(string.Join(", ", dataRow.ItemArray.Select(item => item.ToString())));
+        //        }
+        //        return EmployeeList;
+        //    }
+        //    catch (Exception Ex)
+        //    {
+        //        throw Ex;
+        //    }
+        //    finally
+        //    {
+        //        con.Close();
+        //    }
+        //}
+        public List<Models.Employee> GetAllEmployeesList()
         {
             con.Open();
-
             try
             {
-                SqlDataAdapter adapterEmployees = new SqlDataAdapter("SELECT * FROM [Demo Database NAV (5-0)].[dbo].[CRONUS Sverige AB$Employee]", con);
-                DataSet dt = new DataSet();
-                adapterEmployees.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                adapterEmployees.Fill(dt, "[Demo Database NAV (5-0)].[dbo].[CRONUS Sverige AB$Employee]");
-
-                List<string> EmployeeList = new List<string>();
-                foreach (DataRow dataRow in dt.Tables["[Demo Database NAV (5-0)].[dbo].[CRONUS Sverige AB$Employee]"].Rows)
-                {
-                    EmployeeList.Add(string.Join(", ", dataRow.ItemArray.Select(item => item.ToString())));
-                }
-                return EmployeeList;
-            }
-            catch (Exception Ex)
-            {
-                throw Ex;
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-        public List<Models.EmployeeModel> GetAllEmployeesList()
-        {
-            con.Open();
-            try
-            {
-                List<Models.EmployeeModel> list = new List<Models.EmployeeModel>();
+                List<Models.Employee> list = new List<Models.Employee>();
 
                 String query = "SELECT [Employee_No_], [First_Name], [Last_Name] FROM [Demo Database NAV (5-0)].[dbo].[CRONUS Sverige AB$Employee]";
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    var result = new Models.EmployeeModel();
+                    var result = new Models.Employee();
                     result.Employee_No_ = reader.GetString(0);
                     result.First_Name = reader.GetString(1);
                     result.Last_Name = reader.GetString(2);
@@ -165,69 +165,200 @@ namespace NavWS.DAL
             }
         }
         //1a lösningen
-        public List<List<string>> GetEmployeesMetaold()
-        {
-            Connect();
+        //public List<List<string>> GetEmployeesMetaOld()
+        //{
+        //    Connect();
 
-            string sqlQuery = "select Table_Name, Column_name from INFORMATION_SCHEMA.COLUMNS where"
-                + " TABLE_NAME = 'CRONUS Sverige AB$Employee'";
+        //    string sqlQuery = "select Table_Name, Column_name from INFORMATION_SCHEMA.COLUMNS where"
+        //        + " TABLE_NAME = 'CRONUS Sverige AB$Employee'";
 
-            SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
 
-            return SqlConvert(s.ExecuteReader());
-        }
+        //    return SqlConvert(s.ExecuteReader());
+        //}
 
         //2a lösningen
-        public List<List<string>> GetEmployeesMeta2()
+        public List<Models.EmployeeMeta> GetEmployeesMeta2()
         {
-            Connect();
+            con.Open();
+            try
+            {
+                List<Models.EmployeeMeta> list = new List<Models.EmployeeMeta>();
 
-            string sqlQuery = "SELECT b.name, a.name FROM sys.columns a JOIN sys.tables b ON a.object_id"
-                + " = b.object_id WHERE b.name LIKE 'CRONUS Sverige AB$Employee'";
+                String query = "SELECT b.name, a.name FROM sys.columns a JOIN sys.tables b ON a.object_id = b.object_id WHERE b.name LIKE 'CRONUS Sverige AB$Employee'";
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    var result = new Models.EmployeeMeta();
+                    result.Table_Name = reader.GetString(0);
+                    result.Column_Name = reader.GetString(1);
 
-            SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+                    list.Add(result);
 
-            return SqlConvert(s.ExecuteReader());
+                }
+                return list;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
         }
+        //public List<List<string>> GetEmployeesMeta2Old()
+        //{
+        //    Connect();
 
-        public List<List<string>> GetRelative()
+        //    string sqlQuery = "SELECT b.name, a.name FROM sys.columns a JOIN sys.tables b ON a.object_id"
+        //        + " = b.object_id WHERE b.name LIKE 'CRONUS Sverige AB$Employee'";
+
+        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+
+        //    return SqlConvert(s.ExecuteReader());
+        //}
+
+        public List<Models.EmployeeRelative> GetRelative()
         {
-            Connect();
-            string sqlQuery = "select a.[Employee No_],a.[Relative Code],a.[First Name],b.[First Name]"
+            con.Open();
+            try
+            {
+                List<Models.EmployeeRelative> list = new List<Models.EmployeeRelative>();
+
+                String query = "select a.[Employee No_],a.[Relative Code],a.[First Name],b.[First_Name]"
                 + " from [CRONUS Sverige AB$Employee Relative] a inner join [CRONUS Sverige AB$Employee]"
-                + " b on a.[Employee No_]=b.[No_]";
+                + " b on a.[Employee No_]=b.[Employee_No_]";
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    var result = new Models.EmployeeRelative();
+                    result.Employee_No_ = reader.GetString(0);
+                    result.Relative_Code = reader.GetString(1);
 
-            SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+                    list.Add(result);
 
-            return SqlConvert(s.ExecuteReader());
+                }
+                return list;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
         }
+        //public List<List<string>> GetRelativeOld()
+        //{
+        //    Connect();
+        //    string sqlQuery = "select a.[Employee No_],a.[Relative Code],a.[First Name],b.[First_Name]"
+        //        + " from [CRONUS Sverige AB$Employee Relative] a inner join [CRONUS Sverige AB$Employee]"
+        //        + " b on a.[Employee No_]=b.[Employee_No_]";
 
-        public List<List<string>> GetEmployeeAbsence()
+        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+
+        //    return SqlConvert(s.ExecuteReader());
+        //}
+
+        public List<Models.EmployeeAbsence> GetEmployeeAbsence()
         {
-            Connect();
-            string sqlQuery = "select a.[Employee No_], a.Description from [CRONUS Sverige AB$Employee Absence]"
+            con.Open();
+            try
+            {
+                List<Models.EmployeeAbsence> list = new List<Models.EmployeeAbsence>();
+
+                String query = "select a.[Employee No_], a.Description from [CRONUS Sverige AB$Employee Absence]"
                 + " a where a.[From Date] < CONVERT(DateTime, '2004-12-31 12:00:00.000') and"
                 + " a.[From Date] > CONVERT(DateTime, '2004-01-01 00:00:00.000') and"
                 + " a.[Cause of Absence Code] = 'SJUK'";
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    var result = new Models.EmployeeAbsence();
+                    result.Employee_No_ = reader.GetString(0);
+                    result.Cause_of_Absence_Code = reader.GetString(1);
 
-            SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+                    list.Add(result);
 
-            return SqlConvert(s.ExecuteReader());
+                }
+                return list;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
         }
+        //public List<List<string>> GetEmployeeAbsenceOLD()
+        //{
+        //    Connect();
+        //    string sqlQuery = "select a.[Employee No_], a.Description from [CRONUS Sverige AB$Employee Absence]"
+        //        + " a where a.[From Date] < CONVERT(DateTime, '2004-12-31 12:00:00.000') and"
+        //        + " a.[From Date] > CONVERT(DateTime, '2004-01-01 00:00:00.000') and"
+        //        + " a.[Cause of Absence Code] = 'SJUK'";
 
-        public List<List<string>> GetSickestEmployee()
+        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+
+        //    return SqlConvert(s.ExecuteReader());
+        //}
+
+        public List<Models.EmployeeAbsence> GetSickestEmployee()
         {
-            Connect();
-            string sqlQuery = "select top 1 a.[First_Name] from [CRONUS Sverige AB$Employee] a inner join"
-                + " [CRONUS Sverige AB$Employee Absence] b on a.No_= b.[Employee_No_] and b.[Cause_of_Inactivity Code]"
+            con.Open();
+            try
+            {
+                List<Models.EmployeeAbsence> list = new List<Models.EmployeeAbsence>();
+
+                String query = "select top 1 a.[First_Name] from [CRONUS Sverige AB$Employee] a inner join"
+                + " [CRONUS Sverige AB$Employee Absence] b on a.Employee_No_ = b.[Employee No_] and b.[Cause of Absence Code]"
                 + " = 'SJUK' group by a.[First_Name] order by count(*) desc";
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    var result = new Models.EmployeeAbsence();
+                    result.Employee_No_ = reader.GetString(0);
+                    result.Cause_of_Absence_Code = reader.GetString(1);
 
-            SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+                    list.Add(result);
 
-            return SqlConvert(s.ExecuteReader());
+                }
+                return list;
+            }
+            catch (Exception)
+            {
 
-
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
         }
+        //public List<List<string>> GetSickestEmployeeOLD()
+        //{
+        //    Connect();
+        //    string sqlQuery = "select top 1 a.[First_Name] from [CRONUS Sverige AB$Employee] a inner join"
+        //        + " [CRONUS Sverige AB$Employee Absence] b on a.Employee_No_ = b.[Employee No_] and b.[Cause of Absence Code]"
+        //        + " = 'SJUK' group by a.[First_Name] order by count(*) desc";
+
+        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+
+        //    return SqlConvert(s.ExecuteReader());
+
+
+        //}
 
         //---------------------- Add/Delete/Insert/Update SQL ----------------------
 
@@ -370,63 +501,223 @@ namespace NavWS.DAL
 
 
         //-------------------SQL METADATA Uppgifter--------------------
-        public List<List<string>> GetKeys()
+        public List<Models.EmployeeMeta> GetKeys()
         {
-            Connect();
+            con.Open();
+            try
+            {
+                List<Models.EmployeeMeta> list = new List<Models.EmployeeMeta>();
 
-            string sqlQuery = "select top 100 CONSTRAINT_NAME from INFORMATION_SCHEMA.KEY_COLUMN_USAGE";
+                String query = "select top 100 CONSTRAINT_NAME from INFORMATION_SCHEMA.KEY_COLUMN_USAGE";
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    var result = new Models.EmployeeMeta();
+                    result.Table_Name = reader.GetString(0);
+                    //result.Column_Name = reader.GetString(1);
 
-            SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+                    list.Add(result);
 
-            return SqlConvert(s.ExecuteReader());
+                }
+                return list;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
         }
+        //public List<List<string>> GetKeys()
+        //{
+        //    Connect();
 
-        public List<List<string>> GetIndexes()
+        //    string sqlQuery = "select top 100 CONSTRAINT_NAME from INFORMATION_SCHEMA.KEY_COLUMN_USAGE";
+
+        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+
+        //    return SqlConvert(s.ExecuteReader());
+        //}
+
+        public List<Models.EmployeeMeta> GetIndexes()
         {
-            Connect();
+            con.Open();
+            try
+            {
+                List<Models.EmployeeMeta> list = new List<Models.EmployeeMeta>();
 
-            string sqlQuery = "select top 100 a.object_id, a.name from sys.indexes a where a.name like 'CRONUS%'";
+                String query = "select top 100 a.object_id, a.name from sys.indexes a where a.name like 'CRONUS%'";
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    var result = new Models.EmployeeMeta();
+                    result.Object_ID = reader.GetInt32(0);
+                    result.Table_Name = reader.GetString(1);
 
-            SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+                    list.Add(result);
 
-            return SqlConvert(s.ExecuteReader());
+                }
+                return list;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
         }
+        //public List<List<string>> GetIndexes()
+        //{
+        //    Connect();
 
-        public List<List<string>> GetConstraints()
+        //    string sqlQuery = "select top 100 a.object_id, a.name from sys.indexes a where a.name like 'CRONUS%'";
+
+        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+
+        //    return SqlConvert(s.ExecuteReader());
+        //}
+
+
+        public List<Models.EmployeeMeta> GetConstraints()
         {
-            Connect();
+            {
+                con.Open();
+                try
+                {
+                    List<Models.EmployeeMeta> list = new List<Models.EmployeeMeta>();
 
-            string sqlQuery = "select top 100 CONSTRAINT_NAME, TABLE_NAME from INFORMATION_SCHEMA.TABLE_CONSTRAINTS";
+                    String query = "select top 100 CONSTRAINT_NAME, TABLE_NAME from INFORMATION_SCHEMA.TABLE_CONSTRAINTS";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        var result = new Models.EmployeeMeta();
+                        result.Constraint_Name = reader.GetString(0);
+                        result.Table_Name = reader.GetString(1);
 
-            SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+                        list.Add(result);
 
-            return SqlConvert(s.ExecuteReader());
+                    }
+                    return list;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
         }
+        //public List<List<string>> GetConstraints()
+        //{
+        //    Connect();
+
+        //    string sqlQuery = "select top 100 CONSTRAINT_NAME, TABLE_NAME from INFORMATION_SCHEMA.TABLE_CONSTRAINTS";
+
+        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+
+        //    return SqlConvert(s.ExecuteReader());
+        //}
 
         //Alla tables i databasen
         //1a lösningen
-        public List<List<string>> GetAllTables()
+        public List<Models.EmployeeMeta> GetAllTables()
         {
-            Connect();
+            {
+                con.Open();
+                try
+                {
+                    List<Models.EmployeeMeta> list = new List<Models.EmployeeMeta>();
 
-            string sqlQuery = "select top 100 a.TABLE_NAME from INFORMATION_SCHEMA.TABLES a";
+                    String query = "select top 100 a.TABLE_NAME from INFORMATION_SCHEMA.TABLES a";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        var result = new Models.EmployeeMeta();
+                        result.Table_Name = reader.GetString(0);
 
-            SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+                        list.Add(result);
 
-            return SqlConvert(s.ExecuteReader());
+                    }
+                    return list;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
         }
+        //public List<List<string>> GetAllTables()
+        //{
+        //    Connect();
+
+        //    string sqlQuery = "select top 100 a.TABLE_NAME from INFORMATION_SCHEMA.TABLES a";
+
+        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+
+        //    return SqlConvert(s.ExecuteReader());
+        //}
 
         //2a lösningen
-        public List<List<string>> GetAllTables2()
+        public List<Models.EmployeeMeta> GetAllTables2()
         {
-            Connect();
+            {
+                con.Open();
+                try
+                {
+                    List<Models.EmployeeMeta> list = new List<Models.EmployeeMeta>();
 
-            string sqlQuery = "select top 100 a.name from sys.tables a;";
+                    String query = "select top 100 a.name from sys.tables a;";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        var result = new Models.EmployeeMeta();
+                        result.Table_Name = reader.GetString(0);
 
-            SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+                        list.Add(result);
 
-            return SqlConvert(s.ExecuteReader());
+                    }
+                    return list;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
         }
+        //public List<List<string>> GetAllTables2()
+        //{
+        //    Connect();
+
+        //    string sqlQuery = "select top 100 a.name from sys.tables a;";
+
+        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+
+        //    return SqlConvert(s.ExecuteReader());
+        //}
 
 
 

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace NavWS.Models
 {
-    public class EmployeeModel
+    public class Employee
     {
         //public byte[] timestamp { get; set; }
         public string Employee_No_ { get; set; }

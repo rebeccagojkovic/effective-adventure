@@ -18,47 +18,47 @@ namespace NavWS.Controllers
         }
         //Employee
 
-        public List<Models.EmployeeModel> GetEmployees()
+        public List<Models.Employee> GetEmployees()
         {
             return dal.GetAllEmployeesList();
         }
 
-        public List<List<string>> GetRelative()
+        public List<Models.EmployeeRelative> GetRelative()
         {
             return dal.GetRelative();
         }
 
-        public List<List<string>> GetEmployeeAbsence()
+        public List<Models.EmployeeAbsence> GetEmployeeAbsence()
         {
             return dal.GetEmployeeAbsence();
         }
 
-        public List<List<string>> GetSickestEmployee()
+        public List<Models.EmployeeAbsence> GetSickestEmployee()
         {
             return dal.GetSickestEmployee();
         }
 
-        public List<List<string>> GetKeys()
+        public List<Models.EmployeeMeta> GetKeys()
         {
             return dal.GetKeys();
         }
 
-        public List<List<string>> GetIndexes()
+        public List<Models.EmployeeMeta> GetIndexes()
         {
             return dal.GetIndexes();
         }
 
-        public List<List<string>> GetConstraints()
+        public List<Models.EmployeeMeta> GetConstraints()
         {
             return dal.GetConstraints();
         }
 
-        public List<List<string>> GetAllTables()
+        public List<Models.EmployeeMeta> GetAllTables()
         {
             return dal.GetAllTables();
         }
 
-        public List<List<string>> GetAllTables2()
+        public List<Models.EmployeeMeta> GetAllTables2()
         {
             return dal.GetAllTables2();
         }
@@ -68,7 +68,7 @@ namespace NavWS.Controllers
             return dal.GetEmployeesMeta();
         }
 
-        public List<List<string>> GetEmployeesMeta2()
+        public List<Models.EmployeeMeta> GetEmployeesMeta2()
         {
             return dal.GetEmployeesMeta2();
         }

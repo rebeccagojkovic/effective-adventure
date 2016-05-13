@@ -11,7 +11,7 @@ namespace NavWS.Controllers
     public class EmployeeController
     {
 
-        private Models.EmployeeModel model = new Models.EmployeeModel();
+        private Models.Employee model = new Models.Employee();
         DAL.DAL dal = new DAL.DAL();
 
 

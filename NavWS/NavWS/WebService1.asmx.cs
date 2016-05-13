@@ -22,58 +22,58 @@ namespace NavWS
         Controllers.Controller cont = new Controllers.Controller();
       
         [WebMethod]
-        public List<Models.EmployeeModel> GetEmployees()
+        public List<Models.Employee> GetEmployees()
         {
             Controllers.Controller cont = new Controllers.Controller();
             return cont.GetEmployees();
         }
         
         [WebMethod]
-        public List<List<string>> GetRelative()
+        public List<Models.EmployeeRelative> GetRelative()
         {
 
-            return GetRelative();
+            return cont.GetRelative();
         }
 
         [WebMethod]
-        public List<List<string>> GetEmployeeAbsence()
+        public List<Models.EmployeeAbsence> GetEmployeeAbsence()
         {
             return cont.GetEmployeeAbsence();
         }
 
         [WebMethod]
-        public List<List<string>> GetSickestEmployee()
+        public List<Models.EmployeeAbsence> GetSickestEmployee()
         {
             return cont.GetSickestEmployee();
         }
 
         //SQL META
         [WebMethod]
-        public List<List<string>> GetKeys()
+        public List<Models.EmployeeMeta> GetKeys()
         {
             return cont.GetKeys();
         }
 
         [WebMethod]
-        public List<List<string>> GetIndexes()
+        public List<Models.EmployeeMeta> GetIndexes()
         {
             return cont.GetIndexes();
         }
 
         [WebMethod]
-        public List<List<string>> GetConstraints()
+        public List<Models.EmployeeMeta> GetConstraints()
         {
             return cont.GetConstraints();
         }
 
         [WebMethod]
-        public List<List<string>> GetAllTables()
+        public List<Models.EmployeeMeta> GetAllTables()
         {
             return cont.GetAllTables();
         }
 
         [WebMethod]
-        public List<List<string>> GetAllTables2()
+        public List<Models.EmployeeMeta> GetAllTables2()
         {
             return cont.GetAllTables2();
         }
@@ -85,7 +85,7 @@ namespace NavWS
         }
 
         [WebMethod]
-        public List<List<string>> GetEmployeesMeta2()
+        public List<Models.EmployeeMeta> GetEmployeesMeta2()
         {
             return cont.GetEmployeesMeta2();
         }
@@ -93,15 +93,15 @@ namespace NavWS
         //-----Add/remove/insert/update---------
 
         [WebMethod]
-        public Models.EmployeeModel GetEmployee(string id)
+        public Models.Employee GetEmployee(string id)
         {
             SqlDataReader sqlReader = cont.GetEmployee(id);
 
-            Models.EmployeeModel emp = null;
+            Models.Employee emp = null;
 
             while (sqlReader.Read())
             {
-                emp = new Models.EmployeeModel();
+                emp = new Models.Employee();
                 emp.Employee_No_ = sqlReader.GetString(0);
                 emp.First_Name = sqlReader.GetString(1);
             }
