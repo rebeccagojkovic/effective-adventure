@@ -296,3 +296,6 @@ local.properties
 .recommenders/
 /Uppgift2Java/dist/
 /NavJava/nbproject/private/
+/Uppgift1Java/dist/
+/JavaApplication7/nbproject/private/
+/JavaApplication8/nbproject/private/
