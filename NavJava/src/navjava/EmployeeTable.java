@@ -7,23 +7,32 @@ package navjava;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author erik.aberg
  */
-public class Employee {
+public class EmployeeTable{
 
-    public Employee() {
+    public static DefaultTableModel GetEmployeesTable() {
 
-        ArrayList<String> empl = new ArrayList<String>();
+        String columnNames[] = {"EmployeeNo", "FirstName", "LastName"};
+        List<org.tempuri.Employee> list = Controller.getEmployees().getEmployee();
 
-        for (int i = 0; i < 5; i++) {
-            System.out.println(i);
+        DefaultTableModel model = new DefaultTableModel();
+
+        
+        model.setColumnIdentifiers(columnNames);
+
+        for (org.tempuri.Employee s : list) {
+            Object[] o = new Object[5];
+            o[0] = s.getEmployeeNo();
+            o[1] = s.getFirstName();
+            o[2] = s.getLastName();
+
+            model.addRow(o);
         }
-        
-        
-
-        // ArrayList<Controller.getEmployees()> empl = new ArrayList<Controller.getEmployees()>();
+        return model;
     }
 }

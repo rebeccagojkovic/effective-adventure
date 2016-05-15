@@ -5,6 +5,7 @@
  */
 package navjava;
 
+import javax.swing.table.DefaultTableModel;
 import org.tempuri.ArrayOfEmployee;
 import org.tempuri.ArrayOfEmployeeAbsence;
 import org.tempuri.ArrayOfEmployeeMeta;
@@ -105,6 +106,8 @@ public class Controller {
         org.tempuri.WebService1Soap port = service.getWebService1Soap12();
         port.updateEmployee(id, firstName);
     }
-    
+    public static DefaultTableModel GetEmployeesTable() {
+        return EmployeeTable.GetEmployeesTable();
+    }
     
 }

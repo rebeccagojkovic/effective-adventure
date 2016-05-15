@@ -10,6 +10,8 @@ import java.awt.event.MouseEvent;
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.ComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -28,42 +30,17 @@ public class NavJFrame extends javax.swing.JFrame {
     public NavJFrame() {
         initComponents();
 
-        String columnNames[] = {"EmployeeNo", "FirstName", "LastName"};
-        List<org.tempuri.Employee> list = Controller.getEmployees().getEmployee();
+        Controller cont = new Controller();
 
-        DefaultTableModel model = new DefaultTableModel();
+        jTable2.setModel(cont.GetEmployeesTable());
+        jTable2.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            public void valueChanged(ListSelectionEvent event) {
+                // do some actions here, for example
+                // print first column value from selected row
+                jTextField2.setText(jTable2.getValueAt(jTable2.getSelectedRow(), 0).toString());
+            }
+        });
 
-        jTable2.setModel(model);
-        model.setColumnIdentifiers(columnNames);
-
-        for (org.tempuri.Employee s : list) {
-            Object[] o = new Object[5];
-            o[0] = s.getEmployeeNo();
-            o[1] = s.getFirstName();
-            o[2] = s.getLastName();
-
-            model.addRow(o);
-        }
-        
-        jTable2.getSelectionModel().addListSelectionListener(new ListSelectionListener(){
-        public void valueChanged(ListSelectionEvent event) {
-            // do some actions here, for example
-            // print first column value from selected row
-            jTextField2.setText(jTable2.getValueAt(jTable2.getSelectedRow(), 0).toString());
-        }
-    });
-        
-//        jTable2.addMouseListener(new MouseAdapter() {
-//            public void mouseClicked(MouseEvent e) {
-//                if (e.getClickCount() == 2) {
-//                    JTable target = (JTable) e.getSource();
-//                    int row = target.getSelectedRow();
-//                    int column = target.getSelectedColumn();
-//                    String s = "hej";
-//                    
-//                }
-//            }
-//        });
     }
 
     /**
@@ -120,7 +97,7 @@ public class NavJFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -160,6 +137,11 @@ public class NavJFrame extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jButton3.setText("Execute");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -279,6 +261,14 @@ public class NavJFrame extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Controller cont = new Controller();
+
+        jTable1.setModel(cont.GetEmployeesTable()); 
+        jComboBox1.getSelectedIndex();
+
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
