@@ -115,6 +115,11 @@ namespace NavWS
         {
             cont.AddEmployee(id,  firstName,  middleName,  lastName,  initials,  jobTitle,  searchName,  adress,  adress2,  city,  postCode,  county,  phoneNumber,  mobilePhoneNumber,  eMail,  altAdress,  altAdressStart,  altAdressEnd,  picture,  birthDate,  socialSecurityNumber,  unionCode,  unionMembershipNumber,  sex,countryRegionCode,  managerNumber,  employmentContractCode,  statisticsGroupCode, employmentDate,  status, inactivityDate,  causeOfInactivity,  terminationDate,  groundsForTermCode,  globalDimension1Code,  globalDimension2Code, resourceNumber,  lastDateModified,  extension,  pager,  faxNumber,  companyEmail,  title,  salesPerPurchCode,  noSeries);
         }
+        [WebMethod]
+        public void AddEmployeeMini(string id, string firstName, string lastName)
+        {
+            cont.AddEmployeeMini(id, firstName, lastName);
+        }
 
         [WebMethod]
         public void DeleteEmployee(string id)

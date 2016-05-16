@@ -509,6 +509,33 @@ namespace NavWS.DAL
             }
         }
 
+        public void AddEmployeeMini(string id, string firstName, string lastName)
+        {
+
+            Connect();
+            string sqlQuery = "INSERT INTO [dbo].[CRONUS Sverige AB$Employee]([Employee_No_],[First_Name],[Last_Name])"
+                + "VALUES (@id, @firstName, @lastName)";
+
+            SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+
+            s.Parameters.Add("@id", SqlDbType.VarChar, 30).Value = id;
+            s.Parameters.Add("@firstName", SqlDbType.VarChar, 40).Value = firstName;
+           
+            s.Parameters.Add("@lastName", SqlDbType.VarChar, 30).Value = lastName;
+            try
+            {
+
+                s.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+                //Primary konflikt
+            }
+        }
+
+
+
+
         public void AddEmployee(string id, string firstName, string middleName, string lastName, string initials, string jobTitle, string searchName, string adress, string adress2, string city, string postCode, string county, string phoneNumber, string mobilePhoneNumber, string eMail, string altAdress, DateTime altAdressStart, DateTime altAdressEnd, string picture, DateTime birthDate, string socialSecurityNumber, string unionCode, string unionMembershipNumber, int sex, string countryRegionCode, string managerNumber, string employmentContractCode, string statisticsGroupCode, DateTime employmentDate, int status, DateTime inactivityDate, string causeOfInactivity, DateTime terminationDate, string groundsForTermCode, string globalDimension1Code, string globalDimension2Code, string resourceNumber, DateTime lastDateModified, string extension, string pager, string faxNumber, string companyEmail, string title, string salesPerPurchCode, string noSeries)
         {
             Connect();

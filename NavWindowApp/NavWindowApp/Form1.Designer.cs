@@ -35,12 +35,16 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.refreshEmplbutton1 = new System.Windows.Forms.Button();
+            this.emplNolabel = new System.Windows.Forms.Label();
             this.searchEmployeeButton1 = new System.Windows.Forms.Button();
             this.searchEmployeetextBox = new System.Windows.Forms.TextBox();
             this.employeeDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.clearNewEmplButton4 = new System.Windows.Forms.Button();
+            this.saveNewEmplButton1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -130,13 +134,9 @@
             this.label42 = new System.Windows.Forms.Label();
             this.textBox43 = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
-            this.clearNewEmplButton4 = new System.Windows.Forms.Button();
-            this.saveNewEmplButton1 = new System.Windows.Forms.Button();
-            this.emplNolabel = new System.Windows.Forms.Label();
             this.textBox44 = new System.Windows.Forms.TextBox();
-            this.textBox45 = new System.Windows.Forms.TextBox();
-            this.refreshEmplbutton1 = new System.Windows.Forms.Button();
             this.label44 = new System.Windows.Forms.Label();
+            this.textBox45 = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.queryDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -230,6 +230,25 @@
             this.tabPage3.Text = "Show Employee";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // refreshEmplbutton1
+            // 
+            this.refreshEmplbutton1.Location = new System.Drawing.Point(474, 25);
+            this.refreshEmplbutton1.Name = "refreshEmplbutton1";
+            this.refreshEmplbutton1.Size = new System.Drawing.Size(75, 23);
+            this.refreshEmplbutton1.TabIndex = 4;
+            this.refreshEmplbutton1.Text = "Refresh";
+            this.refreshEmplbutton1.UseVisualStyleBackColor = true;
+            this.refreshEmplbutton1.Click += new System.EventHandler(this.refreshEmplbutton1_Click);
+            // 
+            // emplNolabel
+            // 
+            this.emplNolabel.AutoSize = true;
+            this.emplNolabel.Location = new System.Drawing.Point(6, 8);
+            this.emplNolabel.Name = "emplNolabel";
+            this.emplNolabel.Size = new System.Drawing.Size(132, 13);
+            this.emplNolabel.TabIndex = 3;
+            this.emplNolabel.Text = "Search by Employment No";
+            // 
             // searchEmployeeButton1
             // 
             this.searchEmployeeButton1.Location = new System.Drawing.Point(172, 25);
@@ -257,6 +276,7 @@
             this.employeeDataGridView.ReadOnly = true;
             this.employeeDataGridView.Size = new System.Drawing.Size(543, 597);
             this.employeeDataGridView.TabIndex = 0;
+            this.employeeDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeDataGridView_CellContentClick);
             this.employeeDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView2_RowPostPaint);
             this.employeeDataGridView.VisibleChanged += new System.EventHandler(this.dataGridView2_VisibleChanged);
             // 
@@ -297,6 +317,26 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Edit Employee";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // clearNewEmplButton4
+            // 
+            this.clearNewEmplButton4.Location = new System.Drawing.Point(9, 6);
+            this.clearNewEmplButton4.Name = "clearNewEmplButton4";
+            this.clearNewEmplButton4.Size = new System.Drawing.Size(75, 23);
+            this.clearNewEmplButton4.TabIndex = 4;
+            this.clearNewEmplButton4.Text = "Clear";
+            this.clearNewEmplButton4.UseVisualStyleBackColor = true;
+            this.clearNewEmplButton4.Click += new System.EventHandler(this.clearNewEmplButton4_Click);
+            // 
+            // saveNewEmplButton1
+            // 
+            this.saveNewEmplButton1.Location = new System.Drawing.Point(90, 6);
+            this.saveNewEmplButton1.Name = "saveNewEmplButton1";
+            this.saveNewEmplButton1.Size = new System.Drawing.Size(75, 23);
+            this.saveNewEmplButton1.TabIndex = 3;
+            this.saveNewEmplButton1.Text = "Add";
+            this.saveNewEmplButton1.UseVisualStyleBackColor = true;
+            this.saveNewEmplButton1.Click += new System.EventHandler(this.saveNewEmplButton1_Click);
             // 
             // button3
             // 
@@ -1146,58 +1186,12 @@
             this.label43.Size = new System.Drawing.Size(180, 13);
             this.label43.TabIndex = 171;
             // 
-            // clearNewEmplButton4
-            // 
-            this.clearNewEmplButton4.Location = new System.Drawing.Point(9, 6);
-            this.clearNewEmplButton4.Name = "clearNewEmplButton4";
-            this.clearNewEmplButton4.Size = new System.Drawing.Size(75, 23);
-            this.clearNewEmplButton4.TabIndex = 4;
-            this.clearNewEmplButton4.Text = "Clear";
-            this.clearNewEmplButton4.UseVisualStyleBackColor = true;
-            this.clearNewEmplButton4.Click += new System.EventHandler(this.clearNewEmplButton4_Click);
-            // 
-            // saveNewEmplButton1
-            // 
-            this.saveNewEmplButton1.Location = new System.Drawing.Point(90, 6);
-            this.saveNewEmplButton1.Name = "saveNewEmplButton1";
-            this.saveNewEmplButton1.Size = new System.Drawing.Size(75, 23);
-            this.saveNewEmplButton1.TabIndex = 3;
-            this.saveNewEmplButton1.Text = "Add";
-            this.saveNewEmplButton1.UseVisualStyleBackColor = true;
-            this.saveNewEmplButton1.Click += new System.EventHandler(this.saveNewEmplButton1_Click);
-            // 
-            // emplNolabel
-            // 
-            this.emplNolabel.AutoSize = true;
-            this.emplNolabel.Location = new System.Drawing.Point(6, 8);
-            this.emplNolabel.Name = "emplNolabel";
-            this.emplNolabel.Size = new System.Drawing.Size(132, 13);
-            this.emplNolabel.TabIndex = 3;
-            this.emplNolabel.Text = "Search by Employment No";
-            // 
             // textBox44
             // 
             this.textBox44.Location = new System.Drawing.Point(338, 549);
             this.textBox44.Name = "textBox44";
             this.textBox44.Size = new System.Drawing.Size(143, 20);
             this.textBox44.TabIndex = 172;
-            // 
-            // textBox45
-            // 
-            this.textBox45.Location = new System.Drawing.Point(3, 575);
-            this.textBox45.Name = "textBox45";
-            this.textBox45.Size = new System.Drawing.Size(143, 20);
-            this.textBox45.TabIndex = 174;
-            // 
-            // refreshEmplbutton1
-            // 
-            this.refreshEmplbutton1.Location = new System.Drawing.Point(474, 25);
-            this.refreshEmplbutton1.Name = "refreshEmplbutton1";
-            this.refreshEmplbutton1.Size = new System.Drawing.Size(75, 23);
-            this.refreshEmplbutton1.TabIndex = 4;
-            this.refreshEmplbutton1.Text = "Refresh";
-            this.refreshEmplbutton1.UseVisualStyleBackColor = true;
-            this.refreshEmplbutton1.Click += new System.EventHandler(this.refreshEmplbutton1_Click);
             // 
             // label44
             // 
@@ -1208,6 +1202,13 @@
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(180, 13);
             this.label44.TabIndex = 175;
+            // 
+            // textBox45
+            // 
+            this.textBox45.Location = new System.Drawing.Point(3, 575);
+            this.textBox45.Name = "textBox45";
+            this.textBox45.Size = new System.Drawing.Size(143, 20);
+            this.textBox45.TabIndex = 174;
             // 
             // label45
             // 
