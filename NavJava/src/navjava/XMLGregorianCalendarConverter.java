@@ -5,6 +5,7 @@
  */
 package navjava;
 
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -45,7 +46,7 @@ public class XMLGregorianCalendarConverter {
 
         try {
             GregorianCalendar gc = (GregorianCalendar) GregorianCalendar.getInstance();
-            gc.setTime(date);
+            gc.setTime(new Timestamp(date.getTime()));
             return DatatypeFactory.newInstance().newXMLGregorianCalendar(gc);
         } catch (DatatypeConfigurationException e) {
             // TODO: Optimize exception handling

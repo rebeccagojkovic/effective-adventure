@@ -5,41 +5,13 @@
  */
 package navjava;
 
-import java.awt.Component;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.sql.Array;
-import java.text.DateFormat;
-import java.text.ParseException;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.Locale;
-import java.util.TimeZone;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.ComboBoxModel;
-import javax.swing.JComboBox;
-import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeConstants;
-import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-import org.tempuri.WebService1Soap;
-import org.tempuri.WebService1;
-import static sun.util.calendar.CalendarSystem.getGregorianCalendar;
 
 /**
  *
@@ -1109,18 +1081,25 @@ public class NavJFrame extends javax.swing.JFrame {
 //        } catch (DatatypeConfigurationException ex) {
 //            Logger.getLogger(NavJFrame.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-        Date date = new Date("%-24s %s%n");
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS z", Locale.GERMAN);
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        // LocalDateTime date = LocalDateTime.from(f.parse("2016-05-17 23:18:53"));
+        // LocalDateTime date = LocalDateTime.now();
+        java.util.Date date = new java.util.Date();
+        
+        System.out.println(new Timestamp(date.getTime()));
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         String formattedDate = sdf.format(date);
-        
-        XMLGregorianCalendar altAdressStart = XMLGregorianCalendarConverter.stringToXMLGregorianCalendar(formattedDate, sdf);
-        XMLGregorianCalendar altAdressEnd = XMLGregorianCalendarConverter.stringToXMLGregorianCalendar(formattedDate, sdf);
-        XMLGregorianCalendar birthDate = XMLGregorianCalendarConverter.stringToXMLGregorianCalendar(formattedDate, sdf);
-        XMLGregorianCalendar employmentDate = XMLGregorianCalendarConverter.stringToXMLGregorianCalendar(formattedDate, sdf);
-        XMLGregorianCalendar inactivityDate = XMLGregorianCalendarConverter.stringToXMLGregorianCalendar(formattedDate, sdf);
-        XMLGregorianCalendar terminationDate = XMLGregorianCalendarConverter.stringToXMLGregorianCalendar(formattedDate, sdf);
-        XMLGregorianCalendar lastDateModified = XMLGregorianCalendarConverter.stringToXMLGregorianCalendar(formattedDate, sdf);
-        
+
+        XMLGregorianCalendar altAdressStart = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar(new Timestamp(date.getTime()));
+        XMLGregorianCalendar altAdressEnd = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar(new Timestamp(date.getTime()));
+        XMLGregorianCalendar birthDate = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar(new Timestamp(date.getTime()));
+        XMLGregorianCalendar employmentDate = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar(new Timestamp(date.getTime()));
+        XMLGregorianCalendar inactivityDate = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar(new Timestamp(date.getTime()));
+        XMLGregorianCalendar terminationDate = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar(new Timestamp(date.getTime()));
+        XMLGregorianCalendar lastDateModified = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar(new Timestamp(date.getTime()));
+        System.out.println(altAdressStart);
+
         
         //System.out.printf("%-24s %s%n", "String:", 
         String firstName = jTextField2.getText();
