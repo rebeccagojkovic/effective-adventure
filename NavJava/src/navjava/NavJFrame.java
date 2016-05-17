@@ -19,6 +19,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Locale;
 import java.util.TimeZone;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -1095,85 +1096,100 @@ public class NavJFrame extends javax.swing.JFrame {
 //        LocalDateTime lastDateModified = LocalDateTime.from(f.parse("2012-01-10 23:13:26"));
         // c.setTime();
         //XMLGregorianCalendar test = DatatypeFactory.newInstance().newXMLGregorianCalendar();
-        try {
-            LocalDateTime currentUTCTime = LocalDateTime.now(); // using system timezone
-            XMLGregorianCalendar altAdressStart = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
-            XMLGregorianCalendar altAdressEnd = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
-            XMLGregorianCalendar birthDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
-            XMLGregorianCalendar employmentDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
-            XMLGregorianCalendar inactivityDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
-            XMLGregorianCalendar terminationDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
-            XMLGregorianCalendar lastDateModified = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
+//        try {
+//            LocalDateTime currentUTCTime = LocalDateTime.now(); // using system timezone
+//            XMLGregorianCalendar altAdressStart = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
+//            XMLGregorianCalendar altAdressEnd = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
+//            XMLGregorianCalendar birthDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
+//            XMLGregorianCalendar employmentDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
+//            XMLGregorianCalendar inactivityDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
+//            XMLGregorianCalendar terminationDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
+//            XMLGregorianCalendar lastDateModified = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
+//            
+//        } catch (DatatypeConfigurationException ex) {
+//            Logger.getLogger(NavJFrame.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        Date date = new Date("%-24s %s%n");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS z", Locale.GERMAN);
+        String formattedDate = sdf.format(date);
+        
+        XMLGregorianCalendar altAdressStart = XMLGregorianCalendarConverter.stringToXMLGregorianCalendar(formattedDate, sdf);
+        XMLGregorianCalendar altAdressEnd = XMLGregorianCalendarConverter.stringToXMLGregorianCalendar(formattedDate, sdf);
+        XMLGregorianCalendar birthDate = XMLGregorianCalendarConverter.stringToXMLGregorianCalendar(formattedDate, sdf);
+        XMLGregorianCalendar employmentDate = XMLGregorianCalendarConverter.stringToXMLGregorianCalendar(formattedDate, sdf);
+        XMLGregorianCalendar inactivityDate = XMLGregorianCalendarConverter.stringToXMLGregorianCalendar(formattedDate, sdf);
+        XMLGregorianCalendar terminationDate = XMLGregorianCalendarConverter.stringToXMLGregorianCalendar(formattedDate, sdf);
+        XMLGregorianCalendar lastDateModified = XMLGregorianCalendarConverter.stringToXMLGregorianCalendar(formattedDate, sdf);
+        
+        
+        //System.out.printf("%-24s %s%n", "String:", 
+        String firstName = jTextField2.getText();
+        String id = jTextField3.getText();
+        String middleName = jTextField5.getText();
+        String lastName = jTextField4.getText();
+        String initials = jTextField6.getText();
+        String jobTitle = jTextField7.getText();
+        String searchName = jTextField8.getText();
+        String adress = jTextField9.getText();
+        String adress2 = jTextField10.getText();
+        String city = jTextField11.getText();
+        String postCode = jTextField12.getText();
+        String county = jTextField13.getText();
+        String phoneNumber = jTextField14.getText();
+        String mobilePhoneNumber = jTextField15.getText();
+        String eMail = jTextField16.getText();
+        String altAdress = jTextField17.getText();
+        // XMLGregorianCalendar altAdressStart = xmlCal;
+        // String altAdressStart.get(Calendar.TUESDAY);
+        //String altAdressStart = dateFormat.format(jTextField18.getText());
 
-            String firstName = jTextField2.getText();
-            String id = jTextField3.getText();
-            String middleName = jTextField5.getText();
-            String lastName = jTextField4.getText();
-            String initials = jTextField6.getText();
-            String jobTitle = jTextField7.getText();
-            String searchName = jTextField8.getText();
-            String adress = jTextField9.getText();
-            String adress2 = jTextField10.getText();
-            String city = jTextField11.getText();
-            String postCode = jTextField12.getText();
-            String county = jTextField13.getText();
-            String phoneNumber = jTextField14.getText();
-            String mobilePhoneNumber = jTextField15.getText();
-            String eMail = jTextField16.getText();
-            String altAdress = jTextField17.getText();
-            // XMLGregorianCalendar altAdressStart = xmlCal;
-            // String altAdressStart.get(Calendar.TUESDAY);
-            //String altAdressStart = dateFormat.format(jTextField18.getText());
+        //XMLGregorianCalendar altAdressEnd = xmlCal;
+        //String altAdressEnd = dateFormat.format(jTextField19.getText());
+        String picture = jTextField20.getText();
+        //String birthDate = dateFormat.format(jTextField21.getText());
 
-            //XMLGregorianCalendar altAdressEnd = xmlCal;
-            //String altAdressEnd = dateFormat.format(jTextField19.getText());
-            String picture = jTextField20.getText();
-            //String birthDate = dateFormat.format(jTextField21.getText());
+        //XMLGregorianCalendar birthDate = xmlCal;
+        String socialSecurityNumber = jTextField22.getText();
+        String unionCode = jTextField23.getText();
+        String unionMembershipNumber = jTextField24.getText();
+        int sex = 1;
+        String countryRegionCode = jTextField26.getText();
+        String managerNumber = jTextField27.getText();
+        String employmentContractCode = jTextField28.getText();
+        String statisticsGroupCode = jTextField29.getText();
 
-            //XMLGregorianCalendar birthDate = xmlCal;
-            String socialSecurityNumber = jTextField22.getText();
-            String unionCode = jTextField23.getText();
-            String unionMembershipNumber = jTextField24.getText();
-            int sex = 1;
-            String countryRegionCode = jTextField26.getText();
-            String managerNumber = jTextField27.getText();
-            String employmentContractCode = jTextField28.getText();
-            String statisticsGroupCode = jTextField29.getText();
+        //String employmentDate = dateFormat.format(jTextField30.getText());
+        //XMLGregorianCalendar employmentDate = xmlCal;
+        int status = 1;
 
-            //String employmentDate = dateFormat.format(jTextField30.getText());
-            //XMLGregorianCalendar employmentDate = xmlCal;
-            int status = 1;
+        // String inactivityDate = dateFormat.format(jTextField31.getText());
+        //XMLGregorianCalendar inactivityDate = xmlCal;
+        String causeOfInactivity = jTextField33.getText();
+        // String terminationDate = dateFormat.format(jTextField34.getText());
 
-            // String inactivityDate = dateFormat.format(jTextField31.getText());
-            //XMLGregorianCalendar inactivityDate = xmlCal;
-            String causeOfInactivity = jTextField33.getText();
-            // String terminationDate = dateFormat.format(jTextField34.getText());
+        // XMLGregorianCalendar terminationDate = xmlCal;
+        String groundsForTermCode = jTextField35.getText();
+        String globalDimension1Code = jTextField36.getText();
+        String globalDimension2Code = jTextField37.getText();
+        String resourceNumber = jTextField38.getText();
+        //String lastDateModified = dateFormat.format(jTextField39.getText());
 
-            // XMLGregorianCalendar terminationDate = xmlCal;
-            String groundsForTermCode = jTextField35.getText();
-            String globalDimension1Code = jTextField36.getText();
-            String globalDimension2Code = jTextField37.getText();
-            String resourceNumber = jTextField38.getText();
-            //String lastDateModified = dateFormat.format(jTextField39.getText());
+        //XMLGregorianCalendar lastDateModified = xmlCal;
+        String extension = jTextField40.getText();
+        String pager = jTextField41.getText();
+        String faxNumber = jTextField42.getText();
+        String companyEmail = jTextField43.getText();
+        String title = jTextField44.getText();
+        String salesPerPurchCode = jTextField45.getText();
+        String noSeries = jTextField46.getText();
 
-            //XMLGregorianCalendar lastDateModified = xmlCal;
-            String extension = jTextField40.getText();
-            String pager = jTextField41.getText();
-            String faxNumber = jTextField42.getText();
-            String companyEmail = jTextField43.getText();
-            String title = jTextField44.getText();
-            String salesPerPurchCode = jTextField45.getText();
-            String noSeries = jTextField46.getText();
-
-            Controller.addEmployee(id, firstName, middleName, lastName, initials, jobTitle, searchName, adress, adress2, city, postCode, county, phoneNumber, mobilePhoneNumber, eMail, altAdress, altAdressStart, altAdressEnd, picture, birthDate, socialSecurityNumber, unionCode, unionMembershipNumber, sex, countryRegionCode, managerNumber, employmentContractCode, statisticsGroupCode, employmentDate, status, inactivityDate, causeOfInactivity, terminationDate, groundsForTermCode, globalDimension1Code, globalDimension2Code, resourceNumber, lastDateModified, extension, pager, faxNumber, companyEmail, title, salesPerPurchCode, noSeries);
+        Controller.addEmployee(id, firstName, middleName, lastName, initials, jobTitle, searchName, adress, adress2, city, postCode, county, phoneNumber, mobilePhoneNumber, eMail, altAdress, altAdressStart, altAdressEnd, picture, birthDate, socialSecurityNumber, unionCode, unionMembershipNumber, sex, countryRegionCode, managerNumber, employmentContractCode, statisticsGroupCode, employmentDate, status, inactivityDate, causeOfInactivity, terminationDate, groundsForTermCode, globalDimension1Code, globalDimension2Code, resourceNumber, lastDateModified, extension, pager, faxNumber, companyEmail, title, salesPerPurchCode, noSeries);
 
 //        catch (DatatypeConfigurationException ex) {
 //            Logger.getLogger(NavJFrame.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-            //jTable2.setModel(Controller.GetEmployeesTable());
-        } catch (DatatypeConfigurationException ex) {
-            Logger.getLogger(NavJFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        //jTable2.setModel(Controller.GetEmployeesTable());
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
