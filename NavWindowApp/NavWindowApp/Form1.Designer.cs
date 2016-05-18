@@ -201,8 +201,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(954, 606);
-            this.splitContainer1.SplitterDistance = 405;
+            this.splitContainer1.Size = new System.Drawing.Size(1329, 696);
+            this.splitContainer1.SplitterDistance = 569;
             this.splitContainer1.TabIndex = 6;
             // 
             // tabControl2
@@ -288,7 +288,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage4.Size = new System.Drawing.Size(558, 656);
+            this.tabPage4.Size = new System.Drawing.Size(555, 656);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Execute Queries";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1223,7 +1223,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 606);
+            this.ClientSize = new System.Drawing.Size(1329, 696);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
             this.Text = "Form1";
