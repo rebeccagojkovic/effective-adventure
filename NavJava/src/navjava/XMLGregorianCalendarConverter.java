@@ -5,18 +5,12 @@
  */
 package navjava;
 
-import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.Locale;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -71,7 +65,7 @@ public class XMLGregorianCalendarConverter {
             cal.setHour(ldt.getHour());
             cal.setMinute(ldt.getMinute());
             cal.setSecond(ldt.getSecond());
-           // cal.setFractionalSecond(new BigDecimal("0." + ldt.getNano()));
+            // cal.setFractionalSecond(new BigDecimal("0." + ldt.getNano()));
 
             return cal;//DatatypeFactory.newInstance().newXMLGregorianCalendar(cal);
         } catch (DatatypeConfigurationException e) {
@@ -80,8 +74,6 @@ public class XMLGregorianCalendarConverter {
             return null;
         }
     }
-    
-    
 
     /**
      * Converts a formatted string into XMLGregorianCalendar

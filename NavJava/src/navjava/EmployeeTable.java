@@ -5,7 +5,6 @@
  */
 package navjava;
 
-import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -200,7 +199,8 @@ public class EmployeeTable {
         }
         return model;
     }
-     public static DefaultTableModel GetSickestEmployee() {
+
+    public static DefaultTableModel GetSickestEmployee() {
         String columnNames[] = {"First Name"};
         List<org.tempuri.Employee> list = Controller.getSickestEmployee().getEmployee();
 
@@ -211,13 +211,13 @@ public class EmployeeTable {
         for (org.tempuri.Employee s : list) {
             Object[] o = new Object[1];
             o[0] = s.getFirstName();
-          
+
             model.addRow(o);
         }
         return model;
     }
-     
-       public static DefaultTableModel GetEmployee(String id) {
+
+    public static DefaultTableModel GetEmployee(String id) {
 
         String columnNames[] = {"EmployeeNo", "FirstName", "LastName"};
         List<org.tempuri.Employee> list = Controller.getEmployee(id).getEmployee();
@@ -236,6 +236,5 @@ public class EmployeeTable {
         }
         return model;
     }
-  
-    
+
 }

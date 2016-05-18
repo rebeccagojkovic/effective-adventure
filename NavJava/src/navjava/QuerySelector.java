@@ -5,11 +5,6 @@
  */
 package navjava;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.ComboBoxModel;
-import javax.swing.DefaultComboBoxModel;
-
 /**
  *
  * @author erik.aberg
@@ -49,5 +44,4 @@ public class QuerySelector {
 //        Controller.GetEmployeesTable(new QuerySelector() { Name = "1", Value = Controller.getEmployees().getEmployee() });
 //        return things;
 //    }
-
 }

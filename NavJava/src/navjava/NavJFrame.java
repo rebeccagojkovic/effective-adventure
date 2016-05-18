@@ -5,11 +5,6 @@
  */
 package navjava;
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -26,9 +21,7 @@ public class NavJFrame extends javax.swing.JFrame {
     public NavJFrame() {
         initComponents();
 
-        Controller cont = new Controller();
-
-        jTable2.setModel(cont.GetEmployeesTable());
+        jTable2.setModel(Controller.GetEmployeesTable());
         jTable2.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             public void valueChanged(ListSelectionEvent event) {
                 // do some actions here, for example
@@ -856,7 +849,6 @@ public class NavJFrame extends javax.swing.JFrame {
             jTable1.setModel(Controller.GetSickestEmployee());
         }
 
-
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -1187,7 +1179,7 @@ public class NavJFrame extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -1209,6 +1201,7 @@ public class NavJFrame extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new NavJFrame().setVisible(true);
             }
