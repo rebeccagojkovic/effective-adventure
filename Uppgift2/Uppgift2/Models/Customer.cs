@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Uppgift2
+namespace Uppgift2.Models
 {
     public class Customer
     {
