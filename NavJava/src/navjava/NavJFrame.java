@@ -8,10 +8,11 @@ package navjava;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.xml.datatype.XMLGregorianCalendar;
-
 
 /**
  *
@@ -1085,23 +1086,19 @@ public class NavJFrame extends javax.swing.JFrame {
         // LocalDateTime date = LocalDateTime.from(f.parse("2016-05-17 23:18:53"));
         // LocalDateTime date = LocalDateTime.now();
         java.util.Date date = new java.util.Date();
-        
+
         System.out.println(new Timestamp(date.getTime()));
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
-        String formattedDate = sdf.format(date);
-
-        XMLGregorianCalendar altAdressStart = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar(new Timestamp(date.getTime()));
-        XMLGregorianCalendar altAdressEnd = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar(new Timestamp(date.getTime()));
-        XMLGregorianCalendar birthDate = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar(new Timestamp(date.getTime()));
-        XMLGregorianCalendar employmentDate = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar(new Timestamp(date.getTime()));
-        XMLGregorianCalendar inactivityDate = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar(new Timestamp(date.getTime()));
-        XMLGregorianCalendar terminationDate = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar(new Timestamp(date.getTime()));
-        XMLGregorianCalendar lastDateModified = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar(new Timestamp(date.getTime()));
-        System.out.println(altAdressStart);
+        XMLGregorianCalendar altAdressStart = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar1(date);
+        XMLGregorianCalendar altAdressEnd = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar1(date);
+        XMLGregorianCalendar birthDate = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar1(date);
+        XMLGregorianCalendar employmentDate = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar1(date);
+        XMLGregorianCalendar inactivityDate = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar1(date);
+        XMLGregorianCalendar terminationDate = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar1(date);
+        XMLGregorianCalendar lastDateModified = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar1(date);
+        System.out.println(altAdressEnd);
 
         
-        //System.out.printf("%-24s %s%n", "String:", 
         String firstName = jTextField2.getText();
         String id = jTextField3.getText();
         String middleName = jTextField5.getText();

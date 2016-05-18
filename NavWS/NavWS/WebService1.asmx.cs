@@ -95,18 +95,7 @@ namespace NavWS
         [WebMethod]
         public List<Models.Employee> GetEmployee(string id)
         {
-            //SqlDataReader sqlReader = cont.GetEmployee(id);
-
-            //Models.Employee emp = null;
-
-            //while (sqlReader.Read())
-            //{
-            //    emp = new Models.Employee();
-            //    emp.Employee_No_ = sqlReader.GetString(0);
-            //    emp.First_Name = sqlReader.GetString(1);
-            //}
-
-            //return emp;
+            
             return cont.GetEmployee(id);
         }
 

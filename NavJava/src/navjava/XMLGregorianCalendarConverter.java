@@ -5,6 +5,7 @@
  */
 package navjava;
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -12,6 +13,7 @@ import java.util.Locale;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
@@ -45,8 +47,9 @@ public class XMLGregorianCalendarConverter {
     public static XMLGregorianCalendar dateToXMLGregorianCalendar(Date date) {
 
         try {
+            Timestamp time = new Timestamp(date.getTime());
             GregorianCalendar gc = (GregorianCalendar) GregorianCalendar.getInstance();
-            gc.setTime(new Timestamp(date.getTime()));
+            gc.setTime(time);
             return DatatypeFactory.newInstance().newXMLGregorianCalendar(gc);
         } catch (DatatypeConfigurationException e) {
             // TODO: Optimize exception handling
@@ -54,6 +57,31 @@ public class XMLGregorianCalendarConverter {
             return null;
         }
     }
+
+    public static XMLGregorianCalendar dateToXMLGregorianCalendar1(Date date) {
+
+        try {
+            Timestamp time = new Timestamp(new Date().getTime());
+            LocalDateTime ldt = time.toLocalDateTime();
+            XMLGregorianCalendar cal = DatatypeFactory.newInstance().newXMLGregorianCalendar();
+
+            cal.setYear(ldt.getYear());
+            cal.setMonth(ldt.getMonthValue());
+            cal.setDay(ldt.getDayOfMonth());
+            cal.setHour(ldt.getHour());
+            cal.setMinute(ldt.getMinute());
+            cal.setSecond(ldt.getSecond());
+           // cal.setFractionalSecond(new BigDecimal("0." + ldt.getNano()));
+
+            return cal;//DatatypeFactory.newInstance().newXMLGregorianCalendar(cal);
+        } catch (DatatypeConfigurationException e) {
+            // TODO: Optimize exception handling
+            System.out.print(e.getMessage());
+            return null;
+        }
+    }
+    
+    
 
     /**
      * Converts a formatted string into XMLGregorianCalendar
@@ -73,4 +101,5 @@ public class XMLGregorianCalendarConverter {
             return null;
         }
     }
+
 }

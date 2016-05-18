@@ -101,10 +101,3 @@ namespace NavWS.Controllers
 
     }
 }
-
-//List<string> EmployeeList = new List<string>();
-//foreach (DataRow dataRow in ds.Tables["Company"].Rows)
-//{
-//    EmployeeList.Add(string.Join(", ", dataRow.ItemArray.Select(item => item.ToString())));
-//}
-//adapter.Fill(ds);
