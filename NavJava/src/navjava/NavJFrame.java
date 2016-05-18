@@ -285,308 +285,308 @@ public class NavJFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField3.setText("jTextField2");
+        jTextField3.setText("First");
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
             }
         });
 
-        jTextField4.setText("jTextField2");
+        jTextField4.setText("Last");
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
             }
         });
 
-        jTextField5.setText("jTextField2");
+        jTextField5.setText("A");
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField5ActionPerformed(evt);
             }
         });
 
-        jTextField6.setText("jTextField2");
+        jTextField6.setText("A");
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField6ActionPerformed(evt);
             }
         });
 
-        jTextField7.setText("jTextField2");
+        jTextField7.setText("A");
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField7ActionPerformed(evt);
             }
         });
 
-        jTextField8.setText("jTextField2");
+        jTextField8.setText("A");
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField8ActionPerformed(evt);
             }
         });
 
-        jTextField9.setText("jTextField2");
+        jTextField9.setText("A");
         jTextField9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField9ActionPerformed(evt);
             }
         });
 
-        jTextField10.setText("jTextField2");
+        jTextField10.setText("A");
         jTextField10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField10ActionPerformed(evt);
             }
         });
 
-        jTextField11.setText("jTextField2");
+        jTextField11.setText("A");
         jTextField11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField11ActionPerformed(evt);
             }
         });
 
-        jTextField12.setText("jTextField2");
+        jTextField12.setText("A");
         jTextField12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField12ActionPerformed(evt);
             }
         });
 
-        jTextField13.setText("jTextField2");
+        jTextField13.setText("A");
         jTextField13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField13ActionPerformed(evt);
             }
         });
 
-        jTextField14.setText("jTextField2");
+        jTextField14.setText("A");
         jTextField14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField14ActionPerformed(evt);
             }
         });
 
-        jTextField15.setText("jTextField2");
+        jTextField15.setText("A");
         jTextField15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField15ActionPerformed(evt);
             }
         });
 
-        jTextField16.setText("jTextField2");
+        jTextField16.setText("A");
         jTextField16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField16ActionPerformed(evt);
             }
         });
 
-        jTextField17.setText("jTextField2");
+        jTextField17.setText("A");
         jTextField17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField17ActionPerformed(evt);
             }
         });
 
-        jTextField18.setText("jTextField2");
+        jTextField18.setText("A");
         jTextField18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField18ActionPerformed(evt);
             }
         });
 
-        jTextField19.setText("jTextField2");
+        jTextField19.setText("A");
         jTextField19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField19ActionPerformed(evt);
             }
         });
 
-        jTextField20.setText("jTextField2");
+        jTextField20.setText("A");
         jTextField20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField20ActionPerformed(evt);
             }
         });
 
-        jTextField21.setText("jTextField2");
+        jTextField21.setText("A");
         jTextField21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField21ActionPerformed(evt);
             }
         });
 
-        jTextField22.setText("jTextField2");
+        jTextField22.setText("A");
         jTextField22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField22ActionPerformed(evt);
             }
         });
 
-        jTextField23.setText("jTextField2");
+        jTextField23.setText("A");
         jTextField23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField23ActionPerformed(evt);
             }
         });
 
-        jTextField24.setText("jTextField2");
+        jTextField24.setText("A");
         jTextField24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField24ActionPerformed(evt);
             }
         });
 
-        jTextField25.setText("jTextField2");
+        jTextField25.setText("A");
         jTextField25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField25ActionPerformed(evt);
             }
         });
 
-        jTextField26.setText("jTextField2");
+        jTextField26.setText("A");
         jTextField26.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField26ActionPerformed(evt);
             }
         });
 
-        jTextField27.setText("jTextField2");
+        jTextField27.setText("A");
         jTextField27.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField27ActionPerformed(evt);
             }
         });
 
-        jTextField28.setText("jTextField2");
+        jTextField28.setText("A");
         jTextField28.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField28ActionPerformed(evt);
             }
         });
 
-        jTextField29.setText("jTextField2");
+        jTextField29.setText("A");
         jTextField29.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField29ActionPerformed(evt);
             }
         });
 
-        jTextField30.setText("jTextField2");
+        jTextField30.setText("A");
         jTextField30.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField30ActionPerformed(evt);
             }
         });
 
-        jTextField31.setText("jTextField2");
+        jTextField31.setText("A");
         jTextField31.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField31ActionPerformed(evt);
             }
         });
 
-        jTextField32.setText("jTextField2");
+        jTextField32.setText("A");
         jTextField32.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField32ActionPerformed(evt);
             }
         });
 
-        jTextField33.setText("jTextField2");
+        jTextField33.setText("A");
         jTextField33.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField33ActionPerformed(evt);
             }
         });
 
-        jTextField34.setText("jTextField2");
+        jTextField34.setText("A");
         jTextField34.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField34ActionPerformed(evt);
             }
         });
 
-        jTextField35.setText("jTextField2");
+        jTextField35.setText("A");
         jTextField35.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField35ActionPerformed(evt);
             }
         });
 
-        jTextField36.setText("jTextField2");
+        jTextField36.setText("A");
         jTextField36.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField36ActionPerformed(evt);
             }
         });
 
-        jTextField37.setText("jTextField2");
+        jTextField37.setText("A");
         jTextField37.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField37ActionPerformed(evt);
             }
         });
 
-        jTextField38.setText("jTextField2");
+        jTextField38.setText("A");
         jTextField38.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField38ActionPerformed(evt);
             }
         });
 
-        jTextField39.setText("jTextField2");
+        jTextField39.setText("A");
         jTextField39.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField39ActionPerformed(evt);
             }
         });
 
-        jTextField40.setText("jTextField2");
+        jTextField40.setText("A");
         jTextField40.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField40ActionPerformed(evt);
             }
         });
 
-        jTextField41.setText("jTextField2");
+        jTextField41.setText("A");
         jTextField41.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField41ActionPerformed(evt);
             }
         });
 
-        jTextField42.setText("jTextField2");
+        jTextField42.setText("A");
         jTextField42.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField42ActionPerformed(evt);
             }
         });
 
-        jTextField43.setText("jTextField2");
+        jTextField43.setText("A");
         jTextField43.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField43ActionPerformed(evt);
             }
         });
 
-        jTextField44.setText("jTextField2");
+        jTextField44.setText("A");
         jTextField44.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField44ActionPerformed(evt);
             }
         });
 
-        jTextField45.setText("jTextField2");
+        jTextField45.setText("A");
         jTextField45.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField45ActionPerformed(evt);
             }
         });
 
-        jTextField46.setText("jTextField2");
+        jTextField46.setText("A");
         jTextField46.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField46ActionPerformed(evt);
@@ -1041,53 +1041,7 @@ public class NavJFrame extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
 
-        //   DateTimeFormatter f = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        //   LocalDateTime altAdressStart = LocalDateTime.from(f.parse(jTextField18.getText()));
-        //   LocalDateTime altAdressEnd = LocalDateTime.from(f.parse(jTextField18.getText()));
-        //    LocalDateTime birthDate = LocalDateTime.from(f.parse(jTextField18.getText()));
-        //   LocalDateTime inactivityDate = LocalDateTime.from(f.parse(jTextField18.getText()));
-        //   LocalDateTime terminationDate = LocalDateTime.from(f.parse(jTextField18.getText()));
-        //  LocalDateTime lastDateModified = LocalDateTime.from(f.parse(jTextField18.getText()));
-        //  GregorianCalendar gc = new GregorianCalendar();
-        // gc.get(Calendar.MONTH);
-//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-//        sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
-//        String date = sdf.format(new Date());
-//        XMLGregorianCalendar xmlCal;
-//        try {
-//            xmlCal = DatatypeFactory.newInstance().newXMLGregorianCalendar(date);
-//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-//        getGregorianCalendar().getCalendarDate();
-        // Date d1 =  dateFormat.parse("hej");
-//        DateTimeFormatter f = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-//        LocalDateTime altAdressStart = LocalDateTime.from(f.parse("2012-01-10 23:13:26"));
-//        LocalDateTime altAdressEnd = LocalDateTime.from(f.parse("2012-01-10 23:13:26"));
-//        LocalDateTime birthDate = LocalDateTime.from(f.parse("2012-01-10 23:13:26"));
-//        LocalDateTime employmentDate = LocalDateTime.from(f.parse("2012-01-10 23:13:26"));
-//        LocalDateTime inactivityDate = LocalDateTime.from(f.parse("2012-01-10 23:13:26"));
-//        LocalDateTime terminationDate = LocalDateTime.from(f.parse("2012-01-10 23:13:26"));
-//        LocalDateTime lastDateModified = LocalDateTime.from(f.parse("2012-01-10 23:13:26"));
-        // c.setTime();
-        //XMLGregorianCalendar test = DatatypeFactory.newInstance().newXMLGregorianCalendar();
-//        try {
-//            LocalDateTime currentUTCTime = LocalDateTime.now(); // using system timezone
-//            XMLGregorianCalendar altAdressStart = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
-//            XMLGregorianCalendar altAdressEnd = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
-//            XMLGregorianCalendar birthDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
-//            XMLGregorianCalendar employmentDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
-//            XMLGregorianCalendar inactivityDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
-//            XMLGregorianCalendar terminationDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
-//            XMLGregorianCalendar lastDateModified = DatatypeFactory.newInstance().newXMLGregorianCalendar(currentUTCTime.toString());
-//            
-//        } catch (DatatypeConfigurationException ex) {
-//            Logger.getLogger(NavJFrame.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-        DateTimeFormatter f = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        // LocalDateTime date = LocalDateTime.from(f.parse("2016-05-17 23:18:53"));
-        // LocalDateTime date = LocalDateTime.now();
         java.util.Date date = new java.util.Date();
-
-        System.out.println(new Timestamp(date.getTime()));
 
         XMLGregorianCalendar altAdressStart = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar1(date);
         XMLGregorianCalendar altAdressEnd = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar1(date);
@@ -1096,11 +1050,9 @@ public class NavJFrame extends javax.swing.JFrame {
         XMLGregorianCalendar inactivityDate = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar1(date);
         XMLGregorianCalendar terminationDate = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar1(date);
         XMLGregorianCalendar lastDateModified = XMLGregorianCalendarConverter.dateToXMLGregorianCalendar1(date);
-        System.out.println(altAdressEnd);
 
-        
-        String firstName = jTextField2.getText();
-        String id = jTextField3.getText();
+        String id = jTextField2.getText();
+        String firstName = jTextField3.getText();
         String middleName = jTextField5.getText();
         String lastName = jTextField4.getText();
         String initials = jTextField6.getText();
@@ -1115,16 +1067,7 @@ public class NavJFrame extends javax.swing.JFrame {
         String mobilePhoneNumber = jTextField15.getText();
         String eMail = jTextField16.getText();
         String altAdress = jTextField17.getText();
-        // XMLGregorianCalendar altAdressStart = xmlCal;
-        // String altAdressStart.get(Calendar.TUESDAY);
-        //String altAdressStart = dateFormat.format(jTextField18.getText());
-
-        //XMLGregorianCalendar altAdressEnd = xmlCal;
-        //String altAdressEnd = dateFormat.format(jTextField19.getText());
         String picture = jTextField20.getText();
-        //String birthDate = dateFormat.format(jTextField21.getText());
-
-        //XMLGregorianCalendar birthDate = xmlCal;
         String socialSecurityNumber = jTextField22.getText();
         String unionCode = jTextField23.getText();
         String unionMembershipNumber = jTextField24.getText();
@@ -1133,24 +1076,12 @@ public class NavJFrame extends javax.swing.JFrame {
         String managerNumber = jTextField27.getText();
         String employmentContractCode = jTextField28.getText();
         String statisticsGroupCode = jTextField29.getText();
-
-        //String employmentDate = dateFormat.format(jTextField30.getText());
-        //XMLGregorianCalendar employmentDate = xmlCal;
         int status = 1;
-
-        // String inactivityDate = dateFormat.format(jTextField31.getText());
-        //XMLGregorianCalendar inactivityDate = xmlCal;
         String causeOfInactivity = jTextField33.getText();
-        // String terminationDate = dateFormat.format(jTextField34.getText());
-
-        // XMLGregorianCalendar terminationDate = xmlCal;
         String groundsForTermCode = jTextField35.getText();
         String globalDimension1Code = jTextField36.getText();
         String globalDimension2Code = jTextField37.getText();
         String resourceNumber = jTextField38.getText();
-        //String lastDateModified = dateFormat.format(jTextField39.getText());
-
-        //XMLGregorianCalendar lastDateModified = xmlCal;
         String extension = jTextField40.getText();
         String pager = jTextField41.getText();
         String faxNumber = jTextField42.getText();
@@ -1160,11 +1091,7 @@ public class NavJFrame extends javax.swing.JFrame {
         String noSeries = jTextField46.getText();
 
         Controller.addEmployee(id, firstName, middleName, lastName, initials, jobTitle, searchName, adress, adress2, city, postCode, county, phoneNumber, mobilePhoneNumber, eMail, altAdress, altAdressStart, altAdressEnd, picture, birthDate, socialSecurityNumber, unionCode, unionMembershipNumber, sex, countryRegionCode, managerNumber, employmentContractCode, statisticsGroupCode, employmentDate, status, inactivityDate, causeOfInactivity, terminationDate, groundsForTermCode, globalDimension1Code, globalDimension2Code, resourceNumber, lastDateModified, extension, pager, faxNumber, companyEmail, title, salesPerPurchCode, noSeries);
-
-//        catch (DatatypeConfigurationException ex) {
-//            Logger.getLogger(NavJFrame.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-        //jTable2.setModel(Controller.GetEmployeesTable());
+        jTable2.setModel(Controller.GetEmployeesTable());
 
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -1233,7 +1160,6 @@ public class NavJFrame extends javax.swing.JFrame {
         Controller.deleteEmployee(id);
         jTable2.setModel(Controller.GetEmployeesTable());
 
-        // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -1243,7 +1169,6 @@ public class NavJFrame extends javax.swing.JFrame {
         Controller.updateEmployee(id, firstName);
 
         jTable2.setModel(Controller.GetEmployeesTable());
-// TODO add your handling code here:j
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
