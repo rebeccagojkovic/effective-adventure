@@ -76,6 +76,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateCookiesDataSetTheOne.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer.cs" />
+    <Compile Include="ErrorHandling.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Ingredient.cs" />
     <Compile Include="Model\Order.cs" />

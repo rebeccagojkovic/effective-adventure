@@ -11,7 +11,7 @@ namespace CreateCookies
     {
         public string SQLError(SqlException ex)
         {
-            return ("You have got an SQL error: " + ex.Message);
+            return ("You have got a SQL error: " + ex.Message);
         }
         public string HandleException(Exception ex)
         {

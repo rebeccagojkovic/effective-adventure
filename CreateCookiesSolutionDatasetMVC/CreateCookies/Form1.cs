@@ -90,11 +90,11 @@ namespace CreateCookies
 
                     foreach (string s in searchCustomerValues)
                     {
-                        searchCustomerValues[0] = TextBoxUCname.Text;
-                        searchCustomerValues[1] = TextBoxUCaddress.Text;
-                        searchCustomerValues[2] = TextBoxUCpostaladdress.Text;
-                        searchCustomerValues[3] = ComboBoxUCcountry.Text;
-                        searchCustomerValues[4] = TextBoxUCemail.Text;
+                        TextBoxUCname.Text = searchCustomerValues[0];
+                        TextBoxUCaddress.Text= searchCustomerValues[1];
+                        TextBoxUCpostaladdress.Text= searchCustomerValues[2];
+                        ComboBoxUCcountry.Text= searchCustomerValues[3];
+                        TextBoxUCemail.Text= searchCustomerValues[4];
                     }
                 }
             }

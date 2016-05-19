@@ -11,7 +11,7 @@ namespace Uppgift1
     {
         public string GetTxtFile(string filename)
         {
-            StreamReader sr = File.OpenText("C:\\Users\\erik.aberg\\" + filename);
+            StreamReader sr = File.OpenText("C:\\Users\\Azra Balic\\" + filename);
             String line = sr.ReadToEnd();
             return line;
         }
