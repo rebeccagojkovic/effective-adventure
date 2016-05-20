@@ -20,59 +20,17 @@ namespace Uppgift2
     // [System.Web.Script.Services.ScriptService]
     public class WebService : System.Web.Services.WebService
     {
-
         [WebMethod]
-        public List<Customer> ReadCustomer()
+        public List<Models.Customer> GetCustomersList()
         {
-
-            List<Customer> list = new List<Customer>();
-
-            String connString = @"Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15";
-            SqlConnection sqlConn = new SqlConnection(connString);
-            sqlConn.Open();
-
-            String query = "SELECT * FROM Customer";
-            SqlCommand cmd = new SqlCommand(query, sqlConn);
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            try
-            {
-                while (reader.Read())
-                {
-                    var result = new Customer();
-                    result.CNumber = reader.GetString(0);
-                    result.CName = reader.GetString(1);
-                    result.CAddress = reader.GetString(2);
-                    result.CPostalAddress = reader.GetString(3);
-                    result.CCountry = reader.GetString(4);
-                    result.CEmail = reader.GetString(5);
-
-                    list.Add(result);
-
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-            return list;
+            Controllers.Controller cont = new Controllers.Controller();
+            return cont.GetCustomersList();
         }
         [WebMethod]
         public List<string> GetCustomers()
         {
-            String con = @"Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15";
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Customer", con);
-            DataSet ds = new DataSet();
-            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            adapter.Fill(ds, "Customer");
-            List<string> customerList = new List<string>();
-            foreach (DataRow dataRow in ds.Tables["Customer"].Rows)
-            {
-                customerList.Add(string.Join(", ", dataRow.ItemArray.Select(item => item.ToString())));
-            }
-            return customerList;
+            Controllers.Controller cont = new Controllers.Controller();
+            return cont.GetCustomers();
         }
 
     }

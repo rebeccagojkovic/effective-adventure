@@ -84,6 +84,10 @@ namespace NavWS.Controllers
         {
             dal.AddEmployee(id, firstName, middleName, lastName, initials, jobTitle, searchName, adress, adress2, city, postCode, county, phoneNumber, mobilePhoneNumber, eMail, altAdress, altAdressStart, altAdressEnd, picture, birthDate, socialSecurityNumber, unionCode, unionMembershipNumber, sex, countryRegionCode, managerNumber, employmentContractCode,  statisticsGroupCode, employmentDate, status, inactivityDate, causeOfInactivity, terminationDate, groundsForTermCode, globalDimension1Code, globalDimension2Code, resourceNumber, lastDateModified, extension, pager, faxNumber, companyEmail, title, salesPerPurchCode, noSeries);
         }
+        public void AddEmployeeMini(string id, string firstName, string lastName)
+        {
+            dal.AddEmployeeMini(id, firstName, lastName);
+        }
 
         public void DeleteEmployee(string id)
         {
@@ -97,10 +101,3 @@ namespace NavWS.Controllers
 
     }
 }
-
-//List<string> EmployeeList = new List<string>();
-//foreach (DataRow dataRow in ds.Tables["Company"].Rows)
-//{
-//    EmployeeList.Add(string.Join(", ", dataRow.ItemArray.Select(item => item.ToString())));
-//}
-//adapter.Fill(ds);

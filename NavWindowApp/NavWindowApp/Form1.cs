@@ -232,6 +232,11 @@ namespace NavWindowApp
             employeeDataGridView.DataSource = service.GetEmployees();
 
         }
+
+        private void employeeDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
 

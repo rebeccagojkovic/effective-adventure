@@ -23,6 +23,13 @@ public class Controller {
         port.addEmployee(id, firstName, middleName, lastName, initials, jobTitle, searchName, adress, adress2, city, postCode, county, phoneNumber, mobilePhoneNumber, eMail, altAdress, altAdressStart, altAdressEnd, picture, birthDate, socialSecurityNumber, unionCode, unionMembershipNumber, sex, countryRegionCode, managerNumber, employmentContractCode, statisticsGroupCode, employmentDate, status, inactivityDate, causeOfInactivity, terminationDate, groundsForTermCode, globalDimension1Code, globalDimension2Code, resourceNumber, lastDateModified, extension, pager, faxNumber, companyEmail, title, salesPerPurchCode, noSeries);
     }
 
+    public static void addEmployeeMini(java.lang.String id, java.lang.String firstName, java.lang.String lastName) {
+        org.tempuri.WebService1 service = new org.tempuri.WebService1();
+        org.tempuri.WebService1Soap port = service.getWebService1Soap12();
+        port.addEmployeeMini(id, firstName, lastName);
+
+    }
+
     public static void deleteEmployee(java.lang.String id) {
         org.tempuri.WebService1 service = new org.tempuri.WebService1();
         org.tempuri.WebService1Soap port = service.getWebService1Soap12();
@@ -106,8 +113,52 @@ public class Controller {
         org.tempuri.WebService1Soap port = service.getWebService1Soap12();
         port.updateEmployee(id, firstName);
     }
+
     public static DefaultTableModel GetEmployeesTable() {
         return EmployeeTable.GetEmployeesTable();
     }
-    
+
+    public static DefaultTableModel GetEmployeesMetaTable() {
+        return EmployeeTable.GetEmployeesMetaTable();
+    }
+
+    public static DefaultTableModel GetEmployeesMetaTable2() {
+        return EmployeeTable.GetEmployeesMetaTable2();
+    }
+
+    public static DefaultTableModel GetConstraintsTable() {
+        return EmployeeTable.GetConstraintsTable();
+    }
+
+    public static DefaultTableModel GetEmployeeAbsenceTable() {
+        return EmployeeTable.GetEmployeeAbsenceTable();
+    }
+
+    public static DefaultTableModel GetEmployeeMeta() {
+        return EmployeeTable.GetEmployeesMeta();
+    }
+
+    public static DefaultTableModel GetEmployeeMeta2() {
+        return EmployeeTable.GetEmployeesMeta2();
+    }
+
+    public static DefaultTableModel GetIndexes() {
+        return EmployeeTable.GetIndexes();
+    }
+
+    public static DefaultTableModel GetKeys() {
+        return EmployeeTable.GetKeys();
+    }
+
+    public static DefaultTableModel GetRelative() {
+        return EmployeeTable.GetRelative();
+    }
+
+    public static DefaultTableModel GetSickestEmployee() {
+        return EmployeeTable.GetSickestEmployee();
+    }
+
+    public static DefaultTableModel GetEmployee(String id) {
+        return EmployeeTable.GetEmployee(id);
+    }
 }

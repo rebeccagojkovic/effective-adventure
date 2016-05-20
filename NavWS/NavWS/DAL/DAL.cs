@@ -22,78 +22,6 @@ namespace NavWS.DAL
         }
         SqlConnection con = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=Demo Database NAV (5-0);Persist Security Info=True;User ID=grupp15;Password=Grupp15;");
 
-
-        //public List<List<string>> SqlConvert(SqlDataReader sqlReader)
-        //{
-        //    if (sqlReader != null)
-        //    {
-        //        List<List<string>> returnList = new List<List<string>>();
-
-        //        while (sqlReader.Read())
-        //        {
-        //            List<string> tmpList = new List<string>();
-
-        //            for (int i = 0; i < sqlReader.FieldCount; i++)
-        //            {
-        //                string data = "";
-        //                try
-        //                {
-        //                    if (sqlReader.GetFieldType(i) == typeof(string))
-        //                    {
-        //                        data = sqlReader.GetString(i);
-        //                    }
-
-        //                    if (sqlReader.GetFieldType(i) == typeof(int))
-        //                    {
-        //                        int integer = sqlReader.GetInt32(i);
-        //                        data = integer.ToString();
-        //                    }
-
-
-        //                }
-        //                catch (SqlNullValueException)
-        //                {
-        //                    data = "null";
-        //                }
-
-        //                tmpList.Add(data);
-        //            }
-
-        //            returnList.Add(tmpList);
-        //        }
-
-        //        return returnList;
-        //    }
-
-        //    return null;
-        //}
-        //public List<String> ShowAllEmployeesDAL()
-        //{
-        //    con.Open();
-
-        //    try
-        //    {
-        //        SqlDataAdapter adapterEmployees = new SqlDataAdapter("SELECT * FROM [Demo Database NAV (5-0)].[dbo].[CRONUS Sverige AB$Employee]", con);
-        //        DataSet dt = new DataSet();
-        //        adapterEmployees.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-        //        adapterEmployees.Fill(dt, "[Demo Database NAV (5-0)].[dbo].[CRONUS Sverige AB$Employee]");
-
-        //        List<string> EmployeeList = new List<string>();
-        //        foreach (DataRow dataRow in dt.Tables["[Demo Database NAV (5-0)].[dbo].[CRONUS Sverige AB$Employee]"].Rows)
-        //        {
-        //            EmployeeList.Add(string.Join(", ", dataRow.ItemArray.Select(item => item.ToString())));
-        //        }
-        //        return EmployeeList;
-        //    }
-        //    catch (Exception Ex)
-        //    {
-        //        throw Ex;
-        //    }
-        //    finally
-        //    {
-        //        con.Close();
-        //    }
-        //}
         public List<Models.Employee> GetAllEmployeesList()
         {
             con.Open();
@@ -206,20 +134,7 @@ namespace NavWS.DAL
                 con.Close();
             }
         }
-        //1a lösningen
-        //public List<List<string>> GetEmployeesMetaOld()
-        //{
-        //    Connect();
-
-        //    string sqlQuery = "select Table_Name, Column_name from INFORMATION_SCHEMA.COLUMNS where"
-        //        + " TABLE_NAME = 'CRONUS Sverige AB$Employee'";
-
-        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
-
-        //    return SqlConvert(s.ExecuteReader());
-        //}
-
-        //2a lösningen
+       
         public List<Models.EmployeeMeta> GetEmployeesMeta2()
         {
             con.Open();
@@ -251,18 +166,7 @@ namespace NavWS.DAL
                 con.Close();
             }
         }
-        //public List<List<string>> GetEmployeesMeta2Old()
-        //{
-        //    Connect();
-
-        //    string sqlQuery = "SELECT b.name, a.name FROM sys.columns a JOIN sys.tables b ON a.object_id"
-        //        + " = b.object_id WHERE b.name LIKE 'CRONUS Sverige AB$Employee'";
-
-        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
-
-        //    return SqlConvert(s.ExecuteReader());
-        //}
-
+        
         public List<Models.EmployeeRelative> GetRelative()
         {
             con.Open();
@@ -296,18 +200,7 @@ namespace NavWS.DAL
                 con.Close();
             }
         }
-        //public List<List<string>> GetRelativeOld()
-        //{
-        //    Connect();
-        //    string sqlQuery = "select a.[Employee No_],a.[Relative Code],a.[First Name],b.[First_Name]"
-        //        + " from [CRONUS Sverige AB$Employee Relative] a inner join [CRONUS Sverige AB$Employee]"
-        //        + " b on a.[Employee No_]=b.[Employee_No_]";
-
-        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
-
-        //    return SqlConvert(s.ExecuteReader());
-        //}
-
+        
         public List<Models.EmployeeAbsence> GetEmployeeAbsence()
         {
             con.Open();
@@ -342,19 +235,7 @@ namespace NavWS.DAL
                 con.Close();
             }
         }
-        //public List<List<string>> GetEmployeeAbsenceOLD()
-        //{
-        //    Connect();
-        //    string sqlQuery = "select a.[Employee No_], a.Description from [CRONUS Sverige AB$Employee Absence]"
-        //        + " a where a.[From Date] < CONVERT(DateTime, '2004-12-31 12:00:00.000') and"
-        //        + " a.[From Date] > CONVERT(DateTime, '2004-01-01 00:00:00.000') and"
-        //        + " a.[Cause of Absence Code] = 'SJUK'";
-
-        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
-
-        //    return SqlConvert(s.ExecuteReader());
-        //}
-
+        
         public List<Models.Employee> GetSickestEmployee()
         {
             con.Open();
@@ -388,46 +269,11 @@ namespace NavWS.DAL
                 con.Close();
             }
         }
-        //public List<List<string>> GetSickestEmployeeOLD()
-        //{
-        //    Connect();
-        //    string sqlQuery = "select top 1 a.[First_Name] from [CRONUS Sverige AB$Employee] a inner join"
-        //        + " [CRONUS Sverige AB$Employee Absence] b on a.Employee_No_ = b.[Employee No_] and b.[Cause of Absence Code]"
-        //        + " = 'SJUK' group by a.[First_Name] order by count(*) desc";
-
-        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
-
-        //    return SqlConvert(s.ExecuteReader());
-
-
-        //}
-
+        
         //---------------------- Add/Delete/Insert/Update SQL ----------------------
 
         public List<Models.Employee> GetEmployee(string id)
         {
-
-            //Connect();
-
-            //try
-            //{
-            //    string sqlQuery = "select * from"
-            //        + " [CRONUS Sverige AB$Employee] a where a.Employee_No_ = @id";
-
-            //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
-            //    s.Parameters.Add("@id", SqlDbType.VarChar, 30).Value = id;
-
-            //    return s.ExecuteReader();
-            //}
-            //catch (Exception)
-            //{
-
-            //    throw;
-            //}
-            //finally
-            //{
-            //    con.Close();
-            //}
 
             con.Open();
             try
@@ -509,6 +355,32 @@ namespace NavWS.DAL
             }
         }
 
+        public void AddEmployeeMini(string id, string firstName, string lastName)
+        {
+
+            Connect();
+            string sqlQuery = "INSERT INTO [dbo].[CRONUS Sverige AB$Employee]([Employee_No_],[First_Name],[Last_Name])"
+                + "VALUES (@id, @firstName, @lastName)";
+
+            SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
+
+            s.Parameters.Add("@id", SqlDbType.VarChar, 30).Value = id;
+            s.Parameters.Add("@firstName", SqlDbType.VarChar, 40).Value = firstName;
+           
+            s.Parameters.Add("@lastName", SqlDbType.VarChar, 30).Value = lastName;
+            try
+            {
+
+                s.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+            }
+        }
+
+
+
+
         public void AddEmployee(string id, string firstName, string middleName, string lastName, string initials, string jobTitle, string searchName, string adress, string adress2, string city, string postCode, string county, string phoneNumber, string mobilePhoneNumber, string eMail, string altAdress, DateTime altAdressStart, DateTime altAdressEnd, string picture, DateTime birthDate, string socialSecurityNumber, string unionCode, string unionMembershipNumber, int sex, string countryRegionCode, string managerNumber, string employmentContractCode, string statisticsGroupCode, DateTime employmentDate, int status, DateTime inactivityDate, string causeOfInactivity, DateTime terminationDate, string groundsForTermCode, string globalDimension1Code, string globalDimension2Code, string resourceNumber, DateTime lastDateModified, string extension, string pager, string faxNumber, string companyEmail, string title, string salesPerPurchCode, string noSeries)
         {
             Connect();
@@ -570,7 +442,6 @@ namespace NavWS.DAL
             }
             catch (SqlException)
             {
-                //Primary konflikt
             }
         }
 
@@ -636,7 +507,6 @@ namespace NavWS.DAL
                 {
                     var result = new Models.EmployeeMeta();
                     result.Table_Name = reader.GetString(0);
-                    //result.Column_Name = reader.GetString(1);
 
                     list.Add(result);
 
@@ -653,17 +523,7 @@ namespace NavWS.DAL
                 con.Close();
             }
         }
-        //public List<List<string>> GetKeys()
-        //{
-        //    Connect();
-
-        //    string sqlQuery = "select top 100 CONSTRAINT_NAME from INFORMATION_SCHEMA.KEY_COLUMN_USAGE";
-
-        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
-
-        //    return SqlConvert(s.ExecuteReader());
-        //}
-
+        
         public List<Models.EmployeeMeta> GetIndexes()
         {
             con.Open();
@@ -695,18 +555,7 @@ namespace NavWS.DAL
                 con.Close();
             }
         }
-        //public List<List<string>> GetIndexes()
-        //{
-        //    Connect();
-
-        //    string sqlQuery = "select top 100 a.object_id, a.name from sys.indexes a where a.name like 'CRONUS%'";
-
-        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
-
-        //    return SqlConvert(s.ExecuteReader());
-        //}
-
-
+        
         public List<Models.EmployeeMeta> GetConstraints()
         {
             {
@@ -740,19 +589,7 @@ namespace NavWS.DAL
                 }
             }
         }
-        //public List<List<string>> GetConstraints()
-        //{
-        //    Connect();
-
-        //    string sqlQuery = "select top 100 CONSTRAINT_NAME, TABLE_NAME from INFORMATION_SCHEMA.TABLE_CONSTRAINTS";
-
-        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
-
-        //    return SqlConvert(s.ExecuteReader());
-        //}
-
-        //Alla tables i databasen
-        //1a lösningen
+       
         public List<Models.EmployeeMeta> GetAllTables()
         {
             {
@@ -785,18 +622,7 @@ namespace NavWS.DAL
                 }
             }
         }
-        //public List<List<string>> GetAllTables()
-        //{
-        //    Connect();
-
-        //    string sqlQuery = "select top 100 a.TABLE_NAME from INFORMATION_SCHEMA.TABLES a";
-
-        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
-
-        //    return SqlConvert(s.ExecuteReader());
-        //}
-
-        //2a lösningen
+        
         public List<Models.EmployeeMeta> GetAllTables2()
         {
             {
@@ -829,19 +655,7 @@ namespace NavWS.DAL
                 }
             }
         }
-        //public List<List<string>> GetAllTables2()
-        //{
-        //    Connect();
-
-        //    string sqlQuery = "select top 100 a.name from sys.tables a;";
-
-        //    SqlCommand s = new SqlCommand(sqlQuery, sqlConnection);
-
-        //    return SqlConvert(s.ExecuteReader());
-        //}
-
-
-
+        
     }
 }
 
