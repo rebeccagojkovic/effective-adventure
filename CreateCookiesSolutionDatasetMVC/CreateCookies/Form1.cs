@@ -144,7 +144,7 @@ namespace CreateCookies
             {
                 //controller.SeeOrder(ComboBoxOCnumber.Text.Trim());
                 dataGridViewCustomersOrders.DataSource = controller.SeeOrder(ComboBoxOCnumber.Text.Trim());
-
+                toolStripStatusLabel1.Text = "hej";
             }
             catch (Exception Ex)
             {
