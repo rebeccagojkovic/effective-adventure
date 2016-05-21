@@ -213,35 +213,35 @@ namespace CreateCookies
         {
             String searchOrder = TextBoxSearchOrder.Text;
 
-            SqlConnection SearchOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+            //SqlConnection SearchOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
 
             if (ComboBoxSearchOrder.Text == "Order_Number")
             {
-                SqlDataAdapter dataadapterOrder = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber from Orde where oNumber like '" + TextBoxSearchOrder.Text + "%'", SearchOrderConnection);
-                DataTable SearchOrderGrid = new DataTable();
-                dataadapterOrder.Fill(SearchOrderGrid);
-                dataGridViewOrderControl.DataSource = SearchOrderGrid;
+                //SqlDataAdapter dataadapterOrder = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber from Orde where oNumber like '" + TextBoxSearchOrder.Text + "%'", SearchOrderConnection);
+                //DataTable SearchOrderGrid = new DataTable();
+                //dataadapterOrder.Fill(SearchOrderGrid);
+                dataGridViewOrderControl.DataSource = controller.SearchOrderNumber(TextBoxSearchOrder.Text);
             }
             else if (ComboBoxSearchOrder.Text == "Expected_Delivery_Date")
             {
-                SqlDataAdapter da = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber from Orde where expectedDeliveryDate like '" + TextBoxSearchOrder.Text + "%'", SearchOrderConnection);
-                DataTable SearchOrderGrid = new DataTable();
-                da.Fill(SearchOrderGrid);
-                dataGridViewOrderControl.DataSource = SearchOrderGrid;
+                //SqlDataAdapter da = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber from Orde where expectedDeliveryDate like '" + TextBoxSearchOrder.Text + "%'", SearchOrderConnection);
+                //DataTable SearchOrderGrid = new DataTable();
+                //da.Fill(SearchOrderGrid);
+                dataGridViewOrderControl.DataSource = controller.SearchExpectedDeliveryDate(TextBoxSearchOrder.Text);
             }
             else if (ComboBoxSearchOrder.Text == "Is_Delivered")
             {
-                SqlDataAdapter da = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber from Orde where isDelivered like '" + TextBoxSearchOrder.Text + "%'", SearchOrderConnection);
-                DataTable SearchOrderGrid = new DataTable();
-                da.Fill(SearchOrderGrid);
-                dataGridViewOrderControl.DataSource = SearchOrderGrid;
+                //SqlDataAdapter da = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber from Orde where isDelivered like '" + TextBoxSearchOrder.Text + "%'", SearchOrderConnection);
+                //DataTable SearchOrderGrid = new DataTable();
+                //da.Fill(SearchOrderGrid);
+                dataGridViewOrderControl.DataSource = controller.SearchIsDelivered(TextBoxSearchOrder.Text);
             }
             else if (ComboBoxSearchOrder.Text == "Customer_Number")
             {
-                SqlDataAdapter da = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber from Orde where cNumber like '" + TextBoxSearchOrder.Text + "%'", SearchOrderConnection);
-                DataTable SearchOrderGrid = new DataTable();
-                da.Fill(SearchOrderGrid);
-                dataGridViewOrderControl.DataSource = SearchOrderGrid;
+                //SqlDataAdapter da = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber from Orde where cNumber like '" + TextBoxSearchOrder.Text + "%'", SearchOrderConnection);
+                //DataTable SearchOrderGrid = new DataTable();
+                //da.Fill(SearchOrderGrid);
+                dataGridViewOrderControl.DataSource = controller.SearchCustomerNumber(TextBoxSearchOrder.Text);
             }
         }
 

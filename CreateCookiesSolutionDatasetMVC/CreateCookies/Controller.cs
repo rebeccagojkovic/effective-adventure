@@ -58,7 +58,22 @@ namespace CreateCookies.Controller
         {
             dataAccessLayer.DeleteCustomer(oNumber);
         }
-
+        public DataTable SearchOrderNumber(string oNumber)
+        {
+            return dataAccessLayer.SearchCustomerNumber(oNumber);
+        }
+        public DataTable SearchExpectedDeliveryDate(string expectedDeliveryDate)
+        {
+            return dataAccessLayer.SearchExpectedDeliveryDate(expectedDeliveryDate);
+        }
+        public DataTable SearchIsDelivered(string isDelivered)
+        {
+            return dataAccessLayer.SearchIsDelivered(isDelivered);
+        }
+        public DataTable SearchCustomerNumber(string cNumber)
+        {
+            return dataAccessLayer.SearchCustomerNumber(cNumber);
+        }
 
         //Production
         public string [] GetProductToProduceValues() 

@@ -174,14 +174,16 @@ namespace CreateCookies.View
         }
         
         //Order
-        public void SearchOrder()
+        public DataTable SearchOrderNumber(string oNumber)
         {
             connection.Open();
 
             try
             {
-                SqlDataAdapter dataadapterOrder = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber from Orde where oNumber like '"+ "%'", connection);
-
+                SqlDataAdapter da = new SqlDataAdapter("SELECT oNumber, expectedDeliveryDate, isDelivered,cNumber FROM Orde WHERE oNumber LIKE '" + oNumber + "%'", connection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
 
             }
             catch (Exception Ex)
@@ -193,8 +195,70 @@ namespace CreateCookies.View
                 connection.Close();
           }
         }
+        public DataTable SearchExpectedDeliveryDate(string expectedDeliveryDate)
+        {
+            connection.Open();
 
-       
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT oNumber, expectedDeliveryDate, isDelivered,cNumber FROM Orde WHERE expectedDeliveryDate LIKE '" + expectedDeliveryDate + "%'", connection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public DataTable SearchIsDelivered(string isDelivered)
+        {
+            connection.Open();
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT oNumber, expectedDeliveryDate, isDelivered,cNumber FROM Orde WHERE isDelivered LIKE '" + isDelivered + "%'", connection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public DataTable SearchCustomerNumber(string cNumber)
+        {
+            connection.Open();
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT oNumber, expectedDeliveryDate, isDelivered,cNumber FROM Orde WHERE cNumber LIKE '" + cNumber + "%'", connection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
         public void RegisterOrder(string[] Order,string[] Orderspecification)
         {
            
