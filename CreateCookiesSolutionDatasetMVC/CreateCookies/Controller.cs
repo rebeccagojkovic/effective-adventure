@@ -40,9 +40,13 @@ namespace CreateCookies.Controller
         {
           return dataAccessLayer.SearchCustomer(cNumber);
         }
-        public void SeeOrder(string cNumber)
+        public DataTable SeeOrder(string cNumber)
         {
-            dataAccessLayer.SeeOrder(cNumber);
+            return dataAccessLayer.SeeOrder(cNumber);
+        }
+        public DataTable SeeAllOrders()
+        {
+            return dataAccessLayer.SeeAllOrders();
         }
 
         //Order

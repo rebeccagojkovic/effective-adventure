@@ -140,48 +140,72 @@ namespace CreateCookies
 
         private void BtnSeeOrders_Click(object sender, EventArgs e)
         {
-            SqlConnection SeeCustomerOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-
-            SeeCustomerOrderConnection.Open();
-
-            SqlDataAdapter SeeAllOrdersAdapter = new SqlDataAdapter("Select * from Orde where cNumber= '" + ComboBoxOCnumber.Text.Trim() + "'", SeeCustomerOrderConnection);
-            DataTable dt = new DataTable();
-            SeeAllOrdersAdapter.Fill(dt);
-
-            listViewCustomersOrders.Items.Clear();
-
-            for (int i = 0; i < dt.Rows.Count; i++)
+            try
             {
-                DataRow dr = dt.Rows[i];
-
-                ListViewItem listViewItemSeeAllOrders = new ListViewItem(dr["oNumber"].ToString());
-                listViewItemSeeAllOrders.SubItems.Add(dr["isDelivered"].ToString());
-                listViewItemSeeAllOrders.SubItems.Add(dr["cNumber"].ToString());
-                listViewCustomersOrders.Items.Add(listViewItemSeeAllOrders);
+                //controller.SeeOrder(ComboBoxOCnumber.Text.Trim());
+                dataGridViewCustomersOrders.DataSource = controller.SeeOrder(ComboBoxOCnumber.Text.Trim());
 
             }
-            SeeCustomerOrderConnection.Close();
+            catch (Exception Ex)
+            {
+
+                string errorMessage = controller.Exception(Ex);
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+            }
+
+            //SqlConnection SeeCustomerOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+
+            //SeeCustomerOrderConnection.Open();
+
+            //SqlDataAdapter SeeAllOrdersAdapter = new SqlDataAdapter("Select * from Orde where cNumber= '" + ComboBoxOCnumber.Text.Trim() + "'", SeeCustomerOrderConnection);
+            //DataTable dt = new DataTable();
+            //SeeAllOrdersAdapter.Fill(dt);
+
+            //listViewCustomersOrders.Items.Clear();
+
+            //for (int i = 0; i < dt.Rows.Count; i++)
+            //{
+            //    DataRow dr = dt.Rows[i];
+
+            //    ListViewItem listViewItemSeeAllOrders = new ListViewItem(dr["oNumber"].ToString());
+            //    listViewItemSeeAllOrders.SubItems.Add(dr["isDelivered"].ToString());
+            //    listViewItemSeeAllOrders.SubItems.Add(dr["cNumber"].ToString());
+            //    listViewCustomersOrders.Items.Add(listViewItemSeeAllOrders);
+
+            //}
+            //SeeCustomerOrderConnection.Close();
         }
         private void BtnSeeAllOrders_Click(object sender, EventArgs e)
         {
-            SqlConnection SeeCustomerOrdersConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-
-            SeeCustomerOrdersConnection.Open();
-
-            SqlDataAdapter SeeAllOrdersAdapter = new SqlDataAdapter("Select * from Orde", SeeCustomerOrdersConnection);
-            DataTable dt = new DataTable();
-            SeeAllOrdersAdapter.Fill(dt);
-
-            listViewCustomersOrders.Items.Clear();
-
-            for (int i = 0; i < dt.Rows.Count; i++)
+            try
             {
-                DataRow dr = dt.Rows[i];
-                ListViewItem listViewItemSeeAllOrders = new ListViewItem(dr["oNumber"].ToString());
-                listViewItemSeeAllOrders.SubItems.Add(dr["isDelivered"].ToString());
-                listViewItemSeeAllOrders.SubItems.Add(dr["cNumber"].ToString());
-                listViewCustomersOrders.Items.Add(listViewItemSeeAllOrders);
+                dataGridViewCustomersOrders.DataSource = controller.SeeAllOrders();
             }
+            catch (Exception Ex)
+            {
+
+                string errorMessage = controller.Exception(Ex);
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            //SqlConnection SeeCustomerOrdersConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+
+            //SeeCustomerOrdersConnection.Open();
+
+            //SqlDataAdapter SeeAllOrdersAdapter = new SqlDataAdapter("Select * from Orde", SeeCustomerOrdersConnection);
+            //DataTable dt = new DataTable();
+            //SeeAllOrdersAdapter.Fill(dt);
+
+            //listViewCustomersOrders.Items.Clear();
+
+            //for (int i = 0; i < dt.Rows.Count; i++)
+            //{
+            //    DataRow dr = dt.Rows[i];
+            //    ListViewItem listViewItemSeeAllOrders = new ListViewItem(dr["oNumber"].ToString());
+            //    listViewItemSeeAllOrders.SubItems.Add(dr["isDelivered"].ToString());
+            //    listViewItemSeeAllOrders.SubItems.Add(dr["cNumber"].ToString());
+            //    listViewCustomersOrders.Items.Add(listViewItemSeeAllOrders);
+            //}
 
         }
 
@@ -498,27 +522,27 @@ namespace CreateCookies
 
         private void BtnSeeOrders_Click_1(object sender, EventArgs e)
         {
-            SqlConnection SeeCustomerOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+            //SqlConnection SeeCustomerOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
 
-            SeeCustomerOrderConnection.Open();
+            //SeeCustomerOrderConnection.Open();
 
-            SqlDataAdapter SeeAllOrdersAdapter = new SqlDataAdapter("Select * from Orde where cNumber= '" + ComboBoxOCnumber.Text.Trim() + "'", SeeCustomerOrderConnection);
-            DataTable dt = new DataTable();
-            SeeAllOrdersAdapter.Fill(dt);
+            //SqlDataAdapter SeeAllOrdersAdapter = new SqlDataAdapter("Select * from Orde where cNumber= '" + ComboBoxOCnumber.Text.Trim() + "'", SeeCustomerOrderConnection);
+            //DataTable dt = new DataTable();
+            //SeeAllOrdersAdapter.Fill(dt);
 
-            listViewCustomersOrders.Items.Clear();
+            //listViewCustomersOrders.Items.Clear();
 
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                DataRow dr = dt.Rows[i];
+            //for (int i = 0; i < dt.Rows.Count; i++)
+            //{
+            //    DataRow dr = dt.Rows[i];
 
-                ListViewItem listViewItemSeeAllOrders = new ListViewItem(dr["oNumber"].ToString());
-                listViewItemSeeAllOrders.SubItems.Add(dr["isDelivered"].ToString());
-                listViewItemSeeAllOrders.SubItems.Add(dr["cNumber"].ToString());
-                listViewCustomersOrders.Items.Add(listViewItemSeeAllOrders);
+            //    ListViewItem listViewItemSeeAllOrders = new ListViewItem(dr["oNumber"].ToString());
+            //    listViewItemSeeAllOrders.SubItems.Add(dr["isDelivered"].ToString());
+            //    listViewItemSeeAllOrders.SubItems.Add(dr["cNumber"].ToString());
+            //    listViewCustomersOrders.Items.Add(listViewItemSeeAllOrders);
 
-            }
-            SeeCustomerOrderConnection.Close();
+            //}
+            //SeeCustomerOrderConnection.Close();
         }
 
         private void BtnStore_Click(object sender, EventArgs e)

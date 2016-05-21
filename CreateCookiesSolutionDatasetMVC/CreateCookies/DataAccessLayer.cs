@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CreateCookies.View;
 using System.Data.Common;
+using System.Windows.Forms;
 
 namespace CreateCookies.View
 {
@@ -128,15 +129,38 @@ namespace CreateCookies.View
                 connection.Close();
             }
         }
-        public void SeeOrder(string cNumber)
+        public DataTable SeeOrder(string cNumber)
         { 
             connection.Open();
 
             try
             {
-                SqlDataAdapter SeeAllOrdersAdapter = new SqlDataAdapter("Select * from Orde where cNumber= '" + cNumber + "'", connection);
-                DataTable dt = new DataTable();
-                SeeAllOrdersAdapter.Fill(dt);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Orde WHERE cNumber= '" + cNumber + "'", connection);
+                DataTable SearchOrderGrid = new DataTable();
+                da.Fill(SearchOrderGrid);
+                return SearchOrderGrid;
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public DataTable SeeAllOrders()
+        {
+            connection.Open();
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Orde", connection);
+                DataTable SearchOrderGrid = new DataTable();
+                da.Fill(SearchOrderGrid);
+                return SearchOrderGrid;
             }
             catch (Exception Ex)
             {
