@@ -345,7 +345,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(798, 530);
+            this.tabPage4.Size = new System.Drawing.Size(798, 558);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Supplier";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -936,7 +936,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(798, 530);
+            this.tabPage3.Size = new System.Drawing.Size(798, 558);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Production";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1241,7 +1241,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(798, 530);
+            this.tabPage2.Size = new System.Drawing.Size(798, 558);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Order";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1722,6 +1722,7 @@
             this.dataGridViewCustomersOrders.AutoGenerateColumns = false;
             this.dataGridViewCustomersOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewCustomersOrders.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewCustomersOrders.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewCustomersOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCustomersOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn14,
@@ -1731,6 +1732,7 @@
             this.dataGridViewCustomersOrders.Location = new System.Drawing.Point(8, 18);
             this.dataGridViewCustomersOrders.Name = "dataGridViewCustomersOrders";
             this.dataGridViewCustomersOrders.ReadOnly = true;
+            this.dataGridViewCustomersOrders.RowHeadersVisible = false;
             this.dataGridViewCustomersOrders.Size = new System.Drawing.Size(750, 160);
             this.dataGridViewCustomersOrders.TabIndex = 18;
             // 
@@ -2184,7 +2186,7 @@
             this.tabPage7.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage7.Size = new System.Drawing.Size(798, 530);
+            this.tabPage7.Size = new System.Drawing.Size(798, 558);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Storage";
             this.tabPage7.UseVisualStyleBackColor = true;
