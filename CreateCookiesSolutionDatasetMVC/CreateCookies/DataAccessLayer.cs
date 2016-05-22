@@ -17,8 +17,8 @@ namespace CreateCookies.View
 
         public void RegisterCustomer(string[] customer)
         {
-            SqlCommand command = new SqlCommand(@"insert into Customer (cNumber, cName, cAddress, cPostalAddress, cCountry, cEmail) 
-                               values(@cNumber, @cName, @cAddress, @cPostalAddress, @cCountry, @cEmail)", connection);
+            SqlCommand command = new SqlCommand(@"INSERT INTO Customer (cNumber, cName, cAddress, cPostalAddress, cCountry, cEmail) 
+                               VALUES (@cNumber, @cName, @cAddress, @cPostalAddress, @cCountry, @cEmail)", connection);
 
             command.Parameters.AddWithValue("@cNumber", customer[0]);
             command.Parameters.AddWithValue("@cName", customer[1]);
@@ -47,7 +47,7 @@ namespace CreateCookies.View
 
         public void DeleteCustomer(string cNumber)
         {
-            SqlCommand command = new SqlCommand("delete from Customer where cNumber='" + cNumber + "'", connection);
+            SqlCommand command = new SqlCommand("DELETE FROM Customer WHERE cNumber='" + cNumber + "'", connection);
             {
                 command.Parameters.AddWithValue("@cNumber", cNumber);
 
@@ -70,7 +70,7 @@ namespace CreateCookies.View
         }
         public void UpdateCustomer(string[] customer)
         {
-            SqlCommand command = new SqlCommand("update Customer set cName=@cName, cAddress= @cAddress, cPostalAddress=@cPostalAddress, cCountry = @cCountry,  cEmail = @cEmail where cNumber=@cNumber", connection);
+            SqlCommand command = new SqlCommand("UPDATE Customer SET cName=@cName, cAddress= @cAddress, cPostalAddress=@cPostalAddress, cCountry = @cCountry,  cEmail = @cEmail WHERE cNumber=@cNumber", connection);
             {
                 command.Parameters.AddWithValue("@cNumber", customer[0]);
                 command.Parameters.AddWithValue("@cName", customer[1]);
@@ -96,7 +96,7 @@ namespace CreateCookies.View
             }
         }
 
-        public string [] SearchCustomer(string cNumber)
+        public string[] SearchCustomer(string cNumber)
         {
             connection.Open();
 
@@ -104,12 +104,12 @@ namespace CreateCookies.View
             {
                 string[] searchCustomerValues = new string[5];
 
-                SqlCommand command = new SqlCommand("select * from Customer where cNumber ='" + cNumber + "'", connection);
+                SqlCommand command = new SqlCommand("SELECT * FROM Customer WHERE cNumber ='" + cNumber + "'", connection);
 
                 SqlDataReader dr = command.ExecuteReader();
 
                 while (dr.Read())
-                { 
+                {
                     searchCustomerValues[0] = dr["cName"].ToString();
                     searchCustomerValues[1] = dr["cAddress"].ToString();
                     searchCustomerValues[2] = dr["cPostalAddress"].ToString();
@@ -130,7 +130,7 @@ namespace CreateCookies.View
             }
         }
         public DataTable SeeOrder(string cNumber)
-        { 
+        {
             connection.Open();
 
             try
@@ -172,7 +172,7 @@ namespace CreateCookies.View
                 connection.Close();
             }
         }
-        
+
         //Order
         public DataTable SearchOrderNumber(string oNumber)
         {
@@ -193,7 +193,7 @@ namespace CreateCookies.View
             finally
             {
                 connection.Close();
-          }
+            }
         }
         public DataTable SearchExpectedDeliveryDate(string expectedDeliveryDate)
         {
@@ -280,11 +280,11 @@ namespace CreateCookies.View
             }
         }
 
-        public void RegisterOrder(string[] Order,string[] Orderspecification)
+        public void RegisterOrder(string[] Order, string[] Orderspecification)
         {
-           
-            SqlCommand AddOrderCommand1 = new SqlCommand("insert into Orde (oNumber, isDelivered,expectedDeliveryDate, cNumber) values(@oNumber, @isDelivered,@expectedDeliveryDate, @cNumber)", connection);
-            SqlCommand AddOrderCommand2 = new SqlCommand("insert into Orderspecification (oNumber, pNumber, palletQuantity) values(@oNumber, @pNumber, @palletQuantity)", connection);
+
+            SqlCommand AddOrderCommand1 = new SqlCommand("INSERT INTO Orde (oNumber, isDelivered,expectedDeliveryDate, cNumber) VALUES (@oNumber, @isDelivered,@expectedDeliveryDate, @cNumber)", connection);
+            SqlCommand AddOrderCommand2 = new SqlCommand("INSERT INTO Orderspecification (oNumber, pNumber, palletQuantity) VALUES (@oNumber, @pNumber, @palletQuantity)", connection);
 
             AddOrderCommand1.Parameters.AddWithValue("@oNumber", Order[0]);
             AddOrderCommand1.Parameters.AddWithValue("@isDelivered", Order[1]);
@@ -316,7 +316,7 @@ namespace CreateCookies.View
 
         public void DeleteOrder(string oNumber)
         {
-            SqlCommand command = new SqlCommand("delete from Orde where oNumber='" + oNumber + "'", connection);
+            SqlCommand command = new SqlCommand("DELETE FROM Orde WHERE oNumber='" + oNumber + "'", connection);
             {
                 command.Parameters.AddWithValue("@oNumber", oNumber);
 
@@ -338,6 +338,157 @@ namespace CreateCookies.View
             }
         }
         //Production
+        public DataTable AddProduce(DateTime pTime, string pName, string pPallet, string pNumber, string oNumber)
+        {
+            connection.Open();
+
+            try
+            {
+                SqlCommand producedCommand = new SqlCommand("INSERT INTO Produced(pTime, pName, pPallet, pNumber, oNumber) VALUES (@pTime, @pName, @pPallet, @pNumber, @oNumber)", connection);
+                SqlCommand DeleteingFromOrdersProduction = new SqlCommand("delete from Orderspecification  where oNumber= '" + oNumber + "'", connection);
+                SqlCommand DeleteingFromOrdersProduction2 = new SqlCommand("delete from Orde  where oNumber= '" + oNumber + "'", connection);
+
+                producedCommand.Parameters.AddWithValue("@pTime", pTime);
+                producedCommand.Parameters.AddWithValue("@pName", pName);
+                producedCommand.Parameters.AddWithValue("@pPallet", pPallet);
+                producedCommand.Parameters.AddWithValue("@pNumber", pNumber);
+                producedCommand.Parameters.AddWithValue("@oNumber", oNumber);
+                producedCommand.ExecuteNonQuery();
+                DeleteingFromOrdersProduction.ExecuteNonQuery();
+                DeleteingFromOrdersProduction2.ExecuteNonQuery();
+
+
+                if (pName == "Nötingar" && pName != "")
+                {
+                    for (int j = 0; j <= Int32.Parse(pPallet); j++)
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
+                              WHEN 'Smör' THEN (iQuantityInStock -450)
+                              WHEN 'Mjöl' THEN (iQuantityInStock -450)
+                              WHEN 'Socker' THEN (iQuantityInStock -190) 
+                              WHEN 'Nötter' THEN (iQuantityInStock -225)
+                              ELSE iQuantityInStock
+                              END
+                              WHERE iName IN('Smör', 'Mjöl','Socker','Nötter')", connection);
+
+                        DataTable ProduceStorageGrid = new DataTable();
+                        da.Fill(ProduceStorageGrid);
+                        return ProduceStorageGrid;
+                        j++;
+                    }
+
+                }
+                else if (pName == "Nötkakor" && pName != "")
+                {
+                    for (int j = 0; j <= Int32.Parse(pPallet); j++)
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
+                      WHEN 'Ägg' THEN (iQuantityInStock -4)
+                      WHEN 'Mjöl' THEN (iQuantityInStock -50)
+                      WHEN 'Socker' THEN (iQuantityInStock -375) 
+                      WHEN 'Nötter' THEN (iQuantityInStock -1375)
+                      ELSE iQuantityInStock
+                      END
+                      WHERE iName IN('Ägg', 'Mjöl','Socker','Nötter')", connection);
+
+                        DataTable ProduceStorageGrid = new DataTable();
+                        da.Fill(ProduceStorageGrid);
+                        return ProduceStorageGrid;
+                        j++;
+                    }
+
+                }
+                else if (pName == "Berliner" && pName != "")
+                {
+                    for (int j = 0; j <= Int32.Parse(pPallet); j++)
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
+                      WHEN 'Smör' THEN (iQuantityInStock -450)
+                      WHEN 'Mjöl' THEN (iQuantityInStock -450)
+                      WHEN 'Socker' THEN (iQuantityInStock -190) 
+                      WHEN 'Mjölk' THEN (iQuantityInStock -150)
+                      ELSE iQuantityInStock
+                      END
+                      WHERE iName IN('Smör', 'Mjöl','Socker','Nötter')", connection);
+
+                        DataTable ProduceStorageGrid = new DataTable();
+                        da.Fill(ProduceStorageGrid);
+                        return ProduceStorageGrid;
+                        j++;
+                    }
+                }
+                else if (pName == "Kokostoppar" && pName != "")
+                {
+                    for (int j = 0; j <= Int32.Parse(pPallet); j++)
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
+                      WHEN 'Marsipan' THEN (iQuantityInStock -600)
+                      WHEN 'vaniljsocker' THEN (iQuantityInStock -60)
+                      WHEN 'Choklad' THEN (iQuantityInStock -400) 
+                      WHEN 'Nötter' THEN (iQuantityInStock -600)
+                      ELSE iQuantityInStock
+                      END
+                      WHERE iName IN('Marsipan', 'vaniljsocker','Choklad','Nötter')", connection);
+
+                        DataTable ProduceStorageGrid = new DataTable();
+                        da.Fill(ProduceStorageGrid);
+                        return ProduceStorageGrid;
+                        j++;
+                    }
+
+                }
+                else if (pName == "Amneris" && pName != "")
+                {
+                    for (int j = 0; j <= Int32.Parse(pPallet); j++)
+                    {
+
+                        SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
+                          WHEN 'Mjölk' THEN (iQuantityInStock -110)
+                          WHEN 'Mjöl' THEN (iQuantityInStock -400)
+                          WHEN 'Socker' THEN (iQuantityInStock -100) 
+                          WHEN 'Mandel' THEN (iQuantityInStock -300)
+                          ELSE iQuantityInStock
+                          END
+                          WHERE iName IN('Mjölk', 'Mjöl','Socker','Mandel')", connection);
+
+                        DataTable ProduceStorageGrid = new DataTable();
+                        da.Fill(ProduceStorageGrid);
+                        return ProduceStorageGrid;
+                        j++;
+
+                    }
+                }
+                else if (pName == "Tango" && pName != "")
+                {
+                    for (int j = 0; j <= Int32.Parse(pPallet); j++)
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
+                      WHEN 'Marsipan' THEN (iQuantityInStock -550)
+                      WHEN 'Choklad' THEN (iQuantityInStock -300)
+                      WHEN 'vaniljsocker' THEN (iQuantityInStock -30) 
+                      WHEN 'Ägg' THEN (iQuantityInStock -10)
+                      ELSE iQuantityInStock
+                      END
+                      WHERE iName IN('Marsipan', 'Choklad','vaniljsocker','Ägg')", connection);
+
+                        DataTable ProduceStorageGrid = new DataTable();
+                        da.Fill(ProduceStorageGrid);
+                        return ProduceStorageGrid;
+                        j++;
+                    }
+                }
+                return null;
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
         public string[] GetProducts(string pNumber)
         {
             string[] productList = new string[4];
@@ -371,7 +522,7 @@ namespace CreateCookies.View
 
             try
             {
-                SqlCommand producttoProduceecmd = new SqlCommand("select * from Product inner join  Orderspecification on (Product.pNumber=Orderspecification.pNumber) inner join Orde on (Orderspecification.oNumber=Orde.oNumber)", connection);
+                SqlCommand producttoProduceecmd = new SqlCommand("SELECT * FROM Product INNER JOIN Orderspecification ON (Product.pNumber=Orderspecification.pNumber) INNER JOIN Orde ON (Orderspecification.oNumber=Orde.oNumber)", connection);
 
                 SqlDataReader dr = producttoProduceecmd.ExecuteReader();
 
@@ -385,7 +536,7 @@ namespace CreateCookies.View
                 dr.Close();
 
                 return productList;
-               
+
             }
             catch (Exception Ex)
             {
@@ -396,7 +547,65 @@ namespace CreateCookies.View
                 connection.Close();
             }
         }
+        public DataTable AddPallet(string palletNumber, DateTime palletTime, string pNumber, string oNumber)
+        {
 
+            connection.Open();
+
+            try
+            {
+                SqlCommand insertIntoPalletCommand = new SqlCommand("INSERT INTO Pallet (palletNumber, palletTime, pNumber, oNumber) VALUES (@palletNumber, @palletTime, @pNumber, @oNumber)", connection);
+
+                DateTime myDateTime = DateTime.Now;
+                //string sqlFormattedDate = myDateTime.ToString("2016-02-02 00:00:00.000");
+
+                insertIntoPalletCommand.Parameters.AddWithValue("@palletNumber", palletNumber);
+                insertIntoPalletCommand.Parameters.AddWithValue("@palletTime", myDateTime);
+                insertIntoPalletCommand.Parameters.AddWithValue("@pNumber", pNumber);
+                insertIntoPalletCommand.Parameters.AddWithValue("@oNumber", oNumber);
+
+                DataTable dtstore = new DataTable();
+
+                SqlCommand deleteInProducedCommand = new SqlCommand("DELETE FROM Produced WHERE oNumber='" + oNumber + "'", connection);
+
+                insertIntoPalletCommand.ExecuteNonQuery();
+                deleteInProducedCommand.ExecuteNonQuery();
+                connection.Close();
+                return dtstore;
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+        public DataTable GetPallet()
+        {
+            connection.Open();
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Pallet ", connection);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }
 
