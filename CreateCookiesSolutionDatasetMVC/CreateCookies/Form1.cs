@@ -19,6 +19,7 @@ namespace CreateCookies
         {
             this.controller = controller;
             InitializeComponent();
+            dataGridViewCustomersOrders.DataSource = null;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -264,20 +265,20 @@ namespace CreateCookies
 
         private void BtnChoosenOrderInformation_Click(object sender, EventArgs e)
         {
-            SqlConnection ChooseOrderInformationConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+            //SqlConnection ChooseOrderInformationConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
 
-            ChooseOrderInformationConnection.Open();
+            //ChooseOrderInformationConnection.Open();
 
-            SqlDataAdapter ChooseOrderinformationAdapter = new SqlDataAdapter(@"Select Orderspecification.oNumber,Orderspecification.pNumber,Orderspecification.palletQuantity, Product.pName 
-                from Orderspecification inner join Product on (Orderspecification.pNumber = Product.pNumber) where oNumber= '" + ComboBox1.Text.Trim() + "'", ChooseOrderInformationConnection);
-            DataTable dtChooseOrderinfo = new DataTable();
-            ChooseOrderinformationAdapter.Fill(dtChooseOrderinfo);
+            //SqlDataAdapter ChooseOrderinformationAdapter = new SqlDataAdapter(@"Select Orderspecification.oNumber,Orderspecification.pNumber,Orderspecification.palletQuantity, Product.pName 
+            //    from Orderspecification inner join Product on (Orderspecification.pNumber = Product.pNumber) where oNumber= '" + ComboBox1.Text.Trim() + "'", ChooseOrderInformationConnection);
+            //DataTable dtChooseOrderinfo = new DataTable();
+            //ChooseOrderinformationAdapter.Fill(dtChooseOrderinfo);
 
             listViewOrderInformation.Items.Clear();
 
-            for (int i = 0; i < dtChooseOrderinfo.Rows.Count; i++)
+            for (int i = 0; i < controller.ChooseOrderinformation(ComboBox1.Text.Trim()).Rows.Count; i++)
             {
-                DataRow dr = dtChooseOrderinfo.Rows[i];
+                DataRow dr = controller.ChooseOrderinformation(ComboBox1.Text.Trim()).Rows[i];
 
                 ListViewItem listViewItemorderInfo = new ListViewItem(dr["oNumber"].ToString());
                 listViewItemorderInfo.SubItems.Add(dr["pNumber"].ToString());
@@ -286,24 +287,37 @@ namespace CreateCookies
                 listViewOrderInformation.Items.Add(listViewItemorderInfo);
 
             }
-            ChooseOrderInformationConnection.Close();
         }
 
         private void ComboBoxChooseCookies_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlConnection ChooseCookieConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+            //SqlConnection ChooseCookieConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
 
-            ChooseCookieConnection.Open();
+            //ChooseCookieConnection.Open();
 
-            SqlCommand chooseCookiecmd = new SqlCommand("select * from Product where pName='" + ComboBoxChooseCookies.Text + "'", ChooseCookieConnection);
-            SqlDataReader dr = chooseCookiecmd.ExecuteReader();
+            //SqlCommand chooseCookiecmd = new SqlCommand("select * from Product where pName='" + ComboBoxChooseCookies.Text + "'", ChooseCookieConnection);
+            //SqlDataReader dr = chooseCookiecmd.ExecuteReader();
 
-            if (dr.Read())
+            //if (controller.GetProducts(ComboBoxChooseCookies.Text).Read())
+            //{
+            //    TextBoxProductNUmberOA.Text = controller.GetProducts(ComboBoxChooseCookies.Text)["pNumber"].ToString();
+            //}
+            //dr.Close();
+            //ChooseCookieConnection.Close();
+            string[] prList = controller.GetProducts(ComboBoxChooseCookies.Text);
+
+            try
             {
-                TextBoxProductNUmberOA.Text = dr["pNumber"].ToString();
+                foreach (string s in prList)
+                {
+                    TextBoxProductNUmberOA.Text = prList[0];
+                }
             }
-            dr.Close();
-            ChooseCookieConnection.Close();
+            catch (Exception Ex)
+            {
+                string errorMessage = controller.Exception(Ex);
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void BtnAddOder_Click(object sender, EventArgs e)

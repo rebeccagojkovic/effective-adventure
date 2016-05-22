@@ -74,8 +74,16 @@ namespace CreateCookies.Controller
         {
             return dataAccessLayer.SearchCustomerNumber(cNumber);
         }
-
+        public DataTable ChooseOrderinformation(string oNumber)
+        {
+            return dataAccessLayer.ChooseOrderinformation(oNumber);
+        }
         //Production
+
+        public string[] GetProducts(string pNumber)
+        {
+            return dataAccessLayer.GetProducts(pNumber);
+        }
         public string [] GetProductToProduceValues() 
         {
             return dataAccessLayer.GetProductToProduceValues();

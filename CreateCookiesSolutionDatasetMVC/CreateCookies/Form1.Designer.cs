@@ -167,9 +167,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dataGridViewCustomersOrders = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ordeBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.BtnSeeOrders = new System.Windows.Forms.Button();
             this.BtnSeeAllOrders = new System.Windows.Forms.Button();
@@ -280,6 +277,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ordeBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource1)).BeginInit();
@@ -332,6 +333,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource5)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -1728,34 +1730,13 @@
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewCheckBoxColumn2,
             this.dataGridViewTextBoxColumn16});
-            this.dataGridViewCustomersOrders.DataSource = this.ordeBindingSource4;
+            this.dataGridViewCustomersOrders.DataSource = this.ordeBindingSource1;
             this.dataGridViewCustomersOrders.Location = new System.Drawing.Point(8, 18);
             this.dataGridViewCustomersOrders.Name = "dataGridViewCustomersOrders";
             this.dataGridViewCustomersOrders.ReadOnly = true;
             this.dataGridViewCustomersOrders.RowHeadersVisible = false;
             this.dataGridViewCustomersOrders.Size = new System.Drawing.Size(750, 160);
             this.dataGridViewCustomersOrders.TabIndex = 18;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "oNumber";
-            this.dataGridViewTextBoxColumn14.HeaderText = "oNumber";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
-            // dataGridViewCheckBoxColumn2
-            // 
-            this.dataGridViewCheckBoxColumn2.DataPropertyName = "isDelivered";
-            this.dataGridViewCheckBoxColumn2.HeaderText = "isDelivered";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "cNumber";
-            this.dataGridViewTextBoxColumn16.HeaderText = "cNumber";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
             // 
             // ordeBindingSource4
             // 
@@ -2746,6 +2727,32 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
+            // ordeBindingSource5
+            // 
+            this.ordeBindingSource5.DataMember = "Orde";
+            this.ordeBindingSource5.DataSource = this.createCookiesDataSetTheOne;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "oNumber";
+            this.dataGridViewTextBoxColumn14.HeaderText = "oNumber";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.DataPropertyName = "isDelivered";
+            this.dataGridViewCheckBoxColumn2.HeaderText = "isDelivered";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewCheckBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "cNumber";
+            this.dataGridViewTextBoxColumn16.HeaderText = "cNumber";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2822,6 +2829,7 @@
             this.panel1.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3086,12 +3094,13 @@
         private System.Windows.Forms.DataGridView dataGridViewCustomersOrders;
         private System.Windows.Forms.BindingSource ordeBindingSource3;
         private System.Windows.Forms.BindingSource ordeBindingSource4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.BindingSource ordeBindingSource5;
     }
 }
 

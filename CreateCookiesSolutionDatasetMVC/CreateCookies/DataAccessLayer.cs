@@ -258,6 +258,27 @@ namespace CreateCookies.View
                 connection.Close();
             }
         }
+        public DataTable ChooseOrderinformation(string oNumber)
+        {
+            connection.Open();
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT Orderspecification.oNumber,Orderspecification.pNumber,Orderspecification.palletQuantity, Product.pName FROM Orderspecification INNER JOIN Product ON (Orderspecification.pNumber = Product.pNumber) WHERE oNumber = '" + oNumber + "'", connection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
 
         public void RegisterOrder(string[] Order,string[] Orderspecification)
         {
@@ -317,6 +338,31 @@ namespace CreateCookies.View
             }
         }
         //Production
+        public string[] GetProducts(string pNumber)
+        {
+            string[] productList = new string[4];
+            connection.Open();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Product WHERE pName='" + pNumber + "'", connection);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    productList[0] = dr["pNumber"].ToString();
+                }
+                dr.Close();
+                return productList;
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
         public string[] GetProductToProduceValues()
         {
             string[] productList = new string[4];
