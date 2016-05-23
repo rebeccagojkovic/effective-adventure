@@ -79,9 +79,9 @@ namespace CreateCookies.Controller
             return dataAccessLayer.ChooseOrderinformation(oNumber);
         }
         //Production
-        public DataTable GetProduce()
+        public string[] GetProduced(string pName)
         {
-            return dataAccessLayer.GetProduce();
+            return dataAccessLayer.GetProduced(pName);
         }
         public DataTable AddProduce(DateTime pTime, string pName, string pPallet, string pNumber, string oNumber)
         {
@@ -106,7 +106,10 @@ namespace CreateCookies.Controller
         {
             return dataAccessLayer.GetPallet();
         }
-
+        public DataTable AddStoreToOrder(string oNumber, bool isDelivered, DateTime expectedDeliveryDate, string cNumber)
+        {
+            return dataAccessLayer.AddStoreToOrder(oNumber, isDelivered, expectedDeliveryDate, cNumber);
+        }
         //Supplier
 
 

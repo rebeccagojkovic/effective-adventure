@@ -286,14 +286,14 @@ namespace CreateCookies.View
             SqlCommand AddOrderCommand1 = new SqlCommand("INSERT INTO Orde (oNumber, isDelivered,expectedDeliveryDate, cNumber) VALUES (@oNumber, @isDelivered,@expectedDeliveryDate, @cNumber)", connection);
             SqlCommand AddOrderCommand2 = new SqlCommand("INSERT INTO Orderspecification (oNumber, pNumber, palletQuantity) VALUES (@oNumber, @pNumber, @palletQuantity)", connection);
 
-            DateTime dt = Convert.ToDateTime(Order[2]);
-            IFormatProvider culture = new System.Globalization.CultureInfo("sv-SE", true);
-            DateTime dt2 = DateTime.Parse(Order[2], culture, System.Globalization.DateTimeStyles.AssumeLocal);
+            DateTime dt = DateTime.Now;
+            //IFormatProvider culture = new System.Globalization.CultureInfo("sv-SE", true);
+            //DateTime dt2 = DateTime.Parse(Order[2], culture, System.Globalization.DateTimeStyles.AssumeLocal);
 
 
             AddOrderCommand1.Parameters.AddWithValue("@oNumber", Order[0]);
             AddOrderCommand1.Parameters.AddWithValue("@isDelivered", Order[1]);
-            AddOrderCommand1.Parameters.AddWithValue("@expectedDeliveryDate", dt2);
+            AddOrderCommand1.Parameters.AddWithValue("@expectedDeliveryDate", dt);
             AddOrderCommand1.Parameters.AddWithValue("@cNumber", Order[3]);
 
             AddOrderCommand2.Parameters.AddWithValue("@oNumber", Orderspecification[0]);
@@ -343,16 +343,29 @@ namespace CreateCookies.View
             }
         }
         //Production
-        public DataTable GetProduce()
+        public string[] GetProduced(string pName)
         {
             connection.Open();
 
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Produced", connection);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                return dt;
+                string[] producedArray = new string[7];
+
+                SqlCommand command = new SqlCommand("SELECT * FROM Produced WHERE pName ='" + pName + "'", connection);
+
+                SqlDataReader dr = command.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    producedArray[0] = dr["pTime"].ToString();
+                    producedArray[1] = dr["pNumber"].ToString();
+                    producedArray[2] = dr["oNumber"].ToString();
+                    producedArray[3] = dr["pName"].ToString();
+                    producedArray[4] = dr["pPallet"].ToString();
+                    producedArray[5] = dr["isDelivered"].ToString();
+                    producedArray[6] = dr["cNumber"].ToString();
+                }
+                return producedArray;
             }
             catch (Exception Ex)
             {
@@ -379,6 +392,7 @@ namespace CreateCookies.View
                 producedCommand.Parameters.AddWithValue("@pPallet", pPallet);
                 producedCommand.Parameters.AddWithValue("@pNumber", pNumber);
                 producedCommand.Parameters.AddWithValue("@oNumber", oNumber);
+                //producedCommand.Parameters.AddWithValue("@cNumber", cNumber);
                 producedCommand.ExecuteNonQuery();
                 DeleteingFromOrdersProduction.ExecuteNonQuery();
                 DeleteingFromOrdersProduction2.ExecuteNonQuery();
@@ -527,6 +541,7 @@ namespace CreateCookies.View
                 if (dr.Read())
                 {
                     productList[0] = dr["pNumber"].ToString();
+
                 }
                 dr.Close();
                 return productList;
@@ -548,7 +563,7 @@ namespace CreateCookies.View
 
             try
             {
-                SqlCommand producttoProduceecmd = new SqlCommand("SELECT * FROM Product INNER JOIN Orderspecification ON (Product.pNumber=Orderspecification.pNumber) INNER JOIN Orde ON (Orderspecification.oNumber=Orde.oNumber)", connection);
+                SqlCommand producttoProduceecmd = new SqlCommand("SELECT * FROM Product INNER JOIN Orderspecification ON (Product.pNumber=Orderspecification.pNumber) INNER JOIN Orde ON (Orderspecification.oNumber=Orde.oNumber)", connection); // FULL JOIN Customer ON (Customer.cNumber=Orde.oNumber)
 
                 SqlDataReader dr = producttoProduceecmd.ExecuteReader();
 
@@ -558,6 +573,7 @@ namespace CreateCookies.View
                     productList[1] = dr["palletQuantity"].ToString();
                     productList[2] = dr["pName"].ToString();
                     productList[3] = dr["expectedDeliveryDate"].ToString();
+                    //productList[4] = dr["cNumber"].ToString();
                 }
                 dr.Close();
 
@@ -580,15 +596,17 @@ namespace CreateCookies.View
 
             try
             {
-                SqlCommand insertIntoPalletCommand = new SqlCommand("INSERT INTO Pallet (palletNumber, palletTime, pNumber, oNumber) VALUES (@palletNumber, @palletTime, @pNumber, @oNumber)", connection);
+                SqlCommand insertIntoPalletCommand = new SqlCommand("INSERT INTO Pallet (palletNumber, palletTime, pNumber, oNumber, cNumber) VALUES (@palletNumber, @palletTime, @pNumber, @oNumber)", connection);
 
                 DateTime myDateTime = DateTime.Now;
                 //string sqlFormattedDate = myDateTime.ToString("2016-02-02 00:00:00.000");
 
                 insertIntoPalletCommand.Parameters.AddWithValue("@palletNumber", palletNumber);
-                insertIntoPalletCommand.Parameters.AddWithValue("@palletTime", myDateTime);
+                insertIntoPalletCommand.Parameters.AddWithValue("@palletTime", palletTime.Date);
                 insertIntoPalletCommand.Parameters.AddWithValue("@pNumber", pNumber);
                 insertIntoPalletCommand.Parameters.AddWithValue("@oNumber", oNumber);
+               // insertIntoPalletCommand.Parameters.AddWithValue("@cNumber", cNumber);
+
 
                 DataTable dtstore = new DataTable();
 
@@ -621,6 +639,38 @@ namespace CreateCookies.View
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 return dt;
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public DataTable AddStoreToOrder(string oNumber, bool isDelivered, DateTime expectedDeliveryDate, string cNumber)
+        {
+            connection.Open();
+
+            try
+            {
+                SqlCommand insertIntoOrderCommand = new SqlCommand("INSERT INTO Orde (oNumber, isDelivered, expectedDeliveryDate, cNumber) VALUES (@oNumber, @isDelivered, @expectedDeliveryDate, @cNumber)", connection);
+      
+                insertIntoOrderCommand.Parameters.AddWithValue("@oNumber", oNumber);
+                insertIntoOrderCommand.Parameters.AddWithValue("@isDelivered", isDelivered);
+                insertIntoOrderCommand.Parameters.AddWithValue("@expectedDeliveryDate", expectedDeliveryDate);
+                insertIntoOrderCommand.Parameters.AddWithValue("@cNumber", cNumber);
+
+                DataTable dtstore = new DataTable();
+
+                SqlCommand deleteInPalletCommand = new SqlCommand("DELETE FROM Pallet WHERE oNumber='" + oNumber + "'", connection);
+
+                insertIntoOrderCommand.ExecuteNonQuery();
+                deleteInPalletCommand.ExecuteNonQuery();
+                connection.Close();
+                return dtstore;
             }
             catch (Exception Ex)
             {

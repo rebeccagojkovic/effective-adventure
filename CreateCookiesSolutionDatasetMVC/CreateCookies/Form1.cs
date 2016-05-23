@@ -92,10 +92,10 @@ namespace CreateCookies
                     foreach (string s in searchCustomerValues)
                     {
                         TextBoxUCname.Text = searchCustomerValues[0];
-                        TextBoxUCaddress.Text= searchCustomerValues[1];
-                        TextBoxUCpostaladdress.Text= searchCustomerValues[2];
-                        ComboBoxUCcountry.Text= searchCustomerValues[3];
-                        TextBoxUCemail.Text= searchCustomerValues[4];
+                        TextBoxUCaddress.Text = searchCustomerValues[1];
+                        TextBoxUCpostaladdress.Text = searchCustomerValues[2];
+                        ComboBoxUCcountry.Text = searchCustomerValues[3];
+                        TextBoxUCemail.Text = searchCustomerValues[4];
                     }
                 }
             }
@@ -118,7 +118,7 @@ namespace CreateCookies
 
         private void BtnUppdateCustomer_Click(object sender, EventArgs e)
         {
-            string[] customer = new string[6]; 
+            string[] customer = new string[6];
 
             try
             {
@@ -151,7 +151,7 @@ namespace CreateCookies
             {
 
                 string errorMessage = controller.Exception(Ex);
-                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             //SqlConnection SeeCustomerOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
@@ -248,7 +248,7 @@ namespace CreateCookies
 
         private void BtnDeleteOrder_Click(object sender, EventArgs e)
         {
-            try 
+            try
             {
                 if (ComboBoxDCnumber.SelectedIndex != -1)
                 {
@@ -324,7 +324,7 @@ namespace CreateCookies
 
         private void BtnAddOder_Click(object sender, EventArgs e)
         {
-            
+
             String[] Order = new String[4];
             String[] Orderspecification = new String[3];
 
@@ -352,7 +352,7 @@ namespace CreateCookies
 
         private void BtnProduce_Click(object sender, EventArgs e)
         {
-            controller.AddProduce(DateTimePickerPProductTime.Value.Date, TextBoxProductToProduce.Text, TextBoxpalletamountProduction.Text, TextBoxpNumberProduction.Text, ComboBoxOrderNumberProduction.Text);
+            controller.AddProduce(DateTimePickerPProductTime.Value, TextBoxProductToProduce.Text, TextBoxpalletamountProduction.Text, TextBoxpNumberProduction.Text, ComboBoxOrderNumberProduction.Text);
             this.producedTableAdapter.Fill(this.createCookiesDataSetTheOne.Produced);
             this.ingredientTableAdapter.Fill(this.createCookiesDataSetTheOne.Ingredient);
 
@@ -501,7 +501,7 @@ namespace CreateCookies
         private void ComboBoxOrderNumberProduction_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] prList = controller.GetProductToProduceValues();
-           
+
             try
             {
                 foreach (string s in prList)
@@ -510,6 +510,7 @@ namespace CreateCookies
                     TextBoxpalletamountProduction.Text = prList[1];
                     TextBoxProductToProduce.Text = prList[2];
                     TextBoxEDDProduction.Text = prList[3];
+                    //textBoxCustomerNumberProd.Text = prList[4];
                 }
             }
             catch (Exception Ex)
@@ -567,20 +568,22 @@ namespace CreateCookies
 
         private void BtnStore_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void ComboBoxCooseFromProducedProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string[] prList = controller.GetProducts(ComboBoxCooseFromProducedProducts.Text);
+            string[] prList = controller.GetProduced(ComboBoxCooseFromProducedProducts.Text);
             try
             {
                 foreach (string s in prList)
                 {
-                    TextBoxStoragePNumber.Text = prList[0];
-                    TextBoxStorageONumber.Text = prList[1];
-                    TextBoxStorageProduced.Text = prList[2];
-                    TextBoxStorageProduced.Text = prList[3];
+                    TextBoxStorageProduced.Text = prList[0];
+                    TextBoxStoragePNumber.Text = prList[1];
+                    TextBoxStorageONumber.Text = prList[2];
+                   // textBoxCustomerNumberStorage.Text = prList[6];
+
+
                 }
             }
             catch (Exception)
@@ -610,7 +613,7 @@ namespace CreateCookies
         private void btnStore_Click(object sender, EventArgs e)
         {
             DateTime myDateTime = DateTime.Now;
-            controller.AddPallet(TextBoxPalletID.Text, myDateTime, TextBoxStoragePNumber.Text, TextBoxStorageONumber.Text);
+            controller.AddPallet(TextBoxPalletID.Text, myDateTime, TextBoxStoragePNumber.Text, TextBoxStorageONumber.Text); //  textBoxCustomerNumberStorage.Text
             dataGridViewStorage1.DataSource = controller.GetPallet();
 
             //dataGridViewStorage1.DataSource = controller.GetPallet(ComboBoxCooseFromProducedProducts.Text.Trim());
@@ -673,11 +676,22 @@ namespace CreateCookies
             // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Customer' table. You can move, or remove it, as needed.
             this.customerTableAdapter.Fill(this.createCookiesDataSetTheOne.Customer);
         }
-    }
-} 
 
-    
-  
-    
+        private void BtnUnstoreDelivery_Click(object sender, EventArgs e)
+        {
+
+            if (dataGridViewStorage1.SelectedRows.Count > 0)
+            {
+                controller.AddStoreToOrder((dataGridViewStorage1.SelectedRows[0].Cells[3].Value + string.Empty), true, DateTimePickerExpectedDeliveryDate.Value, dataGridViewStorage1.SelectedRows[0].Cells[3].Value + string.Empty);
+                this.palletTableAdapter.Fill(this.createCookiesDataSetTheOne.Pallet);
+
+            }
+        }
+    }
+}
+
+
+
+
 
 

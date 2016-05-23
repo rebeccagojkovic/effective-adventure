@@ -154,11 +154,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.dataGridViewStorage1 = new System.Windows.Forms.DataGridView();
-            this.palletNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.palletTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.palletBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.TextBoxStorageProduced = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
@@ -227,6 +222,11 @@
             this.ordeBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.orderspecificationBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.palletTableAdapter = new CreateCookies.CreateCookiesDataSetTheOneTableAdapters.PalletTableAdapter();
+            this.dataGridViewStorage1 = new System.Windows.Forms.DataGridView();
+            this.palletNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.palletTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createCookiesDataSetTheOne)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource1)).BeginInit();
@@ -265,7 +265,6 @@
             this.groupBox4.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStorage1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.palletBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.producedBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource4)).BeginInit();
@@ -279,6 +278,7 @@
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStorage1)).BeginInit();
             this.SuspendLayout();
             // 
             // supplierBindingSource1
@@ -319,11 +319,11 @@
             // groupBox13
             // 
             this.groupBox13.Controls.Add(this.dataGridViewProduce);
-            this.groupBox13.Location = new System.Drawing.Point(20, 267);
+            this.groupBox13.Location = new System.Drawing.Point(20, 293);
             this.groupBox13.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox13.Size = new System.Drawing.Size(775, 253);
+            this.groupBox13.Size = new System.Drawing.Size(775, 227);
             this.groupBox13.TabIndex = 3;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Produced products";
@@ -409,7 +409,7 @@
             this.groupBox9.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox9.Size = new System.Drawing.Size(775, 235);
+            this.groupBox9.Size = new System.Drawing.Size(775, 269);
             this.groupBox9.TabIndex = 0;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Production";
@@ -584,10 +584,10 @@
             // 
             // BtnProduce
             // 
-            this.BtnProduce.Location = new System.Drawing.Point(160, 204);
+            this.BtnProduce.Location = new System.Drawing.Point(160, 227);
             this.BtnProduce.Margin = new System.Windows.Forms.Padding(2);
             this.BtnProduce.Name = "BtnProduce";
-            this.BtnProduce.Size = new System.Drawing.Size(185, 24);
+            this.BtnProduce.Size = new System.Drawing.Size(187, 24);
             this.BtnProduce.TabIndex = 2;
             this.BtnProduce.Text = "Produce";
             this.BtnProduce.UseVisualStyleBackColor = true;
@@ -652,6 +652,7 @@
             // 
             this.dataGridViewOrderInformation.AllowUserToAddRows = false;
             this.dataGridViewOrderInformation.AllowUserToDeleteRows = false;
+            this.dataGridViewOrderInformation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewOrderInformation.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewOrderInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewOrderInformation.Location = new System.Drawing.Point(5, 18);
@@ -1572,59 +1573,10 @@
             this.groupBox10.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox10.Size = new System.Drawing.Size(780, 493);
+            this.groupBox10.Size = new System.Drawing.Size(780, 523);
             this.groupBox10.TabIndex = 0;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Storage";
-            // 
-            // dataGridViewStorage1
-            // 
-            this.dataGridViewStorage1.AllowUserToAddRows = false;
-            this.dataGridViewStorage1.AllowUserToDeleteRows = false;
-            this.dataGridViewStorage1.AutoGenerateColumns = false;
-            this.dataGridViewStorage1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewStorage1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewStorage1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStorage1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.palletNumberDataGridViewTextBoxColumn,
-            this.palletTimeDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn17});
-            this.dataGridViewStorage1.DataSource = this.palletBindingSource;
-            this.dataGridViewStorage1.Location = new System.Drawing.Point(5, 18);
-            this.dataGridViewStorage1.Name = "dataGridViewStorage1";
-            this.dataGridViewStorage1.ReadOnly = true;
-            this.dataGridViewStorage1.RowHeadersVisible = false;
-            this.dataGridViewStorage1.Size = new System.Drawing.Size(768, 259);
-            this.dataGridViewStorage1.TabIndex = 30;
-            // 
-            // palletNumberDataGridViewTextBoxColumn
-            // 
-            this.palletNumberDataGridViewTextBoxColumn.DataPropertyName = "palletNumber";
-            this.palletNumberDataGridViewTextBoxColumn.HeaderText = "palletNumber";
-            this.palletNumberDataGridViewTextBoxColumn.Name = "palletNumberDataGridViewTextBoxColumn";
-            this.palletNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // palletTimeDataGridViewTextBoxColumn
-            // 
-            this.palletTimeDataGridViewTextBoxColumn.DataPropertyName = "palletTime";
-            this.palletTimeDataGridViewTextBoxColumn.HeaderText = "palletTime";
-            this.palletTimeDataGridViewTextBoxColumn.Name = "palletTimeDataGridViewTextBoxColumn";
-            this.palletTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "pNumber";
-            this.dataGridViewTextBoxColumn15.HeaderText = "pNumber";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "oNumber";
-            this.dataGridViewTextBoxColumn17.HeaderText = "oNumber";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
             // 
             // palletBindingSource
             // 
@@ -1633,7 +1585,7 @@
             // 
             // TextBoxStorageProduced
             // 
-            this.TextBoxStorageProduced.Location = new System.Drawing.Point(188, 427);
+            this.TextBoxStorageProduced.Location = new System.Drawing.Point(190, 421);
             this.TextBoxStorageProduced.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxStorageProduced.Name = "TextBoxStorageProduced";
             this.TextBoxStorageProduced.Size = new System.Drawing.Size(191, 20);
@@ -1687,7 +1639,7 @@
             // 
             // TextBoxPalletID
             // 
-            this.TextBoxPalletID.Location = new System.Drawing.Point(188, 394);
+            this.TextBoxPalletID.Location = new System.Drawing.Point(190, 392);
             this.TextBoxPalletID.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxPalletID.Name = "TextBoxPalletID";
             this.TextBoxPalletID.Size = new System.Drawing.Size(191, 20);
@@ -1730,10 +1682,11 @@
             this.BtnUnstoreDelivery.TabIndex = 8;
             this.BtnUnstoreDelivery.Text = "Unstore and Delivery";
             this.BtnUnstoreDelivery.UseVisualStyleBackColor = true;
+            this.BtnUnstoreDelivery.Click += new System.EventHandler(this.BtnUnstoreDelivery_Click);
             // 
             // BtnStore
             // 
-            this.BtnStore.Location = new System.Drawing.Point(25, 463);
+            this.BtnStore.Location = new System.Drawing.Point(25, 486);
             this.BtnStore.Margin = new System.Windows.Forms.Padding(2);
             this.BtnStore.Name = "BtnStore";
             this.BtnStore.Size = new System.Drawing.Size(352, 21);
@@ -2117,8 +2070,7 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
             // ordeBindingSource5
             // 
@@ -2133,6 +2085,54 @@
             // palletTableAdapter
             // 
             this.palletTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewStorage1
+            // 
+            this.dataGridViewStorage1.AllowUserToAddRows = false;
+            this.dataGridViewStorage1.AllowUserToDeleteRows = false;
+            this.dataGridViewStorage1.AutoGenerateColumns = false;
+            this.dataGridViewStorage1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewStorage1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewStorage1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStorage1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.palletNumberDataGridViewTextBoxColumn,
+            this.palletTimeDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.dataGridViewStorage1.DataSource = this.palletBindingSource;
+            this.dataGridViewStorage1.Location = new System.Drawing.Point(5, 18);
+            this.dataGridViewStorage1.Name = "dataGridViewStorage1";
+            this.dataGridViewStorage1.ReadOnly = true;
+            this.dataGridViewStorage1.Size = new System.Drawing.Size(768, 259);
+            this.dataGridViewStorage1.TabIndex = 30;
+            // 
+            // palletNumberDataGridViewTextBoxColumn
+            // 
+            this.palletNumberDataGridViewTextBoxColumn.DataPropertyName = "palletNumber";
+            this.palletNumberDataGridViewTextBoxColumn.HeaderText = "palletNumber";
+            this.palletNumberDataGridViewTextBoxColumn.Name = "palletNumberDataGridViewTextBoxColumn";
+            this.palletNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // palletTimeDataGridViewTextBoxColumn
+            // 
+            this.palletTimeDataGridViewTextBoxColumn.DataPropertyName = "palletTime";
+            this.palletTimeDataGridViewTextBoxColumn.HeaderText = "palletTime";
+            this.palletTimeDataGridViewTextBoxColumn.Name = "palletTimeDataGridViewTextBoxColumn";
+            this.palletTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "pNumber";
+            this.dataGridViewTextBoxColumn7.HeaderText = "pNumber";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "oNumber";
+            this.dataGridViewTextBoxColumn8.HeaderText = "oNumber";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // Form1
             // 
@@ -2192,7 +2192,6 @@
             this.tabPage7.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStorage1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.palletBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.producedBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource4)).EndInit();
@@ -2207,6 +2206,7 @@
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordeBindingSource5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderspecificationBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStorage1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2417,13 +2417,13 @@
         private System.Windows.Forms.BindingSource ordeBindingSource5;
         private System.Windows.Forms.DataGridView dataGridViewOrderInformation;
         private System.Windows.Forms.BindingSource orderspecificationBindingSource2;
-        private System.Windows.Forms.DataGridView dataGridViewStorage1;
         private System.Windows.Forms.BindingSource palletBindingSource;
         private CreateCookiesDataSetTheOneTableAdapters.PalletTableAdapter palletTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridViewStorage1;
         private System.Windows.Forms.DataGridViewTextBoxColumn palletNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn palletTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
     }
 }
 
