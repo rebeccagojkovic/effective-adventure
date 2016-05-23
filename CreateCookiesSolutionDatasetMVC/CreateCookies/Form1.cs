@@ -27,8 +27,6 @@ namespace CreateCookies
             this.palletTableAdapter.Fill(this.createCookiesDataSetTheOne.Pallet);
             // TODO: This line of code loads data into the 'createCookiesDataSetTheOne1.Orderspecification' table. You can move, or remove it, as needed.
             this.orderspecificationTableAdapter.Fill(this.createCookiesDataSetTheOne1.Orderspecification);
-
-
             // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Produced' table. You can move, or remove it, as needed.
             this.producedTableAdapter.Fill(this.createCookiesDataSetTheOne.Produced);
             // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Supplier' table. You can move, or remove it, as needed.
@@ -335,7 +333,7 @@ namespace CreateCookies
 
                 Order[0] = TextBoxGenerateOrderNumber.Text;
                 Order[1] = TextBoxisDeliveredAO.Text;
-                Order[2] = (DateTimePickerDeliveryDateAO.ToString());
+                Order[2] = DateTimePickerDeliveryDateAO.ToString();
                 Order[3] = ComboBoxAOCnumber.Text;
 
                 Orderspecification[0] = TextBoxGenerateOrderNumber.Text;
@@ -354,8 +352,10 @@ namespace CreateCookies
 
         private void BtnProduce_Click(object sender, EventArgs e)
         {
+            controller.AddProduce(DateTimePickerPProductTime.Value.Date, TextBoxProductToProduce.Text, TextBoxpalletamountProduction.Text, TextBoxpNumberProduction.Text, ComboBoxOrderNumberProduction.Text);
+            this.producedTableAdapter.Fill(this.createCookiesDataSetTheOne.Produced);
+            this.ingredientTableAdapter.Fill(this.createCookiesDataSetTheOne.Ingredient);
 
-            dataGridViewStorage.DataSource = controller.AddProduce(DateTimePickerPProductTime.Value.Date, TextBoxProductToProduce.Text, TextBoxpalletamountProduction.Text, TextBoxpNumberProduction.Text, ComboBoxOrderNumberProduction.Text);
             //SqlConnection produceConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
             //SqlCommand producedCommand = new SqlCommand("insert into Produced( pTime,pName, pPallet, pNumber, oNumber) values(@pTime, @pName, @pPallet, @pNumber, @oNumber)", produceConnection);
 
@@ -483,7 +483,7 @@ namespace CreateCookies
             //        j++;
             //    }
             //}
-            
+
 
             //SqlCommand DeleteingFromOrdersProduction = new SqlCommand("delete from Orderspecification  where oNumber= '" + ComboBoxOrderNumberProduction.Text.Trim() + "'", produceConnection);
             //SqlCommand DeleteingFromOrdersProduction2 = new SqlCommand("delete from Orde  where oNumber= '" + ComboBoxOrderNumberProduction.Text.Trim() + "'", produceConnection);
@@ -497,7 +497,7 @@ namespace CreateCookies
             //DeleteingFromOrdersProduction2.ExecuteNonQuery();
             //produceConnection.Close();
         }
-    
+
         private void ComboBoxOrderNumberProduction_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] prList = controller.GetProductToProduceValues();
@@ -572,22 +572,39 @@ namespace CreateCookies
 
         private void ComboBoxCooseFromProducedProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlConnection selectStoreInfoConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-
-            selectStoreInfoConnection.Open();
-
-            SqlCommand selectStoragecmd = new SqlCommand("select* from Produced where pName='" + ComboBoxCooseFromProducedProducts.Text + "'", selectStoreInfoConnection);
-            SqlDataReader dr = selectStoragecmd.ExecuteReader();
-
-            if (dr.Read())
+            string[] prList = controller.GetProducts(ComboBoxCooseFromProducedProducts.Text);
+            try
             {
-                TextBoxStoragePNumber.Text = dr["pNumber"].ToString();
-                TextBoxStorageONumber.Text = dr["oNumber"].ToString();
-                TextBoxStorageProduced.Text= dr["pTime"].ToString();
-                TextBoxStorageProduced.Text = dr["pPallet"].ToString();
+                foreach (string s in prList)
+                {
+                    TextBoxStoragePNumber.Text = prList[0];
+                    TextBoxStorageONumber.Text = prList[1];
+                    TextBoxStorageProduced.Text = prList[2];
+                    TextBoxStorageProduced.Text = prList[3];
+                }
             }
-            dr.Close();
-            selectStoreInfoConnection.Close();
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            //SqlConnection selectStoreInfoConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
+
+            //selectStoreInfoConnection.Open();
+
+            //SqlCommand selectStoragecmd = new SqlCommand("select* from Produced where pName='" + ComboBoxCooseFromProducedProducts.Text + "'", selectStoreInfoConnection);
+            //SqlDataReader dr = selectStoragecmd.ExecuteReader();
+
+            //if (dr.Read())
+            //{
+            //    TextBoxStoragePNumber.Text = dr["pNumber"].ToString();
+            //    TextBoxStorageONumber.Text = dr["oNumber"].ToString();
+            //    TextBoxStorageProduced.Text= dr["pTime"].ToString();
+            //    TextBoxStorageProduced.Text = dr["pPallet"].ToString();
+            //}
+            //dr.Close();
+            //selectStoreInfoConnection.Close();
         }
 
         private void btnStore_Click(object sender, EventArgs e)
@@ -595,6 +612,7 @@ namespace CreateCookies
             DateTime myDateTime = DateTime.Now;
             controller.AddPallet(TextBoxPalletID.Text, myDateTime, TextBoxStoragePNumber.Text, TextBoxStorageONumber.Text);
             dataGridViewStorage1.DataSource = controller.GetPallet();
+
             //dataGridViewStorage1.DataSource = controller.GetPallet(ComboBoxCooseFromProducedProducts.Text.Trim());
             //SqlConnection storeConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
 
@@ -634,6 +652,26 @@ namespace CreateCookies
             //deleteInProducedCommand.ExecuteNonQuery();
             //storeConnection.Close();
             //dataGridViewStorage1.DataSource = dtstore;
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Pallet' table. You can move, or remove it, as needed.
+            this.palletTableAdapter.Fill(this.createCookiesDataSetTheOne.Pallet);
+            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne1.Orderspecification' table. You can move, or remove it, as needed.
+            this.orderspecificationTableAdapter.Fill(this.createCookiesDataSetTheOne1.Orderspecification);
+            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Produced' table. You can move, or remove it, as needed.
+            this.producedTableAdapter.Fill(this.createCookiesDataSetTheOne.Produced);
+            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Supplier' table. You can move, or remove it, as needed.
+            this.supplierTableAdapter.Fill(this.createCookiesDataSetTheOne.Supplier);
+            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Ingredient' table. You can move, or remove it, as needed.
+            this.ingredientTableAdapter.Fill(this.createCookiesDataSetTheOne.Ingredient);
+            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Product' table. You can move, or remove it, as needed.
+            this.productTableAdapter.Fill(this.createCookiesDataSetTheOne.Product);
+            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Orde' table. You can move, or remove it, as needed.
+            this.ordeTableAdapter.Fill(this.createCookiesDataSetTheOne.Orde);
+            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Customer' table. You can move, or remove it, as needed.
+            this.customerTableAdapter.Fill(this.createCookiesDataSetTheOne.Customer);
         }
     }
 } 

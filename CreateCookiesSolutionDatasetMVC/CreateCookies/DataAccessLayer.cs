@@ -286,9 +286,14 @@ namespace CreateCookies.View
             SqlCommand AddOrderCommand1 = new SqlCommand("INSERT INTO Orde (oNumber, isDelivered,expectedDeliveryDate, cNumber) VALUES (@oNumber, @isDelivered,@expectedDeliveryDate, @cNumber)", connection);
             SqlCommand AddOrderCommand2 = new SqlCommand("INSERT INTO Orderspecification (oNumber, pNumber, palletQuantity) VALUES (@oNumber, @pNumber, @palletQuantity)", connection);
 
+            DateTime dt = Convert.ToDateTime(Order[2]);
+            IFormatProvider culture = new System.Globalization.CultureInfo("sv-SE", true);
+            DateTime dt2 = DateTime.Parse(Order[2], culture, System.Globalization.DateTimeStyles.AssumeLocal);
+
+
             AddOrderCommand1.Parameters.AddWithValue("@oNumber", Order[0]);
             AddOrderCommand1.Parameters.AddWithValue("@isDelivered", Order[1]);
-            AddOrderCommand1.Parameters.AddWithValue("@expectedDeliveryDate", Order[2]);
+            AddOrderCommand1.Parameters.AddWithValue("@expectedDeliveryDate", dt2);
             AddOrderCommand1.Parameters.AddWithValue("@cNumber", Order[3]);
 
             AddOrderCommand2.Parameters.AddWithValue("@oNumber", Orderspecification[0]);
@@ -338,6 +343,27 @@ namespace CreateCookies.View
             }
         }
         //Production
+        public DataTable GetProduce()
+        {
+            connection.Open();
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Produced", connection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
         public DataTable AddProduce(DateTime pTime, string pName, string pPallet, string pNumber, string oNumber)
         {
             connection.Open();
