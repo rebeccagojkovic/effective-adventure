@@ -23,21 +23,13 @@ namespace CreateCookies
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Pallet' table. You can move, or remove it, as needed.
             this.palletTableAdapter.Fill(this.createCookiesDataSetTheOne.Pallet);
-            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne1.Orderspecification' table. You can move, or remove it, as needed.
             this.orderspecificationTableAdapter.Fill(this.createCookiesDataSetTheOne1.Orderspecification);
-            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Produced' table. You can move, or remove it, as needed.
             this.producedTableAdapter.Fill(this.createCookiesDataSetTheOne.Produced);
-            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Supplier' table. You can move, or remove it, as needed.
             this.supplierTableAdapter.Fill(this.createCookiesDataSetTheOne.Supplier);
-            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Ingredient' table. You can move, or remove it, as needed.
             this.ingredientTableAdapter.Fill(this.createCookiesDataSetTheOne.Ingredient);
-            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Product' table. You can move, or remove it, as needed.
             this.productTableAdapter.Fill(this.createCookiesDataSetTheOne.Product);
-            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Orde' table. You can move, or remove it, as needed.
             this.ordeTableAdapter.Fill(this.createCookiesDataSetTheOne.Orde);
-            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Customer' table. You can move, or remove it, as needed.
             this.customerTableAdapter.Fill(this.createCookiesDataSetTheOne.Customer);
         }
 
@@ -54,6 +46,8 @@ namespace CreateCookies
                 customer[5] = TextBoxCemail.Text;
 
                 controller.RegisterCustomer(customer);
+                toolStripStatusLabel1.Text = "Successful";
+
             }
             catch (Exception Ex)
             {
@@ -72,6 +66,7 @@ namespace CreateCookies
                     String cNumber = ComboBoxDCnumber.Text;
                     controller.DeleteCustomer(cNumber);
                 }
+                toolStripStatusLabel1.Text = "Successful";
             }
             catch (Exception Ex)
             {
@@ -98,6 +93,7 @@ namespace CreateCookies
                         TextBoxUCemail.Text = searchCustomerValues[4];
                     }
                 }
+                toolStripStatusLabel1.Text = "Successful";
             }
             catch (Exception Ex)
             {
@@ -130,6 +126,7 @@ namespace CreateCookies
                 customer[5] = TextBoxUCemail.Text;
 
                 controller.UpdateCustomer(customer);
+                toolStripStatusLabel1.Text = "Successful";
 
             }
             catch (Exception Ex)
@@ -143,9 +140,8 @@ namespace CreateCookies
         {
             try
             {
-                //controller.SeeOrder(ComboBoxOCnumber.Text.Trim());
                 dataGridViewCustomersOrders.DataSource = controller.SeeOrder(ComboBoxOCnumber.Text.Trim());
-                toolStripStatusLabel1.Text = "hej";
+                toolStripStatusLabel1.Text = "Successful";
             }
             catch (Exception Ex)
             {
@@ -153,34 +149,13 @@ namespace CreateCookies
                 string errorMessage = controller.Exception(Ex);
                 MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            //SqlConnection SeeCustomerOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-
-            //SeeCustomerOrderConnection.Open();
-
-            //SqlDataAdapter SeeAllOrdersAdapter = new SqlDataAdapter("Select * from Orde where cNumber= '" + ComboBoxOCnumber.Text.Trim() + "'", SeeCustomerOrderConnection);
-            //DataTable dt = new DataTable();
-            //SeeAllOrdersAdapter.Fill(dt);
-
-            //listViewCustomersOrders.Items.Clear();
-
-            //for (int i = 0; i < dt.Rows.Count; i++)
-            //{
-            //    DataRow dr = dt.Rows[i];
-
-            //    ListViewItem listViewItemSeeAllOrders = new ListViewItem(dr["oNumber"].ToString());
-            //    listViewItemSeeAllOrders.SubItems.Add(dr["isDelivered"].ToString());
-            //    listViewItemSeeAllOrders.SubItems.Add(dr["cNumber"].ToString());
-            //    listViewCustomersOrders.Items.Add(listViewItemSeeAllOrders);
-
-            //}
-            //SeeCustomerOrderConnection.Close();
         }
         private void BtnSeeAllOrders_Click(object sender, EventArgs e)
         {
             try
             {
                 dataGridViewCustomersOrders.DataSource = controller.SeeAllOrders();
+                toolStripStatusLabel1.Text = "Successful";
             }
             catch (Exception Ex)
             {
@@ -188,62 +163,30 @@ namespace CreateCookies
                 string errorMessage = controller.Exception(Ex);
                 MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            //SqlConnection SeeCustomerOrdersConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-
-            //SeeCustomerOrdersConnection.Open();
-
-            //SqlDataAdapter SeeAllOrdersAdapter = new SqlDataAdapter("Select * from Orde", SeeCustomerOrdersConnection);
-            //DataTable dt = new DataTable();
-            //SeeAllOrdersAdapter.Fill(dt);
-
-            //listViewCustomersOrders.Items.Clear();
-
-            //for (int i = 0; i < dt.Rows.Count; i++)
-            //{
-            //    DataRow dr = dt.Rows[i];
-            //    ListViewItem listViewItemSeeAllOrders = new ListViewItem(dr["oNumber"].ToString());
-            //    listViewItemSeeAllOrders.SubItems.Add(dr["isDelivered"].ToString());
-            //    listViewItemSeeAllOrders.SubItems.Add(dr["cNumber"].ToString());
-            //    listViewCustomersOrders.Items.Add(listViewItemSeeAllOrders);
-            //}
-
         }
 
         private void textBoxSearchOrder_TextChanged(object sender, EventArgs e)
         {
             String searchOrder = TextBoxSearchOrder.Text;
 
-            //SqlConnection SearchOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
 
             if (ComboBoxSearchOrder.Text == "Order_Number")
             {
-                //SqlDataAdapter dataadapterOrder = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber from Orde where oNumber like '" + TextBoxSearchOrder.Text + "%'", SearchOrderConnection);
-                //DataTable SearchOrderGrid = new DataTable();
-                //dataadapterOrder.Fill(SearchOrderGrid);
                 dataGridViewOrderControl.DataSource = controller.SearchOrderNumber(TextBoxSearchOrder.Text);
             }
             else if (ComboBoxSearchOrder.Text == "Expected_Delivery_Date")
             {
-                //SqlDataAdapter da = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber from Orde where expectedDeliveryDate like '" + TextBoxSearchOrder.Text + "%'", SearchOrderConnection);
-                //DataTable SearchOrderGrid = new DataTable();
-                //da.Fill(SearchOrderGrid);
                 dataGridViewOrderControl.DataSource = controller.SearchExpectedDeliveryDate(TextBoxSearchOrder.Text);
             }
             else if (ComboBoxSearchOrder.Text == "Is_Delivered")
             {
-                //SqlDataAdapter da = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber from Orde where isDelivered like '" + TextBoxSearchOrder.Text + "%'", SearchOrderConnection);
-                //DataTable SearchOrderGrid = new DataTable();
-                //da.Fill(SearchOrderGrid);
                 dataGridViewOrderControl.DataSource = controller.SearchIsDelivered(TextBoxSearchOrder.Text);
             }
             else if (ComboBoxSearchOrder.Text == "Customer_Number")
             {
-                //SqlDataAdapter da = new SqlDataAdapter("Select oNumber, expectedDeliveryDate, isDelivered,cNumber from Orde where cNumber like '" + TextBoxSearchOrder.Text + "%'", SearchOrderConnection);
-                //DataTable SearchOrderGrid = new DataTable();
-                //da.Fill(SearchOrderGrid);
                 dataGridViewOrderControl.DataSource = controller.SearchCustomerNumber(TextBoxSearchOrder.Text);
             }
+            //toolStripStatusLabel1.Text = "Successful";
         }
 
         private void BtnDeleteOrder_Click(object sender, EventArgs e)
@@ -255,6 +198,7 @@ namespace CreateCookies
                     string oNumber = ComboBoxChooseOrder.Text;
                     controller.DeleteOrder(oNumber);
                 }
+                toolStripStatusLabel1.Text = "Successful";
             }
             catch (Exception Ex)
             {
@@ -265,47 +209,21 @@ namespace CreateCookies
 
         private void BtnChoosenOrderInformation_Click(object sender, EventArgs e)
         {
-            //SqlConnection ChooseOrderInformationConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-
-            //ChooseOrderInformationConnection.Open();
-
-            //SqlDataAdapter ChooseOrderinformationAdapter = new SqlDataAdapter(@"Select Orderspecification.oNumber,Orderspecification.pNumber,Orderspecification.palletQuantity, Product.pName 
-            //    from Orderspecification inner join Product on (Orderspecification.pNumber = Product.pNumber) where oNumber= '" + ComboBox1.Text.Trim() + "'", ChooseOrderInformationConnection);
-            //DataTable dtChooseOrderinfo = new DataTable();
-            //ChooseOrderinformationAdapter.Fill(dtChooseOrderinfo);
-
-            dataGridViewOrderInformation.DataSource = controller.ChooseOrderinformation(ComboBox1.Text.Trim());
-
-            //listViewOrderInformation.Items.Clear();
-
-            //for (int i = 0; i < controller.ChooseOrderinformation(ComboBox1.Text.Trim()).Rows.Count; i++)
-            //{
-            //    DataRow dr = controller.ChooseOrderinformation(ComboBox1.Text.Trim()).Rows[i];
-
-            //    ListViewItem listViewItemorderInfo = new ListViewItem(dr["oNumber"].ToString());
-            //    listViewItemorderInfo.SubItems.Add(dr["pNumber"].ToString());
-            //    listViewItemorderInfo.SubItems.Add(dr["pName"].ToString());
-            //    listViewItemorderInfo.SubItems.Add(dr["palletQuantity"].ToString());
-            //    listViewOrderInformation.Items.Add(listViewItemorderInfo);
-
-            //}
+            try
+            {
+                dataGridViewOrderInformation.DataSource = controller.ChooseOrderinformation(ComboBox1.Text.Trim());
+            toolStripStatusLabel1.Text = "Successful";
+            }
+            catch (Exception Ex)
+            {
+                toolStripStatusLabel1.Text = "";
+                string errorMessage = controller.Exception(Ex);
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void ComboBoxChooseCookies_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //SqlConnection ChooseCookieConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-
-            //ChooseCookieConnection.Open();
-
-            //SqlCommand chooseCookiecmd = new SqlCommand("select * from Product where pName='" + ComboBoxChooseCookies.Text + "'", ChooseCookieConnection);
-            //SqlDataReader dr = chooseCookiecmd.ExecuteReader();
-
-            //if (controller.GetProducts(ComboBoxChooseCookies.Text).Read())
-            //{
-            //    TextBoxProductNUmberOA.Text = controller.GetProducts(ComboBoxChooseCookies.Text)["pNumber"].ToString();
-            //}
-            //dr.Close();
-            //ChooseCookieConnection.Close();
             string[] prList = controller.GetProducts(ComboBoxChooseCookies.Text);
 
             try
@@ -314,9 +232,11 @@ namespace CreateCookies
                 {
                     TextBoxProductNUmberOA.Text = prList[0];
                 }
+               // toolStripStatusLabel1.Text = "Successful";
             }
             catch (Exception Ex)
             {
+                toolStripStatusLabel1.Text = "";
                 string errorMessage = controller.Exception(Ex);
                 MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -341,10 +261,12 @@ namespace CreateCookies
                 Orderspecification[2] = ComboBoxPalletQuantity.Text;
 
                 controller.RegisterOrder(Order, Orderspecification);
+                toolStripStatusLabel1.Text = "Successful";
 
             }
             catch (Exception Ex)
             {
+                toolStripStatusLabel1.Text = "";
                 string errorMessage = controller.Exception(Ex);
                 MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -352,150 +274,22 @@ namespace CreateCookies
 
         private void BtnProduce_Click(object sender, EventArgs e)
         {
-            controller.AddProduce(DateTimePickerPProductTime.Value, TextBoxProductToProduce.Text, TextBoxpalletamountProduction.Text, TextBoxpNumberProduction.Text, ComboBoxOrderNumberProduction.Text);
-            this.producedTableAdapter.Fill(this.createCookiesDataSetTheOne.Produced);
-            this.ingredientTableAdapter.Fill(this.createCookiesDataSetTheOne.Ingredient);
+            try
+            {
+                controller.AddProduce(DateTimePickerPProductTime.Value, TextBoxProductToProduce.Text, TextBoxpalletamountProduction.Text, TextBoxpNumberProduction.Text, ComboBoxOrderNumberProduction.Text);
+                this.producedTableAdapter.Fill(this.createCookiesDataSetTheOne.Produced);
+                this.ingredientTableAdapter.Fill(this.createCookiesDataSetTheOne.Ingredient);
 
-            //SqlConnection produceConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-            //SqlCommand producedCommand = new SqlCommand("insert into Produced( pTime,pName, pPallet, pNumber, oNumber) values(@pTime, @pName, @pPallet, @pNumber, @oNumber)", produceConnection);
+                toolStripStatusLabel1.Text = "Successful";
+            }
+            catch (Exception Ex)
+            {
+                toolStripStatusLabel1.Text = "";
+                string errorMessage = controller.Exception(Ex);
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            }
+            
 
-            //producedCommand.Parameters.AddWithValue("@pTime", DateTimePickerPProductTime.Value.Date);
-            //producedCommand.Parameters.AddWithValue("@pName", TextBoxProductToProduce.Text);
-            //producedCommand.Parameters.AddWithValue("@pPallet", TextBoxpalletamountProduction.Text);
-            //producedCommand.Parameters.AddWithValue("@pNumber", TextBoxpNumberProduction.Text);
-            //producedCommand.Parameters.AddWithValue("@oNumber", ComboBoxOrderNumberProduction.Text);
-
-            //if (TextBoxProductToProduce.Text == "Nötingar" && TextBoxProductToProduce.Text != "")
-            //{
-            //    for (int j = 0; j <= Int32.Parse(TextBoxpalletamountProduction.Text); j++)
-            //    {
-            //        SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
-            //                  WHEN 'Smör' THEN (iQuantityInStock -450)
-            //                  WHEN 'Mjöl' THEN (iQuantityInStock -450)
-            //                  WHEN 'Socker' THEN (iQuantityInStock -190) 
-            //                  WHEN 'Nötter' THEN (iQuantityInStock -225)
-            //                  ELSE iQuantityInStock
-            //                  END
-            //                  WHERE iName IN('Smör', 'Mjöl','Socker','Nötter')", produceConnection);
-
-            //        DataTable ProduceStorageGrid = new DataTable();
-            //        da.Fill(ProduceStorageGrid);
-            //        dataGridViewStorage.DataSource = ProduceStorageGrid;
-            //        j++;
-            //    }
-
-            //}
-            //else if (TextBoxProductToProduce.Text == "Nötkakor" && TextBoxProductToProduce.Text != "")
-            //{
-            //    for (int j = 0; j <= Int32.Parse(TextBoxpalletamountProduction.Text); j++)
-            //    {
-            //        SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
-            //          WHEN 'Ägg' THEN (iQuantityInStock -4)
-            //          WHEN 'Mjöl' THEN (iQuantityInStock -50)
-            //          WHEN 'Socker' THEN (iQuantityInStock -375) 
-            //          WHEN 'Nötter' THEN (iQuantityInStock -1375)
-            //          ELSE iQuantityInStock
-            //          END
-            //          WHERE iName IN('Ägg', 'Mjöl','Socker','Nötter')", produceConnection);
-
-            //        DataTable ProduceStorageGrid = new DataTable();
-            //        da.Fill(ProduceStorageGrid);
-            //        dataGridViewStorage.DataSource = ProduceStorageGrid;
-            //        j++;
-            //    }
-            //}
-            //else if (TextBoxProductToProduce.Text == "Berliner" && TextBoxProductToProduce.Text != "")
-            //{
-            //    for (int j = 0; j <= Int32.Parse(TextBoxpalletamountProduction.Text); j++)
-            //    {
-            //        SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
-            //          WHEN 'Smör' THEN (iQuantityInStock -450)
-            //          WHEN 'Mjöl' THEN (iQuantityInStock -450)
-            //          WHEN 'Socker' THEN (iQuantityInStock -190) 
-            //          WHEN 'Mjölk' THEN (iQuantityInStock -150)
-            //          ELSE iQuantityInStock
-            //          END
-            //          WHERE iName IN('Smör', 'Mjöl','Socker','Nötter')", produceConnection);
-
-            //        DataTable ProduceStorageGrid = new DataTable();
-            //        da.Fill(ProduceStorageGrid);
-            //        dataGridViewStorage.DataSource = ProduceStorageGrid;
-            //        j++;
-            //    }
-            //}
-            //else if (TextBoxProductToProduce.Text == "Kokostoppar" && TextBoxProductToProduce.Text != "")
-            //{
-            //    for (int j = 0; j <= Int32.Parse(TextBoxpalletamountProduction.Text); j++)
-            //    {
-            //        SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
-            //          WHEN 'Marsipan' THEN (iQuantityInStock -600)
-            //          WHEN 'vaniljsocker' THEN (iQuantityInStock -60)
-            //          WHEN 'Choklad' THEN (iQuantityInStock -400) 
-            //          WHEN 'Nötter' THEN (iQuantityInStock -600)
-            //          ELSE iQuantityInStock
-            //          END
-            //          WHERE iName IN('Marsipan', 'vaniljsocker','Choklad','Nötter')", produceConnection);
-
-            //        DataTable ProduceStorageGrid = new DataTable();
-            //        da.Fill(ProduceStorageGrid);
-            //        dataGridViewStorage.DataSource = ProduceStorageGrid;
-            //        j++;
-            //    }
-
-            //}
-            //else if (TextBoxProductToProduce.Text == "Amneris" && TextBoxProductToProduce.Text != "")
-            //{
-            //    for (int j = 0; j <= Int32.Parse(TextBoxpalletamountProduction.Text); j++)
-            //    {
-
-            //        SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
-            //              WHEN 'Mjölk' THEN (iQuantityInStock -110)
-            //              WHEN 'Mjöl' THEN (iQuantityInStock -400)
-            //              WHEN 'Socker' THEN (iQuantityInStock -100) 
-            //              WHEN 'Mandel' THEN (iQuantityInStock -300)
-            //              ELSE iQuantityInStock
-            //              END
-            //              WHERE iName IN('Mjölk', 'Mjöl','Socker','Mandel')", produceConnection);
-
-            //        DataTable ProduceStorageGrid = new DataTable();
-            //        da.Fill(ProduceStorageGrid);
-            //        dataGridViewStorage.DataSource = ProduceStorageGrid;
-            //        j++;
-
-            //    }
-            //}
-            //else if (TextBoxProductToProduce.Text == "Tango" && TextBoxProductToProduce.Text != "")
-            //{
-            //    for (int j = 0; j <= Int32.Parse(TextBoxpalletamountProduction.Text); j++)
-            //    {
-            //        SqlDataAdapter da = new SqlDataAdapter(@"UPDATE Ingredient SET iQuantityInStock = CASE iName
-            //          WHEN 'Marsipan' THEN (iQuantityInStock -550)
-            //          WHEN 'Choklad' THEN (iQuantityInStock -300)
-            //          WHEN 'vaniljsocker' THEN (iQuantityInStock -30) 
-            //          WHEN 'Ägg' THEN (iQuantityInStock -10)
-            //          ELSE iQuantityInStock
-            //          END
-            //          WHERE iName IN('Marsipan', 'Choklad','vaniljsocker','Ägg')", produceConnection);
-
-            //        DataTable ProduceStorageGrid = new DataTable();
-            //        da.Fill(ProduceStorageGrid);
-            //        dataGridViewStorage.DataSource = ProduceStorageGrid;
-            //        j++;
-            //    }
-            //}
-
-
-            //SqlCommand DeleteingFromOrdersProduction = new SqlCommand("delete from Orderspecification  where oNumber= '" + ComboBoxOrderNumberProduction.Text.Trim() + "'", produceConnection);
-            //SqlCommand DeleteingFromOrdersProduction2 = new SqlCommand("delete from Orde  where oNumber= '" + ComboBoxOrderNumberProduction.Text.Trim() + "'", produceConnection);
-
-
-            //listViewOrderInformation.Items.RemoveByKey(ComboBoxOrderNumberProduction.Text);
-
-            //produceConnection.Open();
-            //producedCommand.ExecuteNonQuery();
-            //DeleteingFromOrdersProduction.ExecuteNonQuery();
-            //DeleteingFromOrdersProduction2.ExecuteNonQuery();
-            //produceConnection.Close();
         }
 
         private void ComboBoxOrderNumberProduction_SelectedIndexChanged(object sender, EventArgs e)
@@ -510,11 +304,12 @@ namespace CreateCookies
                     TextBoxpalletamountProduction.Text = prList[1];
                     TextBoxProductToProduce.Text = prList[2];
                     TextBoxEDDProduction.Text = prList[3];
-                    //textBoxCustomerNumberProd.Text = prList[4];
                 }
+              //  toolStripStatusLabel1.Text = "Successful";
             }
             catch (Exception Ex)
             {
+                toolStripStatusLabel1.Text = "";
                 string errorMessage = controller.Exception(Ex);
                 MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -522,48 +317,10 @@ namespace CreateCookies
 
         private void BtnAddSupplier_Click(object sender, EventArgs e)
         {
-            //SqlConnection addSupplierConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-            //SqlCommand addSupplierCommand1 = new SqlCommand("insert into Supplier (sNumber, sName, sLocation) values(@sNumber, @sName, @sLocation)", addSupplierConnection);
-            //SqlCommand addSupplierCommand2 = new SqlCommand("insert into Ingredient (iNumber, iName, iQuantityInStock,sNumber) values(@iNumber, @iName, @iQuantityInStock, @sNumber)", addSupplierConnection);
-
-            //addSupplierCommand1.Parameters.AddWithValue("@sNumber", TextBoxASNumber.Text);
-            //addSupplierCommand1.Parameters.AddWithValue("@sName", TextBoxSupplierName.Text);
-            //addSupplierCommand1.Parameters.AddWithValue("@sLocation", ComboBoxSlocation.Text);
-
-            //addSupplierCommand2.Parameters.AddWithValue("@iNumber", TextBoxASIngredientNumber.Text);
-            //addSupplierCommand2.Parameters.AddWithValue("@iName", TextBoxASIngredientName.Text);
-            //addSupplierCommand2.Parameters.AddWithValue("@iQuantityInStock", TextBoxASQuantityInStock.Text);
-            //addSupplierCommand2.Parameters.AddWithValue("@sNumber", TextBoxASNumber.Text);
-
-            //addSupplierConnection.Open();
-            //addSupplierCommand1.ExecuteNonQuery();
-            //addSupplierCommand2.ExecuteNonQuery();
-            //addSupplierConnection.Close();
         }
 
         private void BtnSeeOrders_Click_1(object sender, EventArgs e)
         {
-            //SqlConnection SeeCustomerOrderConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-
-            //SeeCustomerOrderConnection.Open();
-
-            //SqlDataAdapter SeeAllOrdersAdapter = new SqlDataAdapter("Select * from Orde where cNumber= '" + ComboBoxOCnumber.Text.Trim() + "'", SeeCustomerOrderConnection);
-            //DataTable dt = new DataTable();
-            //SeeAllOrdersAdapter.Fill(dt);
-
-            //listViewCustomersOrders.Items.Clear();
-
-            //for (int i = 0; i < dt.Rows.Count; i++)
-            //{
-            //    DataRow dr = dt.Rows[i];
-
-            //    ListViewItem listViewItemSeeAllOrders = new ListViewItem(dr["oNumber"].ToString());
-            //    listViewItemSeeAllOrders.SubItems.Add(dr["isDelivered"].ToString());
-            //    listViewItemSeeAllOrders.SubItems.Add(dr["cNumber"].ToString());
-            //    listViewCustomersOrders.Items.Add(listViewItemSeeAllOrders);
-
-            //}
-            //SeeCustomerOrderConnection.Close();
         }
 
         private void BtnStore_Click(object sender, EventArgs e)
@@ -581,117 +338,47 @@ namespace CreateCookies
                     TextBoxStorageProduced.Text = prList[0];
                     TextBoxStoragePNumber.Text = prList[1];
                     TextBoxStorageONumber.Text = prList[2];
-                   // textBoxCustomerNumberStorage.Text = prList[6];
-
 
                 }
+              //  toolStripStatusLabel1.Text = "Successful";
             }
-            catch (Exception)
+            catch (Exception Ex)
             {
-
-                throw;
+                toolStripStatusLabel1.Text = "";
+                string errorMessage = controller.Exception(Ex);
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            //SqlConnection selectStoreInfoConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-
-            //selectStoreInfoConnection.Open();
-
-            //SqlCommand selectStoragecmd = new SqlCommand("select* from Produced where pName='" + ComboBoxCooseFromProducedProducts.Text + "'", selectStoreInfoConnection);
-            //SqlDataReader dr = selectStoragecmd.ExecuteReader();
-
-            //if (dr.Read())
-            //{
-            //    TextBoxStoragePNumber.Text = dr["pNumber"].ToString();
-            //    TextBoxStorageONumber.Text = dr["oNumber"].ToString();
-            //    TextBoxStorageProduced.Text= dr["pTime"].ToString();
-            //    TextBoxStorageProduced.Text = dr["pPallet"].ToString();
-            //}
-            //dr.Close();
-            //selectStoreInfoConnection.Close();
         }
 
         private void btnStore_Click(object sender, EventArgs e)
         {
-            DateTime myDateTime = DateTime.Now;
-            controller.AddPallet(TextBoxPalletID.Text, myDateTime, TextBoxStoragePNumber.Text, TextBoxStorageONumber.Text); //  textBoxCustomerNumberStorage.Text
+            try
+            {
+                DateTime myDateTime = DateTime.Now;
+            controller.AddPallet(TextBoxPalletID.Text, myDateTime, TextBoxStoragePNumber.Text, TextBoxStorageONumber.Text);
             dataGridViewStorage1.DataSource = controller.GetPallet();
-
-            //dataGridViewStorage1.DataSource = controller.GetPallet(ComboBoxCooseFromProducedProducts.Text.Trim());
-            //SqlConnection storeConnection = new SqlConnection("Data Source=klippan.privatedns.org;Initial Catalog=CreateCookies;Persist Security Info=True;User ID=grupp15;Password=Grupp15");
-
-            //SqlCommand insertIntoPalletCommand = new SqlCommand("insert into Pallet (palletNumber, palletTime, pNumber,oNumber) values(@palletNumber, @palletTime, @pNumber, @oNumber)", storeConnection);
-
-            //storeConnection.Open();
-
-            //DateTime myDateTime = DateTime.Now;
-            //string sqlFormattedDate = myDateTime.ToString("2016-02-02 00:00:00.000");
-
-            //insertIntoPalletCommand.Parameters.AddWithValue("@palletNumber", TextBoxPalletID.Text);
-            //insertIntoPalletCommand.Parameters.AddWithValue("@palletTime", sqlFormattedDate);
-            //insertIntoPalletCommand.Parameters.AddWithValue("@pNumber", TextBoxStoragePNumber.Text);
-            //insertIntoPalletCommand.Parameters.AddWithValue("@oNumber", TextBoxStorageONumber.Text);
-
-
-            //SqlDataAdapter storeAdapter = new SqlDataAdapter(@"Select Pallet.palletNumber,Pallet.oNumber,Produced.pName,Produced.pTime,Produced.pNumber,Produced.pPallet from Pallet inner join 
-            //    Produced on (Pallet.pNumber=Produced.pNumber) where pName= '" + ComboBoxCooseFromProducedProducts.Text.Trim() + "'", storeConnection);
-            //DataTable dtstore = new DataTable();
-            //storeAdapter.Fill(dtstore);
-
-            //for (int i = 0; i < dtstore.Rows.Count; i++)
-            //{
-            //    DataRow dr = dtstore.Rows[i];
-
-            //    ListViewItem listViewstore = new ListViewItem(dr["palletNumber"].ToString());
-            //    listViewstore.SubItems.Add(dr["palletTime"].ToString());
-            //    listViewstore.SubItems.Add(dr["pNumber"].ToString());
-            //    listViewstore.SubItems.Add(dr["oNumber"].ToString());
-            //    listViewstore.SubItems.Add(dr["pPallet"].ToString());
-            //    listViewStorage.Items.Add(listViewstore);
-            //}
-
-            //SqlCommand deleteInProducedCommand = new SqlCommand("Delete from Produced where oNumber='" + TextBoxStorageONumber.Text + "'", storeConnection);
-
-            //insertIntoPalletCommand.ExecuteNonQuery();
-            //deleteInProducedCommand.ExecuteNonQuery();
-            //storeConnection.Close();
-            //dataGridViewStorage1.DataSource = dtstore;
+                toolStripStatusLabel1.Text = "Successful";
+            }
+            catch (Exception Ex)
+            {
+                toolStripStatusLabel1.Text = "";
+                string errorMessage = controller.Exception(Ex);
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Pallet' table. You can move, or remove it, as needed.
+            toolStripStatusLabel1.Text = "";
             this.palletTableAdapter.Fill(this.createCookiesDataSetTheOne.Pallet);
-            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne1.Orderspecification' table. You can move, or remove it, as needed.
             this.orderspecificationTableAdapter.Fill(this.createCookiesDataSetTheOne1.Orderspecification);
-            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Produced' table. You can move, or remove it, as needed.
             this.producedTableAdapter.Fill(this.createCookiesDataSetTheOne.Produced);
-            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Supplier' table. You can move, or remove it, as needed.
             this.supplierTableAdapter.Fill(this.createCookiesDataSetTheOne.Supplier);
-            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Ingredient' table. You can move, or remove it, as needed.
             this.ingredientTableAdapter.Fill(this.createCookiesDataSetTheOne.Ingredient);
-            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Product' table. You can move, or remove it, as needed.
             this.productTableAdapter.Fill(this.createCookiesDataSetTheOne.Product);
-            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Orde' table. You can move, or remove it, as needed.
             this.ordeTableAdapter.Fill(this.createCookiesDataSetTheOne.Orde);
-            // TODO: This line of code loads data into the 'createCookiesDataSetTheOne.Customer' table. You can move, or remove it, as needed.
             this.customerTableAdapter.Fill(this.createCookiesDataSetTheOne.Customer);
         }
 
-        private void BtnUnstoreDelivery_Click(object sender, EventArgs e)
-        {
-
-            if (dataGridViewStorage1.SelectedRows.Count > 0)
-            {
-                controller.AddStoreToOrder((dataGridViewStorage1.SelectedRows[0].Cells[3].Value + string.Empty), true, DateTimePickerExpectedDeliveryDate.Value, dataGridViewStorage1.SelectedRows[0].Cells[3].Value + string.Empty);
-                this.palletTableAdapter.Fill(this.createCookiesDataSetTheOne.Pallet);
-
-            }
-        }
     }
 }
-
-
-
-
-
-

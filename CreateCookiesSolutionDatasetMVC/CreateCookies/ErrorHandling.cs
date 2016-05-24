@@ -11,7 +11,7 @@ namespace CreateCookies
     {
         public string SQLError(SqlException ex)
         {
-            return ("You have got a SQL error: " + ex.Message);
+            return ("There was an SQL error: " + ex.Message);
         }
         public string HandleException(Exception ex)
         {
@@ -22,7 +22,7 @@ namespace CreateCookies
             }
             else
             {
-                return "You have to fill in all fealds";
+                return "You have to fill in all fields";
             }
         }
     }

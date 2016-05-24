@@ -273,6 +273,7 @@ namespace CreateCookies.View
             catch (Exception Ex)
             {
                 throw Ex;
+
             }
             finally
             {
@@ -598,14 +599,12 @@ namespace CreateCookies.View
             {
                 SqlCommand insertIntoPalletCommand = new SqlCommand("INSERT INTO Pallet (palletNumber, palletTime, pNumber, oNumber, cNumber) VALUES (@palletNumber, @palletTime, @pNumber, @oNumber)", connection);
 
-                DateTime myDateTime = DateTime.Now;
-                //string sqlFormattedDate = myDateTime.ToString("2016-02-02 00:00:00.000");
+             //   DateTime myDateTime = DateTime.Now;
 
                 insertIntoPalletCommand.Parameters.AddWithValue("@palletNumber", palletNumber);
                 insertIntoPalletCommand.Parameters.AddWithValue("@palletTime", palletTime.Date);
                 insertIntoPalletCommand.Parameters.AddWithValue("@pNumber", pNumber);
                 insertIntoPalletCommand.Parameters.AddWithValue("@oNumber", oNumber);
-               // insertIntoPalletCommand.Parameters.AddWithValue("@cNumber", cNumber);
 
 
                 DataTable dtstore = new DataTable();
@@ -684,5 +683,3 @@ namespace CreateCookies.View
         }
     }
 }
-
-
